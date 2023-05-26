@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -518,8 +518,6 @@ public class Loader_Recipes_Handlers implements Runnable {
 		RM.Boxinator    .add(new RecipeMapHandlerPrefix(nugget                          , 9, NF,  16,16,     0, NF, ingot                   , 1, ST.tag( 9), NI, F, F, F, new And(ANTIMATTER.NOT, EXPLODES_IN_NONVANILLA_CRAFTING_GRID.NOT)));
 		RM.Boxinator    .add(new RecipeMapHandlerPrefix(chunkGt                         , 4, NF,  16,16,     0, NF, ingot                   , 1, ST.tag( 4), NI, F, F, F, new And(ANTIMATTER.NOT, EXPLODES_IN_NONVANILLA_CRAFTING_GRID.NOT)));
 		RM.Boxinator    .add(new RecipeMapHandlerPrefix(billet                          , 3, NF,  16,16,     0, NF, ingot                   , 2, ST.tag( 3), NI, F, F, F, new And(ANTIMATTER.NOT, EXPLODES_IN_NONVANILLA_CRAFTING_GRID.NOT)));
-		RM.Boxinator    .add(new RecipeMapHandlerPrefix(plateTiny                       , 9, NF,  16,16,     0, NF, casingSmall             , 2, ST.tag( 9), NI, F, F, F, new And(ANTIMATTER.NOT, EXPLODES_IN_NONVANILLA_CRAFTING_GRID.NOT)));
-		RM.Boxinator    .add(new RecipeMapHandlerPrefix(plateGemTiny                    , 9, NF,  16,16,     0, NF, casingSmall             , 2, ST.tag( 9), NI, F, F, F, new And(ANTIMATTER.NOT, EXPLODES_IN_NONVANILLA_CRAFTING_GRID.NOT)));
 		
 		GameRegistry.addRecipe(new AdvancedCrafting1ToY(oreRaw                      , gem                       , 1, F));
 		GameRegistry.addRecipe(new AdvancedCrafting1ToY(oreRaw                      , rawOreChunk               , 3, F));
@@ -578,10 +576,6 @@ public class Loader_Recipes_Handlers implements Runnable {
 		GameRegistry.addRecipe(new AdvancedCraftingXToY(gem                     ,  9, blockGem                  , 1, F));
 		GameRegistry.addRecipe(new AdvancedCraftingXToY(plate                   ,  9, blockPlate                , 1, F));
 		GameRegistry.addRecipe(new AdvancedCraftingXToY(plateGem                ,  9, blockPlateGem             , 1, F));
-		GameRegistry.addRecipe(new AdvancedCraftingXToY(plateTiny               ,  5, casingSmall               , 1, F));
-		GameRegistry.addRecipe(new AdvancedCraftingXToY(plateTiny               ,  9, casingSmall               , 2, F));
-		GameRegistry.addRecipe(new AdvancedCraftingXToY(plateGemTiny            ,  5, casingSmall               , 1, F));
-		GameRegistry.addRecipe(new AdvancedCraftingXToY(plateGemTiny            ,  9, casingSmall               , 2, F));
 		
 		for (OreDictPrefix tPrefix : OreDictPrefix.VALUES) if (tPrefix != OP.oreRaw) {
 			if (tPrefix.contains(STANDARD_ORE)) GameRegistry.addRecipe(new AdvancedCrafting1ToY(tPrefix, oreRaw, 1, F));
@@ -693,7 +687,6 @@ public class Loader_Recipes_Handlers implements Runnable {
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(MT.Aredrite               , NF                                ,   0,   1, NF, MT.Ardite               , NI, T, tConditionP));
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(MT.Chimerite              , NF                                ,   0,   1, NF, MT.Vinteum              , NI, T, tConditionP));
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(MT.BlueTopaz              , NF                                ,   0,   1, NF, MT.Topaz                , NI, T, tConditionP));
-		RM.Generifier   .add(new RecipeMapHandlerMaterial(MT.Zanite                 , NF                                ,   0,   1, NF, MT.Tanzanite            , NI, T, tConditionP));
 		
 		for (OreDictMaterial tMaterial : new OreDictMaterial[] {MT.WroughtIron, MT.MeteoricIron, MT.IronMagnetic, MT.Meteorite, MT.IronCompressed, MT.IronCast, MT.Thaumium, MT.Enori})
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.Fe                   , NI, T, tConditionP));
@@ -715,14 +708,8 @@ public class Loader_Recipes_Handlers implements Runnable {
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.Amethyst             , NI, T, tConditionP));
 		for (OreDictMaterial tMaterial : ANY.Jasper.mToThis) if (tMaterial != MT.Jasper)
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.Jasper               , NI, T, tConditionP));
-		for (OreDictMaterial tMaterial : ANY.TigerEye.mToThis) if (tMaterial != MT.TigerEyeYellow)
-		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.TigerEyeYellow       , NI, T, tConditionP));
 		for (OreDictMaterial tMaterial : ANY.CaF2.mToThis) if (tMaterial != MT.CaF2)
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.CaF2                 , NI, T, tConditionP));
-		for (OreDictMaterial tMaterial : ANY.Rubber.mToThis) if (tMaterial != MT.Rubber)
-		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.Rubber               , NI, T, tConditionP));
-		for (OreDictMaterial tMaterial : ANY.Plastic.mToThis) if (tMaterial != MT.Plastic)
-		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.Plastic              , NI, T, tConditionP));
 		for (OreDictMaterial tMaterial : ANY.Wood.mToThis) if (tMaterial != MT.Wood)
 		RM.Generifier   .add(new RecipeMapHandlerMaterial(tMaterial                 , NF                                ,   0,   1, NF, MT.Wood                 , NI, T, tConditionP));
 		for (OreDictMaterial tMaterial : ANY.Wax.mToThis) if (tMaterial != MT.Wax)
@@ -813,15 +800,10 @@ public class Loader_Recipes_Handlers implements Runnable {
 		long tInputAmount = 1, tOutputAmount = 1;
 		if (aOutput.mAmount > aInput.mAmount) tInputAmount = UT.Code.divup(aOutput.mAmount, aInput.mAmount); else tOutputAmount = aInput.mAmount / aOutput.mAmount;
 		if (tInputAmount > 64 || tOutputAmount < 1) return;
-		if (tOutputAmount > 64) {
-			if (aHot)
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, null, 0, NF, 96, 0                                                       , 0, NF, aOutput, 64, aOutput, UT.Code.bindStack(tOutputAmount-64), aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, sExtruderNormal));
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, null, 0, NF, 16, UT.Code.units(aOutput.mAmount*tOutputAmount, U, 64, T)  , 0, NF, aOutput, 64, aOutput, UT.Code.bindStack(tOutputAmount-64), aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, sExtruderSimple));
-		} else {
-			if (aHot)
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount         , NF, 96, 0                                                       , 0, NF,              aOutput,                   tOutputAmount    , aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, sExtruderNormal));
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount         , NF, 16, UT.Code.units(aOutput.mAmount*tOutputAmount, U, 64, T)  , 0, NF,              aOutput,                   tOutputAmount    , aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, sExtruderSimple));
-		}
+		if (tOutputAmount > 64) tOutputAmount = 64;
+		if (aHot)
+		RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, NF, 96, 0                                                       , 0, NF, aOutput, tOutputAmount, aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, sExtruderNormal));
+		RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, NF, 16, UT.Code.units(aOutput.mAmount*tOutputAmount, U, 64, T)  , 0, NF, aOutput, tOutputAmount, aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, sExtruderSimple));
 	}
 	
 	@SuppressWarnings({"unchecked", "rawtypes"})
@@ -830,14 +812,9 @@ public class Loader_Recipes_Handlers implements Runnable {
 		long tInputAmount = 1, tOutputAmount = 1;
 		if (aOutput.mAmount > aInput.mAmount) tInputAmount = UT.Code.divup(aOutput.mAmount, aInput.mAmount); else tOutputAmount = aInput.mAmount / aOutput.mAmount;
 		if (tInputAmount > 64 || tOutputAmount < 1) return;
-		if (tOutputAmount > 64) {
-			if (aHot)
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, null, 0, NF, 96, 0                                                       , 0, NF, aOutput, 64, aOutput, UT.Code.bindStack(tOutputAmount-64), aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, new And(aCondition, sExtruderNormal)));
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, null, 0, NF, 16, UT.Code.units(aOutput.mAmount*tOutputAmount, U, 64, T)  , 0, NF, aOutput, 64, aOutput, UT.Code.bindStack(tOutputAmount-64), aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, new And(aCondition, sExtruderSimple)));
-		} else {
-			if (aHot)
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount         , NF, 96, 0                                                       , 0, NF,              aOutput,                   tOutputAmount    , aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, new And(aCondition, sExtruderNormal)));
-			RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount         , NF, 16, UT.Code.units(aOutput.mAmount*tOutputAmount, U, 64, T)  , 0, NF,              aOutput,                   tOutputAmount    , aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, new And(aCondition, sExtruderSimple)));
-		}
+		if (tOutputAmount > 64) tOutputAmount = 64;
+		if (aHot)
+		RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, NF, 96, 0                                                       , 0, NF, aOutput, tOutputAmount, aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, new And(aCondition, sExtruderNormal)));
+		RM.Extruder.add(new RecipeMapHandlerPrefixForging(aInput, tInputAmount, NF, 16, UT.Code.units(aOutput.mAmount*tOutputAmount, U, 64, T)  , 0, NF, aOutput, tOutputAmount, aShape, NI, aInput == OP.dust || aInput == OP.ingot || aInput == OP.gem, F, F, new And(aCondition, sExtruderSimple)));
 	}
 }

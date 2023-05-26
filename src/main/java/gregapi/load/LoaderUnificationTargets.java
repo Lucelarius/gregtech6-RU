@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -553,11 +553,6 @@ public class LoaderUnificationTargets implements Runnable {
 		OreDictManager.INSTANCE.setTarget(OP.ingot          , MT.Octine                 , MD.BTL, "unknownGeneric", 15);
 		OreDictManager.INSTANCE.setTarget(OP.blockIngot     , MT.Octine                 , MD.BTL, "octineBlock", 0);
 		OreDictManager.INSTANCE.setTarget(OP.oreBetweenstone, MT.Octine                 , MD.BTL, "octineOre", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockSolid     , MT.STONES.Betweenstone    , MD.BTL, "smoothBetweenstone", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockSolid     , MT.STONES.Pitstone        , MD.BTL, "smoothPitstone", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockSolid     , MT.STONES.Cragrock        , MD.BTL, "smoothCragrock", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockSolid     , MT.STONES.Templerock      , MD.BTL, "smoothTempleBrick", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockSolid     , MT.STONES.Limestone       , MD.BTL, "limestone", 0);
 		OreDictManager.INSTANCE.setTarget(OP.ingot          , MT.Blaze                  , MD.GaNe, "blazeIngot", 1);
 		OreDictManager.INSTANCE.setTarget(OP.nugget         , MT.Blaze                  , MD.GaNe, "blazeIngot", 2);
 		OreDictManager.INSTANCE.setTarget(OP.stick          , MT.Endstone               , MD.GaEn, "endstoneRod", 0);
@@ -868,24 +863,15 @@ public class LoaderUnificationTargets implements Runnable {
 		OreDictManager.INSTANCE.setTarget(OP.dustSmall      , MT.Ash                    , MD.BINNIE_BOTANY, "misc", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dustSmall      , MT.Wood                   , MD.BINNIE_BOTANY, "misc", 1);
 		OreDictManager.INSTANCE.setTarget(OP.dustSmall      , MT.S                      , MD.BINNIE_BOTANY, "misc", 3);
-		OreDictManager.INSTANCE.setTarget(OP.oreVanillastone, MT.NaCl                   , MD.Salt, "saltLake", 0);
-		OreDictManager.INSTANCE.setTarget(OP.oreVanillastone, MT.NaCl                   , MD.Salt, "saltOre", 0);
-		OreDictManager.INSTANCE.setTarget(OP.oreDeepslate   , MT.NaCl                   , MD.Salt, "saltDeepslateOre", 0);
-		OreDictManager.INSTANCE.setTarget(OP.oreLimestone   , MT.NaCl                   , MD.HaC, "salt", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockDust      , MT.NaCl                   , MD.HaC, "spamcompressedsaltBlockalt", 0);
-		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.NaCl                   , MD.HaC, "saltItem", 0);
-		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.NaCl                   , MD.Salt, "salt", 0);
-		OreDictManager.INSTANCE.setTarget(OP.dustTiny       , MT.NaCl                   , MD.Salt, "saltPinch", 0);
-		OreDictManager.INSTANCE.setTarget(OP.blockDust      , MT.NaCl                   , MD.Salt, "saltBlock", 0);
-		OreDictManager.INSTANCE.setTarget(OP.dustTiny       , MT.Sugar                  , MD.Salt, "sugarPinch", 0);
-		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.NaHCO3                 , MD.Salt, "soda", 0);
-		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.Milk                   , MD.Salt, "powderedMilk", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.Nutmeg                 , MD.HaC, "groundnutmegItem", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.Cinnamon               , MD.HaC, "groundcinnamonItem", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.Cocoa                  , MD.HaC, "cocoapowderItem", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.Curry                  , MD.HaC, "currypowderItem", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.WaxPlant               , MD.HaC, "waxItem", 0);
 		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.WaxBee                 , MD.HaC, "beeswaxItem", 0);
+		OreDictManager.INSTANCE.setTarget(OP.dust           , MT.NaCl                   , MD.HaC, "saltItem", 0);
+		OreDictManager.INSTANCE.setTarget(OP.blockDust      , MT.NaCl                   , MD.HaC, "spamcompressedsaltBlockalt", 0);
+		OreDictManager.INSTANCE.setTarget(OP.oreLimestone   , MT.NaCl                   , MD.HaC, "salt", 0);
 		OreDictManager.INSTANCE.setTarget(OP.oreVanillastone, MT.Aquamarine             , MD.CW2, "gem_ore", 0);
 		OreDictManager.INSTANCE.setTarget(OP.blockGem       , MT.Aquamarine             , MD.CW2, "gem_ore", 1);
 		OreDictManager.INSTANCE.setTarget(OP.gem            , MT.Aquamarine             , MD.CW2, "gem", 0);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -538,6 +538,7 @@ public class UT {
 			aName = aName.toLowerCase();
 			Fluid rFluid = new FluidGT(aName, aTexture, aRGBa == null ? UNCOLOURED : aRGBa, aTemperatureK, aState == 2 || aState == 3);
 			LH.add(rFluid.getUnlocalizedName(), aLocalized==null?aName:aLocalized);
+			LH.add(rFluid.getUnlocalizedName()+".name", aLocalized==null?aName:aLocalized);
 			
 			for (Set<String> tSet : aFluidList) tSet.add(aName);
 			
@@ -1749,16 +1750,13 @@ public class UT {
 		public static byte getSideForPlayerPlacing(Entity aPlayer) {
 			if (aPlayer.rotationPitch >=  65) return SIDE_UP;
 			if (aPlayer.rotationPitch <= -65) return SIDE_DOWN;
-			return getHorizontalForPlayerPlacing(aPlayer);
-		}
-		public static byte getHorizontalForPlayerPlacing(Entity aPlayer) {
 			return COMPASS_DIRECTIONS[UT.Code.roundDown(4*aPlayer.rotationYaw/360+0.5)&3];
 		}
 		
 		public static byte getSideForPlayerPlacing(Entity aPlayer, byte aDefaultFacing, boolean[] aAllowedFacings) {
 			if (aPlayer.rotationPitch >=  65 && aAllowedFacings[SIDE_UP]) return SIDE_UP;
 			if (aPlayer.rotationPitch <= -65 && aAllowedFacings[SIDE_DOWN]) return SIDE_DOWN;
-			byte rFacing = getHorizontalForPlayerPlacing(aPlayer);
+			byte rFacing = COMPASS_DIRECTIONS[UT.Code.roundDown(0.5+4*aPlayer.rotationYaw/360)&3];
 			if (aAllowedFacings[rFacing]) return rFacing;
 			for (byte tSide : ALL_SIDES_VALID) if (aAllowedFacings[tSide]) return tSide;
 			return aDefaultFacing;
@@ -1767,7 +1765,7 @@ public class UT {
 		public static byte getOppositeSideForPlayerPlacing(Entity aPlayer, byte aDefaultFacing, boolean[] aAllowedFacings) {
 			if (aPlayer.rotationPitch >=  65 && aAllowedFacings[SIDE_DOWN]) return SIDE_DOWN;
 			if (aPlayer.rotationPitch <= -65 && aAllowedFacings[SIDE_UP]) return SIDE_UP;
-			byte rFacing = OPOS[getHorizontalForPlayerPlacing(aPlayer)];
+			byte rFacing = OPOS[COMPASS_DIRECTIONS[UT.Code.roundDown(0.5+4*aPlayer.rotationYaw/360)&3]];
 			if (aAllowedFacings[rFacing]) return rFacing;
 			for (byte tSide : ALL_SIDES_VALID) if (aAllowedFacings[tSide]) return tSide;
 			return aDefaultFacing;

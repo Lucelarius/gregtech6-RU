@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -478,8 +478,7 @@ public class ST {
 				if (tMovable < aMinMove || tMovable + (aStackTo == null ? 0 : aStackTo.stackSize) < aMinSize) continue;
 				// Actually Moving the Stack
 				rMoved += move_((IInventory)aFrom.mTileEntity, (IInventory)aTo.mTileEntity, aStackFrom, aStackTo, aSlotFrom, aSlotTo, tMovable);
-				aStackFrom = ((IInventory)aFrom.mTileEntity).getStackInSlot(aSlotFrom);
-				if (ST.size(aStackFrom) < 1) break;
+				break;
 			}
 		}
 		return rMoved;

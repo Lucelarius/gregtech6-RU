@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -490,8 +490,6 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration("plateGemMercury"                 , OD.itemQuicksilver);
 		OreDictManager.INSTANCE.addReRegistration("crystalMercury"                  , OD.itemQuicksilver);
 		OreDictManager.INSTANCE.addReRegistration(OD.itemQuicksilver                , "quicksilver");
-		OreDictManager.INSTANCE.addReRegistration(OD.paperEmpty                     , OD.itemInsulator);
-		OreDictManager.INSTANCE.addReRegistration(OD.itemRubber                     , OD.itemInsulator);
 		OreDictManager.INSTANCE.addReRegistration("gearAnyIronOrSteel"              , "Gear");
 		OreDictManager.INSTANCE.addReRegistration("gearGtAnyIronOrSteel"            , "Gear");
 		OreDictManager.INSTANCE.addReRegistration("sprocketAnyIronOrSteel"          , "Sprocket");
@@ -611,11 +609,6 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration(OD.itemFur                        , OD.craftingFur);
 		OreDictManager.INSTANCE.addReRegistration(OD.itemPelt                       , OD.craftingFur);
 		OreDictManager.INSTANCE.addReRegistration(OD.itemGrassTall                  , OD.itemGrass);
-		OreDictManager.INSTANCE.addReRegistration("cropWheat"                       , OD.cropGrain);
-		OreDictManager.INSTANCE.addReRegistration("cropRice"                        , OD.cropGrain);
-		OreDictManager.INSTANCE.addReRegistration("cropOats"                        , OD.cropGrain);
-		OreDictManager.INSTANCE.addReRegistration("cropRye"                         , OD.cropGrain);
-		OreDictManager.INSTANCE.addReRegistration("cropBarley"                      , OD.cropGrain);
 		OreDictManager.INSTANCE.addReRegistration("bouleGtAnySilicon"               , "bouleSilicon");
 		OreDictManager.INSTANCE.addReRegistration("plateGemAnySilicon"              , OD.itemSilicon);
 		OreDictManager.INSTANCE.addReRegistration("plateAnySilicon"                 , OD.itemSilicon);
@@ -897,8 +890,8 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration("foodMayo"                        , "listAllcondiment");
 		OreDictManager.INSTANCE.addReRegistration("foodKetchup"                     , "listAllcondiment");
 		OreDictManager.INSTANCE.addReRegistration("foodMaplesyrup"                  , "listAllcondiment");
-		OreDictManager.INSTANCE.addReRegistration("gemSugar"                        , "listAllsugar");
 		OreDictManager.INSTANCE.addReRegistration("dustSugar"                       , "listAllsugar");
+		OreDictManager.INSTANCE.addReRegistration("foodHoneydrop"                   , "listAllsugar");
 		OreDictManager.INSTANCE.addReRegistration("bottleAquaRegia"                 , OD.aquaRegia);
 		OreDictManager.INSTANCE.addReRegistration("bucketAquaRegia"                 , OD.aquaRegia);
 		OreDictManager.INSTANCE.addReRegistration("cellAquaRegia"                   , OD.aquaRegia);
@@ -1448,9 +1441,6 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.logWood, new OreDictItemData(ANY.Wood, U*8, MT.Bark, U));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.logRubber, new OreDictItemData(MT.WoodRubber, U*8, MT.Bark, U));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankWood, new OreDictItemData(ANY.Wood, U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankAnyWood, new OreDictItemData(ANY.Wood, U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankWeedwood, new OreDictItemData(MT.Weedwood, U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankSkyroot, new OreDictItemData(MT.Skyroot, U));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingChest, new OreDictItemData(ANY.Wood, U * 5));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingPiston, new OreDictItemData(MT.Stone, U * 4, ANY.Wood, U * 3));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingFurnace, new OreDictItemData(MT.Stone, U * 8));

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,6 +19,7 @@
 
 package gregtech;
 
+import appeng.api.AEApi;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -176,6 +177,8 @@ public class GT6_Main extends Abstract_Mod {
 //      new Loader_Sonictron().run();
 		
 		new CompatMods(MD.MC, this) {@Override public void onPostLoad(FMLPostInitializationEvent aInitEvent) {
+			// Clearing the AE Grindstone Recipe List, so we don't need to worry about pre-existing Recipes.
+			if (MD.AE.mLoaded) AEApi.instance().registries().grinder().getRecipes().clear();
 			// We ain't got Water in that Water Bottle. That would be an infinite Water Exploit.
 			for (FluidContainerData tData : FluidContainerRegistry.getRegisteredFluidContainerData()) if (tData.filledContainer.getItem() == Items.potionitem && ST.meta_(tData.filledContainer) == 0) {tData.fluid.amount = 0; break;}
 			
@@ -234,7 +237,6 @@ public class GT6_Main extends Abstract_Mod {
 		new Compat_Recipes_OpenComputers        (MD.OC            , this);
 		new Compat_Recipes_GrowthCraft          (MD.GrC           , this);
 		new Compat_Recipes_HarvestCraft         (MD.HaC           , this);
-		new Compat_Recipes_SaltyMod             (MD.Salt          , this);
 		new Compat_Recipes_MoCreatures          (MD.MoCr          , this);
 		new Compat_Recipes_Lycanites            (MD.LycM          , this);
 		new Compat_Recipes_Erebus               (MD.ERE           , this);
@@ -430,9 +432,8 @@ public class GT6_Main extends Abstract_Mod {
 						boolean tAddedSpecial = F;
 						if (tMaterial.mMaterial.mHidden) {temp = F; break;}
 						if (tMaterial.mMaterial == MT.Air) {
-							tDusts  .add(FL.Air.display(UT.Code.units(tMaterial.mAmount, U, 1000, T)));
-							tIngots .add(FL.Air.display(UT.Code.units(tMaterial.mAmount, U, 1000, T)));
-							tSpecial.add(FL.Air.display(UT.Code.units(tMaterial.mAmount, U, 1000, T)));
+							tDusts .add(FL.Air.display(UT.Code.units(tMaterial.mAmount, U, 1000, T)));
+							tIngots.add(FL.Air.display(UT.Code.units(tMaterial.mAmount, U, 1000, T)));
 							continue;
 						}
 						if (tMaterial.mMaterial == MT.OREMATS.Magnetite          ) {tAddedSpecial = tSpecial.add(ST.make(BlocksGT.Sands, UT.Code.divup(tMaterial.mAmount, U*9), 0, "You probably want to craft it into Dust"));} else

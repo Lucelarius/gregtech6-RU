@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -76,8 +76,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	 * <BR>[14000:14999] Lauren
 	 * <BR>[15000:15999] Yuesha / GT6U
 	 * <BR>[16000:16999] Altadoon
-	 * <BR>[17000:17999] CHanzyLazer / GTCH
-	 * <BR>[18000:18999] the next one who asks me (do not use unless I personally tell you to use this larger Range)
+	 * <BR>[17000:17999] the next one who asks me (do not use unless I personally tell you to use this larger Range)
+	 * <BR>[18000:18999] Free
 	 * <BR>[19000:19999] Free
 	 * 
 	 * <BR><BR>The medium Ranges (given to people, who I expect to add some Materials, but not that many)
@@ -115,8 +115,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	 * <BR>[30700:30799] Briareos81
 	 * <BR>[30800:30899] SuperCoder79
 	 * <BR>[30900:30999] ManaMetal Mod
-	 * <BR>[31000:31099] BioAstroiner
-	 * <BR>[31100:31199] the next one who asks me (do not use unless I personally tell you to use this smaller Range)
+	 * <BR>[31000:31099] the next one who asks me (do not use unless I personally tell you to use this smaller Range)
+	 * <BR>[31100:31199] Free
 	 * <BR>[31200:31299] Free
 	 * <BR>[31300:31399] Free
 	 * <BR>[31400:31499] Free

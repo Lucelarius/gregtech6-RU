@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -375,7 +375,7 @@ public class GT_API extends Abstract_Mod {
 			MT.Sb.setLocal("Anti-Money");
 			MT.Tc.setLocal("Gregorium");
 			MT.Si.setLocal("Silicone");
-			MT.Cr.setLocal("Firefox");
+			MT.Cr.setLocal("Chrome");
 			MT.Cu.setLocal("Cooper");
 			MT.AnnealedCopper.setLocal("Anilled Cooper");
 			MT.Mg.setLocal("Manganesium");
@@ -423,7 +423,6 @@ public class GT_API extends Abstract_Mod {
 			MT.DiamondPink.setLocal("Craponite");
 			MT.Bedrock.setLocal("Sofarock");
 			MT.Plastic.setLocal("LEGO");
-			MT.Teflon.setLocal("Polytetrafluoroethylene");
 			MT.Asbestos.setLocal("Bestos");
 			MT.AncientDebris.setLocal("Cinnabun");
 			MT.Cinnamon.setLocal("Ancient Debris");
@@ -490,7 +489,6 @@ public class GT_API extends Abstract_Mod {
 		EMIT_EU_AS_RF                           = ConfigsGT.GREGTECH.get("general", "Emit_EU_as_RF_from_Blocks"        , F);
 		NERFED_WOOD                             = ConfigsGT.GREGTECH.get("general", "WoodNeedsSawForCrafting"          , T);
 		FORCE_GRAVEL_NO_FLINT                   = ConfigsGT.GREGTECH.get("general", "GravelWontDropFlint"              , F);
-		SLOW_LEAF_DECAY                         = ConfigsGT.GREGTECH.get("general", "SlowLeafDecay"                    , F);
 		FAST_LEAF_DECAY                         = ConfigsGT.GREGTECH.get("general", "FastLeafDecay"                    , T);
 		CONSTANT_ENERGY                         = ConfigsGT.GREGTECH.get("general", "UninterruptedEnergyRequirement"   , T);
 		FOOD_OVERDOSE_DEATH                     = ConfigsGT.GREGTECH.get("general", "DeathByOverdosingCertainFoods"    , T);
@@ -691,7 +689,6 @@ public class GT_API extends Abstract_Mod {
 			tFile = new File(DirectoriesGT.MINECRAFT, "GregTech.lang");
 			if (!tFile.exists()) tFile = new File(DirectoriesGT.MINECRAFT, "gregtech.lang");
 			LanguageHandler.sLangFile = new Configuration(tFile);
-			LanguageHandler.sUseFile = LanguageHandler.sLangFile.get("EnableLangFile", "UseThisFileAsLanguageFile", F).getBoolean(F);
 		} else {
 			sBlockIconload.clear();
 			sBlockIconload = null;

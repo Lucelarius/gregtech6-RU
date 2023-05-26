@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -643,13 +643,6 @@ public enum FL {
 	public static boolean equal(FluidStack aFluid1, FluidStack aFluid2) {return equal(aFluid1, aFluid2, F);}
 	public static boolean equal(FluidStack aFluid1, FluidStack aFluid2, boolean aIgnoreNBT) {return aFluid1 != null && aFluid2 != null && aFluid1.getFluid() == aFluid2.getFluid() && (aIgnoreNBT || ((aFluid1.tag == null) == (aFluid2.tag == null)) && (aFluid1.tag == null || aFluid1.tag.equals(aFluid2.tag)));}
 	
-	public static boolean   valid(Fluid      aFluid) {return aFluid != null && !FL.Error.is(aFluid.getName());}
-	public static boolean invalid(Fluid      aFluid) {return aFluid == null ||  FL.Error.is(aFluid.getName());}
-	public static boolean   valid(FluidStack aFluid) {return aFluid != null &&   valid(aFluid.getFluid());}
-	public static boolean invalid(FluidStack aFluid) {return aFluid == null || invalid(aFluid.getFluid());}
-	public static boolean nonzero(FluidStack aFluid) {return aFluid != null && aFluid.amount > 0 &&   valid(aFluid.getFluid());}
-	public static boolean    zero(FluidStack aFluid) {return aFluid == null || aFluid.amount < 1 || invalid(aFluid.getFluid());}
-	
 	public static boolean is(IFluidTank aTank, String... aNames) {return is(aTank.getFluid(), aNames);}
 	public static boolean is(FluidStack aFluid, String... aNames) {return aFluid != null && is(aFluid.getFluid(), aNames);}
 	public static boolean is(Fluid aFluid, String... aNames) {if (aFluid != null) for (String aName : aNames) if (aFluid.getName().equalsIgnoreCase(aName)) return T; return F;}
@@ -1081,6 +1074,7 @@ public enum FL {
 		
 		Fluid rFluid = new FluidGT(aName, aTexture, aRGBa == null ? UNCOLOURED : aRGBa, aTemperatureK, aState == 2 || aState == 3);
 		LH.add(rFluid.getUnlocalizedName(), aLocalized);
+		LH.add(rFluid.getUnlocalizedName()+".name", aLocalized);
 		
 		for (Set<String> tSet : aFluidList) tSet.add(aName);
 		

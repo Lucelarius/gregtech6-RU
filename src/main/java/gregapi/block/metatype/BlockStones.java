@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2022 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -113,22 +113,22 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		GAPI_POST.mAfterInit.add(this);
 		
 		if (aDefaultLocalised != null) {
-			LH.add(getUnlocalizedName()+".0", aDefaultLocalised);
-			LH.add(getUnlocalizedName()+".1", aDefaultLocalised+" Cobblestone");
-			LH.add(getUnlocalizedName()+".2", "Mossy "+aDefaultLocalised+" Cobblestone");
-			LH.add(getUnlocalizedName()+".3", aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".4", "Cracked "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".5", "Mossy "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".6", "Chiseled "+aDefaultLocalised);
-			LH.add(getUnlocalizedName()+".7", "Smooth "+aDefaultLocalised);
-			LH.add(getUnlocalizedName()+".8", "Reinforced "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".9", "Redstoned "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".10", aDefaultLocalised+" Tiles");
-			LH.add(getUnlocalizedName()+".11", "Small "+aDefaultLocalised+" Tiles");
-			LH.add(getUnlocalizedName()+".12", "Small "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".13", aDefaultLocalised+" Windmill Tiles A");
-			LH.add(getUnlocalizedName()+".14", aDefaultLocalised+" Windmill Tiles B");
-			LH.add(getUnlocalizedName()+".15", aDefaultLocalised+" Square Bricks");
+			LH.add(getUnlocalizedName()+".0.name", aDefaultLocalised);
+			LH.add(getUnlocalizedName()+".1.name", aDefaultLocalised+" Cobblestone");
+			LH.add(getUnlocalizedName()+".2.name", "Mossy "+aDefaultLocalised+" Cobblestone");
+			LH.add(getUnlocalizedName()+".3.name", aDefaultLocalised+" Bricks");
+			LH.add(getUnlocalizedName()+".4.name", "Cracked "+aDefaultLocalised+" Bricks");
+			LH.add(getUnlocalizedName()+".5.name", "Mossy "+aDefaultLocalised+" Bricks");
+			LH.add(getUnlocalizedName()+".6.name", "Chiseled "+aDefaultLocalised);
+			LH.add(getUnlocalizedName()+".7.name", "Smooth "+aDefaultLocalised);
+			LH.add(getUnlocalizedName()+".8.name", "Reinforced "+aDefaultLocalised+" Bricks");
+			LH.add(getUnlocalizedName()+".9.name", "Redstoned "+aDefaultLocalised+" Bricks");
+			LH.add(getUnlocalizedName()+".10.name", aDefaultLocalised+" Tiles");
+			LH.add(getUnlocalizedName()+".11.name", "Small "+aDefaultLocalised+" Tiles");
+			LH.add(getUnlocalizedName()+".12.name", "Small "+aDefaultLocalised+" Bricks");
+			LH.add(getUnlocalizedName()+".13.name", aDefaultLocalised+" Windmill Tiles A");
+			LH.add(getUnlocalizedName()+".14.name", aDefaultLocalised+" Windmill Tiles B");
+			LH.add(getUnlocalizedName()+".15.name", aDefaultLocalised+" Square Bricks");
 		}
 		
 		OP.blockSolid.disableItemGeneration(mMaterial);
@@ -194,8 +194,8 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		
 		for (int i = 0; i < maxMeta(); i++) mEqualBlocks[i].add(ST.make(this, 1, i));
 		
-		mMaterial.mTextureSolid  = BlockTextureCopied.get(this, SIDE_TOP, STONE);
-		mMaterial.mTextureSmooth = BlockTextureCopied.get(this, SIDE_TOP, SMOTH);
+		aMaterial.mTextureSolid  = BlockTextureCopied.get(this, SIDE_TOP, STONE);
+		aMaterial.mTextureSmooth = BlockTextureCopied.get(this, SIDE_TOP, SMOTH);
 		
 		if (MD.RC.mLoaded) try {
 			EntityTunnelBore.addMineableBlock(this, COBBL);
@@ -203,7 +203,11 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 			EntityTunnelBore.addMineableBlock(this, MCOBL);
 		} catch(Throwable e) {e.printStackTrace(ERR);}
 		
-		if (COMPAT_FR != null) for (int i = 0; i < maxMeta(); i++) COMPAT_FR.addToBackpacks(SPAWNABLE[i]?"digger":"builder", ST.make(this, 1, i));
+		if (COMPAT_FR != null) {
+			COMPAT_FR.addToBackpacks("digger", ST.make(this, 1, COBBL));
+			COMPAT_FR.addToBackpacks("digger", ST.make(this, 1, STONE));
+			COMPAT_FR.addToBackpacks("digger", ST.make(this, 1, MCOBL));
+		}
 	}
 	
 	@Override
@@ -216,22 +220,22 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		mMaterial = (aMaterial == null ? ANY.Stone : aMaterial);
 		
 		if (aDefaultLocalised != null) {
-			LH.add(getUnlocalizedName()+".0", aDefaultLocalised+" Slab");
-			LH.add(getUnlocalizedName()+".1", aDefaultLocalised+" Cobblestone Slab");
-			LH.add(getUnlocalizedName()+".2", "Mossy "+aDefaultLocalised+" Cobblestone Slab");
-			LH.add(getUnlocalizedName()+".3", aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".4", "Cracked "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".5", "Mossy "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".6", "Chiseled "+aDefaultLocalised+" Slab");
-			LH.add(getUnlocalizedName()+".7", "Smooth "+aDefaultLocalised+" Slab");
-			LH.add(getUnlocalizedName()+".8", "Reinforced "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".9", "Redstoned "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".10", aDefaultLocalised+" Tiles Slab");
-			LH.add(getUnlocalizedName()+".11", "Small "+aDefaultLocalised+" Tiles Slab");
-			LH.add(getUnlocalizedName()+".12", "Small "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".13", aDefaultLocalised+" Windmill Tiles A Slab");
-			LH.add(getUnlocalizedName()+".14", aDefaultLocalised+" Windmill Tiles B Slab");
-			LH.add(getUnlocalizedName()+".15", aDefaultLocalised+" Square Bricks Slab");
+			LH.add(getUnlocalizedName()+".0.name", aDefaultLocalised+" Slab");
+			LH.add(getUnlocalizedName()+".1.name", aDefaultLocalised+" Cobblestone Slab");
+			LH.add(getUnlocalizedName()+".2.name", "Mossy "+aDefaultLocalised+" Cobblestone Slab");
+			LH.add(getUnlocalizedName()+".3.name", aDefaultLocalised+" Bricks Slab");
+			LH.add(getUnlocalizedName()+".4.name", "Cracked "+aDefaultLocalised+" Bricks Slab");
+			LH.add(getUnlocalizedName()+".5.name", "Mossy "+aDefaultLocalised+" Bricks Slab");
+			LH.add(getUnlocalizedName()+".6.name", "Chiseled "+aDefaultLocalised+" Slab");
+			LH.add(getUnlocalizedName()+".7.name", "Smooth "+aDefaultLocalised+" Slab");
+			LH.add(getUnlocalizedName()+".8.name", "Reinforced "+aDefaultLocalised+" Bricks Slab");
+			LH.add(getUnlocalizedName()+".9.name", "Redstoned "+aDefaultLocalised+" Bricks Slab");
+			LH.add(getUnlocalizedName()+".10.name", aDefaultLocalised+" Tiles Slab");
+			LH.add(getUnlocalizedName()+".11.name", "Small "+aDefaultLocalised+" Tiles Slab");
+			LH.add(getUnlocalizedName()+".12.name", "Small "+aDefaultLocalised+" Bricks Slab");
+			LH.add(getUnlocalizedName()+".13.name", aDefaultLocalised+" Windmill Tiles A Slab");
+			LH.add(getUnlocalizedName()+".14.name", aDefaultLocalised+" Windmill Tiles B Slab");
+			LH.add(getUnlocalizedName()+".15.name", aDefaultLocalised+" Square Bricks Slab");
 		}
 		OM.data(ST.make(this, 1, STONE), new OreDictItemData(mMaterial, 9*U2));
 		OM.data(ST.make(this, 1, COBBL), new OreDictItemData(mMaterial, 9*U2));
@@ -320,7 +324,6 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.rockGt.mat(mMaterial, 4));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
 		RM.generify(tStack.toStack(), ST.make(Blocks.cobblestone, 1, 0));
-		RM.growmoss(tStack.toStack(), ST.make(this, 1, MCOBL));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		CR.shaped(ST.make(mSlabs[0]          , 4, COBBL), CR.DEF    , "  " , "XX" , 'X', tStack.toStack());
 		CR.shaped(ST.make(Blocks.stone_stairs    , 4, 0), CR.DEF_MIR, " X" , "XX" , 'X', tStack.toStack()); // TODO Stairs
@@ -363,7 +366,6 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
 		RM.generify(tStack.toStack(), ST.make(Blocks.mossy_cobblestone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
-		RM.cleanmoss(ST.make(this, 1, COBBL), tStack.toStack());
 		}
 		
 		for (ItemStackContainer tStack : (ItemStackSet<ItemStackContainer>)mEqualBlocks[BRICK]) {
@@ -373,9 +375,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
 		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
-		RM.growmoss(tStack.toStack(), ST.make(this, 1, MBRIK));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
-		CR.shaped(ST.make(this, 1, CRACK), CR.DEF    , "y" , "X" , 'X', tStack.toStack());
 		CR.shaped(ST.make(this, 1, CRACK), CR.DEF    , "h" , "X" , 'X', tStack.toStack());
 		CR.shaped(ST.make(this, 1, RNFBR), CR.DEF_MIR, "Se", "X ", 'X', tStack.toStack(), 'S', OP.stick.dat(ANY.Iron));
 		CR.shaped(ST.make(this, 1, RSTBR), CR.DEF    , "Dh", "X ", 'X', tStack.toStack(), 'D', OD.itemRedstone);
@@ -385,8 +385,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16,  7000           , tStack.toStack(), OP.rockGt.mat(mMaterial, 4));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, COBBL));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 2));
-		RM.growmoss(tStack.toStack(), ST.make(this, 1, MBRIK));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 1));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		}
 		
@@ -394,9 +393,8 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16,  7000           , tStack.toStack(), OP.rockGt.mat(mMaterial, 4));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, COBBL));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 1));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 2));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
-		RM.cleanmoss(ST.make(this, 1, BRICK), tStack.toStack());
 		}
 		
 		for (ItemStackContainer tStack : (ItemStackSet<ItemStackContainer>)mEqualBlocks[CHISL]) {
@@ -411,7 +409,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, COBBL));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, COBBL));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.double_stone_slab, 1, 8));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		CR.shaped(ST.make(this, 1, CHISL), CR.DEF, "y" , "X" , 'X', tStack.toStack());
 		CR.shaped(ST.make(this, 4, BRICK), CR.DEF, "XX", "XX", 'X', tStack.toStack());
@@ -437,7 +435,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		CR.shapeless(ST.make(this, 1, QBRIK), CR.DEF, new Object[] {tStack.toStack()});
 		}
@@ -446,7 +444,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		}
 		
@@ -454,7 +452,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		}
 		
@@ -462,7 +460,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		CR.shapeless(ST.make(this, 1, WINDB), CR.DEF, new Object[] {tStack.toStack()});
 		}
@@ -471,7 +469,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		CR.shapeless(ST.make(this, 1, WINDA), CR.DEF, new Object[] {tStack.toStack()});
 		}
@@ -480,7 +478,7 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		RM.Hammer       .addRecipe1(T, 16, 16                  , tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Crusher      .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), ST.make(this, 1, CRACK));
 		RM.Shredder     .addRecipe1(T, 16, 16+mHarvestLevel* 16, tStack.toStack(), OP.blockDust.mat(mMaterial, 1));
-		RM.generify(tStack.toStack(), ST.make(Blocks.stonebrick, 1, 0));
+		RM.generify(tStack.toStack(), ST.make(Blocks.stone, 1, 0));
 		RM.add_smelting(tStack.toStack(), ST.make(this, 1, STONE), F, F, F);
 		CR.shapeless(ST.make(this, 1, TILES), CR.DEF, new Object[] {tStack.toStack()});
 		}
@@ -548,19 +546,6 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		case  7: return UT.Code.bindStack(OP.stonePolished   .mDefaultStackSize * (mBlock.mBlock == mBlock ? 1 : 2));
 		default: return UT.Code.bindStack(OP.stoneBricks     .mDefaultStackSize * (mBlock.mBlock == mBlock ? 1 : 2));
 		}
-	}
-	
-	@Override
-	public boolean onBlockActivated(World aWorld, int aX, int aY, int aZ, EntityPlayer aPlayer, int aSide, float aHitX, float aHitY, float aHitZ) {
-		if (aPlayer == null) return F;
-		ItemStack aStack = aPlayer.getCurrentEquippedItem();
-		if (ST.invalid(aStack)) return F;
-		byte aMeta = WD.meta(aWorld, aX, aY, aZ);
-		if (MOSSABLE[aMeta] && OD.itemMoss.is_(aStack) && ST.use(aPlayer, T, aStack)) {
-			WD.set(aWorld, aX, aY, aZ, this, MOSS_MAPPINGS[aMeta], 3);
-			return T;
-		}
-		return F;
 	}
 	
 	@Override
