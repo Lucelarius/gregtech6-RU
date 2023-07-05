@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -76,8 +76,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	 * <BR>[14000:14999] Lauren
 	 * <BR>[15000:15999] Yuesha / GT6U
 	 * <BR>[16000:16999] Altadoon
-	 * <BR>[17000:17999] the next one who asks me (do not use unless I personally tell you to use this larger Range)
-	 * <BR>[18000:18999] Free
+	 * <BR>[17000:17999] CHanzyLazer / GTCH
+	 * <BR>[18000:18999] the next one who asks me (do not use unless I personally tell you to use this larger Range)
 	 * <BR>[19000:19999] Free
 	 * 
 	 * <BR><BR>The medium Ranges (given to people, who I expect to add some Materials, but not that many)
@@ -85,9 +85,9 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	 * <BR>[20000:20499] BloodAsp
 	 * <BR>[20500:20999] Axelandre42
 	 * <BR>[21000:21499] IceFrezze
-	 * <BR>[21500:21999] the next one who asks me (do not use unless I personally tell you to use this medium Range)
-	 * <BR>[22000:22499] Free
-	 * <BR>[22500:22999] Free
+	 * <BR>[21500:21999] the next one who asks me (do not use unless I personally tell you to use this medium Range), yes this is still correct
+	 * <BR>[22000:22499] kuzuanpa
+	 * <BR>[22500:22999] reserved for now, unsure if needed.
 	 * <BR>[23000:23499] Free
 	 * <BR>[23500:23999] Free
 	 * <BR>[24000:24499] Free
@@ -115,8 +115,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	 * <BR>[30700:30799] Briareos81
 	 * <BR>[30800:30899] SuperCoder79
 	 * <BR>[30900:30999] ManaMetal Mod
-	 * <BR>[31000:31099] the next one who asks me (do not use unless I personally tell you to use this smaller Range)
-	 * <BR>[31100:31199] Free
+	 * <BR>[31000:31099] BioAstroiner
+	 * <BR>[31100:31199] the next one who asks me (do not use unless I personally tell you to use this smaller Range)
 	 * <BR>[31200:31299] Free
 	 * <BR>[31300:31399] Free
 	 * <BR>[31400:31499] Free

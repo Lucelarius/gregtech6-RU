@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -31,6 +31,7 @@ import gregapi.enchants.Enchantment_Radioactivity;
 import gregapi.fluid.FluidGT;
 import gregapi.fluid.FluidTankGT;
 import gregapi.item.IItemProjectile;
+import gregapi.lang.LanguageHandler;
 import gregapi.network.packets.PacketSound;
 import gregapi.old.Textures;
 import gregapi.oredict.OreDictItemData;
@@ -538,7 +539,6 @@ public class UT {
 			aName = aName.toLowerCase();
 			Fluid rFluid = new FluidGT(aName, aTexture, aRGBa == null ? UNCOLOURED : aRGBa, aTemperatureK, aState == 2 || aState == 3);
 			LH.add(rFluid.getUnlocalizedName(), aLocalized==null?aName:aLocalized);
-			LH.add(rFluid.getUnlocalizedName()+".name", aLocalized==null?aName:aLocalized);
 			
 			for (Set<String> tSet : aFluidList) tSet.add(aName);
 			
@@ -632,6 +632,7 @@ public class UT {
 		}
 		
 		public static ItemStack createWrittenBook(String aMapping, String aTitle, String aAuthor, ItemStack aDefaultBook, String... aPages) {
+			for (int i = 0; i < aPages.length; i++) {aPages[i] = LanguageHandler.langfile("written.book." + aMapping + ".page." + i, aPages[i]);}
 			return createWrittenBook(aMapping, aTitle, aAuthor, aDefaultBook, T, aPages);
 		}
 		public static ItemStack createWrittenBook(String aMapping, String aTitle, String aAuthor, ItemStack aDefaultBook, boolean aLogging, String... aPages) {
@@ -644,7 +645,11 @@ public class UT {
 			rNBT.setString("author", aAuthor);
 			NBTTagList tNBTList = new NBTTagList();
 			for (short i = 0; i < aPages.length; i++) {
-				if (aPages[i].length() < 256) tNBTList.appendTag(new NBTTagString(aPages[i])); else if (aLogging) ERR.println("WARNING: String for Page of written Book too long! ->\n" + aPages[i]);
+				if (aPages[i].length() < 256) {
+					tNBTList.appendTag(new NBTTagString(aPages[i].replaceAll("¶", "\n")));
+				} else if (aLogging) {
+					ERR.println("WARNING: String for Page of written Book too long! ->\n" + aPages[i]);
+				}
 			}
 			rNBT.setTag("pages", tNBTList);
 			NBT.set(rStack, rNBT);
@@ -1343,10 +1348,14 @@ public class UT {
 			return F;
 		}
 		
-		public static <E> E[] fill(E aToFillIn, E[] rArray) {
-			for (int i = 0; i < rArray.length; i++) rArray[i] = aToFillIn;
-			return rArray;
-		}
+		public static boolean[] swap(int aIndexA, int aIndexB, boolean[] aArray) {boolean tSwap = aArray[aIndexA]; aArray[aIndexA] = aArray[aIndexB]; aArray[aIndexB] = tSwap; return aArray;}
+		public static byte   [] swap(int aIndexA, int aIndexB, byte   [] aArray) {byte    tSwap = aArray[aIndexA]; aArray[aIndexA] = aArray[aIndexB]; aArray[aIndexB] = tSwap; return aArray;}
+		public static short  [] swap(int aIndexA, int aIndexB, short  [] aArray) {short   tSwap = aArray[aIndexA]; aArray[aIndexA] = aArray[aIndexB]; aArray[aIndexB] = tSwap; return aArray;}
+		public static int    [] swap(int aIndexA, int aIndexB, int    [] aArray) {int     tSwap = aArray[aIndexA]; aArray[aIndexA] = aArray[aIndexB]; aArray[aIndexB] = tSwap; return aArray;}
+		public static long   [] swap(int aIndexA, int aIndexB, long   [] aArray) {long    tSwap = aArray[aIndexA]; aArray[aIndexA] = aArray[aIndexB]; aArray[aIndexB] = tSwap; return aArray;}
+		public static <E>   E[] swap(int aIndexA, int aIndexB, E      [] aArray) {E       tSwap = aArray[aIndexA]; aArray[aIndexA] = aArray[aIndexB]; aArray[aIndexB] = tSwap; return aArray;}
+		
+		public static <E>   E[] fill(E aToFillIn, E[] rArray) {Arrays.fill(rArray, aToFillIn); return rArray;}
 		
 		@SafeVarargs
 		public static <E> E[] makeArray(E[] rArray, E... aArray) {
@@ -1750,13 +1759,16 @@ public class UT {
 		public static byte getSideForPlayerPlacing(Entity aPlayer) {
 			if (aPlayer.rotationPitch >=  65) return SIDE_UP;
 			if (aPlayer.rotationPitch <= -65) return SIDE_DOWN;
+			return getHorizontalForPlayerPlacing(aPlayer);
+		}
+		public static byte getHorizontalForPlayerPlacing(Entity aPlayer) {
 			return COMPASS_DIRECTIONS[UT.Code.roundDown(4*aPlayer.rotationYaw/360+0.5)&3];
 		}
 		
 		public static byte getSideForPlayerPlacing(Entity aPlayer, byte aDefaultFacing, boolean[] aAllowedFacings) {
 			if (aPlayer.rotationPitch >=  65 && aAllowedFacings[SIDE_UP]) return SIDE_UP;
 			if (aPlayer.rotationPitch <= -65 && aAllowedFacings[SIDE_DOWN]) return SIDE_DOWN;
-			byte rFacing = COMPASS_DIRECTIONS[UT.Code.roundDown(0.5+4*aPlayer.rotationYaw/360)&3];
+			byte rFacing = getHorizontalForPlayerPlacing(aPlayer);
 			if (aAllowedFacings[rFacing]) return rFacing;
 			for (byte tSide : ALL_SIDES_VALID) if (aAllowedFacings[tSide]) return tSide;
 			return aDefaultFacing;
@@ -1765,7 +1777,7 @@ public class UT {
 		public static byte getOppositeSideForPlayerPlacing(Entity aPlayer, byte aDefaultFacing, boolean[] aAllowedFacings) {
 			if (aPlayer.rotationPitch >=  65 && aAllowedFacings[SIDE_DOWN]) return SIDE_DOWN;
 			if (aPlayer.rotationPitch <= -65 && aAllowedFacings[SIDE_UP]) return SIDE_UP;
-			byte rFacing = OPOS[COMPASS_DIRECTIONS[UT.Code.roundDown(0.5+4*aPlayer.rotationYaw/360)&3]];
+			byte rFacing = OPOS[getHorizontalForPlayerPlacing(aPlayer)];
 			if (aAllowedFacings[rFacing]) return rFacing;
 			for (byte tSide : ALL_SIDES_VALID) if (aAllowedFacings[tSide]) return tSide;
 			return aDefaultFacing;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -29,6 +29,7 @@ import gregapi.oredict.event.OreDictListenerEvent_Names;
 import gregapi.util.CR;
 import gregapi.util.OM;
 import gregapi.util.ST;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -106,7 +107,7 @@ public class Loader_Recipes_Other implements Runnable {
 		
 		for (byte i = 0; i < 16; i++) {final byte aIndex = i;
 		addListener(DYE_OREDICTS_MIXABLE[aIndex], new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
-			if (ST.container(aEvent.mStack, T) == null) {
+			if (ST.ingredable(aEvent.mStack)) {
 				for (FluidStack tWater : FL.waters(L))
 				RM.Mixer.addRecipe1(T, 16, 16, aEvent.mStack, tWater, FL.mul(DYE_FLUIDS_WATER[aIndex], 3, 2, F), ZL_IS);
 				
@@ -365,8 +366,10 @@ public class Loader_Recipes_Other implements Runnable {
 		CR.shaped(ring          .mat(tWax               ,  1), CR.DEF, "k", "X", 'X', plate.dat(tWax));
 		CR.shaped(casingSmall   .mat(tWax               ,  1), CR.DEF, "X", "k", 'X', plate.dat(tWax));
 		}
-		CR.shaped(ring          .mat(MT.Rubber          ,  1), CR.DEF, "k", "X", 'X', plate.dat(MT.Rubber));
-		CR.shaped(casingSmall   .mat(MT.Rubber          ,  1), CR.DEF, "X", "k", 'X', plate.dat(MT.Rubber));
+		for (OreDictMaterial tRubber : ANY.Rubber.mToThis) {
+		CR.shaped(ring          .mat(tRubber            ,  1), CR.DEF, "k", "X", 'X', plate.dat(tRubber));
+		CR.shaped(casingSmall   .mat(tRubber            ,  1), CR.DEF, "X", "k", 'X', plate.dat(tRubber));
+		}
 		CR.shaped(gearGt        .mat(MT.Stone           ,  1), CR.DEF, "SPS", "PfP", "SPS", 'P', stoneSmooth, 'S', OD.buttonStone);
 		CR.shaped(gearGt        .mat(MT.Stone           ,  1), CR.DEF, "SPS", "PfP", "SPS", 'P', stoneSmooth, 'S', rockGt.dat(MT.Stone));
 		CR.shaped(gearGt        .mat(MT.Stone           ,  1), CR.DEF, "SPS", "PfP", "SPS", 'P', stoneSmooth, 'S', stick.dat(MT.Stone));
@@ -463,7 +466,7 @@ public class Loader_Recipes_Other implements Runnable {
 		RM.Mixer            .addRecipeX(T, 16,   16, ST.array(OM.dust(MT.Ag           ), OM.dust(MT.I    )), OM.dust(MT.AgI, 2*U  ));
 		RM.Mixer            .addRecipeX(T, 16,   16, ST.array(OM.dust(MT.Ag       , U4), OM.dust(MT.I, U4)), OM.dust(MT.AgI, 2* U4));
 		RM.Mixer            .addRecipeX(T, 16,   16, ST.array(OM.dust(MT.Ag       , U9), OM.dust(MT.I, U9)), OM.dust(MT.AgI, 2* U9));
-		for (OreDictMaterial tMat : ANY.Quartz.mToThis) {ItemStack tDust = dust.mat(tMat, 1), tGem = gem.mat(tMat, 1);
+		for (OreDictMaterial tMat : ANY.Quartz.mToThis) if (tMat != MT.BlackQuartz) {ItemStack tDust = dust.mat(tMat, 1), tGem = gem.mat(tMat, 1);
 		if (ST.valid(tDust)) {
 		RM.Mixer            .addRecipe2(T, 16,   16, OM.dust(MT.C           ,U*2), tDust, OM.dust(MT.BlackQuartz));
 		RM.Mixer            .addRecipe2(T, 16,   16, OM.dust(MT.Coal            ), tDust, OM.dust(MT.BlackQuartz));
@@ -558,6 +561,9 @@ public class Loader_Recipes_Other implements Runnable {
 		RM.Mixer.addRecipe1(T, 16, 16, OM.dust(tMat), FL.Oil_Heavy2    .make(1000), FL.lube(5000), ZL_IS);
 		RM.Mixer.addRecipe1(T, 16, 16, OM.dust(tMat), FL.Oil_ExtraHeavy.make(1000), FL.lube(6000), ZL_IS);
 		}
+		
+		// Road Stripes
+		RM.Mixer.addRecipe2(F, 16, 64, OP.dust.mat(MT.Glass, 1), OP.dust.mat(MT.Asphalt, 1), FL.array(FL.Latex.make(L), DYE_FLUIDS_CHEMICAL[DYE_INDEX_White]), ZL_FLUIDSTACK, ST.make((Block)BlocksGT.RailRoad, 4, 0));
 		
 		// Other
 		RM.Lightning    .addRecipe2(T,  16, 2048, ST.tag(1), gem.mat(MT.CertusQuartz, 1), gem.mat(MT.ChargedCertusQuartz, 1));
@@ -903,9 +909,9 @@ public class Loader_Recipes_Other implements Runnable {
 			tInput = blockGem     .mat(tMaterial, 1); if (tInput != null) RM.Massfab.addRecipe1(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072*9, tInput, NF, tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons*9), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons*9));
 			
 			FluidStack
-			tFluid = tMaterial.liquid(U, T); if (!FL.Error.is(tFluid))    RM.Massfab.addRecipe0(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072  , tFluid,     tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons  ), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons  ));
-			tFluid = tMaterial.gas   (U, T); if (!FL.Error.is(tFluid))    RM.Massfab.addRecipe0(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072  , tFluid,     tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons  ), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons  ));
-			tFluid = tMaterial.plasma(U, T); if (!FL.Error.is(tFluid))    RM.Massfab.addRecipe0(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072  , tFluid,     tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons  ), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons  ));
+			tFluid = tMaterial.liquid(U, T); if (FL.nonzero(tFluid))      RM.Massfab.addRecipe0(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072  , tFluid,     tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons  ), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons  ));
+			tFluid = tMaterial.gas   (U, T); if (FL.nonzero(tFluid))      RM.Massfab.addRecipe0(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072  , tFluid,     tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons  ), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons  ));
+			tFluid = tMaterial.plasma(U, T); if (FL.nonzero(tFluid))      RM.Massfab.addRecipe0(T, 1, (tMaterial.mNeutrons+tMaterial.mProtons)*131072  , tFluid,     tMaterial.mProtons<1?NF:FL.MatterCharged.make(tMaterial.mProtons  ), tMaterial.mNeutrons<1?NF:FL.MatterNeutral.make(tMaterial.mNeutrons  ));
 		}
 	}
 }

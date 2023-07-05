@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -67,7 +67,7 @@ public class RM {
 	, Distillery                = new RecipeMap                     (null, "gt.recipe.distillery"                   , "Distillery"                      , null, 0, 1, RES_PATH_GUI+"machines/Distillery"                ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 1, 2, 1,/*MIN*/ 2,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, F, F)
 	, Drying                    = new RecipeMap                     (null, "gt.recipe.drying"                       , "Dryer"                           , null, 0, 1, RES_PATH_GUI+"machines/Dryer"                     ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 0,/*IN-OUT-MIN-FLUID=*/ 1, 3, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Coagulator                = new RecipeMap                     (null, "gt.recipe.coagulator"                   , "Coagulator"                      , null, 0, 1, RES_PATH_GUI+"machines/Coagulator"                ,/*IN-OUT-MIN-ITEM=*/ 0, 1, 0,/*IN-OUT-MIN-FLUID=*/ 1, 0, 1,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
-	, CrystallisationCrucible   = new RecipeMap                     (null, "gt.recipe.crystallisationcrucible"      , "Crystallisation Crucible"        , null, 0, 1, RES_PATH_GUI+"machines/CrystallisationCrucible"   ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 2, 0, 1,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
+	, CrystallisationCrucible   = new RecipeMap                     (null, "gt.recipe.crystallisationcrucible"      , "Crystallisation Crucible"        , null, 0, 1, RES_PATH_GUI+"machines/CrystallisationCrucible"   ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 3, 0, 1,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Mixer                     = new RecipeMap                     (null, "gt.recipe.mixer"                        , "Mixer"                           , null, 0, 1, RES_PATH_GUI+"machines/Mixer"                     ,/*IN-OUT-MIN-ITEM=*/ 6, 1, 0,/*IN-OUT-MIN-FLUID=*/ 6, 2, 0,/*MIN*/ 2,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, HeatMixer                 = Mixer
 	, BurnMixer                 = new RecipeMap                     (null, "gt.recipe.burnmixer"                    , "Burner Mixer"                    , null, 0, 1, RES_PATH_GUI+"machines/BurnMixer"                 ,/*IN-OUT-MIN-ITEM=*/ 6, 1, 0,/*IN-OUT-MIN-FLUID=*/ 6, 2, 0,/*MIN*/ 2,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
@@ -92,7 +92,7 @@ public class RM {
 	
 	, Slicer                    = new RecipeMap                     (null, "gt.recipe.slicer"                       , "Slicer"                          , null, 0, 1, RES_PATH_GUI+"machines/Slicer"                    ,/*IN-OUT-MIN-ITEM=*/ 2, 2, 2,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 2,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Lathe                     = new RecipeMap                     (null, "gt.recipe.lathe"                        , "Lathe"                           , null, 0, 1, RES_PATH_GUI+"machines/Lathe"                     ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
-	, Debarker                  = new RecipeMap                     (null, "gt.recipe.debarker"                     , "Debarker"                        , null, 0, 1, RES_PATH_GUI+"machines/Debarker"                  ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 1, 0, 1,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
+	, PressureWasher            = new RecipeMap                     (null, "gt.recipe.pressurewasher"               , "Pressure Washer"                 , null, 0, 1, RES_PATH_GUI+"machines/PressureWasher"            ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 1, 0, 1,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T), Debarker = PressureWasher
 	, Press                     = new RecipeMapFormingPress         (null, "gt.recipe.press"                        , "Press"                           , null, 0, 1, RES_PATH_GUI+"machines/Press"                     ,/*IN-OUT-MIN-ITEM=*/ 3, 1, 2,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	
 	, Squeezer                  = new RecipeMap                     (null, "gt.recipe.squeezer"                     , "Squeezer"                        , null, 0, 1, RES_PATH_GUI+"machines/Squeezer"                  ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 0, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
@@ -129,7 +129,7 @@ public class RM {
 	, Mortar                    = new RecipeMap                     (null, "gt.recipe.mortar"                       , "Mortar"                          , null, 0, 1, RES_PATH_GUI+"machines/Mortar"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Shredder                  = new RecipeMapShredder             (null, "gt.recipe.shredder"                     , "Shredder"                        , null, 0, 1, RES_PATH_GUI+"machines/Shredder"                  ,/*IN-OUT-MIN-ITEM=*/ 1,12, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Crusher                   = new RecipeMap                     (null, "gt.recipe.crusher"                      , "Crusher"                         , null, 0, 1, RES_PATH_GUI+"machines/Crusher"                   ,/*IN-OUT-MIN-ITEM=*/ 1,12, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
-	, Extruder                  = new RecipeMap                     (null, "gt.recipe.extruder"                     , "Extruder"                        , null, 0, 1, RES_PATH_GUI+"machines/Extruder"                  ,/*IN-OUT-MIN-ITEM=*/ 2, 1, 2,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
+	, Extruder                  = new RecipeMap                     (null, "gt.recipe.extruder"                     , "Extruder"                        , null, 0, 1, RES_PATH_GUI+"machines/Extruder"                  ,/*IN-OUT-MIN-ITEM=*/ 2, 2, 2,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Hammer                    = new RecipeMapHammer               (null, "gt.recipe.hammer"                       , "Hammer"                          , null, 6, 3, RES_PATH_GUI+"machines/Hammer"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Chisel                    = new RecipeMapChisel               (null, "gt.recipe.chisel"                       , "Chisel"                          , null, 0, 1, RES_PATH_GUI+"machines/Chisel"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, F, T, T, F, T, T)
 	
@@ -170,6 +170,8 @@ public class RM {
 		Furnace.mRecipeMachineList.add(ST.make(Blocks.furnace, 1, W));
 		Furnace.mRecipeMachineList.add(ST.make(Blocks.lit_furnace, 1, W));
 		ToolHeads.mRecipeMachineList.add(ST.make(Blocks.crafting_table, 1, W));
+		
+		RecipeMap.RECIPE_MAPS.put("gt.recipe.debarker", PressureWasher);
 	}
 	
 	public static boolean generify(ItemStack aStack1, ItemStack aStack2) {
@@ -190,7 +192,7 @@ public class RM {
 	}
 	public static boolean genericycle(FluidStack... aFluids) {
 		ArrayListNoNulls<FluidStack> aFluidList = new ArrayListNoNulls<>(F, aFluids);
-		for (int i = 0; i < aFluidList.size(); i++) if (FL.Error.is(aFluidList.get(i))) aFluidList.remove(i--);
+		for (int i = 0; i < aFluidList.size(); i++) if (FL.invalid(aFluidList.get(i))) aFluidList.remove(i--);
 		if (aFluidList.size() < 2) return F;
 		for (int i = 0; i < aFluidList.size(); i++) generify(aFluidList.get(i), aFluidList.get((i+1) % aFluidList.size()));
 		return T;
@@ -270,6 +272,12 @@ public class RM {
 	public static boolean compactsmash(ItemStack aContent, long aAmount, ItemStack aFull) {
 		return compact(aContent, aAmount, aFull) && smash(aFull, aContent, aAmount);
 	}
+	public static boolean compactunpack(ItemStack aContent, ItemStack aFull) {
+		return compact(aContent, aFull) && unpack(aFull, aContent);
+	}
+	public static boolean compactunpack(ItemStack aContent, long aAmount, ItemStack aFull) {
+		return compact(aContent, aAmount, aFull) && unpack(aFull, ST.amount(aAmount, aContent));
+	}
 	
 	
 	public static boolean glowstone(ItemStack aBlock, OreDictMaterial aMaterial) {
@@ -282,6 +290,305 @@ public class RM {
 		return T;
 	}
 	
+	public static boolean moss(ItemStack aClean, ItemStack aMossy) {
+		return cleanmoss(aClean, aMossy) && growmoss(aClean, aMossy);
+	}
+	public static boolean cleanmoss(ItemStack aClean, ItemStack aMossy) {
+		if (ST.invalid(aClean) || ST.invalid(aMossy)) return F;
+		pressurewash(aMossy, aClean);
+		return T;
+	}
+	public static boolean growmoss(ItemStack aClean, ItemStack aMossy) {
+		if (ST.invalid(aClean) || ST.invalid(aMossy)) return F;
+		CR.shapeless(aMossy, CR.DEF_NCC, new Object[] {aClean, OD.itemMoss});
+		return T;
+	}
+	
+	public static ItemStack stoneshapes(OreDictMaterial aMat, boolean aIsCobbleTarget, ItemStack aBlock, ItemStack aStair, ItemStack aSlabs, ItemStack aWalls, ItemStack aPillar) {
+		
+		if (ST.valid(aBlock)) {
+			RM.Shredder.addRecipe1(T, 16, 16, aBlock, OP.blockDust.mat(aMat, 1));
+			
+			if (aIsCobbleTarget) {
+				RM.pack(OP.rockGt.mat(aMat, 4), aBlock);
+				CR.shaped(aBlock, CR.DEF_NCC, "BB", "BB", 'B', OP.rockGt.dat(aMat));
+			}
+			if (ST.valid(aStair)) {
+				CR.shaped(ST.amount(4, aStair), CR.DEF_NCC_MIR, "sB", "BB", 'B', aBlock);
+			}
+			if (ST.valid(aSlabs)) {
+				CR.shaped(ST.amount(2, aSlabs), CR.DEF_NCC, "sB", 'B', aBlock);
+				RM.sawing(16, 72, F, 3, aBlock, ST.amount(2, aSlabs));
+			}
+			if (ST.valid(aWalls)) {
+				CR.shaped(ST.amount(4, aWalls), CR.DEF_NCC, " B ", "BBB", 'B', aBlock);
+			}
+			if (ST.valid(aPillar)) {
+				CR.shaped(ST.amount(2, aPillar), CR.DEF_NCC, " B", " B", 'B', aBlock);
+			}
+		}
+		
+		if (ST.valid(aStair)) {
+			CR.remout(aStair);
+			RM.Shredder.addRecipe1(T, 16, 16, aStair, OP.dustSmall.mat(aMat,27));
+			
+			if (aIsCobbleTarget) {
+				RM.pack(OP.rockGt.mat(aMat, 3), aStair);
+				CR.shaped(aStair, CR.DEF_NCC_MIR, " B", "BB", 'B', OP.rockGt.dat(aMat));
+			}
+			if (ST.valid(aSlabs)) {
+				CR.shaped(aSlabs, CR.DEF_NCC, "sB", 'B', aStair);
+				RM.sawing(16, 72, F, 3, aStair, aSlabs, OP.dustSmall.mat(aMat, 9));
+			}
+		}
+		
+		if (ST.valid(aSlabs)) {
+			CR.remout(aSlabs);
+			RM.Shredder.addRecipe1(T, 16, 16, aSlabs, OP.dustSmall.mat(aMat,18));
+			
+			if (aIsCobbleTarget) {
+				RM.pack(OP.rockGt.mat(aMat, 2), aSlabs);
+				CR.shaped(aSlabs, CR.DEF_NCC, "BB", 'B', OP.rockGt.dat(aMat));
+			}
+			if (ST.valid(aStair)) {
+				CR.shaped(ST.amount(2, aStair), CR.DEF_NCC_MIR, "sB", "BB", 'B', aSlabs);
+			}
+		}
+		
+		if (ST.valid(aWalls)) {
+			CR.remout(aWalls);
+			RM.Shredder.addRecipe1(T, 16, 16, aWalls, OP.blockDust.mat(aMat, 1));
+			
+			if (aIsCobbleTarget) {
+				CR.shaped(aWalls, CR.DEF_NCC, " B ", "BBB", 'B', OP.rockGt.dat(aMat));
+			}
+		}
+		
+		if (ST.valid(aPillar)) {
+			CR.remout(aPillar);
+			RM.Shredder.addRecipe1(T, 16, 16, aPillar, OP.blockDust.mat(aMat, 1));
+			
+			if (aIsCobbleTarget) {
+				CR.shaped(aPillar, CR.DEF_NCC, "BBB", " B ", 'B', OP.rockGt.dat(aMat));
+			}
+		}
+		
+		return aBlock;
+	}
+	
+	public static boolean stonetypes(OreDictMaterial aMat, boolean aIsMatTarget, ItemStack aStone, ItemStack aCobble, ItemStack aBricks, ItemStack aCracked, ItemStack aChiseled, ItemStack aSmooth, ItemStack aTiles) {
+		
+		for (ItemStack tStack : ST.array(aStone, aCobble, aBricks, aCracked, aChiseled, aSmooth, aTiles)) if (ST.valid(tStack)) {
+			RM.Shredder.addRecipe1(T, 16, 16, tStack, OP.blockDust.mat(aMat, 1));
+		}
+		
+		for (ItemStack tStack : ST.array(aStone, aCobble, aSmooth)) if (ST.valid(tStack)) {
+			RM.Extruder.addRecipe2(F, F, F, F, F, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Plate       .get(0), OP.plate.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, F, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Plate_Curved.get(0), OP.plateCurved.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Rod         .get(0), OP.stick.mat(aMat, 18));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Rod_Long    .get(0), OP.stickLong.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Bolt        .get(0), OP.bolt.mat(aMat, 64));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Shovel      .get(0), OP.toolHeadRawShovel.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Sword       .get(0), OP.toolHeadRawSword.mat(aMat, 4));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Hoe         .get(0), OP.toolHeadRawHoe.mat(aMat, 4));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Pickaxe     .get(0), OP.toolHeadRawPickaxe.mat(aMat, 3));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Axe         .get(0), OP.toolHeadRawAxe.mat(aMat, 3));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Gear        .get(0), OP.gearGt.mat(aMat, 2));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Gear_Small  .get(0), OP.gearGtSmall.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, F, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Hammer      .get(0), OP.toolHeadHammer.mat(aMat, 1));
+			RM.Extruder.addRecipe2(F, F, F, F, F, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Plate       .get(0), OP.plate.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, F, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Plate_Curved.get(0), OP.plateCurved.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Rod         .get(0), OP.stick.mat(aMat, 18));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Rod_Long    .get(0), OP.stickLong.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Bolt        .get(0), OP.bolt.mat(aMat, 64));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Shovel      .get(0), OP.toolHeadRawShovel.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Sword       .get(0), OP.toolHeadRawSword.mat(aMat, 4));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Hoe         .get(0), OP.toolHeadRawHoe.mat(aMat, 4));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Pickaxe     .get(0), OP.toolHeadRawPickaxe.mat(aMat, 3));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Axe         .get(0), OP.toolHeadRawAxe.mat(aMat, 3));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Gear        .get(0), OP.gearGt.mat(aMat, 2));
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Gear_Small  .get(0), OP.gearGtSmall.mat(aMat, 9));
+			RM.Extruder.addRecipe2(F, F, F, F, F, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Hammer      .get(0), OP.toolHeadHammer.mat(aMat, 1));
+			
+			if (ST.valid(aStone)) {
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Block       .get(0), aStone);
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Block       .get(0), aStone);
+			} else if (ST.valid(aSmooth)) {
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Block       .get(0), aSmooth);
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Block       .get(0), aSmooth);
+			}
+			if (ST.valid(aBricks)) {
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Ingot       .get(0), aBricks);
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Ingot       .get(0), aBricks);
+			} else if (ST.valid(aCracked)) {
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_Extruder_Ingot       .get(0), aCracked);
+			RM.Extruder.addRecipe2(F, F, F, F, T, 16,  32, ST.amount(1, tStack), IL.Shape_SimpleEx_Ingot       .get(0), aCracked);
+			}
+		}
+		
+		if (ST.valid(aStone)) {
+			RM.generify(aStone, ST.make(Blocks.stone, 1, 0));
+			
+			if (aIsMatTarget) {
+				RM.add_smelting(OP.blockDust.mat(aMat, 1), aStone, F, F, F);
+			}
+			if (ST.valid(aCobble)) {
+				RM.Hammer       .addRecipe1(T, 16, 16, aStone, aCobble);
+				RM.Crusher      .addRecipe1(T, 16, 16, aStone, aCobble);
+			} else {
+				RM.Hammer       .addRecipe1(T, 16, 16, aStone, OP.rockGt.mat(aMat, 4));
+				RM.Crusher      .addRecipe1(T, 16, 16, aStone, OP.rockGt.mat(aMat, 4));
+			}
+			if (ST.valid(aBricks)) {
+				CR.shaped(ST.amount(4, aBricks), CR.DEF_REM, "XX", "XX", 'X', aStone );
+			}
+			if (ST.valid(aChiseled)) {
+				if (FL.Mana_TE.exists())
+				RM.Bath         .addRecipe1(T,  0, 16, aStone, FL.Mana_TE.make(1), NF, aChiseled);
+				RM.Chisel       .addRecipe1(T, 16, 16, aStone, aChiseled);
+				CR.shaped(aChiseled, CR.DEF_REM, "y" , "X" , 'X', aStone);
+			}
+			if (ST.valid(aSmooth)) {
+				RM.add_smelting(aStone, aSmooth, T, F, F);
+			}
+			if (ST.valid(aTiles)) {
+				CR.shaped(ST.amount(2, aTiles), CR.DEF_REM, "X ", " X", 'X', aStone);
+			}
+		}
+		
+		if (ST.valid(aCobble)) {
+			RM.generify(aCobble, ST.make(Blocks.cobblestone, 1, 0));
+			RM.Hammer       .addRecipe1(T, 16, 16,  8000, aCobble, OP.rockGt.mat(aMat, 4));
+			RM.Crusher      .addRecipe1(T, 16, 16       , aCobble, OP.rockGt.mat(aMat, 4));
+			
+			if (aIsMatTarget) {
+				RM.pack(OP.rockGt.mat(aMat, 4), aCobble);
+				CR.shaped(aCobble, CR.DEF_NCC, "BB", "BB", 'B', OP.rockGt.dat(aMat));
+			}
+			if (ST.valid(aStone)) {
+				RM.add_smelting(aCobble, aStone, T, F, F);
+			} else if (ST.valid(aSmooth)) {
+				RM.add_smelting(aCobble, aSmooth, T, F, F);
+			}
+		}
+		
+		if (ST.valid(aBricks)) {
+			CR.remout(aBricks);
+			RM.generify(aBricks, ST.make(Blocks.stonebrick, 1, 0));
+			
+			if (ST.valid(aStone)) {
+				RM.add_smelting(aBricks, aStone, T, F, F);
+			} else if (ST.valid(aSmooth)) {
+				RM.add_smelting(aBricks, aSmooth, T, F, F);
+			}
+			if (ST.valid(aCracked)) {
+				RM.Chisel       .addRecipe1(T, 16, 16, aBricks, aCracked);
+				RM.Hammer       .addRecipe1(T, 16, 16, aBricks, aCracked);
+				RM.Crusher      .addRecipe1(T, 16, 16, aBricks, aCracked);
+				CR.shaped(aCracked, CR.DEF_REM, "h" , "X" , 'X', aBricks);
+				CR.shaped(aCracked, CR.DEF_REM, "y" , "X" , 'X', aBricks);
+			} else if (ST.valid(aCobble)) {
+				RM.Chisel       .addRecipe1(T, 16, 16, aBricks, aCobble);
+				RM.Hammer       .addRecipe1(T, 16, 16, aBricks, aCobble);
+				RM.Crusher      .addRecipe1(T, 16, 16, aBricks, aCobble);
+				CR.shaped(aCobble, CR.DEF_REM, "h" , "X" , 'X', aBricks);
+				CR.shaped(aCobble, CR.DEF_REM, "y" , "X" , 'X', aBricks);
+			} else {
+				RM.Hammer       .addRecipe1(T, 16, 16, aBricks, OP.rockGt.mat(aMat, 4));
+				RM.Crusher      .addRecipe1(T, 16, 16, aBricks, OP.rockGt.mat(aMat, 4));
+				CR.shaped(OP.rockGt.mat(aMat, 4), CR.DEF_REM, "h" , "X" , 'X', aBricks);
+				CR.shaped(OP.rockGt.mat(aMat, 4), CR.DEF_REM, "y" , "X" , 'X', aBricks);
+			}
+		}
+		
+		if (ST.valid(aCracked)) {
+			CR.remout(aCracked);
+			RM.generify(aCracked, ST.make(Blocks.stonebrick, 1, 2));
+			RM.Hammer       .addRecipe1(T, 16, 16,  7000, aCracked, OP.rockGt.mat(aMat, 4));
+			
+			if (ST.valid(aStone)) {
+				RM.add_smelting(aCracked, aStone, T, F, F);
+			} else if (ST.valid(aSmooth)) {
+				RM.add_smelting(aCracked, aSmooth, T, F, F);
+			}
+			if (ST.valid(aCobble)) {
+				RM.Crusher      .addRecipe1(T, 16, 16, aCracked, aCobble);
+			} else {
+				RM.Crusher      .addRecipe1(T, 16, 16, aCracked, OP.rockGt.mat(aMat, 4));
+			}
+		}
+		
+		if (ST.valid(aChiseled)) {
+			CR.remout(aChiseled);
+			RM.generify(aChiseled, ST.make(Blocks.stonebrick, 1, 3));
+			
+			if (ST.valid(aStone)) {
+				RM.add_smelting(aChiseled, aStone, T, F, F);
+			} else if (ST.valid(aSmooth)) {
+				RM.add_smelting(aChiseled, aSmooth, T, F, F);
+			}
+			if (ST.valid(aCobble)) {
+				RM.Hammer       .addRecipe1(T, 16, 16, aChiseled, aCobble);
+				RM.Crusher      .addRecipe1(T, 16, 16, aChiseled, aCobble);
+			} else {
+				RM.Hammer       .addRecipe1(T, 16, 16, aChiseled, OP.rockGt.mat(aMat, 4));
+				RM.Crusher      .addRecipe1(T, 16, 16, aChiseled, OP.rockGt.mat(aMat, 4));
+			}
+		}
+		
+		if (ST.valid(aSmooth)) {
+			CR.remout(aSmooth);
+			RM.generify(aSmooth, ST.make(Blocks.double_stone_slab, 1, 8));
+			
+			if (ST.valid(aStone)) {
+				RM.add_smelting(aSmooth, aStone, T, F, F);
+			} else if (aIsMatTarget) {
+				RM.add_smelting(OP.blockDust.mat(aMat, 1), aSmooth, T, F, F);
+			}
+			if (ST.valid(aCobble)) {
+				RM.Hammer       .addRecipe1(T, 16, 16, aSmooth, aCobble);
+				RM.Crusher      .addRecipe1(T, 16, 16, aSmooth, aCobble);
+			} else {
+				RM.Hammer       .addRecipe1(T, 16, 16, aSmooth, OP.rockGt.mat(aMat, 4));
+				RM.Crusher      .addRecipe1(T, 16, 16, aSmooth, OP.rockGt.mat(aMat, 4));
+			}
+			if (ST.valid(aBricks)) {
+				CR.shaped(ST.amount(4, aBricks), CR.DEF_REM, "XX", "XX", 'X', aSmooth);
+			}
+			if (ST.valid(aChiseled)) {
+				if (FL.Mana_TE.exists())
+				RM.Bath         .addRecipe1(T,  0, 16, aSmooth, FL.Mana_TE.make(1), NF, aChiseled);
+				RM.Chisel       .addRecipe1(T, 16, 16, aSmooth, aChiseled);
+				CR.shaped(aChiseled, CR.DEF_REM, "y" , "X" , 'X', aSmooth);
+			}
+			if (ST.valid(aTiles)) {
+				CR.shaped(ST.amount(2, aTiles), CR.DEF_REM, "X ", " X", 'X', aSmooth);
+			}
+		}
+		
+		if (ST.valid(aTiles)) {
+			CR.remout(aTiles);
+			RM.generify(aTiles, ST.make(Blocks.stonebrick, 1, 0));
+			
+			if (ST.valid(aStone)) {
+				RM.add_smelting(aTiles, aStone, T, F, F);
+			} else if (ST.valid(aSmooth)) {
+				RM.add_smelting(aTiles, aSmooth, T, F, F);
+			}
+			if (ST.valid(aCracked)) {
+				RM.Hammer       .addRecipe1(T, 16, 16, aTiles, aCracked);
+				RM.Crusher      .addRecipe1(T, 16, 16, aTiles, aCracked);
+			} else if (ST.valid(aCobble)) {
+				RM.Hammer       .addRecipe1(T, 16, 16, aTiles, aCobble);
+				RM.Crusher      .addRecipe1(T, 16, 16, aTiles, aCobble);
+			} else {
+				RM.Hammer       .addRecipe1(T, 16, 16, aTiles, OP.rockGt.mat(aMat, 4));
+				RM.Crusher      .addRecipe1(T, 16, 16, aTiles, OP.rockGt.mat(aMat, 4));
+			}
+		}
+		
+		return T;
+	}
 	
 	public static boolean replicateOrganic(long aTag1, long aTag2, ItemStack aOutput) {
 		if (ST.invalid(aOutput)) return F;
@@ -318,14 +625,18 @@ public class RM {
 		return T;
 	}
 	
-	public static boolean debarking(ItemStack aInput, ItemStack... aOutputs) {return debarking(16, 64, 1000, aInput, aOutputs);}
-	public static boolean debarking(long aEUt, long aDuration, ItemStack aInput, ItemStack... aOutputs) {return debarking(aEUt, aDuration, 1000, aInput, aOutputs);}
-	public static boolean debarking(long aEUt, long aDuration, long aWater, ItemStack aInput, ItemStack... aOutputs) {
+	public static boolean pressurewash(ItemStack aInput, ItemStack... aOutputs) {return pressurewash(16, 64, 200, aInput, aOutputs);}
+	public static boolean pressurewash(long aEUt, long aDuration, ItemStack aInput, ItemStack... aOutputs) {return pressurewash(aEUt, aDuration, 1000, aInput, aOutputs);}
+	public static boolean pressurewash(long aEUt, long aDuration, long aWater, ItemStack aInput, ItemStack... aOutputs) {
 		if (ST.invalid(aInput) || aOutputs.length <= 0 || ST.invalid(aOutputs[0])) return F;
 		for (FluidStack tWater : FL.waters(aWater < 1 ? 1 : aWater))
-		Debarker.addRecipe1(T, aEUt, aDuration, aInput, tWater, NF, aOutputs);
+		PressureWasher.addRecipe1(T, aEUt, aDuration, aInput, tWater, NF, aOutputs);
 		return T;
 	}
+	
+	@Deprecated public static boolean debarking(ItemStack aInput, ItemStack... aOutputs) {return pressurewash(16, 64, 1000, aInput, aOutputs);}
+	@Deprecated public static boolean debarking(long aEUt, long aDuration, ItemStack aInput, ItemStack... aOutputs) {return pressurewash(aEUt, aDuration, 1000, aInput, aOutputs);}
+	@Deprecated public static boolean debarking(long aEUt, long aDuration, long aWater, ItemStack aInput, ItemStack... aOutputs) {return pressurewash(aEUt, aDuration, aWater, aInput, aOutputs);}
 	
 	public static boolean sawing(long aEUt, long aDuration, boolean aIsFoodItem, long aLubricantAmount, ItemStack aInput, ItemStack... aOutputs) {
 		if (ST.invalid(aInput) || aOutputs.length <= 0 || ST.invalid(aOutputs[0])) return F;
@@ -415,7 +726,7 @@ public class RM {
 		if (ST.invalid(aInput) || ST.invalid(aOutput)) return F;
 		if (aRemoveOthers) rem_smelting(aInput);
 		aOutput = OM.get_(aOutput);
-		if (ST.container(aInput, F) != null || ST.equal_(aInput, aOutput, F) || !ConfigsGT.RECIPES.get(ConfigCategories.Machines.smelting, aInput, T)) return F;
+		if (!ST.ingredable(aInput) || ST.equal_(aInput, aOutput, F) || !ConfigsGT.RECIPES.get(ConfigCategories.Machines.smelting, aInput, T)) return F;
 		FurnaceRecipes.smelting().func_151394_a(aInput, ST.copy_(aOutput), aEXP);
 		if (MD.EtFu.mLoaded) try {
 			if (aSmoker) SmokerRecipes      .smelting().addRecipe(aInput, ST.copy_(aOutput), aEXP);
@@ -515,6 +826,19 @@ public class RM {
 		return F;
 	}
 	
+	public static boolean mortarize(ItemStack aInput, ItemStack aOutput) {return mortarize(1, aInput, aOutput, NI);}
+	public static boolean mortarize(ItemStack aInput, ItemStack aOutput1, ItemStack aOutput2) {return mortarize(1, aInput, aOutput1, aOutput2);}
+	public static boolean mortarize(long aPower, ItemStack aInput, ItemStack aOutput) {return mortarize(aPower, aInput, aOutput, NI);}
+	public static boolean mortarize(long aPower, ItemStack aInput, ItemStack aOutput1, ItemStack aOutput2) {
+		if (ST.invalid(aInput) || ST.invalid(aOutput1)) return F;
+		RM.Mortar  .addRecipe1(T, 16, 16*aPower, aInput, aOutput1, aOutput2);
+		RM.Shredder.addRecipe1(T, 16, 16*aPower, aInput, aOutput1, aOutput2);
+		ae_grinder   (UT.Code.bindInt(   5*aPower), aInput, aOutput1, aOutput2, 1.0F);
+		te_pulverizer(UT.Code.bindInt(1000*aPower), aInput, aOutput1, aOutput2);
+		ic2_macerator(aInput, aOutput1);
+		return T;
+	}
+	
 	public static boolean ae_grinder(int aTurns, ItemStack aInput, ItemStack aOutput) {if (MD.AE.mLoaded && ST.valid(aInput) && ST.valid(aOutput)) try {AEApi.instance().registries().grinder().addRecipe(ST.copy_(aInput), ST.copy_(aOutput), Math.max(1, aTurns)); return T;} catch(Throwable e) {e.printStackTrace(ERR);} return F;}
 	public static boolean ae_grinder(int aTurns, ItemStack aInput, ItemStack aOutput, ItemStack aOutput2, float aChance2) {if (MD.AE.mLoaded && ST.valid(aInput) && ST.valid(aOutput)) try {AEApi.instance().registries().grinder().addRecipe(ST.copy_(aInput), ST.copy_(aOutput), ST.copy(aOutput2), aChance2, Math.max(1, aTurns)); return T;} catch(Throwable e) {e.printStackTrace(ERR);} return F;}
 	public static boolean ae_grinder(int aTurns, ItemStack aInput, ItemStack aOutput, ItemStack aOutput2, float aChance2, ItemStack aOutput3, float aChance3) {if (MD.AE.mLoaded && ST.valid(aInput) && ST.valid(aOutput)) try {AEApi.instance().registries().grinder().addRecipe(ST.copy_(aInput), ST.copy_(aOutput), ST.copy(aOutput2), aChance2, ST.copy(aOutput3), aChance3, Math.max(1, aTurns)); return T;} catch(Throwable e) {e.printStackTrace(ERR);} return F;}
@@ -530,7 +854,7 @@ public class RM {
 		aOutput1 = ST.validMeta(OM.get_(aOutput1));
 		aOutput2 = ST.validMeta(OM.get (aOutput2));
 		
-		if (ST.container(aInput, F) == null) {
+		if (ST.ingredable(aInput)) {
 			if (ENABLE_ADDING_IC2_MACERATOR_RECIPES) {
 				if (ConfigsGT.RECIPES.get(ConfigCategories.Machines.maceration, aInput, T)) {
 					UT.addSimpleIC2MachineRecipe(ic2.api.recipe.Recipes.macerator, aInput, null, aOutput1);
@@ -565,6 +889,16 @@ public class RM {
 				}
 			}
 		}
+		return T;
+	}
+	public static boolean ic2_macerator(ItemStack aInput, ItemStack aOutput) {
+		if (!ENABLE_ADDING_IC2_MACERATOR_RECIPES || ST.invalid(aInput) || ST.invalid(aOutput)) return F;
+		aOutput = ST.validMeta(OM.get_(aOutput));
+		if (!ConfigsGT.RECIPES.get(ConfigCategories.Machines.extractor, aInput, T)) {
+			UT.removeSimpleIC2MachineRecipe(aInput, ic2.api.recipe.Recipes.macerator.getRecipes(), null);
+			return F;
+		}
+		UT.addSimpleIC2MachineRecipe(ic2.api.recipe.Recipes.macerator, aInput, null, aOutput);
 		return T;
 	}
 	public static boolean ic2_extractor(ItemStack aInput, ItemStack aOutput) {

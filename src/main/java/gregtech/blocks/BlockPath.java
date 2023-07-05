@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -31,6 +31,7 @@ import gregapi.util.WD;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -40,6 +41,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static gregapi.data.CS.*;
 
@@ -47,22 +49,22 @@ public class BlockPath extends BlockBaseMeta implements IBlockOnWalkOver, IRende
 	public BlockPath(String aUnlocalised) {
 		super(null, aUnlocalised, Material.grass, soundTypeGrass, 12, Textures.BlockIcons.DIRTS);
 		setCreativeTab(CreativeTabs.tabTransport);
-		LH.add(getUnlocalizedName()+  ".0.name", "Path");
-		LH.add(getUnlocalizedName()+  ".1.name", "Aether Path");
-		LH.add(getUnlocalizedName()+  ".2.name", "Loamy Path");
-		LH.add(getUnlocalizedName()+  ".3.name", "Sandy Path");
-		LH.add(getUnlocalizedName()+  ".4.name", "Silty Path");
-		LH.add(getUnlocalizedName()+  ".5.name", "Alfisol Path");
-		LH.add(getUnlocalizedName()+  ".6.name", "Andisol Path");
-		LH.add(getUnlocalizedName()+  ".7.name", "Gelisol Path");
-		LH.add(getUnlocalizedName()+  ".8.name", "Histosol Path");
-		LH.add(getUnlocalizedName()+  ".9.name", "Inceptisol Path");
-		LH.add(getUnlocalizedName()+ ".10.name", "Mollisol Path");
-		LH.add(getUnlocalizedName()+ ".11.name", "Oxisol Path");
-		LH.add(getUnlocalizedName()+ ".12.name", "Path");
-		LH.add(getUnlocalizedName()+ ".13.name", "Path");
-		LH.add(getUnlocalizedName()+ ".14.name", "Path");
-		LH.add(getUnlocalizedName()+ ".15.name", "Path");
+		LH.add(getUnlocalizedName()+ ".0", "Path");
+		LH.add(getUnlocalizedName()+ ".1", "Aether Path");
+		LH.add(getUnlocalizedName()+ ".2", "Loamy Path");
+		LH.add(getUnlocalizedName()+ ".3", "Sandy Path");
+		LH.add(getUnlocalizedName()+ ".4", "Silty Path");
+		LH.add(getUnlocalizedName()+ ".5", "Alfisol Path");
+		LH.add(getUnlocalizedName()+ ".6", "Andisol Path");
+		LH.add(getUnlocalizedName()+ ".7", "Gelisol Path");
+		LH.add(getUnlocalizedName()+ ".8", "Histosol Path");
+		LH.add(getUnlocalizedName()+ ".9", "Inceptisol Path");
+		LH.add(getUnlocalizedName()+".10", "Mollisol Path");
+		LH.add(getUnlocalizedName()+".11", "Oxisol Path");
+		LH.add(getUnlocalizedName()+".12", "Path");
+		LH.add(getUnlocalizedName()+".13", "Path");
+		LH.add(getUnlocalizedName()+".14", "Path");
+		LH.add(getUnlocalizedName()+".15", "Path");
 		setBlockBounds(0, 0, 0, 1, PIXELS_NEG[1], 1);
 		
 		if (COMPAT_FR  != null) COMPAT_FR.addToBackpacks("digger", ST.make(this, 1, W));
@@ -137,6 +139,7 @@ public class BlockPath extends BlockBaseMeta implements IBlockOnWalkOver, IRende
 	@Override public IRenderedBlockObject passRenderingToObject(IBlockAccess aWorld, int aX, int aY, int aZ                                       ) {return null;}
 	
 	@Override public IIcon getIcon(int aSide, int aMeta) {return (SIDES_TOP[aSide]?Textures.BlockIcons.PATH_TOP:Textures.BlockIcons.DIRTS[aMeta % 16]).getIcon(0);}
+	@Override @SuppressWarnings({"unchecked"}) public void addCollisionBoxesToList(World aWorld, int aX, int aY, int aZ, AxisAlignedBB aAABB, List aList, Entity aEntity) {AxisAlignedBB tAABB = AxisAlignedBB.getBoundingBox(aX, aY, aZ, aX+1, aY+0.5, aZ+1); if (tAABB.intersectsWith(aAABB)) aList.add(tAABB); if (isHalfBlock(aWorld, aX, aY, aZ)) return; tAABB = AxisAlignedBB.getBoundingBox(aX, aY, aZ, aX+1, aY+1, aZ+1); if (tAABB.intersectsWith(aAABB)) aList.add(tAABB);}
 	@Override public AxisAlignedBB getCollisionBoundingBoxFromPool(World aWorld, int aX, int aY, int aZ) {return AxisAlignedBB.getBoundingBox(aX, aY, aZ, aX+1, aY+(isHalfBlock(aWorld, aX, aY, aZ)?0.5:1), aZ+1);}
 	@Override public AxisAlignedBB getSelectedBoundingBoxFromPool (World aWorld, int aX, int aY, int aZ) {return AxisAlignedBB.getBoundingBox(aX, aY, aZ, aX+1, aY+(isHalfBlock(aWorld, aX, aY, aZ)?0.5:1), aZ+1);}
 	@Override public void setBlockBoundsBasedOnState(IBlockAccess aWorld, int aX, int aY, int aZ) {setBlockBounds(0, 0, 0, 1, (isHalfBlock(aWorld, aX, aY, aZ)?0.5F:1), 1);}

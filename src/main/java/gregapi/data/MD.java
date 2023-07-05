@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -165,6 +165,7 @@ public class MD {
 	
 	, TreeCap           = new ModData(ModIDs.TreeCap            , "Treecapitator")
 	, HaC               = new ModData(ModIDs.HaC                , "HarvestCraft")
+	, Salt              = new ModData(ModIDs.Salt               , "Salty Mod")
 	, CookBook          = new ModData(ModIDs.CookBook           , "Cooking for Blockheads")
 	, APC               = new ModData(ModIDs.APC                , "AppleCore")
 	, HO                = new ModData(ModIDs.HO                 , "Hunger Overhaul")
@@ -173,7 +174,8 @@ public class MD {
 	, MaCu              = new ModData(ModIDs.MaCu               , "Mariculture")
 	, MoCr              = new ModData(ModIDs.MoCr               , "Mo'Creatures")
 	, GoG               = new ModData(ModIDs.GoG                , "Grimoire of Gaia")
-	, PdC               = new ModData(ModIDs.PdC                , "Psychedelicraft") // Wait, why did I add some compat to this Drug Mod again!?!
+	, DRPG              = new ModData(ModIDs.DRPG               , "Divine RPG")
+	, PdC               = new ModData(ModIDs.PdC                , "Psychedelicraft") // Wait, why did I add some compat to this Drug Mod again?
 	, Bamboo            = new ModData(ModIDs.Bamboo             , "Bamboo Mod")
 	, PMP               = new ModData(ModIDs.PMP                , "Plant Mega Pack")
 	, Fossil            = new ModData(ModIDs.Fossil             , "Fossils and Archeology")

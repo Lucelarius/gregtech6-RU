@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -234,11 +234,11 @@ public class GT_API_Proxy_Client extends GT_API_Proxy {
 				}
 				if (MD.RC.mLoaded && "Railcraft:part.plate".equalsIgnoreCase(aRegName)) {
 					switch(aMeta) {
-					case 0: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateIron.name")); break;
-					case 1: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateSteel.name")); break;
-					case 2: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateTinAlloy.name")); break;
-					case 3: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateCopper.name")); break;
-					case 4: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateLead.name")); break;
+					case 0: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateIron")); break;
+					case 1: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateSteel")); break;
+					case 2: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateTinAlloy")); break;
+					case 3: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateCopper")); break;
+					case 4: aEvent.toolTip.set(0, LH.Chat.WHITE+LH.get("oredict.plateLead")); break;
 					}
 				}
 			}
@@ -322,7 +322,7 @@ public class GT_API_Proxy_Client extends GT_API_Proxy {
 				}
 				if (tData.hasValidMaterialData()) {
 					boolean tUnburnable = F;
-					for (OreDictMaterialStack tMaterial : tData.getAllMaterialStacks()) {
+					for (OreDictMaterialStack tMaterial : tData.getAllMaterialWeights()) {
 						if (tMaterial.mMaterial.contains(TD.Properties.UNBURNABLE)) tUnburnable = T;
 						for (IOreDictListenerItem tListener : tMaterial.mMaterial.mListenersItem) {
 							String tToolTip = tListener.getListenerToolTip(tData.mPrefix, tData.mMaterial.mMaterial, aEvent.itemStack);
@@ -430,7 +430,7 @@ public class GT_API_Proxy_Client extends GT_API_Proxy {
 				
 				if (aEvent.showAdvancedItemTooltips) {
 					boolean temp = T;
-					for (OreDictMaterialStack tMaterial : tData.getAllMaterialStacks()) if (tMaterial.mAmount != 0 && !tMaterial.mMaterial.contains(TD.Properties.DONT_SHOW_THIS_COMPONENT)) {
+					for (OreDictMaterialStack tMaterial : tData.getAllMaterialWeights()) if (tMaterial.mAmount != 0 && !tMaterial.mMaterial.contains(TD.Properties.DONT_SHOW_THIS_COMPONENT)) {
 						if (temp) {
 							aEvent.toolTip.add(LH.Chat.DCYAN + LH.get(LH.TOOLTIP_CONTAINED_MATERIALS));
 							temp = F;

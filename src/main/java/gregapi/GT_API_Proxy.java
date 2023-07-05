@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -229,6 +229,8 @@ public abstract class GT_API_Proxy extends Abstract_Proxy implements IGuiHandler
 	@SubscribeEvent
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void onServerTick(ServerTickEvent aEvent) {
+		TOOL_SOUNDS = TOOL_SOUNDS_SETTING;
+		
 		if (aEvent.side.isServer()) {
 			// Try acquiring the Lock within 10 Milliseconds. Otherwise fuck anyone who locks it up for too long, or any other faulty reason MC doesn't work.
 			try {TICK_LOCK.tryLock(10, TimeUnit.MILLISECONDS);} catch (Throwable e) {e.printStackTrace(ERR);} finally {if (TICK_LOCK.isHeldByCurrentThread()) TICK_LOCK.unlock();}
@@ -516,6 +518,8 @@ public abstract class GT_API_Proxy extends Abstract_Proxy implements IGuiHandler
 	
 	@SubscribeEvent
 	public void onWorldTick(WorldTickEvent aEvent) {
+		TOOL_SOUNDS = TOOL_SOUNDS_SETTING;
+		
 		if (aEvent.side.isServer() && aEvent.phase == Phase.END) {
 			ArrayListNoNulls<EntityXPOrb> tOrbs = (XP_ORB_COMBINING && SERVER_TIME % 40 == 31 ? new ArrayListNoNulls<EntityXPOrb>(128) : null);
 			
@@ -681,7 +685,7 @@ public abstract class GT_API_Proxy extends Abstract_Proxy implements IGuiHandler
 								if (tData.mMaterial.mMaterial == MT.Craponite) {
 									tCraponite++;
 								}
-								if (tData.mMaterial.mMaterial == MT.Firestone && tData.hasValidPrefixData() && !MD.RC.owns(tStack)) for (int j = (int)UT.Code.divup(tData.mMaterial.mAmount, U) * tStack.stackSize; j > 0; j--) {
+								if (tData.mMaterial.mMaterial == MT.Firestone && tData.hasValidPrefixData() && !MD.RC.owns(tStack)) for (int j = (int)UT.Code.divup(tData.mMaterial.mAmount * tStack.stackSize, U); j > 0; j--) {
 									WD.fire(aEvent.player.worldObj, UT.Code.roundDown(aEvent.player.posX)-5+RNGSUS.nextInt(11), UT.Code.roundDown(aEvent.player.posY)-5+RNGSUS.nextInt(11), UT.Code.roundDown(aEvent.player.posZ)-5+RNGSUS.nextInt(11), RNGSUS.nextInt(8) != 0);
 								}
 							}
@@ -793,7 +797,7 @@ public abstract class GT_API_Proxy extends Abstract_Proxy implements IGuiHandler
 				IToolStats tStats = ((MultiItemTool)ST.item_(aEvent.original)).getToolStats(aEvent.original);
 				if (tStats != null) tStats.afterBreaking(aEvent.original, aEvent.entityPlayer);
 			} else
-			if (ST.item_(aEvent.original) instanceof ItemSword || ST.item_(aEvent.original) instanceof ItemTool) {
+			if (!ItemsGT.NO_TOOL_FATIQUE.contains(aEvent.original, T) && (ST.item_(aEvent.original) instanceof ItemSword || ST.item_(aEvent.original) instanceof ItemTool)) {
 				// If you work so hard that your Tool breaks, you should probably take a break yourself. :P
 				UT.Entities.applyPotion(aEvent.entityPlayer, Potion.weakness   , 300, 2, F);
 				UT.Entities.applyPotion(aEvent.entityPlayer, Potion.digSlowdown, 300, 2, F);
@@ -1394,13 +1398,15 @@ public abstract class GT_API_Proxy extends Abstract_Proxy implements IGuiHandler
 		}
 		
 		OreDictItemData tData = OM.anydata_(aFuel);
-		if (tData != null) {
+		if (tData != null && (tData.mFurnaceFuel || rFuelValue != 0)) {
 			long tBurnTime = 0;
-			if (tData.mPrefix == OP.oreRaw) {
+			if (tData.mPrefix == null) {
+				for (OreDictMaterialStack tMaterial : tData.getAllMaterialStacks()) tBurnTime += UT.Code.units(tMaterial.mMaterial.mFurnaceBurnTime, U, tMaterial.mAmount, F);
+			} else if (tData.mPrefix == OP.oreRaw) {
 				tBurnTime = tData.mMaterial.mMaterial.mFurnaceBurnTime;
 			} else if (tData.mPrefix == OP.blockRaw) {
 				tBurnTime = tData.mMaterial.mMaterial.mFurnaceBurnTime * 10;
-			} else if (tData.mPrefix == null || tData.mPrefix.contains(TD.Prefix.BURNABLE)) {
+			} else if (tData.mPrefix.contains(TD.Prefix.BURNABLE)) {
 				for (OreDictMaterialStack tMaterial : tData.getAllMaterialStacks()) tBurnTime += UT.Code.units(tMaterial.mMaterial.mFurnaceBurnTime, U, tMaterial.mAmount, F);
 				if (tData.mPrefix == OP.stick          && ANY.Wood.mToThis.contains(tData.mMaterial.mMaterial)) return (int)UT.Code.bind(0, 32000, Math.max( TICKS_PER_SMELT      /2, tBurnTime));
 				if (tData.mPrefix == OP.stickLong      && ANY.Wood.mToThis.contains(tData.mMaterial.mMaterial)) return (int)UT.Code.bind(0, 32000, Math.max( TICKS_PER_SMELT        , tBurnTime));

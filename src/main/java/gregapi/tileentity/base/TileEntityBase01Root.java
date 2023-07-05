@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -126,6 +126,30 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 	public void onAdjacentBlockChange(int aTileX, int aTileY, int aTileZ) {
 		//
 	}
+	
+	@Override
+	public void readFromNBT(NBTTagCompound aNBT) {
+		// load ID and Coords
+		if (aNBT.hasKey("x")) xCoord = aNBT.getInteger("x");
+		if (aNBT.hasKey("y")) yCoord = aNBT.getInteger("y");
+		if (aNBT.hasKey("z")) zCoord = aNBT.getInteger("z");
+		// make sure Y is not negative because this causes crashes.
+		if (yCoord < 0) WD.invalidateTileEntityWithNegativeYCoord(xCoord, yCoord, zCoord, this);
+	}
+	
+	@Override
+	public void writeToNBT(NBTTagCompound aNBT) {
+		// make sure Y is not negative because this causes crashes.
+		if (yCoord < 0) WD.invalidateTileEntityWithNegativeYCoord(xCoord, yCoord, zCoord, this);
+		// save ID and Coords
+		aNBT.setString("id", getTileEntityName());
+		aNBT.setInteger("x", xCoord);
+		aNBT.setInteger("y", yCoord);
+		aNBT.setInteger("z", zCoord);
+	}
+	
+	/** return the internal Name of this TileEntity to be registered. DO NOT START YOUR NAME WITH "gt."!!! */
+	public abstract String getTileEntityName();
 	
 	@Override public void markDirty() {/* Oh no, I won't let this do anything anymore! It's only useful for Comparators and that didn't work properly anyways! */}
 	@Override public World getWorld() {return worldObj;}
@@ -719,8 +743,8 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 	// A Default implementation for RF Stuff, so I don't have to implement those Interfaces manually every time I make an RF Emitter or Acceptor.
 	
 	public boolean canConnectEnergy  (ForgeDirection aDirection) {for (TagData tTag : TD.Energy.ALL_RF) if (isEnergyEmittingTo(tTag, UT.Code.side(aDirection), T)) return T; return isEnergyAcceptingFrom(TD.Energy.RF, UT.Code.side(aDirection), T);}
-	public int     receiveEnergy     (ForgeDirection aDirection, int aSize, boolean aSimulate) {return (int)doEnergyInjection (TD.Energy.RF, UT.Code.side(aDirection), aSize, 1, !aSimulate)*aSize;}
-	public int     extractEnergy     (ForgeDirection aDirection, int aSize, boolean aSimulate) {return (int)doEnergyExtraction(TD.Energy.RF, UT.Code.side(aDirection), aSize, 1, !aSimulate)*aSize;}
+	public int     receiveEnergy     (ForgeDirection aDirection, int aSize, boolean aSimulate) {return (int)doEnergyInjection (TD.Energy.RF, UT.Code.side(aDirection), 1, aSize, !aSimulate);}
+	public int     extractEnergy     (ForgeDirection aDirection, int aSize, boolean aSimulate) {return (int)doEnergyExtraction(TD.Energy.RF, UT.Code.side(aDirection), 1, aSize, !aSimulate);}
 	public int     getEnergyStored   (ForgeDirection aDirection) {return UT.Code.bindInt(getEnergyCapacity(TD.Energy.RF, UT.Code.side(aDirection)));}
 	public int     getMaxEnergyStored(ForgeDirection aDirection) {return UT.Code.bindInt(getEnergyCapacity(TD.Energy.RF, UT.Code.side(aDirection)));}
 	

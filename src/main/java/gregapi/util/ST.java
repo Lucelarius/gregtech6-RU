@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -478,7 +478,8 @@ public class ST {
 				if (tMovable < aMinMove || tMovable + (aStackTo == null ? 0 : aStackTo.stackSize) < aMinSize) continue;
 				// Actually Moving the Stack
 				rMoved += move_((IInventory)aFrom.mTileEntity, (IInventory)aTo.mTileEntity, aStackFrom, aStackTo, aSlotFrom, aSlotTo, tMovable);
-				break;
+				aStackFrom = ((IInventory)aFrom.mTileEntity).getStackInSlot(aSlotFrom);
+				if (ST.size(aStackFrom) < 1) break;
 			}
 		}
 		return rMoved;
@@ -780,7 +781,7 @@ public class ST {
 		return torch(aBlock, 1); // that "1" is totally not hacky at all. XD
 	}
 	public static boolean torch(Block aBlock, long aMeta) {
-		if (IL.TFC_Torch.equal(aBlock) || IL.NePl_Torch.equal(aBlock) || IL.GC_Torch_Glowstone.equal(aBlock) || IL.AETHER_Torch_Ambrosium.equal(aBlock) || (aMeta == 1 && IL.TC_Block_Air.equal(aBlock))) return T;
+		if (IL.TFC_Torch.equal(aBlock) || IL.NePl_Torch.equal(aBlock) || IL.GC_Torch_Glowstone.equal(aBlock) || IL.AETHER_Torch_Ambrosium.equal(aBlock) || IL.AE_Torch_Quartz.equal(aBlock) || (aMeta == 1 && IL.TC_Block_Air.equal(aBlock))) return T;
 		return aBlock instanceof BlockTorch && !(aBlock instanceof BlockRedstoneTorch);
 	}
 	public static boolean torch(ItemStack aStack) {
@@ -808,6 +809,17 @@ public class ST {
 		ItemStack tStack = null;
 		while (tIterator.hasNext()) if ((tStack = tIterator.next())!= null && equal(aStack, tStack)) return !aInvertFilter;
 		return aInvertFilter;
+	}
+	
+	public static boolean ingredable(ItemStack aStack) {
+		if (invalid(aStack)) return F;
+		if (item_(aStack) instanceof IItemGTContainerTool) return F;
+		if (item_(aStack) instanceof IFluidContainerItem && ((IFluidContainerItem)item_(aStack)).getCapacity(aStack) > 0) return F;
+		if (item_(aStack).hasContainerItem(aStack)) return F;
+		if (ItemsGT.CONTAINER_DURABILITY.contains(aStack, T)) return F;
+		if (IL.Cell_Empty.equal(aStack, F, T) || IL.SC2_Teapot_Empty.equal(aStack, F, T) || IL.SC2_Teacup_Empty.equal(aStack, F, T)) return T;
+		if (IL.Cell_Empty.equal(aStack, T, T) || IL.SC2_Teapot_Empty.equal(aStack, T, T) || IL.SC2_Teacup_Empty.equal(aStack, T, T)) return F;
+		return T;
 	}
 	
 	public static ItemStack container(ItemStack aStack, boolean aCheckIFluidContainerItems) {

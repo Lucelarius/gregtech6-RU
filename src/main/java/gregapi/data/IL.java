@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -139,6 +139,7 @@ public enum IL implements IItemContainer {
 	TF_Giant_Cobble, TF_Giant_Obsidian, TF_Giant_Log, TF_Giant_Leaves,
 	TF_Uncrafting, TF_Pick_Giant, TF_Sword_Giant, TF_Lamp_of_Cinders, TF_Cube_of_Annihilation,
 	TF_Trophy, TF_Trophy_Naga, TF_Trophy_Lich, TF_Trophy_Hydra, TF_Trophy_Urghast, TF_Trophy_Snowqueen,
+	DRPG_Bucket_Tar,
 	HiL_Ironwood,
 	HaC_Log_Cinnamon, HaC_Log_Maple, HaC_Log_Paperbark,
 	HaC_Cinnamon, HaC_Royal_Jelly,
@@ -155,14 +156,15 @@ public enum IL implements IItemContainer {
 	CANDY_Sapling_Chocolate, CANDY_Sapling_Caramel, CANDY_Sapling_White, CANDY_Sapling_Cherry,
 	CANDY_Leaves_Chocolate, CANDY_Leaves_Caramel, CANDY_Leaves_White, CANDY_Leaves_Cherry,
 	BTL_Swamp_Talisman, BTL_Tainted_Potion, BTL_Chest,
-	BTL_Bedrock, BTL_Betweenstone, BTL_Pitstone, BTL_Weedwood_Log, BTL_Weedwood_Beam, BTL_Weedwood_Planks, BTL_Weedwood_Bark, BTL_Weedwood_Sapling, BTL_Weedwood_Leaves, BTL_Weedwood_RottenBark, BTL_Portal_Bark,
-	BTL_Bark, BTL_Dry_Bark, BTL_Resin, BTL_Rubber, BTL_Skin, BTL_Tar,
-	ERE_Mud_Brick, ERE_Spray_Repellant, ERE_Herbicide, ERE_Compost, ERE_Bamboo, ERE_Gaean_Gem, ERE_Gaean_Staff, ERE_Umberstone, ERE_Umbercobble, ERE_White_Planks, ERE_White_Slab, ERE_White_Stairs, ERE_Crate, ERE_Pole, ERE_Ladder, ERE_Pot, ERE_Pot_Raw, ERE_Pot_Cooked,
+	BTL_Bedrock, BTL_Betweenstone, BTL_Pitstone, BTL_Cragrock, BTL_Templebrick, BTL_Limestone, BTL_Mud, BTL_Mud_Brick, BTL_Mud_Bricks, BTL_Peat, BTL_Weedwood_Log, BTL_Weedwood_Beam, BTL_Weedwood_Planks, BTL_Weedwood_Bark, BTL_Weedwood_Sapling, BTL_Weedwood_Leaves, BTL_Weedwood_RottenBark, BTL_Portal_Bark,
+	BTL_Bark, BTL_Dry_Bark, BTL_Coral_Mire, BTL_Coral_Deep, BTL_Resin, BTL_Rubber, BTL_Skin, BTL_Tar, BTL_Compost,
+	ERE_Mud, ERE_Mud_Brick, ERE_Mud_Bricks, ERE_Spray_Repellant, ERE_Herbicide, ERE_Compost, ERE_Bamboo, ERE_Gaean_Gem, ERE_Gaean_Staff, ERE_Umberstone, ERE_Umbercobble, ERE_White_Planks, ERE_White_Slab, ERE_White_Stairs, ERE_Crate, ERE_Pole, ERE_Ladder, ERE_Pot, ERE_Pot_Raw, ERE_Pot_Cooked,
 	ERE_Bambucket_Empty, ERE_Bambucket_Water, ERE_Bambucket_Milk, ERE_Bambucket_Honey, ERE_Bambucket_AntiVenom, ERE_Bambucket_FormicAcid, ERE_Bambucket_BeetleJuice,
 	AETHER_Skyroot_Planks, AETHER_Skyroot_Log, AETHER_Skyroot_Log_Gold, AETHER_Skyroot_Log_Small, AETHER_Torch_Ambrosium, AETHER_Bowl, AETHER_Apple, AETHER_Tall_Grass, AETHER_Sand, AETHER_Glass, AETHER_Glass_Pane, AETHER_Dirt, AETHER_Grass, AETHER_Grass_Enchanted, AETHER_Grass_Enchanted_Vanilla, AETHER_Chest,
 	AETHER_Skyroot_Sapling_Gold, AETHER_Skyroot_Sapling_Green, AETHER_Skyroot_Sapling_Blue, AETHER_Skyroot_Sapling_Dark, AETHER_Skyroot_Sapling_Purple,
 	AETHER_Skyroot_Leaves_Gold, AETHER_Skyroot_Leaves_Green, AETHER_Skyroot_Leaves_Blue, AETHER_Skyroot_Leaves_Dark, AETHER_Skyroot_Leaves_Purple, AETHER_Skyroot_Leaves_Apple,
 	AETHER_Bucket_Empty, AETHER_Bucket_Water, AETHER_Bucket_Milk, AETHER_Bucket_Poison,
+	Salt_Mud_Ball, Salt_Mud, Salt_Mud_Bricks, Salt_Dirt_1, Salt_Dirt_2, Salt_Dirt_3, Salt_Grass,
 	GrC_Honey_Jar, GrC_Honey_Bucket, GrC_Honey_Bottle, GrC_Milk_Bucket, GrC_Milk_Bottle,
 	GrC_Applecore, GrC_Grape_Purple, GrC_Grape_Green, GrC_Grape_Red,
 	GrC_Cheese_Cheddar, GrC_Cheese_Gorgonzola, GrC_Cheese_Swiss, GrC_Cheese_Appenzeller, GrC_Cheese_Asiago, GrC_Cheese_Parmesan, GrC_Cheese_Monterey, GrC_Cheese_Ricotta,
@@ -171,6 +173,7 @@ public enum IL implements IItemContainer {
 	GrC_Bamboo, GrC_Bamboo_Charcoal,
 	GrC_Paddy,
 	TiC_Stonetorch,
+	AE_Torch_Quartz,
 	MaCu_Dye_White, MaCu_Dye_Blue, MaCu_Dye_Green, MaCu_Dye_Yellow, MaCu_Dye_Red, MaCu_Dye_Brown, MaCu_Bait_Worm, MaCu_Bait_Ant, MaCu_Bait_Maggot, MaCu_Bait_Grasshopper, MaCu_Bait_Bee, MaCu_Polished_Planks, MaCu_Polished_Logs,
 	MoCr_Crab_Raw, MoCr_Crab_Cooked, MoCr_Turkey_Raw, MoCr_Turkey_Cooked, MoCr_Rat_Raw, MoCr_Rat_Cooked, MoCr_Ostrich_Raw, MoCr_Ostrich_Cooked, MoCr_Turtle_Raw,
 	AA_Dye_Black, AA_Fertilizer, AA_Dough_Rice, AA_Bread_Rice, AA_XP,
@@ -259,7 +262,7 @@ public enum IL implements IItemContainer {
 	ThermosCan_Dark_Coffee, ThermosCan_Dark_Cafe_au_lait, ThermosCan_Coffee, ThermosCan_Cafe_au_lait, ThermosCan_Lait_au_cafe, ThermosCan_Dark_Chocolate_Milk,
 	ThermosCan_Chocolate_Milk,
 	ThermosCan_Tea, ThermosCan_Sweet_Tea, ThermosCan_Ice_Tea,
-	Bottle_Empty, Bottle_Milk, Bottle_Milk_Spoiled, Bottle_Blood, Bottle_Rotten_Drink, Bottle_Glue, Bottle_Lubricant, Bottle_Mercury, Bottle_Holy_Water, Bottle_Beer, Bottle_Purple_Drink,
+	Bottle_Empty, Bottle_Milk, Bottle_Milk_Spoiled, Bottle_Blood, Bottle_Rotten_Drink, Bottle_Tar, Bottle_Glue, Bottle_Lubricant, Bottle_Mercury, Bottle_Holy_Water, Bottle_Beer, Bottle_Purple_Drink,
 	Pill_Empty,
 	Pill_Mint, Pill_Red, Pill_Blue,
 	Pill_Iodine,
