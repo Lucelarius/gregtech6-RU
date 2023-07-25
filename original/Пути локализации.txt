@@ -1,7 +1,22 @@
+===========================================================================================
+\java\gregapi\data                                  - CS.java
+\java\gregapi\data                                  - MT.java
 
-- Loader_MultiTileEntities.java                     \java\gregtech\loaders\b
-    - MultiTileEntityPipeFluid.java                 \java\gregapi\tileentity\connectors
-    - MultiTileEntityPipeItem.java                  \java\gregapi\tileentity\connectors
-    - MultiTileEntityWireElectric.java              \java\gregapi\tileentity\connectors
+===========================================================================================
+\java\gregtech\loaders\a                            - Loader_Fluids.java
+\java\gregtech\loaders\a                            - Loader_Ores.java
+\java\gregtech\loaders\a                            - Loader_Rails.java
+\java\gregtech\loaders\a                            - Loader_Tools.java
 
-- MT.java                                           \java\gregapi\data
+\java\gregtech\loaders\b                            - Loader_Books.java
+\java\gregtech\loaders\b                            - Loader_MultiTileEntities.java
+    \java\gregapi\tileentity\connectors                 - MultiTileEntityPipeFluid.java
+    \java\gregapi\tileentity\connectors                 - MultiTileEntityPipeItem.java
+    \java\gregapi\tileentity\connectors                 - MultiTileEntityWireElectric.java
+
+
+\java\gregtech\loaders\c                            - Loader_Loot.java
+\java\gregtech\loaders\c                            - Loader_Recipes_Crops.java***
+\java\gregtech\loaders\c                            - Loader_Recipes_Food.java***
+\java\gregtech\loaders\c                            - Loader_Recipes_Foreign.java
+\java\gregtech\loaders\c                            - Loader_Recipes_Hints.java
