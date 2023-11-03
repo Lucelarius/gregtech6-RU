@@ -167,7 +167,7 @@ public class MultiTileEntityMold extends TileEntityBase07Paintable implements IT
 		}
 		
 		if (mContent == null) {
-			if (mAutoPullDirections != 0 && (mInventoryChanged || SERVER_TIME % 50 == 5 || (mBlockUpdated && mUseRedstone)) && (!mUseRedstone || hasRedstoneIncoming())) {
+			if (mAutoPullDirections != 0 && (mInventoryChanged || SERVER_TIME % 20 == 5 || (mBlockUpdated && mUseRedstone)) && (!mUseRedstone || hasRedstoneIncoming())) {
 				for (byte tSide : ALL_SIDES_VALID) if (FACE_CONNECTED[tSide][mAutoPullDirections]) {
 					DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(tSide);
 					if (tDelegator.mTileEntity instanceof ITileEntityCrucible && ((ITileEntityCrucible)tDelegator.mTileEntity).fillMoldAtSide(this, tDelegator.mSideOfTileEntity, tSide)) break;
@@ -297,7 +297,7 @@ public class MultiTileEntityMold extends TileEntityBase07Paintable implements IT
 		ItemStack tOutputStack = slot(0);
 		if (tOutputStack != null) {
 			OreDictItemData tData = OM.anyassociation(tOutputStack);
-			if (tData != null) for (Achievement tAchievement : tData.mMaterial.mMaterial.mAchievementsForCreation) aPlayer.triggerAchievement(tAchievement);
+			if (tData != null) for (Achievement tAchievement : tData.mMaterial.mMaterial.mAchievementsForCreation) UT.Inventories.unlockAchievement(aPlayer, tAchievement);
 			ItemStack aStack = aPlayer.getCurrentEquippedItem();
 			if (aStack == null) {
 				aPlayer.inventory.setInventorySlotContents(aPlayer.inventory.currentItem, tOutputStack);

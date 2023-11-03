@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,8 +19,6 @@
 
 package gregapi.recipes.handlers;
 
-import static gregapi.data.CS.*;
-
 import gregapi.code.ICondition;
 import gregapi.data.FL;
 import gregapi.data.OP;
@@ -36,6 +34,8 @@ import gregapi.util.UT;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
+
+import static gregapi.data.CS.*;
 
 /**
  * @author Gregorius Techneticies
@@ -135,14 +135,14 @@ public class RecipeMapHandlerPrefix extends RecipeMapHandler {
 	public boolean addRecipesUsing(RecipeMap aMap, boolean aNEI, ItemStack aStack, OreDictItemData aData) {
 		if (isDone()) return F;
 		if (ST.equal(aStack, mAdditionalInput)) return aNEI && mAllowToGenerateAllRecipesAtOnce && addAllRecipesInternal(aMap);
-		return aData != null && aData.hasValidMaterialData() && UT.Code.contains(aData.mPrefix, mInputPrefixes) && addRecipeForMaterial(aMap, aData.mMaterial.mMaterial);
+		return aData != null && aData.validData() && UT.Code.contains(aData.mPrefix, mInputPrefixes) && addRecipeForMaterial(aMap, aData.mMaterial.mMaterial);
 	}
 	
 	@Override
 	public boolean addRecipesProducing(RecipeMap aMap, boolean aNEI, ItemStack aStack, OreDictItemData aData) {
 		if (isDone()) return F;
 		if (ST.equal(aStack, mAdditionalOutput)) return aNEI && mAllowToGenerateAllRecipesAtOnce && addAllRecipesInternal(aMap);
-		return aData != null && aData.hasValidMaterialData() && (UT.Code.contains(aData.mPrefix, mOutputPrefixes) || (mOutputPulverizedRemains && aData.mPrefix == OP.dust)) && addRecipeForMaterial(aMap, aData.mMaterial.mMaterial);
+		return aData != null && aData.validData() && (UT.Code.contains(aData.mPrefix, mOutputPrefixes) || (mOutputPulverizedRemains && aData.mPrefix == OP.dust)) && addRecipeForMaterial(aMap, aData.mMaterial.mMaterial);
 	}
 	
 	@Override
@@ -223,6 +223,6 @@ public class RecipeMapHandlerPrefix extends RecipeMapHandler {
 	}
 	
 	public long getCosts(OreDictMaterial aMaterial) {
-		return UT.Code.units(mUnitsInputted, U, mMultiplier+mMultiplier*aMaterial.mToolQuality, T);
+		return UT.Code.units(Math.max(mUnitsInputted, mUnitsOutputted), U, mMultiplier+mMultiplier*aMaterial.mToolQuality, T);
 	}
 }

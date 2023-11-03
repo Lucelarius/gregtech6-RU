@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -107,7 +107,7 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 							OreDictMaterialStack tMaterial = OreDictMaterial.FLUID_MAP.get(aFluid.getFluid().getName());
 							aFluid = aFluid.copy();
 							aFluid.amount = Math.min(aFluid.amount, FL.lava(aFluid) ? 1000 : !FL.water(aFluid) && tMaterial != null && tMaterial.mAmount > 0 ? UT.Code.bindInt(tMaterial.mAmount) : 250);
-							if (((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, UT.Code.bindInt(((ITileEntityTapFillable)tDelegator2.mTileEntity).tapFill(tDelegator2.mSideOfTileEntity, aFluid, T)), T) != null) {
+							if (FL.nonzero(((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, UT.Code.bindInt(((ITileEntityTapFillable)tDelegator2.mTileEntity).tapFill(tDelegator2.mSideOfTileEntity, aFluid, T)), T))) {
 								UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this);
 								UT.Sounds.send(SFX.MC_LIQUID_WATER, 1.0F, 1.0F, this);
 							}
@@ -128,7 +128,7 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 						if (FL.XP.is(aFluid)) {
 							if (MD.OB.mLoaded) {
 								try {
-									int tXP = Math.min(LiquidXpUtils.liquidToXpRatio(aFluid.amount), UT.Code.roundUp(EnchantmentUtils.getExperienceForLevel(aPlayer.experienceLevel+1) - (EnchantmentUtils.getExperienceForLevel(aPlayer.experienceLevel)+(aPlayer.experience * aPlayer.xpBarCap()))));
+									int tXP = Math.min(LiquidXpUtils.liquidToXpRatio(aFluid.amount), Math.max(10, UT.Code.roundUp(EnchantmentUtils.getExperienceForLevel(aPlayer.experienceLevel+1) - (EnchantmentUtils.getExperienceForLevel(aPlayer.experienceLevel) + (aPlayer.experience * aPlayer.xpBarCap())))));
 									int tDrain = LiquidXpUtils.xpToLiquidRatio(tXP);
 									if (tDrain > 0 && tXP > 0) {
 										((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, tDrain, T);

@@ -171,6 +171,7 @@ public class LH {
 	, HAZARD_LEAKING_GAS = "gt.lang.hazard.leak.gas"
 	, TOOLTIP_GASPROOF = "gt.lang.proof.gas"
 	, TOOLTIP_ACIDPROOF = "gt.lang.proof.acid"
+	, TOOLTIP_MAGICPROOF = "gt.lang.proof.magic"
 	, TOOLTIP_LIQUIDPROOF = "gt.lang.proof.liquid"
 	, TOOLTIP_PLASMAPROOF = "gt.lang.proof.plasma"
 	, TOOLTIP_HEATPROOF = "gt.lang.proof.heat"
@@ -198,6 +199,7 @@ public class LH {
 	, TOOLTIP_NEEDS_SHARPENING = "gt.lang.needs.sharpening"
 	, TOOLTIP_SHAPELESS_CRAFT = "gt.lang.has.shapeless"
 	, TOOLTIP_AUTOCOLLECT = "gt.lang.autocollect"
+	, TOOLTIP_ARMOR_PENETRATING = "gt.lang.armorpenetrating"
 	, TOOLTIP_BEACON_PAYMENT = "gt.lang.beacon.payment"
 	, TOOLTIP_SHELFABLE = "gt.lang.shelfable"
 	, TOOLTIP_SANDWICHABLE = "gt.lang.sandwichable"
@@ -206,6 +208,7 @@ public class LH {
 	, TOOLTIP_POSSIBLE_WEAPON_ENCHANTS = "gt.lang.weapon.enchants"
 	, TOOLTIP_POSSIBLE_AMMO_ENCHANTS = "gt.lang.ammo.enchants"
 	, TOOLTIP_POSSIBLE_RANGED_ENCHANTS = "gt.lang.ranged.enchants"
+	, TOOLTIP_POSSIBLE_FISHING_ENCHANTS = "gt.lang.fishing.enchants"
 	, TOOLTIP_POSSIBLE_ARMOR_ENCHANTS = "gt.lang.armor.enchants"
 	, TOOLTIP_TOO_MANY_TOOL_ENCHANTS = "gt.lang.tool.enchants.too.many"
 	, TOOLTIP_TOO_MANY_ARMOR_ENCHANTS = "gt.lang.armor.enchants.too.many"
@@ -221,10 +224,12 @@ public class LH {
 	, TOOLTIP_BLAST_RESISTANCE_DYNAMITE = "gt.lang.blast.resist.dynamite.proof"
 	, TOOLTIP_BLAST_RESISTANCE_NOT_NUKE = "gt.lang.blast.resist.nuke.not"
 	, TOOLTIP_ENCHANT_BONUS = "gt.lang.enchantment.bonus"
+	, TOOLTIP_THAUMCRAFT_WARP = "gt.lang.thaumcraft.warp"
 	, TOOLTIP_BETWEENLANDS_RESISTANCE = "gt.lang.betweenlands.resist"
 	, TOOLTIP_TWILIGHT_MAZE_BREAKING = "gt.lang.twilightforest.mazebreaking"
 	, TOOLTIP_TWILIGHT_MAZE_HEDGE_BREAKING = "gt.lang.twilightforest.mazehedgebreaking"
 	, TOOLTIP_TWILIGHT_MAZE_STONE_BREAKING = "gt.lang.twilightforest.mazestonebreaking"
+	, TOOLTIP_TWILIGHT_TOWER_WOOD_BREAKING = "gt.lang.twilightforest.towerwoodbreaking"
 	, PROSPECTING_LAVA = "gt.lang.prospecting.lava"
 	, PROSPECTING_LIQUID = "gt.lang.prospecting.liquid"
 	, PROSPECTING_AIR = "gt.lang.prospecting.air"
@@ -331,7 +336,7 @@ public class LH {
 				if (aEnergyOUT2.mType == TD.Energy.RF) aList.add(LH.getToolTipEfficiency(UT.Code.units(10000, aEnergyIN.mRec*RF_PER_EU, aEnergyOUT.mRec, F)));
 			}
 		} else {
-			if (TD.Energy.ALL_EU.contains(aEnergyOUT.mType) && aEnergyIN.mType == TD.Energy.RF) aList.add(LH.getToolTipEfficiency(UT.Code.units(10000, aEnergyIN.mRec, aEnergyOUT.mRec*8, F)));
+			if (TD.Energy.ALL_EU.contains(aEnergyOUT .mType) && aEnergyIN.mType == TD.Energy.RF) aList.add(LH.getToolTipEfficiency(UT.Code.units(10000, aEnergyIN.mRec, aEnergyOUT.mRec*8, F)));
 			if (TD.Energy.ALL_EU.contains(aEnergyOUT2.mType) && aEnergyIN.mType == TD.Energy.RF) aList.add(LH.getToolTipEfficiency(UT.Code.units(10000, aEnergyIN.mRec, aEnergyOUT.mRec*8, F)));
 		}
 	}
@@ -364,16 +369,60 @@ public class LH {
 	}
 	
 	static {
-		add("loot.mineshaftCorridor"                    , "Mineshaft");
-		add("loot.pyramidDesertyChest"                  , "Desert Pyramid");
-		add("loot.pyramidJungleChest"                   , "Jungle Temple");
-		add("loot.pyramidJungleDispenser"               , "Dispenser");
-		add("loot.strongholdCorridor"                   , "Corridor");
-		add("loot.strongholdLibrary"                    , "Library");
-		add("loot.strongholdCrossing"                   , "Storage");
-		add("loot.villageBlacksmith"                    , "Blacksmith");
-		add("loot.bonusChest"                           , "Bonus Chest");
-		add("loot.dungeonChest"                         , "Dungeon");
+		add("enchantment.level.11"                      , "XI");
+		add("enchantment.level.12"                      , "XII");
+		add("enchantment.level.13"                      , "XIII");
+		add("enchantment.level.14"                      , "XIV");
+		add("enchantment.level.15"                      , "XV");
+		add("enchantment.level.16"                      , "XVI");
+		add("enchantment.level.17"                      , "XVII");
+		add("enchantment.level.18"                      , "XVIII");
+		add("enchantment.level.19"                      , "XIX");
+		add("enchantment.level.20"                      , "XX");
+		add("enchantment.level.21"                      , "XXI");
+		add("enchantment.level.22"                      , "XXII");
+		add("enchantment.level.23"                      , "XXIII");
+		add("enchantment.level.24"                      , "XXIV");
+		add("enchantment.level.25"                      , "XXV");
+		add("enchantment.level.26"                      , "XXVI");
+		add("enchantment.level.27"                      , "XXVII");
+		add("enchantment.level.28"                      , "XXVIII");
+		add("enchantment.level.29"                      , "XXIX");
+		add("enchantment.level.30"                      , "XXX");
+		
+		add("loot.mineshaftCorridor"                    , "+Mineshaft+");
+		add("loot.pyramidDesertyChest"                  , "*Desert Pyramid*");
+		add("loot.pyramidJungleChest"                   , "*Jungle Temple*");
+		add("loot.pyramidJungleDispenser"               , "-Dispenser-");
+		add("loot.strongholdCorridor"                   , "-Corridor-");
+		add("loot.strongholdLibrary"                    , "+Library+");
+		add("loot.strongholdCrossing"                   , "+Storage+");
+		add("loot.villageBlacksmith"                    , "*Blacksmith*");
+		add("loot.bonusChest"                           , "-Bonus Chest-");
+		add("loot.dungeonChest"                         , "*Dungeon*");
+		add("loot.twilightforest:hill1"                 , "-Hollow Hill-");
+		add("loot.twilightforest:hill2"                 , "+Hollow Hill+");
+		add("loot.twilightforest:hill3"                 , "*Hollow Hill*");
+		add("loot.twilightforest:hedgemaze"             , "-Hedge Maze-");
+		add("loot.twilightforest:tree_cache"            , "-Tree Cache-");
+		add("loot.twilightforest:basement"              , "-Basement Cache-");
+		add("loot.twilightforest:labyrinth_room"        , "-Labyrinth-");
+		add("loot.twilightforest:labyrinth_deadend"     , "+Labyrinth+");
+		add("loot.twilightforest:labyrinth_vault"       , "*Labyrinth*");
+		add("loot.twilightforest:tower_room"            , "-Magic Tower-");
+		add("loot.twilightforest:tower_library"         , "+Magic Tower+");
+		add("loot.twilightforest:stronghold_cache"      , "-Stronghold-");
+		add("loot.twilightforest:stronghold_room"       , "+Stronghold+");
+		add("loot.twilightforest:stronghold_boss"       , "*Stronghold*");
+		add("loot.twilightforest:darktower_cache"       , "-Dark Tower-");
+		add("loot.twilightforest:darktower_key"         , "+Dark Tower+");
+		add("loot.twilightforest:darktower_boss"        , "*Dark Tower*");
+		add("loot.twilightforest:aurora_cache"          , "-Aurora Tower-");
+		add("loot.twilightforest:aurora_room"           , "+Aurora Tower+");
+		add("loot.twilightforest:aurora_boss"           , "*Aurora Tower*");
+		add("loot.twilightforest:troll_garden"          , "-Troll Cave-");
+		add("loot.twilightforest:troll_vault"           , "+Troll Cave+");
+		
 		add(EFFICIENCY                                  , "Efficiency");
 		add(RECIPE                                      , "Recipe");
 		add(RECIPES                                     , "Recipes");
@@ -386,7 +435,7 @@ public class LH {
 		add(RECIPES_SIFTER_USAGE                        , "Place Input on Top and rightclick it");
 		add(RECIPES_MIXINGBOWL_USAGE                    , "Place Input in Center, Fill with Fluid on the Rim, then rightclick it");
 		add(RECIPES_BATHINGPOT_USAGE                    , "Place Input in Center, Fill with Fluid on the Rim, then rightclick it");
-		add(RECIPES_GRINDSTONE_USAGE                    , "Click multiple times with the Object you want to sharpen");
+		add(RECIPES_GRINDSTONE_USAGE                    , "Click multiple times with the Object to Sharpen or remove Enchantments");
 		add(RECIPES_GRINDSTONE_INIT                     , "Add Sandstone Block in order to be able to use this");
 		add(RECIPES_DUSTFUNNEL                          , "Turns all differently sized Dusts into the specified Size");
 		add(RECIPES_AUTOHAMMER                          , "Performs Hammer Rightclicks and crushes Blocks");
@@ -503,6 +552,7 @@ public class LH {
 		add(HAZARD_LEAKING_GAS                          , "Leaks when used with Gases!");
 		add(TOOLTIP_GASPROOF                            , "Can handle Gases");
 		add(TOOLTIP_ACIDPROOF                           , "Can handle Acids");
+		add(TOOLTIP_MAGICPROOF                          , "Can handle Magic");
 		add(TOOLTIP_LIQUIDPROOF                         , "Can handle Liquids");
 		add(TOOLTIP_PLASMAPROOF                         , "Can handle Plasma");
 		add(TOOLTIP_HEATPROOF                           , "Can handle Temperatures up to: ");
@@ -530,6 +580,7 @@ public class LH {
 		add(TOOLTIP_NEEDS_SHARPENING                    , "Needs to be sharpened before use");
 		add(TOOLTIP_SHAPELESS_CRAFT                     , "Has Shapeless Recipes with Amounts: ");
 		add(TOOLTIP_AUTOCOLLECT                         , "Can Auto-Collect Items when harvesting Block");
+		add(TOOLTIP_ARMOR_PENETRATING                   , "Can Penetrate Armor");
 		add(TOOLTIP_BEACON_PAYMENT                      , "Can be used as a Beacon Payment");
 		add(TOOLTIP_SHELFABLE                           , "Can be placed inside a GT Bookshelf");
 		add(TOOLTIP_SANDWICHABLE                        , "Is a valid Sandwich Ingredient");
@@ -538,6 +589,7 @@ public class LH {
 		add(TOOLTIP_POSSIBLE_WEAPON_ENCHANTS            , "Weapon: ");
 		add(TOOLTIP_POSSIBLE_AMMO_ENCHANTS              , "Ammo: ");
 		add(TOOLTIP_POSSIBLE_RANGED_ENCHANTS            , "Ranged: ");
+		add(TOOLTIP_POSSIBLE_FISHING_ENCHANTS           , "Fishing: ");
 		add(TOOLTIP_POSSIBLE_ARMOR_ENCHANTS             , "Armor: ");
 		add(TOOLTIP_TOO_MANY_TOOL_ENCHANTS              , "Too Many Tool Enchantments to List");
 		add(TOOLTIP_TOO_MANY_ARMOR_ENCHANTS             , "Too Many Armor Enchantments to List");
@@ -553,10 +605,12 @@ public class LH {
 		add(TOOLTIP_BLAST_RESISTANCE_DYNAMITE           , "(Strong Dynamite Proof)");
 		add(TOOLTIP_BLAST_RESISTANCE_NOT_NUKE           , "(IC2 Nukes can still go through!)");
 		add(TOOLTIP_ENCHANT_BONUS                       , "Can influence an Enchanting Table like a Bookshelf");
+		add(TOOLTIP_THAUMCRAFT_WARP                     , "Tools made of this cause Warp to the Wielder");
 		add(TOOLTIP_BETWEENLANDS_RESISTANCE             , "Resistant to the rotting Effects of the Betweenlands");
 		add(TOOLTIP_TWILIGHT_MAZE_BREAKING              , "Tools made of this can break Twilight Forest Mazes");
-		add(TOOLTIP_TWILIGHT_MAZE_HEDGE_BREAKING        , "Can break Twilight Forest Maze Hedges");
-		add(TOOLTIP_TWILIGHT_MAZE_STONE_BREAKING        , "Can break Twilight Forest Mazestone");
+		add(TOOLTIP_TWILIGHT_MAZE_HEDGE_BREAKING        , "Can easily break Twilight Forest Maze Hedges");
+		add(TOOLTIP_TWILIGHT_MAZE_STONE_BREAKING        , "Can easily break Twilight Forest Mazestone");
+		add(TOOLTIP_TWILIGHT_TOWER_WOOD_BREAKING        , "Can easily break Twilight Forest Towerwood");
 		add(PROSPECTING_LAVA                            , "There is Lava behind this Rock");
 		add(PROSPECTING_LIQUID                          , "There is a Fluid behind this Rock");
 		add(PROSPECTING_AIR                             , "There is an Air Pocket behind this Rock");
@@ -564,7 +618,7 @@ public class LH {
 		add(PROSPECTING_TRACES                          , "Found traces of ");
 		add(PROSPECTING_NOTHING                         , "No traces of Ore found");
 		add(AUTOCRAFTING_INSERT_BLUEPRINT               , "Insert an autocraftable Blueprint here");
-		add(ADVCRAFTING_INSERT_BLUEPRINT                , "Insert a Blueprint here");
+		add(ADVCRAFTING_INSERT_BLUEPRINT                , "Insert Blueprint or Selector Tag 2 through 9");
 		add(ADVCRAFTING_PUT_TO_STORAGE                  , "Move Crafting Grid content to Storage Slots");
 		add(ADVCRAFTING_AUTOMATION_ACCESS               , "Allow Automation to extract from the Crafting Grid");
 		add(ADVCRAFTING_NEUTRAL_SLOT                    , "This Slot does ABSOLUTELY NOTHING! park Items here!");

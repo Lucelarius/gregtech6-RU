@@ -70,6 +70,8 @@ public enum OD {
 	, container250soymilk
 	, container1000honey
 	, container250honey
+	, container1000juice
+	, container250juice
 	, container1000seedoil
 	, container250seedoil
 	, container1000creosote
@@ -165,6 +167,7 @@ public enum OD {
 	, slimeballRice
 	, slimeballSwet
 	, slimeballBorax
+	, slimeballAnimal
 	, itemGrassTall
 	, itemGrass
 	, itemGrassDry
@@ -210,6 +213,10 @@ public enum OD {
 	, itemSkin
 	, itemFur
 	, itemPelt
+	, itemTusk
+	, itemHoof
+	, itemHorn
+	, itemAntler
 	, itemMulch
 	, itemCompost
 	, itemFertilizer
@@ -224,6 +231,8 @@ public enum OD {
 	, fishtrapBait
 	, obsidian
 	, cryingObsidian
+	, glass
+	, glassColorless
 	, paneGlass
 	, paneGlassColorless
 	, blockGlass

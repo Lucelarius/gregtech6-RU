@@ -626,8 +626,13 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration("plateWood"                       , OD.plankWood);
 		OreDictManager.INSTANCE.addReRegistration("plankWood"                       , OD.plankAnyWood);
 		OreDictManager.INSTANCE.addReRegistration("plateAnyWood"                    , OD.plankAnyWood);
+		OreDictManager.INSTANCE.addReRegistration(OD.blockGlassColorless            , OD.glassColorless);
 		OreDictManager.INSTANCE.addReRegistration(OD.blockGlassColorless            , OD.blockGlass);
+		OreDictManager.INSTANCE.addReRegistration(OD.paneGlassColorless             , OD.glassColorless);
 		OreDictManager.INSTANCE.addReRegistration(OD.paneGlassColorless             , OD.paneGlass);
+		OreDictManager.INSTANCE.addReRegistration(OD.glassColorless                 , OD.glass);
+		OreDictManager.INSTANCE.addReRegistration(OD.blockGlass                     , OD.glass);
+		OreDictManager.INSTANCE.addReRegistration(OD.paneGlass                      , OD.glass);
 		OreDictManager.INSTANCE.addReRegistration(OreDictToolNames.axe              , OreDictToolNames.sawaxe);
 		OreDictManager.INSTANCE.addReRegistration(OreDictToolNames.saw              , OreDictToolNames.sawaxe);
 		OreDictManager.INSTANCE.addReRegistration("wireFineTin"                     , OreDictToolNames.solderingmetal);
@@ -923,6 +928,7 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration("bucketLava"                      , OD.container1000lava);
 		OreDictManager.INSTANCE.addReRegistration("bucketTar"                       , OD.container1000tar);
 		OreDictManager.INSTANCE.addReRegistration("bucketHoney"                     , OD.container1000honey);
+		OreDictManager.INSTANCE.addReRegistration("bucketJuice"                     , OD.container1000juice);
 		OreDictManager.INSTANCE.addReRegistration("bucketMilk"                      , OD.container1000milk);
 		OreDictManager.INSTANCE.addReRegistration("bucketSoymilk"                   , OD.container1000soymilk);
 		OreDictManager.INSTANCE.addReRegistration("bucketSoyMilk"                   , OD.container1000soymilk);
@@ -933,6 +939,7 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration("cellWater"                       , OD.container1000water);
 		OreDictManager.INSTANCE.addReRegistration("cellLava"                        , OD.container1000lava);
 		OreDictManager.INSTANCE.addReRegistration("cellHoney"                       , OD.container1000honey);
+		OreDictManager.INSTANCE.addReRegistration("cellJuice"                       , OD.container1000juice);
 		OreDictManager.INSTANCE.addReRegistration("cellMilk"                        , OD.container1000milk);
 		OreDictManager.INSTANCE.addReRegistration("cellSoymilk"                     , OD.container1000soymilk);
 		OreDictManager.INSTANCE.addReRegistration("cellSoyMilk"                     , OD.container1000soymilk);
@@ -979,6 +986,8 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.addReRegistration("foodSoymilk"                     , "listAllmilk");
 		OreDictManager.INSTANCE.addReRegistration("foodCoconutcream"                , "listAllheavycream");
 		OreDictManager.INSTANCE.addReRegistration("foodHeavycream"                  , "listAllheavycream");
+		OreDictManager.INSTANCE.addReRegistration(OD.container1000juice             , "listAlljuice");
+		OreDictManager.INSTANCE.addReRegistration(OD.container250juice              , "listAlljuice");
 		OreDictManager.INSTANCE.addReRegistration("foodAnanasjuice"                 , "listAlljuice");
 		OreDictManager.INSTANCE.addReRegistration("foodApplejuice"                  , "listAlljuice");
 		OreDictManager.INSTANCE.addReRegistration("foodApricotjuice"                , "listAlljuice");
@@ -1399,10 +1408,14 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.setAutomaticItemData("hambone", new OreDictItemData(MT.MeatRaw, 2*U));
 		OreDictManager.INSTANCE.setAutomaticItemData("livingRoot", new OreDictItemData(MT.LiveRoot, U));
 		OreDictManager.INSTANCE.setAutomaticItemData("silicon", new OreDictItemData(MT.Si, U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.blockGlass, new OreDictItemData(MT.Glass, U*9));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.paneGlass, new OreDictItemData(MT.Glass, U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.glowstone, new OreDictItemData(ANY.Glowstone, 4*U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.soulsand, new OreDictItemData(MT.SoulSand, U*9));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.blockGlassColorless, new OreDictItemData(MT.Glass, U*9));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.blockGlass         , new OreDictItemData(MT.Glass, U*9));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.paneGlassColorless , new OreDictItemData(MT.Glass, U));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.paneGlass          , new OreDictItemData(MT.Glass, U));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.glassColorless     , new OreDictItemData(MT.Glass, U));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.glass              , new OreDictItemData(MT.Glass, U));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.glowstone          , new OreDictItemData(ANY.Glowstone, 4*U));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.soulsand           , new OreDictItemData(MT.SoulSand, U*9));
 		OreDictManager.INSTANCE.setAutomaticItemData("seedWheat", new OreDictItemData(MT.Wheat, U9));
 		OreDictManager.INSTANCE.setAutomaticItemData("seedRye", new OreDictItemData(MT.Rye, U9));
 		OreDictManager.INSTANCE.setAutomaticItemData("seedOats", new OreDictItemData(MT.Oat, U9));
@@ -1458,7 +1471,7 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankAnyWood, new OreDictItemData(ANY.Wood, U));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankWeedwood, new OreDictItemData(MT.Weedwood, U));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.plankSkyroot, new OreDictItemData(MT.Skyroot, U));
-		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingChest, new OreDictItemData(ANY.Wood, U * 5));
+		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingChest, new OreDictItemData(ANY.Wood, U * 4));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingPiston, new OreDictItemData(MT.Stone, U * 4, ANY.Wood, U * 3));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingFurnace, new OreDictItemData(MT.Stone, U * 8));
 		OreDictManager.INSTANCE.setAutomaticItemData(OD.craftingAnvil, new OreDictItemData(MT.Fe, U * 10));
@@ -1479,7 +1492,8 @@ public class LoaderOreDictReRegistrations implements Runnable {
 		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.Sand            ), new OreDictItemData(MT.Sand            , U*9));
 		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.RedSand         ), new OreDictItemData(MT.RedSand         , U*9));
 		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.SoulSand        ), new OreDictItemData(MT.SoulSand        , U*9));
-		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.EndSand         ), new OreDictItemData(MT.EndSand         , U*9));
+		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.EndSandWhite    ), new OreDictItemData(MT.EndSandWhite    , U*9));
+		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.EndSandBlack    ), new OreDictItemData(MT.EndSandBlack    , U*9));
 		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.Bedrock         ), new OreDictItemData(MT.Bedrock         , U*1));
 		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.Flint           ), new OreDictItemData(MT.Flint           , U*9));
 		OreDictManager.INSTANCE.setAutomaticItemData(OP.stone.dat(MT.CaCO3           ), new OreDictItemData(MT.CaCO3           , U*9));

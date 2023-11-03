@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,14 +19,6 @@
 
 package gregtech.worldgen;
 
-import static gregapi.data.CS.*;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-
 import gregapi.block.multitileentity.MultiTileEntityRegistry;
 import gregapi.util.UT;
 import net.minecraft.init.Blocks;
@@ -36,6 +28,14 @@ import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+
+import static gregapi.data.CS.*;
 
 /**
  * @author Gregorius Techneticies
@@ -109,7 +109,7 @@ public class ChestGenHooksChestReplacer extends ChestGenHooks {
 			// XYZ and check if the Block we replace is a regular Chest.
 			int aX = ((TileEntityChest)aInventory).xCoord, aY = ((TileEntityChest)aInventory).yCoord, aZ = ((TileEntityChest)aInventory).zCoord;
 			if (Blocks.chest != aWorld.getBlock(aX, aY, aZ)) return generateChestContent2(aRandom, aInventory);
-			// Does my Registry exist?
+			// Does Greg's Registry exist?
 			MultiTileEntityRegistry tRegistry = MultiTileEntityRegistry.getRegistry("gt.multitileentity");
 			if (tRegistry == null) return generateChestContent2(aRandom, aInventory);
 			// Grab the Chests Facing.
@@ -119,7 +119,7 @@ public class ChestGenHooksChestReplacer extends ChestGenHooks {
 			// Erase it again just to fucking make sure!
 			aWorld.setBlock(aX, aY, aZ, NB, 0, 1);
 			// Place the better Loot Chest.
-			tRegistry.mBlock.placeBlock(aWorld, aX, aY, aZ, SIDE_UNKNOWN, mChestID, UT.NBT.make(NBT_FACING, tFacing, "gt.dungeonloot", mCategory), F, T);
+			tRegistry.mBlock.placeBlock(aWorld, aX, aY, aZ, SIDE_UNKNOWN, mChestID, UT.NBT.make(NBT_FACING, tFacing, NBT_TRAPPED, T, "gt.dungeonloot", mCategory), F, T);
 			// Loot wont need to be generated anymore in that case.
 			return ZL_IS;
 		}

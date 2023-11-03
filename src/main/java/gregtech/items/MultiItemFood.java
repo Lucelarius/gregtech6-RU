@@ -22,7 +22,7 @@ package gregtech.items;
 import gregapi.data.*;
 import gregapi.item.CreativeTab;
 import gregapi.item.IItemRottable;
-import gregapi.item.multiitem.MultiItemRandom;
+import gregapi.item.multiitem.MultiItemRandomWithCompat;
 import gregapi.item.multiitem.behaviors.*;
 import gregapi.item.multiitem.food.FoodStat;
 import gregapi.oredict.OreDictItemData;
@@ -42,7 +42,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import static gregapi.data.CS.*;
 
-public class MultiItemFood extends MultiItemRandom implements IItemRottable {
+public class MultiItemFood extends MultiItemRandomWithCompat implements IItemRottable {
 	public MultiItemFood(String aModID, String aUnlocalized) {
 		super(aModID, aUnlocalized);
 		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Nature & Foods", this, (short)12000));
@@ -105,7 +105,8 @@ public class MultiItemFood extends MultiItemRandom implements IItemRottable {
 		RM.replicateOrganic( 2,  5, IL.IC2_Resin.exists() ? IL.IC2_Resin.get(1) : IL.Resin.get(1));
 		
 		
-		IL.Slimeball_Borax .set(addItem(12099, "Slimeball"        , "Borax mixed with Glue"                  , OD.slimeball, OD.slimeballBorax, TC.stack(TC.LIMUS, 2)));
+		IL.Sticky_Goo      .set(addItem(12098, "Sticky Goo"       , "Not Vegan at all"                       , OD.slimeball, OD.slimeballAnimal, TC.stack(TC.LIMUS, 2)));
+		IL.Slimeball_Borax .set(addItem(12099, "Slimeball"        , "Borax mixed with Glue"                  , OD.slimeball, OD.slimeballBorax , TC.stack(TC.LIMUS, 2)));
 		RM.Mixer.addRecipe1(T, 16, 16, OM.dust(MT.OREMATS.Borax), FL.Glue.make(250), NF, IL.Slimeball_Borax.get(1));
 		
 		
@@ -197,6 +198,30 @@ public class MultiItemFood extends MultiItemRandom implements IItemRottable {
 		RM.Bath       .addRecipe1(T,  0, 16, OM.dust(MT.Kaolinite    ),        tWater    , NF, IL.Clay_Ball_White.get(1));
 		}
 		
+		IL.Tusk         .set(addItem(12400, "Tusk"         , ""                 , OD.itemTusk  , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		IL.Tusk_Hoglin  .set(addItem(12401, "Hoglin Tusk"  , "not golden"       , OD.itemTusk  , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		IL.Tusk_Boar    .set(addItem(12402, "Boar Tusk"    , ""                 , OD.itemTusk  , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		
+		IL.Hoof         .set(addItem(12500, "Hoof"         , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Cow     .set(addItem(12501, "Cow Hoof"     , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Horse   .set(addItem(12502, "Horse Hoof"   , "not race-worthy"  , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Mule    .set(addItem(12503, "Mule Hoof"    , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Donkey  .set(addItem(12504, "Donkey Hoof"  , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Deer    .set(addItem(12505, "Deer Hoof"    , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		
+		IL.Horn         .set(addItem(12600, "Horn"         , ""                 , OD.itemHorn  , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		IL.Horn_Cow     .set(addItem(12601, "Cow Horn"     , ""                 , OD.itemHorn  , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		IL.Horn_Sheep   .set(addItem(12602, "Sheep Horn"   , "from horned Sheep", OD.itemHorn  , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		
+		IL.Antler       .set(addItem(12700, "Antler"       , ""                 , OD.itemAntler, TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
+		IL.Antler_Deer  .set(addItem(12701, "Deer Antler"  , "oh dear..."       , OD.itemAntler, TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
+		
+		
+		
+		
+		
+		
+		
 		IL.Comb_Honey   .set(addItem(30000, "Honey Comb"   , "", OD.beeComb, OD.materialHoneycomb, "foodFilledhoneycomb", TC.stack(TC.LIMUS, 1), TC.stack(TC.FAMES, 1), TC.stack(TC.SANO, 1), new FoodStat( 1, 0.1F, 20, C+37, 0.50F,  0,  0,  0, 20,  0, EnumAction.eat, null, F, T, F, T))); Sandwiches.INGREDIENTS.put(last(), (byte)22);
 		IL.Comb_Water   .set(addItem(30001, "Water Comb"   , "", OD.beeComb, TC.stack(TC.AQUA, 2), new FoodStat( 1, 0.1F, 20, C+37, 0.50F,  0,  0,  0, 20,  0, EnumAction.eat, null, F, T, F, T))); Sandwiches.INGREDIENTS.put(last(), (byte)22);
 		IL.Comb_Magic   .set(addItem(30002, "Magic Comb"   , "", OD.beeComb, TC.stack(TC.PRAECANTIO, 2)));
@@ -269,7 +294,7 @@ public class MultiItemFood extends MultiItemRandom implements IItemRottable {
 		
 		IL.Food_Cucumber                       .set(addItem(   40, "Cucumber"                              , "Not a Sea Cucumber!", "cropCucumber"                            , new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
 		IL.Food_Cucumber_Sliced                .set(addItem(   41, "Cucumber Slice"                        , "QUEWWWCUMMMBURRR!!!"                                            , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)23);
-		IL.Food_Pickle                         .set(addItem(   42, "Pickle"                                , "Not a Sea Pickle! Not Rick either!", "cropPickle", "foodPickles", new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   4,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.VENENUM, 1)));
+		IL.Food_Pickle                         .set(addItem(   42, "Pickle"                                , "Not a Sea Pickle! Not Rick either!", "cropPickle", "foodPickles", new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   4,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.VENEMUM, 1)));
 		IL.Food_Pickle_Sliced                  .set(addItem(   43, "Pickle Slice"                          , "You seem to be in a Pickle."                                    , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   1,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)41);
 		RM.replicateOrganic( 4,  8, IL.Food_Cucumber.get(1));
 		RM.replicateOrganic( 4, 13, IL.Food_Pickle.get(1));
@@ -887,7 +912,7 @@ public class MultiItemFood extends MultiItemRandom implements IItemRottable {
 		IL.Pill_Mint                           .set(addItem(31002, "Peppermint"                               , "Take a fresh energetic Breath"                               , new FoodStat( 0, 0.000F,   0, C+37,  0.00F,   0,   0,   0,   0,   0,   0, EnumAction.eat, null                                 , T, F, F, T, Potion.moveSlowdown.id, -1, -1, 100), TC.stack(TC.SANO, 1), TC.stack(TC.HERBA  , 1))); Sandwiches.INGREDIENTS.put(last(), (byte)42);
 		IL.Pill_Blue                           .set(addItem(31003, "Blue Pill"                                , "Ignore the nauseating Reality"                               , new FoodStat( 0, 0.000F,   0, C+37,  0.00F,   0,   0,   0,   0,   0,   0, EnumAction.eat, null                                 , T, F, F, T, Potion.confusion   .id, -1, -1, 100), TC.stack(TC.SANO, 1), TC.stack(TC.CORPUS , 1))); Sandwiches.INGREDIENTS.put(last(), (byte)42);
 		IL.Pill_Red                            .set(addItem(31004, "Red Pill"                                 , "Open your Eyes to the Truth"                                 , new FoodStat( 0, 0.000F,   0, C+37,  0.00F,   0,   0,   0,   0,   0,   0, EnumAction.eat, null                                 , T, F, F, T, Potion.blindness   .id, -1, -1, 100), TC.stack(TC.SANO, 1), TC.stack(TC.SENSUS , 1))); Sandwiches.INGREDIENTS.put(last(), (byte)42);
-		IL.Pill_Antidote                       .set(addItem(31005, "Antidote"                                 , "Pill that cures Poison"                                      , new FoodStat( 0, 0.000F,   0, C+37,  0.00F,   0,   0,   0,   0,   0,   0, EnumAction.eat, null                                 , T, F, F, T, Potion.poison      .id, -1, -1, 100), TC.stack(TC.SANO, 1), TC.stack(TC.VENENUM, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)42);
+		IL.Pill_Antidote                       .set(addItem(31005, "Antidote"                                 , "Pill that cures Poison"                                      , new FoodStat( 0, 0.000F,   0, C+37,  0.00F,   0,   0,   0,   0,   0,   0, EnumAction.eat, null                                 , T, F, F, T, Potion.poison      .id, -1, -1, 100), TC.stack(TC.SANO, 1), TC.stack(TC.VENEMUM, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)42);
 		RM.Boxinator    .addRecipe2(T, 16,   16, OM.dust(MT.I)                          , IL.Pill_Empty.get(1), IL.Pill_Iodine.get(1));
 		RM.Boxinator    .addRecipe2(T, 16,   16, OM.dust(MT.Mint)                       , IL.Pill_Empty.get(1), IL.Pill_Mint.get(1));
 		RM.Boxinator    .addRecipe2(T, 16,   16, ST.make(Blocks.brown_mushroom, 1, W)   , IL.Pill_Empty.get(1), IL.Pill_Antidote.get(1));

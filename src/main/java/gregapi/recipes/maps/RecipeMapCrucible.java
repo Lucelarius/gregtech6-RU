@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -52,7 +52,7 @@ public class RecipeMapCrucible extends RecipeMapSpecialSingleInput {
 		HashSetNoNulls<OreDictMaterial> tSet = new HashSetNoNulls<>();
 		for (ItemStack aOutput : aOutputs) {
 			OreDictItemData aData = OM.anydata(aOutput);
-			if (aData == null || !aData.hasValidPrefixMaterialData() || !aData.mPrefix.contains(TD.Prefix.INGOT_BASED)) continue;
+			if (aData == null || !aData.validData() || !aData.mPrefix.contains(TD.Prefix.INGOT_BASED)) continue;
 			for (OreDictMaterial tMat : aData.mMaterial.mMaterial.mTargetedSmelting) if (tSet.add(tMat) && !tMat.contains(TD.Properties.INVALID_MATERIAL) && tMat.mTargetSmelting.mMaterial == aData.mMaterial.mMaterial) {
 				if (tMat != aData.mMaterial.mMaterial) {
 				rList.add(getRecipeFor(OP.ingot             .mat(tMat, 1)));
@@ -87,7 +87,7 @@ public class RecipeMapCrucible extends RecipeMapSpecialSingleInput {
 		for (OreDictMaterialStack tMaterial : aData.getAllMaterialStacks()) if (tMaterial.mMaterial.mTargetSmelting.mAmount > 0 && tMaterial.mMaterial.contains(MELTING)) OM.stack(UT.Code.units(tMaterial.mAmount, U, tMaterial.mMaterial.mTargetSmelting.mAmount, F), tMaterial.mMaterial.mTargetSmelting.mMaterial).addToList(tMaterialList);
 		if (tMaterialList.isEmpty()) return null;
 		
-		ArrayListNoNulls<ItemStack> tOutputList = new ArrayListNoNulls<>();
+		ArrayListNoNulls<ItemStack> tOutputList = ST.arraylist();
 		for (OreDictMaterialStack tMaterial : tMaterialList) tOutputList.add(OM.ingotOrDust(tMaterial.mMaterial, tMaterial.mAmount));
 		
 		ItemStack[] tOutputs = tOutputList.toArray(ZL_IS);

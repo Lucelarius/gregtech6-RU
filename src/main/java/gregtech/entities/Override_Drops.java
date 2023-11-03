@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,15 +19,7 @@
 
 package gregtech.entities;
 
-import static gregapi.data.CS.*;
-
-import java.util.List;
-
-import gregapi.data.IL;
-import gregapi.data.MD;
-import gregapi.data.MT;
-import gregapi.data.OD;
-import gregapi.data.OP;
+import gregapi.data.*;
 import gregapi.util.OM;
 import gregapi.util.ST;
 import gregapi.util.UT;
@@ -38,14 +30,15 @@ import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityWolf;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+
+import java.util.List;
+
+import static gregapi.data.CS.*;
 
 public class Override_Drops {
 	public static void handleDrops(EntityLivingBase aDead, String aClass, List<EntityItem> aDrops, int aLooting, boolean aBurn, boolean aPlayerKill) {
@@ -54,6 +47,7 @@ public class Override_Drops {
 		boolean tReplaceIron = aClass.startsWith("entitygaia");
 		
 		int tRandomNumber = RNGSUS.nextInt(Math.max(36, 144-aLooting*3)), tIntestinesAmount = 0;
+		
 		
 		if (aDead instanceof EntityAnimal && aDead.isChild()) {
 			tReplaceIron = T;
@@ -441,19 +435,75 @@ public class Override_Drops {
 			
 			}
 		} else if (aClass.equalsIgnoreCase("EntityHoglin")) {
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Tusk_Hoglin.get(1)));
+			}
 			tReplaceIron = T;
 		} else if (aClass.equalsIgnoreCase("EntityZoglin")) {
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(200) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Tusk_Hoglin.get(1)));
+			}
 			tReplaceIron = T;
 		} else if (aClass.equalsIgnoreCase("EntityStrider")) {
 			tReplaceIron = T;
+		} else if (aClass.equalsIgnoreCase("EntityTFIceCrystal")) {
+			tReplaceIron = T;
+			int tAmount = RNGSUS.nextInt(2);
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting+1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, OP.stick.mat(MT.Blizz, 1)));
+		} else if (aClass.equalsIgnoreCase("EntityTFIceShooter") || aClass.equalsIgnoreCase("EntityTFIceExploder")) {
+			tReplaceIron = T;
+			int tAmount = RNGSUS.nextInt(3);
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting+1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, OP.stick.mat(MT.Blizz, 1)));
+		} else if (aClass.equalsIgnoreCase("EntityTFTowerGolem")) {
+			for (EntityItem tEntity : aDrops) {
+				ItemStack tStack = tEntity.getEntityItem();
+				if (OM.is("ingotAnyIronOrSteel", tStack)) ST.set(tStack, OP.ingot.mat(MT.IronWood, 1), F, F);
+			}
 		} else if (aClass.equalsIgnoreCase("EntityTFWraith")) {
 			tReplaceIron = T;
-			if (RNGSUS.nextInt(10) == 0) aDrops.add(ST.entity(aDead, OP.dust.mat(MT.Ectoplasm, 1)));
+			int tAmount = RNGSUS.nextInt(3);
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting+1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, OP.dust.mat(MT.Ectoplasm, 1)));
+		} else if (aClass.equalsIgnoreCase("EntityTFMinoshroom")) {
+			tReplaceIron = F;
+			for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Cow.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Horn_Cow.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntityTFMinotaur")) {
+			tReplaceIron = T;
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Cow.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Horn_Cow.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntityTFBoar")) {
+			tReplaceIron = T;
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Tusk_Boar.get(1)));
+			}
 		} else if (aClass.equalsIgnoreCase("MoCEntityBoar")) {
 			tReplaceIron = T;
 			int tAmount = 1+RNGSUS.nextInt(3);
 			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
 			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?Items.cooked_porkchop:Items.porkchop, 1, 0));
+			
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Tusk_Boar.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntityTFDeer")) {
+			tReplaceIron = T;
+			for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Deer.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Antler_Deer.get(1)));
+			}
 		} else if (aClass.equalsIgnoreCase("MoCEntityDeer")) {
 			tReplaceIron = T;
 			ItemStack tRaw    = IL.TF_Venison_Raw   .get(1, ST.make(MD.HaC, "venisonrawItem"   , 1, 0));
@@ -462,6 +512,12 @@ public class Override_Drops {
 				int tAmount = 1+RNGSUS.nextInt(3);
 				if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
 				while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?tCooked:tRaw));
+			}
+			for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Deer.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Antler_Deer.get(1)));
 			}
 		} else if (aClass.equalsIgnoreCase("MoCEntityOstrich")) {
 			tReplaceIron = T;
@@ -473,14 +529,68 @@ public class Override_Drops {
 			int tAmount = 2+RNGSUS.nextInt(3);
 			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
 			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Horse_Cooked.get(1):IL.Food_Horse_Raw.get(1)));
+			for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Horse.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntitySquirrel") || aClass.equalsIgnoreCase("EntityTFSquirrel")) {
+			tReplaceIron = T;
+			int tAmount = 1+RNGSUS.nextInt(3);
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, RNGSUS.nextBoolean()?IL.Food_Hazelnut.get(1):IL.Food_Peanut.get(1)));
 		} else if (aClass.equalsIgnoreCase("EntityTFQuestRam")) {
 			tReplaceIron = T;
 			int tAmount = 24+RNGSUS.nextInt(8);
 			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting*8+1);
 			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mutton_Cooked.get(1):IL.Food_Mutton_Raw.get(1)));
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Horn_Sheep.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntityTFBighorn")) {
+			tReplaceIron = T;
+			if (!MD.EtFu.mLoaded && !MD.GaSu.mLoaded) {
+			int tAmount = RNGSUS.nextInt(3);
+			if (MD.HaC.mLoaded) tAmount--;
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mutton_Cooked.get(1):IL.Food_Mutton_Raw.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Horn_Sheep.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntitySheepuff")) {
+			tReplaceIron = T;
+			int tAmount = RNGSUS.nextInt(3);
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mutton_Cooked.get(1):IL.Food_Mutton_Raw.get(1)));
+		} else if (aClass.equalsIgnoreCase("EntityTFBunny") || aClass.equalsIgnoreCase("EntityAerbunny")) {
+			tReplaceIron = T;
+			for(int i = 0, j = RNGSUS.nextInt(2) + RNGSUS.nextInt(1 + aLooting); i < j; ++i) {
+				aDrops.add(ST.entity(aDead, MD.EtFu, "rabbit_hide", 1, 0));
+			}
+			for(int i = 0, j = RNGSUS.nextInt(2); i < j; ++i) {
+				if (MD.EtFu.mLoaded) {
+					aDrops.add(ST.entity(aDead, MD.EtFu, aBurn ? "rabbit_cooked" : "rabbit_raw", 1, 0));
+				} else {
+					aDrops.add(ST.entity(aDead, MD.HaC, aBurn ? "rabbitcookedItem" : "rabbitrawItem", 1, 0));
+				}
+			}
+			if (RNGSUS.nextInt(100) <= 10 + aLooting) {
+				aDrops.add(ST.entity(aDead, MD.EtFu, "rabbit_foot", 1, 0));
+			}
+			if (RNGSUS.nextInt(100) <= 10 + aLooting) {
+				aDrops.add(ST.entity(aDead, IL.Food_Carrot.get(1)));
+			}
+		} else if (aClass.equalsIgnoreCase("EntityRabbit")) {
+			if (RNGSUS.nextInt(100) <= 10 + aLooting) {
+				aDrops.add(ST.entity(aDead, IL.Food_Carrot.get(1)));
+			}
 		} else if (aClass.equalsIgnoreCase("EntityWarg") || aClass.equalsIgnoreCase("EntityHellhound") || aClass.equalsIgnoreCase("MoCEntityWWolf") || aClass.equalsIgnoreCase("EntityTFMistWolf") || aClass.equalsIgnoreCase("EntityTFWinterWolf")) {
 			tReplaceIron = T;
 			int tAmount = 1+RNGSUS.nextInt(4);
+			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
+			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_DogMeat_Cooked.get(1):IL.Food_DogMeat_Raw.get(1)));
+		} else if (aDead instanceof EntityWolf) {
+			tReplaceIron = T;
+			int tAmount = RNGSUS.nextInt(3);
 			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
 			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_DogMeat_Cooked.get(1):IL.Food_DogMeat_Raw.get(1)));
 		} else if (aDead instanceof EntityHorse) {
@@ -490,24 +600,12 @@ public class Override_Drops {
 			if (RNGSUS.nextInt(Math.max(1, 10-(int)(((EntityHorse)aDead).getHorseJumpStrength()*10.0))) == 0) tAmount += 1+RNGSUS.nextInt(aLooting + 1)/2;
 			if (RNGSUS.nextInt(Math.max(1, 30-(int)(((EntityHorse)aDead).getMaxHealth()))) == 0) tAmount += 1+RNGSUS.nextInt(aLooting + 1)/2;
 			switch(((EntityHorse)aDead).getHorseType()) {
-			case 0: while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Horse_Cooked.get(1):IL.Food_Horse_Raw.get(1))); break;
-			case 1: while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Donkey_Cooked.get(1):IL.Food_Donkey_Raw.get(1))); break;
-			case 2: while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mule_Cooked.get(1):IL.Food_Mule_Raw.get(1))); break;
-			case 3: while (tAmount-->0) aDrops.add(ST.entity(aDead, ST.make(Items.rotten_flesh, 1, 0))); break;
-			case 4: while (tAmount-->0) aDrops.add(ST.entity(aDead, ST.make(Items.bone, 1, 0))); break;
+			default: while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Horse_Cooked .get(1):IL.Food_Horse_Raw .get(1))); for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) aDrops.add(ST.entity(aDead, IL.Hoof_Horse .get(1))); break;
+			case  1: while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Donkey_Cooked.get(1):IL.Food_Donkey_Raw.get(1))); for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) aDrops.add(ST.entity(aDead, IL.Hoof_Donkey.get(1))); break;
+			case  2: while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mule_Cooked  .get(1):IL.Food_Mule_Raw  .get(1))); for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) aDrops.add(ST.entity(aDead, IL.Hoof_Mule  .get(1))); break;
+			case  3: while (tAmount-->0) aDrops.add(ST.entity(aDead, ST.make(Items.rotten_flesh                           , 1, 0))); for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(200) <= 25 + aLooting * 5) aDrops.add(ST.entity(aDead, IL.Hoof_Horse .get(1))); break;
+			case  4: while (tAmount-->0) aDrops.add(ST.entity(aDead, ST.make(Items.bone                                   , 1, 0))); for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(200) <= 25 + aLooting * 5) aDrops.add(ST.entity(aDead, IL.Hoof_Horse .get(1))); break;
 			}
-		} else if (aDead instanceof EntityWolf) {
-			tReplaceIron = T;
-			int tAmount = RNGSUS.nextInt(3);
-			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
-			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_DogMeat_Cooked.get(1):IL.Food_DogMeat_Raw.get(1)));
-		} else if (aClass.equalsIgnoreCase("EntityAerbunny")) {
-			tReplaceIron = T;
-		} else if (aClass.equalsIgnoreCase("EntitySheepuff")) {
-			tReplaceIron = T;
-			int tAmount = RNGSUS.nextInt(3);
-			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
-			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mutton_Cooked.get(1):IL.Food_Mutton_Raw.get(1)));
 		} else if (aDead instanceof EntitySheep) {
 			tReplaceIron = T;
 			if (!MD.EtFu.mLoaded && !MD.GaSu.mLoaded) {
@@ -516,9 +614,31 @@ public class Override_Drops {
 			if (aLooting > 0) tAmount += RNGSUS.nextInt(aLooting + 1);
 			while (tAmount-->0) aDrops.add(ST.entity(aDead, aBurn?IL.Food_Mutton_Cooked.get(1):IL.Food_Mutton_Raw.get(1)));
 			}
+		} else if (aDead instanceof EntityMooshroom) {
+			tReplaceIron = T;
+			for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Cow.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Horn_Cow.get(1)));
+			}
+		} else if (aDead instanceof EntityCow) {
+			tReplaceIron = T;
+			for (int i = 0; i < 4; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Hoof_Cow.get(1)));
+			}
+			for (int i = 0; i < 2; i++) if (RNGSUS.nextInt(100) <= 25 + aLooting * 5) {
+				aDrops.add(ST.entity(aDead, IL.Horn_Cow.get(1)));
+			}
+		} else if (aDead instanceof EntityPig) {
+			tReplaceIron = T;
+		} else if (aDead instanceof EntityChicken) {
+			tReplaceIron = T;
 		}
 		
-		for (EntityItem tEntity : aDrops) {ItemStack tStack = tEntity.getEntityItem(); if (ST.valid(tStack)) {
+		while (aDrops.remove(null));
+		
+		for (EntityItem tEntity : aDrops) if (tEntity != null) {ItemStack tStack = tEntity.getEntityItem(); if (ST.valid(tStack)) {
 			// Replace some of the Arrows with Headless Arrows.
 			if (MOBS_DROP_JUNK && ST.item_(tStack) == Items.arrow && RNGSUS.nextInt(aLooting * 2 + 4) < 3) {
 				ST.set(tStack, OP.arrowGtWood.mat(MT.Empty, 1), F, F);
@@ -541,6 +661,9 @@ public class Override_Drops {
 			// Give Meat more variety! :D
 			if (MOBS_DROP_MEAT && !OD.listAllmeatsubstitute.is(tStack)) {
 				if (RNGSUS.nextInt(3) == 0 && (OM.is("listAllmeatraw", tStack) || OM.is("listAllmeatcooked", tStack))) tIntestinesAmount++;
+				if (ST.item_(tStack) == Items.fish) {
+					if (aBurn) ST.set(tStack, RM.get_smelting(tStack), F, F); break;
+				}
 				if (ST.item_(tStack) == Items.porkchop) {
 					switch(tRandomNumber%3) {
 					case 0: ST.set(tStack, (aBurn?IL.Food_Ham_Cooked:IL.Food_Ham_Raw).get(1), F, F); break;
@@ -550,7 +673,7 @@ public class Override_Drops {
 				if (ST.item_(tStack) == Items.cooked_porkchop) {
 					switch(tRandomNumber%3) {
 					case 0: ST.set(tStack, IL.Food_Ham_Cooked.get(1), F, F); break;
-					case 1: ST.set(tStack, IL.Food_Bacon_Cooked.get(UT.Code.bindStack(tStack.stackSize * (3+RNGSUS.nextInt(3)))), T, F); break;
+					case 1: ST.set(tStack, IL.Food_Bacon_Cooked.get(UT.Code.bindStack(tStack.stackSize * (3L+RNGSUS.nextInt(3)))), T, F); break;
 					}
 				} else
 				if (OM.is("listAllbeefraw", tStack)) {

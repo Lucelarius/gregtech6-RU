@@ -81,7 +81,7 @@ public class MultiTileEntityFaucet extends TileEntityBase10Attachment implements
 	@Override
 	public void onTick2(long aTimer, boolean aIsServerSide) {
 		if (aIsServerSide) {
-			if (mAutoPull ? SERVER_TIME % 50 == 5 : (mBlockUpdated && hasRedstoneIncoming())) {
+			if (mAutoPull ? SERVER_TIME % 20 == 5 : (mBlockUpdated && hasRedstoneIncoming())) {
 				DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(mFacing);
 				if (tDelegator.mTileEntity instanceof ITileEntityCrucible) {
 					((ITileEntityCrucible)tDelegator.mTileEntity).fillMoldAtSide(this, tDelegator.mSideOfTileEntity, mFacing);
@@ -139,7 +139,9 @@ public class MultiTileEntityFaucet extends TileEntityBase10Attachment implements
 	public boolean onBlockActivated3(EntityPlayer aPlayer, byte aSide, float aHitX, float aHitY, float aHitZ) {
 		if (isServerSide()) {
 			DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(mFacing);
-			if (tDelegator.mTileEntity instanceof ITileEntityCrucible) ((ITileEntityCrucible)tDelegator.mTileEntity).fillMoldAtSide(this, tDelegator.mSideOfTileEntity, mFacing);
+			if (tDelegator.mTileEntity instanceof ITileEntityCrucible) {
+				((ITileEntityCrucible)tDelegator.mTileEntity).fillMoldAtSide(this, tDelegator.mSideOfTileEntity, mFacing);
+			}
 		}
 		return T;
 	}

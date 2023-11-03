@@ -41,11 +41,12 @@ public class GT_Tool_Pickaxe extends ToolStats {
 	@Override public int getToolDamagePerBlockBreak()                                       {return  25;}
 	@Override public int getToolDamagePerEntityAttack()                                     {return 200;}
 	@Override public float getBaseDamage()                                                  {return 1.5F;}
+	@Override public boolean canPenetrate()                                                 {return T;}
 	@Override public boolean isMiningTool()                                                 {return T;}
 	
 	@Override
 	public boolean isMinableBlock(Block aBlock, byte aMetaData) {
-		return TOOL_pickaxe.equalsIgnoreCase(aBlock.getHarvestTool(aMetaData)) || aBlock instanceof BlockSilverfish || aBlock.getMaterial() == Material.rock || aBlock.getMaterial() == Material.iron || aBlock.getMaterial() == Material.anvil || aBlock.getMaterial() == Material.glass || aBlock == Blocks.flower_pot;
+		return TOOL_pickaxe.equalsIgnoreCase(aBlock.getHarvestTool(aMetaData)) || aBlock instanceof BlockSilverfish || aBlock.getMaterial() == Material.rock || aBlock.getMaterial() == Material.iron || aBlock.getMaterial() == Material.anvil || aBlock.getMaterial() == Material.glass || aBlock.getMaterial() == Material.packedIce || aBlock.getMaterial() == Material.ice || aBlock == Blocks.flower_pot;
 	}
 	
 	@Override

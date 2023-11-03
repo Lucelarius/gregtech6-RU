@@ -20,7 +20,6 @@
 package gregtech.loaders.c;
 
 import gregapi.block.metatype.BlockStones;
-import gregapi.code.ItemStackContainer;
 import gregapi.config.ConfigCategories;
 import gregapi.data.*;
 import gregapi.oredict.OreDictMaterial;
@@ -42,10 +41,10 @@ import static gregapi.data.OP.*;
 public class Loader_Recipes_OreDict extends OreDictListenerEvent_Names {
 	@Override
 	public void addAllListeners() {
-		addListener(OP.dust.dat(MT.Glass), OP.dust.dat(MT.Sand), OP.dust.dat(MT.RedSand), OP.dust.dat(MT.EndSand), new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
+		addListener(new Object[] {OP.dust.dat(MT.Glass), OP.dust.dat(MT.Sand), OP.dust.dat(MT.RedSand), OP.dust.dat(MT.EndSandWhite), OP.dust.dat(MT.EndSandBlack)}, new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
 			RM.add_smelting(aEvent.mStack, ST.make(Blocks.glass_pane, 1, 0), F, F, F);
 		}});
-		addListener(OP.blockDust.dat(MT.Glass), OP.blockDust.dat(MT.Sand), OP.blockDust.dat(MT.RedSand), OP.blockDust.dat(MT.EndSand), new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
+		addListener(new Object[] {OP.blockDust.dat(MT.Glass), OP.blockDust.dat(MT.Sand), OP.blockDust.dat(MT.RedSand), OP.blockDust.dat(MT.EndSandWhite), OP.blockDust.dat(MT.EndSandBlack)}, new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
 			RM.add_smelting(aEvent.mStack, ST.make(Blocks.glass, 1, 0), F, F, F);
 		}});
 		addListener(OP.dust.dat(MT.Stone), new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
@@ -82,6 +81,7 @@ public class Loader_Recipes_OreDict extends OreDictListenerEvent_Names {
 			RM.Hammer       .addRecipe1(T, 16,   64,                           aEvent.mStack, IL.RC_Crushed_Obsidian.get(1, IL.HBM_Crushed_Obsidian.get(1, OP.dust.mat(MT.Obsidian, 8))));
 			RM.Crusher      .addRecipe1(T, 16,  600, new long[] {10000, 2500}, aEvent.mStack, IL.RC_Crushed_Obsidian.get(1, IL.HBM_Crushed_Obsidian.get(1, OP.dust.mat(MT.Obsidian, 8))), OP.dust.mat(MT.Obsidian, 1));
 			RM.pulverizing(                                                    aEvent.mStack, IL.RC_Crushed_Obsidian.get(1, IL.HBM_Crushed_Obsidian.get(1, OP.dust.mat(MT.Obsidian, 8))), OP.dust.mat(MT.Obsidian, 1), 25, T);
+			if (IL.TF_Pick_Giant.exists()) RM.Boxinator.addRecipe2(T,128,128, ST.amount(64, aEvent.mStack), IL.TF_Pick_Giant.getWildcard(0), IL.TF_Giant_Obsidian.get(1));
 		}});
 		addListener("stoneNetherBrick", new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
 			RM.Hammer       .addRecipe1(T, 16,   16, aEvent.mStack, ST.make(Items.netherbrick, 3, 0));
@@ -115,7 +115,7 @@ public class Loader_Recipes_OreDict extends OreDictListenerEvent_Names {
 			
 			RM.Laminator    .addRecipe2(T, 16,   16,              aEvent.mStack , ST.make(Blocks.piston, 1, W), ST.make(Blocks.sticky_piston, 1, 0));
 			
-			if (MD.TiC.owns(aEvent.mStack) || OD.slimeballSwet.is_(aEvent.mStack) || OD.slimeballPink.is_(aEvent.mStack) || OD.slimeballRice.is_(aEvent.mStack) || OD.slimeballBorax.is_(aEvent.mStack)) return;
+			if (MD.TiC.owns(aEvent.mStack) || OD.slimeballSwet.is_(aEvent.mStack) || OD.slimeballPink.is_(aEvent.mStack) || OD.slimeballRice.is_(aEvent.mStack) || OD.slimeballBorax.is_(aEvent.mStack) || OD.slimeballAnimal.is_(aEvent.mStack)) return;
 			
 			for (FluidStack tWater : FL.waters(250, 200))
 			RM.Mixer        .addRecipe1(T, 16,   16,              aEvent.mStack , tWater, FL.Glue.make(250), ZL_IS);
@@ -151,13 +151,18 @@ public class Loader_Recipes_OreDict extends OreDictListenerEvent_Names {
 			RM.Drying       .addRecipe1(T, 16,  128,              aEvent.mStack , NF, FL.DistW.make(50), ST.make(MD.SC2, "ItemSlimeRubber", 1, 0));
 			RM.generify(aEvent.mStack, ST.make(Items.slime_ball, 1, 0));
 		}});
+		addListener(OD.slimeballAnimal, new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
+			for (FluidStack tWater : FL.waters(250, 200))
+			RM.Mixer        .addRecipe1(T, 16,   16,              aEvent.mStack , tWater, FL.Glue.make(250), ZL_IS);
+			RM.Centrifuge   .addRecipe1(T, 16,   64,              aEvent.mStack , NF, FL.Glue.make(250), ZL_IS);
+		}});
 		addListener("foodJellyfishraw", new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
 			RM.Squeezer     .addRecipe1(T, 16,   16,  9000, aEvent.mStack, NF, NF, ST.make(Items.slime_ball, 1, 0));
 			RM.Juicer       .addRecipe1(T, 16,   16,  7000, aEvent.mStack, NF, NF, ST.make(Items.slime_ball, 1, 0));
 			RM.Centrifuge   .addRecipe1(T, 16,   16       , aEvent.mStack, NF, FL.Glue.make(500), ZL_IS);
 		}});
 		addListener(OD.record, new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
-			if (!BooksGT.BOOK_REGISTER.containsKey(aEvent.mStack, T)) BooksGT.BOOK_REGISTER.put(new ItemStackContainer(aEvent.mStack), (byte)30);
+			if (!BooksGT.BOOK_REGISTER.containsKey(aEvent.mStack, T)) BooksGT.BOOK_REGISTER.put(aEvent.mStack, (byte)30);
 		}});
 		addListener(OP.treeSapling, new IOreDictListenerEvent() {@Override public void onOreRegistration(OreDictRegistrationContainer aEvent) {
 			RM.sawing(16, 16, F, 1, aEvent.mStack, OP.stick.mat(MT.Wood, 1));

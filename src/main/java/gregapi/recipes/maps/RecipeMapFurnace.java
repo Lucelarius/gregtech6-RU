@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020 GregTech-6 Team
+ * Copyright (c) 2023 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,17 +19,8 @@
 
 package gregapi.recipes.maps;
 
-import static gregapi.data.CS.*;
-
-import java.util.Collection;
-
 import gregapi.block.metatype.BlockStones;
-import gregapi.data.FL;
-import gregapi.data.IL;
-import gregapi.data.MD;
-import gregapi.data.OD;
-import gregapi.data.RM;
-import gregapi.data.TD;
+import gregapi.data.*;
 import gregapi.oredict.OreDictItemData;
 import gregapi.random.IHasWorldAndCoords;
 import gregapi.recipes.Recipe;
@@ -43,6 +34,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidStack;
 
+import java.util.Collection;
+
+import static gregapi.data.CS.*;
+
 /**
  * @author Gregorius Techneticies
  */
@@ -55,7 +50,7 @@ public class RecipeMapFurnace extends RecipeMapNonGTRecipes {
 	public Recipe findRecipe(IHasWorldAndCoords aTileEntity, Recipe aRecipe, boolean aNotUnificated, long aSize, ItemStack aSpecialSlot, FluidStack[] aFluids, ItemStack... aInputs) {
 		if (aInputs == null || aInputs.length <= 0 || aInputs[0] == null) return null;
 		if (aRecipe != null && aRecipe.isRecipeInputEqual(F, T, aFluids, aInputs)) return aRecipe;
-		ItemStack tOutput = RM.get_smelting(aInputs[0], F, null);
+		ItemStack tOutput = RM.get_smelting(aInputs[0]);
 		if (tOutput == null) return null;
 		if (FL.XP.exists()) {
 			OreDictItemData tData = OM.anydata_(aInputs[0]);
@@ -93,10 +88,10 @@ public class RecipeMapFurnace extends RecipeMapNonGTRecipes {
 						tFluid = FL.XP.make(tOutput.stackSize);
 					} else {
 						// Now for OreDictItemData of the Input Item
-						if (tData != null && tData.hasValidPrefixMaterialData()) {
+						if (tData != null && tData.validData()) {
 							if (tData.mPrefix.containsAny(TD.Prefix.ORE, TD.Prefix.ORE_PROCESSING_BASED)) {
 								tData = OM.anydata_(tOutput);
-								if (tData != null && tData.hasValidPrefixMaterialData()) {
+								if (tData != null && tData.validData()) {
 									// Give XP based on Tool Quality of the Output.
 									long tXP = tOutput.stackSize * (3+tData.mMaterial.mMaterial.mToolQuality);
 									// Valuable Tag is for Gold and certain Gems and happens to double the XP you can get from this.
@@ -121,7 +116,7 @@ public class RecipeMapFurnace extends RecipeMapNonGTRecipes {
 							// Those RotaryCraft Extracts are all about Ore Processing.
 							if (MD.RoC.owns(aInputs[0], "extracts")) {
 								tData = OM.anydata_(tOutput);
-								if (tData != null && tData.hasValidPrefixMaterialData()) {
+								if (tData != null && tData.validData()) {
 									// Give XP based on Tool Quality of the Output.
 									long tXP = tOutput.stackSize * (3+tData.mMaterial.mMaterial.mToolQuality);
 									// Valuable Tag is for Gold and certain Gems and happens to double the XP you can get from this.
@@ -156,5 +151,5 @@ public class RecipeMapFurnace extends RecipeMapNonGTRecipes {
 		return new Recipe(F, F, T, ST.array(ST.amount(1, aInputs[0])), ST.array(tOutput), null, null, ZL_FS, ZL_FS, 16, 16, 0);
 	}
 	
-	@Override public boolean containsInput(ItemStack aStack, IHasWorldAndCoords aTileEntity, ItemStack aSpecialSlot) {return ST.valid(RM.get_smelting(aStack, F, null));}
+	@Override public boolean containsInput(ItemStack aStack, IHasWorldAndCoords aTileEntity, ItemStack aSpecialSlot) {return ST.valid(RM.get_smelting(aStack));}
 }
