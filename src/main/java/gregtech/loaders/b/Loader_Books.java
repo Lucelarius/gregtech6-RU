@@ -498,34 +498,34 @@ public class Loader_Books implements Runnable {
 		tBook.add("Step 5: Shaping"     +"¶===================¶Now just click the Side of the top of the Mold where the Crucible is next to, in order to fill it with its Metals. Warning: The Mold itself can melt too if it is made of the wrong Material.");
 		tBook.add("Step 5: Shaping"     +"¶===================¶Wait for the Metal to cool down, but note that you should not touch or take out the Metal while it is hot or else you will burn yourself unless you wear a Hazmat Suit or something.");
 		tBook.add("Mold Shapes"         +"¶===================¶The following is a List of Shapes you can chisel the Mold into. The position of the Shape on the Mold is NOT important, you can rotate and mirror it too¶X = Chiseled¶O = Not Chiseled");
-		tBook.add("Ingot"               +"¶===================¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶===================¶1.000 Units required");
-		tBook.add("Chunk"               +"¶===================¶XXOOO¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶0.250 Units required");
-		tBook.add("Plate"               +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶===================¶1.000 Units required");
-		tBook.add("Tiny Plate"          +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶0.111 Units required");
-		tBook.add("Bolt"                +"¶===================¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶0.125 Units required");
-		tBook.add("Rod"                 +"¶===================¶OOOOO¶OOOOO¶XXXXX¶OOOOO¶OOOOO¶===================¶0.500 Units required");
-		tBook.add("Long Rod"            +"¶===================¶XOOOO¶OXOOO¶OOXOO¶OOOXO¶OOOOX¶===================¶1.000 Units required");
-		tBook.add("Item Casing"         +"¶===================¶XXXOX¶XXXOX¶XXXOX¶OOOOX¶XXXOO¶===================¶0.500 Units required");
-		tBook.add("Ring"                +"¶===================¶OOOOO¶OXXXO¶OXOXO¶OXXXO¶OOOOO¶===================¶0.250 Units required");
-		tBook.add("Gear"                +"¶===================¶XOXOX¶OXXXO¶XXOXX¶OXXXO¶XOXOX¶===================¶4.000 Units required");
-		tBook.add("Small Gear"          +"¶===================¶OXOXO¶XXXXX¶OXOXO¶XXXXX¶OXOXO¶===================¶1.000 Units required");
-		tBook.add("Sword"               +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OXXXO¶===================¶2.000 Units required");
-		tBook.add("Pickaxe"             +"¶===================¶OOOOO¶OXXXO¶XOOOX¶OOOOO¶OOOOO¶===================¶3.000 Units required");
-		tBook.add("Spade"               +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OXOXO¶OOOOO¶===================¶1.000 Units required");
-		tBook.add("Shovel"              +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶1.000 Units required");
-		tBook.add("Universal Spade"     +"¶===================¶OOXOO¶OXXXO¶OXXOO¶OXXXO¶OOOOO¶===================¶1.000 Units required");
-		tBook.add("Axe"                 +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXOOO¶OOOOO¶===================¶3.000 Units required");
-		tBook.add("Double Axe"          +"¶===================¶OOOOO¶XXXXX¶XXXXX¶XOOOX¶OOOOO¶===================¶5.000 Units required");
-		tBook.add("Saw"                 +"¶===================¶OOOOO¶XXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶2.000 Units required");
-		tBook.add("Hammer"              +"¶===================¶XXXOO¶XXXOO¶XOXOO¶XXXOO¶XXXOO¶===================¶6.000 Units required");
-		tBook.add("File"                +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OOXOO¶OOXOO¶===================¶1.500 Units required");
-		tBook.add("Screwdriver"         +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶1.000 Units required");
-		tBook.add("Chisel"              +"¶===================¶OXXXO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶1.500 Units required");
-		tBook.add("Arrow"               +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OXXXO¶OOOOO¶===================¶0.125 Units required");
-		tBook.add("Hoe"                 +"¶===================¶OOOOO¶OOXXO¶OXXXO¶OOOOO¶OOOOO¶===================¶2.000 Units required");
-		tBook.add("Sense/Scythe"        +"¶===================¶OOOOO¶OXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶3.000 Units required");
-		tBook.add("Plow"                +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶OOXOO¶===================¶4.000 Units required");
-		tBook.add("Builder's Wand"      +"¶===================¶OOXOO¶XXXXX¶OXXXO¶OXOXO¶OOOOO¶===================¶1.000 Units required");
+		tBook.add("Слиток"              +"¶===================¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Кусок"               +"¶===================¶XXOOO¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.250");
+		tBook.add("Пластина"            +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶===================¶Требуется материала: 1.000");
+		tBook.add("Малая пластина"      +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.111");
+		tBook.add("Болт"                +"¶===================¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.125");
+		tBook.add("Стержень"            +"¶===================¶OOOOO¶OOOOO¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.500");
+		tBook.add("Длинный стержень"    +"¶===================¶XOOOO¶OXOOO¶OOXOO¶OOOXO¶OOOOX¶===================¶Требуется материала: 1.000");
+		tBook.add("Оболочка"            +"¶===================¶XXXOX¶XXXOX¶XXXOX¶OOOOX¶XXXOO¶===================¶Требуется материала: 0.500");
+		tBook.add("Кольцо"              +"¶===================¶OOOOO¶OXXXO¶OXOXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.250");
+		tBook.add("Шестерня"            +"¶===================¶XOXOX¶OXXXO¶XXOXX¶OXXXO¶XOXOX¶===================¶Требуется материала: 4.000");
+		tBook.add("Малая шестерня"      +"¶===================¶OXOXO¶XXXXX¶OXOXO¶XXXXX¶OXOXO¶===================¶Требуется материала: 1.000");
+		tBook.add("Мечь"                +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OXXXO¶===================¶Требуется материала: 2.000");
+		tBook.add("Кирка"               +"¶===================¶OOOOO¶OXXXO¶XOOOX¶OOOOO¶OOOOO¶===================¶Требуется материала: 3.000");
+		tBook.add("Совковая лопата"     +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OXOXO¶OOOOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Лопата"              +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Универсальная лопата"+"¶===================¶OOXOO¶OXXXO¶OXXOO¶OXXXO¶OOOOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Топор"               +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXOOO¶OOOOO¶===================¶Требуется материала: 3.000");
+		tBook.add("Секира"              +"¶===================¶OOOOO¶XXXXX¶XXXXX¶XOOOX¶OOOOO¶===================¶Требуется материала: 5.000");
+		tBook.add("Пила"                +"¶===================¶OOOOO¶XXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 2.000");
+		tBook.add("Молот"               +"¶===================¶XXXOO¶XXXOO¶XOXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 6.000");
+		tBook.add("Напильник"           +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.500");
+		tBook.add("Отвертка"            +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Долото"              +"¶===================¶OXXXO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.500");
+		tBook.add("Наконечник стрелы"   +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.125");
+		tBook.add("Мотыга"              +"¶===================¶OOOOO¶OOXXO¶OXXXO¶OOOOO¶OOOOO¶===================¶Требуется материала: 2.000");
+		tBook.add("Коса"                +"¶===================¶OOOOO¶OXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 3.000");
+		tBook.add("Снегоуборочная лопата"+"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶OOXOO¶===================¶Требуется материала: 4.000");
+		tBook.add("Наконечник строительного жезла"+"¶===================¶OOXOO¶XXXXX¶OXXXO¶OXOXO¶OOOOO¶===================¶Требуется материала: 1.000");
 		
 		UT.Books.createWrittenBook("Manual_Smeltery", "Smelting Crucible Manual", "GMWI (Gregorius Metal Working Industries)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
 		
@@ -538,7 +538,7 @@ public class Loader_Books implements Runnable {
 		
 		for (OreDictMaterial tMat : OreDictMaterial.ALLOYS) {
 			for (IOreDictConfigurationComponent tComponents : tMat.mAlloyCreationRecipes) {
-				tPage="Alloy:¶"+tMat.getLocal()+"¶===================¶Melting: "+tMat.mMeltingPoint+" K¶Boiling: "+tMat.mBoilingPoint+" K¶===================¶Components per "+tComponents.getCommonDivider() + "¶";
+				tPage="Сплав:¶"+tMat.getLocal()+"¶===================¶Плавление: "+tMat.mMeltingPoint+" K¶Кипение: "+tMat.mBoilingPoint+" K¶===================¶Компоненты для "+tComponents.getCommonDivider() + ":¶";
 				for (OreDictMaterialStack tMaterial : tComponents.getUndividedComponents()) tPage += (tMaterial.mAmount / U)+" "+tMaterial.mMaterial.getLocal()+"¶";
 				tBook.add(tPage);
 			}
@@ -553,8 +553,8 @@ public class Loader_Books implements Runnable {
 		for (OreDictMaterial tMat : OreDictMaterial.MATERIAL_ARRAY) {
 			if (tMat != null && !tMat.mHidden && tMat.contains(TD.Atomic.ELEMENT) && !tMat.contains(TD.Atomic.ANTIMATTER)) {
 				tBook.add(tMat.getLocal()+"¶"+tMat.mProtons+"/"+tMat.mNeutrons+"¶===================¶ID: "+(tMat.mID<0?"NONE":tMat.mID)
-				+"¶Melting: "+tMat.mMeltingPoint+" K¶Boiling: "+tMat.mBoilingPoint+" K¶Plasma: "+tMat.mPlasmaPoint
-				+" K¶===================¶Density:¶"+(tMat.mGramPerCubicCentimeter == 0 ? "???" : tMat.mGramPerCubicCentimeter)+" g/cm3¶"+tMat.getWeight(U)+" kg/unit¶===================¶");
+				+"¶Плавление: "+tMat.mMeltingPoint+" K¶Кипение: "+tMat.mBoilingPoint+" K¶Плазма: "+tMat.mPlasmaPoint
+				+" K¶===================¶Плотность:¶"+(tMat.mGramPerCubicCentimeter == 0 ? "???" : tMat.mGramPerCubicCentimeter)+" g/cm3¶"+tMat.getWeight(U)+" kg/unit¶===================¶");
 			}
 		}
 		

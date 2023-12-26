@@ -36,26 +36,26 @@ public class TD {
 	/** For NEI and Creative Mode Menus */
 	public static class Creative {
 		/** If this Item, Prefix or Material is hidden from Creative (unless Debug Mode is on) */
-		public static final TagData HIDDEN                                  = TagData.createTagData("NEI.HIDDEN", "Hidden");
+		public static final TagData HIDDEN                                  = TagData.createTagData("NEI.HIDDEN", "Скрытый");
 	}
 	
 	/** For the Projectile System. */
 	public static class Projectiles {
-		public static final TagData ARROW                                   = TagData.createTagData("PROJECTILES.ARROW", "Arrow");
-		public static final TagData BULLET_SMALL                            = TagData.createTagData("PROJECTILES.BULLET_SMALL", "Small Bullet");
-		public static final TagData BULLET_MEDIUM                           = TagData.createTagData("PROJECTILES.BULLET_MEDIUM", "Medium Bullet");
-		public static final TagData BULLET_LARGE                            = TagData.createTagData("PROJECTILES.BULLET_LARGE", "Large Bullet");
+		public static final TagData ARROW                                   = TagData.createTagData("PROJECTILES.ARROW", "Стрела");
+		public static final TagData BULLET_SMALL                            = TagData.createTagData("PROJECTILES.BULLET_SMALL", "Малая пуля");
+		public static final TagData BULLET_MEDIUM                           = TagData.createTagData("PROJECTILES.BULLET_MEDIUM", "Средняя пуля");
+		public static final TagData BULLET_LARGE                            = TagData.createTagData("PROJECTILES.BULLET_LARGE", "Большая пуля");
 	}
 	
 	/** For Pipe Networks. Mainly connectivity. */
 	public static class Connectors {
-		public static final TagData PNEUMATIC_ITEM                          = TagData.createTagData("CONNECTORS.PNEUMATIC_ITEM", "Pneumatic Item Pipe");
-		public static final TagData PIPE_FLUID                              = TagData.createTagData("CONNECTORS.PIPE_FLUID", "Fluid Pipe");
-		public static final TagData WIRE_REDSTONE                           = TagData.createTagData("CONNECTORS.WIRE_REDSTONE", "Redstone Wire");
-		public static final TagData WIRE_ELECTRIC                           = TagData.createTagData("CONNECTORS.WIRE_ELECTRIC", "Electric Wire");
-		public static final TagData WIRE_LASER                              = TagData.createTagData("CONNECTORS.WIRE_LASER", "Laser Wire");
-		public static final TagData WIRE_LOGISTICS                          = TagData.createTagData("CONNECTORS.WIRE_LOGISTICS", "Logistics Wire");
-		public static final TagData AXLE_ROTATION                           = TagData.createTagData("CONNECTORS.AXLE_ROTATION", "Rotational Axle");
+		public static final TagData PNEUMATIC_ITEM                          = TagData.createTagData("CONNECTORS.PNEUMATIC_ITEM", "Пневматическая предметная труба");
+		public static final TagData PIPE_FLUID                              = TagData.createTagData("CONNECTORS.PIPE_FLUID", "Жидкостная труба");
+		public static final TagData WIRE_REDSTONE                           = TagData.createTagData("CONNECTORS.WIRE_REDSTONE", "Провод из красного сплава");
+		public static final TagData WIRE_ELECTRIC                           = TagData.createTagData("CONNECTORS.WIRE_ELECTRIC", "Электрический провод");
+		public static final TagData WIRE_LASER                              = TagData.createTagData("CONNECTORS.WIRE_LASER", "Лазерный провод");
+		public static final TagData WIRE_LOGISTICS                          = TagData.createTagData("CONNECTORS.WIRE_LOGISTICS", "Логистический провод");
+		public static final TagData AXLE_ROTATION                           = TagData.createTagData("CONNECTORS.AXLE_ROTATION", "Вращательная ось");
 		
 		/** Contains all known Energy Tags, which are related to Item Transport. */
 		public static final List<TagData> ALL_ITEM_TRANSPORT                = new ArrayListNoNulls<>(F, PNEUMATIC_ITEM);
@@ -68,7 +68,7 @@ public class TD {
 		 * Size = Voltage
 		 * Amount = Amperage
 		 */
-		public static final TagData ELECTRICITY                             = TagData.createTagData("ENERGY.ELECTRICITY", "EU", "Electric Energy", LH.Chat.BLUE), EU = ELECTRICITY;
+		public static final TagData ELECTRICITY                             = TagData.createTagData("ENERGY.ELECTRICITY", "EU", "Электрическая энергия", LH.Chat.BLUE), EU = ELECTRICITY;
 		
 		/**
 		 * Energy Tag for Rotation Power. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -81,7 +81,7 @@ public class TD {
 		 * This is because it is clockwise from the perspective of the Receiver and a Z-Mirroring would invert the direction!
 		 * And all of that will be very confusing to normal people... Yeah I don't like it too, but I had to do it.
 		 */
-		public static final TagData KINETIC_ROTATION                        = TagData.createTagData("ENERGY.KINETIC_ROTATION", "RU", "Rotation Energy", LH.Chat.GREEN), RU = KINETIC_ROTATION;
+		public static final TagData KINETIC_ROTATION                        = TagData.createTagData("ENERGY.KINETIC_ROTATION", "RU", "Вращательная энергия", LH.Chat.GREEN), RU = KINETIC_ROTATION;
 		
 		/**
 		 * Energy Tag for Piston Power. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -89,7 +89,7 @@ public class TD {
 		 * Size = Push (x > 0) or Pull (x < 0)
 		 * Amount = Power
 		 */
-		public static final TagData KINETIC_PUSH                            = TagData.createTagData("ENERGY.KINETIC_PUSH", "KU", "Kinetic Energy", LH.Chat.DGREEN), KU = KINETIC_PUSH;
+		public static final TagData KINETIC_PUSH                            = TagData.createTagData("ENERGY.KINETIC_PUSH", "KU", "Кинетическая энергия", LH.Chat.DGREEN), KU = KINETIC_PUSH;
 		
 		/**
 		 * Energy Tag for Heat. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -97,7 +97,7 @@ public class TD {
 		 * Size = unused (always 1)
 		 * Amount = Temperature
 		 */
-		public static final TagData HEAT                                    = TagData.createTagData("ENERGY.HEAT", "HU", "Heat Energy", LH.Chat.RED), HU = HEAT;
+		public static final TagData HEAT                                    = TagData.createTagData("ENERGY.HEAT", "HU", "Тепловая энергия", LH.Chat.RED), HU = HEAT;
 		
 		/**
 		 * Energy Tag for Cryo Energy. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -105,7 +105,7 @@ public class TD {
 		 * Size = unused (always 1)
 		 * Amount = Temperature
 		 */
-		public static final TagData CRYO                                    = TagData.createTagData("ENERGY.CRYO", "CU", "Cryo Energy", LH.Chat.CYAN), CU = CRYO;
+		public static final TagData CRYO                                    = TagData.createTagData("ENERGY.CRYO", "CU", "Крио энергия", LH.Chat.CYAN), CU = CRYO;
 		
 		/**
 		 * Energy Tag for Lasers and alike. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -113,7 +113,7 @@ public class TD {
 		 * Size = Strength/Size/Diameter/etc. of the Beam.
 		 * Amount = Amount of Energy Transmitted (Frequency).
 		 */
-		public static final TagData LIGHT                                   = TagData.createTagData("ENERGY.LIGHT", "LU", "Light Energy", LH.Chat.YELLOW), LU = LIGHT;
+		public static final TagData LIGHT                                   = TagData.createTagData("ENERGY.LIGHT", "LU", "Световая энергия", LH.Chat.YELLOW), LU = LIGHT;
 		
 		/**
 		 * Energy Tag for Magnets and alike. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -121,7 +121,7 @@ public class TD {
 		 * Size = Strength of the Field. Positive for Electron Charge aka South, Negative for Proton Charge aka North. (Yes, I am again fixing the American stupidness of giving Electrons the negative charge!)
 		 * Amount = unused (always 1)
 		 */
-		public static final TagData MAGNETIC                                = TagData.createTagData("ENERGY.MAGNETIC", "MU", "Magnetic Energy", LH.Chat.DGRAY), MU = MAGNETIC;
+		public static final TagData MAGNETIC                                = TagData.createTagData("ENERGY.MAGNETIC", "MU", "Магнитная энергия", LH.Chat.DGRAY), MU = MAGNETIC;
 		
 		/**
 		 * Energy Tag for Neutron Rays. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -129,7 +129,7 @@ public class TD {
 		 * Size = unused (always 1)
 		 * Amount = Temperature
 		 */
-		public static final TagData NEUTRON                                 = TagData.createTagData("ENERGY.NEUTRON", "NU", "Neutron Energy", LH.Chat.BLACK), NU = NEUTRON;
+		public static final TagData NEUTRON                                 = TagData.createTagData("ENERGY.NEUTRON", "NU", "Нейтронная энергия", LH.Chat.BLACK), NU = NEUTRON;
 		
 		/**
 		 * Energy Tag for Quantum Energy. Units are IndustrialCraft EU (yes EU for easier conversion).
@@ -137,42 +137,42 @@ public class TD {
 		 * Size = Nobody knows
 		 * Amount = Nobody knows
 		 */
-		public static final TagData QUANTUM                                 = TagData.createTagData("ENERGY.QUANTUM", "QU", "Quantum Energy", LH.Chat.PURPLE), QU = QUANTUM;
+		public static final TagData QUANTUM                                 = TagData.createTagData("ENERGY.QUANTUM", "QU", "Квантовая энергия", LH.Chat.PURPLE), QU = QUANTUM;
 		
 		/**
 		 * Energy Tag for Time. Machines which simply run on time use this token. This can for example also be used to make a "Time"-Energy emitting thing that accelerates chemical procedures.
 		 * Size = unused (always 1)
 		 * Amount = Ticks
 		 */
-		public static final TagData TIME                                    = TagData.createTagData("ENERGY.TIME", "TU", "Time", LH.Chat.DBLUE), TU = TIME, TICK = TIME;
+		public static final TagData TIME                                    = TagData.createTagData("ENERGY.TIME", "TU", "Время", LH.Chat.DBLUE), TU = TIME, TICK = TIME;
 		
 		/**
 		 * Energy Tag for RedstoneFlux. Units are ThermalExpansion RastaFarians. 4 RF = 1 EU; 10 RF = 1 MJ;
 		 * Size = unused (always 1)
 		 * Amount = RF
 		 */
-		public static final TagData REDSTONE_FLUX                           = TagData.createTagData("ENERGY.REDSTONE_FLUX", "RF", "Redstone Flux", LH.Chat.DRED), RF = REDSTONE_FLUX;
+		public static final TagData REDSTONE_FLUX                           = TagData.createTagData("ENERGY.REDSTONE_FLUX", "RF", "RF-энергия", LH.Chat.DRED), RF = REDSTONE_FLUX;
 		
 		/**
 		 * Energy Tag for MinecraftJoules. Units are BuildCraft MichaelJacksons. 1 MJ = 2.5 EU = 10 RF;
 		 * Size = The Amount the Engine outputs in one push.
 		 * Amount = MJ
 		 */
-		public static final TagData MINECRAFT_JOULES                        = TagData.createTagData("ENERGY.MINECRAFT_JOULES", "MJ", "Minecraft Joules", LH.Chat.DRED), MJ = MINECRAFT_JOULES;
+		public static final TagData MINECRAFT_JOULES                        = TagData.createTagData("ENERGY.MINECRAFT_JOULES", "MJ", "Майнкрафт Джоули", LH.Chat.DRED), MJ = MINECRAFT_JOULES;
 		
 		/**
 		 * Energy Tag for Steam Power. Units are Litres of Steam. 2 SU = 1 EU
 		 * Size = unused (always 1)
 		 * Amount = Steam per Tick
 		 */
-		public static final TagData STEAM                                   = TagData.createTagData("ENERGY.STEAM", "Steam", "Steam", LH.Chat.GRAY);
+		public static final TagData STEAM                                   = TagData.createTagData("ENERGY.STEAM", "Steam", "Пар", LH.Chat.GRAY);
 		
 		/**
 		 * Energy Tag for Air Pressure Power
 		 * Size = Pressure
 		 * Amount = Amount of Air
 		 */
-		public static final TagData AIR                                     = TagData.createTagData("ENERGY.AIR", "AU", "Air Pressure", LH.Chat.WHITE), AU = AIR;
+		public static final TagData AIR                                     = TagData.createTagData("ENERGY.AIR", "AU", "Давление воздуха", LH.Chat.WHITE), AU = AIR;
 		
 		/** Energy Tag for Ordo Vis. In MilliVis Units. 10 = 1 CentiVis. 1000 = 1 Full Vis. */
 		public static final TagData VIS_ORDO                                = TagData.createTagData("ENERGY.VIS_ORDO", "Ordo", "Ordo Vis", LH.Chat.WHITE);
@@ -224,77 +224,77 @@ public class TD {
 	/** For Prefixes */
 	public static class Prefix {
 		/** If this Prefix is unused */
-		public static final TagData PREFIX_UNUSED                           = TagData.createTagData("PREFIX.PREFIX_UNUSED", "Unused Prefix");
+		public static final TagData PREFIX_UNUSED                           = TagData.createTagData("PREFIX.PREFIX_UNUSED", "Не используемый префикс");
 		/** If this Prefix is a Container */
-		public static final TagData IS_CONTAINER                            = TagData.createTagData("PREFIX.IS_CONTAINER", "Container");
+		public static final TagData IS_CONTAINER                            = TagData.createTagData("PREFIX.IS_CONTAINER", "Контейнер");
 		/** If this Prefix is a Crate */
-		public static final TagData IS_CRATE                                = TagData.createTagData("PREFIX.IS_CRATE", "Crate");
+		public static final TagData IS_CRATE                                = TagData.createTagData("PREFIX.IS_CRATE", "Ящик");
 		/** If this Prefix is Material Based */
-		public static final TagData MATERIAL_BASED                          = TagData.createTagData("PREFIX.MATERIAL_BASED", "Material Based");
+		public static final TagData MATERIAL_BASED                          = TagData.createTagData("PREFIX.MATERIAL_BASED", "Базовый материал");
 		/** If this Prefix is normally used for Blocks */
-		public static final TagData BLOCK_BASED                             = TagData.createTagData("PREFIX.BLOCK_BASED", "Block Based");
+		public static final TagData BLOCK_BASED                             = TagData.createTagData("PREFIX.BLOCK_BASED", "Базовый блок");
 		/** If this Prefix is Storage Based */
-		public static final TagData STORAGE_BASED                           = TagData.createTagData("PREFIX.STORAGE_BASED", "Storage Based");
+		public static final TagData STORAGE_BASED                           = TagData.createTagData("PREFIX.STORAGE_BASED", "Базовое хранилище");
 		/** If this Prefix is normally used for Crop Drops */
-		public static final TagData PLANT_DROP                              = TagData.createTagData("PREFIX.PLANT_DROP", "Plant Drop");
+		public static final TagData PLANT_DROP                              = TagData.createTagData("PREFIX.PLANT_DROP", "Выпадение растений");
 		/** If this Prefix is Unificatable in Inventory */
-		public static final TagData UNIFICATABLE                            = TagData.createTagData("PREFIX.UNIFICATABLE", "Unificatable");
+		public static final TagData UNIFICATABLE                            = TagData.createTagData("PREFIX.UNIFICATABLE", "Унифицируемый");
 		/** If this Prefix has the Material Tooltip */
-		public static final TagData TOOLTIP_MATERIAL                        = TagData.createTagData("PREFIX.TOOLTIP_MATERIAL", "Material Tooltip");
+		public static final TagData TOOLTIP_MATERIAL                        = TagData.createTagData("PREFIX.TOOLTIP_MATERIAL", "Подсказка по материалу");
 		/** If this Prefix has the Enchantment Tooltip */
-		public static final TagData TOOLTIP_ENCHANTS                        = TagData.createTagData("PREFIX.TOOLTIP_ENCHANTS", "Enchantment Tooltip");
+		public static final TagData TOOLTIP_ENCHANTS                        = TagData.createTagData("PREFIX.TOOLTIP_ENCHANTS", "Подсказка по чарам");
 		/** If this Prefix is not Filterable inside the Prefix Filter */
-		public static final TagData NO_PREFIX_FILTERING                     = TagData.createTagData("PREFIX.NO_PREFIX_FILTERING", "Not Prefix Filterable");
+		public static final TagData NO_PREFIX_FILTERING                     = TagData.createTagData("PREFIX.NO_PREFIX_FILTERING", "Нет префикса фильтрации");
 		/** If this Prefix is Gem based */
-		public static final TagData GEM_BASED                               = TagData.createTagData("PREFIX.GEM_BASED", "Gem");
+		public static final TagData GEM_BASED                               = TagData.createTagData("PREFIX.GEM_BASED", "Самоцвет");
 		/** If this Prefix is Dust based and a 100% pure Dust (so not used for Ore Processing or Crates) */
-		public static final TagData DUST_BASED                              = TagData.createTagData("PREFIX.DUST_BASED", "Dust");
+		public static final TagData DUST_BASED                              = TagData.createTagData("PREFIX.DUST_BASED", "Пыль");
 		/** If this Prefix is Ingot based and a simple Ingot thing (so not used for Multi-Ingots or Crates) */
-		public static final TagData INGOT_BASED                             = TagData.createTagData("PREFIX.INGOT_BASED", "Ingot");
+		public static final TagData INGOT_BASED                             = TagData.createTagData("PREFIX.INGOT_BASED", "Слиток");
 		/** If this Prefix is Wire based and a simple Wire thing (so not used for Cables) */
-		public static final TagData WIRE_BASED                              = TagData.createTagData("PREFIX.WIRE_BASED", "Wire");
+		public static final TagData WIRE_BASED                              = TagData.createTagData("PREFIX.WIRE_BASED", "Провод");
 		/** If this Prefix is only Unificatable in Recipes */
-		public static final TagData UNIFICATABLE_RECIPES                    = TagData.createTagData("PREFIX.UNIFICATABLE_RECIPES", "Recipe Unificatable");
+		public static final TagData UNIFICATABLE_RECIPES                    = TagData.createTagData("PREFIX.UNIFICATABLE_RECIPES", "Рецепты унификации");
 		/** If this Prefix can be used in an Extruder. */
-		public static final TagData EXTRUDER_FODDER                         = TagData.createTagData("PREFIX.EXTRUDER_FODDER", "Extruder Fodder");
+		public static final TagData EXTRUDER_FODDER                         = TagData.createTagData("PREFIX.EXTRUDER_FODDER", "Сырье для экструдера");
 		/** If this Prefix is for Ores */
-		public static final TagData ORE                                     = TagData.createTagData("PREFIX.ORE", "Ore");
+		public static final TagData ORE                                     = TagData.createTagData("PREFIX.ORE", "Руда");
 		/** If this Prefix is for Ores */
-		public static final TagData STANDARD_ORE                            = TagData.createTagData("PREFIX.STANDARD_ORE", "Standard Ore");
+		public static final TagData STANDARD_ORE                            = TagData.createTagData("PREFIX.STANDARD_ORE", "Стандартная руда");
 		/** If this Prefix is for Dust alike Ores */
-		public static final TagData DUST_ORE                                = TagData.createTagData("PREFIX.DUST_ORE", "Dust Ore");
+		public static final TagData DUST_ORE                                = TagData.createTagData("PREFIX.DUST_ORE", "Пыль руды");
 		/** If this Prefix is for Dense Ores */
-		public static final TagData DENSE_ORE                               = TagData.createTagData("PREFIX.DENSE_ORE", "Dense Ore");
+		public static final TagData DENSE_ORE                               = TagData.createTagData("PREFIX.DENSE_ORE", "Плотная руда");
 		/** If this Prefix is used for Ore Processing */
-		public static final TagData ORE_PROCESSING_DIRTY                    = TagData.createTagData("PREFIX.ORE_PROCESSING_DIRTY", "Ore Processing Dirty");
+		public static final TagData ORE_PROCESSING_DIRTY                    = TagData.createTagData("PREFIX.ORE_PROCESSING_DIRTY", "Обработка загрязненной руды");
 		/** If this Prefix is used for Ore Processing */
-		public static final TagData ORE_PROCESSING_CLEAN                    = TagData.createTagData("PREFIX.ORE_PROCESSING_CLEAN", "Ore Processing Clean");
+		public static final TagData ORE_PROCESSING_CLEAN                    = TagData.createTagData("PREFIX.ORE_PROCESSING_CLEAN", "Обработка чистой руды");
 		/** If this Prefix is used for Ore Processing */
-		public static final TagData ORE_PROCESSING_REFINED                  = TagData.createTagData("PREFIX.ORE_PROCESSING_REFINED", "Ore Processing Refined");
+		public static final TagData ORE_PROCESSING_REFINED                  = TagData.createTagData("PREFIX.ORE_PROCESSING_REFINED", "Рафинирование руды");
 		/** If this Prefix is used for Ore Processing, like "crushed" for example */
-		public static final TagData ORE_PROCESSING_BASED                    = TagData.createTagData("PREFIX.ORE_PROCESSING_BASED", "Ore Processing Based");
+		public static final TagData ORE_PROCESSING_BASED                    = TagData.createTagData("PREFIX.ORE_PROCESSING_BASED", "Базовая обработка руды");
 		/** If this Prefix is for Tool Heads. */
-		public static final TagData TOOL_HEAD                               = TagData.createTagData("PREFIX.TOOL_HEAD", "Tool Head");
+		public static final TagData TOOL_HEAD                               = TagData.createTagData("PREFIX.TOOL_HEAD", "Наконечник инструмента");
 		/** If this Prefix is for Tool Heads that require a Handle. */
-		public static final TagData NEEDS_HANDLE                            = TagData.createTagData("PREFIX.NEEDS_HANDLE", "Needs Handle");
+		public static final TagData NEEDS_HANDLE                            = TagData.createTagData("PREFIX.NEEDS_HANDLE", "Необходима рукоять");
 		/** If this Prefix is for Tool Heads that require sharpening. */
-		public static final TagData NEEDS_SHARPENING                        = TagData.createTagData("PREFIX.NEEDS_SHARPENING", "Needs Sharpening");
+		public static final TagData NEEDS_SHARPENING                        = TagData.createTagData("PREFIX.NEEDS_SHARPENING", "Нуждается в заточке");
 		/** If this Prefix is for Tools and alike */
-		public static final TagData TOOL_ALIKE                              = TagData.createTagData("PREFIX.TOOL_ALIKE", "Tool");
+		public static final TagData TOOL_ALIKE                              = TagData.createTagData("PREFIX.TOOL_ALIKE", "Инструмент");
 		/** If this Prefix is for Weapons and alike */
-		public static final TagData WEAPON_ALIKE                            = TagData.createTagData("PREFIX.WEAPON_ALIKE", "Weapon");
+		public static final TagData WEAPON_ALIKE                            = TagData.createTagData("PREFIX.WEAPON_ALIKE", "Оружие");
 		/** If this Prefix is for Armors and alike */
-		public static final TagData ARMOR_ALIKE                             = TagData.createTagData("PREFIX.ARMOR_ALIKE", "Armor");
+		public static final TagData ARMOR_ALIKE                             = TagData.createTagData("PREFIX.ARMOR_ALIKE", "Броня");
 		/** If this Prefix is for Ammo and alike */
-		public static final TagData AMMO_ALIKE                              = TagData.createTagData("PREFIX.AMMO_ALIKE", "Ammo");
+		public static final TagData AMMO_ALIKE                              = TagData.createTagData("PREFIX.AMMO_ALIKE", "Патроны");
 		/** If this Prefix can be recycled */
-		public static final TagData RECYCLABLE                              = TagData.createTagData("PREFIX.RECYCLABLE", "Recyclable");
+		public static final TagData RECYCLABLE                              = TagData.createTagData("PREFIX.RECYCLABLE", "Переработка");
 		/** If this Prefix can be scanned */
-		public static final TagData SCANNABLE                               = TagData.createTagData("PREFIX.SCANNABLE", "Scannable");
+		public static final TagData SCANNABLE                               = TagData.createTagData("PREFIX.SCANNABLE", "Сканирование");
 		/** If this Prefix can be burned in a Furnace as Fuel, if the Material fits. */
-		public static final TagData BURNABLE                                = TagData.createTagData("PREFIX.BURNABLE", "Burnable");
+		public static final TagData BURNABLE                                = TagData.createTagData("PREFIX.BURNABLE", "Сжигание");
 		/** If this Prefix can be burned in a Furnace as Fuel, if the Material fits. */
-		public static final TagData SIMPLIFIABLE                            = TagData.createTagData("PREFIX.SIMPLIFIABLE", "Simplifiable");
+		public static final TagData SIMPLIFIABLE                            = TagData.createTagData("PREFIX.SIMPLIFIABLE", "Упрощение");
 		/** If this Prefix is self referencing and therefore needs no Material (it can still have a Material) */
 		public static final TagData SELF_REFERENCING                        = TagData.createTagData("PREFIX.SELF_REFERENCING", "Self Referencing");
 	}
@@ -302,79 +302,79 @@ public class TD {
 	/** For Atomic Materials */
 	public static class Atomic {
 		/** If this Material is an Atomic Element (Antimatter Elements include this too!) */
-		public static final TagData ELEMENT                                 = TagData.createTagData("ATOMIC.ELEMENT", "Element");
+		public static final TagData ELEMENT                                 = TagData.createTagData("ATOMIC.ELEMENT", "Элемент");
 		/** If this Material is an Atomic Particle */
-		public static final TagData PARTICLE                                = TagData.createTagData("ATOMIC.PARTICLE", "Particle");
+		public static final TagData PARTICLE                                = TagData.createTagData("ATOMIC.PARTICLE", "Частицы");
 		/** If this Material is a Molecule, as opposed to being just random Materials mixed together. */
-		public static final TagData MOLECULE                                = TagData.createTagData("ATOMIC.MOLECULE", "Molecule");
+		public static final TagData MOLECULE                                = TagData.createTagData("ATOMIC.MOLECULE", "Молекулы");
 		/** If this Material is Antimatter (Antimatter Molecules include this too!) */
-		public static final TagData ANTIMATTER                              = TagData.createTagData("ATOMIC.ANTIMATTER", "Antimatter");
+		public static final TagData ANTIMATTER                              = TagData.createTagData("ATOMIC.ANTIMATTER", "Антиматерия");
 		
 		/** If this Material is some kind of Metal (so added if any of the six Types below is the case!) */
-		public static final TagData METAL                                   = TagData.createTagData("ATOMIC.METAL", "Metal");
+		public static final TagData METAL                                   = TagData.createTagData("ATOMIC.METAL", "Металлы");
 		/** If this Material is an Alkali Metal according to the periodic Table of Elements */
-		public static final TagData ALKALI_METAL                            = TagData.createTagData("ATOMIC.ALKALI_METAL", "Alkali Metal");
+		public static final TagData ALKALI_METAL                            = TagData.createTagData("ATOMIC.ALKALI_METAL", "Щелочные металлы");
 		/** If this Material is an Alkaline Earth Metal according to the periodic Table of Elements */
-		public static final TagData ALKALINE_EARTH_METAL                    = TagData.createTagData("ATOMIC.ALKALINE_EARTH_METAL", "Alkaline Earth Metal");
+		public static final TagData ALKALINE_EARTH_METAL                    = TagData.createTagData("ATOMIC.ALKALINE_EARTH_METAL", "Щёлочноземельные металлы");
 		/** If this Material is of the Lanthanide Group according to the periodic Table of Elements */
-		public static final TagData LANTHANIDE                              = TagData.createTagData("ATOMIC.LANTHANIDE", "Lanthanide");
+		public static final TagData LANTHANIDE                              = TagData.createTagData("ATOMIC.LANTHANIDE", "Лантаноиды");
 		/** If this Material is of the Actinide Group according to the periodic Table of Elements */
-		public static final TagData ACTINIDE                                = TagData.createTagData("ATOMIC.ACTINIDE", "Actinide");
+		public static final TagData ACTINIDE                                = TagData.createTagData("ATOMIC.ACTINIDE", "Актиноиды");
 		/** If this Material is a Transition Metal according to the periodic Table of Elements */
-		public static final TagData TRANSITION_METAL                        = TagData.createTagData("ATOMIC.TRANSITION_METAL", "Transition Metal");
+		public static final TagData TRANSITION_METAL                        = TagData.createTagData("ATOMIC.TRANSITION_METAL", "Переходные металлы");
 		/** If this Material is a Post Transition Metal according to the periodic Table of Elements */
-		public static final TagData POST_TRANSITION_METAL                   = TagData.createTagData("ATOMIC.POST_TRANSITION_METAL", "Post Transition Metal");
+		public static final TagData POST_TRANSITION_METAL                   = TagData.createTagData("ATOMIC.POST_TRANSITION_METAL", "Постпереходные металлы");
 		
 		/** If this Material is Metalloid according to the periodic Table of Elements */
-		public static final TagData METALLOID                               = TagData.createTagData("ATOMIC.METALLOID", "Metalloid");
+		public static final TagData METALLOID                               = TagData.createTagData("ATOMIC.METALLOID", "Полуметаллы");
 		
 		/** If this Material is some kind of Nonmetal (so added if any of the three Types below is the case!) */
-		public static final TagData NONMETAL                                = TagData.createTagData("ATOMIC.NONMETAL", "Non-Metal");
+		public static final TagData NONMETAL                                = TagData.createTagData("ATOMIC.NONMETAL", "Неметаллы");
 		/** If this Material is a Polyatomic Nonmetal according to the periodic Table of Elements */
-		public static final TagData POLYATOMIC_NONMETAL                     = TagData.createTagData("ATOMIC.POLYATOMIC_NONMETAL", "Polyatomic Non-Metal");
+		public static final TagData POLYATOMIC_NONMETAL                     = TagData.createTagData("ATOMIC.POLYATOMIC_NONMETAL", "Полиатомные неметаллы");
 		/** If this Material is a Diatomic Nonmetal according to the periodic Table of Elements */
-		public static final TagData DIATOMIC_NONMETAL                       = TagData.createTagData("ATOMIC.DIATOMIC_NONMETAL", "Diatomic Non-Metal");
+		public static final TagData DIATOMIC_NONMETAL                       = TagData.createTagData("ATOMIC.DIATOMIC_NONMETAL", "Двухатомные неметаллы");
 		/** If this Material is a Noble Gas according to the periodic Table of Elements */
-		public static final TagData NOBLE_GAS                               = TagData.createTagData("ATOMIC.NOBLE_GAS", "Noble Gas");
+		public static final TagData NOBLE_GAS                               = TagData.createTagData("ATOMIC.NOBLE_GAS", "Благородные газы");
 		/** If this Material is a Halogen according to the periodic Table of Elements */
-		public static final TagData HALOGEN                                 = TagData.createTagData("ATOMIC.HALOGEN", "Halogen");
+		public static final TagData HALOGEN                                 = TagData.createTagData("ATOMIC.HALOGEN", "Галоген");
 		/** If this Material is a Chalcogen according to the periodic Table of Elements */
-		public static final TagData CHALCOGEN                               = TagData.createTagData("ATOMIC.CHALCOGEN", "Chalcogen");
+		public static final TagData CHALCOGEN                               = TagData.createTagData("ATOMIC.CHALCOGEN", "Халькогены");
 		/** If this Material is a Pnictogen according to the periodic Table of Elements */
-		public static final TagData PNICTOGEN                               = TagData.createTagData("ATOMIC.PNICTOGEN", "Pnictogen");
+		public static final TagData PNICTOGEN                               = TagData.createTagData("ATOMIC.PNICTOGEN", "Пниктогены");
 		/** If this Material is a Crystallogen according to the periodic Table of Elements */
-		public static final TagData CRYSTALLOGEN                            = TagData.createTagData("ATOMIC.CRYSTALLOGEN", "Crystallogen");
+		public static final TagData CRYSTALLOGEN                            = TagData.createTagData("ATOMIC.CRYSTALLOGEN", "Кристаллогены");
 		/** If this Material is a Icosagen according to the periodic Table of Elements */
-		public static final TagData ICOSAGEN                                = TagData.createTagData("ATOMIC.ICOSAGEN", "Icosagen");
+		public static final TagData ICOSAGEN                                = TagData.createTagData("ATOMIC.ICOSAGEN", "Подгруппа бора");
 		/** If this Material is in the Zinc Group according to the periodic Table of Elements */
-		public static final TagData ZINC_GROUP                              = TagData.createTagData("ATOMIC.ZINC_GROUP", "Zinc Group");
+		public static final TagData ZINC_GROUP                              = TagData.createTagData("ATOMIC.ZINC_GROUP", "Подгруппа цинка");
 		/** If this Material is in the Copper Group according to the periodic Table of Elements */
-		public static final TagData COPPER_GROUP                            = TagData.createTagData("ATOMIC.COPPER_GROUP", "Copper Group");
+		public static final TagData COPPER_GROUP                            = TagData.createTagData("ATOMIC.COPPER_GROUP", "Подгруппа меди");
 		/** If this Material is in the Nickel Group according to the periodic Table of Elements */
-		public static final TagData NICKEL_GROUP                            = TagData.createTagData("ATOMIC.NICKEL_GROUP", "Nickel Group");
+		public static final TagData NICKEL_GROUP                            = TagData.createTagData("ATOMIC.NICKEL_GROUP", "Подгруппа никеля");
 		/** If this Material is in the Cobalt Group according to the periodic Table of Elements */
-		public static final TagData COBALT_GROUP                            = TagData.createTagData("ATOMIC.COBALT_GROUP", "Cobalt Group");
+		public static final TagData COBALT_GROUP                            = TagData.createTagData("ATOMIC.COBALT_GROUP", "Подгруппа кобальта");
 		/** If this Material is in the Iron Group according to the periodic Table of Elements */
-		public static final TagData IRON_GROUP                              = TagData.createTagData("ATOMIC.IRON_GROUP", "Iron Group");
+		public static final TagData IRON_GROUP                              = TagData.createTagData("ATOMIC.IRON_GROUP", "Подгруппа железа");
 		/** If this Material is in the Manganese Group according to the periodic Table of Elements */
-		public static final TagData MANGANESE_GROUP                         = TagData.createTagData("ATOMIC.MANGANESE_GROUP", "Manganese Group");
+		public static final TagData MANGANESE_GROUP                         = TagData.createTagData("ATOMIC.MANGANESE_GROUP", "Подгруппа марганца");
 		/** If this Material is in the Chromium Group according to the periodic Table of Elements */
-		public static final TagData CHROMIUM_GROUP                          = TagData.createTagData("ATOMIC.CHROMIUM_GROUP", "Chromium Group");
+		public static final TagData CHROMIUM_GROUP                          = TagData.createTagData("ATOMIC.CHROMIUM_GROUP", "Подгруппа хрома");
 		/** If this Material is in the Vanadium Group according to the periodic Table of Elements */
-		public static final TagData VANADIUM_GROUP                          = TagData.createTagData("ATOMIC.VANADIUM_GROUP", "Vanadium Group");
+		public static final TagData VANADIUM_GROUP                          = TagData.createTagData("ATOMIC.VANADIUM_GROUP", "Подгруппа ванадия");
 		/** If this Material is in the Titanium Group according to the periodic Table of Elements */
-		public static final TagData TITANIUM_GROUP                          = TagData.createTagData("ATOMIC.TITANIUM_GROUP", "Titanium Group");
+		public static final TagData TITANIUM_GROUP                          = TagData.createTagData("ATOMIC.TITANIUM_GROUP", "Подгруппа титана");
 		/** If this Material is in the Scandium Group according to the periodic Table of Elements */
-		public static final TagData SCANDIUM_GROUP                          = TagData.createTagData("ATOMIC.SCANDIUM_GROUP", "Scandium Group");
+		public static final TagData SCANDIUM_GROUP                          = TagData.createTagData("ATOMIC.SCANDIUM_GROUP", "Подгруппа скандия");
 		
 		/** If this Material is a Noble Metal according to the periodic Table of Elements: Only for Gold, Silver and Copper */
-		public static final TagData NOBLE_METAL                             = TagData.createTagData("ATOMIC.NOBLE_METAL", "Noble Metal");
+		public static final TagData NOBLE_METAL                             = TagData.createTagData("ATOMIC.NOBLE_METAL", "Благородные металлы");
 		/** If this Material is a Refractory Metal according to the periodic Table of Elements */
-		public static final TagData REFRACTORY_METAL                        = TagData.createTagData("ATOMIC.REFRACTORY_METAL", "Refractory Metal");
+		public static final TagData REFRACTORY_METAL                        = TagData.createTagData("ATOMIC.REFRACTORY_METAL", "Тугоплавкие металлы");
 		/** If this Material is a Precious Metal according to the periodic Table of Elements */
-		public static final TagData PRECIOUS_METAL                          = TagData.createTagData("ATOMIC.PRECIOUS_METAL", "Precious Metal");
+		public static final TagData PRECIOUS_METAL                          = TagData.createTagData("ATOMIC.PRECIOUS_METAL", "Ценные металлы");
 		/** If this Material is in the Platinum Group according to the periodic Table of Elements */
-		public static final TagData PLATINUM_GROUP                          = TagData.createTagData("ATOMIC.PLATINUM_GROUP", "Platinum Group");
+		public static final TagData PLATINUM_GROUP                          = TagData.createTagData("ATOMIC.PLATINUM_GROUP", "Платиновая группа");
 		
 		/** Contains all known Atomic Tags. */
 		public static final List<TagData> ALL                               = new ArrayListNoNulls<>(Arrays.asList(ELEMENT, PARTICLE, MOLECULE, ANTIMATTER, METAL, ALKALI_METAL, ALKALINE_EARTH_METAL, LANTHANIDE, ACTINIDE, TRANSITION_METAL, POST_TRANSITION_METAL, METALLOID, NONMETAL, POLYATOMIC_NONMETAL, DIATOMIC_NONMETAL, NOBLE_GAS));
@@ -383,87 +383,87 @@ public class TD {
 	/** General Material Properties */
 	public static class Properties {
 		/** If this Material is some kind of Acid */
-		public static final TagData ACID                                    = TagData.createTagData("PROPERTIES.ACID", "Acid");
+		public static final TagData ACID                                    = TagData.createTagData("PROPERTIES.ACID", "Кислота");
 		/** If this Material is some kind of Wood */
-		public static final TagData WOOD                                    = TagData.createTagData("PROPERTIES.WOOD", "Wood");
+		public static final TagData WOOD                                    = TagData.createTagData("PROPERTIES.WOOD", "Дерево");
 		/** If this Material is some kind of Food (or edible at all) */
-		public static final TagData FOOD                                    = TagData.createTagData("PROPERTIES.FOOD", "Food");
+		public static final TagData FOOD                                    = TagData.createTagData("PROPERTIES.FOOD", "Еда");
 		/** If this Material is some kind of Meat */
-		public static final TagData MEAT                                    = TagData.createTagData("PROPERTIES.MEAT", "Meat");
+		public static final TagData MEAT                                    = TagData.createTagData("PROPERTIES.MEAT", "Мясо");
 		/** If this Material is some kind of Rotten */
-		public static final TagData ROTTEN                                  = TagData.createTagData("PROPERTIES.ROTTEN", "Rotten");
+		public static final TagData ROTTEN                                  = TagData.createTagData("PROPERTIES.ROTTEN", "Гнилой");
 		/** If this Material is some kind of Coal */
-		public static final TagData COAL                                    = TagData.createTagData("PROPERTIES.COAL", "Coal");
+		public static final TagData COAL                                    = TagData.createTagData("PROPERTIES.COAL", "Уголь");
 		/** If this Material is some kind of Stone */
-		public static final TagData STONE                                   = TagData.createTagData("PROPERTIES.STONE", "Stone");
+		public static final TagData STONE                                   = TagData.createTagData("PROPERTIES.STONE", "Камень");
 		/** If this Material is some kind of Pearl */
-		public static final TagData PEARL                                   = TagData.createTagData("PROPERTIES.PEARL", "Pearl");
+		public static final TagData PEARL                                   = TagData.createTagData("PROPERTIES.PEARL", "Жемчуг");
 		/** If this Material is some kind of Quartz */
-		public static final TagData QUARTZ                                  = TagData.createTagData("PROPERTIES.QUARTZ", "Quartz");
+		public static final TagData QUARTZ                                  = TagData.createTagData("PROPERTIES.QUARTZ", "Кварц");
 		/** If this Material is some kind of Crystal */
-		public static final TagData CRYSTAL                                 = TagData.createTagData("PROPERTIES.CRYSTAL", "Crystal");
+		public static final TagData CRYSTAL                                 = TagData.createTagData("PROPERTIES.CRYSTAL", "Кристалл");
 		/** If this Material is some typically called valuable for the sake of being luxury. */
-		public static final TagData VALUABLE                                = TagData.createTagData("PROPERTIES.VALUABLE", "Valuable");
+		public static final TagData VALUABLE                                = TagData.createTagData("PROPERTIES.VALUABLE", "Ценный");
 		/** If this Material is some kind of Magical */
-		public static final TagData MAGICAL                                 = TagData.createTagData("PROPERTIES.MAGICAL", "Magical");
+		public static final TagData MAGICAL                                 = TagData.createTagData("PROPERTIES.MAGICAL", "Магический");
 		/** If this Material is some kind of Thaumcraft Warp inducing */
-		public static final TagData WARPING                                 = TagData.createTagData("PROPERTIES.WARPING", "Warping");
+		public static final TagData WARPING                                 = TagData.createTagData("PROPERTIES.WARPING", "Деформация");
 		/** If this Material is useable in the Betweenlands */
 		public static final TagData BETWEENLANDS                            = TagData.createTagData("PROPERTIES.BETWEENLANDS", "Betweenlands");
 		/** If this Material can break Twilight Mazes */
 		public static final TagData MAZEBREAKER                             = TagData.createTagData("PROPERTIES.MAZEBREAKER", "Maze Breaker");
 		/** If this Material is having a constantly burning Aura (like Blaze Rods) */
-		public static final TagData BURNING                                 = TagData.createTagData("PROPERTIES.BURNING", "Burning Aura");
+		public static final TagData BURNING                                 = TagData.createTagData("PROPERTIES.BURNING", "Горячая аура");
 		/** If this Material is some kind of flammable */
-		public static final TagData FLAMMABLE                               = TagData.createTagData("PROPERTIES.FLAMMABLE", "Flammable");
+		public static final TagData FLAMMABLE                               = TagData.createTagData("PROPERTIES.FLAMMABLE", "Воспламеняющийся");
 		/** If this Material is not burnable at all or Fire Proof */
-		public static final TagData UNBURNABLE                              = TagData.createTagData("PROPERTIES.UNBURNABLE", "Unburnable");
+		public static final TagData UNBURNABLE                              = TagData.createTagData("PROPERTIES.UNBURNABLE", "Негорючий");
 		/** If this Material is some kind of explosive */
-		public static final TagData EXPLOSIVE                               = TagData.createTagData("PROPERTIES.EXPLOSIVE", "Explosive");
+		public static final TagData EXPLOSIVE                               = TagData.createTagData("PROPERTIES.EXPLOSIVE", "Взрывчатый");
 		/** If this Material is bouncy */
-		public static final TagData BOUNCY                                  = TagData.createTagData("PROPERTIES.BOUNCY", "Bouncy");
+		public static final TagData BOUNCY                                  = TagData.createTagData("PROPERTIES.BOUNCY", "Упругий");
 		/** If this Material is glowing in the dark */
-		public static final TagData GLOWING                                 = TagData.createTagData("PROPERTIES.GLOWING", "Glowing");
+		public static final TagData GLOWING                                 = TagData.createTagData("PROPERTIES.GLOWING", "Светящийся");
 		/** If this Material is lighting up the area around it */
-		public static final TagData LIGHTING                                = TagData.createTagData("PROPERTIES.LIGHTING", "Lighting");
+		public static final TagData LIGHTING                                = TagData.createTagData("PROPERTIES.LIGHTING", "Освещение");
 		/** If this Material is brittle */
-		public static final TagData BRITTLE                                 = TagData.createTagData("PROPERTIES.BRITTLE", "Brittle");
+		public static final TagData BRITTLE                                 = TagData.createTagData("PROPERTIES.BRITTLE", "Хрупкий");
 		/** If this Material is stretchable */
-		public static final TagData STRETCHY                                = TagData.createTagData("PROPERTIES.STRETCHY", "Stretchy");
+		public static final TagData STRETCHY                                = TagData.createTagData("PROPERTIES.STRETCHY", "Эластичный");
 		/** If this Material is invisible */
-		public static final TagData INVISIBLE                               = TagData.createTagData("PROPERTIES.INVISIBLE", "Invisible");
+		public static final TagData INVISIBLE                               = TagData.createTagData("PROPERTIES.INVISIBLE", "Невидимый");
 		/** If this Material is transparent */
-		public static final TagData TRANSPARENT                             = TagData.createTagData("PROPERTIES.TRANSPARENT", "Transparent");
+		public static final TagData TRANSPARENT                             = TagData.createTagData("PROPERTIES.TRANSPARENT", "Прозрачный");
 		/** If this Material is passively Magnetic */
-		public static final TagData MAGNETIC_PASSIVE                        = TagData.createTagData("PROPERTIES.MAGNETIC_PASSIVE", "Passively Magnetic");
+		public static final TagData MAGNETIC_PASSIVE                        = TagData.createTagData("PROPERTIES.MAGNETIC_PASSIVE", "Пассивный магнетизм");
 		/** If this Material is actively Magnetic */
-		public static final TagData MAGNETIC_ACTIVE                         = TagData.createTagData("PROPERTIES.MAGNETIC_ACTIVE", "Actively Magnetic");
+		public static final TagData MAGNETIC_ACTIVE                         = TagData.createTagData("PROPERTIES.MAGNETIC_ACTIVE", "Активный магнетизм");
 		/** If this Material is Ender Dragon Proof. */
-		public static final TagData ENDER_DRAGON_PROOF                      = TagData.createTagData("PROPERTIES.ENDER_DRAGON_PROOF", "Ender Dragon Proof");
+		public static final TagData ENDER_DRAGON_PROOF                      = TagData.createTagData("PROPERTIES.ENDER_DRAGON_PROOF", "Драконоустойчивый");
 		/** If this Material is Wither Proof. */
-		public static final TagData WITHER_PROOF                            = TagData.createTagData("PROPERTIES.WITHER_PROOF", "Wither Proof");
+		public static final TagData WITHER_PROOF                            = TagData.createTagData("PROPERTIES.WITHER_PROOF", "Устойчив к Иссушителю");
 		/** Unused, there is Tool Type checks instead. */
-		public static final TagData NO_ADVANCED_TOOLS                       = TagData.createTagData("PROPERTIES.NO_ADVANCED_TOOLS", "No Advanced Tools");
+		public static final TagData NO_ADVANCED_TOOLS                       = TagData.createTagData("PROPERTIES.NO_ADVANCED_TOOLS", "Нет дополнительных инструментов");
 		/** If this Material has Tool Stats. */
-		public static final TagData HAS_TOOL_STATS                          = TagData.createTagData("PROPERTIES.HAS_TOOL_STATS", "Has Tool Stats");
+		public static final TagData HAS_TOOL_STATS                          = TagData.createTagData("PROPERTIES.HAS_TOOL_STATS", "Статистика инструментов");
 		/** If this Material has a Color. */
-		public static final TagData HAS_COLOR                               = TagData.createTagData("PROPERTIES.HAS_COLOR", "Has Color");
+		public static final TagData HAS_COLOR                               = TagData.createTagData("PROPERTIES.HAS_COLOR", "Имеет цвет");
 		/** If this Material is typically used by Mods or Vanilla Minecraft, and where the "ore" Prefix is important. */
-		public static final TagData COMMON_ORE                              = TagData.createTagData("PROPERTIES.COMMON_ORE", "Common Ore");
+		public static final TagData COMMON_ORE                              = TagData.createTagData("PROPERTIES.COMMON_ORE", "Обыкновенная руда");
 		/** If this Material is something like Unstable Ingots */
-		public static final TagData EXPLODES_IN_NONVANILLA_CRAFTING_GRID    = TagData.createTagData("PROPERTIES.EXPLODES_IN_NONVANILLA_CRAFTING_GRID", "Explodes in Non-Vanilla Crafting Tables!");
+		public static final TagData EXPLODES_IN_NONVANILLA_CRAFTING_GRID    = TagData.createTagData("PROPERTIES.EXPLODES_IN_NONVANILLA_CRAFTING_GRID", "Взрывается в неванильных верстаках!");
 		/** If this Material is generated among the random small Gem Ores. */
-		public static final TagData RANDOM_SMALL_GEM_ORE                    = TagData.createTagData("PROPERTIES.RANDOM_SMALL_GEM_ORE", "Random Small Gem Ore");
+		public static final TagData RANDOM_SMALL_GEM_ORE                    = TagData.createTagData("PROPERTIES.RANDOM_SMALL_GEM_ORE", "Случайная руда самоцвета");
 		/** If this Material is only Unificatable in Recipes (for example Wood, which has many variations depending on from which Tree it comes from) */
-		public static final TagData AUTO_BLACKLIST                          = TagData.createTagData("PROPERTIES.AUTO_BLACKLIST", "Auto Blacklist");
+		public static final TagData AUTO_BLACKLIST                          = TagData.createTagData("PROPERTIES.AUTO_BLACKLIST", "Автоматический черный список");
 		/** If this Material is not a valid Material Name and therefore doesn't get unificated at all. This mainly gets used for technical Materials. */
-		public static final TagData AUTO_MATERIAL                           = TagData.createTagData("PROPERTIES.AUTO_MATERIAL", "Automatic Material");
+		public static final TagData AUTO_MATERIAL                           = TagData.createTagData("PROPERTIES.AUTO_MATERIAL", "Автоматический материал");
 		/** If this Material is not a valid Material Name and therefore doesn't get unificated at all. This mainly gets used for technical Materials. */
-		public static final TagData INVALID_MATERIAL                        = TagData.createTagData("PROPERTIES.INVALID_MATERIAL", "Invalid Material");
-		public static final TagData UNUSED_MATERIAL                         = TagData.createTagData("PROPERTIES.UNUSED_MATERIAL", "Unused Material");
-		public static final TagData IGNORE_IN_COLOR_LOG                     = TagData.createTagData("PROPERTIES.IGNORE_IN_COLOR_LOG", "Ignored in Color Log");
+		public static final TagData INVALID_MATERIAL                        = TagData.createTagData("PROPERTIES.INVALID_MATERIAL", "Неподходящий материал");
+		public static final TagData UNUSED_MATERIAL                         = TagData.createTagData("PROPERTIES.UNUSED_MATERIAL", "Неиспользуемый материал");
+		public static final TagData IGNORE_IN_COLOR_LOG                     = TagData.createTagData("PROPERTIES.IGNORE_IN_COLOR_LOG", "Игнорируется в журнале цветов");
 		/** If this Material should not be shown with the Contains X Tooltip. */
-		public static final TagData DONT_SHOW_THIS_COMPONENT                = TagData.createTagData("PROPERTIES.DONT_SHOW_THIS_COMPONENT", "Not shown as Component");
+		public static final TagData DONT_SHOW_THIS_COMPONENT                = TagData.createTagData("PROPERTIES.DONT_SHOW_THIS_COMPONENT", "Не отображается как компонент");
 		
 		/** Contains all known Property Tags. */
 		public static final List<TagData> ALL                               = new ArrayListNoNulls<>(Arrays.asList(ACID, WOOD, FOOD, MEAT, ROTTEN, COAL, STONE, PEARL, QUARTZ, CRYSTAL, MAGICAL, WARPING, VALUABLE, BURNING, FLAMMABLE, UNBURNABLE, EXPLOSIVE, BOUNCY, GLOWING, MAGNETIC_ACTIVE, MAGNETIC_PASSIVE, BETWEENLANDS, MAZEBREAKER, LIGHTING, BRITTLE, STRETCHY, INVISIBLE, TRANSPARENT, ENDER_DRAGON_PROOF, WITHER_PROOF, EXPLODES_IN_NONVANILLA_CRAFTING_GRID, HAS_COLOR, AUTO_BLACKLIST, AUTO_MATERIAL, INVALID_MATERIAL, IGNORE_IN_COLOR_LOG, UNUSED_MATERIAL, DONT_SHOW_THIS_COMPONENT));
@@ -474,67 +474,67 @@ public class TD {
 	/** Describing the kind of binding the Compound Material is having */
 	public static class Compounds {
 		/** If this Material is some kind of Metallurgic Alloy (For Mods which automatically create Alloys in Smelteries or similar if the Components are there) */
-		public static final TagData ALLOY                                   = TagData.createTagData("COMPOUNDS.ALLOY", "Alloy");
+		public static final TagData ALLOY                                   = TagData.createTagData("COMPOUNDS.ALLOY", "Сплавы");
 		
 		/** If this Material is some kind of coated Alloy, like galvanized Stuff. */
-		public static final TagData COATED                                  = TagData.createTagData("COMPOUNDS.COATED", "Coated");
+		public static final TagData COATED                                  = TagData.createTagData("COMPOUNDS.COATED", "С покрытием");
 		
 		/** If this Material is some kind of layered Alloy, like layers of Plates. */
-		public static final TagData LAYERED                                 = TagData.createTagData("COMPOUNDS.LAYERED", "Layered");
+		public static final TagData LAYERED                                 = TagData.createTagData("COMPOUNDS.LAYERED", "Слоистые");
 		
 		/** If this Material is only vaguely decomposable. An example for that would be Gravel, Dirt or Clay, where no one knows the exact Components or hidden things. */
-		public static final TagData APPROXIMATE                             = TagData.createTagData("COMPOUNDS.APPROXIMATE", "Approximate Components");
+		public static final TagData APPROXIMATE                             = TagData.createTagData("COMPOUNDS.APPROXIMATE", "Приблизительные компоненты");
 		
 		/** If this Material is decomposable by any means. This must be added when the Material can be reversed by any means, to prevent people from making it acquirable by cheaper means, causing exploits. */
-		public static final TagData DECOMPOSABLE                            = TagData.createTagData("COMPOUNDS.DECOMPOSABLE", "Decomposable");
+		public static final TagData DECOMPOSABLE                            = TagData.createTagData("COMPOUNDS.DECOMPOSABLE", "Разлагаемые");
 	}
 	
 	/** For Material Processing */
 	public static class Processing {
 		/** If this Material is not recyclable in the IC2 Recycler or similar. This means it is blacklisted automatically.  */
-		public static final TagData UNRECYCLABLE                            = TagData.createTagData("PROCESSING.UNRECYCLABLE", "Not Recyclable");
+		public static final TagData UNRECYCLABLE                            = TagData.createTagData("PROCESSING.UNRECYCLABLE", "Не перерабатывается");
 		/** If this Material is decomposable by a Centrifuge. Requires Compounds.DECOMPOSABLE too */
-		public static final TagData CENTRIFUGE                              = TagData.createTagData("PROCESSING.CENTRIFUGABLE", "Centrifugable");
+		public static final TagData CENTRIFUGE                              = TagData.createTagData("PROCESSING.CENTRIFUGABLE", "Центрифужится");
 		/** If this Material is decomposable by an Electrolyser. Requires Compounds.DECOMPOSABLE too */
-		public static final TagData ELECTROLYSER                            = TagData.createTagData("PROCESSING.ELECTROLYSABLE", "Electrolysable");
+		public static final TagData ELECTROLYSER                            = TagData.createTagData("PROCESSING.ELECTROLYSABLE", "Электролизуется");
 		/** If this Material can be alloyed in a Crucible. */
-		public static final TagData CRUCIBLE_ALLOY                          = TagData.createTagData("PROCESSING.CRUCIBLE_ALLOY", "Crucible Alloyable");
+		public static final TagData CRUCIBLE_ALLOY                          = TagData.createTagData("PROCESSING.CRUCIBLE_ALLOY", "Допускается тигель");
 		/** If this Material can be used in an Extruder. */
-		public static final TagData EXTRUDER                                = TagData.createTagData("PROCESSING.EXTRUDABLE", "Extrudable");
+		public static final TagData EXTRUDER                                = TagData.createTagData("PROCESSING.EXTRUDABLE", "Экструдирование");
 		/** If this Material can be used in a low Tech Extruder. */
-		public static final TagData EXTRUDER_SIMPLE                         = TagData.createTagData("PROCESSING.EXTRUDABLE_SIMPLE", "Extrudable (Low Tech)");
+		public static final TagData EXTRUDER_SIMPLE                         = TagData.createTagData("PROCESSING.EXTRUDABLE_SIMPLE", "Экструдирование (Low Tech)");
 		/** If this Material can be created using UU-Matter or UU-Anti-Matter respectively */
-		public static final TagData UUM                                     = TagData.createTagData("PROCESSING.UUM_SYNTHESISABLE", "UUM Synthesisable");
+		public static final TagData UUM                                     = TagData.createTagData("PROCESSING.UUM_SYNTHESISABLE", "UUM Синтезирование");
 		/** If this Material can be created using Nuclear Fusion */
-		public static final TagData FUSION                                  = TagData.createTagData("PROCESSING.FUSION_SYNTHESISABLE", "Fusion Synthesisable");
+		public static final TagData FUSION                                  = TagData.createTagData("PROCESSING.FUSION_SYNTHESISABLE", "Термоядерный синтез");
 		/** If this Material can be ground by a Mortar. */
-		public static final TagData MORTAR                                  = TagData.createTagData("PROCESSING.MORTAR_GRINDABLE", "Mortar Grindable");
+		public static final TagData MORTAR                                  = TagData.createTagData("PROCESSING.MORTAR_GRINDABLE", "Измельчается в ступке");
 		/** If this Material can be solidified into a Crystalline Structure, like Glass or Ice. */
-		public static final TagData COOL2CRYSTAL                            = TagData.createTagData("PROCESSING.COOL2CRYSTAL", "Cools into Crystalline Form");
+		public static final TagData COOL2CRYSTAL                            = TagData.createTagData("PROCESSING.COOL2CRYSTAL", "Охлаждается в кристаллическую форму");
 		/** If this Material can be processed by smithy Stuff. */
-		public static final TagData SMITHABLE                               = TagData.createTagData("PROCESSING.SMITHABLE", "Smithable");
+		public static final TagData SMITHABLE                               = TagData.createTagData("PROCESSING.SMITHABLE", "Кузнечный");
 		/** If this Material can be directly cooked in a regular Furnace */
-		public static final TagData FURNACE                                 = TagData.createTagData("PROCESSING.FURNACE", "Furnace Smeltable");
+		public static final TagData FURNACE                                 = TagData.createTagData("PROCESSING.FURNACE", "Плавка в печи");
 		/** If this Material can never be directly cooked in a regular Furnace. It will yield Scraps instead. */
-		public static final TagData NEVER_FURNACE                           = TagData.createTagData("PROCESSING.NEVER_FURNACE", "Never Furnace Smeltable");
+		public static final TagData NEVER_FURNACE                           = TagData.createTagData("PROCESSING.NEVER_FURNACE", "Никогда не плавится в печи");
 		/** If this Material can be molten in a Crucible (every Material can, this is just for NEI Stuff) */
-		public static final TagData MELTING                                 = TagData.createTagData("PROCESSING.MELTING", "Meltable");
+		public static final TagData MELTING                                 = TagData.createTagData("PROCESSING.MELTING", "Плавкий");
 		/** If this Material can not be molten in a Smelter (the Machine, not the Crucible) */
-		public static final TagData BLACKLISTED_SMELTER                     = TagData.createTagData("PROCESSING.BLACKLISTED_SMELTER", "Not Meltable in a Smelter");
+		public static final TagData BLACKLISTED_SMELTER                     = TagData.createTagData("PROCESSING.BLACKLISTED_SMELTER", "Не плавится в плавильне");
 		
-		public static final TagData CRYSTALLISABLE                          = TagData.createTagData("PROCESSING.CRYSTALLISABLE", "Crystallisable");
+		public static final TagData CRYSTALLISABLE                          = TagData.createTagData("PROCESSING.CRYSTALLISABLE", "Кристаллизируется");
 		
-		public static final TagData REACTS_WITH_GLASS                       = TagData.createTagData("PROCESSING.REACTS_WITH_GLASS", "Reacts with Glass");
+		public static final TagData REACTS_WITH_GLASS                       = TagData.createTagData("PROCESSING.REACTS_WITH_GLASS", "Реагирует со стеклом");
 		
-		public static final TagData SOLDERING_MATERIAL                      = TagData.createTagData("PROCESSING.SOLDERING_MATERIAL", "Soldering Metal");
-		public static final TagData SOLDERING_MATERIAL_BAD                  = TagData.createTagData("PROCESSING.SOLDERING_MATERIAL_BAD", "Bad Soldering Metal");
-		public static final TagData SOLDERING_MATERIAL_GOOD                 = TagData.createTagData("PROCESSING.SOLDERING_MATERIAL_GOOD", "Good Soldering Metal");
+		public static final TagData SOLDERING_MATERIAL                      = TagData.createTagData("PROCESSING.SOLDERING_MATERIAL", "Металл для пайки");
+		public static final TagData SOLDERING_MATERIAL_BAD                  = TagData.createTagData("PROCESSING.SOLDERING_MATERIAL_BAD", "Плохой металл для пайки");
+		public static final TagData SOLDERING_MATERIAL_GOOD                 = TagData.createTagData("PROCESSING.SOLDERING_MATERIAL_GOOD", "Хороший металл для пайки");
 		
-		public static final TagData WASHING_FIRESTONE                       = TagData.createTagData("PROCESSING.WASHING_FIRESTONE", "Firestone Washable");
-		public static final TagData WASHING_PERSULFATE                      = TagData.createTagData("PROCESSING.WASHING_PERSULFATE", "Persulfate Washable"), WASHING_SODIUMPERSULFATE = WASHING_PERSULFATE;
-		public static final TagData WASHING_MERCURY                         = TagData.createTagData("PROCESSING.WASHING_MERCURY", "Mercury Washable");
+		public static final TagData WASHING_FIRESTONE                       = TagData.createTagData("PROCESSING.WASHING_FIRESTONE", "Горящая промывка");
+		public static final TagData WASHING_PERSULFATE                      = TagData.createTagData("PROCESSING.WASHING_PERSULFATE", "Пероксодисульфатная промывка"), WASHING_SODIUMPERSULFATE = WASHING_PERSULFATE;
+		public static final TagData WASHING_MERCURY                         = TagData.createTagData("PROCESSING.WASHING_MERCURY", "Промывка ртутью");
 		
-		public static final TagData PULVERIZING_CINNABAR                    = TagData.createTagData("PROCESSING.PULVERIZING_CINNABAR", "Cinnabar Crystal from Pulverisation");
+		public static final TagData PULVERIZING_CINNABAR                    = TagData.createTagData("PROCESSING.PULVERIZING_CINNABAR", "Кристалл киновари в просеивателе");
 		
 		public static final List<TagData> ALL_MACHINES                      = new ArrayListNoNulls<>(Arrays.asList(CRYSTALLISABLE, CRUCIBLE_ALLOY, FURNACE, NEVER_FURNACE, SMITHABLE, MELTING, MORTAR, COOL2CRYSTAL, FUSION, UUM, ELECTROLYSER, CENTRIFUGE, UNRECYCLABLE, SOLDERING_MATERIAL));
 		public static final List<TagData> ALL_ORES                          = new ArrayListNoNulls<>(Arrays.asList(CRYSTALLISABLE, WASHING_FIRESTONE, WASHING_PERSULFATE, WASHING_MERCURY, PULVERIZING_CINNABAR));

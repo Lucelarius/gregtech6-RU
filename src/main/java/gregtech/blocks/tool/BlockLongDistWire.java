@@ -41,13 +41,13 @@ public class BlockLongDistWire extends BlockBaseMachineUpdate {
 	public BlockLongDistWire(String aUnlocalised, IIconContainer[] aIcons, byte[] aTiers) {
 		super(null, aUnlocalised, Material.iron, soundTypeCloth, 16, aIcons, ~0);
 		mTiers = aTiers;
-		for (byte i = 0; i < 16; i++) LH.add(aUnlocalised+"."+i, "Long Distance Electric Wire ("+VN[mTiers[i]]+")");
+		for (byte i = 0; i < 16; i++) LH.add(aUnlocalised+"."+i, "Электрический провод дальней передачи ("+VN[mTiers[i]]+")");
 	}
 	
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		aList.add(Chat.CYAN + LH.get(LH.WIRE_STATS_VOLTAGE) + (VMAX[mTiers[aMeta]]) + " " + TD.Energy.EU.getLocalisedNameShort() + " (" + VN[mTiers[aMeta]] + ")");
-		aList.add(Chat.CYAN + LH.get(LH.WIRE_STATS_AMPERAGE) + "UNLIMITED");
+		aList.add(Chat.CYAN + LH.get(LH.WIRE_STATS_AMPERAGE) + "НЕОГРАНИЧЕНО");
 		aList.add(Chat.CYAN + LH.get(LH.WIRE_STATS_LOSS) + "0.125 " + TD.Energy.EU.getLocalisedNameShort() + "/m");
 	}
 	

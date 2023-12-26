@@ -37,7 +37,7 @@ import net.minecraft.util.IIcon;
  */
 public class ItemEmptySlot extends ItemBase {
 	public ItemEmptySlot() {
-		super(MD.GAPI.mID, "gt.empty_slot", "Empty Slot", "This Slot has to be left Empty");
+		super(MD.GAPI.mID, "gt.empty_slot", "Пустой слот", "Этот слот должен быть оставлен пустым");
 		ItemsGT.ILLEGAL_DROPS.add(this);
 		ST.hide(this);
 	}

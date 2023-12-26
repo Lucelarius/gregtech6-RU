@@ -28,22 +28,22 @@ import net.minecraft.block.material.Material;
 public class BlockBarsWood extends BlockBaseBars {
 	public BlockBarsWood(String aNameInternal) {
 		super(aNameInternal, ANY.Wood, Material.wood, Block.soundTypeWood);
-		LH.add(getUnlocalizedName()+ ".0", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".1", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".2", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".3", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".4", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".5", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".6", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".7", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".8", "Wood Bars");
-		LH.add(getUnlocalizedName()+ ".9", "Wood Bars");
-		LH.add(getUnlocalizedName()+".10", "Wood Bars");
-		LH.add(getUnlocalizedName()+".11", "Wood Bars");
-		LH.add(getUnlocalizedName()+".12", "Wood Bars");
-		LH.add(getUnlocalizedName()+".13", "Wood Bars");
-		LH.add(getUnlocalizedName()+".14", "Wood Bars");
-		LH.add(getUnlocalizedName()+".15", "Wood Bars");
+		LH.add(getUnlocalizedName()+ ".0", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".1", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".2", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".3", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".4", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".5", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".6", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".7", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".8", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+ ".9", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+".10", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+".11", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+".12", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+".13", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+".14", "Деревянная решетка");
+		LH.add(getUnlocalizedName()+".15", "Деревянная решетка");
 	}
 	
 	@Override public float getExplosionResistance(byte aMeta) {return 3;}

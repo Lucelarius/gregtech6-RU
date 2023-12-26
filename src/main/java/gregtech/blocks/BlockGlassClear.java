@@ -47,7 +47,7 @@ import static gregapi.data.CS.*;
 
 public class BlockGlassClear extends BlockColored {
 	public BlockGlassClear(String aUnlocalised) {
-		super(ItemBlockMetaType.class, Material.glass, soundTypeGlass, aUnlocalised, "Glass", MT.Glass, 0.5F, 0.5F, 0, Textures.BlockIcons.GLASSES_CLEAR);
+		super(ItemBlockMetaType.class, Material.glass, soundTypeGlass, aUnlocalised, "Стекло", MT.Glass, 0.5F, 0.5F, 0, Textures.BlockIcons.GLASSES_CLEAR);
 		OM.data(ST.make(this, 1, W), new OreDictItemData(MT.Glass, U *9));
 		BlocksGT.breakableGlass.add(this);
 	}

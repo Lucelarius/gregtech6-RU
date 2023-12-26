@@ -116,9 +116,9 @@ public class Behavior_Spray_Foam_Hardener extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.foamhardenerspray.tooltip", "Can harden C-Foam");
-		LH.add("gt.behaviour.hardenerspray.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.unstackable", "Not usable when stacked!");
+		LH.add("gt.behaviour.foamhardenerspray.tooltip", "Затвердевает С-пену");
+		LH.add("gt.behaviour.hardenerspray.uses", "Осталось использований:");
+		LH.add("gt.behaviour.unstackable", "Не может быть использовано в сложенном виде!");
 	}
 	
 	@Override

@@ -49,7 +49,7 @@ public class Behavior_FeedPig extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.feed.pig", "Is usable as Pig Food");
+		LH.add("gt.behaviour.feed.pig", "Используется как корм для свиней");
 	}
 	
 	@Override

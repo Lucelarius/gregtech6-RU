@@ -50,9 +50,9 @@ public class MultiTileEntityMiniPortalTwilight extends MultiTileEntityMiniPortal
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListTwilightSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.twilight.tooltip.1", "Only works between the Twilight Forest and the Overworld!");
-		LH.add("gt.tileentity.portal.twilight.tooltip.2", "Margin of Error to still work: 512 Meters.");
-		LH.add("gt.tileentity.portal.twilight.tooltip.3", "Requires any Diamond for activation");
+		LH.add("gt.tileentity.portal.twilight.tooltip.1", "Работает только в Twilight Forest и обычном мире!");
+		LH.add("gt.tileentity.portal.twilight.tooltip.2", "Предел погрешности для работы: 512 Метров.");
+		LH.add("gt.tileentity.portal.twilight.tooltip.3", "Требуется любой алмаз для активации");
 	}
 	
 	@Override

@@ -51,7 +51,7 @@ public class Behavior_Switch_Metadata extends AbstractBehaviorDefault {
 	
 	@Override
 	public List<String> getAdditionalToolTips(MultiItem aItem, List<String> aList, ItemStack aStack) {
-		if (mShowModeSwitchTooltip) aList.add("Sneak Rightclick to switch Mode");
+		if (mShowModeSwitchTooltip) aList.add("Приседание и ПКМ для переключения режима");
 		return aList;
 	}
 	

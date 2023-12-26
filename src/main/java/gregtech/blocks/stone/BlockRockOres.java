@@ -51,15 +51,15 @@ public class BlockRockOres extends BlockBaseMeta {
 	
 	public BlockRockOres(String aUnlocalised) {
 		super(null, aUnlocalised, Material.rock, soundTypeStone, 9, Textures.BlockIcons.ROCK_ORES);
-		LH.add(getUnlocalizedName()+ ".0", "Anthracite Coal");
-		LH.add(getUnlocalizedName()+ ".1", "Lignite Coal");
-		LH.add(getUnlocalizedName()+ ".2", "Salt");
-		LH.add(getUnlocalizedName()+ ".3", "Rock Salt");
-		LH.add(getUnlocalizedName()+ ".4", "Bauxite");
-		LH.add(getUnlocalizedName()+ ".5", "Oil Shale");
-		LH.add(getUnlocalizedName()+ ".6", "Gypsum");
-		LH.add(getUnlocalizedName()+ ".7", "Milky Quartz");
-		LH.add(getUnlocalizedName()+ ".8", "Nether Quartz");
+		LH.add(getUnlocalizedName()+ ".0", "Антрацитовый уголь");
+		LH.add(getUnlocalizedName()+ ".1", "Бурый уголь");
+		LH.add(getUnlocalizedName()+ ".2", "Соль");
+		LH.add(getUnlocalizedName()+ ".3", "Каменная соль");
+		LH.add(getUnlocalizedName()+ ".4", "Боксит");
+		LH.add(getUnlocalizedName()+ ".5", "Горючий сланец");
+		LH.add(getUnlocalizedName()+ ".6", "Гипс");
+		LH.add(getUnlocalizedName()+ ".7", "Молочный кварц");
+		LH.add(getUnlocalizedName()+ ".8", "Адский кварц");
 		
 		for (int i = 0; i < maxMeta(); i++) OM.reg(ST.make(this, 1, i), OP.oreDense.dat(ORE_MATERIALS[i]));
 		

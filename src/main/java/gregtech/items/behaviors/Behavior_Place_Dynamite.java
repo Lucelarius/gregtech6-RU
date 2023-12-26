@@ -87,7 +87,7 @@ public class Behavior_Place_Dynamite extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.placedynamite", "Places Dynamite and links it to Remote Activators in Hotbar");
+		LH.add("gt.behaviour.placedynamite", "Размещает динамит и связывает его с удаленным активатором в панели быстрого доступа");
 	}
 	
 	@Override

@@ -46,37 +46,37 @@ public class BlockTreeLogAFireProof extends BlockBaseLog implements IBlockToolab
 	public BlockTreeLogAFireProof(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.LOGS_A);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Rubber Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".4", "Rubber Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".8", "Rubber Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".12", "Rubber Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".0", "Бревно каучукового дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".4", "Бревно каучукового дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".8", "Бревно каучукового дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".12", "Бревно каучукового дерева (Огнеупорный)");
 		OM.reg(ST.make(this, 1, 0), OD.logRubber);
 		OM.reg(ST.make(this, 1, 4), OD.logRubber);
 		OM.reg(ST.make(this, 1, 8), OD.logRubber);
 		OM.reg(ST.make(this, 1,12), OD.logRubber);
 		
-		LH.add(getUnlocalizedName()+ ".1", "Maple Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".5", "Maple Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".9", "Maple Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".13", "Maple Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".1", "Бревно кленового дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".5", "Бревно кленового дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".9", "Бревно кленового дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".13", "Бревно кленового дерева (Огнеупорный)");
 		OM.reg(ST.make(this, 1, 1), OD.logWood);
 		OM.reg(ST.make(this, 1, 5), OD.logWood);
 		OM.reg(ST.make(this, 1, 9), OD.logWood);
 		OM.reg(ST.make(this, 1,13), OD.logWood);
 		
-		LH.add(getUnlocalizedName()+ ".2", "Willow Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".6", "Willow Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".10", "Willow Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".14", "Willow Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".2", "Бревно ивы (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".6", "Бревно ивы (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".10", "Бревно ивы (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".14", "Бревно ивы (Огнеупорный)");
 		OM.reg(ST.make(this, 1, 2), OD.logWood);
 		OM.reg(ST.make(this, 1, 6), OD.logWood);
 		OM.reg(ST.make(this, 1,10), OD.logWood);
 		OM.reg(ST.make(this, 1,14), OD.logWood);
 		
-		LH.add(getUnlocalizedName()+ ".3", "Blue Mahoe Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".7", "Blue Mahoe Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".11", "Blue Mahoe Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".15", "Blue Mahoe Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".3", "Бревно синего махо (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".7", "Бревно синего махо (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".11", "Бревно синего махо (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".15", "Бревно синего махо (Огнеупорный)");
 		OM.reg(ST.make(this, 1, 3), OD.logWood);
 		OM.reg(ST.make(this, 1, 7), OD.logWood);
 		OM.reg(ST.make(this, 1,11), OD.logWood);

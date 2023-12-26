@@ -28,24 +28,24 @@ public class BlockTreeBeam1 extends BlockBaseBeamFlammable {
 	public BlockTreeBeam1(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.BEAMS_1);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Oak Beam");
-		LH.add(getUnlocalizedName()+ ".4", "Oak Beam");
-		LH.add(getUnlocalizedName()+ ".8", "Oak Beam");
-		LH.add(getUnlocalizedName()+".12", "Oak Beam");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из дуба");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из дуба");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из дуба");
+		LH.add(getUnlocalizedName()+".12", "Брус из дуба");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Spruce Beam");
-		LH.add(getUnlocalizedName()+ ".5", "Spruce Beam");
-		LH.add(getUnlocalizedName()+ ".9", "Spruce Beam");
-		LH.add(getUnlocalizedName()+".13", "Spruce Beam");
+		LH.add(getUnlocalizedName()+ ".1", "Брус из ели");
+		LH.add(getUnlocalizedName()+ ".5", "Брус из ели");
+		LH.add(getUnlocalizedName()+ ".9", "Брус из ели");
+		LH.add(getUnlocalizedName()+".13", "Брус из ели");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Birch Beam");
-		LH.add(getUnlocalizedName()+ ".6", "Birch Beam");
-		LH.add(getUnlocalizedName()+".10", "Birch Beam");
-		LH.add(getUnlocalizedName()+".14", "Birch Beam");
+		LH.add(getUnlocalizedName()+ ".2", "Брус из берёзы");
+		LH.add(getUnlocalizedName()+ ".6", "Брус из берёзы");
+		LH.add(getUnlocalizedName()+".10", "Брус из берёзы");
+		LH.add(getUnlocalizedName()+".14", "Брус из берёзы");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Jungle Beam");
-		LH.add(getUnlocalizedName()+ ".7", "Jungle Beam");
-		LH.add(getUnlocalizedName()+".11", "Jungle Beam");
-		LH.add(getUnlocalizedName()+".15", "Jungle Beam");
+		LH.add(getUnlocalizedName()+ ".3", "Брус из тропического дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Брус из тропического дерева");
+		LH.add(getUnlocalizedName()+".11", "Брус из тропического дерева");
+		LH.add(getUnlocalizedName()+".15", "Брус из тропического дерева");
 	}
 }

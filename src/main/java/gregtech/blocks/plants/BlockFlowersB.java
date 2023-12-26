@@ -42,14 +42,14 @@ import static gregapi.data.CS.*;
 public class BlockFlowersB extends BlockBaseFlower implements Runnable {
 	public BlockFlowersB(String aUnlocalised) {
 		super(null, aUnlocalised, 8, Textures.BlockIcons.FLOWERS_B);
-		LH.add(getUnlocalizedName()+ ".0", "Artemisia Tridentata"); // Gold, Antimony, Arsenic
-		LH.add(getUnlocalizedName()+ ".1", "Atriplex Canescens"); // Gold, Antimony, Arsenic
-		LH.add(getUnlocalizedName()+ ".2", "Desert Trumpet"); // Gold, color might vary depending on other Minerals close by
-		LH.add(getUnlocalizedName()+ ".3", "Becium Homblei"); // Copper, Nickel
-		LH.add(getUnlocalizedName()+ ".4", "Prince's Plume"); // Selenium
-		LH.add(getUnlocalizedName()+ ".5", "Thompsons Locoweed"); // Uranium
-		LH.add(getUnlocalizedName()+ ".6", "Pandanus Candelabrum"); // Diamond
-		LH.add(getUnlocalizedName()+ ".7", "Tungstus"); // Tungsten
+		LH.add(getUnlocalizedName()+ ".0", "Полынь"); // Gold, Antimony, Arsenic
+		LH.add(getUnlocalizedName()+ ".1", "Лебеда сереющая"); // Gold, Antimony, Arsenic
+		LH.add(getUnlocalizedName()+ ".2", "Труба пустыни"); // Gold, color might vary depending on other Minerals close by
+		LH.add(getUnlocalizedName()+ ".3", "Медный цветок"); // Copper, Nickel
+		LH.add(getUnlocalizedName()+ ".4", "Пустынный князь"); // Selenium
+		LH.add(getUnlocalizedName()+ ".5", "Шалфей Томпсона"); // Uranium
+		LH.add(getUnlocalizedName()+ ".6", "Канделябр Панданус"); // Diamond
+		LH.add(getUnlocalizedName()+ ".7", "Вольфрамит"); // Tungsten
 		
 		GT.mBeforePostInit.add(this);
 		BlocksGT.FLOWERS.add(this);
@@ -64,22 +64,22 @@ public class BlockFlowersB extends BlockBaseFlower implements Runnable {
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		switch(aMeta) {
-		case  0: aList.add("Indicates presence of an Arsenic Deposit nearby" ); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  1: aList.add("Indicates presence of an Antimony Deposit nearby"); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  2: aList.add("Indicates presence of a Gold Deposit nearby"     ); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  3: aList.add("Indicates presence of a Copper Deposit nearby"   ); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  4: aList.add("Indicates presence of a Redstone Deposit nearby" ); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  5: aList.add("Indicates presence of an Uranium Deposit nearby" ); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  6: aList.add("Indicates presence of a Diamond Deposit nearby"  ); aList.add(LH.Chat.DGRAY + "* exists in Real Life"); break;
-		case  7: aList.add("Indicates presence of a Tungsten Deposit nearby" ); break;
-		case  8: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case  9: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case 10: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case 11: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case 12: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case 13: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case 14: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
-		case 15: aList.add("Indicates presence of some Ore Deposit nearby"   ); break;
+		case  0: aList.add("Указывает на наличие поблизости месторождения мышьяка"       ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  1: aList.add("Указывает на наличие поблизости месторождения сурьмы"        ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  2: aList.add("Указывает на наличие поблизости месторождения золота"        ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  3: aList.add("Указывает на наличие поблизости месторождения меди"          ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  4: aList.add("Указывает на наличие поблизости месторождения красной пыли"  ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  5: aList.add("Указывает на наличие поблизости месторождения урана"         ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  6: aList.add("Указывает на наличие поблизости месторождения алмазов"       ); aList.add(LH.Chat.DGRAY + "* существует в реальной жизни"); break;
+		case  7: aList.add("Указывает на наличие поблизости месторождения вольфрама"     ); break;
+		case  8: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case  9: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case 10: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case 11: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case 12: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case 13: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case 14: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
+		case 15: aList.add("Указывает на наличие поблизости месторождения другой руды"   ); break;
 		}
 	}
 	

@@ -131,9 +131,9 @@ public class Behavior_Spray_Extinguisher extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.extinguisher.tooltip", "Extinguishes Fire");
-		LH.add("gt.behaviour.extinguisher.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.unstackable", "Not usable when stacked!");
+		LH.add("gt.behaviour.extinguisher.tooltip", "Тушит огонь");
+		LH.add("gt.behaviour.extinguisher.uses", "Осталось использований:");
+		LH.add("gt.behaviour.unstackable", "Не может быть использовано в сложенном виде!");
 	}
 	
 	@Override

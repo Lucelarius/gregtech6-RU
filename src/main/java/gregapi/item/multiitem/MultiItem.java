@@ -70,7 +70,7 @@ public abstract class MultiItem extends ItemBase implements IItemEnergy {
 	 * @param aUnlocalized The Unlocalized Name of this Item. DO NOT START YOUR UNLOCALISED NAME WITH "gt."!!!
 	 */
 	public MultiItem(String aModID, String aUnlocalized) {
-		super(aModID, aUnlocalized, "Generated Item", null);
+		super(aModID, aUnlocalized, "Сгенерированный предмет", null);
 		setHasSubtypes(T);
 		setMaxDamage(0);
 	}
@@ -249,11 +249,11 @@ public abstract class MultiItem extends ItemBase implements IItemEnergy {
 			IItemEnergy tEnergyStats = getEnergyStats(aStack);
 			if (tEnergyStats != null) {
 				if (tEnergyStats instanceof EnergyStatDebug) {
-					aList.add(LH.Chat.RAINBOW_SLOW + "Works as Infinite Energy Battery");
+					aList.add(LH.Chat.RAINBOW_SLOW + "Работает как бесконечная батарейка");
 				} else {
 					for (TagData tEnergyType : tEnergyStats.getEnergyTypes(aStack)) {
 						long tCapacity = tEnergyStats.getEnergyCapacity(tEnergyType, aStack);
-						aList.add(LH.Chat.WHITE + UT.Code.makeString(Math.min(tCapacity, tEnergyStats.getEnergyStored(tEnergyType, aStack))) + " / " + UT.Code.makeString(tCapacity) + " " + tEnergyType.getLocalisedChatNameShort() + LH.Chat.WHITE + " - Size: " + tEnergyStats.getEnergySizeInputRecommended(tEnergyType, aStack));
+						aList.add(LH.Chat.WHITE + UT.Code.makeString(Math.min(tCapacity, tEnergyStats.getEnergyStored(tEnergyType, aStack))) + " / " + UT.Code.makeString(tCapacity) + " " + tEnergyType.getLocalisedChatNameShort() + LH.Chat.WHITE + " - Размер: " + tEnergyStats.getEnergySizeInputRecommended(tEnergyType, aStack));
 					}
 				}
 			}
@@ -261,7 +261,7 @@ public abstract class MultiItem extends ItemBase implements IItemEnergy {
 			Long[] tStats = getFluidContainerStats(aStack);
 			if (tStats != null && tStats[0] > 0) {
 				FluidStack tFluid = getFluidContent(aStack);
-				aList.add(LH.Chat.BLUE + ((tFluid==null?"No Fluids Contained":FL.name(tFluid, T))));
+				aList.add(LH.Chat.BLUE + ((tFluid==null?"Не содержит жидкости":FL.name(tFluid, T))));
 				aList.add(LH.Chat.BLUE + ((tFluid==null?0:tFluid.amount) + "L / " + tStats[0] + "L"));
 			}
 			

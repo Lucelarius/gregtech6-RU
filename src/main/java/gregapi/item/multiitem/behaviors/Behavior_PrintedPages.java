@@ -37,7 +37,7 @@ public class Behavior_PrintedPages extends AbstractBehaviorDefault {
 			aList.add(LH.Chat.CYAN + tTitle);
 			aList.add(LH.Chat.CYAN + "by " + UT.NBT.getBookAuthor(aStack));
 		} else {
-			aList.add(LH.Chat.CYAN + "These Pages are Empty");
+			aList.add(LH.Chat.CYAN + "Эти страницы пусты");
 		}
 		return aList;
 	}

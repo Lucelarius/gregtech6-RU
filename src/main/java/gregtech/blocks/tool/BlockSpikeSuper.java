@@ -40,33 +40,33 @@ import static gregapi.data.CS.TFC_DAMAGE_MULTIPLIER;
 public class BlockSpikeSuper extends BlockBaseSpike {
 	public BlockSpikeSuper(String aNameInternal) {
 		super(aNameInternal, MT.TungstenSteel, MT.Ad);
-		LH.add(getUnlocalizedName()+ ".0", "Tungstensteel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".1", "Tungstensteel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".2", "Tungstensteel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".3", "Tungstensteel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".4", "Tungstensteel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".5", "Tungstensteel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".6", "Tungstensteel Block Spike");
-		LH.add(getUnlocalizedName()+ ".7", "Falling Tungstensteel Spike Block");
-		LH.add(getUnlocalizedName()+ ".8", "Adamantium Wall Spike");
-		LH.add(getUnlocalizedName()+ ".9", "Adamantium Wall Spike");
-		LH.add(getUnlocalizedName()+".10", "Adamantium Wall Spike");
-		LH.add(getUnlocalizedName()+".11", "Adamantium Wall Spike");
-		LH.add(getUnlocalizedName()+".12", "Adamantium Wall Spike");
-		LH.add(getUnlocalizedName()+".13", "Adamantium Wall Spike");
-		LH.add(getUnlocalizedName()+".14", "Adamantium Block Spike");
-		LH.add(getUnlocalizedName()+".15", "Falling Adamantium Spike Block");
+		LH.add(getUnlocalizedName()+ ".0", "Настенный шип (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".1", "Настенный шип (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".2", "Настенный шип (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".3", "Настенный шип (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".4", "Настенный шип (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".5", "Настенный шип (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".6", "Блок шипов (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".7", "Падающий блок шипов (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".8", "Настенный шип (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".9", "Настенный шип (Адамантий)");
+		LH.add(getUnlocalizedName()+".10", "Настенный шип (Адамантий)");
+		LH.add(getUnlocalizedName()+".11", "Настенный шип (Адамантий)");
+		LH.add(getUnlocalizedName()+".12", "Настенный шип (Адамантий)");
+		LH.add(getUnlocalizedName()+".13", "Настенный шип (Адамантий)");
+		LH.add(getUnlocalizedName()+".14", "Блок шипов (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".15", "Падающий блок шипов (Вольфрамовая сталь)");
 	}
 	
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		if (aMeta < 8) {
-			aList.add(LH.Chat.ORANGE + "Deals huge Damage to anything touching it!");
+			aList.add(LH.Chat.ORANGE + "Наносит огромный урон всему, что к нему прикасается!");
 		} else {
-			aList.add(LH.Chat.ORANGE + "Deals absurd amounts of Damage to anything touching it!");
+			aList.add(LH.Chat.ORANGE + "Наносит абсурдное количество урона всему, что к нему прикасается!");
 		}
 		if ((aMeta & 7) >= 6) {
-			aList.add(LH.Chat.CYAN + "Works in all Directions, but only does half the Wall Spikes Damage!");
+			aList.add(LH.Chat.CYAN + "Работает во всех направлениях, но наносит только половину урона от настенных шипов!");
 		}
 	}
 	

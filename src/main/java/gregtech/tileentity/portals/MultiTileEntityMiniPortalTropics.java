@@ -48,9 +48,9 @@ public class MultiTileEntityMiniPortalTropics extends MultiTileEntityMiniPortal 
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListTropicSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.tropic.tooltip.1", "Only works between the Tropics and the Overworld!");
-		LH.add("gt.tileentity.portal.tropic.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.tropic.tooltip.3", "Requires any Tropicraft Cocktail for activation");
+		LH.add("gt.tileentity.portal.tropic.tooltip.1", "Работает только в Tropics и обычном мире!");
+		LH.add("gt.tileentity.portal.tropic.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.tropic.tooltip.3", "Требуется любой Tropicraft Cocktail для активации");
 	}
 	
 	@Override

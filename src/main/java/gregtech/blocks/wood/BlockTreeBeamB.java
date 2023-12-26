@@ -28,24 +28,24 @@ public class BlockTreeBeamB extends BlockBaseBeamFlammable {
 	public BlockTreeBeamB(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.BEAMS_B);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Hazel Beam");
-		LH.add(getUnlocalizedName()+ ".4", "Hazel Beam");
-		LH.add(getUnlocalizedName()+ ".8", "Hazel Beam");
-		LH.add(getUnlocalizedName()+".12", "Hazel Beam");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из орешника");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из орешника");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из орешника");
+		LH.add(getUnlocalizedName()+".12", "Брус из орешника");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Cinnamon Beam");
-		LH.add(getUnlocalizedName()+ ".5", "Cinnamon Beam");
-		LH.add(getUnlocalizedName()+ ".9", "Cinnamon Beam");
-		LH.add(getUnlocalizedName()+".13", "Cinnamon Beam");
+		LH.add(getUnlocalizedName()+ ".1", "Брус из дерева корицы");
+		LH.add(getUnlocalizedName()+ ".5", "Брус из дерева корицы");
+		LH.add(getUnlocalizedName()+ ".9", "Брус из дерева корицы");
+		LH.add(getUnlocalizedName()+".13", "Брус из дерева корицы");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Coconut Beam");
-		LH.add(getUnlocalizedName()+ ".6", "Coconut Beam");
-		LH.add(getUnlocalizedName()+".10", "Coconut Beam");
-		LH.add(getUnlocalizedName()+".14", "Coconut Beam");
+		LH.add(getUnlocalizedName()+ ".2", "Брус из кокосового дерева");
+		LH.add(getUnlocalizedName()+ ".6", "Брус из кокосового дерева");
+		LH.add(getUnlocalizedName()+".10", "Брус из кокосового дерева");
+		LH.add(getUnlocalizedName()+".14", "Брус из кокосового дерева");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Rainbowood Beam");
-		LH.add(getUnlocalizedName()+ ".7", "Rainbowood Beam");
-		LH.add(getUnlocalizedName()+".11", "Rainbowood Beam");
-		LH.add(getUnlocalizedName()+".15", "Rainbowood Beam");
+		LH.add(getUnlocalizedName()+ ".3", "Брус из радужного дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Брус из радужного дерева");
+		LH.add(getUnlocalizedName()+".11", "Брус из радужного дерева");
+		LH.add(getUnlocalizedName()+".15", "Брус из радужного дерева");
 	}
 }

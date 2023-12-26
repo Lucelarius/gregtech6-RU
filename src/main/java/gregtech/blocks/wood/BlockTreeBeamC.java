@@ -34,10 +34,10 @@ public class BlockTreeBeamC extends BlockBaseBeamFlammable {
 	public BlockTreeBeamC(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 1, Textures.BlockIcons.BEAMS_C);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Beam");
-		LH.add(getUnlocalizedName()+ ".4", "Blue Spruce Beam");
-		LH.add(getUnlocalizedName()+ ".8", "Blue Spruce Beam");
-		LH.add(getUnlocalizedName()+".12", "Blue Spruce Beam");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из голубой ели");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из голубой ели");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из голубой ели");
+		LH.add(getUnlocalizedName()+".12", "Брус из голубой ели");
 		
 	//  LH.add(getUnlocalizedName()+ ".1", " Beam");
 	//  LH.add(getUnlocalizedName()+ ".5", " Beam");
@@ -59,7 +59,7 @@ public class BlockTreeBeamC extends BlockBaseBeamFlammable {
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		super.addInformation(aStack, aMeta, aPlayer, aList, aF3_H);
 		if (XMAS_IN_JULY && (aMeta & 3) == 0) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Save on everything at Christmas in July!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "Сэкономьте на всем на Рождество в июле!");
 		}
 	}
 }

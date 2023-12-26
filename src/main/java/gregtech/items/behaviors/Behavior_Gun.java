@@ -298,7 +298,7 @@ public class Behavior_Gun extends AbstractBehaviorDefault {
 		}
 		
 		// To make Looting work at all...
-		DamageSource tDamageSource = DamageSources.getCombatDamage("player", tPlayer, DamageSources.getDeathMessage(aPlayer, aTarget, (tData!=null&&tData.validMaterial() ? "[VICTIM] got killed by [KILLER] shooting a Bullet made of " + tData.mMaterial.mMaterial.getLocal() : "[VICTIM] got shot by [KILLER]"))).setProjectile();
+		DamageSource tDamageSource = DamageSources.getCombatDamage("player", tPlayer, DamageSources.getDeathMessage(aPlayer, aTarget, (tData!=null&&tData.validMaterial() ? "[VICTIM] был(а) убит(а) [KILLER] выстрелом из " + tData.mMaterial.mMaterial.getLocal() : "[VICTIM] был(а) застрелен(а) [KILLER]"))).setProjectile();
 		// Extremely Fast Bullets will penetrate Armor. You need a Rifle with the Power Enchantment for this. A Power 5 Carbine at point-blank could do too though.
 		if (aPower > 25000) tDamageSource.setDamageBypassesArmor();
 		// Smite Bullets will break one Lich Shield each, in order to make this somewhat beatable in Multiplayer.
@@ -316,7 +316,7 @@ public class Behavior_Gun extends AbstractBehaviorDefault {
 			return T;
 		}
 		// Print Errors to the Log and send a Chat Message informing about its existence.
-		} catch(Throwable e) {e.printStackTrace(ERR); UT.Entities.sendchat(aPlayer, "See gregtech.log for details: " + e.toString()); aTarget.setDead(); return T;}
+		} catch(Throwable e) {e.printStackTrace(ERR); UT.Entities.sendchat(aPlayer, "Подробности смотрите в gregtech.log: " + e.toString()); aTarget.setDead(); return T;}
 		// Just pretend we miss the Target if it was in its Invulnerability Frames, this will end up hitting whatever is behind the Target instead.
 		if (aTarget.hurtResistantTime > 0) return F;
 		// It hits, but it doesn't seem to do anything.

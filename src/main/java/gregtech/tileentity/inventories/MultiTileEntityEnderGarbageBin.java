@@ -50,9 +50,9 @@ import static gregapi.data.CS.*;
  */
 public class MultiTileEntityEnderGarbageBin extends TileEntityBase07Paintable implements IFluidHandler, ITileEntityFunnelAccessible, IMTE_AddToolTips {
 	static {
-		LH.add("gt.multitileentity.ender.garbage.bin.tooltip.1", "Trash Bin deleting Items & Fluids, or moving them to the Servers Garbage Dump");
-		LH.add("gt.multitileentity.ender.garbage.bin.tooltip.2", "Items & Fluids entering this will be dumped inside the Garbage Dimension");
-		LH.add("gt.multitileentity.ender.garbage.bin.tooltip.3", "You can stop this from operating using a simple Redstone Signal");
+		LH.add("gt.multitileentity.ender.garbage.bin.tooltip.1", "Мусорное ведро, удаляющее предметы и жидкости, либо перемещающее их на серверную свалку");
+		LH.add("gt.multitileentity.ender.garbage.bin.tooltip.2", "Предметы и жидкости, попадающие в него, будут сбрасываться на свалку");
+		LH.add("gt.multitileentity.ender.garbage.bin.tooltip.3", "Вы можете отключить, используя сигнал красного камня");
 	}
 	
 	@Override

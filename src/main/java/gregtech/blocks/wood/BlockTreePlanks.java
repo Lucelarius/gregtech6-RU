@@ -37,22 +37,22 @@ import static gregapi.data.CS.ALL_SIDES_VALID;
 public class BlockTreePlanks extends BlockBasePlanksFlammable {
 	public BlockTreePlanks(String aName) {
 		super(ItemBlockMetaType.class, Material.wood, soundTypeWood, aName, "", ANY.Wood, 1, 1, 0, 16, Textures.BlockIcons.PLANKS);
-		LH.add(getUnlocalizedName()+ ".0", "Rubberwood Planks");
-		LH.add(getUnlocalizedName()+ ".1", "Maple Planks");
-		LH.add(getUnlocalizedName()+ ".2", "Willow Planks");
-		LH.add(getUnlocalizedName()+ ".3", "Blue Mahoe Planks");
-		LH.add(getUnlocalizedName()+ ".4", "Hazel Planks");
-		LH.add(getUnlocalizedName()+ ".5", "Cinnamon Planks");
-		LH.add(getUnlocalizedName()+ ".6", "Coconut Planks");
-		LH.add(getUnlocalizedName()+ ".7", "Rainbowood Planks");
-		LH.add(getUnlocalizedName()+ ".8", "Compressed Wood Planks");
-		LH.add(getUnlocalizedName()+ ".9", "Wood Planks");
-		LH.add(getUnlocalizedName()+".10", "Treated Planks");
-		LH.add(getUnlocalizedName()+".11", "Crate");
-		LH.add(getUnlocalizedName()+".12", "Dead Planks");
-		LH.add(getUnlocalizedName()+".13", "Rotten Planks");
-		LH.add(getUnlocalizedName()+".14", "Mossy Planks");
-		LH.add(getUnlocalizedName()+".15", "Frozen Planks");
+		LH.add(getUnlocalizedName()+ ".0", "Доски из каучукового дерева");
+		LH.add(getUnlocalizedName()+ ".1", "Доски из клена");
+		LH.add(getUnlocalizedName()+ ".2", "Доски из ивы");
+		LH.add(getUnlocalizedName()+ ".3", "Доски из синего махо");
+		LH.add(getUnlocalizedName()+ ".4", "Доски из орешника");
+		LH.add(getUnlocalizedName()+ ".5", "Доски из дерева корицы");
+		LH.add(getUnlocalizedName()+ ".6", "Доски из кокосового дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Доски из радужного дерева");
+		LH.add(getUnlocalizedName()+ ".8", "Доски из сжатого дерева");
+		LH.add(getUnlocalizedName()+ ".9", "Доски из дерева");
+		LH.add(getUnlocalizedName()+".10", "Обработанные доски");
+		LH.add(getUnlocalizedName()+".11", "Ящик");
+		LH.add(getUnlocalizedName()+".12", "Мертвые доски");
+		LH.add(getUnlocalizedName()+".13", "Гнилые доски");
+		LH.add(getUnlocalizedName()+".14", "Замшелые доски");
+		LH.add(getUnlocalizedName()+".15", "Замороженные доски");
 		
 		OM.reg(ST.make(this, 1, 7), OP.plank.dat(MT.WOODS.Rainbowood));
 		
@@ -69,22 +69,22 @@ public class BlockTreePlanks extends BlockBasePlanksFlammable {
 	
 	protected BlockTreePlanks(Class<? extends ItemBlock> aItemClass, Material aVanillaMaterial, SoundType aVanillaSoundType, String aName, String aDefaultLocalised, OreDictMaterial aMaterial, float aResistanceMultiplier, float aHardnessMultiplier, int aHarvestLevel, int aCount, IIconContainer[] aIcons, byte aSlabType, BlockMetaType aBlock) {
 		super(aItemClass, aVanillaMaterial, aVanillaSoundType, aName, aDefaultLocalised, aMaterial, aResistanceMultiplier, aHardnessMultiplier, aHarvestLevel, aCount, aIcons, aSlabType, aBlock);
-		LH.add(getUnlocalizedName()+ ".0", "Rubberwood Slab");
-		LH.add(getUnlocalizedName()+ ".1", "Maple Slab");
-		LH.add(getUnlocalizedName()+ ".2", "Willow Slab");
-		LH.add(getUnlocalizedName()+ ".3", "Blue Mahoe Slab");
-		LH.add(getUnlocalizedName()+ ".4", "Hazel Slab");
-		LH.add(getUnlocalizedName()+ ".5", "Cinnamon Slab");
-		LH.add(getUnlocalizedName()+ ".6", "Coconut Slab");
-		LH.add(getUnlocalizedName()+ ".7", "Rainbowood Slab");
-		LH.add(getUnlocalizedName()+ ".8", "Compressed Wood Slab");
-		LH.add(getUnlocalizedName()+ ".9", "Wood Slab");
-		LH.add(getUnlocalizedName()+".10", "Treated Slab");
-		LH.add(getUnlocalizedName()+".11", "Crate Slab");
-		LH.add(getUnlocalizedName()+".12", "Dead Slab");
-		LH.add(getUnlocalizedName()+".13", "Rotten Slab");
-		LH.add(getUnlocalizedName()+".14", "Mossy Slab");
-		LH.add(getUnlocalizedName()+".15", "Frozen Slab");
+		LH.add(getUnlocalizedName()+ ".0", "Плита из каучука");
+		LH.add(getUnlocalizedName()+ ".1", "Плита из клена");
+		LH.add(getUnlocalizedName()+ ".2", "Плита из ивы");
+		LH.add(getUnlocalizedName()+ ".3", "Плита из синего махо");
+		LH.add(getUnlocalizedName()+ ".4", "Плита из орешника");
+		LH.add(getUnlocalizedName()+ ".5", "Плита из дерева корицы");
+		LH.add(getUnlocalizedName()+ ".6", "Плита из кокосового дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Плита из радужного дерева");
+		LH.add(getUnlocalizedName()+ ".8", "Плита из сжатого дерева");
+		LH.add(getUnlocalizedName()+ ".9", "Плита из дерева");
+		LH.add(getUnlocalizedName()+".10", "Плита из обработанного дерева");
+		LH.add(getUnlocalizedName()+".11", "Плита из ящика");
+		LH.add(getUnlocalizedName()+".12", "Плита из мертвого дерева");
+		LH.add(getUnlocalizedName()+".13", "Плита из гнилого дерева");
+		LH.add(getUnlocalizedName()+".14", "Плита из замшелого дерева");
+		LH.add(getUnlocalizedName()+".15", "Плита из замороженного дерева");
 	}
 	
 	@Override public float getBlockHardness(World aWorld, int aX, int aY, int aZ) {return (aWorld.getBlockMetadata(aX, aY, aZ) < 12 ? 1.0F : 0.5F) * super.getBlockHardness(aWorld, aX, aY, aZ);}

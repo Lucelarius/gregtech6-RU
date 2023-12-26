@@ -48,8 +48,8 @@ public class MultiTileEntityMiniPortalCW2AquaCavern extends MultiTileEntityMiniP
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListCW2Side;}
 	
 	static {
-		LH.add("gt.tileentity.portal.aquacavern.tooltip.1", "Only works between Aqua Cavern and the Overworld!");
-		LH.add("gt.tileentity.portal.aquacavern.tooltip.2", "Margin of Error to still work: 128 Meters.");
+		LH.add("gt.tileentity.portal.aquacavern.tooltip.1", "Работает только в  Aqua Cavern и обычном мире!");
+		LH.add("gt.tileentity.portal.aquacavern.tooltip.2", "Предел погрешности для работы: 128 Метров.");
 	}
 	
 	@Override

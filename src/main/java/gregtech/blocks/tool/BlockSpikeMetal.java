@@ -43,37 +43,37 @@ import static gregapi.data.CS.TFC_DAMAGE_MULTIPLIER;
 public class BlockSpikeMetal extends BlockBaseSpike {
 	public BlockSpikeMetal(String aNameInternal) {
 		super(aNameInternal, ANY.Cu, MT.Pb);
-		LH.add(getUnlocalizedName()+ ".0" , "Copper Wall Spike");
-		LH.add(getUnlocalizedName()+ ".1" , "Copper Wall Spike");
-		LH.add(getUnlocalizedName()+ ".2" , "Copper Wall Spike");
-		LH.add(getUnlocalizedName()+ ".3" , "Copper Wall Spike");
-		LH.add(getUnlocalizedName()+ ".4" , "Copper Wall Spike");
-		LH.add(getUnlocalizedName()+ ".5" , "Copper Wall Spike");
-		LH.add(getUnlocalizedName()+ ".6" , "Copper Block Spike");
-		LH.add(getUnlocalizedName()+ ".7" , "Falling Copper Spike Block");
-		LH.add(getUnlocalizedName()+ ".8" , "Lead Wall Spike");
-		LH.add(getUnlocalizedName()+ ".9" , "Lead Wall Spike");
-		LH.add(getUnlocalizedName()+ ".10", "Lead Wall Spike");
-		LH.add(getUnlocalizedName()+ ".11", "Lead Wall Spike");
-		LH.add(getUnlocalizedName()+ ".12", "Lead Wall Spike");
-		LH.add(getUnlocalizedName()+ ".13", "Lead Wall Spike");
-		LH.add(getUnlocalizedName()+ ".14", "Lead Block Spike");
-		LH.add(getUnlocalizedName()+ ".15", "Falling Lead Spike Block");
+		LH.add(getUnlocalizedName()+ ".0" , "Настенный шип (Медь)");
+		LH.add(getUnlocalizedName()+ ".1" , "Настенный шип (Медь)");
+		LH.add(getUnlocalizedName()+ ".2" , "Настенный шип (Медь)");
+		LH.add(getUnlocalizedName()+ ".3" , "Настенный шип (Медь)");
+		LH.add(getUnlocalizedName()+ ".4" , "Настенный шип (Медь)");
+		LH.add(getUnlocalizedName()+ ".5" , "Настенный шип (Медь)");
+		LH.add(getUnlocalizedName()+ ".6" , "Блок шипов (Медь)");
+		LH.add(getUnlocalizedName()+ ".7" , "Падающий блок шипов (Медь)");
+		LH.add(getUnlocalizedName()+ ".8" , "Настенный шип (Свинец)");
+		LH.add(getUnlocalizedName()+ ".9" , "Настенный шип (Свинец)");
+		LH.add(getUnlocalizedName()+ ".10", "Настенный шип (Свинец)");
+		LH.add(getUnlocalizedName()+ ".11", "Настенный шип (Свинец)");
+		LH.add(getUnlocalizedName()+ ".12", "Настенный шип (Свинец)");
+		LH.add(getUnlocalizedName()+ ".13", "Настенный шип (Свинец)");
+		LH.add(getUnlocalizedName()+ ".14", "Блок шипов (Свинец)");
+		LH.add(getUnlocalizedName()+ ".15", "Падающий блок шипов (Свинец)");
 	}
 	
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		if (aMeta < 8) {
-			aList.add(LH.Chat.ORANGE + "Deals huge Damage to any Slime touching it!");
-			aList.add(LH.Chat.ORANGE + "Does very low Damage to anything else!");
-			aList.add(LH.Chat.ORANGE + "Doesn't work on Skeletons and Iron Golems.");
+			aList.add(LH.Chat.ORANGE + "Наносит огромный урон любому слизню, прикоснувшемуся к нему!");
+			aList.add(LH.Chat.ORANGE + "Наносит очень низкий урон всему остальному!");
+			aList.add(LH.Chat.ORANGE + "Не действует на скелетов и железных големов.");
 		} else {
-			aList.add(LH.Chat.ORANGE + "Deals huge Damage to any Arthropod touching it!");
-			aList.add(LH.Chat.ORANGE + "Does very low Damage to anything else!");
-			aList.add(LH.Chat.ORANGE + "Doesn't work on Skeletons, Slimes and Iron Golems.");
+			aList.add(LH.Chat.ORANGE + "Наносит огромный урон любому членистоногому, прикасающемуся к нему!");
+			aList.add(LH.Chat.ORANGE + "Наносит очень низкий урон всему остальному!");
+			aList.add(LH.Chat.ORANGE + "Не действует на скелетов, слизней и железных големов.");
 		}
 		if ((aMeta & 7) >= 6) {
-			aList.add(LH.Chat.CYAN + "Works in all Directions, but only does half the Wall Spikes Damage!");
+			aList.add(LH.Chat.CYAN + "Работает во всех направлениях, но наносит только половину урона от настенных шипов!");
 		}
 	}
 	

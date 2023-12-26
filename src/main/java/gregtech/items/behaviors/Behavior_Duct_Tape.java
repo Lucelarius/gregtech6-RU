@@ -99,9 +99,9 @@ public class Behavior_Duct_Tape extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.ducttape.tooltip", "Can fix anything!*");
-		LH.add("gt.behaviour.ducttape.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.unstackable", "Not usable when stacked!");
+		LH.add("gt.behaviour.ducttape.tooltip", "Можно исправить что угодно!*");
+		LH.add("gt.behaviour.ducttape.uses", "Осталось использований:");
+		LH.add("gt.behaviour.unstackable", "Не может быть использовано в сложенном виде!");
 	}
 	
 	@Override

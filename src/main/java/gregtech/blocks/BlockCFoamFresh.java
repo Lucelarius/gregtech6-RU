@@ -44,7 +44,7 @@ import static gregapi.data.CS.*;
 
 public class BlockCFoamFresh extends BlockColored implements IBlockFoamable {
 	public BlockCFoamFresh(String aUnlocalised) {
-		super(ItemBlockMetaType.class, Material.sponge, soundTypeCloth, aUnlocalised, "Fresh C-Foam", MT.ConstructionFoam, 1.0F, 0.0F, 0, Textures.BlockIcons.CFOAMS_FRESH);
+		super(ItemBlockMetaType.class, Material.sponge, soundTypeCloth, aUnlocalised, "Свежая С-пена", MT.ConstructionFoam, 1.0F, 0.0F, 0, Textures.BlockIcons.CFOAMS_FRESH);
 	}
 	
 	@Override

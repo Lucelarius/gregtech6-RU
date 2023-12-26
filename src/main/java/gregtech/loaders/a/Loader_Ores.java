@@ -448,7 +448,7 @@ public class Loader_Ores implements Runnable {
 		
 		if (aMod.mLoaded) {
 			if (aRock == NB || aRock == null) {
-				if (D1) throw new IllegalArgumentException("The Stone of the Mod '" + aMod.mID + "' with the Category '" + aName + "' is missing despite the Mod being loaded. Maybe an old/wrong Version of the Mod is used?");
+				if (D1) throw new IllegalArgumentException("Камень мода '" + aMod.mID + "' категории '" + aName + "' отсутствует, несмотря на то, что мод загружен. Возможно, используется старая/неправильная версия мода?");
 				aPrefix = OP.oreVanillastone;
 				aRock = Blocks.stone;
 				aCobble = Blocks.cobblestone;

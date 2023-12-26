@@ -55,7 +55,7 @@ public class Behavior_SensorKit extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.sensorkit.tooltip", "Used to display Information using the Mod Nuclear Control");
+		LH.add("gt.behaviour.sensorkit.tooltip", "Используется для отображения информации с помощью мода Nuclear Control.");
 	}
 	
 	@Override

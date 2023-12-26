@@ -48,8 +48,8 @@ public class MultiTileEntityMiniPortalAroma extends MultiTileEntityMiniPortal {
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListAromaSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.aroma.tooltip.1", "Only works between Aroma's Mining Dimension and the Overworld!");
-		LH.add("gt.tileentity.portal.aroma.tooltip.2", "Margin of Error to still work: 128 Meters.");
+		LH.add("gt.tileentity.portal.aroma.tooltip.1", "Работает только в  Aroma's Mining Dimension и обычном мире!");
+		LH.add("gt.tileentity.portal.aroma.tooltip.2", "Предел погрешности для работы: 128 Метров.");
 	}
 	
 	@Override

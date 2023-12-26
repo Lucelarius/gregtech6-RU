@@ -67,8 +67,8 @@ public class Behavior_CureZombie extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.cure.zombie.strong", "Can be used to cure strong Zombie Villagers");
-		LH.add("gt.behaviour.cure.zombie.weak", "Can be used to cure weakened Zombie Villagers");
+		LH.add("gt.behaviour.cure.zombie.strong", "Может быть использован для лечения сильных зомби-жителей");
+		LH.add("gt.behaviour.cure.zombie.weak", "Может быть использован для лечения ослабленных зомби-жителей");
 	}
 	
 	@Override

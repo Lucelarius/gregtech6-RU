@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalAether extends MultiTileEntityMiniPortal {
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListAetherSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.aether.tooltip.1", "Only works between the Aether and the Overworld!");
-		LH.add("gt.tileentity.portal.aether.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.aether.tooltip.3", "Requires a Glass Bottle of Holy Water for activation");
+		LH.add("gt.tileentity.portal.aether.tooltip.1", "Работает только в Aether и обычном мире!");
+		LH.add("gt.tileentity.portal.aether.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.aether.tooltip.3", "Требуется святая вода для активации");
 	}
 	
 	@Override

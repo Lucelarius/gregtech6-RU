@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalBetweenlands extends MultiTileEntityMiniPo
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListBetweenlandsSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.betweenlands.tooltip.1", "Only works between the Betweenlands and the Overworld!");
-		LH.add("gt.tileentity.portal.betweenlands.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.betweenlands.tooltip.3", "Requires Swamp Talisman for activation");
+		LH.add("gt.tileentity.portal.betweenlands.tooltip.1", "Работает только в Betweenlands и обычном мире!");
+		LH.add("gt.tileentity.portal.betweenlands.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.betweenlands.tooltip.3", "Требуется Swamp Talisman для активации");
 	}
 	
 	@Override

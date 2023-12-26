@@ -115,9 +115,9 @@ public class Behavior_Spray_Foam_Remover extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.foamremoverspray.tooltip", "Can remove C-Foam");
-		LH.add("gt.behaviour.removerspray.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.unstackable", "Not usable when stacked!");
+		LH.add("gt.behaviour.foamremoverspray.tooltip", "Удаляет С-пену");
+		LH.add("gt.behaviour.removerspray.uses", "Осталось использований:");
+		LH.add("gt.behaviour.unstackable", "Не может быть использовано в сложенном виде!");
 	}
 	
 	@Override

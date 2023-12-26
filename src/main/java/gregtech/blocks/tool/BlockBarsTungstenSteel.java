@@ -32,22 +32,22 @@ import net.minecraft.world.IBlockAccess;
 public class BlockBarsTungstenSteel extends BlockBaseBars {
 	public BlockBarsTungstenSteel(String aNameInternal) {
 		super(aNameInternal, MT.TungstenSteel, Material.iron, Block.soundTypeMetal);
-		LH.add(getUnlocalizedName()+ ".0", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".1", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".2", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".3", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".4", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".5", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".6", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".7", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".8", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+ ".9", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+".10", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+".11", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+".12", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+".13", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+".14", "Tungstensteel Bars");
-		LH.add(getUnlocalizedName()+".15", "Tungstensteel Bars");
+		LH.add(getUnlocalizedName()+ ".0", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".1", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".2", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".3", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".4", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".5", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".6", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".7", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".8", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+ ".9", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".10", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".11", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".12", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".13", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".14", "Решетка (Вольфрамовая сталь)");
+		LH.add(getUnlocalizedName()+".15", "Решетка (Вольфрамовая сталь)");
 	}
 	
 	@Override public float getExplosionResistance(byte aMeta) {return 16;}

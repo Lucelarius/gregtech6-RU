@@ -42,7 +42,7 @@ import net.minecraft.item.ItemStack;
 public class BlockTreePlanks2 extends BlockBasePlanksFlammable {
 	public BlockTreePlanks2(String aName) {
 		super(ItemBlockMetaType.class, Material.wood, soundTypeWood, aName, "", ANY.Wood, 1, 1, 0, 1, Textures.BlockIcons.PLANKS_2);
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Planks");
+		LH.add(getUnlocalizedName()+ ".0", "Доски из голубой ели");
 	//  LH.add(getUnlocalizedName()+ ".1", " Planks");
 	//  LH.add(getUnlocalizedName()+ ".2", " Planks");
 	//  LH.add(getUnlocalizedName()+ ".3", " Planks");
@@ -72,7 +72,7 @@ public class BlockTreePlanks2 extends BlockBasePlanksFlammable {
 	
 	protected BlockTreePlanks2(Class<? extends ItemBlock> aItemClass, Material aVanillaMaterial, SoundType aVanillaSoundType, String aName, String aDefaultLocalised, OreDictMaterial aMaterial, float aResistanceMultiplier, float aHardnessMultiplier, int aHarvestLevel, int aCount, IIconContainer[] aIcons, byte aSlabType, BlockMetaType aBlock) {
 		super(aItemClass, aVanillaMaterial, aVanillaSoundType, aName, aDefaultLocalised, aMaterial, aResistanceMultiplier, aHardnessMultiplier, aHarvestLevel, aCount, aIcons, aSlabType, aBlock);
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Slab");
+		LH.add(getUnlocalizedName()+ ".0", "Плита из голубой ели");
 	//  LH.add(getUnlocalizedName()+ ".1", " Slab");
 	//  LH.add(getUnlocalizedName()+ ".2", " Slab");
 	//  LH.add(getUnlocalizedName()+ ".3", " Slab");
@@ -94,7 +94,7 @@ public class BlockTreePlanks2 extends BlockBasePlanksFlammable {
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		super.addInformation(aStack, aMeta, aPlayer, aList, aF3_H);
 		if (XMAS_IN_JULY && aMeta == 0) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Save on everything at Christmas in July!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "Сэкономьте на всем на Рождество в июле!");
 		}
 	}
 }

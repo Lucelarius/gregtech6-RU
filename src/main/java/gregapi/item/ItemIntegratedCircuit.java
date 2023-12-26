@@ -47,7 +47,7 @@ import static gregapi.data.CS.*;
  */
 public class ItemIntegratedCircuit extends ItemBase {
 	public ItemIntegratedCircuit() {
-		super(MD.GAPI.mID, "gt.integrated_circuit", "Selector Tag", "");
+		super(MD.GAPI.mID, "gt.integrated_circuit", "Настройщик", "");
 		setHasSubtypes(T);
 		setMaxDamage(0);
 		
@@ -95,7 +95,7 @@ public class ItemIntegratedCircuit extends ItemBase {
 	@Override
 	public void addAdditionalToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		super.addAdditionalToolTips(aList, aStack, aF3_H);
-		aList.add(LanguageHandler.get(getUnlocalizedName() + ".configuration", "Configuration: ") + getConfigurationString(getDamage(aStack)));
+		aList.add(LanguageHandler.get(getUnlocalizedName() + ".configuration", "Конфигурация: ") + getConfigurationString(getDamage(aStack)));
 	}
 	
 	@Override

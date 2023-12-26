@@ -48,7 +48,7 @@ public class Behavior_WrittenBook extends AbstractBehaviorDefault {
 			aList.add(LH.Chat.CYAN + tTitle);
 			aList.add(LH.Chat.CYAN + "by " + UT.NBT.getBookAuthor(aStack));
 		} else {
-			aList.add(LH.Chat.CYAN + "This Book is Empty");
+			aList.add(LH.Chat.CYAN + "Эта книга пустая");
 		}
 		return aList;
 	}

@@ -28,24 +28,24 @@ public class BlockTreeBeam3 extends BlockBaseBeamFlammable {
 	public BlockTreeBeam3(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.BEAMS_3);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Greatwood Beam");
-		LH.add(getUnlocalizedName()+ ".4", "Greatwood Beam");
-		LH.add(getUnlocalizedName()+ ".8", "Greatwood Beam");
-		LH.add(getUnlocalizedName()+".12", "Greatwood Beam");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из хорошего дерева");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из хорошего дерева");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из хорошего дерева");
+		LH.add(getUnlocalizedName()+".12", "Брус из хорошего дерева");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Silverwood Beam");
-		LH.add(getUnlocalizedName()+ ".5", "Silverwood Beam");
-		LH.add(getUnlocalizedName()+ ".9", "Silverwood Beam");
-		LH.add(getUnlocalizedName()+".13", "Silverwood Beam");
+		LH.add(getUnlocalizedName()+ ".1", "Брус из серебрянного дерева");
+		LH.add(getUnlocalizedName()+ ".5", "Брус из серебрянного дерева");
+		LH.add(getUnlocalizedName()+ ".9", "Брус из серебрянного дерева");
+		LH.add(getUnlocalizedName()+".13", "Брус из серебрянного дерева");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Skyroot Beam");
-		LH.add(getUnlocalizedName()+ ".6", "Skyroot Beam");
-		LH.add(getUnlocalizedName()+".10", "Skyroot Beam");
-		LH.add(getUnlocalizedName()+".14", "Skyroot Beam");
+		LH.add(getUnlocalizedName()+ ".2", "Брус из небесного корня");
+		LH.add(getUnlocalizedName()+ ".6", "Брус из небесного корня");
+		LH.add(getUnlocalizedName()+".10", "Брус из небесного корня");
+		LH.add(getUnlocalizedName()+".14", "Брус из небесного корня");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Darkwood Beam");
-		LH.add(getUnlocalizedName()+ ".7", "Darkwood Beam");
-		LH.add(getUnlocalizedName()+".11", "Darkwood Beam");
-		LH.add(getUnlocalizedName()+".15", "Darkwood Beam");
+		LH.add(getUnlocalizedName()+ ".3", "Брус из темного дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Брус из темного дерева");
+		LH.add(getUnlocalizedName()+".11", "Брус из темного дерева");
+		LH.add(getUnlocalizedName()+".15", "Брус из темного дерева");
 	}
 }

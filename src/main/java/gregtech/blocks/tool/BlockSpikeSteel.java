@@ -38,31 +38,31 @@ import net.minecraft.world.World;
 public class BlockSpikeSteel extends BlockBaseSpike {
 	public BlockSpikeSteel(String aNameInternal) {
 		super(aNameInternal, ANY.BlueSteel, ANY.RedSteel); // If you were looking for the regular Steel Spike, that one is with the Sharp Spikes.
-		LH.add(getUnlocalizedName()+ ".0", "Blue Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".1", "Blue Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".2", "Blue Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".3", "Blue Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".4", "Blue Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".5", "Blue Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".6", "Blue Steel Block Spike");
-		LH.add(getUnlocalizedName()+ ".7", "Falling Blue Steel Spike Block");
-		LH.add(getUnlocalizedName()+ ".8", "Red Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".9", "Red Steel Wall Spike");
-		LH.add(getUnlocalizedName()+".10", "Red Steel Wall Spike");
-		LH.add(getUnlocalizedName()+".11", "Red Steel Wall Spike");
-		LH.add(getUnlocalizedName()+".12", "Red Steel Wall Spike");
-		LH.add(getUnlocalizedName()+".13", "Red Steel Wall Spike");
-		LH.add(getUnlocalizedName()+".14", "Red Steel Block Spike");
-		LH.add(getUnlocalizedName()+".15", "Falling Red Steel Spike Block");
+		LH.add(getUnlocalizedName()+ ".0", "Настенный шип (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".1", "Настенный шип (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".2", "Настенный шип (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".3", "Настенный шип (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".4", "Настенный шип (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".5", "Настенный шип (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".6", "Блок шипов (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".7", "Падающий блок шипов (Синяя сталь)");
+		LH.add(getUnlocalizedName()+ ".8", "Настенный шип (Красная сталь)");
+		LH.add(getUnlocalizedName()+ ".9", "Настенный шип (Красная сталь)");
+		LH.add(getUnlocalizedName()+".10", "Настенный шип (Красная сталь)");
+		LH.add(getUnlocalizedName()+".11", "Настенный шип (Красная сталь)");
+		LH.add(getUnlocalizedName()+".12", "Настенный шип (Красная сталь)");
+		LH.add(getUnlocalizedName()+".13", "Настенный шип (Красная сталь)");
+		LH.add(getUnlocalizedName()+".14", "Блок шипов (Красная сталь)");
+		LH.add(getUnlocalizedName()+".15", "Падающий блок шипов (Красная сталь)");
 	}
 	
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
-		aList.add(LH.Chat.ORANGE + "Deals above average Damage to anything touching it!");
-		aList.add(LH.Chat.ORANGE + "Doesn't work on Iron Golems.");
+		aList.add(LH.Chat.ORANGE + "Наносит урон выше среднего всему, что к нему прикасается!");
+		aList.add(LH.Chat.ORANGE + "Не действует на железных големов.");
 		
 		if ((aMeta & 7) >= 6) {
-			aList.add(LH.Chat.CYAN + "Works in all Directions, but only does half the Wall Spikes Damage!");
+			aList.add(LH.Chat.CYAN + "Работает во всех направлениях, но наносит только половину урона от настенных шипов!");
 		}
 	}
 	

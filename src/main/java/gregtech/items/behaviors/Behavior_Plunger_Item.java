@@ -66,7 +66,7 @@ public class Behavior_Plunger_Item extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.plunger.item", "Clears Items from Pipes");
+		LH.add("gt.behaviour.plunger.item", "Удаляет предметы из труб");
 	}
 	
 	@Override

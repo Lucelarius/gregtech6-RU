@@ -112,8 +112,8 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 		if (aID >= 0 && aID < 32766 && isUsableMeta((short)aID)) {
 			LH.add(getUnlocalizedName() + "." +  aID                , aEnglish);
 			LH.add(getUnlocalizedName() + "." +  aID    + ".tooltip", aToolTip);
-			LH.add(getUnlocalizedName() + "." + (aID+1)             , aEnglish + " (Empty)");
-			LH.add(getUnlocalizedName() + "." + (aID+1) + ".tooltip", "You need to recharge it");
+			LH.add(getUnlocalizedName() + "." + (aID+1)             , aEnglish + " (Пусто)");
+			LH.add(getUnlocalizedName() + "." + (aID+1) + ".tooltip", "Вам нужно его перезарядить");
 			mToolStats.put((short) aID   , aToolStats);
 			mToolStats.put((short)(aID+1), aToolStats);
 			aToolStats.onStatsAddedToTool(this, aID);
@@ -316,20 +316,20 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 		IToolStats tStats = getToolStats(aStack);
 		if (tMaxDamage > 0 && tStats != null) {
 			if (tMat1 == MT.NULL) {
-				aList.add(LH.Chat.WHITE + "Durability: x" + LH.Chat.GREEN + tStats.getMaxDurabilityMultiplier());
-				aList.add(LH.Chat.WHITE + "Level: +" + LH.Chat.YELLOW + tStats.getBaseQuality());
+				aList.add(LH.Chat.WHITE + "Прочность: x" + LH.Chat.GREEN + tStats.getMaxDurabilityMultiplier());
+				aList.add(LH.Chat.WHITE + "Уровень: +" + LH.Chat.YELLOW + tStats.getBaseQuality());
 				float tCombat = getToolCombatDamage(aStack);
-				aList.add(LH.Chat.WHITE + "Attack Damage: +" + LH.Chat.BLUE + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + " Hearts)"));
-				aList.add(LH.Chat.WHITE + "Mining Speed: x" + LH.Chat.PINK + tStats.getSpeedMultiplier());
+				aList.add(LH.Chat.WHITE + "Урон от атаки: +" + LH.Chat.BLUE + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + " Сердец)"));
+				aList.add(LH.Chat.WHITE + "Скорость добычи: x" + LH.Chat.PINK + tStats.getSpeedMultiplier());
 				if (tStats.canCollect()) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_AUTOCOLLECT));
 				if (tStats.canPenetrate()) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_ARMOR_PENETRATING));
 			} else {
-				aList.add(LH.Chat.WHITE + "Durability: " + LH.Chat.GREEN + UT.Code.makeString(tMaxDamage - tDamage) + " / " + UT.Code.makeString(tMaxDamage));
-				aList.add(LH.Chat.WHITE + tMat1.getLocal() + LH.Chat.YELLOW + " Level: " + (tStats.getBaseQuality() + tMat1.mToolQuality));
+				aList.add(LH.Chat.WHITE + "Прочность: " + LH.Chat.GREEN + UT.Code.makeString(tMaxDamage - tDamage) + " / " + UT.Code.makeString(tMaxDamage));
+				aList.add(LH.Chat.WHITE + tMat1.getLocal() + LH.Chat.YELLOW + " Уровень: " + (tStats.getBaseQuality() + tMat1.mToolQuality));
 				float tCombat = getToolCombatDamage(aStack);
-				aList.add(LH.Chat.WHITE + "Attack Damage: " + LH.Chat.BLUE + "+" + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + " Hearts)"));
-				aList.add(LH.Chat.WHITE + "Mining Speed: " + LH.Chat.PINK + Math.max(Float.MIN_NORMAL, tStats.getSpeedMultiplier() * tMat1.mToolSpeed));
-				aList.add(LH.Chat.WHITE + "Crafting Uses: " + LH.Chat.GREEN + UT.Code.divup(getEnergyStats(aStack) == null ? tMaxDamage - tDamage : Math.min(getEnergyStored(TD.Energy.EU, aStack), getEnergyCapacity(TD.Energy.EU, aStack)), tStats.getToolDamagePerContainerCraft()));
+				aList.add(LH.Chat.WHITE + "Урон от атаки: " + LH.Chat.BLUE + "+" + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + " Сердец)"));
+				aList.add(LH.Chat.WHITE + "Скорость добычи: " + LH.Chat.PINK + Math.max(Float.MIN_NORMAL, tStats.getSpeedMultiplier() * tMat1.mToolSpeed));
+				aList.add(LH.Chat.WHITE + "Используется в крафте: " + LH.Chat.GREEN + UT.Code.divup(getEnergyStats(aStack) == null ? tMaxDamage - tDamage : Math.min(getEnergyStored(TD.Energy.EU, aStack), getEnergyCapacity(TD.Energy.EU, aStack)), tStats.getToolDamagePerContainerCraft()));
 				if (MD.BTL.mLoaded && tMat1.contains(TD.Properties.BETWEENLANDS)) aList.add(LH.Chat.GREEN + LH.get(LH.TOOLTIP_BETWEENLANDS_RESISTANCE));
 				if (MD.TF .mLoaded && tMat1.contains(TD.Properties.MAZEBREAKER)) {
 					if (canHarvestBlock(IL.TF_Mazestone.block(), aStack)) aList.add(LH.Chat.PINK + LH.get(LH.TOOLTIP_TWILIGHT_MAZE_STONE_BREAKING));

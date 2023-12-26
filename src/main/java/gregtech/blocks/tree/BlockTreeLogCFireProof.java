@@ -46,10 +46,10 @@ public class BlockTreeLogCFireProof extends BlockBaseLog implements IBlockToolab
 	public BlockTreeLogCFireProof(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 1, Textures.BlockIcons.LOGS_C);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".4", "Blue Spruce Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".8", "Blue Spruce Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".12", "Blue Spruce Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".0", "Бревно голубой ели (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".4", "Бревно голубой ели (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".8", "Бревно голубой ели (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".12", "Бревно голубой ели (Огнеупорный)");
 		OM.reg(ST.make(this, 1, 0), OD.logWood);
 		OM.reg(ST.make(this, 1, 4), OD.logWood);
 		OM.reg(ST.make(this, 1, 8), OD.logWood);
@@ -103,7 +103,7 @@ public class BlockTreeLogCFireProof extends BlockBaseLog implements IBlockToolab
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		super.addInformation(aStack, aMeta, aPlayer, aList, aF3_H);
 		if (XMAS_IN_JULY && (aMeta & 3) == 0) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Save on everything at Christmas in July!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "Сэкономьте на всем на Рождество в июле!");
 		}
 	}
 }

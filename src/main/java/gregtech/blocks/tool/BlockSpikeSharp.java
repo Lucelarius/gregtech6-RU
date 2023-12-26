@@ -41,34 +41,34 @@ import net.minecraft.world.World;
 public class BlockSpikeSharp extends BlockBaseSpike {
 	public BlockSpikeSharp(String aNameInternal) {
 		super(aNameInternal, ANY.Steel, MT.Ti);
-		LH.add(getUnlocalizedName()+ ".0", "Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".1", "Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".2", "Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".3", "Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".4", "Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".5", "Steel Wall Spike");
-		LH.add(getUnlocalizedName()+ ".6", "Steel Block Spike");
-		LH.add(getUnlocalizedName()+ ".7", "Falling Steel Spike Block");
-		LH.add(getUnlocalizedName()+ ".8", "Titanium Wall Spike");
-		LH.add(getUnlocalizedName()+ ".9", "Titanium Wall Spike");
-		LH.add(getUnlocalizedName()+".10", "Titanium Wall Spike");
-		LH.add(getUnlocalizedName()+".11", "Titanium Wall Spike");
-		LH.add(getUnlocalizedName()+".12", "Titanium Wall Spike");
-		LH.add(getUnlocalizedName()+".13", "Titanium Wall Spike");
-		LH.add(getUnlocalizedName()+".14", "Titanium Block Spike");
-		LH.add(getUnlocalizedName()+".15", "Falling Titanium Spike Block");
+		LH.add(getUnlocalizedName()+ ".0", "Настенный шип (Сталь)");
+		LH.add(getUnlocalizedName()+ ".1", "Настенный шип (Сталь)");
+		LH.add(getUnlocalizedName()+ ".2", "Настенный шип (Сталь)");
+		LH.add(getUnlocalizedName()+ ".3", "Настенный шип (Сталь)");
+		LH.add(getUnlocalizedName()+ ".4", "Настенный шип (Сталь)");
+		LH.add(getUnlocalizedName()+ ".5", "Настенный шип (Сталь)");
+		LH.add(getUnlocalizedName()+ ".6", "Блок шипов (Сталь)");
+		LH.add(getUnlocalizedName()+ ".7", "Падающий блок шипов (Сталь)");
+		LH.add(getUnlocalizedName()+ ".8", "Настенный шип (Титан)");
+		LH.add(getUnlocalizedName()+ ".9", "Настенный шип (Титан)");
+		LH.add(getUnlocalizedName()+".10", "Настенный шип (Титан)");
+		LH.add(getUnlocalizedName()+".11", "Настенный шип (Титан)");
+		LH.add(getUnlocalizedName()+".12", "Настенный шип (Титан)");
+		LH.add(getUnlocalizedName()+".13", "Настенный шип (Титан)");
+		LH.add(getUnlocalizedName()+".14", "Блок шипов (Титан)");
+		LH.add(getUnlocalizedName()+".15", "Падающий блок шипов (Титан)");
 	}
 	
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		if (aMeta < 8) {
-			aList.add(LH.Chat.ORANGE + "Deals average Damage to anything touching it!");
-			aList.add(LH.Chat.ORANGE + "Doesn't work on Skeletons, Slimes and Iron Golems.");
+			aList.add(LH.Chat.ORANGE + "Наносит средний урон всему, что к нему прикасается!");
+			aList.add(LH.Chat.ORANGE + "Не действует на скелетов, слизней и железных големов.");
 		} else {
-			aList.add(LH.Chat.ORANGE + "Deals large Damage to anything touching it!");
+			aList.add(LH.Chat.ORANGE + "Наносит большой урон всему, что к нему прикасается!");
 		}
 		if ((aMeta & 7) >= 6) {
-			aList.add(LH.Chat.CYAN + "Works in all Directions, but only does half the Wall Spikes Damage!");
+			aList.add(LH.Chat.CYAN + "Работает во всех направлениях, но наносит только половину урона от настенных шипов!");
 		}
 	}
 	

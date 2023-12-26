@@ -42,7 +42,7 @@ import net.minecraftforge.common.IPlantable;
  */
 public class MultiTileEntityPlantPot extends TileEntityBase07Paintable implements IMTE_AddToolTips, IMTE_CanSustainPlant {
 	static {
-		LH.add("gt.multitileentity.plantpot.tooltip.1", "Can grow any Plants ontop of it!");
+		LH.add("gt.multitileentity.plantpot.tooltip.1", "В нем можно выращивать любые растения!");
 	}
 	
 	@Override

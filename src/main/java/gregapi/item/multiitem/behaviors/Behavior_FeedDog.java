@@ -57,7 +57,7 @@ public class Behavior_FeedDog extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.feed.dog", "Is usable as Dog Food");
+		LH.add("gt.behaviour.feed.dog", "Можно использовать как корм для собак");
 	}
 	
 	@Override

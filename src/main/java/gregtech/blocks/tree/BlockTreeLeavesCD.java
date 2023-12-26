@@ -45,7 +45,7 @@ import static gregapi.data.CS.*;
 public class BlockTreeLeavesCD extends BlockBaseLeaves implements Runnable {
 	public BlockTreeLeavesCD(String aUnlocalised, Block aSaplings) {
 		super(null, aUnlocalised, Material.leaves, soundTypeGrass, 1, Textures.BlockIcons.LEAVES_CD, aSaplings, new Block[] {BlocksGT.LogC, BlocksGT.LogC, BlocksGT.LogC, BlocksGT.LogC, BlocksGT.LogD, BlocksGT.LogD, BlocksGT.LogD, BlocksGT.LogD}, new byte[] {0, 1, 2, 3, 0, 1, 2, 3});
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Leaves");
+		LH.add(getUnlocalizedName()+ ".0", "Листья голубой ели");
 	//  LH.add(getUnlocalizedName()+ ".1", " Leaves");
 	//  LH.add(getUnlocalizedName()+ ".2", " Leaves");
 	//  LH.add(getUnlocalizedName()+ ".3", " Leaves");
@@ -53,7 +53,7 @@ public class BlockTreeLeavesCD extends BlockBaseLeaves implements Runnable {
 	//  LH.add(getUnlocalizedName()+ ".5", " Leaves");
 	//  LH.add(getUnlocalizedName()+ ".6", " Leaves");
 	//  LH.add(getUnlocalizedName()+ ".7", " Leaves");
-		LH.add(getUnlocalizedName()+ ".8", "Blue Spruce Leaves");
+		LH.add(getUnlocalizedName()+ ".8", "Листья голубой ели");
 	//  LH.add(getUnlocalizedName()+ ".9", " Leaves");
 	//  LH.add(getUnlocalizedName()+".10", " Leaves");
 	//  LH.add(getUnlocalizedName()+".11", " Leaves");
@@ -128,7 +128,7 @@ public class BlockTreeLeavesCD extends BlockBaseLeaves implements Runnable {
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		super.addInformation(aStack, aMeta, aPlayer, aList, aF3_H);
 		if (XMAS_IN_JULY && (aMeta & 7) == 0) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Save on everything at Christmas in July!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "Сэкономьте на всем на Рождество в июле!");
 		}
 	}
 }

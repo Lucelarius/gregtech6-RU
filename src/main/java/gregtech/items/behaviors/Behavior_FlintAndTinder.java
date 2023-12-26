@@ -79,7 +79,7 @@ public class Behavior_FlintAndTinder extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.flintandtinder", "Ignites a Fire with a Chance of ");
+		LH.add("gt.behaviour.flintandtinder", "Зажигает огонь с шансом ");
 	}
 	
 	@Override

@@ -188,7 +188,7 @@ public class Behavior_Place_Path extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.path", "Creates Dirt Paths on Rightclick");
+		LH.add("gt.behaviour.path", "Создает тропинку нажатием ПКМ");
 	}
 	
 	@Override

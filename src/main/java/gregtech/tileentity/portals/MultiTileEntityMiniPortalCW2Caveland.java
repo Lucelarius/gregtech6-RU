@@ -48,8 +48,8 @@ public class MultiTileEntityMiniPortalCW2Caveland extends MultiTileEntityMiniPor
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListCW2Side;}
 	
 	static {
-		LH.add("gt.tileentity.portal.caveland.tooltip.1", "Only works between Caveland and the Overworld!");
-		LH.add("gt.tileentity.portal.caveland.tooltip.2", "Margin of Error to still work: 128 Meters.");
+		LH.add("gt.tileentity.portal.caveland.tooltip.1", "Работает только в Caveland и обычном мире!");
+		LH.add("gt.tileentity.portal.caveland.tooltip.2", "Предел погрешности для работы: 128 Метров.");
 	}
 	
 	@Override

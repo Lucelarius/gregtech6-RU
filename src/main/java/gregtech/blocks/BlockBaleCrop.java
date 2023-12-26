@@ -31,40 +31,40 @@ public class BlockBaleCrop extends BlockBaseBale {
 	public BlockBaleCrop(String aUnlocalised) {
 		super(null, aUnlocalised, Material.grass, soundTypeGrass, 4, Textures.BlockIcons.BALES_CROP);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Rye Bale");
-		LH.add(getUnlocalizedName()+ ".4", "Rye Bale");
-		LH.add(getUnlocalizedName()+ ".8", "Rye Bale");
-		LH.add(getUnlocalizedName()+".12", "Rye Bale");
+		LH.add(getUnlocalizedName()+ ".0", "Ржаной тюк");
+		LH.add(getUnlocalizedName()+ ".4", "Ржаной тюк");
+		LH.add(getUnlocalizedName()+ ".8", "Ржаной тюк");
+		LH.add(getUnlocalizedName()+".12", "Ржаной тюк");
 		OM.reg(ST.make(this, 1, 0), "baleRye");
 		OM.reg(ST.make(this, 1, 4), "baleRye");
 		OM.reg(ST.make(this, 1, 8), "baleRye");
 		OM.reg(ST.make(this, 1,12), "baleRye");
 		IL.Bale_Rye.set(ST.make(this, 1, 0));
 		
-		LH.add(getUnlocalizedName()+ ".1", "Oats Bale");
-		LH.add(getUnlocalizedName()+ ".5", "Oats Bale");
-		LH.add(getUnlocalizedName()+ ".9", "Oats Bale");
-		LH.add(getUnlocalizedName()+".13", "Oats Bale");
+		LH.add(getUnlocalizedName()+ ".1", "Овсяный тюк");
+		LH.add(getUnlocalizedName()+ ".5", "Овсяный тюк");
+		LH.add(getUnlocalizedName()+ ".9", "Овсяный тюк");
+		LH.add(getUnlocalizedName()+".13", "Овсяный тюк");
 		OM.reg(ST.make(this, 1, 1), "baleOats");
 		OM.reg(ST.make(this, 1, 5), "baleOats");
 		OM.reg(ST.make(this, 1, 9), "baleOats");
 		OM.reg(ST.make(this, 1,13), "baleOats");
 		IL.Bale_Oats.set(ST.make(this, 1, 1));
 		
-		LH.add(getUnlocalizedName()+ ".2", "Barley Bale");
-		LH.add(getUnlocalizedName()+ ".6", "Barley Bale");
-		LH.add(getUnlocalizedName()+".10", "Barley Bale");
-		LH.add(getUnlocalizedName()+".14", "Barley Bale");
+		LH.add(getUnlocalizedName()+ ".2", "Ячменный тюк");
+		LH.add(getUnlocalizedName()+ ".6", "Ячменный тюк");
+		LH.add(getUnlocalizedName()+".10", "Ячменный тюк");
+		LH.add(getUnlocalizedName()+".14", "Ячменный тюк");
 		OM.reg(ST.make(this, 1, 2), "baleBarley");
 		OM.reg(ST.make(this, 1, 6), "baleBarley");
 		OM.reg(ST.make(this, 1,10), "baleBarley");
 		OM.reg(ST.make(this, 1,14), "baleBarley");
 		IL.Bale_Barley.set(ST.make(this, 1, 2));
 		
-		LH.add(getUnlocalizedName()+ ".3", "Rice Bale");
-		LH.add(getUnlocalizedName()+ ".7", "Rice Bale");
-		LH.add(getUnlocalizedName()+".11", "Rice Bale");
-		LH.add(getUnlocalizedName()+".15", "Rice Bale");
+		LH.add(getUnlocalizedName()+ ".3", "Рисовый тюк");
+		LH.add(getUnlocalizedName()+ ".7", "Рисовый тюк");
+		LH.add(getUnlocalizedName()+".11", "Рисовый тюк");
+		LH.add(getUnlocalizedName()+".15", "Рисовый тюк");
 		OM.reg(ST.make(this, 1, 3), "baleRice");
 		OM.reg(ST.make(this, 1, 7), "baleRice");
 		OM.reg(ST.make(this, 1,11), "baleRice");

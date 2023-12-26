@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalCandyCraft extends MultiTileEntityMiniPort
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListCandySide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.candy.tooltip.1", "Only works between the Candy Dimension and the Overworld!");
-		LH.add("gt.tileentity.portal.candy.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.candy.tooltip.3", "Requires PEZ for activation");
+		LH.add("gt.tileentity.portal.candy.tooltip.1", "Работает только в Candy Dimension и обычном мире!");
+		LH.add("gt.tileentity.portal.candy.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.candy.tooltip.3", "Требуется PEZ для активации");
 	}
 	
 	@Override

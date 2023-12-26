@@ -39,9 +39,9 @@ public class Behavior_DataStorage extends AbstractBehaviorDefault {
 			NBTTagCompound tUSB = aStack.getTagCompound().getCompoundTag(NBT_USB_DATA);
 			if (tUSB != null) {
 				UT.NBT.getDataToolTip(tUSB, aList, T);
-				aList.add(LH.Chat.DGRAY + "Data: USB " + aStack.getTagCompound().getByte(NBT_USB_TIER) + ".0");
+				aList.add(LH.Chat.DGRAY + "Данные: USB " + aStack.getTagCompound().getByte(NBT_USB_TIER) + ".0");
 			} else {
-				aList.add(LH.Chat.CYAN + "This Stick is Empty");
+				aList.add(LH.Chat.CYAN + "Эта флэшка пустая");
 			}
 		}
 		return aList;

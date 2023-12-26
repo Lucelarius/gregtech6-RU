@@ -76,7 +76,7 @@ public class Behavior_Scanner extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.scanning", "Can scan Blocks in World");
+		LH.add("gt.behaviour.scanning", "Может сканировать блоки в мире");
 	}
 	
 	@Override

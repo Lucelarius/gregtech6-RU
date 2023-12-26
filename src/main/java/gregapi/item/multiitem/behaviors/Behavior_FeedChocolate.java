@@ -62,7 +62,7 @@ public class Behavior_FeedChocolate extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.feed.chocolate", "Do not feed this to Pets!");
+		LH.add("gt.behaviour.feed.chocolate", "Не кормите этим питомцев!");
 	}
 	
 	@Override

@@ -56,7 +56,7 @@ public class Behavior_Cropnalyzer extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.cropnalyzer", "Can scan Crops in World");
+		LH.add("gt.behaviour.cropnalyzer", "Может сканировать посевы в мире");
 	}
 	
 	@Override
@@ -81,24 +81,24 @@ public class Behavior_Cropnalyzer extends AbstractBehaviorDefault {
 			} else {
 				rEUAmount = V[3];
 			}
-			rList.add("Type -- Name: " + LH.get(((ic2.api.crops.ICropTile)tTileEntity).getCrop().displayName())
-					+ "   Growth: " + ((ic2.api.crops.ICropTile)tTileEntity).getGrowth()
-					+ "   Gain: " + ((ic2.api.crops.ICropTile)tTileEntity).getGain()
-					+ "   Resistance: " + ((ic2.api.crops.ICropTile)tTileEntity).getResistance()
+			rList.add("Тип -- Название: " + LH.get(((ic2.api.crops.ICropTile)tTileEntity).getCrop().displayName())
+					+ "   Рост: " + ((ic2.api.crops.ICropTile)tTileEntity).getGrowth()
+					+ "   Урожайность: " + ((ic2.api.crops.ICropTile)tTileEntity).getGain()
+					+ "   Сопротивление: " + ((ic2.api.crops.ICropTile)tTileEntity).getResistance()
 					);
-			rList.add("Plant -- Fertilizer: " + ((ic2.api.crops.ICropTile)tTileEntity).getNutrientStorage()
-					+ "   Water: " + ((ic2.api.crops.ICropTile)tTileEntity).getHydrationStorage()
-					+ "   Weed-Ex: " + ((ic2.api.crops.ICropTile)tTileEntity).getWeedExStorage()
+			rList.add("Растение -- Удобрения: " + ((ic2.api.crops.ICropTile)tTileEntity).getNutrientStorage()
+					+ "   Вода: " + ((ic2.api.crops.ICropTile)tTileEntity).getHydrationStorage()
+					+ "   Антисорняк: " + ((ic2.api.crops.ICropTile)tTileEntity).getWeedExStorage()
 			//      + "   Scan-Level: " + ((ic2.api.crops.ICropTile)tTileEntity).getScanLevel()
 					);
-			rList.add("Environment -- Nutrients: " + ((ic2.api.crops.ICropTile)tTileEntity).getNutrients()
-					+ "   Humidity: " + ((ic2.api.crops.ICropTile)tTileEntity).getHumidity()
-					+ "   Air-Quality: " + ((ic2.api.crops.ICropTile)tTileEntity).getAirQuality()
+			rList.add("Среда -- Питательные вещества: " + ((ic2.api.crops.ICropTile)tTileEntity).getNutrients()
+					+ "   Влажность: " + ((ic2.api.crops.ICropTile)tTileEntity).getHumidity()
+					+ "   Качество воздуха: " + ((ic2.api.crops.ICropTile)tTileEntity).getAirQuality()
 					);
 			String tString = "";
 			for (String tAttribute : ((ic2.api.crops.ICropTile)tTileEntity).getCrop().attributes()) tString += ", " + tAttribute;
-			rList.add("Attributes:" + tString.replaceFirst(",", ""));
-			rList.add("Discovered by: " + ((ic2.api.crops.ICropTile)tTileEntity).getCrop().discoveredBy());
+			rList.add("Атрибуты:" + tString.replaceFirst(",", ""));
+			rList.add("Обнаружено: " + ((ic2.api.crops.ICropTile)tTileEntity).getCrop().discoveredBy());
 			
 		}
 		aList.addAll(rList);

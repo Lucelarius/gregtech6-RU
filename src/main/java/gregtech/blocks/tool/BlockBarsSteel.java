@@ -28,22 +28,22 @@ import net.minecraft.block.material.Material;
 public class BlockBarsSteel extends BlockBaseBars {
 	public BlockBarsSteel(String aNameInternal) {
 		super(aNameInternal, ANY.Steel, Material.iron, Block.soundTypeMetal);
-		LH.add(getUnlocalizedName()+ ".0", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".1", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".2", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".3", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".4", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".5", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".6", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".7", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".8", "Steel Bars");
-		LH.add(getUnlocalizedName()+ ".9", "Steel Bars");
-		LH.add(getUnlocalizedName()+".10", "Steel Bars");
-		LH.add(getUnlocalizedName()+".11", "Steel Bars");
-		LH.add(getUnlocalizedName()+".12", "Steel Bars");
-		LH.add(getUnlocalizedName()+".13", "Steel Bars");
-		LH.add(getUnlocalizedName()+".14", "Steel Bars");
-		LH.add(getUnlocalizedName()+".15", "Steel Bars");
+		LH.add(getUnlocalizedName()+ ".0", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".1", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".2", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".3", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".4", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".5", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".6", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".7", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".8", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+ ".9", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+".10", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+".11", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+".12", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+".13", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+".14", "Решетка (Сталь)");
+		LH.add(getUnlocalizedName()+".15", "Решетка (Сталь)");
 	}
 	
 	@Override public float getExplosionResistance(byte aMeta) {return 8;}

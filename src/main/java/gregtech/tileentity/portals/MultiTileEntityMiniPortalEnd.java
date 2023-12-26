@@ -47,9 +47,9 @@ public class MultiTileEntityMiniPortalEnd extends MultiTileEntityMiniPortal {
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListEndSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.end.tooltip.1", "Only works between the End and the Overworld with a x128 Distance Factor!");
-		LH.add("gt.tileentity.portal.end.tooltip.2", "Margin of Error to still work: 512 Meters.");
-		LH.add("gt.tileentity.portal.end.tooltip.3", "Requires Ender Eye for activation");
+		LH.add("gt.tileentity.portal.end.tooltip.1", "Работает только в Краю и обычном мире с фактором расстояния x128 Метров!");
+		LH.add("gt.tileentity.portal.end.tooltip.2", "Предел погрешности для работы: 512 Метров.");
+		LH.add("gt.tileentity.portal.end.tooltip.3", "Требуется Око Эндера для активации");
 	}
 	
 	@Override

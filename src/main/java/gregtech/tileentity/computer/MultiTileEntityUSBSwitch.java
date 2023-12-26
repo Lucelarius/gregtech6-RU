@@ -45,7 +45,7 @@ import net.minecraft.nbt.NBTTagCompound;
  */
 public class MultiTileEntityUSBSwitch extends TileEntityBase08DataSwitch {
 	static {
-		LH.add("gt.multitileentity.usb.switch.tooltip", "Switches between 16 different USB Sticks using Selector Covers");
+		LH.add("gt.multitileentity.usb.switch.tooltip", "Переключение между 16 различными USB-флешками с помощью покрытия Настройщик");
 	}
 	
 	@Override

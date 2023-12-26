@@ -55,13 +55,13 @@ public class Behavior_Worldgen_Debugger extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.worldgendebug", "Testing Tool for executing Code based on Coordinates");
+		LH.add("gt.behaviour.worldgendebug", "Инструмент для тестирования выполнения кода на основе координат");
 	}
 	
 	@Override
 	public List<String> getAdditionalToolTips(MultiItem aItem, List<String> aList, ItemStack aStack) {
 		aList.add(LH.get("gt.behaviour.worldgendebug"));
-		aList.add("Currently deletes a single Chunk, except for bottom most Bedrock and GT6 Ores");
+		aList.add("В настоящее время удаляет один кусок, за исключением самых нижних коренных пород и руд GT6");
 		return aList;
 	}
 }

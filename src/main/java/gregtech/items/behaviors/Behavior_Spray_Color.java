@@ -55,7 +55,7 @@ public class Behavior_Spray_Color extends AbstractBehaviorDefault {
 		mFull = aFull;
 		mUses = aUses * 10;
 		mColor = UT.Code.bind4(aColor);
-		LH.add("gt.behaviour.paintspray."+mColor+".tooltip", "Can Color things in " + DYE_NAMES[mColor]);
+		LH.add("gt.behaviour.paintspray."+mColor+".tooltip", "Окрашивает в " + DYE_NAMES[mColor]);
 	}
 	
 	@Override
@@ -167,8 +167,8 @@ public class Behavior_Spray_Color extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.paintspray.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.unstackable", "Not usable when stacked!");
+		LH.add("gt.behaviour.paintspray.uses", "Осталось использований:");
+		LH.add("gt.behaviour.unstackable", "Не может быть использовано в сложенном виде!");
 	}
 	
 	@Override

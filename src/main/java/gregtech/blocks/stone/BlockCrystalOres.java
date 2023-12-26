@@ -44,18 +44,18 @@ public class BlockCrystalOres extends BlockBaseMeta {
 	
 	public BlockCrystalOres(String aUnlocalised) {
 		super(null, aUnlocalised, Material.glass, soundTypeGlass, ORE_MATERIALS.length, Textures.BlockIcons.CRYSTAL_ORES);
-		LH.add(getUnlocalizedName()+ ".0", "Arsenopyrite Crystal");
-		LH.add(getUnlocalizedName()+ ".1", "Chalcopyrite Crystal");
-		LH.add(getUnlocalizedName()+ ".2", "Cinnabar Crystal");
-		LH.add(getUnlocalizedName()+ ".3", "Cobaltite Crystal");
-		LH.add(getUnlocalizedName()+ ".4", "Galena Crystal");
-		LH.add(getUnlocalizedName()+ ".5", "Kesterite Crystal");
-		LH.add(getUnlocalizedName()+ ".6", "Molybdenite Crystal");
-		LH.add(getUnlocalizedName()+ ".7", "Pyrite Crystal");
-		LH.add(getUnlocalizedName()+ ".8", "Sphalerite Crystal");
-		LH.add(getUnlocalizedName()+ ".9", "Stannite Crystal");
-		LH.add(getUnlocalizedName()+".10", "Stibnite Crystal");
-		LH.add(getUnlocalizedName()+".11", "Tetrahedrite Crystal");
+		LH.add(getUnlocalizedName()+ ".0", "Кристалл арсенопирита");
+		LH.add(getUnlocalizedName()+ ".1", "Кристалл халькопирита");
+		LH.add(getUnlocalizedName()+ ".2", "Кристалл киновари");
+		LH.add(getUnlocalizedName()+ ".3", "Кристалл кобальтина");
+		LH.add(getUnlocalizedName()+ ".4", "Кристалл галенита");
+		LH.add(getUnlocalizedName()+ ".5", "Кристалл кестерита");
+		LH.add(getUnlocalizedName()+ ".6", "Кристалл молибденит");
+		LH.add(getUnlocalizedName()+ ".7", "Кристалл пирита");
+		LH.add(getUnlocalizedName()+ ".8", "Кристалл сфалерита");
+		LH.add(getUnlocalizedName()+ ".9", "Кристалл станнина");
+		LH.add(getUnlocalizedName()+".10", "Кристалл антимонита");
+		LH.add(getUnlocalizedName()+".11", "Кристалл тэтраэдрита");
 		
 		for (int i = 0; i < maxMeta(); i++) {
 			OM.reg(ST.make(this, 1, i), OP.oreDense.dat(ORE_MATERIALS[i]));

@@ -61,21 +61,21 @@ import static gregapi.data.CS.*;
 public class MultiItemBumbles extends MultiItemRandomWithCompat implements IItemBumbleBee {
 	public MultiItemBumbles(String aModID, String aUnlocalized) {
 		super(aModID, aUnlocalized);
-		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Bumblebees", this, (short)2));
+		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Шмели", this, (short)2));
 		if (!SHOW_BUMBLEBEES) ST.hide(this);
 	}
 	
 	@Override
 	public void addItems() {
 		make(    0, "Wild Bumblebee"            , "");
-		make(   10, "Captive Bumblebee"         , "Is used to enprisonment");
-		make(   20, "Common Bumblebee"          , "Works hard for its Family");
-		make(   30, "Cultivated Bumblebee"      , "Drinks Wine while watching Oprah");
+		make(   10, "Captive Bumblebee"         , "Привык к тюремному заключению");
+		make(   20, "Common Bumblebee"          , "Усердно работает для своей семьи");
+		make(   30, "Cultivated Bumblebee"      , "Пьет вино во время просмотра Опры");
 		
-		make(  100, "Surfing Bumblebee"         , "Too chill to work regularily");
+		make(  100, "Surfing Bumblebee"         , "Слишком холодно, чтобы регулярно работать");
 		make(  110, "Swimming Bumblebee"        , "");
-		make(  120, "Diving Bumblebee"          , "Not gonna jump into Green Water");
-		make(  130, "Subnautic Bumblebee"       , "Its Wings became Air Tanks");
+		make(  120, "Diving Bumblebee"          , "Не буду прыгать в зеленую воду");
+		make(  130, "Subnautic Bumblebee"       , "Его крылья стали воздушными резервуарами");
 		
 		make(  200, "Apprentice Bumblebee"      , "");
 		make(  210, "Magician Bumblebee"        , "");
@@ -87,15 +87,15 @@ public class MultiItemBumbles extends MultiItemRandomWithCompat implements IItem
 		make(  320, "Impish Bumblebee"          , "");
 		make(  330, "Demonic Bumblebee"         , "");
 		
-		make(  400, "End Bumblebee"             , "The End is nigh!");
-		make(  410, "Void Bumblebee"            , "Voids parts of its work for no reason");
-		make(  420, "Alienated Bumblebee"       , "Doesn't feel comfortable with Society");
-		make(  430, "Nihilistic Bumblebee"      , "Who cares? Nothing matters.");
+		make(  400, "End Bumblebee"             , "Конец близок!");
+		make(  410, "Void Bumblebee"            , "Отменяет часть своей работы без причины");
+		make(  420, "Alienated Bumblebee"       , "Не чувствует себя комфортно в обществе");
+		make(  430, "Nihilistic Bumblebee"      , "Какая разница? Ничто не имеет значения.");
 		
-		make(  500, "Stoned Bumblebee"          , "Duuuude, I'm so damn biiig");
+		make(  500, "Stoned Bumblebee"          , "Йооооу, я такой чертовски красивый");
 		make(  510, "Rocking Bumblebee"         , "");
 		make(  520, "Hard Rock Bumblebee"       , "");
-		make(  530, "Bumbelvis"                 , "Has left the Building");
+		make(  530, "Bumbelvis"                 , "Покинул здание");
 		
 		make(  600, "Jungle Bumblebee"          , "");
 		make(  610, "Jungle Bumblebee (T2)"     , "");//TODO Change Bumble Texture and Name
@@ -105,77 +105,77 @@ public class MultiItemBumbles extends MultiItemRandomWithCompat implements IItem
 		make(  700, "Frosty Bumblebee"          , "");
 		make(  710, "North Pole Bumblebee"      , "");
 		make(  720, "Bumble Elf"                , "");
-		make(  730, "Bumble Claus"              , "Ho Ho Ho!");
+		make(  730, "Bumble Claus"              , "Хо-Хо-Хо!");
 		
 		make(  800, "Bumbleshroom"              , "");
 		make(  810, "Bumble Toad"               , "");
-		make(  820, "Bumble Bro"                , "It's a me! Bumblio!");
-		make(  830, "Bumble Peach"              , "Is in another Castle!");
+		make(  820, "Bumble Bro"                , "Это я! Бамблий!");
+		make(  830, "Bumble Peach"              , "Находится в другом замке!");
 		
 		make(  900, "Sandy Bumblebee"           , "");
 		make(  910, "Sandy Bumblebee (T2)"      , "");//TODO Change Bumble Texture and Name
 		make(  920, "Sandy Bumblebee (T3)"      , "");//TODO Change Bumble Texture and Name
-		make(  930, "Bumbobee"                  , "Shop at Sahara!");
+		make(  930, "Bumbobee"                  , "Делайте покупки в Сахаре!");
 		
 		// Normal + Rocky = Clay
-		make(10000, "Creative Bumblebee"        , "Interested in Pottery");
-		make(10010, "Builder Bumblebee"         , "Also known as Bumblebob the Builder");
-		make(10020, "Masonic Bumblebee"         , "Is free to build Brick Walls");
-		make(10030, "Illuminumblebee"           , "Nothing suspicious around here");
+		make(10000, "Creative Bumblebee"        , "Интересуюсь гончарным делом");
+		make(10010, "Builder Bumblebee"         , "Также известен как Бамблбоб Строитель");
+		make(10020, "Masonic Bumblebee"         , "Можно бесплатно строить кирпичные стены");
+		make(10030, "Illuminumblebee"           , "Здесь нет ничего подозрительного");
 		
 		// Normal + Water = Sticky
-		make(10100, "Industrial Bumblebee"      , "Revolutionises Comb Production");
-		make(10110, "Overseer Bumblebee"        , "Effectively orders around the Workforce");
-		make(10120, "Bumble Tycoon"             , "Taking over the Bumblebeesiness");
-		make(10130, "Monopolistic Bumblebee"    , "Owns everything and everyone");
+		make(10100, "Industrial Bumblebee"      , "Революция в производстве расчесок");
+		make(10110, "Overseer Bumblebee"        , "Эффективно управляет персоналом");
+		make(10120, "Bumble Tycoon"             , "Взял на себя Шмелебизнес");
+		make(10130, "Monopolistic Bumblebee"    , "Владеет всем и всеми");
 		
 		// Normal + Sandy = Royal
-		make(10200, "Bumbleknight"              , "For the King of Bumble Castle!");
-		make(10210, "Colonial Bumblebee"        , "For the Queen of Bumbleland!");
-		make(10220, "Royal Bumblebee"           , "Member of the Royal Family");
-		make(10230, "Bumblemonarch"             , "Ruling over the Bumblecountry");
+		make(10200, "Bumbleknight"              , "За короля замка Бамбл!");
+		make(10210, "Colonial Bumblebee"        , "За королеву Бамблленда!");
+		make(10220, "Royal Bumblebee"           , "Член королевской семьи");
+		make(10230, "Bumblemonarch"             , "Управляет страной Бамбл");
 		
 		// Nether + End = Satanic
-		make(10300, "Bumblegoth"                , "Hangs around in dark places");
-		make(10310, "Occult Bumblebee"          , "Practices occult Rituals");
-		make(10320, "Antichristumblebee"        , "Screw Bumblebeesus!");
-		make(10330, "Satanic Bumblebee"         , "Heil Bumblesatan!");
+		make(10300, "Bumblegoth"                , "Висит в темных местах");
+		make(10310, "Occult Bumblebee"          , "Практикует оккультные ритуалы");
+		make(10320, "Antichristumblebee"        , "К черту шмелей");
+		make(10330, "Satanic Bumblebee"         , "Слава Бамбл Сатане!");
 		
 		// Rock + Water = Amnesic / Lubricant
-		make(10400, "Forgetful Bumblebee"       , "What was I supposed to do again? It slipped my mind.");
-		make(10410, "Amnesic Bumblebee"         , "Who are you? And who am I even?");
-		make(10420, "Bumbleheimers"             , "Could you get me some Honey? Thanks. Could you get me some Honey?");
-		make(10430, "Bumble in Black"           , "You did not see anything unusual. I did not wiggle my Butt.");
+		make(10400, "Forgetful Bumblebee"       , "Еще раз пожалуйста, что мне надо было сделать? Это вылетело у меня из головы.");
+		make(10410, "Amnesic Bumblebee"         , "Кто ты? И кто я вообще?");
+		make(10420, "Bumbleheimers"             , "Не могли бы вы принести мне немного меда? Спасибо. Не могли бы вы принести мне немного меда?");
+		make(10430, "Bumble in Black"           , "Ничего необычного вы не видели. Я не шевелил задницей.");
 		
 		// Jungle + Sandy = Soldier (Damages anything, even Skeletons, makes Bone Combs)
-		make(10500, "Private Bumble"            , "Reporting for Duty!");
-		make(10510, "Lt. Bumbleson"             , "Yes Sir!");
-		make(10520, "Colonel Bumble O'Beeill"   , "Leading the Team");
-		make(10530, "General Bumblemond"        , "In charge of the Bumblyene Mountain Base");
+		make(10500, "Private Bumble"            , "Отчетность по долгу!");
+		make(10510, "Lt. Bumbleson"             , "Да Сэр!");
+		make(10520, "Colonel Bumble O'Beeill"   , "Лидер команды");
+		make(10530, "General Bumblemond"        , "Отвечает за горную базу Бамблию");
 		
 		// Nether + Military = Pyro
 		make(20000, "Blazing Bumblebee"         , "");
 		make(20010, "Flaming Bumblebee"         , "");//TODO Change Bumble Texture
-		make(20020, "Bumbletrantor"             , "The Last Stormbumble");//TODO Change Bumble Texture
-		make(20030, "Pyro Bumble"               , "Likes Unicorns, Rainbows and Candy");//TODO Change Bumble Texture
+		make(20020, "Bumbletrantor"             , "Последний Громовой Бамбл");//TODO Change Bumble Texture
+		make(20030, "Pyro Bumble"               , "Любит единорогов, радугу и конфеты");//TODO Change Bumble Texture
 		
 		// Frosty + Military = Cryo
 		make(20100, "Blizzful Bumblebee"        , "");
 		make(20110, "Freezing Bumblebee"        , "");//TODO Change Bumble Texture
-		make(20120, "Mr. Bumblefreeze"          , "Ice to meet you!");//TODO Change Bumble Texture
-		make(20130, "Cryo Bumble"               , "Delivered Pizza to I.C.Wiener");//TODO Change Bumble Texture
+		make(20120, "Mr. Bumblefreeze"          , "Лед для тебя!");//TODO Change Bumble Texture
+		make(20130, "Cryo Bumble"               , "Доставка пицци для I.C.Wiener");//TODO Change Bumble Texture
 		
 		// End + Military = Aero
 		make(20200, "Blitzing Bumblebee"        , "");
 		make(20210, "Storming Bumblebee"        , "");//TODO Change Bumble Texture
-		make(20220, "Bumbleaang"                , "The Last Bumblebender");//TODO Change Bumble Texture
-		make(20230, "Aero Bumble"               , "According to the Laws of Fluid Dynamics, this Bumblebee CAN Fly!");//TODO Change Bumble Texture
+		make(20220, "Bumbleaang"                , "Последний Bumblebender");//TODO Change Bumble Texture
+		make(20230, "Aero Bumble"               , "Согласно законам гидродинамики, этот шмель МОЖЕТ летать!");//TODO Change Bumble Texture
 		
 		// Rocky + Military = Tera
 		make(20300, "Basalzed Bumblebee"        , "");
-		make(20310, "Quakeing Bumblebee"        , "With a mighty White Beard!");
+		make(20310, "Quakeing Bumblebee"        , "С могучей Белой Бородой!");
 		make(20320, "Earth Bound Bumblebee"     , "PK Bumble!");
-		make(20330, "Tera Bumble"               , "By your Powers combined, I am Captain Bumblebee!");
+		make(20330, "Tera Bumble"               , "Благодаря вашим силам я — капитан Бамблби!");
 		
 		// Jungle + Water = Swamp
 		// Rocky  + Sandy = Red Sand?
@@ -585,14 +585,14 @@ public class MultiItemBumbles extends MultiItemRandomWithCompat implements IItem
 		RM.Bumblelyzer.addFakeRecipe(F, ST.array(ST.make(this, 1, aSpeciesID+i+5, "Was already scanned, auto-skipping")), ST.array(ST.make(this, 1, aSpeciesID+i+5, "Just passed to the Output")), null, null, null, null,  1, 16, 0);
 		}
 		
-		addItem(aSpeciesID+0, aName + " Drone"              , aTooltip, "gt:bumbledrone"    , TC.stack(TC.BESTIA , 1));
-		addItem(aSpeciesID+1, aName + " Princess"           , aTooltip, "gt:bumbleprincess" , TC.stack(TC.BESTIA , 2));
-		addItem(aSpeciesID+2, aName + " Queen"              , aTooltip, "gt:bumblequeen"    , TC.stack(TC.BESTIA , 2), TD.Creative.HIDDEN);
-		addItem(aSpeciesID+4, aName + " (Dead)"             , aTooltip, "gt:bumbledead"     , TC.stack(TC.MORTUUS, 1), TD.Creative.HIDDEN);
-		addItem(aSpeciesID+5, aName + " Drone (Scanned)"    , aTooltip, "gt:bumbledrone"    , TC.stack(TC.BESTIA , 1), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9));
-		addItem(aSpeciesID+6, aName + " Princess (Scanned)" , aTooltip, "gt:bumbleprincess" , TC.stack(TC.BESTIA , 2), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9));
-		addItem(aSpeciesID+7, aName + " Queen (Scanned)"    , aTooltip, "gt:bumblequeen"    , TC.stack(TC.BESTIA , 2), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9), TD.Creative.HIDDEN);
-		addItem(aSpeciesID+9, aName + " (Dead & Scanned)"   , aTooltip, "gt:bumbledead"     , TC.stack(TC.MORTUUS, 1), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9), TD.Creative.HIDDEN);
+		addItem(aSpeciesID+0, aName + " - Дрон"                    , aTooltip, "gt:bumbledrone"    , TC.stack(TC.BESTIA , 1));
+		addItem(aSpeciesID+1, aName + " - Принцесса"               , aTooltip, "gt:bumbleprincess" , TC.stack(TC.BESTIA , 2));
+		addItem(aSpeciesID+2, aName + " - Королева"                , aTooltip, "gt:bumblequeen"    , TC.stack(TC.BESTIA , 2), TD.Creative.HIDDEN);
+		addItem(aSpeciesID+4, aName + " (Мертвый)"                 , aTooltip, "gt:bumbledead"     , TC.stack(TC.MORTUUS, 1), TD.Creative.HIDDEN);
+		addItem(aSpeciesID+5, aName + " - Дрон (Отсканирован)"     , aTooltip, "gt:bumbledrone"    , TC.stack(TC.BESTIA , 1), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9));
+		addItem(aSpeciesID+6, aName + " - Принцесса (Отсканирован)", aTooltip, "gt:bumbleprincess" , TC.stack(TC.BESTIA , 2), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9));
+		addItem(aSpeciesID+7, aName + " - Королева (Отсканирован)" , aTooltip, "gt:bumblequeen"    , TC.stack(TC.BESTIA , 2), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9), TD.Creative.HIDDEN);
+		addItem(aSpeciesID+9, aName + " (Мертвый и Отсканирован)"  , aTooltip, "gt:bumbledead"     , TC.stack(TC.MORTUUS, 1), TC.stack(TC.COGNITIO, 1), new OreDictItemData(MT.Paper, U9), TD.Creative.HIDDEN);
 		
 		ItemsGT.addNEIRedirect(ST.make(this, 1, aSpeciesID+0), ST.make(this, 1, aSpeciesID+2));
 		ItemsGT.addNEIRedirect(ST.make(this, 1, aSpeciesID+1), ST.make(this, 1, aSpeciesID+2));

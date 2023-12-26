@@ -44,25 +44,25 @@ public class BlockTreeLog1FireProof extends BlockBaseBeam implements IBlockToola
 	public BlockTreeLog1FireProof(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.LOGS_1);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Dead Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".4", "Dead Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".8", "Dead Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".12", "Dead Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".0", "Мертвое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".4", "Мертвое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".8", "Мертвое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".12", "Мертвое бревно (Огнеупорный)");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Rotten Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".5", "Rotten Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".9", "Rotten Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".13", "Rotten Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".1", "Гнилое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".5", "Гнилое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".9", "Гнилое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".13", "Гнилое бревно (Огнеупорный)");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Mossy Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".6", "Mossy Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".10", "Mossy Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".14", "Mossy Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".2", "Замшелое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".6", "Замшелое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".10", "Замшелое бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".14", "Замшелое бревно (Огнеупорный)");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Frozen Log (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".7", "Frozen Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".11", "Frozen Log (Fireproof)");
-		LH.add(getUnlocalizedName()+".15", "Frozen Log (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".3", "Замороженное бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".7", "Замороженное бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".11", "Замороженное бревно (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".15", "Замороженное бревно (Огнеупорный)");
 	}
 	
 	@Override

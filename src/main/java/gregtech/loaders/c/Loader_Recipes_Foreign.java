@@ -52,7 +52,7 @@ public class Loader_Recipes_Foreign implements Runnable {
 			}
 		}
 		if (MD.FR.mLoaded) {
-			OUT.println("GT_Mod: Copying all of the Forestry Centrifuge/Squeezer Recipes to GT Machines");
+			OUT.println("GT_Mod: Копирование всех рецептов Forestry центрифуг/соковыжималок на машины GT.");
 			try {
 				for (ICentrifugeRecipe tRecipe : RecipeManagers.centrifugeManager.recipes()) {
 					Map<ItemStack, Float> tMap = tRecipe.getAllProducts();

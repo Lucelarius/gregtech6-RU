@@ -54,7 +54,7 @@ public class Behavior_Place_Paddy extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.paddy", "Creates Paddies on Farmland on Rightclick");
+		LH.add("gt.behaviour.paddy", "Разрыхляет землю на ПКМ");
 	}
 	
 	@Override

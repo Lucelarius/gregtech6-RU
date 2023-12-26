@@ -138,10 +138,10 @@ public class Behavior_Lighter extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.lighter.tooltip", "Can light things on Fire");
-		LH.add("gt.behaviour.lighter.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.lighter.chance", "Chance:");
-		LH.add("gt.behaviour.singleuse", "Single Use");
+		LH.add("gt.behaviour.lighter.tooltip", "Может зажигать огонь");
+		LH.add("gt.behaviour.lighter.uses", "Осталось использований:");
+		LH.add("gt.behaviour.lighter.chance", "Шанс:");
+		LH.add("gt.behaviour.singleuse", "Одноразовое использование");
 	}
 	
 	@Override

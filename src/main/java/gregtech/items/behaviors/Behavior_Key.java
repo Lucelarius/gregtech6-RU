@@ -63,7 +63,7 @@ public class Behavior_Key extends AbstractBehaviorDefault {
 		return F;
 	}
 	
-	static {LH.add("gt.behaviour.key", "Can open certain regular Locks");}
+	static {LH.add("gt.behaviour.key", "Может открывать определенные обычные замки");}
 	
 	@Override
 	public List<String> getAdditionalToolTips(MultiItem aItem, List<String> aList, ItemStack aStack) {

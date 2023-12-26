@@ -29,7 +29,7 @@ import net.minecraft.block.material.Material;
 public class BlockGlowtus extends BlockBaseLilyPad {
 	public BlockGlowtus(String aUnlocalised) {
 		super(null, aUnlocalised, Material.plants, soundTypeGrass, 16, Textures.BlockIcons.GLOWTUS);
-		for (int i = 0; i < 16; i++) LH.add(getUnlocalizedName()+"."+i, DYE_NAMES[i] + " Glowtus");
+		for (int i = 0; i < 16; i++) LH.add(getUnlocalizedName()+"."+i,  "Светящаяся кувшинка (" + DYE_NAMES[i] + ")");
 	}
 	
 	@Override public int getLightOpacity() {return LIGHT_OPACITY_NONE;}

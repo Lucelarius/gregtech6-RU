@@ -45,7 +45,7 @@ public class Behavior_Chunk_Remover extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.chunkremove", "Deletes Chunks except for the very Bottom");
+		LH.add("gt.behaviour.chunkremove", "Удаляет чанки кроме самого низа");
 	}
 	
 	@Override

@@ -57,7 +57,7 @@ public class Behavior_Spray_Foam extends AbstractBehaviorDefault {
 		mUses = aUses * 10;
 		mOwned = aOwned;
 		mColor = UT.Code.bind4(aColor);
-		LH.add("gt.behaviour.foamspray."+mColor+".tooltip", "Can place " + DYE_NAMES[mColor] + " C-Foam");
+		LH.add("gt.behaviour.foamspray."+mColor+".tooltip", "Размещает С-пену (" + DYE_NAMES[mColor] + ")");
 	}
 	
 	@Override
@@ -191,17 +191,17 @@ public class Behavior_Spray_Foam extends AbstractBehaviorDefault {
 	public void switchMode(ItemStack aStack, EntityPlayer aPlayer) {
 		setMode(aStack, (getMode(aStack) + 1) % (mOwned?3:5));
 		switch ((int)getMode(aStack)) {
-		case 0: UT.Entities.sendchat(aPlayer, "Single Block Mode"); break;
-		case 1: UT.Entities.sendchat(aPlayer, "4m Line Mode"); break;
-		case 2: UT.Entities.sendchat(aPlayer, "3mx3m Area Mode"); break;
-		case 3: UT.Entities.sendchat(aPlayer, "Single Slab Mode"); break;
-		case 4: UT.Entities.sendchat(aPlayer, "3mx3m Slab Mode"); break;
+		case 0: UT.Entities.sendchat(aPlayer, "Режим: Один блок"); break;
+		case 1: UT.Entities.sendchat(aPlayer, "Режим: Линия 4м"); break;
+		case 2: UT.Entities.sendchat(aPlayer, "Режим: Зона 3м*3м"); break;
+		case 3: UT.Entities.sendchat(aPlayer, "Режим: Одна плита"); break;
+		case 4: UT.Entities.sendchat(aPlayer, "Режим: Плита - зона 3м*3м"); break;
 		}
 	}
 	
 	static {
-		LH.add("gt.behaviour.foamspray.uses", "Remaining Uses:");
-		LH.add("gt.behaviour.unstackable", "Not usable when stacked!");
+		LH.add("gt.behaviour.foamspray.uses", "Осталось использований:");
+		LH.add("gt.behaviour.unstackable", "Не может быть использовано в сложенном виде!");
 	}
 	
 	@Override

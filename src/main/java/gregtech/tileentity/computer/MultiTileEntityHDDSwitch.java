@@ -45,7 +45,7 @@ import net.minecraft.nbt.NBTTagCompound;
  */
 public class MultiTileEntityHDDSwitch extends TileEntityBase08DataSwitch {
 	static {
-		LH.add("gt.multitileentity.hdd.switch.tooltip", "Switches between the 16 Data Slots using Selector Covers");
+		LH.add("gt.multitileentity.hdd.switch.tooltip", "Переключение между 16 слотами данных с помощью покрытия Настройщик");
 	}
 	
 	@Override

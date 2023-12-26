@@ -64,7 +64,7 @@ public class Behavior_Scoop extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.scoop", "Catches Butterflies");
+		LH.add("gt.behaviour.scoop", "Ловит бабочек");
 	}
 	
 	@Override

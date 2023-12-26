@@ -42,7 +42,7 @@ import net.minecraft.item.ItemStack;
 public class BlockTreePlanks2FireProof extends BlockBasePlanks {
 	public BlockTreePlanks2FireProof(String aName) {
 		super(ItemBlockMetaType.class, Material.wood, soundTypeWood, aName, "", ANY.Wood, 1, 1, 0, 1, Textures.BlockIcons.PLANKS_2);
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Planks (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".0", "Доски из голубой ели (Огнеупорный)");
 	//  LH.add(getUnlocalizedName()+ ".1", " Planks (Fireproof)");
 	//  LH.add(getUnlocalizedName()+ ".2", " Planks (Fireproof)");
 	//  LH.add(getUnlocalizedName()+ ".3", " Planks (Fireproof)");
@@ -72,7 +72,7 @@ public class BlockTreePlanks2FireProof extends BlockBasePlanks {
 	
 	protected BlockTreePlanks2FireProof(Class<? extends ItemBlock> aItemClass, Material aVanillaMaterial, SoundType aVanillaSoundType, String aName, String aDefaultLocalised, OreDictMaterial aMaterial, float aResistanceMultiplier, float aHardnessMultiplier, int aHarvestLevel, int aCount, IIconContainer[] aIcons, byte aSlabType, BlockMetaType aBlock) {
 		super(aItemClass, aVanillaMaterial, aVanillaSoundType, aName, aDefaultLocalised, aMaterial, aResistanceMultiplier, aHardnessMultiplier, aHarvestLevel, aCount, aIcons, aSlabType, aBlock);
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Slab (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".0", "Плита из голубой ели (Огнеупорный)");
 	//  LH.add(getUnlocalizedName()+ ".1", " Slab (Fireproof)");
 	//  LH.add(getUnlocalizedName()+ ".2", " Slab (Fireproof)");
 	//  LH.add(getUnlocalizedName()+ ".3", " Slab (Fireproof)");
@@ -94,7 +94,7 @@ public class BlockTreePlanks2FireProof extends BlockBasePlanks {
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		super.addInformation(aStack, aMeta, aPlayer, aList, aF3_H);
 		if (XMAS_IN_JULY && aMeta == 0) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Save on everything at Christmas in July!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "Сэкономьте на всем на Рождество в июле!");
 		}
 	}
 }

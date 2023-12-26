@@ -43,22 +43,22 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class BlockTreeSaplingAB extends BlockBaseSapling {
 	public BlockTreeSaplingAB(String aUnlocalised) {
 		super(null, aUnlocalised, Material.plants, soundTypeGrass, 8, Textures.BlockIcons.SAPLINGS_AB);
-		LH.add(getUnlocalizedName()+ ".0", "Rubber Sapling");
-		LH.add(getUnlocalizedName()+ ".1", "Maple Sapling");
-		LH.add(getUnlocalizedName()+ ".2", "Willow Sapling");
-		LH.add(getUnlocalizedName()+ ".3", "Blue Mahoe Sapling");
-		LH.add(getUnlocalizedName()+ ".4", "Hazel Sapling");
-		LH.add(getUnlocalizedName()+ ".5", "Cinnamon Sapling");
-		LH.add(getUnlocalizedName()+ ".6", "Coconut Sapling");
-		LH.add(getUnlocalizedName()+ ".7", "Rainbowood Sapling");
-		LH.add(getUnlocalizedName()+ ".8", "Rubber Sapling");
-		LH.add(getUnlocalizedName()+ ".9", "Maple Sapling");
-		LH.add(getUnlocalizedName()+".10", "Willow Sapling");
-		LH.add(getUnlocalizedName()+".11", "Blue Mahoe Sapling");
-		LH.add(getUnlocalizedName()+".12", "Hazel Sapling");
-		LH.add(getUnlocalizedName()+".13", "Cinnamon Sapling");
-		LH.add(getUnlocalizedName()+".14", "Coconut Sapling");
-		LH.add(getUnlocalizedName()+".15", "Rainbowood Sapling");
+		LH.add(getUnlocalizedName()+ ".0", "Саженец каучукового дерева");
+		LH.add(getUnlocalizedName()+ ".1", "Саженец клена");
+		LH.add(getUnlocalizedName()+ ".2", "Саженец ивы");
+		LH.add(getUnlocalizedName()+ ".3", "Саженец синего махо");
+		LH.add(getUnlocalizedName()+ ".4", "Саженец орешника");
+		LH.add(getUnlocalizedName()+ ".5", "Саженец дерева корицы");
+		LH.add(getUnlocalizedName()+ ".6", "Саженец кокосового дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Саженец радужного дерева");
+		LH.add(getUnlocalizedName()+ ".8", "Саженец каучукового дерева");
+		LH.add(getUnlocalizedName()+ ".9", "Саженец клена");
+		LH.add(getUnlocalizedName()+".10", "Саженец ивы");
+		LH.add(getUnlocalizedName()+".11", "Саженец синего махо");
+		LH.add(getUnlocalizedName()+".12", "Саженец орешника");
+		LH.add(getUnlocalizedName()+".13", "Саженец дерева корицы");
+		LH.add(getUnlocalizedName()+".14", "Саженец кокосового дерева");
+		LH.add(getUnlocalizedName()+".15", "Саженец радужного дерева");
 		
 		for (int i = 0; i < maxMeta(); i++) {
 			OM.reg(ST.make(this, 1, i), OP.treeSapling);

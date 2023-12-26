@@ -32,22 +32,22 @@ import net.minecraft.world.IBlockAccess;
 public class BlockBarsAdamantium extends BlockBaseBars {
 	public BlockBarsAdamantium(String aNameInternal) {
 		super(aNameInternal, MT.Ad, Material.iron, Block.soundTypeMetal);
-		LH.add(getUnlocalizedName()+ ".0" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".1" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".2" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".3" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".4" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".5" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".6" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".7" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".8" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".9" , "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".10", "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".11", "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".12", "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".13", "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".14", "Adamantium Bars");
-		LH.add(getUnlocalizedName()+ ".15", "Adamantium Bars");
+		LH.add(getUnlocalizedName()+ ".0" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".1" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".2" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".3" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".4" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".5" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".6" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".7" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".8" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".9" , "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".10", "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".11", "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".12", "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".13", "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".14", "Решетка (Адамантий)");
+		LH.add(getUnlocalizedName()+ ".15", "Решетка (Адамантий)");
 	}
 	
 	@Override public float getExplosionResistance(byte aMeta) {return 100;}

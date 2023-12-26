@@ -68,7 +68,7 @@ public class Behavior_FeedCat extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.feed.cat", "Is usable as Cat Food");
+		LH.add("gt.behaviour.feed.cat", "Можно использовать как корм для кошек");
 	}
 	
 	@Override

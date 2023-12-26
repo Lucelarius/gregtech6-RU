@@ -83,8 +83,8 @@ public class MultiTileEntityQueueHopper extends TileEntityBase09FacingSingle imp
 	}
 	
 	static {
-		LH.add("gt.multitileentity.hopper.tooltip.1", "Slot Count: ");
-		LH.add("gt.multitileentity.hopper.tooltip.2", "Slot Size: ");
+		LH.add("gt.multitileentity.hopper.tooltip.1", "Количество слотов: ");
+		LH.add("gt.multitileentity.hopper.tooltip.2", "Указанный размер пачки: ");
 	}
 	
 	@Override
@@ -124,16 +124,16 @@ public class MultiTileEntityQueueHopper extends TileEntityBase09FacingSingle imp
 			} else {
 				if (++mMode > 64) mMode =  1;
 			}
-			if (aChatReturn != null) aChatReturn.add("Max Stacksize: " + mMode);
+			if (aChatReturn != null) aChatReturn.add("Максимальный размер пачки: " + mMode);
 			return 200;
 		}
 		if (aTool.equals(TOOL_softhammer)) {
 			mMode = 64;
-			if (aChatReturn != null) aChatReturn.add("Max Stacksize: " + mMode);
+			if (aChatReturn != null) aChatReturn.add("Максимальный размер пачки: " + mMode);
 			return 10000;
 		}
 		if (aTool.equals(TOOL_magnifyingglass)) {
-			if (aChatReturn != null) aChatReturn.add("Max Stacksize: " + mMode);
+			if (aChatReturn != null) aChatReturn.add("Максимальный размер пачки: " + mMode);
 			return 1;
 		}
 		return super.onToolClick2(aTool, aRemainingDurability, aQuality, aPlayer, aChatReturn, aPlayerInventory, aSneaking, aStack, aSide, aHitX, aHitY, aHitZ);

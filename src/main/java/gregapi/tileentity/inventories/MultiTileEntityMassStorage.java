@@ -98,8 +98,8 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 	}
 	
 	static {
-		LH.add("gt.multitileentity.massstorage.tooltip.1", "Can store Items of one Type, Capacity: ");
-		LH.add("gt.multitileentity.massstorage.tooltip.2", "Can be used adjacent to Advanced Crafting Tables");
+		LH.add("gt.multitileentity.massstorage.tooltip.1", "Может хранить предметы одного типа. Емкость: ");
+		LH.add("gt.multitileentity.massstorage.tooltip.2", "Можно использовать рядом с улучшенными верстаками");
 	}
 	
 	@Override
@@ -159,7 +159,7 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 		if (aTool.equals(TOOL_ducttape)) {
 			if ((mMode & B[3]) != 0 || !slotHas(1)) return 0;
 			if (slot(1).stackSize > aRemainingDurability) {
-				aChatReturn.add("Not enough Tape left to contain the Items!");
+				aChatReturn.add("Недостаточно ленты, чтобы удержать предметы!");
 				return 0;
 			}
 			mMode |= B[3];
@@ -176,14 +176,14 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 		}
 		if (aTool.equals(TOOL_cutter)) {
 			mMode ^= B[2];
-			aChatReturn.add((mMode & B[2]) == 0 ? "Won't emit Overflow" : "Will emit Overflow to Inventories below");
+			aChatReturn.add((mMode & B[2]) == 0 ? "Не будет отдавать при переполнении" : "Будет отдавать вниз при переполнении");
 			updateClientData();
 			updateInventory();
 			return 10000;
 		}
 		if (aTool.equals(TOOL_screwdriver)) {
 			mMode ^= B[1];
-			aChatReturn.add((mMode & B[1]) == 0 ? "Filter stays when empty" : "Filter resets when empty");
+			aChatReturn.add((mMode & B[1]) == 0 ? "Фильтр останется при опустошении" : "Фильтр сбросится при опустошении");
 			if (!allowZeroStacks(1)) slotNull(1);
 			updateClientData();
 			updateInventory();
@@ -191,7 +191,7 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 		}
 		if (aTool.equals(TOOL_monkeywrench)) {
 			mMode ^= B[0];
-			aChatReturn.add((mMode & B[0]) == 0 ? "Won't fill Inventories below" : "Will fill Inventories below");
+			aChatReturn.add((mMode & B[0]) == 0 ? "Не будет заполнять инвентарь ниже" : "Will fill Inventories below");
 			updateClientData();
 			updateInventory();
 			return 10000;
@@ -199,13 +199,13 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 		if (aTool.equals(TOOL_magnifyingglass)) {
 			if (aChatReturn != null) {
 				if (slotHas(1)) {
-					aChatReturn.add("Contains: " + slot(1).stackSize + " " + slot(1).getDisplayName());
+					aChatReturn.add("Содержит: " + slot(1).stackSize + " " + slot(1).getDisplayName());
 				} else {
-					aChatReturn.add("Storage is empty");
+					aChatReturn.add("Хранилище пустое");
 				}
-				aChatReturn.add((mMode & B[0]) == 0 ? "Won't fill Inventories below" : "Will fill Inventories below");
-				aChatReturn.add((mMode & B[1]) == 0 ? "Filter stays when empty" : "Filter resets when empty");
-				aChatReturn.add((mMode & B[2]) == 0 ? "Won't emit Overflow" : "Will emit Overflow to Inventories below");
+				aChatReturn.add((mMode & B[0]) == 0 ? "Не будет заполнять инвентарь ниже" : "Будет заполнять инвентарь ниже");
+				aChatReturn.add((mMode & B[1]) == 0 ? "Фильтр останется при опустошении" : "Фильтр сбросится при опустошении");
+				aChatReturn.add((mMode & B[2]) == 0 ? "Не будет отдавать при переполнении" : "Будет отдавать вниз при переполнении");
 				if ((mMode & B[3]) != 0) aChatReturn.add("Will keep content when harvested.");
 			}
 			return 1;

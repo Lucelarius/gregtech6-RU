@@ -54,11 +54,11 @@ public abstract class TileEntityBase08DataSwitch extends TileEntityBase07Paintab
 	}
 	
 	static {
-		LH.add("gt.multitileentity.data.switch.tooltip.1", "Use adjacent to Machines that require USB Sticks to select Recipes");
-		LH.add("gt.multitileentity.data.switch.tooltip.2", "Add USB Cable to Slot where USB Stick in the Recipe would go");
-		LH.add("gt.multitileentity.data.switch.tooltip.3", "Clicking with USB Stick will write its Data to the selected Slot.");
-		LH.add("gt.multitileentity.data.switch.tooltip.4", "Not usable with Machines that consume USB Sticks, such as Scanners!");
-		LH.add("gt.multitileentity.data.switch.tooltip.5", "Requires a Selector Cover to work, otherwise it always selects Slot 0!");
+		LH.add("gt.multitileentity.data.switch.tooltip.1", "Используйте рядом с механизмами, которые требуют USB-накопители для выбора рецептов");
+		LH.add("gt.multitileentity.data.switch.tooltip.2", "Вставьте USB-кабель в слот, куда вставляется USB-накопитель в рецепте");
+		LH.add("gt.multitileentity.data.switch.tooltip.3", "При нажатии на USB-накопитель, данные будут записаны в выбранный слот.");
+		LH.add("gt.multitileentity.data.switch.tooltip.4", "Не может использоваться с машинами которые используют USB-накопители, такими как сканеры!");
+		LH.add("gt.multitileentity.data.switch.tooltip.5", "Для работы требуется покрытие Настройщик, иначе всегда выбирается слот 0!");
 	}
 	
 	@Override

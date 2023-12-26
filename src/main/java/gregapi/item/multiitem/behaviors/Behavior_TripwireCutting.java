@@ -60,7 +60,7 @@ public class Behavior_TripwireCutting extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.tripwirecutting", "Can cut Tripwires by Rightclick");
+		LH.add("gt.behaviour.tripwirecutting", "Могут разрезать растяжку на ПКМ");
 	}
 	
 	@Override

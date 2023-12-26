@@ -84,8 +84,8 @@ public abstract class MultiTileEntityMiniPortal extends TileEntityBase04MultiTil
 	sToolTipFunction2 = "gt.tileentity.portal.mini.tooltip.2";
 	
 	static {
-		LH.add(sToolTipFunction1, "Teleports Items, Fluids, Redstone, Comparator Signals, GT Energy and more!");
-		LH.add(sToolTipFunction2, "Always teleports things to the closest active Portal in Range!");
+		LH.add(sToolTipFunction1, "Перемещает предметы, жидкости, сигнал красного камня, сигнал компаратора, GT Энергию и другое!");
+		LH.add(sToolTipFunction2, "Всегда перемещает вещи на ближайший активный портал в радиусе!");
 	}
 	
 	@Override
@@ -231,7 +231,7 @@ public abstract class MultiTileEntityMiniPortal extends TileEntityBase04MultiTil
 		if (aTool.equals(TOOL_magnifyingglass)) {
 			if (aChatReturn != null) {
 				if (mTarget == null) {
-					aChatReturn.add("No Target");
+					aChatReturn.add("Нет сигнала");
 				} else {
 					aChatReturn.add("X: " + mTarget.xCoord + "   Y: " + mTarget.yCoord + "   Z: " + mTarget.zCoord);
 				}

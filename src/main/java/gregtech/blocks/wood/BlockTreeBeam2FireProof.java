@@ -28,24 +28,24 @@ public class BlockTreeBeam2FireProof extends BlockBaseBeam {
 	public BlockTreeBeam2FireProof(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.BEAMS_2);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Acacia Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".4", "Acacia Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".8", "Acacia Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+".12", "Acacia Beam (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из акации (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из акации (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из акации (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".12", "Брус из акации (Огнеупорный)");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Dark Oak Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".5", "Dark Oak Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".9", "Dark Oak Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+".13", "Dark Oak Beam (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".1", "Брус из темного дуба (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".5", "Брус из темного дуба (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".9", "Брус из темного дуба (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".13", "Брус из темного дуба (Огнеупорный)");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Rubber Wood Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".6", "Rubber Wood Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+".10", "Rubber Wood Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+".14", "Rubber Wood Beam (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".2", "Брус из каучукого дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".6", "Брус из каучукого дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".10", "Брус из каучукого дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".14", "Брус из каучукого дерева (Огнеупорный)");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Wood Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+ ".7", "Wood Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+".11", "Wood Beam (Fireproof)");
-		LH.add(getUnlocalizedName()+".15", "Wood Beam (Fireproof)");
+		LH.add(getUnlocalizedName()+ ".3", "Брус из дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+ ".7", "Брус из дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".11", "Брус из дерева (Огнеупорный)");
+		LH.add(getUnlocalizedName()+".15", "Брус из дерева (Огнеупорный)");
 	}
 }

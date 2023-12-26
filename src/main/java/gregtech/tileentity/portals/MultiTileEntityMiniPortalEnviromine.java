@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalEnviromine extends MultiTileEntityMiniPort
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListEnviromineSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.enviromine.tooltip.1", "Only works between the Enviromine Caves and the Overworld!");
-		LH.add("gt.tileentity.portal.enviromine.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.enviromine.tooltip.3", "Requires any Exquisite Diamond for activation");
+		LH.add("gt.tileentity.portal.enviromine.tooltip.1", "Работает только в Enviromine Caves и обычном мире!");
+		LH.add("gt.tileentity.portal.enviromine.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.enviromine.tooltip.3", "Требуется любой изысканный алмаз для активации");
 	}
 	
 	@Override

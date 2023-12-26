@@ -44,24 +44,24 @@ public class MultiItemBooks extends MultiItemRandomWithCompat {
 		super(aModID, aUnlocalized);
 		OM.reg(OD.craftingBook, ST.make(this, 1, W));
 		BooksGT.BOOK_REGISTER.put(this, W, (byte)3);
-		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Books", this, (short)32000));
+		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Книги", this, (short)32000));
 	}
 	
 	@Override
 	public void addItems() {
 		for (int i = 0; i < 11; i++) {
-			BooksGT.BOOK_REGISTER.put(addItem(     i, "Book"       , "", OD.bookWrittenSmall, TC.stack(TC.COGNITIO, 2), TICKS_PER_SMELT  , new OreDictItemData(MT.Paper, U * 3)), (byte)(i>8?39+i:i==8?1:3+i)); BooksGT.BOOKS_NORMAL.add(last());
-			BooksGT.BOOK_REGISTER.put(addItem(1000+i, "Large Book" , "", OD.bookWrittenBig  , TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6)), (byte)(i>8?39+i:i==8?1:3+i)); BooksGT.BOOKS_NORMAL.add(last());
+			BooksGT.BOOK_REGISTER.put(addItem(     i, "Книга"             , ""                             , OD.bookWrittenSmall, TC.stack(TC.COGNITIO, 2), TICKS_PER_SMELT  , new OreDictItemData(MT.Paper, U * 3)), (byte)(i>8?39+i:i==8?1:3+i)); BooksGT.BOOKS_NORMAL.add(last());
+			BooksGT.BOOK_REGISTER.put(addItem(1000+i, "Большая книга" , ""                             , OD.bookWrittenBig  , TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6)), (byte)(i>8?39+i:i==8?1:3+i)); BooksGT.BOOKS_NORMAL.add(last());
 		}
 		
-		BooksGT.BOOK_REGISTER.put(addItem(32000, "Book"                    , "With a Bronze Emblem on it"      , OD.bookWrittenSmall, TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 2), TICKS_PER_SMELT  , new OreDictItemData(MT.Paper, U * 3, MT.Bronze, U9)), (byte)12); BooksGT.BOOKS_NORMAL.add(last());
-		BooksGT.BOOK_REGISTER.put(addItem(32001, "Large Book"              , "With a Bronze Emblem on it"      , OD.bookWrittenBig  , TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6, MT.Bronze, U9)), (byte)12); BooksGT.BOOKS_NORMAL.add(last());
+		BooksGT.BOOK_REGISTER.put(addItem(32000, "Книга"              , "С бронзовой эмблемой на ней"  , OD.bookWrittenSmall, TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 2), TICKS_PER_SMELT  , new OreDictItemData(MT.Paper, U * 3, MT.Bronze, U9)), (byte)12); BooksGT.BOOKS_NORMAL.add(last());
+		BooksGT.BOOK_REGISTER.put(addItem(32001, "Большая книга"      , "С бронзовой эмблемой на ней"  , OD.bookWrittenBig  , TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6, MT.Bronze, U9)), (byte)12); BooksGT.BOOKS_NORMAL.add(last());
 		
-		BooksGT.BOOK_REGISTER.put(addItem(32002, "Material Dictionary"     , "Contains Data about a Material"  , OD.bookWrittenSmall, TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 2), TICKS_PER_SMELT  , new OreDictItemData(MT.Paper, U * 3)), (byte)11); BooksGT.BOOKS_NORMAL.add(last());
-		BooksGT.BOOK_REGISTER.put(addItem(32003, "Material Dictionary"     , "Contains Data about a Material"  , OD.bookWrittenBig  , TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6)), (byte)11); BooksGT.BOOKS_NORMAL.add(last());
+		BooksGT.BOOK_REGISTER.put(addItem(32002, "Словарь материалов" , "Содержит данные о материале"  , OD.bookWrittenSmall, TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 2), TICKS_PER_SMELT  , new OreDictItemData(MT.Paper, U * 3)), (byte)11); BooksGT.BOOKS_NORMAL.add(last());
+		BooksGT.BOOK_REGISTER.put(addItem(32003, "Словарь материалов" , "Содержит данные о материале"  , OD.bookWrittenBig  , TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6)), (byte)11); BooksGT.BOOKS_NORMAL.add(last());
 		
-		BooksGT.BOOK_REGISTER.put(addItem(32004, "Book"                    , "With a Radiation Symbol on it"   , OD.bookWrittenSmall, TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 3, MT.Tc, U9)), (byte)10); BooksGT.BOOKS_NORMAL.add(last());
-		BooksGT.BOOK_REGISTER.put(addItem(32005, "Large Book"              , "With a Radiation Symbol on it"   , OD.bookWrittenBig  , TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6, MT.Tc, U9)), (byte)10); BooksGT.BOOKS_NORMAL.add(last());
+		BooksGT.BOOK_REGISTER.put(addItem(32004, "Книга"              , "С символом радиации на ней"   , OD.bookWrittenSmall, TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 3, MT.Tc, U9)), (byte)10); BooksGT.BOOKS_NORMAL.add(last());
+		BooksGT.BOOK_REGISTER.put(addItem(32005, "Большая книга"      , "С символом радиации на ней"   , OD.bookWrittenBig  , TD.Creative.HIDDEN, TC.stack(TC.COGNITIO, 4), TICKS_PER_SMELT*2, new OreDictItemData(MT.Paper, U * 6, MT.Tc, U9)), (byte)10); BooksGT.BOOKS_NORMAL.add(last());
 		
 		
 		RM.generify(ST.make(this, 1, W), ST.make(Items.written_book, 1, 0));
@@ -185,7 +185,7 @@ public class MultiItemBooks extends MultiItemRandomWithCompat {
 			aList.add(LH.Chat.CYAN + tTitle);
 			aList.add(LH.Chat.CYAN + "by " + UT.NBT.getBookAuthor(aStack));
 		} else {
-			aList.add(LH.Chat.CYAN + "This Book is Empty");
+			aList.add(LH.Chat.CYAN + "Эта книга пустая");
 		}
 	}
 }

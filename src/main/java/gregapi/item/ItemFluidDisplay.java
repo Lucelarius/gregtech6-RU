@@ -62,7 +62,7 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 	public ItemFluidDisplay() {
 		super();
 		mName = "gt.display.fluid";
-		LH.add(mName, "Fluid Display");
+		LH.add(mName, "Жидкостный дисплей");
 		GameRegistry.registerItem(this, mName, MD.GAPI.mID);
 		if (ConfigsGT.CLIENT.get(ConfigCategories.visibility, "HiddenGTFluidDisplay", F)) ST.hide(this);
 		ItemsGT.DEBUG_ITEMS.add(this);

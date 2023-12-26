@@ -28,22 +28,22 @@ import net.minecraft.block.material.Material;
 public class BlockBarsBrass extends BlockBaseBars {
 	public BlockBarsBrass(String aNameInternal) {
 		super(aNameInternal, MT.Brass, Material.iron, Block.soundTypeMetal);
-		LH.add(getUnlocalizedName()+ ".0", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".1", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".2", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".3", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".4", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".5", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".6", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".7", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".8", "Brass Bars");
-		LH.add(getUnlocalizedName()+ ".9", "Brass Bars");
-		LH.add(getUnlocalizedName()+".10", "Brass Bars");
-		LH.add(getUnlocalizedName()+".11", "Brass Bars");
-		LH.add(getUnlocalizedName()+".12", "Brass Bars");
-		LH.add(getUnlocalizedName()+".13", "Brass Bars");
-		LH.add(getUnlocalizedName()+".14", "Brass Bars");
-		LH.add(getUnlocalizedName()+".15", "Brass Bars");
+		LH.add(getUnlocalizedName()+ ".0", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".1", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".2", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".3", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".4", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".5", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".6", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".7", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".8", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+ ".9", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+".10", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+".11", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+".12", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+".13", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+".14", "Решетка (Латунь)");
+		LH.add(getUnlocalizedName()+".15", "Решетка (Латунь)");
 	}
 	
 	@Override public float getExplosionResistance(byte aMeta) {return 5;}

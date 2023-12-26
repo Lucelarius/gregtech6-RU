@@ -41,7 +41,7 @@ import net.minecraft.world.World;
 
 public class BlockAsphalt extends BlockColored implements IBlockOnWalkOver {
 	public BlockAsphalt(String aUnlocalised) {
-		super(ItemBlockMetaType.class, Material.rock, soundTypeStone, aUnlocalised, "Asphalt", null, 1.0F, 1.0F, 1, Textures.BlockIcons.ASPHALTS);
+		super(ItemBlockMetaType.class, Material.rock, soundTypeStone, aUnlocalised, "Асфальт", null, 1.0F, 1.0F, 1, Textures.BlockIcons.ASPHALTS);
 		setCreativeTab(CreativeTabs.tabTransport);
 		OM.data(ST.make(this, 1, W), new OreDictItemData(MT.Asphalt, U ));
 		MT.Asphalt.mTextureSolid = BlockTextureCopied.get(this, SIDE_TOP, DYE_INDEX_Black);

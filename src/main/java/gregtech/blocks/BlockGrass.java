@@ -47,22 +47,22 @@ import static gregapi.data.CS.*;
 public class BlockGrass extends BlockBaseMeta {
 	public BlockGrass(String aUnlocalised) {
 		super(null, aUnlocalised, Material.grass, soundTypeGrass, 4, Textures.BlockIcons.GRASSES_TOP);
-		LH.add(getUnlocalizedName()+ ".0", "Grass");
-		LH.add(getUnlocalizedName()+ ".1", "Grass");
-		LH.add(getUnlocalizedName()+ ".2", "Grass");
-		LH.add(getUnlocalizedName()+ ".3", "Grass");
-		LH.add(getUnlocalizedName()+ ".4", "Grass");
-		LH.add(getUnlocalizedName()+ ".5", "Grass");
-		LH.add(getUnlocalizedName()+ ".6", "Grass");
-		LH.add(getUnlocalizedName()+ ".7", "Grass");
-		LH.add(getUnlocalizedName()+ ".8", "Grass");
-		LH.add(getUnlocalizedName()+ ".9", "Grass");
-		LH.add(getUnlocalizedName()+".10", "Grass");
-		LH.add(getUnlocalizedName()+".11", "Grass");
-		LH.add(getUnlocalizedName()+".12", "Grass");
-		LH.add(getUnlocalizedName()+".13", "Grass");
-		LH.add(getUnlocalizedName()+".14", "Grass");
-		LH.add(getUnlocalizedName()+".15", "Grass");
+		LH.add(getUnlocalizedName()+ ".0", "Трава");
+		LH.add(getUnlocalizedName()+ ".1", "Трава");
+		LH.add(getUnlocalizedName()+ ".2", "Трава");
+		LH.add(getUnlocalizedName()+ ".3", "Трава");
+		LH.add(getUnlocalizedName()+ ".4", "Трава");
+		LH.add(getUnlocalizedName()+ ".5", "Трава");
+		LH.add(getUnlocalizedName()+ ".6", "Трава");
+		LH.add(getUnlocalizedName()+ ".7", "Трава");
+		LH.add(getUnlocalizedName()+ ".8", "Трава");
+		LH.add(getUnlocalizedName()+ ".9", "Трава");
+		LH.add(getUnlocalizedName()+".10", "Трава");
+		LH.add(getUnlocalizedName()+".11", "Трава");
+		LH.add(getUnlocalizedName()+".12", "Трава");
+		LH.add(getUnlocalizedName()+".13", "Трава");
+		LH.add(getUnlocalizedName()+".14", "Трава");
+		LH.add(getUnlocalizedName()+".15", "Трава");
 		
 		BlocksGT.drillableDynamite.add(this);
 		BlocksGT.harvestableSpade.add(this);
@@ -82,8 +82,8 @@ public class BlockGrass extends BlockBaseMeta {
 	}
 	
 	static {
-		LH.add("gt.grass.tooltip", "Does not spread, get eaten, change color nor need light");
-		LH.add("gt.grass.tooltip.spray", "Spray Paint can also be used to dye Grass!");
+		LH.add("gt.grass.tooltip", "Не распространяется, не съедается, не меняет цвет и не нуждается в свете");
+		LH.add("gt.grass.tooltip.spray", "Аэрозольную краску также можно использовать для окрашивания травы!");
 	}
 	
 	@Override

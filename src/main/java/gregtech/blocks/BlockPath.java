@@ -48,22 +48,22 @@ public class BlockPath extends BlockBaseMeta implements IBlockOnWalkOver, IRende
 	public BlockPath(String aUnlocalised) {
 		super(null, aUnlocalised, Material.grass, soundTypeGrass, 12, Textures.BlockIcons.DIRTS);
 		setCreativeTab(CreativeTabs.tabTransport);
-		LH.add(getUnlocalizedName()+ ".0", "Path");
-		LH.add(getUnlocalizedName()+ ".1", "Aether Path");
-		LH.add(getUnlocalizedName()+ ".2", "Loamy Path");
-		LH.add(getUnlocalizedName()+ ".3", "Sandy Path");
-		LH.add(getUnlocalizedName()+ ".4", "Silty Path");
-		LH.add(getUnlocalizedName()+ ".5", "Alfisol Path");
-		LH.add(getUnlocalizedName()+ ".6", "Andisol Path");
-		LH.add(getUnlocalizedName()+ ".7", "Gelisol Path");
-		LH.add(getUnlocalizedName()+ ".8", "Histosol Path");
-		LH.add(getUnlocalizedName()+ ".9", "Inceptisol Path");
-		LH.add(getUnlocalizedName()+".10", "Mollisol Path");
-		LH.add(getUnlocalizedName()+".11", "Oxisol Path");
-		LH.add(getUnlocalizedName()+".12", "Path");
-		LH.add(getUnlocalizedName()+".13", "Path");
-		LH.add(getUnlocalizedName()+".14", "Path");
-		LH.add(getUnlocalizedName()+".15", "Path");
+		LH.add(getUnlocalizedName()+ ".0", "Тропинка");
+		LH.add(getUnlocalizedName()+ ".1", "Тропинка (Aether)");
+		LH.add(getUnlocalizedName()+ ".2", "Тропинка (Loamy)");
+		LH.add(getUnlocalizedName()+ ".3", "Тропинка (Sandy)");
+		LH.add(getUnlocalizedName()+ ".4", "Тропинка (Silty)");
+		LH.add(getUnlocalizedName()+ ".5", "Тропинка (Alfisol)");
+		LH.add(getUnlocalizedName()+ ".6", "Тропинка (Andisol)");
+		LH.add(getUnlocalizedName()+ ".7", "Тропинка (Gelisol)");
+		LH.add(getUnlocalizedName()+ ".8", "Тропинка (Histosol)");
+		LH.add(getUnlocalizedName()+ ".9", "Тропинка (Inceptisol)");
+		LH.add(getUnlocalizedName()+".10", "Тропинка (Mollisol)");
+		LH.add(getUnlocalizedName()+".11", "Тропинка (Oxisol)");
+		LH.add(getUnlocalizedName()+".12", "Тропинка");
+		LH.add(getUnlocalizedName()+".13", "Тропинка");
+		LH.add(getUnlocalizedName()+".14", "Тропинка");
+		LH.add(getUnlocalizedName()+".15", "Тропинка");
 		setBlockBounds(0, 0, 0, 1, PIXELS_NEG[1], 1);
 		
 		if (COMPAT_FR  != null) COMPAT_FR.addToBackpacks("digger", ST.make(this, 1, W));

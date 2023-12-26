@@ -47,7 +47,7 @@ public class OreDictListenerItem_Washing extends OreDictListenerItem {
 	 * @param aByProductPrefixes the Prefixes it can select from, if Items of those Prefixes exist. You can add the same Prefix multiple times to weight it.
 	 */
 	public OreDictListenerItem_Washing(OreDictPrefix aItemToGet, int aChance, OreDictPrefix... aByProductPrefixes) {
-		LH.add("gt.behaviour.washing", "Throw into Cauldron to clean this Item");
+		LH.add("gt.behaviour.washing", "Бросьте в Котел, чтобы очистить этот предмет");
 		mByProductPrefixes = aByProductPrefixes;
 		mItemToGet = aItemToGet;
 		mChance = aChance;
@@ -81,6 +81,6 @@ public class OreDictListenerItem_Washing extends OreDictListenerItem {
 	
 	@Override
 	public String getListenerToolTip(OreDictPrefix aPrefix, OreDictMaterial aMaterial, ItemStack aStack) {
-		return LanguageHandler.translate("gt.behaviour.washing", "Throw into Cauldron to clean this Item");
+		return LanguageHandler.translate("gt.behaviour.washing", "Бросьте в Котел, чтобы очистить этот предмет");
 	}
 }

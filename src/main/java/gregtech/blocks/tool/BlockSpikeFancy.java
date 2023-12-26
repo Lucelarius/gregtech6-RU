@@ -45,37 +45,37 @@ import net.minecraft.world.World;
 public class BlockSpikeFancy extends BlockBaseSpike {
 	public BlockSpikeFancy(String aNameInternal) {
 		super(aNameInternal, MT.Au, MT.Ag);
-		LH.add(getUnlocalizedName()+ ".0", "Gold Wall Spike");
-		LH.add(getUnlocalizedName()+ ".1", "Gold Wall Spike");
-		LH.add(getUnlocalizedName()+ ".2", "Gold Wall Spike");
-		LH.add(getUnlocalizedName()+ ".3", "Gold Wall Spike");
-		LH.add(getUnlocalizedName()+ ".4", "Gold Wall Spike");
-		LH.add(getUnlocalizedName()+ ".5", "Gold Wall Spike");
-		LH.add(getUnlocalizedName()+ ".6", "Gold Block Spike");
-		LH.add(getUnlocalizedName()+ ".7", "Falling Gold Spike Block");
-		LH.add(getUnlocalizedName()+ ".8", "Silver Wall Spike");
-		LH.add(getUnlocalizedName()+ ".9", "Silver Wall Spike");
-		LH.add(getUnlocalizedName()+".10", "Silver Wall Spike");
-		LH.add(getUnlocalizedName()+".11", "Silver Wall Spike");
-		LH.add(getUnlocalizedName()+".12", "Silver Wall Spike");
-		LH.add(getUnlocalizedName()+".13", "Silver Wall Spike");
-		LH.add(getUnlocalizedName()+".14", "Silver Block Spike");
-		LH.add(getUnlocalizedName()+".15", "Falling Silver Spike Block");
+		LH.add(getUnlocalizedName()+ ".0", "Настенный шип (Золото)");
+		LH.add(getUnlocalizedName()+ ".1", "Настенный шип (Золото)");
+		LH.add(getUnlocalizedName()+ ".2", "Настенный шип (Золото)");
+		LH.add(getUnlocalizedName()+ ".3", "Настенный шип (Золото)");
+		LH.add(getUnlocalizedName()+ ".4", "Настенный шип (Золото)");
+		LH.add(getUnlocalizedName()+ ".5", "Настенный шип (Золото)");
+		LH.add(getUnlocalizedName()+ ".6", "Блок шипов (Золото)");
+		LH.add(getUnlocalizedName()+ ".7", "Падающий блок шипов (Золото)");
+		LH.add(getUnlocalizedName()+ ".8", "Настенный шип (Серебро)");
+		LH.add(getUnlocalizedName()+ ".9", "Настенный шип (Серебро)");
+		LH.add(getUnlocalizedName()+".10", "Настенный шип (Серебро)");
+		LH.add(getUnlocalizedName()+".11", "Настенный шип (Серебро)");
+		LH.add(getUnlocalizedName()+".12", "Настенный шип (Серебро)");
+		LH.add(getUnlocalizedName()+".13", "Настенный шип (Серебро)");
+		LH.add(getUnlocalizedName()+".14", "Блок шипов (Серебро)");
+		LH.add(getUnlocalizedName()+".15", "Падающий блок шипов (Серебро)");
 	}
 	
 	@Override
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		if (aMeta < 8) {
-			aList.add(LH.Chat.ORANGE + "Deals huge Damage to any Undead touching it!");
-			aList.add(LH.Chat.ORANGE + "Does very low Damage to anything else!");
-			aList.add(LH.Chat.ORANGE + "Doesn't work on Slimes and Iron Golems.");
+			aList.add(LH.Chat.ORANGE + "Наносит огромный урон любой нежити, прикоснувшейся к нему!");
+			aList.add(LH.Chat.ORANGE + "Наносит очень низкий урон всему остальному!");
+			aList.add(LH.Chat.ORANGE + "Не действует на слизней и железных големов.");
 		} else {
-			aList.add(LH.Chat.ORANGE + "Deals huge Damage to any Enderman, Werewolf or Bear989Sr touching it!");
-			aList.add(LH.Chat.ORANGE + "Does very low Damage to anything else!");
-			aList.add(LH.Chat.ORANGE + "Doesn't work on Skeletons, Slimes and Iron Golems.");
+			aList.add(LH.Chat.ORANGE + "Наносит огромный урон любому Эндермену, Оборотню или прикоснувшемуся к нему Bear989Sr!");
+			aList.add(LH.Chat.ORANGE + "Наносит очень низкий урон всему остальному!");
+			aList.add(LH.Chat.ORANGE + "Не действует на скелетов, слизней и железных големов.");
 		}
 		if ((aMeta & 7) >= 6) {
-			aList.add(LH.Chat.CYAN + "Works in all Directions, but only does half the Wall Spikes Damage!");
+			aList.add(LH.Chat.CYAN + "Работает во всех направлениях, но наносит только половину урона от настенных шипов!");
 		}
 	}
 	

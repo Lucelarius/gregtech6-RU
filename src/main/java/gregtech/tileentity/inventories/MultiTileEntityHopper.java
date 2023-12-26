@@ -85,9 +85,9 @@ public class MultiTileEntityHopper extends TileEntityBase09FacingSingle implemen
 	}
 	
 	static {
-		LH.add("gt.multitileentity.hopper.tooltip.1", "Slot Count: ");
-		LH.add("gt.multitileentity.hopper.tooltip.2", "Specified Stacksize: ");
-		LH.add("gt.multitileentity.hopper.tooltip.3", "Exact Insertion Mode");
+		LH.add("gt.multitileentity.hopper.tooltip.1", "Количество слотов: ");
+		LH.add("gt.multitileentity.hopper.tooltip.2", "Указанный размер пачки: ");
+		LH.add("gt.multitileentity.hopper.tooltip.3", "Точность режима размещения");
 	}
 	
 	@Override
@@ -131,22 +131,22 @@ public class MultiTileEntityHopper extends TileEntityBase09FacingSingle implemen
 			} else {
 				if (++mMode > 64) mMode =  0;
 			}
-			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Emits up to 1 Stack" : "Emits up to 64 Items") : (mExactMode ? "Emits exact Stacksize of: " : "Emits divisible Stacksize of: ") + mMode);
+			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Отдает до 1 пачки" : "Отдает до 64 предметов") : (mExactMode ? "Выдает точный размер пачки: " : "Выдает кратный размер пачки: ") + mMode);
 			return 200;
 		}
 		if (aTool.equals(TOOL_monkeywrench)) {
 			mExactMode = !mExactMode;
-			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Emits up to 1 Stack" : "Emits up to 64 Items") : (mExactMode ? "Emits exact Stacksize of: " : "Emits divisible Stacksize of: ") + mMode);
+			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Отдает до 1 пачки" : "Отдает до 64 предметов") : (mExactMode ? "Выдает точный размер пачки: " : "Выдает кратный размер пачки: ") + mMode);
 			return 10000;
 		}
 		if (aTool.equals(TOOL_softhammer)) {
 			mExactMode = F;
 			mMode = 0;
-			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Emits up to 1 Stack" : "Emits up to 64 Items") : (mExactMode ? "Emits exact Stacksize of: " : "Emits divisible Stacksize of: ") + mMode);
+			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Отдает до 1 пачки" : "Отдает до 64 предметов") : (mExactMode ? "Выдает точный размер пачки: " : "Выдает кратный размер пачки: ") + mMode);
 			return 10000;
 		}
 		if (aTool.equals(TOOL_magnifyingglass)) {
-			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Emits up to 1 Stack" : "Emits up to 64 Items") : (mExactMode ? "Emits exact Stacksize of: " : "Emits divisible Stacksize of: ") + mMode);
+			if (aChatReturn != null) aChatReturn.add(mMode <= 0 ? (mExactMode ? "Отдает до 1 пачки" : "Отдает до 64 предметов") : (mExactMode ? "Выдает точный размер пачки: " : "Выдает кратный размер пачки: ") + mMode);
 			return 1;
 		}
 		return super.onToolClick2(aTool, aRemainingDurability, aQuality, aPlayer, aChatReturn, aPlayerInventory, aSneaking, aStack, aSide, aHitX, aHitY, aHitZ);

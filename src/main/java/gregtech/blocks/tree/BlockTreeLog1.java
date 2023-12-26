@@ -44,25 +44,25 @@ public class BlockTreeLog1 extends BlockBaseBeamFlammable implements IBlockToola
 	public BlockTreeLog1(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.LOGS_1);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Dead Log");
-		LH.add(getUnlocalizedName()+ ".4", "Dead Log");
-		LH.add(getUnlocalizedName()+ ".8", "Dead Log");
-		LH.add(getUnlocalizedName()+".12", "Dead Log");
+		LH.add(getUnlocalizedName()+ ".0", "Мертвое бревно");
+		LH.add(getUnlocalizedName()+ ".4", "Мертвое бревно");
+		LH.add(getUnlocalizedName()+ ".8", "Мертвое бревно");
+		LH.add(getUnlocalizedName()+".12", "Мертвое бревно");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Rotten Log");
-		LH.add(getUnlocalizedName()+ ".5", "Rotten Log");
-		LH.add(getUnlocalizedName()+ ".9", "Rotten Log");
-		LH.add(getUnlocalizedName()+".13", "Rotten Log");
+		LH.add(getUnlocalizedName()+ ".1", "Гнилое бревно");
+		LH.add(getUnlocalizedName()+ ".5", "Гнилое бревно");
+		LH.add(getUnlocalizedName()+ ".9", "Гнилое бревно");
+		LH.add(getUnlocalizedName()+".13", "Гнилое бревно");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Mossy Log");
-		LH.add(getUnlocalizedName()+ ".6", "Mossy Log");
-		LH.add(getUnlocalizedName()+".10", "Mossy Log");
-		LH.add(getUnlocalizedName()+".14", "Mossy Log");
+		LH.add(getUnlocalizedName()+ ".2", "Замшелое бревно");
+		LH.add(getUnlocalizedName()+ ".6", "Замшелое бревно");
+		LH.add(getUnlocalizedName()+".10", "Замшелое бревно");
+		LH.add(getUnlocalizedName()+".14", "Замшелое бревно");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Frozen Log");
-		LH.add(getUnlocalizedName()+ ".7", "Frozen Log");
-		LH.add(getUnlocalizedName()+".11", "Frozen Log");
-		LH.add(getUnlocalizedName()+".15", "Frozen Log");
+		LH.add(getUnlocalizedName()+ ".3", "Замороженное бревно");
+		LH.add(getUnlocalizedName()+ ".7", "Замороженное бревно");
+		LH.add(getUnlocalizedName()+".11", "Замороженное бревно");
+		LH.add(getUnlocalizedName()+".15", "Замороженное бревно");
 	}
 	
 	@Override

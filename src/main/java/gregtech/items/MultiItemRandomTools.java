@@ -55,18 +55,18 @@ import static gregapi.data.OP.chunkGt;
 public class MultiItemRandomTools extends MultiItemRandomWithCompat implements IItemRottable {
 	public MultiItemRandomTools(String aModID, String aUnlocalized) {
 		super(aModID, aUnlocalized);
-		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Equipment", this, (short)5008));
+		setCreativeTab(new CreativeTab(getUnlocalizedName(), "GregTech: Оборудование", this, (short)5008));
 	}
 	
 	@Override
 	public void addItems() {
 		IBehavior<MultiItem> tBehaviour;
 		
-		IL.Compound_Bronze       .set(addItem(  0, "Bronze Compound"        , "Put in Furnace to smelt it" , new OreDictItemData(MT.Bronze       , U9), TC.stack(TC.METALLUM, 1)));
-		IL.Compound_Brass        .set(addItem(  1, "Brass Compound"         , "Put in Furnace to smelt it" , new OreDictItemData(MT.Brass        , U9), TC.stack(TC.METALLUM, 1)));
-		IL.Compound_BismuthBronze.set(addItem(  2, "Bismuth Bronze Compound", "Put in Furnace to smelt it" , new OreDictItemData(MT.BismuthBronze, U9), TC.stack(TC.METALLUM, 1)));
-		IL.Compound_ArsenicCopper.set(addItem(  3, "Arsenic Copper Compound", "Put in Furnace to smelt it" , new OreDictItemData(MT.ArsenicCopper, U9), TC.stack(TC.METALLUM, 1)));
-		IL.Compound_ArsenicBronze.set(addItem(  4, "Arsenic Bronze Compound", "Put in Furnace to smelt it" , new OreDictItemData(MT.ArsenicBronze, U9), TC.stack(TC.METALLUM, 1)));
+		IL.Compound_Bronze       .set(addItem(  0, "Бронзовое соединение"       , "Поместите в печь, чтобы расплавить это" , new OreDictItemData(MT.Bronze       , U9), TC.stack(TC.METALLUM, 1)));
+		IL.Compound_Brass        .set(addItem(  1, "Латунное соединение"        , "Поместите в печь, чтобы расплавить это" , new OreDictItemData(MT.Brass        , U9), TC.stack(TC.METALLUM, 1)));
+		IL.Compound_BismuthBronze.set(addItem(  2, "Висмут-бронзовое соединение", "Поместите в печь, чтобы расплавить это" , new OreDictItemData(MT.BismuthBronze, U9), TC.stack(TC.METALLUM, 1)));
+		IL.Compound_ArsenicCopper.set(addItem(  3, "Мышьяк-медное соединение"   , "Поместите в печь, чтобы расплавить это" , new OreDictItemData(MT.ArsenicCopper, U9), TC.stack(TC.METALLUM, 1)));
+		IL.Compound_ArsenicBronze.set(addItem(  4, "Мышьяк-бронзовое соединение", "Поместите в печь, чтобы расплавить это" , new OreDictItemData(MT.ArsenicBronze, U9), TC.stack(TC.METALLUM, 1)));
 		
 		RM.add_smelting(IL.Compound_Bronze       .get(1), OP.nugget.mat(MT.Bronze       , 1), F, F, T);
 		RM.add_smelting(IL.Compound_Brass        .get(1), OP.nugget.mat(MT.Brass        , 1), F, F, T);
@@ -74,52 +74,52 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.add_smelting(IL.Compound_ArsenicCopper.get(1), OP.nugget.mat(MT.ArsenicCopper, 1), F, F, T);
 		RM.add_smelting(IL.Compound_ArsenicBronze.get(1), OP.nugget.mat(MT.ArsenicBronze, 1), F, F, T);
 		
-		IL.Porcelain_Cup_Raw               .set(addItem(899, "Modeled Porcelain Cup"    , "Put in Furnace to harden", new OreDictItemData(MT.Porcelain, U), TC.stack(TC.TERRA, 2), TC.stack(TC.VACUOS, 1))); CR.shapeless(OP.dust.mat(MT.Porcelain, 1), CR.DEF_NCC, new Object[] {last()});
+		IL.Porcelain_Cup_Raw               .set(addItem(899, "Слепленая фарфоровая чашка"    , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Porcelain, U), TC.stack(TC.TERRA, 2), TC.stack(TC.VACUOS, 1))); CR.shapeless(OP.dust.mat(MT.Porcelain, 1), CR.DEF_NCC, new Object[] {last()});
 		
 		CR.shaped(IL.Porcelain_Cup_Raw   .get(1), CR.DEF_NCC, "kPR"              , 'P', OP.dust.dat(MT.Porcelain), 'R', OreDictToolNames.rollingpin);
 		
-		IL.Ceramic_Ingot_Mold_Raw          .set(addItem(900, "Clay Ingot Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Chunk_Mold_Raw          .set(addItem(901, "Clay Chunk Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Plate_Mold_Raw          .set(addItem(902, "Clay Plate Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Tiny_Plate_Mold_Raw     .set(addItem(903, "Clay Tiny Plate Mold"     , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Bolt_Mold_Raw           .set(addItem(904, "Clay Bolt Mold"           , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Rod_Mold_Raw            .set(addItem(905, "Clay Rod Mold"            , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Long_Rod_Mold_Raw       .set(addItem(906, "Clay Long Rod Mold"       , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Item_Casing_Mold_Raw    .set(addItem(907, "Clay Item Casing Mold"    , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Ring_Mold_Raw           .set(addItem(908, "Clay Ring Mold"           , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Gear_Mold_Raw           .set(addItem(909, "Clay Gear Mold"           , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Small_Gear_Mold_Raw     .set(addItem(910, "Clay Small Gear Mold"     , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Sword_Mold_Raw          .set(addItem(911, "Clay Sword Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Pickaxe_Mold_Raw        .set(addItem(912, "Clay Pickaxe Mold"        , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Spade_Mold_Raw          .set(addItem(913, "Clay Spade Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Shovel_Mold_Raw         .set(addItem(914, "Clay Shovel Mold"         , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Universal_Spade_Mold_Raw.set(addItem(915, "Clay Universal Spade Mold", "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Axe_Mold_Raw            .set(addItem(916, "Clay Axe Mold"            , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Double_Axe_Mold_Raw     .set(addItem(917, "Clay Double Axe Mold"     , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Saw_Mold_Raw            .set(addItem(918, "Clay Saw Mold"            , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Hammer_Mold_Raw         .set(addItem(919, "Clay Hammer Mold"         , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_File_Mold_Raw           .set(addItem(920, "Clay File Mold"           , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Screwdriver_Mold_Raw    .set(addItem(921, "Clay Screwdriver Mold"    , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Chisel_Mold_Raw         .set(addItem(922, "Clay Chisel Mold"         , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Arrow_Mold_Raw          .set(addItem(923, "Clay Arrow Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Hoe_Mold_Raw            .set(addItem(924, "Clay Hoe Mold"            , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Sense_Mold_Raw          .set(addItem(925, "Clay Sense Mold"          , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Plow_Mold_Raw           .set(addItem(926, "Clay Plow Mold"           , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Builderwand_Mold_Raw    .set(addItem(927, "Clay Builder's Wand Mold" , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Nugget_Mold_Raw         .set(addItem(928, "Clay Nugget Mold"         , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Billet_Mold_Raw         .set(addItem(929, "Clay Billet Mold"         , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Ingot_Mold_Raw          .set(addItem(900, "Глиняная форма - Слиток"                        , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Chunk_Mold_Raw          .set(addItem(901, "Глиняная форма - Кусок"                         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Plate_Mold_Raw          .set(addItem(902, "Глиняная форма - Пластина"                      , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Tiny_Plate_Mold_Raw     .set(addItem(903, "Глиняная форма - Малая пластина"                , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Bolt_Mold_Raw           .set(addItem(904, "Глиняная форма - Болт"                          , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Rod_Mold_Raw            .set(addItem(905, "Глиняная форма - Стержень"                      , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Long_Rod_Mold_Raw       .set(addItem(906, "Глиняная форма - Длинный стержень"              , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Item_Casing_Mold_Raw    .set(addItem(907, "Глиняная форма - Оболочка"                      , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Ring_Mold_Raw           .set(addItem(908, "Глиняная форма - Кольцо"                        , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Gear_Mold_Raw           .set(addItem(909, "Глиняная форма - Шестерня"                      , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Small_Gear_Mold_Raw     .set(addItem(910, "Глиняная форма - Малая шестерня"                , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Sword_Mold_Raw          .set(addItem(911, "Глиняная форма - Мечь"                          , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Pickaxe_Mold_Raw        .set(addItem(912, "Глиняная форма - Кирка"                         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Spade_Mold_Raw          .set(addItem(913, "Глиняная форма - Совковая лопата"               , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Shovel_Mold_Raw         .set(addItem(914, "Глиняная форма - Лопата"                        , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Universal_Spade_Mold_Raw.set(addItem(915, "Глиняная форма - Универсальная лопата"          , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Axe_Mold_Raw            .set(addItem(916, "Глиняная форма - Топор"                         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Double_Axe_Mold_Raw     .set(addItem(917, "Глиняная форма - Секира"                        , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Saw_Mold_Raw            .set(addItem(918, "Глиняная форма - Пила"                          , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Hammer_Mold_Raw         .set(addItem(919, "Глиняная форма - Молот"                         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_File_Mold_Raw           .set(addItem(920, "Глиняная форма - Напильник"                     , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Screwdriver_Mold_Raw    .set(addItem(921, "Глиняная форма - Отвертка"                      , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Chisel_Mold_Raw         .set(addItem(922, "Глиняная форма - Долото"                        , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Arrow_Mold_Raw          .set(addItem(923, "Глиняная форма - Наконечник стрелы"             , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Hoe_Mold_Raw            .set(addItem(924, "Глиняная форма - Мотыга"                        , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Sense_Mold_Raw          .set(addItem(925, "Глиняная форма - Коса"                          , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Plow_Mold_Raw           .set(addItem(926, "Глиняная форма - Снегоуборочная лопата"         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Builderwand_Mold_Raw    .set(addItem(927, "Глиняная форма - Наконечник строительного жезла", "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Nugget_Mold_Raw         .set(addItem(928, "Глиняная форма - Самородок"                     , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Billet_Mold_Raw         .set(addItem(929, "Глиняная форма - Заготовка"                     , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
 		
-		IL.Ceramic_Tap_Raw                 .set(addItem(987, "Clay Tap"                 , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*3), TC.stack(TC.TERRA, 2), TC.stack(TC.MOTUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 3, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Funnel_Raw              .set(addItem(988, "Clay Funnel"              , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*3), TC.stack(TC.TERRA, 2), TC.stack(TC.MOTUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 3, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Crucible_Raw            .set(addItem(989, "Clay Crucible"            , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*7), TC.stack(TC.TERRA, 2), TC.stack(TC.IGNIS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 7, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Basin_Raw               .set(addItem(990, "Clay Basin"               , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Mold_Raw                .set(addItem(991, "Clay Mold"                , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Faucet_Raw              .set(addItem(992, "Clay Faucet"              , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*3), TC.stack(TC.TERRA, 2), TC.stack(TC.MOTUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 3, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Crossing_Raw            .set(addItem(993, "Clay Crossing"            , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.ITER      , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Juicer_Raw                      .set(addItem(994, "Clay Juicer"              , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*4), TC.stack(TC.TERRA, 2), TC.stack(TC.LIMUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 4, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Bowl_Raw                .set(addItem(995, "Clay Bowl"                , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.PERMUTATIO, 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Ceramic_Jug_Raw                 .set(addItem(996, "Clay Jug"                 , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*6), TC.stack(TC.TERRA, 2), TC.stack(TC.VACUOS    , 1))); CR.shapeless(ST.make(Items.clay_ball, 6, 0), CR.DEF_NCC, new Object[] {last()});
-		IL.Measuring_Pot_Raw               .set(addItem(997, "Clay Measuring Pot"       , "Put in Furnace to harden", new OreDictItemData(MT.Clay, U*4), TC.stack(TC.TERRA, 2), TC.stack(TC.VACUOS    , 1))); CR.shapeless(ST.make(Items.clay_ball, 4, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Tap_Raw                 .set(addItem(987, "Глиняный краник"                                , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*3), TC.stack(TC.TERRA, 2), TC.stack(TC.MOTUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 3, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Funnel_Raw              .set(addItem(988, "Глиняная миниворонка"                           , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*3), TC.stack(TC.TERRA, 2), TC.stack(TC.MOTUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 3, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Crucible_Raw            .set(addItem(989, "Глиняный тигель"                                , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*7), TC.stack(TC.TERRA, 2), TC.stack(TC.IGNIS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 7, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Basin_Raw               .set(addItem(990, "Глиняный резервуар"                             , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Mold_Raw                .set(addItem(991, "Глиняная форма"                                 , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.GELUM     , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Faucet_Raw              .set(addItem(992, "Глиняный литейный кран"                         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*3), TC.stack(TC.TERRA, 2), TC.stack(TC.MOTUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 3, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Crossing_Raw            .set(addItem(993, "Глиняная крестовина"                            , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.ITER      , 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Juicer_Raw                      .set(addItem(994, "Глиняная соковыжималка"                         , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*4), TC.stack(TC.TERRA, 2), TC.stack(TC.LIMUS     , 1))); CR.shapeless(ST.make(Items.clay_ball, 4, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Bowl_Raw                .set(addItem(995, "Глиняная миска"                                 , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*5), TC.stack(TC.TERRA, 2), TC.stack(TC.PERMUTATIO, 1))); CR.shapeless(ST.make(Items.clay_ball, 5, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Ceramic_Jug_Raw                 .set(addItem(996, "Глиняный кувшин"                                , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*6), TC.stack(TC.TERRA, 2), TC.stack(TC.VACUOS    , 1))); CR.shapeless(ST.make(Items.clay_ball, 6, 0), CR.DEF_NCC, new Object[] {last()});
+		IL.Measuring_Pot_Raw               .set(addItem(997, "Глиняная чашка"                                 , "Поместите в печь, чтобы застыло", new OreDictItemData(MT.Clay, U*4), TC.stack(TC.TERRA, 2), TC.stack(TC.VACUOS    , 1))); CR.shapeless(ST.make(Items.clay_ball, 4, 0), CR.DEF_NCC, new Object[] {last()});
 		
 		CR.shaped(IL.Ceramic_Tap_Raw     .get(1), CR.DEF_NCC, "CCR", "kC "       , 'C', OD.itemClay, 'R', OreDictToolNames.rollingpin);
 		CR.shaped(IL.Ceramic_Funnel_Raw  .get(1), CR.DEF_NCC, "CRC", "kC "       , 'C', OD.itemClay, 'R', OreDictToolNames.rollingpin);
@@ -232,8 +232,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		CR.shapeless(IL.Ceramic_Chisel_Mold_Raw         .get(1), CR.DEF_NCC, new Object[] {IL.Ceramic_Mold_Raw, OP.plate.dat(tMat), OP.stick.dat(tMat)});
 		}
 		
-		IL.Food_Can_Empty.set(addItem(998, "Empty Food Can" , "Used for canning Food" , new OreDictItemData(MT.TinAlloy, OP.plateCurved.mAmount), TC.stack(TC.VACUOS, 1), TC.stack(TC.FABRICO, 1)));
-		IL.Spray_Empty   .set(addItem(999, "Empty Spray Can", "Used for making Sprays", new OreDictItemData(MT.Sn, OP.plateCurved.mAmount, MT.Redstone, OP.dust.mAmount), TC.stack(TC.VACUOS, 1), TC.stack(TC.MOTUS, 1)));
+		IL.Food_Can_Empty.set(addItem(998, "Пустая консерва"            , "Используйте для наполнения едой"    , new OreDictItemData(MT.TinAlloy, OP.plateCurved.mAmount), TC.stack(TC.VACUOS, 1), TC.stack(TC.FABRICO, 1)));
+		IL.Spray_Empty   .set(addItem(999, "Пустой аэрозольный балончик", "Используйте для изготовления спреев", new OreDictItemData(MT.Sn, OP.plateCurved.mAmount, MT.Redstone, OP.dust.mAmount), TC.stack(TC.VACUOS, 1), TC.stack(TC.MOTUS, 1)));
 		
 		RM.RollBender.addRecipe1(T, 16, 64, OP.plateCurved.mat(MT.TinAlloy, 1), IL.Food_Can_Empty.get(1));
 // TODO RA.addAssemblerRecipe(OP.dust.mat(MT.Redstone, 1), OP.cell.mat(MT.Empty, 1), IL.Spray_Empty.get(1), 800, 1);
@@ -241,8 +241,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		CR.shaped(IL.Spray_Empty         .get(1), CR.DEF_NCC, "Rf" , "Cs"        , 'R', OD.itemRedstone, 'C', OP.plateCurved.dat(MT.Sn));
 		
 		for (byte i = 0; i < 16; i++) {
-		IL.SPRAY_CAN_DYES[i]               .set(addItem( 1000+2*i, "Spray Paint ("+DYE_NAMES[i]+")", "Full", TC.stack(TC.SENSUS, 4)));
-		IL.SPRAY_CAN_DYES_USED[i]          .set(addItem(mLastID+1, "Spray Paint ("+DYE_NAMES[i]+")", "Used", TC.stack(TC.SENSUS, 3), TD.Creative.HIDDEN));
+		IL.SPRAY_CAN_DYES[i]               .set(addItem( 1000+2*i, "Аэрозольная краска ("+DYE_NAMES[i]+")", "Полный", TC.stack(TC.SENSUS, 4)));
+		IL.SPRAY_CAN_DYES_USED[i]          .set(addItem(mLastID+1, "Аэрозольная краска ("+DYE_NAMES[i]+")", "Использовано", TC.stack(TC.SENSUS, 3), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Color(IL.Spray_Empty.get(1), IL.SPRAY_CAN_DYES_USED[i].get(1), IL.SPRAY_CAN_DYES[i].get(1), 512, i);
 		addItemBehavior(mLastID, tBehaviour); addItemBehavior(mLastID-1, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 256, IL.Spray_Empty.get(1), FL.mul(DYE_FLUIDS_CHEMICAL[i], 16), NF, IL.SPRAY_CAN_DYES[i].get(1));
@@ -250,8 +250,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.DidYouKnow.addFakeRecipe(F, ST.array(IL.SPRAY_CAN_DYES[i].get(1), IL.SPRAY_CAN_DYES_USED[i].get(1), ST.make(Blocks.wool, 1, 0), ST.make(Blocks.glass_pane, 1, 0), ST.make(Blocks.glass, 1, 0), ST.make(Blocks.hardened_clay, 1, 0)), ST.array(NI, NI, ST.make(Blocks.wool, 1, 15-i), ST.make(Blocks.stained_glass_pane, 1, 15-i), ST.make(Blocks.stained_glass, 1, 15-i), ST.make(Blocks.stained_hardened_clay, 1, 15-i)), null, ZL_LONG, ZL_FS, ZL_FS, 0, 0, 0);
 		
 		
-		IL.SPRAY_CAN_FOAM[i]               .set(addItem( 1100+2*i, "C-Foam Spray ("+DYE_NAMES[i]+")", "Full", TC.stack(TC.TERRA, 2), TC.stack(TC.FABRICO, 2)));
-		IL.SPRAY_CAN_FOAM_USED[i]          .set(addItem(mLastID+1, "C-Foam Spray ("+DYE_NAMES[i]+")", "Used", TC.stack(TC.TERRA, 1), TC.stack(TC.FABRICO, 1), TD.Creative.HIDDEN));
+		IL.SPRAY_CAN_FOAM[i]               .set(addItem( 1100+2*i, "Спрэй С-пены ("+DYE_NAMES[i]+")", "Полный", TC.stack(TC.TERRA, 2), TC.stack(TC.FABRICO, 2)));
+		IL.SPRAY_CAN_FOAM_USED[i]          .set(addItem(mLastID+1, "Спрэй С-пены ("+DYE_NAMES[i]+")", "Использовано", TC.stack(TC.TERRA, 1), TC.stack(TC.FABRICO, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Foam(IL.Spray_Empty.get(1), IL.SPRAY_CAN_FOAM_USED[i].get(1), IL.SPRAY_CAN_FOAM[i].get(1), 256, i, F);
 		addItemBehavior(mLastID, tBehaviour); addItemBehavior(mLastID-1, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 256, IL.Spray_Empty.get(1), FL.mul(DYED_C_FOAMS[i], 256), NF, IL.SPRAY_CAN_FOAM[i].get(1));
@@ -259,19 +259,19 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.DidYouKnow.addFakeRecipe(F, ST.array(IL.SPRAY_CAN_FOAM[i].get(1), IL.SPRAY_CAN_FOAM_USED[i].get(1)), ST.array(ST.make(BlocksGT.CFoamFresh, 1, i), ST.make(BlocksGT.CFoam, 1, i)), null, ZL_LONG, ZL_FS, ZL_FS, 0, 0, 0);
 		
 		
-		IL.SPRAY_CAN_FOAM_OWNED[i]         .set(addItem( 1132+2*i, "Advanced C-Foam Spray ("+DYE_NAMES[i]+")", "Full (C-Foam only breakable by Owner once dry)", TC.stack(TC.TERRA, 2), TC.stack(TC.FABRICO, 2), TC.stack(TC.SPIRITUS, 2)));
-		IL.SPRAY_CAN_FOAM_OWNED_USED[i]    .set(addItem(mLastID+1, "Advanced C-Foam Spray ("+DYE_NAMES[i]+")", "Used (C-Foam only breakable by Owner once dry)", TC.stack(TC.TERRA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.SPIRITUS, 1), TD.Creative.HIDDEN));
+		IL.SPRAY_CAN_FOAM_OWNED[i]         .set(addItem( 1132+2*i, "Улучшенный спрэй С-пены ("+DYE_NAMES[i]+")", "Полный (С-пена разрушается только владельцем после высыхания)"      , TC.stack(TC.TERRA, 2), TC.stack(TC.FABRICO, 2), TC.stack(TC.SPIRITUS, 2)));
+		IL.SPRAY_CAN_FOAM_OWNED_USED[i]    .set(addItem(mLastID+1, "Улучшенный спрэй С-пены ("+DYE_NAMES[i]+")", "Использовано (С-пена разрушается только владельцем после высыхания)", TC.stack(TC.TERRA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.SPIRITUS, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Foam(IL.Spray_Empty.get(1), IL.SPRAY_CAN_FOAM_OWNED_USED[i].get(1), IL.SPRAY_CAN_FOAM_OWNED[i].get(1), 256, i, T);
 		addItemBehavior(mLastID, tBehaviour); addItemBehavior(mLastID-1, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 256, IL.Spray_Empty.get(1), FL.mul(DYED_C_FOAMS_OWNED[i], 256), NF, IL.SPRAY_CAN_FOAM_OWNED[i].get(1));
 		ItemsGT.addNEIRedirects(IL.SPRAY_CAN_FOAM_OWNED_USED[i].get(1), IL.SPRAY_CAN_FOAM_OWNED[i].get(1));
-		RM.DidYouKnow.addFakeRecipe(F, ST.array(IL.SPRAY_CAN_FOAM_OWNED[i].get(1), IL.SPRAY_CAN_FOAM_OWNED_USED[i].get(1)), ST.array(ST.make(BlocksGT.CFoamFresh, 1, i, "Player-Owned C-Foam"), ST.make(BlocksGT.CFoam, 1, i, "Player-Owned C-Foam")), null, ZL_LONG, ZL_FS, ZL_FS, 0, 0, 0);
+		RM.DidYouKnow.addFakeRecipe(F, ST.array(IL.SPRAY_CAN_FOAM_OWNED[i].get(1), IL.SPRAY_CAN_FOAM_OWNED_USED[i].get(1)), ST.array(ST.make(BlocksGT.CFoamFresh, 1, i, "Игрок-владелец С-пены"), ST.make(BlocksGT.CFoam, 1, i, "Игрок-владелец С-пены")), null, ZL_LONG, ZL_FS, ZL_FS, 0, 0, 0);
 		}
 		
 		
 		
-		IL.Spray_Color_Remover             .set(addItem(1096, "Paint Removal Spray", "Full", TC.stack(TC.SENSUS, 2), TC.stack(TC.PERDITIO, 2)));
-		IL.Spray_Color_Remover_Used        .set(addItem(1097, "Paint Removal Spray", "Used", TC.stack(TC.SENSUS, 1), TC.stack(TC.PERDITIO, 1), TD.Creative.HIDDEN));
+		IL.Spray_Color_Remover             .set(addItem(1096, "Спрей для удаления краски", "Полный"      , TC.stack(TC.SENSUS, 2), TC.stack(TC.PERDITIO, 2)));
+		IL.Spray_Color_Remover_Used        .set(addItem(1097, "Спрей для удаления краски", "Использовано", TC.stack(TC.SENSUS, 1), TC.stack(TC.PERDITIO, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Color_Remover(IL.Spray_Empty.get(1), IL.Spray_Color_Remover_Used.get(1), IL.Spray_Color_Remover.get(1), 256);
 		addItemBehavior(1096, tBehaviour); addItemBehavior(1097, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 256, IL.Spray_Empty.get(1), MT.Cl.fluid(16*U, T), NF, IL.Spray_Color_Remover.get(1));
@@ -279,8 +279,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Spray_Foam_Remover              .set(addItem(1196, "C-Foam Removal Spray", "Full", TC.stack(TC.TERRA, 2), TC.stack(TC.PERDITIO, 2)));
-		IL.Spray_Foam_Remover_Used         .set(addItem(1197, "C-Foam Removal Spray", "Used", TC.stack(TC.TERRA, 1), TC.stack(TC.PERDITIO, 1), TD.Creative.HIDDEN));
+		IL.Spray_Foam_Remover              .set(addItem(1196, "Удалитель С-пены", "Полный"      , TC.stack(TC.TERRA, 2), TC.stack(TC.PERDITIO, 2)));
+		IL.Spray_Foam_Remover_Used         .set(addItem(1197, "Удалитель С-пены", "Использовано", TC.stack(TC.TERRA, 1), TC.stack(TC.PERDITIO, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Foam_Remover(IL.Spray_Empty.get(1), IL.Spray_Foam_Remover_Used.get(1), IL.Spray_Foam_Remover.get(1), 256);
 		addItemBehavior(1196, tBehaviour); addItemBehavior(1197, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 256, IL.Spray_Empty.get(1), MT.H2SO4.fluid(16*U, T), NF, IL.Spray_Foam_Remover.get(1));
@@ -289,8 +289,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Spray_Foam_Hardener             .set(addItem(1198, "Hardening Spray", "Full", TC.stack(TC.TERRA, 2), TC.stack(TC.TUTAMEN, 2)));
-		IL.Spray_Foam_Hardener_Used        .set(addItem(1199, "Hardening Spray", "Used", TC.stack(TC.TERRA, 1), TC.stack(TC.TUTAMEN, 1), TD.Creative.HIDDEN));
+		IL.Spray_Foam_Hardener             .set(addItem(1198, "Отвердитель С-пены", "Полный", TC.stack(TC.TERRA, 2), TC.stack(TC.TUTAMEN, 2)));
+		IL.Spray_Foam_Hardener_Used        .set(addItem(1199, "Отвердитель С-пены", "Использовано", TC.stack(TC.TERRA, 1), TC.stack(TC.TUTAMEN, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Foam_Hardener(IL.Spray_Empty.get(1), IL.Spray_Foam_Hardener_Used.get(1), IL.Spray_Foam_Hardener.get(1), 256);
 		addItemBehavior(1198, tBehaviour); addItemBehavior(1199, tBehaviour);
 		RM.Canner.addRecipe2(T, 16, 256, ST.make(Blocks.sand, 7, W), IL.Spray_Empty.get(1), IL.Spray_Foam_Hardener.get(1));
@@ -300,8 +300,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Spray_Extinguisher              .set(addItem(1998, "Fire Extinguisher (CO2)", "Full", TC.stack(TC.PERDITIO, 2), TC.stack(TC.IGNIS, 2)));
-		IL.Spray_Extinguisher_Used         .set(addItem(1999, "Fire Extinguisher (CO2)", "Used", TC.stack(TC.PERDITIO, 1), TC.stack(TC.IGNIS, 1), TD.Creative.HIDDEN));
+		IL.Spray_Extinguisher              .set(addItem(1998, "Огнетушитель (CO2)", "Полный", TC.stack(TC.PERDITIO, 2), TC.stack(TC.IGNIS, 2)));
+		IL.Spray_Extinguisher_Used         .set(addItem(1999, "Огнетушитель (CO2)", "Использовано", TC.stack(TC.PERDITIO, 1), TC.stack(TC.IGNIS, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Spray_Extinguisher(IL.Spray_Empty.get(1), IL.Spray_Extinguisher_Used.get(1), IL.Spray_Extinguisher.get(1), 256);
 		addItemBehavior(1998, tBehaviour); addItemBehavior(1999, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 256, IL.Spray_Empty.get(1), MT.CO2.fluid(16*U, T), NF, IL.Spray_Extinguisher.get(1));
@@ -312,26 +312,26 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		OreDictMaterial[] tBucketMaterials = new OreDictMaterial[] {ANY.Cu, MT.Sn, MT.Zn, MT.Pb, MT.Bi, MT.Brass, MT.Bronze, MT.BismuthBronze, MT.Au};
 		for (int i = 0; i < 9; i++) {
 			OreDictItemData tData = new OreDictItemData(ANY.Wood, U*3, OM.stack(tBucketMaterials[i], U*1));
-			ItemStack tBucket = addItem(2000 + i*100, "Wooden Bucket", "Empty", TC.stack(TC.ARBOR, 2), TC.stack(TC.VACUOS, 2), Behavior_Bucket_Simple.INSTANCE, tData);
+			ItemStack tBucket = addItem(2000 + i*100, "Деревянное ведро", "Пусто", TC.stack(TC.ARBOR, 2), TC.stack(TC.VACUOS, 2), Behavior_Bucket_Simple.INSTANCE, tData);
 			CR.shaped(tBucket, CR.DEF_NCC, "WPW", " Wh", 'P', OP.plate.dat(tBucketMaterials[i]), 'W', OD.plankAnyWood);
 			ItemsGT.addNEIRedirects(tBucket
-			, addItem(mLastID+1, "Wooden Bucket", "Water"                                  , TC.stack(TC.ARBOR, 2), TC.stack(TC.AQUA     , 2), new Behavior_Bucket_Simple(ST.make(Items.water_bucket, 1, 0))                       , tData.copy(), FL.Water.make(1000), FL.DistW.make(1000), FL.River_Water.make(1000), FL.MnWtr.make(1000), FL.Mineralsoda.make(1000), FL.Soda.make(1000), FL.Water_Hot.make(1000), FL.Water_Boiling.make(1000), FL.Water_Geothermal.make(1000), OD.container1000water)
-			, addItem(mLastID+1, "Wooden Bucket", "Milk (you cannot drink out of Buckets!)", TC.stack(TC.ARBOR, 2), TC.stack(TC.SANO     , 2), new Behavior_Bucket_Simple(ST.make(Items.milk_bucket, 1, 0))                        , tData.copy(), FL.Milk.make(1000), FL.MilkGrC.make(1000)                                                                                                                                                                                           , OD.container1000milk)
-			, addItem(mLastID+1, "Wooden Bucket", "Latex"                                  , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Latex.make(1000), FL.make("molten.latex", 1000)                                                                                                                                                                                  , OD.container1000latex)
-			, addItem(mLastID+1, "Wooden Bucket", "Creosote Oil"                           , TC.stack(TC.ARBOR, 2), TC.stack(TC.IGNIS    , 2), new Behavior_Bucket_Simple(IL.RC_Creosote_Bucket.get(1))                            , tData.copy(), FL.Oil_Creosote.make(1000)                                                                                                                                                                                                          , OD.container1000creosote)
-			, addItem(mLastID+1, "Wooden Bucket", "Sea Water (you cannot place this!)"     , TC.stack(TC.ARBOR, 2), TC.stack(TC.TEMPESTAS, 2), new Behavior_Switch_Metadata(2000 + i*100, F, F)                                    , tData.copy(), FL.Ocean.make(1000), FL.OceanGrC.make(1000), FL.Tropics_Water.make(1000)                                                                                                                                                            )
-			, addItem(mLastID+1, "Wooden Bucket", "Rubber Tree Sap"                        , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Resin_Rubber.make(1000)                                                                                                                                                                                                          , OD.container1000rubbertreesap)
-			, addItem(mLastID+1, "Wooden Bucket", "Spruce Tree Resin"                      , TC.stack(TC.ARBOR, 3), TC.stack(TC.LIMUS    , 1), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Resin_Spruce.make(1000)                                                                                                                                                                                                          , OD.container1000spruceresin)
-			, addItem(mLastID+1, "Wooden Bucket", "Honey"                                  , TC.stack(TC.ARBOR, 3), TC.stack(TC.BESTIA   , 1), new Behavior_Bucket_Simple(ST.make(MD.ERE, "bucketHoney", 1, 0, IL.FR_Honey_Bucket)), tData.copy(), FL.Honey.make(1000), FL.HoneyGrC.make(1000), FL.HoneyBoP.make(1000)                                                                                                                                                                 , OD.container1000honey)
-			, addItem(mLastID+1, "Wooden Bucket", "Dirty Water (you cannot place this!)"   , TC.stack(TC.ARBOR, 2), TC.stack(TC.AQUA     , 1), TC.stack(TC.VENEMUM, 1), new Behavior_Switch_Metadata(2000 + i*100, F, F)           , tData.copy(), FL.Dirty_Water.make(1000)                                                                                                                                                                                                           )
-			, addItem(mLastID+1, "Wooden Bucket", "Lubricant"                              , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.LubRoCant.make(1000), FL.Lubricant.make(1000)                                                                                                                                                                                    , OD.container1000lubricant)
-			, addItem(mLastID+1, "Wooden Bucket", "Milk (you cannot drink out of Buckets!)", TC.stack(TC.ARBOR, 2), TC.stack(TC.VENEMUM  , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Milk_Spoiled.make(1000)                                                                                                                                                                                                          )
-			, addItem(mLastID+1, "Wooden Bucket", "Maple Sap"                              , TC.stack(TC.ARBOR, 2), TC.stack(TC.FAMES    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Sap_Maple.make(1000)                                                                                                                                                                                                             , OD.container1000maplesap)
-			, addItem(mLastID+1, "Wooden Bucket", "Rainbow Sap"                            , TC.stack(TC.ARBOR, 2), TC.stack(TC.AURAM    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Sap_Rainbow.make(1000)                                                                                                                                                                                                           , OD.container1000rainbowsap)
-			, addItem(mLastID+1, "Wooden Bucket", "Soy Milk"                               , TC.stack(TC.ARBOR, 2), TC.stack(TC.HERBA    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.MilkSoy.make(1000)                                                                                                                                                                                                               , OD.container1000soymilk)
-			, addItem(mLastID+1, "Wooden Bucket", "Glue"                                   , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Glue.make(1000)                                                                                                                                                                                                                  , OD.container1000glue)
-			, addItem(mLastID+1, "Wooden Bucket", "Spectral Dew"                           , TC.stack(TC.ARBOR, 2), TC.stack(TC.SPIRITUS , 2), new Behavior_Bucket_Simple(IL.NeLi_Bucket_Spectral_Dew.get(1))                      , tData.copy(), FL.SpDew.make(1000)                                                                                                                                                                                                                 , OD.container1000water)
-			, addItem(mLastID+1, "Wooden Bucket", "Seed Oil"                               , TC.stack(TC.ARBOR, 3), TC.stack(TC.GRANUM   , 1), new Behavior_Bucket_Simple(IL.FR_SeedOil_Bucket.get(1))                             , tData.copy(), FL.Oil_Seed.make(1000), FL.Oil_Lin.make(1000), FL.Oil_Hemp.make(1000), FL.Oil_Olive.make(1000), FL.Oil_Sunflower.make(1000), FL.Oil_Nut.make(1000)                                                                                  , OD.container1000seedoil)
+			, addItem(mLastID+1, "Деревянное ведро", "Вода"                                       , TC.stack(TC.ARBOR, 2), TC.stack(TC.AQUA     , 2), new Behavior_Bucket_Simple(ST.make(Items.water_bucket, 1, 0))                       , tData.copy(), FL.Water.make(1000), FL.DistW.make(1000), FL.River_Water.make(1000), FL.MnWtr.make(1000), FL.Mineralsoda.make(1000), FL.Soda.make(1000), FL.Water_Hot.make(1000), FL.Water_Boiling.make(1000), FL.Water_Geothermal.make(1000), OD.container1000water)
+			, addItem(mLastID+1, "Деревянное ведро", "Молоко (из ведер нельзя пить!)"             , TC.stack(TC.ARBOR, 2), TC.stack(TC.SANO     , 2), new Behavior_Bucket_Simple(ST.make(Items.milk_bucket, 1, 0))                        , tData.copy(), FL.Milk.make(1000), FL.MilkGrC.make(1000)                                                                                                                                                                                           , OD.container1000milk)
+			, addItem(mLastID+1, "Деревянное ведро", "Латекс"                                     , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Latex.make(1000), FL.make("molten.latex", 1000)                                                                                                                                                                                  , OD.container1000latex)
+			, addItem(mLastID+1, "Деревянное ведро", "Креозотовое масло"                          , TC.stack(TC.ARBOR, 2), TC.stack(TC.IGNIS    , 2), new Behavior_Bucket_Simple(IL.RC_Creosote_Bucket.get(1))                            , tData.copy(), FL.Oil_Creosote.make(1000)                                                                                                                                                                                                          , OD.container1000creosote)
+			, addItem(mLastID+1, "Деревянное ведро", "Морская вода (вы не можете разместить это!)", TC.stack(TC.ARBOR, 2), TC.stack(TC.TEMPESTAS, 2), new Behavior_Switch_Metadata(2000 + i*100, F, F)                                    , tData.copy(), FL.Ocean.make(1000), FL.OceanGrC.make(1000), FL.Tropics_Water.make(1000)                                                                                                                                                            )
+			, addItem(mLastID+1, "Деревянное ведро", "Сок каучукового дерева"                     , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Resin_Rubber.make(1000)                                                                                                                                                                                                          , OD.container1000rubbertreesap)
+			, addItem(mLastID+1, "Деревянное ведро", "Смола елового дерева"                       , TC.stack(TC.ARBOR, 3), TC.stack(TC.LIMUS    , 1), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Resin_Spruce.make(1000)                                                                                                                                                                                                          , OD.container1000spruceresin)
+			, addItem(mLastID+1, "Деревянное ведро", "Мед"                                        , TC.stack(TC.ARBOR, 3), TC.stack(TC.BESTIA   , 1), new Behavior_Bucket_Simple(ST.make(MD.ERE, "bucketHoney", 1, 0, IL.FR_Honey_Bucket)), tData.copy(), FL.Honey.make(1000), FL.HoneyGrC.make(1000), FL.HoneyBoP.make(1000)                                                                                                                                                                 , OD.container1000honey)
+			, addItem(mLastID+1, "Деревянное ведро", "Грязная вода (вы не можете разместить это!)", TC.stack(TC.ARBOR, 2), TC.stack(TC.AQUA     , 1), TC.stack(TC.VENEMUM, 1), new Behavior_Switch_Metadata(2000 + i*100, F, F)           , tData.copy(), FL.Dirty_Water.make(1000)                                                                                                                                                                                                           )
+			, addItem(mLastID+1, "Деревянное ведро", "Смазка"                                     , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.LubRoCant.make(1000), FL.Lubricant.make(1000)                                                                                                                                                                                    , OD.container1000lubricant)
+			, addItem(mLastID+1, "Деревянное ведро", "Молоко (из ведер нельзя пить!)"             , TC.stack(TC.ARBOR, 2), TC.stack(TC.VENEMUM  , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Milk_Spoiled.make(1000)                                                                                                                                                                                                          )
+			, addItem(mLastID+1, "Деревянное ведро", "Кленовый сок"                               , TC.stack(TC.ARBOR, 2), TC.stack(TC.FAMES    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Sap_Maple.make(1000)                                                                                                                                                                                                             , OD.container1000maplesap)
+			, addItem(mLastID+1, "Деревянное ведро", "Радужный сок"                               , TC.stack(TC.ARBOR, 2), TC.stack(TC.AURAM    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Sap_Rainbow.make(1000)                                                                                                                                                                                                           , OD.container1000rainbowsap)
+			, addItem(mLastID+1, "Деревянное ведро", "Соевое молоко"                              , TC.stack(TC.ARBOR, 2), TC.stack(TC.HERBA    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.MilkSoy.make(1000)                                                                                                                                                                                                               , OD.container1000soymilk)
+			, addItem(mLastID+1, "Деревянное ведро", "Клей"                                       , TC.stack(TC.ARBOR, 2), TC.stack(TC.LIMUS    , 2), Behavior_Bucket_Simple.INSTANCE                                                     , tData.copy(), FL.Glue.make(1000)                                                                                                                                                                                                                  , OD.container1000glue)
+			, addItem(mLastID+1, "Деревянное ведро", "Призрачная роса"                            , TC.stack(TC.ARBOR, 2), TC.stack(TC.SPIRITUS , 2), new Behavior_Bucket_Simple(IL.NeLi_Bucket_Spectral_Dew.get(1))                      , tData.copy(), FL.SpDew.make(1000)                                                                                                                                                                                                                 , OD.container1000water)
+			, addItem(mLastID+1, "Деревянное ведро", "Растительное масло"                         , TC.stack(TC.ARBOR, 3), TC.stack(TC.GRANUM   , 1), new Behavior_Bucket_Simple(IL.FR_SeedOil_Bucket.get(1))                             , tData.copy(), FL.Oil_Seed.make(1000), FL.Oil_Lin.make(1000), FL.Oil_Hemp.make(1000), FL.Oil_Olive.make(1000), FL.Oil_Sunflower.make(1000), FL.Oil_Nut.make(1000)                                                                                  , OD.container1000seedoil)
 			);
 		}
 		
@@ -347,7 +347,7 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Tool_Matches                    .set(addItem(5000, "Match"                            , ""                                            , new Behavior_Lighter(9000), TC.stack(TC.IGNIS, 1), TC.stack(TC.VACUOS, 1), OD.craftingFirestarter));
+		IL.Tool_Matches                    .set(addItem(5000, "Спичка"                            , ""                                            , new Behavior_Lighter(9000), TC.stack(TC.IGNIS, 1), TC.stack(TC.VACUOS, 1), OD.craftingFirestarter));
 		for (OreDictMaterial tWood : ANY.Wood.mToThis) {
 		RM.Assembler.addRecipe2(T, 16, 16, OP.bolt.mat(tWood, 1), OP.dustSmall.mat(MT.P       , 1), IL.Tool_Matches.get(1));
 		RM.Assembler.addRecipe2(T, 16, 64, OP.bolt.mat(tWood, 4), OP.dust     .mat(MT.P              , 1), IL.Tool_Matches.get(4));
@@ -360,8 +360,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		CR.shaped(IL.Tool_Matches.get(1), CR.DEF, "P", "S", 'P', OP.dustSmall.dat(ANY.Phosphorus      ), 'S', OP.bolt.dat(ANY.Wood));
 		CR.shaped(IL.Tool_Matches.get(4), CR.DEF, " S ", "SPS", " S ", 'P', OP.dust.dat(MT.P          ), 'S', OP.bolt.dat(ANY.Wood));
 		CR.shaped(IL.Tool_Matches.get(4), CR.DEF, " S ", "SPS", " S ", 'P', OP.dust.dat(ANY.Phosphorus), 'S', OP.bolt.dat(ANY.Wood));
-		IL.Tool_MatchBox_Used              .set(addItem(5002, "Match Box"                        , "This is not a Car"                           , TC.stack(TC.IGNIS, 2), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
-		IL.Tool_MatchBox_Full              .set(addItem(5003, "Match Box (Full)"                 , "This is not a Car"                           , TC.stack(TC.IGNIS, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
+		IL.Tool_MatchBox_Used              .set(addItem(5002, "Спичечный коробок"                , "Это не машина"                           , TC.stack(TC.IGNIS, 2), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
+		IL.Tool_MatchBox_Full              .set(addItem(5003, "Спичечный коробок (Полный)"       , "Это не машина"                           , TC.stack(TC.IGNIS, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
 		tBehaviour = new Behavior_Lighter(null, IL.Tool_MatchBox_Used.get(1), IL.Tool_MatchBox_Full.get(1), 64, 9000);
 		addItemBehavior(5002, tBehaviour); addItemBehavior(5003, tBehaviour);
 		ItemsGT.addNEIRedirects(IL.Tool_Matches.get(1), IL.Tool_MatchBox_Used.get(1), IL.Tool_MatchBox_Full.get(1));
@@ -370,9 +370,9 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Tool_Lighter_Invar_Empty        .set(addItem(5004, "Lighter (Empty)"                  , "Requires Canning Machine to be filled"       , new OreDictItemData(MT.Invar, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.VACUOS, 1)));
-		IL.Tool_Lighter_Invar_Used         .set(addItem(5005, "Lighter"                          , ""                                            , new OreDictItemData(MT.Invar, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 2), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
-		IL.Tool_Lighter_Invar_Full         .set(addItem(5006, "Lighter (Full)"                   , ""                                            , new OreDictItemData(MT.Invar, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
+		IL.Tool_Lighter_Invar_Empty        .set(addItem(5004, "Зажигалка (Пусто)"                , "Требуется наполнить"                              , new OreDictItemData(MT.Invar, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.VACUOS, 1)));
+		IL.Tool_Lighter_Invar_Used         .set(addItem(5005, "Зажигалка"                        , ""                                                 , new OreDictItemData(MT.Invar, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 2), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
+		IL.Tool_Lighter_Invar_Full         .set(addItem(5006, "Зажигалка (Полная)"               , ""                                                 , new OreDictItemData(MT.Invar, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
 		tBehaviour = new Behavior_Lighter(IL.Tool_Lighter_Invar_Empty.get(1), IL.Tool_Lighter_Invar_Used.get(1), IL.Tool_Lighter_Invar_Full.get(1), 100, 10000);
 		addItemBehavior(5005, tBehaviour); addItemBehavior(5006, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 16, IL.Tool_Lighter_Invar_Empty.get(1), FL.Butane.make(100), NF, IL.Tool_Lighter_Invar_Full.get(1));
@@ -380,9 +380,9 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Tool_Lighter_Platinum_Empty     .set(addItem(5007, "Shiny Lighter (Empty)"            , "Requires Canning Machine to be filled"       , new OreDictItemData(MT.Pt, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.NEBRISUM, 1), TC.stack(TC.VACUOS, 1)));
-		IL.Tool_Lighter_Platinum_Used      .set(addItem(5008, "Shiny Lighter"                    , "A known Master of Pranks is engraved on it"  , new OreDictItemData(MT.Pt, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 2), TC.stack(TC.NEBRISUM, 1), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
-		IL.Tool_Lighter_Platinum_Full      .set(addItem(5009, "Shiny Lighter (Full)"             , "A known Master of Pranks is engraved on it"  , new OreDictItemData(MT.Pt, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.NEBRISUM, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
+		IL.Tool_Lighter_Platinum_Empty     .set(addItem(5007, "Блестящая зажигалка (Пусто)"            , "Требуется наполнить"                              , new OreDictItemData(MT.Pt, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.NEBRISUM, 1), TC.stack(TC.VACUOS, 1)));
+		IL.Tool_Lighter_Platinum_Used      .set(addItem(5008, "Блестящая зажигалка"                    , "На ней выгравирован известный мастер розыгрышей"  , new OreDictItemData(MT.Pt, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 2), TC.stack(TC.NEBRISUM, 1), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
+		IL.Tool_Lighter_Platinum_Full      .set(addItem(5009, "Блестящая зажигалка (Полная)"           , "На ней выгравирован известный мастер розыгрышей"  , new OreDictItemData(MT.Pt, OP.plateCurved.mAmount * 2), TC.stack(TC.IGNIS, 1), TC.stack(TC.NEBRISUM, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
 		tBehaviour = new Behavior_Lighter(IL.Tool_Lighter_Platinum_Empty.get(1), IL.Tool_Lighter_Platinum_Used.get(1), IL.Tool_Lighter_Platinum_Full.get(1), 1000, 10000);
 		addItemBehavior(5008, tBehaviour); addItemBehavior(5009, tBehaviour);
 		RM.Canner.addRecipe1(T, 16, 64, IL.Tool_Lighter_Platinum_Empty.get(1), FL.Butane.make(1000), NF, IL.Tool_Lighter_Platinum_Full.get(1));
@@ -390,10 +390,10 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Tool_Lighter_Plastic_Empty      .set(addItem(5010, "Plastic Lighter (Empty)"          , "Requires Canning Machine to be filled"       , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 1), TC.stack(TC.VACUOS, 1)));
-		IL.Tool_Lighter_Plastic_Used       .set(addItem(5011, "Plastic Lighter"                  , ""                                            , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 2), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
-		IL.Tool_Lighter_Plastic_Full       .set(addItem(5012, "Plastic Lighter (Full)"           , ""                                            , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
-		IL.Tool_Lighter_Plastic_Broken     .set(addItem(5013, "Plastic Lighter (Broken)"         , ""                                            , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 1), TC.stack(TC.PERDITIO, 1), TD.Creative.HIDDEN));
+		IL.Tool_Lighter_Plastic_Empty      .set(addItem(5010, "Пластиковая зажигалка (Пусто)"          , "Требуется наполнить"                         , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 1), TC.stack(TC.VACUOS, 1)));
+		IL.Tool_Lighter_Plastic_Used       .set(addItem(5011, "Пластиковая зажигалка"                  , ""                                            , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 2), TC.stack(TC.POTENTIA, 1), OD.craftingFirestarter, TD.Creative.HIDDEN));
+		IL.Tool_Lighter_Plastic_Full       .set(addItem(5012, "Пластиковая зажигалка (Полная)"         , ""                                            , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 1), TC.stack(TC.POTENTIA, 2), OD.craftingFirestarter));
+		IL.Tool_Lighter_Plastic_Broken     .set(addItem(5013, "Пластиковая зажигалка (Сломана)"        , ""                                            , new OreDictItemData(ANY.Plastic, OP.plateCurved.mAmount * 2, ANY.Fe, OP.screw.mAmount), TC.stack(TC.IGNIS, 1), TC.stack(TC.PERDITIO, 1), TD.Creative.HIDDEN));
 		tBehaviour = new Behavior_Lighter(IL.Tool_Lighter_Plastic_Broken.get(1), IL.Tool_Lighter_Plastic_Used.get(1), IL.Tool_Lighter_Plastic_Full.get(1), 100, 9000);
 		addItemBehavior(5011, tBehaviour); addItemBehavior(5012, tBehaviour);
 		CR.shaped(IL.Tool_Lighter_Plastic_Empty.get(1), CR.DEF_NCC, "IF", "dP", "xP", 'F', OD.itemFlint, 'P', OP.plateCurved.dat(ANY.Plastic), 'I', OP.screw.dat(ANY.Iron));
@@ -402,14 +402,14 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Tool_Fire_Starter               .set(addItem(5014, "Fire Starter"                     , "(Made with Dry Grass)"                       , new OreDictItemData(ANY.Wood, U), new Behavior_Lighter(5000), TC.stack(TC.IGNIS, 1), TC.stack(TC.ARBOR, 1), TC.stack(TC.HERBA, 1), OD.craftingFirestarter));
+		IL.Tool_Fire_Starter               .set(addItem(5014, "Воспламенитель"                   , "(Сделано из сухой травы)"                    , new OreDictItemData(ANY.Wood, U), new Behavior_Lighter(5000), TC.stack(TC.IGNIS, 1), TC.stack(TC.ARBOR, 1), TC.stack(TC.HERBA, 1), OD.craftingFirestarter));
 		CR.shaped(IL.Tool_Fire_Starter.get(1)       , CR.DEF_NCC_MIR, "S ", "GS", 'S', OP.stick.dat(ANY.Wood), 'G', OD.itemGrassDry);
 		
-		IL.Tool_Fire_Starter_Bark          .set(addItem(5015, "Fire Starter"                     , "(Made with Dry Tree Bark)"                   , new OreDictItemData(ANY.Wood, U), new Behavior_Lighter(5500), TC.stack(TC.IGNIS, 1), TC.stack(TC.ARBOR, 2), OD.craftingFirestarter));
+		IL.Tool_Fire_Starter_Bark          .set(addItem(5015, "Воспламенитель"                   , "(Сделано из сухой коры дерева)"              , new OreDictItemData(ANY.Wood, U), new Behavior_Lighter(5500), TC.stack(TC.IGNIS, 1), TC.stack(TC.ARBOR, 2), OD.craftingFirestarter));
 		CR.shaped(IL.Tool_Fire_Starter_Bark.get(1)  , CR.DEF_NCC_MIR, "S ", "GS", 'S', OP.stick.dat(ANY.Wood), 'G', OD.itemBarkDry);
 		
 		
-		IL.Pellet_Wood                     .set(addItem(5999, "Wood Pellet"                      , ""                                            , new OreDictItemData(ANY.Wood, U), TICKS_PER_SMELT, TC.stack(TC.POTENTIA, 1)));
+		IL.Pellet_Wood                     .set(addItem(5999, "Древесные пеллета"                , ""                                            , new OreDictItemData(ANY.Wood, U), TICKS_PER_SMELT, TC.stack(TC.POTENTIA, 1)));
 		RM.Mixer.addRecipe1(T, 16, 16, OM.dust(MT.LiveRoot   , U2), FL.Glue.make( 25), NF, IL.Pellet_Wood.get(1));
 		RM.Mixer.addRecipe1(T, 16, 32, OM.dust(MT.LiveRoot       ), FL.Glue.make( 50), NF, IL.Pellet_Wood.get(2));
 		RM.Mixer.addRecipe1(T, 16, 16, OM.dust(MT.Livingwood , U2), FL.Glue.make( 25), NF, IL.Pellet_Wood.get(1));
@@ -429,21 +429,21 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.CokeOven.addRecipe1(T, 0, 900, IL.Pellet_Wood.get(1), NF, FL.Oil_Creosote.make(25), chunkGt.mat(MT.Charcoal, 1));
 		
 		
-		IL.Module_Stone_Generator          .set(addItem(6000, "Stone Generator Module"           , "Generates Stone for Recipes, also known as a Cobble Generator", TC.stack(TC.MACHINA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.TERRA, 1), TC.stack(TC.AQUA, 1)));
-		IL.Module_Basalt_Generator         .set(addItem(6001, "Basalt Generator Module"          , "Generates Basalt for Recipes"                                 , TC.stack(TC.MACHINA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.TERRA, 1), TC.stack(TC.AQUA, 1)));
-		IL.Module_Blackstone_Generator     .set(addItem(6002, "Blackstone Generator Module"      , "Generates Blackstone for Recipes"                             , TC.stack(TC.MACHINA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.TERRA, 1), TC.stack(TC.AQUA, 1)));
+		IL.Module_Stone_Generator          .set(addItem(6000, "Модульный генератор камня"        , "Генерирует камень для рецептов, также известный как генератор булыжника", TC.stack(TC.MACHINA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.TERRA, 1), TC.stack(TC.AQUA, 1)));
+		IL.Module_Basalt_Generator         .set(addItem(6001, "Модульный генератор базальта"     , "Генерирет базальт для рецептов"                                         , TC.stack(TC.MACHINA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.TERRA, 1), TC.stack(TC.AQUA, 1)));
+		IL.Module_Blackstone_Generator     .set(addItem(6002, "Модульный генератор черного камня", "Генерирет черный камень для рецептов"                                   , TC.stack(TC.MACHINA, 1), TC.stack(TC.FABRICO, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.TERRA, 1), TC.stack(TC.AQUA, 1)));
 		CR.shaped(IL.Module_Stone_Generator     .get(1), CR.DEF_REV_NCC, "CPC", "LMW", "COC", 'M', OP.casingMachine.dat(MT.SteelGalvanized), 'O', IL.Shape_Extruder_Block, 'C', OD_CIRCUITS[4], 'P', OD.craftingPiston, 'L', OD.container1000lava, 'W', OD.container1000water);
 		CR.shaped(IL.Module_Basalt_Generator    .get(1), CR.DEF_REV_NCC, "S", "M", "I", 'M', IL.Module_Stone_Generator, 'S', OD.soulsand, 'I', Blocks.packed_ice);
 		CR.shaped(IL.Module_Blackstone_Generator.get(1), CR.DEF_REV_NCC, "S", "M", "O", 'M', IL.Module_Stone_Generator, 'S', OD.soulsand, 'O', OD.obsidian);
 		
 		
-		IL.Paper_Printed_Pages             .set(addItem(7002, "Printed Pages"                    , ""                                                            , Behavior_PrintedPages.INSTANCE, new OreDictItemData(MT.Paper, U*3), TC.stack(TC.COGNITIO, 3)));
-		IL.Paper_Printed_Pages_Many        .set(addItem(7003, "Many Printed Pages"               , ""                                                            , Behavior_PrintedPages.INSTANCE, new OreDictItemData(MT.Paper, U*6), TC.stack(TC.COGNITIO, 6)));
+		IL.Paper_Printed_Pages             .set(addItem(7002, "Печатные страницы"                    , ""                                                            , Behavior_PrintedPages.INSTANCE, new OreDictItemData(MT.Paper, U*3), TC.stack(TC.COGNITIO, 3)));
+		IL.Paper_Printed_Pages_Many        .set(addItem(7003, "Много печатных страниц"               , ""                                                            , Behavior_PrintedPages.INSTANCE, new OreDictItemData(MT.Paper, U*6), TC.stack(TC.COGNITIO, 6)));
 		BooksGT.BOOK_REGISTER.put(IL.Paper_Printed_Pages     , (byte)26);
 		BooksGT.BOOK_REGISTER.put(IL.Paper_Printed_Pages_Many, (byte)26);
 		
-		IL.Paper_Blueprint_Empty           .set(addItem(7010, "Empty Blueprint"                  , "Place in Blueprint Slot and Shiftclick it, to assign Recipe" , new OreDictItemData(MT.Paper, U), TC.stack(TC.COGNITIO, 1)));
-		IL.Paper_Blueprint_Used            .set(addItem(7011, "Blueprint"                        , "Blueprint containing a Crafting Recipe"                      , new OreDictItemData(MT.Paper, U), TC.stack(TC.COGNITIO, 2), "gt:autocrafterblueprintitem"));
+		IL.Paper_Blueprint_Empty           .set(addItem(7010, "Пустой чертёж"                  , "Поместите в слот чертёж и нажмите Shift, чтобы назначить рецепт" , new OreDictItemData(MT.Paper, U), TC.stack(TC.COGNITIO, 1)));
+		IL.Paper_Blueprint_Used            .set(addItem(7011, "Чертёж"                         , "Чертеж, содержащий рецепт крафта"                                , new OreDictItemData(MT.Paper, U), TC.stack(TC.COGNITIO, 2), "gt:autocrafterblueprintitem"));
 		for (FluidStack tDye : DYE_FLUIDS[DYE_INDEX_Blue])
 		RM.Bath.addRecipe1(T, 0, 16, ST.make(Items.paper, 1, W), tDye, NF, IL.Paper_Blueprint_Empty.get(1));
 		BooksGT.BOOK_REGISTER.put(IL.Paper_Blueprint_Empty, (byte)25);
@@ -451,7 +451,7 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		ItemsGT.addNEIRedirects(IL.Paper_Blueprint_Empty.get(1), IL.Paper_Blueprint_Used.get(1));
 		
 		
-		for (int i = 0; i < 16; i++)            addItem(i       +  7030, DYE_NAMES[i] + " Canvas"           , "Can be used together with the Obscurator"    , "gt:canvas", new CoverTextureCanvas(BlockTextureDefault.get("machines/covers/canvas", DYES[i])), new OreDictItemData(MT.Paper, U), TC.stack(TC.PANNUS, 1));
+		for (int i = 0; i < 16; i++)            addItem(i       +  7030, DYE_NAMES[i] + " холст"            , "Может использоваться вместе с Obscurator"    , "gt:canvas", new CoverTextureCanvas(BlockTextureDefault.get("machines/covers/canvas", DYES[i])), new OreDictItemData(MT.Paper, U), TC.stack(TC.PANNUS, 1));
 		for (FluidStack tDye : DYE_FLUIDS[DYE_INDEX_White])
 		RM.Bath.addRecipe1(T, 0, 16, ST.make(Items.paper, 1, W), tDye, NF, make(7030+DYE_INDEX_White));
 		for (int i = 0; i < 16; i++) if (i != DYE_INDEX_White) for (FluidStack tDye : DYE_FLUIDS[i])
@@ -460,15 +460,15 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		BooksGT.BOOK_REGISTER.put(this, 7030+i, (byte)27);
 		
 		
-		IL.Paper_Magic_Research_0          .set(addItem(7990, "Magic Research Paper (Introduction)", "", new OreDictItemData(MT.Paper, U), TC.TERRA   .get(8), TC.AQUA        .get(8), TC.AER     .get(8), TC.IGNIS   .get(8), TC.PERDITIO .get(8), TC.ORDO      .get(8)));
-		IL.Paper_Magic_Research_1          .set(addItem(7991, "Magic Research Paper (Page 1 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.LUX     .get(8), TC.MOTUS       .get(8), TC.VACUOS  .get(8), TC.POTENTIA.get(8), TC.VITREUS  .get(8), TC.VICTUS    .get(8)));
-		IL.Paper_Magic_Research_2          .set(addItem(7992, "Magic Research Paper (Page 2 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.VOLATUS .get(8), TC.ITER        .get(8), TC.MORTUUS .get(8), TC.BESTIA  .get(8), TC.TENEBRAE .get(8), TC.PRAECANTIO.get(8)));
-		IL.Paper_Magic_Research_3          .set(addItem(7993, "Magic Research Paper (Page 3 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.ALIENIS .get(8), TC.EXAMINIS    .get(8), TC.SPIRITUS.get(8), TC.VITIUM  .get(8), TC.METALLUM .get(8), TC.GELUM     .get(8)));
-		IL.Paper_Magic_Research_4          .set(addItem(7994, "Magic Research Paper (Page 4 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.COGNITIO.get(8), TC.SENSUS      .get(8), TC.HERBA   .get(8), TC.SANO    .get(8), TC.LIMUS    .get(8), TC.TEMPESTAS .get(8)));
-		IL.Paper_Magic_Research_5          .set(addItem(7995, "Magic Research Paper (Page 5 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.HUMANUS .get(8), TC.VINCULUM    .get(8), TC.ARBOR   .get(8), TC.FAMES   .get(8), TC.CORPUS   .get(8), TC.AURAM     .get(8)));
-		IL.Paper_Magic_Research_6          .set(addItem(7996, "Magic Research Paper (Page 6 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.PERFODIO.get(8), TC.INSTRUMENTUM.get(8), TC.MESSIS  .get(8), TC.LUCRUM  .get(8), TC.VENEMUM  .get(8), TC.PERMUTATIO.get(8)));
-		IL.Paper_Magic_Research_7          .set(addItem(7997, "Magic Research Paper (Page 7 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.TELUM   .get(8), TC.TUTAMEN     .get(8), TC.PANNUS  .get(8), TC.FABRICO .get(8), TC.METO     .get(8), TC.MACHINA   .get(8)));
-		IL.Paper_Magic_Research_8          .set(addItem(7998, "Magic Research Paper (Page 8 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.ELECTRUM.get(8), TC.RADIO       .get(8), TC.MAGNETO .get(8), TC.NEBRISUM.get(8), TC.STRONTIO .get(8), TC.REFLEXIO  .get(8)));
+		IL.Paper_Magic_Research_0          .set(addItem(7990, "Документ исследования магии (Введение)"        , "", new OreDictItemData(MT.Paper, U), TC.TERRA   .get(8), TC.AQUA        .get(8), TC.AER     .get(8), TC.IGNIS   .get(8), TC.PERDITIO .get(8), TC.ORDO      .get(8)));
+		IL.Paper_Magic_Research_1          .set(addItem(7991, "Документ исследования магии (Страница 1 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.LUX     .get(8), TC.MOTUS       .get(8), TC.VACUOS  .get(8), TC.POTENTIA.get(8), TC.VITREUS  .get(8), TC.VICTUS    .get(8)));
+		IL.Paper_Magic_Research_2          .set(addItem(7992, "Документ исследования магии (Страница 2 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.VOLATUS .get(8), TC.ITER        .get(8), TC.MORTUUS .get(8), TC.BESTIA  .get(8), TC.TENEBRAE .get(8), TC.PRAECANTIO.get(8)));
+		IL.Paper_Magic_Research_3          .set(addItem(7993, "Документ исследования магии (Страница 3 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.ALIENIS .get(8), TC.EXAMINIS    .get(8), TC.SPIRITUS.get(8), TC.VITIUM  .get(8), TC.METALLUM .get(8), TC.GELUM     .get(8)));
+		IL.Paper_Magic_Research_4          .set(addItem(7994, "Документ исследования магии (Страница 4 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.COGNITIO.get(8), TC.SENSUS      .get(8), TC.HERBA   .get(8), TC.SANO    .get(8), TC.LIMUS    .get(8), TC.TEMPESTAS .get(8)));
+		IL.Paper_Magic_Research_5          .set(addItem(7995, "Документ исследования магии (Страница 5 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.HUMANUS .get(8), TC.VINCULUM    .get(8), TC.ARBOR   .get(8), TC.FAMES   .get(8), TC.CORPUS   .get(8), TC.AURAM     .get(8)));
+		IL.Paper_Magic_Research_6          .set(addItem(7996, "Документ исследования магии (Страница 6 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.PERFODIO.get(8), TC.INSTRUMENTUM.get(8), TC.MESSIS  .get(8), TC.LUCRUM  .get(8), TC.VENEMUM  .get(8), TC.PERMUTATIO.get(8)));
+		IL.Paper_Magic_Research_7          .set(addItem(7997, "Документ исследования магии (Страница 7 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.TELUM   .get(8), TC.TUTAMEN     .get(8), TC.PANNUS  .get(8), TC.FABRICO .get(8), TC.METO     .get(8), TC.MACHINA   .get(8)));
+		IL.Paper_Magic_Research_8          .set(addItem(7998, "Документ исследования магии (Страница 8 / 8)"  , "", new OreDictItemData(MT.Paper, U), TC.ELECTRUM.get(8), TC.RADIO       .get(8), TC.MAGNETO .get(8), TC.NEBRISUM.get(8), TC.STRONTIO .get(8), TC.REFLEXIO  .get(8)));
 		
 		for (int i = 0; i < IL.MAGIC_RESEARCH_PAPERS.length; i++) {
 			BooksGT.BOOK_REGISTER.put(IL.MAGIC_RESEARCH_PAPERS[i], (byte)18);
@@ -478,16 +478,16 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 			}
 		}
 		
-		IL.Robot_Tip_Wrench                .set(addItem(8000, "Robot Arm Wrench Tip"         , "Infinitely usable inside an Autocrafter", OreDictToolNames.wrench                                                          , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Screwdriver           .set(addItem(8001, "Robot Arm Screwdriver Tip"    , "Infinitely usable inside an Autocrafter", OreDictToolNames.screwdriver                                                     , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Saw                   .set(addItem(8002, "Robot Arm Saw Tip"            , "Infinitely usable inside an Autocrafter", OreDictToolNames.saw                                                             , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Hammer                .set(addItem(8003, "Robot Arm Hammer Tip"         , "Infinitely usable inside an Autocrafter", OreDictToolNames.hammer, OreDictToolNames.hac_mortar                             , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Cutter                .set(addItem(8004, "Robot Arm Cutter Tip"         , "Infinitely usable inside an Autocrafter", OreDictToolNames.wirecutter, OreDictToolNames.scissors                           , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Chisel                .set(addItem(8005, "Robot Arm Chisel Tip"         , "Infinitely usable inside an Autocrafter", OreDictToolNames.chisel                                                          , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Rubber                .set(addItem(8006, "Robot Arm Rubber Hammer Tip"  , "Infinitely usable inside an Autocrafter", OreDictToolNames.softhammer                                                      , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Blade                 .set(addItem(8007, "Robot Arm Blade Tip"          , "Infinitely usable inside an Autocrafter", OreDictToolNames.sword, OreDictToolNames.blade, OreDictToolNames.hac_cuttingboard, "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_Drill                 .set(addItem(8008, "Robot Arm Drill Tip"          , "Infinitely usable inside an Autocrafter", OreDictToolNames.drill, OreDictToolNames.handdrill                               , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
-		IL.Robot_Tip_File                  .set(addItem(8009, "Robot Arm File Tip"           , "Infinitely usable inside an Autocrafter", OreDictToolNames.file                                                            , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Wrench                .set(addItem(8000, "Наконечник ключа для руки робота"     , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.wrench                                                          , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Screwdriver           .set(addItem(8001, "Наконечник отвертки для робота"       , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.screwdriver                                                     , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Saw                   .set(addItem(8002, "Наконечник пилы для робота"           , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.saw                                                             , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Hammer                .set(addItem(8003, "Наконечник молота для руки робота"    , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.hammer, OreDictToolNames.hac_mortar                             , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Cutter                .set(addItem(8004, "Наконечник кусачек для руки робота"   , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.wirecutter, OreDictToolNames.scissors                           , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Chisel                .set(addItem(8005, "Наконечник долото для руки робота"    , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.chisel                                                          , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Rubber                .set(addItem(8006, "Наконечник киянки для руки робота"    , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.softhammer                                                      , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Blade                 .set(addItem(8007, "Наконечник лезвия для руки робота"    , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.sword, OreDictToolNames.blade, OreDictToolNames.hac_cuttingboard, "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_Drill                 .set(addItem(8008, "Наконечник сверла для руки робота"    , "Бесконечно можно использовать в автокрафтере", OreDictToolNames.drill, OreDictToolNames.handdrill                               , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
+		IL.Robot_Tip_File                  .set(addItem(8009, "Наконечник напильника для руки робота", "Бесконечно можно использовать в автокрафтере", OreDictToolNames.file                                                            , "gt:autocrafterinfinite", TC.stack(TC.INSTRUMENTUM, 4)));
 		
 		CR.shaped(IL.Robot_Tip_Wrench      .get(1), CR.DEF_REV, "wPh", "CMC", " X ", 'P', OP.plateCurved.dat(MT.SteelGalvanized), 'C', OD_CIRCUITS[3], 'M', IL.MOTORS   [3], 'X', OP.toolHeadWrench.dat(MT.Cr));
 		CR.shaped(IL.Robot_Tip_Screwdriver .get(1), CR.DEF_REV, "wPh", "CMC", " X ", 'P', OP.plateCurved.dat(MT.SteelGalvanized), 'C', OD_CIRCUITS[3], 'M', IL.MOTORS   [3], 'X', OP.toolHeadScrewdriver.dat(MT.StainlessSteel));
@@ -500,16 +500,16 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		CR.shaped(IL.Robot_Tip_Drill       .get(1), CR.DEF_REV, "wPh", "CMC", "fX ", 'P', OP.plateCurved.dat(MT.SteelGalvanized), 'C', OD_CIRCUITS[3], 'M', IL.MOTORS   [3], 'X', OP.stick.dat(ANY.Steel));
 		CR.shaped(IL.Robot_Tip_File        .get(1), CR.DEF_REV, "wPh", "CMC", " X ", 'P', OP.plateCurved.dat(MT.SteelGalvanized), 'C', OD_CIRCUITS[3], 'M', IL.CONVEYERS[3], 'X', OP.dust.dat(ANY.Diamond));
 		
-		IL.Tool_Token_Wrench               .set(addItem(8500, "Single Use Wrench"       , "Non-Functional-Tool for Crafting only", OreDictToolNames.wrench                                                          , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Screwdriver          .set(addItem(8501, "Single Use Screwdriver"  , "Non-Functional-Tool for Crafting only", OreDictToolNames.screwdriver                                                     , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Saw                  .set(addItem(8502, "Single Use Saw"          , "Non-Functional-Tool for Crafting only", OreDictToolNames.saw                                                             , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Hammer               .set(addItem(8503, "Single Use Hammer"       , "Non-Functional-Tool for Crafting only", OreDictToolNames.hammer, OreDictToolNames.hac_mortar                             , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Cutter               .set(addItem(8504, "Single Use Cutter"       , "Non-Functional-Tool for Crafting only", OreDictToolNames.wirecutter, OreDictToolNames.scissors                           , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Chisel               .set(addItem(8505, "Single Use Chisel"       , "Non-Functional-Tool for Crafting only", OreDictToolNames.chisel                                                          , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Rubber               .set(addItem(8506, "Single Use Rubber Hammer", "Non-Functional-Tool for Crafting only", OreDictToolNames.softhammer                                                      , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Blade                .set(addItem(8507, "Single Use Blade"        , "Non-Functional-Tool for Crafting only", OreDictToolNames.sword, OreDictToolNames.blade, OreDictToolNames.hac_cuttingboard, TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_Drill                .set(addItem(8508, "Single Use Drill"        , "Non-Functional-Tool for Crafting only", OreDictToolNames.drill, OreDictToolNames.handdrill                               , TC.stack(TC.INSTRUMENTUM, 1)));
-		IL.Tool_Token_File                 .set(addItem(8509, "Single Use File"         , "Non-Functional-Tool for Crafting only", OreDictToolNames.file                                                            , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Wrench               .set(addItem(8500, "Одноразовый ключ"      , "Нефункциональный инструмент, только для крафта", OreDictToolNames.wrench                                                          , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Screwdriver          .set(addItem(8501, "Одноразовая отвертка"  , "Нефункциональный инструмент, только для крафта", OreDictToolNames.screwdriver                                                     , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Saw                  .set(addItem(8502, "Одноразовая пила"      , "Нефункциональный инструмент, только для крафта", OreDictToolNames.saw                                                             , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Hammer               .set(addItem(8503, "Одноразовый молот"     , "Нефункциональный инструмент, только для крафта", OreDictToolNames.hammer, OreDictToolNames.hac_mortar                             , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Cutter               .set(addItem(8504, "Одноразовые кусачки"   , "Нефункциональный инструмент, только для крафта", OreDictToolNames.wirecutter, OreDictToolNames.scissors                           , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Chisel               .set(addItem(8505, "Одноразовое долото"    , "Нефункциональный инструмент, только для крафта", OreDictToolNames.chisel                                                          , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Rubber               .set(addItem(8506, "Одноразовая киянка"    , "Нефункциональный инструмент, только для крафта", OreDictToolNames.softhammer                                                      , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Blade                .set(addItem(8507, "Одноразовое лезвие"    , "Нефункциональный инструмент, только для крафта", OreDictToolNames.sword, OreDictToolNames.blade, OreDictToolNames.hac_cuttingboard, TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_Drill                .set(addItem(8508, "Одноразовое сверло"    , "Нефункциональный инструмент, только для крафта", OreDictToolNames.drill, OreDictToolNames.handdrill                               , TC.stack(TC.INSTRUMENTUM, 1)));
+		IL.Tool_Token_File                 .set(addItem(8509, "Одноразовый напильник" , "Нефункциональный инструмент, только для крафта", OreDictToolNames.file                                                            , TC.stack(TC.INSTRUMENTUM, 1)));
 		
 		RM.Boxinator.addRecipe2(T, 16, 16* 2, OP.plateTiny.mat(MT.Steel , 1), IL.Robot_Tip_Wrench     .get(0), IL.Tool_Token_Wrench     .get( 2));
 		RM.Boxinator.addRecipe2(T, 16, 16*32, OP.plateTiny.mat(MT.Steel , 1), IL.Robot_Tip_Screwdriver.get(0), IL.Tool_Token_Screwdriver.get(32));
@@ -523,12 +523,12 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.Boxinator.addRecipe2(T, 16, 16* 9, OP.plateTiny.mat(MT.Steel , 1), IL.Robot_Tip_File       .get(0), IL.Tool_Token_File       .get( 9));
 		
 		
-		IL.Tool_Remote_Activator           .set(addItem(9000, "Remote Activator"         , "", Behavior_Remote.INSTANCE, TC.stack(TC.MOTUS, 1), TC.stack(TC.PERMUTATIO, 1)));
-		IL.Tool_Cheat                      .set(addItem(9001, "Debug Scanner"            , "", Behavior_Cropnalyzer.INSTANCE, ItemsGT.DEBUG_ITEMS, ItemsGT.ILLEGAL_DROPS, GarbageGT.BLACKLIST, new Behavior_Scanner(Integer.MAX_VALUE), EnergyStatDebug.INSTANCE, TC.stack(TC.SENSUS,10), TC.stack(TC.INSTRUMENTUM,10)));
-		IL.Tool_Scanner                    .set(addItem(9002, "Portable Scanner"         , "", Behavior_Cropnalyzer.INSTANCE, new Behavior_Scanner(2), EnergyStat.makeTool(TD.Energy.EU, V[3]*8000, V[3], 64, next()), TC.stack(TC.SENSUS,10), TC.stack(TC.INSTRUMENTUM,10)));
-		IL.Tool_Cropnalyzer                .set(addItem(9003, "Portable Cropnalyzer"     , "", Behavior_Cropnalyzer.INSTANCE, EnergyStat.makeTool(TD.Energy.EU, V[2]*8000, V[2], 64, next()), TC.stack(TC.SENSUS, 5), TC.stack(TC.INSTRUMENTUM, 5), TC.stack(TC.HERBA, 5)));
-		IL.Tool_Chunk_Remover              .set(addItem(9998, "Chunk Eraser"             , "", Behavior_Chunk_Remover.INSTANCE, ItemsGT.DEBUG_ITEMS, ItemsGT.ILLEGAL_DROPS, GarbageGT.BLACKLIST, TC.stack(TC.TERRA,10), TC.stack(TC.VACUOS,10), TC.stack(TC.INSTRUMENTUM,10)));
-		IL.Tool_Worldgen_Debugger          .set(addItem(9999, "Worldgen Debug Wand"      , "", Behavior_Worldgen_Debugger.INSTANCE, ItemsGT.DEBUG_ITEMS, ItemsGT.ILLEGAL_DROPS, GarbageGT.BLACKLIST, TC.stack(TC.TERRA,10), TC.stack(TC.PRAECANTIO,10), TC.stack(TC.INSTRUMENTUM,10)));
+		IL.Tool_Remote_Activator           .set(addItem(9000, "Дистанционный активатор"        , "", Behavior_Remote.INSTANCE, TC.stack(TC.MOTUS, 1), TC.stack(TC.PERMUTATIO, 1)));
+		IL.Tool_Cheat                      .set(addItem(9001, "Сканер отладки"                 , "", Behavior_Cropnalyzer.INSTANCE, ItemsGT.DEBUG_ITEMS, ItemsGT.ILLEGAL_DROPS, GarbageGT.BLACKLIST, new Behavior_Scanner(Integer.MAX_VALUE), EnergyStatDebug.INSTANCE, TC.stack(TC.SENSUS,10), TC.stack(TC.INSTRUMENTUM,10)));
+		IL.Tool_Scanner                    .set(addItem(9002, "Портативный сканер"             , "", Behavior_Cropnalyzer.INSTANCE, new Behavior_Scanner(2), EnergyStat.makeTool(TD.Energy.EU, V[3]*8000, V[3], 64, next()), TC.stack(TC.SENSUS,10), TC.stack(TC.INSTRUMENTUM,10)));
+		IL.Tool_Cropnalyzer                .set(addItem(9003, "Портативный анализатор растений", "", Behavior_Cropnalyzer.INSTANCE, EnergyStat.makeTool(TD.Energy.EU, V[2]*8000, V[2], 64, next()), TC.stack(TC.SENSUS, 5), TC.stack(TC.INSTRUMENTUM, 5), TC.stack(TC.HERBA, 5)));
+		IL.Tool_Chunk_Remover              .set(addItem(9998, "Стиратель чанков"               , "", Behavior_Chunk_Remover.INSTANCE, ItemsGT.DEBUG_ITEMS, ItemsGT.ILLEGAL_DROPS, GarbageGT.BLACKLIST, TC.stack(TC.TERRA,10), TC.stack(TC.VACUOS,10), TC.stack(TC.INSTRUMENTUM,10)));
+		IL.Tool_Worldgen_Debugger          .set(addItem(9999, "Жезл отладки генерации"         , "", Behavior_Worldgen_Debugger.INSTANCE, ItemsGT.DEBUG_ITEMS, ItemsGT.ILLEGAL_DROPS, GarbageGT.BLACKLIST, TC.stack(TC.TERRA,10), TC.stack(TC.PRAECANTIO,10), TC.stack(TC.INSTRUMENTUM,10)));
 		
 		CR.shaped(IL.Tool_Remote_Activator      .get(1), CR.DEF_REV, "TPE", "BCd", "xPT", 'P', OP.plate.dat(MT.Cr), 'T', OP.screw.dat(MT.Cr), 'C', OD_CIRCUITS[4], 'E', IL.EMITTERS[4], 'B', OD.button);
 		BooksGT.BOOK_REGISTER.put(IL.Tool_Remote_Activator, (byte)1);
@@ -536,11 +536,11 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 //      CR.shaped(IL.Tool_Scanner               .get(1), CR.DEF_REV, "EXR", "CPU", "BXB", 'B', IL.Battery_Alkaline_HV, 'X', OP.plate.dat(MT.Cr), 'U', OD_USB_STICKS[3], 'C', OD_USB_CABLES[3], 'E', IL.EMITTERS[4], 'R', IL.SENSORS[4], 'P', IL.Processor_Crystal_Sapphire);
 //      CR.shaped(IL.Tool_Cropnalyzer           .get(1), CR.DEF_REV, "EXR", "CPU", "BXB", 'B', IL.Battery_Alkaline_MV, 'X', OP.plate.dat(MT.Al), 'U', OD_USB_STICKS[1], 'C', OD_USB_CABLES[1], 'E', IL.EMITTERS[2], 'R', IL.SENSORS[2], 'P', OD_CIRCUITS[6]);
 		
-		IL.Thermometer_Quicksilver         .set(addItem(10000, "Quicksilver Thermometer"  , "Measures Temperature"                   , new Behavior_Tool(TOOL_thermometer  ), TC.stack(TC.SENSUS, 2), TC.stack(TC.IGNIS, 2), TC.stack(TC.GELUM, 2)));
-		IL.Geiger_Counter_Empty            .set(addItem(10001, "Geiger Counter (Empty)"   , "Fill with proper inert Gas"                                                    , TC.stack(TC.SENSUS, 1), TC.stack(TC.RADIO, 1)));
-		IL.Geiger_Counter                  .set(addItem(10002, "Geiger Counter"           , "Measures Neutron Count"                 , new Behavior_Tool(TOOL_geigercounter), TC.stack(TC.SENSUS, 5), TC.stack(TC.RADIO, 5)));
-		IL.Electro_Meter                   .set(addItem(10003, "Electrometer"             , "Measures Electricity"                   , new Behavior_Tool(TOOL_electrometer ), TC.stack(TC.SENSUS, 5), TC.stack(TC.ELECTRUM, 5)));
-		IL.Tacho_Meter                     .set(addItem(10004, "Tachometer"               , "Measures Rotation Speed"                , new Behavior_Tool(TOOL_tachometer   ), TC.stack(TC.SENSUS, 5), TC.stack(TC.MOTUS, 5)));
+		IL.Thermometer_Quicksilver         .set(addItem(10000, "Ртутный термометр"        , "Измеряет температуру"                   , new Behavior_Tool(TOOL_thermometer  ), TC.stack(TC.SENSUS, 2), TC.stack(TC.IGNIS, 2), TC.stack(TC.GELUM, 2)));
+		IL.Geiger_Counter_Empty            .set(addItem(10001, "Счетчик Гейгера (Пусто)"  , "Заполните соответствующий инертный газ"                                        , TC.stack(TC.SENSUS, 1), TC.stack(TC.RADIO, 1)));
+		IL.Geiger_Counter                  .set(addItem(10002, "Счетчик Гейгера"          , "Измеряет количество нейтронов"          , new Behavior_Tool(TOOL_geigercounter), TC.stack(TC.SENSUS, 5), TC.stack(TC.RADIO, 5)));
+		IL.Electro_Meter                   .set(addItem(10003, "Электрометр"              , "Измеряет электричество"                 , new Behavior_Tool(TOOL_electrometer ), TC.stack(TC.SENSUS, 5), TC.stack(TC.ELECTRUM, 5)));
+		IL.Tacho_Meter                     .set(addItem(10004, "Тахометр"                 , "Измеряет скорость вращения"             , new Behavior_Tool(TOOL_tachometer   ), TC.stack(TC.SENSUS, 5), TC.stack(TC.MOTUS, 5)));
 		
 		CR.shaped(IL.Thermometer_Quicksilver    .get(1), CR.DEF_REV, " GD", "GQG", "PG ", 'P', OP.plate.dat(ANY.Cu), 'G', OP.plate.dat(MT.Glass), 'D', DYE_OREDICTS[DYE_INDEX_Red], 'Q', OD.itemQuicksilver);
 		CR.shaped(IL.Geiger_Counter_Empty       .get(1), CR.DEF_REV, "TXT", "PCP", "TdT", 'X', OP.capcellcon .dat(MT.Al   ), 'P', OP.plate.dat(MT.Al             ), 'T', OP.screw.dat(MT.Al             ), 'C', OD_CIRCUITS[1]);
@@ -554,17 +554,17 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.Canner.addRecipe1(T, 16, 64, IL.Geiger_Counter_Empty.get(1), FL.Argon .make(1000), NF, IL.Geiger_Counter.get(1));
 		
 		
-		IL.Compass_North                   .set(addItem(11000, "Compass (NORTH)" , "Points to Zed Negative"                             , OD.itemCompass, new Behavior_Switch_Metadata(11001, T, T), OM.data(ST.make(Items.compass, 1, 0)), TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO                                              , 2))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Face                    .set(addItem(11001, "Compass (FACE)"  , "Points into the direction you look"                 , OD.itemCompass, new Behavior_Switch_Metadata(11002, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.COGNITIO, 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Spawn                   .set(addItem(11002, "Compass (SPAWN)" , "Points to the World Spawn like a normal Compass"    , OD.itemCompass, new Behavior_Switch_Metadata(11003, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.HUMANUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Center                  .set(addItem(11003, "Compass (CENTER)", "Points towards the middle of the World"             , OD.itemCompass, new Behavior_Switch_Metadata(11004, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.TERRA   , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Death                   .set(addItem(11004, "Compass (DEATH)" , "Points to your last Death, if you did not Rage Quit", OD.itemCompass, new Behavior_Switch_Metadata(11000, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.MORTUUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_North                   .set(addItem(11000, "Compass (Север)" , "Указывает на сервер"                                , OD.itemCompass, new Behavior_Switch_Metadata(11001, T, T), OM.data(ST.make(Items.compass, 1, 0)), TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO                                              , 2))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Face                    .set(addItem(11001, "Compass (Фронт)" , "Указывает в направлении, в которое вы смотрите"     , OD.itemCompass, new Behavior_Switch_Metadata(11002, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.COGNITIO, 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Spawn                   .set(addItem(11002, "Compass (Спавн)" , "Указывает на СПАВН как обычный компас"              , OD.itemCompass, new Behavior_Switch_Metadata(11003, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.HUMANUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Center                  .set(addItem(11003, "Compass (Центр)" , "Указывает на центр мира"                            , OD.itemCompass, new Behavior_Switch_Metadata(11004, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.TERRA   , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Death                   .set(addItem(11004, "Compass (Смерть)", "Указывает на последнее место смерти"                , OD.itemCompass, new Behavior_Switch_Metadata(11000, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.MORTUUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
 		ItemsGT.addNEIRedirects(IL.Compass_North.get(1), IL.Compass_Face.get(1), IL.Compass_Spawn.get(1), IL.Compass_Center.get(1), IL.Compass_Death.get(1));
 		CR.shapeless(IL.Compass_North.get(1), CR.DEF, new Object[] {Items.compass});
 		
 		
-		IL.Tape                            .set(addItem(12000, "Tape", "Full Roll", TC.stack(TC.PANNUS, 1), TC.stack(TC.LIMUS, 1)));
-		IL.Tape_Used                       .set(addItem(12001, "Tape", "Used Roll", TC.stack(TC.PANNUS, 1), TC.stack(TC.LIMUS, 1)));
+		IL.Tape                            .set(addItem(12000, "Лента", "Полный рулон"       , TC.stack(TC.PANNUS, 1), TC.stack(TC.LIMUS, 1)));
+		IL.Tape_Used                       .set(addItem(12001, "Лента", "Использованый рулон", TC.stack(TC.PANNUS, 1), TC.stack(TC.LIMUS, 1)));
 		CR.shaped   (IL.Tape.get(1), CR.DEF, "PPP", " G ", 'P', OD.paperEmpty, 'G', OD.itemGlue);
 		CR.shapeless(IL.Tape.get(1), CR.DEF, new Object[] {IL.Tape_Used, IL.Tape_Used, IL.Tape_Used, IL.Tape_Used});
 		tBehaviour = new Behavior_Duct_Tape(null, IL.Tape_Used.get(1), IL.Tape.get(1), 0, 10000);
@@ -574,8 +574,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		addItemBehavior(12000, tBehaviour);
 		addItemBehavior(12001, tBehaviour);
 		
-		IL.Duct_Tape                       .set(addItem(12002, "Duct Tape", "Full Roll", TC.stack(TC.FABRICO, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
-		IL.Duct_Tape_Used                  .set(addItem(12003, "Duct Tape", "Used Roll", TC.stack(TC.FABRICO, 1), TC.stack(TC.LIMUS, 1)));
+		IL.Duct_Tape                       .set(addItem(12002, "Клейкая лента", "Полный рулон"       , TC.stack(TC.FABRICO, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
+		IL.Duct_Tape_Used                  .set(addItem(12003, "Клейкая лента", "Использованый рулон", TC.stack(TC.FABRICO, 1), TC.stack(TC.LIMUS, 1)));
 		CR.shaped   (IL.Duct_Tape.get(1), CR.DEF, "PPP", " G ", 'P', OP.foil.dat(ANY.Plastic), 'G', OD.itemGlue);
 		CR.shapeless(IL.Duct_Tape.get(1), CR.DEF, new Object[] {IL.Duct_Tape_Used, IL.Duct_Tape_Used, IL.Duct_Tape_Used, IL.Duct_Tape_Used});
 		tBehaviour = new Behavior_Duct_Tape(null, IL.Duct_Tape_Used.get(1), IL.Duct_Tape.get(1), 1, 100000);
@@ -585,8 +585,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		addItemBehavior(12002, tBehaviour);
 		addItemBehavior(12003, tBehaviour);
 		
-		IL.Brain_Tape                      .set(addItem(12008, "BrainTech Aerospace Advanced Reinforced Duct Tape FAL-84", "Full Roll", TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
-		IL.Brain_Tape_Used                 .set(addItem(12009, "BrainTech Aerospace Advanced Reinforced Duct Tape FAL-84", "Used Roll", TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
+		IL.Brain_Tape                      .set(addItem(12008, "Усовершенствованная армированная клейкая лента BrainTech Aerospace FAL-84", "Полный рулон"       , TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
+		IL.Brain_Tape_Used                 .set(addItem(12009, "Усовершенствованная армированная клейкая лента BrainTech Aerospace FAL-84", "Использованый рулон", TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
 		CR.shaped   (IL.Brain_Tape.get(1), CR.DEF, "PPP", " G ", 'P', OP.foil.dat(ANY.W), 'G', OD.itemGlue);
 		CR.shapeless(IL.Brain_Tape.get(1), CR.DEF, new Object[] {IL.Brain_Tape_Used, IL.Brain_Tape_Used, IL.Brain_Tape_Used, IL.Brain_Tape_Used});
 		tBehaviour = new Behavior_Duct_Tape(null, IL.Brain_Tape_Used.get(1), IL.Brain_Tape.get(1), 2, 10000000);
@@ -598,16 +598,16 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		
 		
 		
-		IL.Key_Iron                        .set(addItem(30000, "Iron Key"    , "", OD.itemKey, new OreDictItemData(ANY.Iron   , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Iron    .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(ANY.Iron));
-		IL.Key_Gold                        .set(addItem(30001, "Gold Key"    , "", OD.itemKey, new OreDictItemData(MT.Au      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Gold    .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Au));
-		IL.Key_Copper                      .set(addItem(30002, "Copper Key"  , "", OD.itemKey, new OreDictItemData(ANY.Cu     , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Copper  .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(ANY.Cu));
-		IL.Key_Tin                         .set(addItem(30003, "Tin Key"     , "", OD.itemKey, new OreDictItemData(MT.Sn      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Tin     .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Sn));
-		IL.Key_Bronze                      .set(addItem(30004, "Bronze Key"  , "", OD.itemKey, new OreDictItemData(MT.Bronze  , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Bronze  .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Bronze));
-		IL.Key_Brass                       .set(addItem(30005, "Brass Key"   , "", OD.itemKey, new OreDictItemData(MT.Brass   , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Brass   .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Brass));
-		IL.Key_Silver                      .set(addItem(30006, "Silver Key"  , "", OD.itemKey, new OreDictItemData(MT.Ag      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Silver  .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Ag));
-		IL.Key_Platinum                    .set(addItem(30007, "Platinum Key", "", OD.itemKey, new OreDictItemData(MT.Pt      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Platinum.get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Pt));
-		IL.Key_Lead                        .set(addItem(30008, "Lead Key"    , "", OD.itemKey, new OreDictItemData(MT.Pb      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Lead    .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Pb));
-		IL.Key_Plastic                     .set(addItem(30009, "Plastic Key" , "", OD.itemKey, new OreDictItemData(ANY.Plastic, U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Plastic .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(ANY.Plastic));
+		IL.Key_Iron                        .set(addItem(30000, "Железный ключ"   , "", OD.itemKey, new OreDictItemData(ANY.Iron   , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Iron    .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(ANY.Iron));
+		IL.Key_Gold                        .set(addItem(30001, "Золотой ключ"    , "", OD.itemKey, new OreDictItemData(MT.Au      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Gold    .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Au));
+		IL.Key_Copper                      .set(addItem(30002, "Медный ключ"     , "", OD.itemKey, new OreDictItemData(ANY.Cu     , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Copper  .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(ANY.Cu));
+		IL.Key_Tin                         .set(addItem(30003, "Оловянный ключ"  , "", OD.itemKey, new OreDictItemData(MT.Sn      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Tin     .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Sn));
+		IL.Key_Bronze                      .set(addItem(30004, "Бронзовый ключ"  , "", OD.itemKey, new OreDictItemData(MT.Bronze  , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Bronze  .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Bronze));
+		IL.Key_Brass                       .set(addItem(30005, "Латунный ключ"   , "", OD.itemKey, new OreDictItemData(MT.Brass   , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Brass   .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Brass));
+		IL.Key_Silver                      .set(addItem(30006, "Серебрянный ключ", "", OD.itemKey, new OreDictItemData(MT.Ag      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Silver  .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Ag));
+		IL.Key_Platinum                    .set(addItem(30007, "Платиновый ключ" , "", OD.itemKey, new OreDictItemData(MT.Pt      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Platinum.get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Pt));
+		IL.Key_Lead                        .set(addItem(30008, "Свинцовый ключ"  , "", OD.itemKey, new OreDictItemData(MT.Pb      , U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Lead    .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(MT.Pb));
+		IL.Key_Plastic                     .set(addItem(30009, "Пластиковый ключ", "", OD.itemKey, new OreDictItemData(ANY.Plastic, U4), Behavior_Key.INSTANCE, TC.stack(TC.MACHINA, 1))); CR.shaped(IL.Key_Plastic .get(3), CR.DEF_NCC, "fPx", 'P', OP.plate.dat(ANY.Plastic));
 		
 		// In order to be able to hide Keys inside Bookshelves
 		for (IItemContainer tContainer : IL.KEYS) BooksGT.BOOK_REGISTER.put(tContainer, (byte)1);

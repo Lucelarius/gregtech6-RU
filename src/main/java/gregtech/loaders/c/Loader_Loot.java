@@ -404,7 +404,7 @@ public class Loader_Loot implements Runnable {
 	
 	public static boolean addLoot(String aType, WeightedRandomChestContent aLoot) {
 		if (ST.invalid(aLoot.theItemId) || UT.Code.stringInvalid(aType)) {
-			ERR.println("Failed to add Loot: " + aLoot.theItemId + " to " + aType);
+			ERR.println("Не удалось добавить добычу: " + aLoot.theItemId + " для " + aType);
 			return F;
 		}
 		ChestGenHooks.addItem(aType, aLoot);
@@ -413,7 +413,7 @@ public class Loader_Loot implements Runnable {
 	
 	public static boolean addLoot(String aType, int aChance, int aMin, int aMax, ItemStack aLoot) {
 		if (ST.invalid(aLoot) || aMin <= 0 || aMax <= 0 || UT.Code.stringInvalid(aType)) {
-			ERR.println("Failed to add Loot: " + aLoot + " to " + aType);
+			ERR.println("Не удалось добавить добычу: " + aLoot + " для " + aType);
 			return F;
 		}
 		if (ConfigsGT.WORLDGEN.get("loot." + aType, aLoot, T)) {

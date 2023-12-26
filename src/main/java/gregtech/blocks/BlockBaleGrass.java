@@ -42,40 +42,40 @@ public class BlockBaleGrass extends BlockBaseBale {
 	public BlockBaleGrass(String aUnlocalised) {
 		super(null, aUnlocalised, Material.grass, soundTypeGrass, 4, Textures.BlockIcons.BALES_GRASS);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Grass Bale");
-		LH.add(getUnlocalizedName()+ ".4", "Grass Bale");
-		LH.add(getUnlocalizedName()+ ".8", "Grass Bale");
-		LH.add(getUnlocalizedName()+".12", "Grass Bale");
+		LH.add(getUnlocalizedName()+ ".0", "Тюк травы");
+		LH.add(getUnlocalizedName()+ ".4", "Тюк травы");
+		LH.add(getUnlocalizedName()+ ".8", "Тюк травы");
+		LH.add(getUnlocalizedName()+".12", "Тюк травы");
 		OM.reg(ST.make(this, 1, 0), "baleGrass");
 		OM.reg(ST.make(this, 1, 4), "baleGrass");
 		OM.reg(ST.make(this, 1, 8), "baleGrass");
 		OM.reg(ST.make(this, 1,12), "baleGrass");
 		IL.Bale.set(ST.make(this, 1, 0));
 		
-		LH.add(getUnlocalizedName()+ ".1", "Dry Grass Bale");
-		LH.add(getUnlocalizedName()+ ".5", "Dry Grass Bale");
-		LH.add(getUnlocalizedName()+ ".9", "Dry Grass Bale");
-		LH.add(getUnlocalizedName()+".13", "Dry Grass Bale");
+		LH.add(getUnlocalizedName()+ ".1", "Сухой тюк травы");
+		LH.add(getUnlocalizedName()+ ".5", "Сухой тюк травы");
+		LH.add(getUnlocalizedName()+ ".9", "Сухой тюк травы");
+		LH.add(getUnlocalizedName()+".13", "Сухой тюк травы");
 		OM.reg(ST.make(this, 1, 1), "baleGrassDry");
 		OM.reg(ST.make(this, 1, 5), "baleGrassDry");
 		OM.reg(ST.make(this, 1, 9), "baleGrassDry");
 		OM.reg(ST.make(this, 1,13), "baleGrassDry");
 		IL.Bale_Dry.set(ST.make(this, 1, 1));
 		
-		LH.add(getUnlocalizedName()+ ".2", "Moldy Grass Bale");
-		LH.add(getUnlocalizedName()+ ".6", "Moldy Grass Bale");
-		LH.add(getUnlocalizedName()+".10", "Moldy Grass Bale");
-		LH.add(getUnlocalizedName()+".14", "Moldy Grass Bale");
+		LH.add(getUnlocalizedName()+ ".2", "Заплесневелый тюк травы");
+		LH.add(getUnlocalizedName()+ ".6", "Заплесневелый тюк травы");
+		LH.add(getUnlocalizedName()+".10", "Заплесневелый тюк травы");
+		LH.add(getUnlocalizedName()+".14", "Заплесневелый тюк травы");
 		OM.reg(ST.make(this, 1, 2), "baleGrassMoldy");
 		OM.reg(ST.make(this, 1, 6), "baleGrassMoldy");
 		OM.reg(ST.make(this, 1,10), "baleGrassMoldy");
 		OM.reg(ST.make(this, 1,14), "baleGrassMoldy");
 		IL.Bale_Moldy.set(ST.make(this, 1, 2));
 		
-		LH.add(getUnlocalizedName()+ ".3", "Rotten Grass Bale");
-		LH.add(getUnlocalizedName()+ ".7", "Rotten Grass Bale");
-		LH.add(getUnlocalizedName()+".11", "Rotten Grass Bale");
-		LH.add(getUnlocalizedName()+".15", "Rotten Grass Bale");
+		LH.add(getUnlocalizedName()+ ".3", "Гнилой тюк травы");
+		LH.add(getUnlocalizedName()+ ".7", "Гнилой тюк травы");
+		LH.add(getUnlocalizedName()+".11", "Гнилой тюк травы");
+		LH.add(getUnlocalizedName()+".15", "Гнилой тюк травы");
 		OM.reg(ST.make(this, 1, 3), "baleGrassRotten");
 		OM.reg(ST.make(this, 1, 7), "baleGrassRotten");
 		OM.reg(ST.make(this, 1,11), "baleGrassRotten");

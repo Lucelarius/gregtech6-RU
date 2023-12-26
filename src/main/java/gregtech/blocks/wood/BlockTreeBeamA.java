@@ -28,24 +28,24 @@ public class BlockTreeBeamA extends BlockBaseBeamFlammable {
 	public BlockTreeBeamA(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.BEAMS_A);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Rubber Beam");
-		LH.add(getUnlocalizedName()+ ".4", "Rubber Beam");
-		LH.add(getUnlocalizedName()+ ".8", "Rubber Beam");
-		LH.add(getUnlocalizedName()+".12", "Rubber Beam");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из каучукого дерева");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из каучукого дерева");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из каучукого дерева");
+		LH.add(getUnlocalizedName()+".12", "Брус из каучукого дерева");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Maple Beam");
-		LH.add(getUnlocalizedName()+ ".5", "Maple Beam");
-		LH.add(getUnlocalizedName()+ ".9", "Maple Beam");
-		LH.add(getUnlocalizedName()+".13", "Maple Beam");
+		LH.add(getUnlocalizedName()+ ".1", "Брус из клена");
+		LH.add(getUnlocalizedName()+ ".5", "Брус из клена");
+		LH.add(getUnlocalizedName()+ ".9", "Брус из клена");
+		LH.add(getUnlocalizedName()+".13", "Брус из клена");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Willow Beam");
-		LH.add(getUnlocalizedName()+ ".6", "Willow Beam");
-		LH.add(getUnlocalizedName()+".10", "Willow Beam");
-		LH.add(getUnlocalizedName()+".14", "Willow Beam");
+		LH.add(getUnlocalizedName()+ ".2", "Брус из ивы");
+		LH.add(getUnlocalizedName()+ ".6", "Брус из ивы");
+		LH.add(getUnlocalizedName()+".10", "Брус из ивы");
+		LH.add(getUnlocalizedName()+".14", "Брус из ивы");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Blue Mahoe Beam");
-		LH.add(getUnlocalizedName()+ ".7", "Blue Mahoe Beam");
-		LH.add(getUnlocalizedName()+".11", "Blue Mahoe Beam");
-		LH.add(getUnlocalizedName()+".15", "Blue Mahoe Beam");
+		LH.add(getUnlocalizedName()+ ".3", "Брус из синего махо");
+		LH.add(getUnlocalizedName()+ ".7", "Брус из синего махо");
+		LH.add(getUnlocalizedName()+".11", "Брус из синего махо");
+		LH.add(getUnlocalizedName()+".15", "Брус из синего махо");
 	}
 }

@@ -52,9 +52,9 @@ import static gregapi.data.CS.*;
  */
 public class MultiTileEntityEnderGarbageDump extends TileEntityBase07Paintable implements IFluidHandler, ITileEntityTapAccessible, IMTE_AddToolTips {
 	static {
-		LH.add("gt.multitileentity.ender.garbage.dump.tooltip.1", "This is where all the Trash Bin Items & Fluids go to");
-		LH.add("gt.multitileentity.ender.garbage.dump.tooltip.2", "Accesses the Garbage Dimension to retrieve Trash.");
-		LH.add("gt.multitileentity.ender.garbage.dump.tooltip.3", "If used properly, people could for example 'donate' Resources.");
+		LH.add("gt.multitileentity.ender.garbage.dump.tooltip.1", "Это то место, куда попадают все предметы и жидкости из мусорных ведер");
+		LH.add("gt.multitileentity.ender.garbage.dump.tooltip.2", "Доступ к свалке для извлечения мусора.");
+		LH.add("gt.multitileentity.ender.garbage.dump.tooltip.3", "При правильном использовании люди могут, например, пожертвовать ресурсы.");
 	}
 	
 	@Override

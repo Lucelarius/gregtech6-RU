@@ -50,9 +50,9 @@ public class MultiTileEntityMiniPortalAtum extends MultiTileEntityMiniPortal {
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListAtumSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.atum.tooltip.1", "Only works between the Atum Desert and the Overworld!");
-		LH.add("gt.tileentity.portal.atum.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.atum.tooltip.3", "Requires the Scarab for activation");
+		LH.add("gt.tileentity.portal.atum.tooltip.1", "Работает только в Atum Desert и обычном мире!");
+		LH.add("gt.tileentity.portal.atum.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.atum.tooltip.3", "Требуется скарабей для активации");
 	}
 	
 	@Override

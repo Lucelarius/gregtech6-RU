@@ -39,19 +39,19 @@ public class Behavior_DataStorage16 extends AbstractBehaviorDefault {
 			if (aStack.hasTagCompound() && aStack.getTagCompound().hasKey(NBT_USB_DRIVE)) {
 				NBTTagCompound tDrive = aStack.getTagCompound().getCompoundTag(NBT_USB_DRIVE);
 				if (tDrive.hasNoTags()) {
-					aList.add(LH.Chat.CYAN + "Uncleanly Formatted");
+					aList.add(LH.Chat.CYAN + "Плохо отформатировано");
 				} else {
 					for (byte i = 0; i < 16; i++) {
 						NBTTagCompound tUSB = tDrive.getCompoundTag(NBT_USB_DATA+i);
 						if (tUSB == null || tUSB.hasNoTags()) {
-							aList.add(LH.Chat.DGRAY + "Data Slot "+i+" is Empty");
+							aList.add(LH.Chat.DGRAY + "Слот данных "+i+" пустой");
 						} else {
 							UT.NBT.getDataToolTip(tUSB, aList, F);
 						}
 					}
 				}
 			} else {
-				aList.add(LH.Chat.CYAN + "Perfectly Formatted");
+				aList.add(LH.Chat.CYAN + "Идеально отформатировано");
 			}
 		}
 		return aList;

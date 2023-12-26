@@ -69,7 +69,7 @@ public class Behavior_Shears extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.shears", "Shaves Sheep, Mooshrooms and alike");
+		LH.add("gt.behaviour.shears", "Стригут овец, грибы и т.д.");
 	}
 	
 	@Override

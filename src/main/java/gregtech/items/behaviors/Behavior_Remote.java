@@ -49,20 +49,20 @@ public class Behavior_Remote extends AbstractBehaviorDefault {
 		ArrayListNoNulls<ChunkCoordinates> tList = getCoords(aNBT, aWorld.provider.dimensionId);
 		ChunkCoordinates tCoords = new ChunkCoordinates(aX, aY, aZ);
 		if (tList.contains(tCoords)) {
-			UT.Entities.sendchat(aPlayer, "Coordinates removed!");
+			UT.Entities.sendchat(aPlayer, "Координаты удалены!");
 			UT.Sounds.send(aWorld, SFX.GT_BEEP, 0.5F, 1.0F, tCoords);
 			tList.remove(tCoords);
 		} else if (tList.size() >= 64) {
-			UT.Entities.sendchat(aPlayer, "Cant hold more than 64 Coordinates per Dimension!");
+			UT.Entities.sendchat(aPlayer, "Не могу хранить более 64 координат в измерении!");
 			UT.Sounds.send(aWorld, SFX.GT_BEEP, 0.5F, 0.5F, tCoords);
 		} else {
 			TileEntity tTileEntity = WD.te(aWorld, tCoords, F);
 			if (tTileEntity instanceof ITileEntityRemoteActivateable) {
-				UT.Entities.sendchat(aPlayer, "Coordinates added!");
+				UT.Entities.sendchat(aPlayer, "Координаты добавлены!");
 				UT.Sounds.send(aWorld, SFX.GT_BEEP, 0.5F, 1.0F, tCoords);
 				tList.add(tCoords);
 			} else {
-				UT.Entities.sendchat(aPlayer, "This cannot be added!");
+				UT.Entities.sendchat(aPlayer, "Это нельзя добавить!");
 				UT.Sounds.send(aWorld, SFX.GT_BEEP, 0.5F, 0.5F, tCoords);
 			}
 		}
@@ -134,7 +134,7 @@ public class Behavior_Remote extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.remote", "Activates up to 64 Blocks within a Range of 128m");
+		LH.add("gt.behaviour.remote", "Активирует до 64 блоков в радиусе 128м.");
 	}
 	
 	@Override

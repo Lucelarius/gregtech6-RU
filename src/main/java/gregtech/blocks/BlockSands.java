@@ -36,9 +36,9 @@ import static gregapi.data.CS.*;
 public class BlockSands extends BlockBaseMeta {
 	public BlockSands(String aUnlocalised) {
 		super(null, aUnlocalised, Material.sand, soundTypeSand, 3, Textures.BlockIcons.SANDS);
-		LH.add(getUnlocalizedName()+ ".0", "Black Sand");
-		LH.add(getUnlocalizedName()+ ".1", "Basaltic Black Sand");
-		LH.add(getUnlocalizedName()+ ".2", "Granitic Black Sand");
+		LH.add(getUnlocalizedName()+ ".0", "Черный песок");
+		LH.add(getUnlocalizedName()+ ".1", "Базальтовый черный песок");
+		LH.add(getUnlocalizedName()+ ".2", "Гранитный черный песок");
 		
 		MT.OREMATS.Magnetite          .mTextureDust = BlockTextureCopied.get(this, SIDE_TOP, 0);
 		MT.OREMATS.BasalticMineralSand.mTextureDust = BlockTextureCopied.get(this, SIDE_TOP, 1);

@@ -49,22 +49,22 @@ public class BlockVanillaOresA extends BlockBaseMeta {
 	
 	public BlockVanillaOresA(String aUnlocalised) {
 		super(null, aUnlocalised, Material.rock, soundTypeStone, ORE_MATERIALS.length, Textures.BlockIcons.VANILLA_ORES_A);
-		LH.add(getUnlocalizedName()+ ".0", "Sulfur Ore"      );
-		LH.add(getUnlocalizedName()+ ".1", "Apatite Ore"     );
-		LH.add(getUnlocalizedName()+ ".2", "Ruby Ore"        );
-		LH.add(getUnlocalizedName()+ ".3", "Amber Ore"       );
-		LH.add(getUnlocalizedName()+ ".4", "Amethyst Ore"    );
-		LH.add(getUnlocalizedName()+ ".5", "Galena Ore"      );
-		LH.add(getUnlocalizedName()+ ".6", "Tetrahedrite Ore");
-		LH.add(getUnlocalizedName()+ ".7", "Cassiterite Ore" );
-		LH.add(getUnlocalizedName()+ ".8", "Sheldonite Ore"  );
-		LH.add(getUnlocalizedName()+ ".9", "Pentlandite Ore" );
-		LH.add(getUnlocalizedName()+".10", "Scheelite Ore"   );
-		LH.add(getUnlocalizedName()+".11", "Rutile Ore"      );
-		LH.add(getUnlocalizedName()+".12", "Bastnasite Ore"  );
-		LH.add(getUnlocalizedName()+".13", "Graphite Ore"    );
-		LH.add(getUnlocalizedName()+".14", "Pitchblende Ore" );
-		LH.add(getUnlocalizedName()+".15", "Borax Ore"       );
+		LH.add(getUnlocalizedName()+ ".0", "Серная руда"        );
+		LH.add(getUnlocalizedName()+ ".1", "Апатитовая руда"    );
+		LH.add(getUnlocalizedName()+ ".2", "Рубиновая руда"     );
+		LH.add(getUnlocalizedName()+ ".3", "Янтарная руда"      );
+		LH.add(getUnlocalizedName()+ ".4", "Аметистовая руда"   );
+		LH.add(getUnlocalizedName()+ ".5", "Галенитовая руда"   );
+		LH.add(getUnlocalizedName()+ ".6", "Тетраэдритовая руда");
+		LH.add(getUnlocalizedName()+ ".7", "Касситеритовая руда");
+		LH.add(getUnlocalizedName()+ ".8", "Шелдонитовая руда"  );
+		LH.add(getUnlocalizedName()+ ".9", "Пентландитовая руда");
+		LH.add(getUnlocalizedName()+".10", "Шеелитовая руда"    );
+		LH.add(getUnlocalizedName()+".11", "Рутиловая руда"     );
+		LH.add(getUnlocalizedName()+".12", "Бастнезитовая руда" );
+		LH.add(getUnlocalizedName()+".13", "Графитовая руда"    );
+		LH.add(getUnlocalizedName()+".14", "Настурановая руда"  );
+		LH.add(getUnlocalizedName()+".15", "Бораксовая руда"    );
 		
 		for (int i = 0; i < maxMeta(); i++) OM.reg(ST.make(this, 1, i), OP.oreVanillastone.dat(ORE_MATERIALS[i]));
 		

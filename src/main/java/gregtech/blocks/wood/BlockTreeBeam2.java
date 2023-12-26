@@ -28,24 +28,24 @@ public class BlockTreeBeam2 extends BlockBaseBeamFlammable {
 	public BlockTreeBeam2(String aUnlocalised) {
 		super(null, aUnlocalised, Material.wood, soundTypeWood, 4, Textures.BlockIcons.BEAMS_2);
 		
-		LH.add(getUnlocalizedName()+ ".0", "Acacia Beam");
-		LH.add(getUnlocalizedName()+ ".4", "Acacia Beam");
-		LH.add(getUnlocalizedName()+ ".8", "Acacia Beam");
-		LH.add(getUnlocalizedName()+".12", "Acacia Beam");
+		LH.add(getUnlocalizedName()+ ".0", "Брус из акации");
+		LH.add(getUnlocalizedName()+ ".4", "Брус из акации");
+		LH.add(getUnlocalizedName()+ ".8", "Брус из акации");
+		LH.add(getUnlocalizedName()+".12", "Брус из акации");
 		
-		LH.add(getUnlocalizedName()+ ".1", "Dark Oak Beam");
-		LH.add(getUnlocalizedName()+ ".5", "Dark Oak Beam");
-		LH.add(getUnlocalizedName()+ ".9", "Dark Oak Beam");
-		LH.add(getUnlocalizedName()+".13", "Dark Oak Beam");
+		LH.add(getUnlocalizedName()+ ".1", "Брус из темного дуба");
+		LH.add(getUnlocalizedName()+ ".5", "Брус из темного дуба");
+		LH.add(getUnlocalizedName()+ ".9", "Брус из темного дуба");
+		LH.add(getUnlocalizedName()+".13", "Брус из темного дуба");
 		
-		LH.add(getUnlocalizedName()+ ".2", "Rubber Wood Beam");
-		LH.add(getUnlocalizedName()+ ".6", "Rubber Wood Beam");
-		LH.add(getUnlocalizedName()+".10", "Rubber Wood Beam");
-		LH.add(getUnlocalizedName()+".14", "Rubber Wood Beam");
+		LH.add(getUnlocalizedName()+ ".2", "Брус из каучукого дерева");
+		LH.add(getUnlocalizedName()+ ".6", "Брус из каучукого дерева");
+		LH.add(getUnlocalizedName()+".10", "Брус из каучукого дерева");
+		LH.add(getUnlocalizedName()+".14", "Брус из каучукого дерева");
 		
-		LH.add(getUnlocalizedName()+ ".3", "Wood Beam");
-		LH.add(getUnlocalizedName()+ ".7", "Wood Beam");
-		LH.add(getUnlocalizedName()+".11", "Wood Beam");
-		LH.add(getUnlocalizedName()+".15", "Wood Beam");
+		LH.add(getUnlocalizedName()+ ".3", "Брус из дерева");
+		LH.add(getUnlocalizedName()+ ".7", "Брус из дерева");
+		LH.add(getUnlocalizedName()+".11", "Брус из дерева");
+		LH.add(getUnlocalizedName()+".15", "Брус из дерева");
 	}
 }

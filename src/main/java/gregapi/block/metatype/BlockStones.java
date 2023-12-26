@@ -113,21 +113,21 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		
 		if (aDefaultLocalised != null) {
 			LH.add(getUnlocalizedName()+".0", aDefaultLocalised);
-			LH.add(getUnlocalizedName()+".1", aDefaultLocalised+" Cobblestone");
-			LH.add(getUnlocalizedName()+".2", "Mossy "+aDefaultLocalised+" Cobblestone");
-			LH.add(getUnlocalizedName()+".3", aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".4", "Cracked "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".5", "Mossy "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".6", "Chiseled "+aDefaultLocalised);
-			LH.add(getUnlocalizedName()+".7", "Smooth "+aDefaultLocalised);
-			LH.add(getUnlocalizedName()+".8", "Reinforced "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".9", "Redstoned "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".10", aDefaultLocalised+" Tiles");
-			LH.add(getUnlocalizedName()+".11", "Small "+aDefaultLocalised+" Tiles");
-			LH.add(getUnlocalizedName()+".12", "Small "+aDefaultLocalised+" Bricks");
-			LH.add(getUnlocalizedName()+".13", aDefaultLocalised+" Windmill Tiles A");
-			LH.add(getUnlocalizedName()+".14", aDefaultLocalised+" Windmill Tiles B");
-			LH.add(getUnlocalizedName()+".15", aDefaultLocalised+" Square Bricks");
+			LH.add(getUnlocalizedName()+".1", aDefaultLocalised+", булыжник");
+			LH.add(getUnlocalizedName()+".2", aDefaultLocalised+", замшелый булыжник");
+			LH.add(getUnlocalizedName()+".3", aDefaultLocalised+", кирпичи");
+			LH.add(getUnlocalizedName()+".4", aDefaultLocalised+", потресканные кирпичи");
+			LH.add(getUnlocalizedName()+".5", aDefaultLocalised+", замшелые кирпичи");
+			LH.add(getUnlocalizedName()+".6", aDefaultLocalised+", резной");
+			LH.add(getUnlocalizedName()+".7", aDefaultLocalised+", гладкий");
+			LH.add(getUnlocalizedName()+".8", aDefaultLocalised+", армированные кирпичи");
+			LH.add(getUnlocalizedName()+".9", aDefaultLocalised+", сигнальные кирпичи");
+			LH.add(getUnlocalizedName()+".10", aDefaultLocalised+", плита");
+			LH.add(getUnlocalizedName()+".11", aDefaultLocalised+", малая плита");
+			LH.add(getUnlocalizedName()+".12", aDefaultLocalised+", малые кирпичи");
+			LH.add(getUnlocalizedName()+".13", aDefaultLocalised+", мельничная плита А");
+			LH.add(getUnlocalizedName()+".14", aDefaultLocalised+", мельничная плита Б");
+			LH.add(getUnlocalizedName()+".15", aDefaultLocalised+", квадратные кирпичи");
 		}
 		
 		OP.blockSolid.disableItemGeneration(mMaterial);
@@ -215,22 +215,22 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		mMaterial = (aMaterial == null ? ANY.Stone : aMaterial);
 		
 		if (aDefaultLocalised != null) {
-			LH.add(getUnlocalizedName()+".0", aDefaultLocalised+" Slab");
-			LH.add(getUnlocalizedName()+".1", aDefaultLocalised+" Cobblestone Slab");
-			LH.add(getUnlocalizedName()+".2", "Mossy "+aDefaultLocalised+" Cobblestone Slab");
-			LH.add(getUnlocalizedName()+".3", aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".4", "Cracked "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".5", "Mossy "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".6", "Chiseled "+aDefaultLocalised+" Slab");
-			LH.add(getUnlocalizedName()+".7", "Smooth "+aDefaultLocalised+" Slab");
-			LH.add(getUnlocalizedName()+".8", "Reinforced "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".9", "Redstoned "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".10", aDefaultLocalised+" Tiles Slab");
-			LH.add(getUnlocalizedName()+".11", "Small "+aDefaultLocalised+" Tiles Slab");
-			LH.add(getUnlocalizedName()+".12", "Small "+aDefaultLocalised+" Bricks Slab");
-			LH.add(getUnlocalizedName()+".13", aDefaultLocalised+" Windmill Tiles A Slab");
-			LH.add(getUnlocalizedName()+".14", aDefaultLocalised+" Windmill Tiles B Slab");
-			LH.add(getUnlocalizedName()+".15", aDefaultLocalised+" Square Bricks Slab");
+			LH.add(getUnlocalizedName()+".0", aDefaultLocalised+"-плита");
+			LH.add(getUnlocalizedName()+".1", aDefaultLocalised+"-плита, булыжник");
+			LH.add(getUnlocalizedName()+".2", aDefaultLocalised+"-плита, замшелый булыжник");
+			LH.add(getUnlocalizedName()+".3", aDefaultLocalised+"-плита, кирпичи");
+			LH.add(getUnlocalizedName()+".4", aDefaultLocalised+"-плита, потресканные кирпичи");
+			LH.add(getUnlocalizedName()+".5", aDefaultLocalised+"-плита, замшелые кирпичи");
+			LH.add(getUnlocalizedName()+".6", aDefaultLocalised+"-плита, резной");
+			LH.add(getUnlocalizedName()+".7", aDefaultLocalised+"-плита, гладкий");
+			LH.add(getUnlocalizedName()+".8", aDefaultLocalised+"-плита, армированные кирпичи");
+			LH.add(getUnlocalizedName()+".9", aDefaultLocalised+"-плита, сигнальные кирпичи");
+			LH.add(getUnlocalizedName()+".10", aDefaultLocalised+", плиточная плита");
+			LH.add(getUnlocalizedName()+".11", aDefaultLocalised+", малая плиточная плита");
+			LH.add(getUnlocalizedName()+".12", aDefaultLocalised+", малые плиточные кирпичи");
+			LH.add(getUnlocalizedName()+".13", aDefaultLocalised+", мельничная плиточная плита А");
+			LH.add(getUnlocalizedName()+".14", aDefaultLocalised+", мельничная плиточная плита Б");
+			LH.add(getUnlocalizedName()+".15", aDefaultLocalised+", квадратные плиточные кирпичи");
 		}
 		OM.data(ST.make(this, 1, STONE), new OreDictItemData(mMaterial, 9*U2));
 		OM.data(ST.make(this, 1, COBBL), new OreDictItemData(mMaterial, 9*U2));
@@ -642,9 +642,9 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 	}
 	
 	static {
-		LH.add("gt.tooltip.stone.mushroom.yes", "Mushrooms can spread to this rough Stone");
-		LH.add("gt.tooltip.stone.mushroom.no", "Mushrooms cant spread to smooth Stones!");
-		LH.add("gt.tooltip.stone.moss.bonemeal", "Use Bonemeal or similar to spread the Moss");
+		LH.add("gt.tooltip.stone.mushroom.yes", "Грибы могут прорости на этом грубом камне");
+		LH.add("gt.tooltip.stone.mushroom.no", "Грибы не растут на гладких камнях!");
+		LH.add("gt.tooltip.stone.moss.bonemeal", "Используйте костяную муку или что-то подобное, чтобы разложить мох");
 	}
 	
 	@Override

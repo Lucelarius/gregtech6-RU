@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalEndOfTime extends MultiTileEntityMiniPorta
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListEndOfTimeSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.endoftime.tooltip.1", "Only works between the Last Millenium and the Overworld with a x128 Distance Factor!");
-		LH.add("gt.tileentity.portal.endoftime.tooltip.2", "Margin of Error to still work: 512 Meters.");
-		LH.add("gt.tileentity.portal.endoftime.tooltip.3", "Requires a Bedrockium Ingot for activation");
+		LH.add("gt.tileentity.portal.endoftime.tooltip.1", "Работает только в Last Millenium и обычном мире с фактором расстояния x128 Метров!");
+		LH.add("gt.tileentity.portal.endoftime.tooltip.2", "Предел погрешности для работы: 512 Метров.");
+		LH.add("gt.tileentity.portal.endoftime.tooltip.3", "Требуется Bedrockium Ingot для активации");
 	}
 	
 	@Override

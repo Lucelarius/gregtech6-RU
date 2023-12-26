@@ -61,7 +61,7 @@ public class Behavior_Plunger_Fluid extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.plunger.fluid", "Clears 1000 Liters of Fluid from Tanks");
+		LH.add("gt.behaviour.plunger.fluid", "Удаляет 1000 литров жидкости из резервуаров");
 	}
 	
 	@Override

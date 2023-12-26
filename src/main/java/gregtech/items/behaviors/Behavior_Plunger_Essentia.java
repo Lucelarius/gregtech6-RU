@@ -59,7 +59,7 @@ public class Behavior_Plunger_Essentia extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.plunger.essentia", "Clears Essentia from Containers and Tubes");
+		LH.add("gt.behaviour.plunger.essentia", "Очищает эссенцию из контейнеров и колб");
 	}
 	
 	@Override

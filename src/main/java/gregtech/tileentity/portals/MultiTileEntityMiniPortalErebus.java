@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalErebus extends MultiTileEntityMiniPortal {
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListErebusSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.erebus.tooltip.1", "Only works between the Erebus and the Overworld!");
-		LH.add("gt.tileentity.portal.erebus.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.erebus.tooltip.3", "Requires Staff of Gaea or a Gaean Gem for activation");
+		LH.add("gt.tileentity.portal.erebus.tooltip.1", "Работает только в Erebus и обычном мире!");
+		LH.add("gt.tileentity.portal.erebus.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.erebus.tooltip.3", "Требуется Staff of Gaea or a Gaean Gem для активации");
 	}
 	
 	@Override

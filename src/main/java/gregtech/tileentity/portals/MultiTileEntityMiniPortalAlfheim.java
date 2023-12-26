@@ -49,10 +49,10 @@ public class MultiTileEntityMiniPortalAlfheim extends MultiTileEntityMiniPortal 
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListAlfheimSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.alfheim.tooltip.1", "Only works between Alfheim and Midgard!");
-		LH.add("gt.tileentity.portal.alfheim.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.alfheim.tooltip.3", "Requires an Interdimensional Gateway Core for activation");
-		LH.add("gt.tileentity.portal.alfheim.tooltip.4", "This is not a Trade Portal! It's working just like all other Mini Portals!");
+		LH.add("gt.tileentity.portal.alfheim.tooltip.1", "Работает только в Альфхейме и Мидгарде");
+		LH.add("gt.tileentity.portal.alfheim.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.alfheim.tooltip.3", "Требуется межпространственное ядро шлюза для активации");
+		LH.add("gt.tileentity.portal.alfheim.tooltip.4", "Это не торговый портал! Он работает так же, как и все другие мини-порталы!");
 	}
 	
 	@Override

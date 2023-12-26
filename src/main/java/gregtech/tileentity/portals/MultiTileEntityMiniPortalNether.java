@@ -47,8 +47,8 @@ public class MultiTileEntityMiniPortalNether extends MultiTileEntityMiniPortal i
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListNetherSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.nether.tooltip.1", "Only works between the Nether and the Overworld with a x8 Distance Factor!");
-		LH.add("gt.tileentity.portal.nether.tooltip.2", "Margin of Error to still work: 128 Meters.");
+		LH.add("gt.tileentity.portal.nether.tooltip.1", "Работает только в аду и обычном мире с фактором расстояния x8 Метров!");
+		LH.add("gt.tileentity.portal.nether.tooltip.2", "Предел погрешности для работы: 128 Метров.");
 	}
 	
 	@Override

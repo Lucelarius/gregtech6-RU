@@ -71,7 +71,7 @@ public class Behavior_FeedGrass extends AbstractBehaviorDefault {
 	}
 	
 	static {
-		LH.add("gt.behaviour.feed.grass", "Is usable as Cow, Sheep and Horse Food");
+		LH.add("gt.behaviour.feed.grass", "Можно использовать как корм для коров, овец и лошадей");
 	}
 	
 	@Override

@@ -49,9 +49,9 @@ public class MultiTileEntityMiniPortalDeepDark extends MultiTileEntityMiniPortal
 	@Override public List<MultiTileEntityMiniPortal> getPortalListB() {return sListDeepDarkSide;}
 	
 	static {
-		LH.add("gt.tileentity.portal.deepdark.tooltip.1", "Only works between the Deep Dark and the Overworld!");
-		LH.add("gt.tileentity.portal.deepdark.tooltip.2", "Margin of Error to still work: 128 Meters.");
-		LH.add("gt.tileentity.portal.deepdark.tooltip.3", "Requires a Bedrockium Ingot for activation");
+		LH.add("gt.tileentity.portal.deepdark.tooltip.1", "Работает только в Deep Dark и обычном мире!");
+		LH.add("gt.tileentity.portal.deepdark.tooltip.2", "Предел погрешности для работы: 128 Метров.");
+		LH.add("gt.tileentity.portal.deepdark.tooltip.3", "Требуется Bedrockium Ingot для активации");
 	}
 	
 	@Override

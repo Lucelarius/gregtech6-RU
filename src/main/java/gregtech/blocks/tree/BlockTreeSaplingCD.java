@@ -42,7 +42,7 @@ import static gregapi.data.CS.*;
 public class BlockTreeSaplingCD extends BlockBaseSapling {
 	public BlockTreeSaplingCD(String aUnlocalised) {
 		super(null, aUnlocalised, Material.plants, soundTypeGrass, 1, Textures.BlockIcons.SAPLINGS_CD);
-		LH.add(getUnlocalizedName()+ ".0", "Blue Spruce Sapling");
+		LH.add(getUnlocalizedName()+ ".0", "Саженец голубой ели");
 	//  LH.add(getUnlocalizedName()+ ".1", " Sapling");
 	//  LH.add(getUnlocalizedName()+ ".2", " Sapling");
 	//  LH.add(getUnlocalizedName()+ ".3", " Sapling");
@@ -50,7 +50,7 @@ public class BlockTreeSaplingCD extends BlockBaseSapling {
 	//  LH.add(getUnlocalizedName()+ ".5", " Sapling");
 	//  LH.add(getUnlocalizedName()+ ".6", " Sapling");
 	//  LH.add(getUnlocalizedName()+ ".7", " Sapling");
-		LH.add(getUnlocalizedName()+ ".8", "Blue Spruce Sapling");
+		LH.add(getUnlocalizedName()+ ".8", "Саженец голубой ели");
 	//  LH.add(getUnlocalizedName()+ ".9", " Sapling");
 	//  LH.add(getUnlocalizedName()+".10", " Sapling");
 	//  LH.add(getUnlocalizedName()+".11", " Sapling");
@@ -108,7 +108,7 @@ public class BlockTreeSaplingCD extends BlockBaseSapling {
 	public void addInformation(ItemStack aStack, byte aMeta, EntityPlayer aPlayer, List<String> aList, boolean aF3_H) {
 		super.addInformation(aStack, aMeta, aPlayer, aList, aF3_H);
 		if (XMAS_IN_JULY && (aMeta & 7) == 0) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Save on everything at Christmas in July!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "Сэкономьте на всем на Рождество в июле!");
 		}
 	}
 }
