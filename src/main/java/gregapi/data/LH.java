@@ -635,7 +635,7 @@ public class LH {
 		add(TIME_HOURS                                  , "Часа(ов)");
 		add(TIME_DAYS                                   , "Дня(ей)");
 		add(TIME_WEEKS                                  , "Недели(ь)");
-		add(ADMIN_ONLY_CREATION                         , "Только администраторы могут это создать. (или используйте мод \"MineTweaker\" для добавления рецепта)");
+		add(ADMIN_ONLY_CREATION                         , "Только администраторы могут это создать. (или используйте мод MineTweaker для добавления рецепта)");
 		add(WIP                                         , Chat.RESET + Chat.WHITE + Chat.BOLD + "WIP" + Chat.RESET_TOOLTIP + ", Это может быть не так функционально, как вы ожидаете!");
 	}
 	
