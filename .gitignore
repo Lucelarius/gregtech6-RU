@@ -4,8 +4,12 @@
 # Whitelist directories (directories with no tracked files don't get committed regardless)
 !**/
 
+
 !/.gitignore
 !/.gitattributes
+
+!/ru-src/*
+!/ru-src/**/*.java
 
 # License files
 !/LICENSE*
@@ -57,4 +61,3 @@
 # Some old scripts in resources...
 !/src/main/resources/**/*.bat
 
-!/ru-src

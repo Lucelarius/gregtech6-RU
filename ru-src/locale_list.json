@@ -1,0 +1,254 @@
+{
+  "gregapi": [
+    {
+      "block": [
+        {
+          "metatype": [
+            "BlockColored.java",
+            "BlockStones.java"
+          ]
+        }
+      ],
+      "data": [
+        "CS.java",
+        "FL.java",
+        "FM.java",
+        "LH.java",
+        "MT.java",
+        "RM.java",
+        "TD.java"
+      ],
+      "item": [
+        "ItemEmptySlot.java",
+        "ItemFluidDisplay.java",
+        "ItemIntegratedCircuit.java",
+        {
+          "multiitem": [
+            "MultiItem.java",
+            "MultiItemTool.java",
+            {
+              "behaviors": [
+                "Behavior_CureZombie.java",
+                "Behavior_FeedCat.java",
+                "Behavior_FeedChocolate.java",
+                "Behavior_FeedDog.java",
+                "Behavior_FeedGrass.java",
+                "Behavior_FeedPig.java",
+                "Behavior_Place_Paddy.java",
+                "Behavior_Place_Path.java",
+                "Behavior_Place_Sapling.java",
+                "Behavior_PrintedPages.java",
+                "Behavior_Shears.java",
+                "Behavior_Switch_Metadata.java",
+                "Behavior_TripwireCutting.java",
+                "Behavior_WrittenBook.java"
+              ]
+            }
+          ]
+        }
+      ],
+      "oredict": [
+        {
+          "listeners": [
+            "OreDictListenerItem_Washing.java"
+          ]
+        }
+      ],
+      "tileentity": [
+        {
+          "computer": [
+            "TileEntityBase08DataSwitch.java"
+          ],
+          "connectors": [
+            "MultiTileEntityPipeFluid.java",
+            "MultiTileEntityPipeItem.java",
+            "MultiTileEntityWireElectric.java"
+          ],
+          "inventories": [
+            "MultiTileEntityMassStorage.java"
+          ]
+        }
+      ]
+    }
+  ],
+  "gregtech": [
+    {
+      "blocks": [
+        "BlockAsphalt.java",
+        "BlockBaleCrop.java",
+        "BlockBaleGrass.java",
+        "BlockCFoam.java",
+        "BlockCFoamFresh.java",
+        "BlockConcrete.java",
+        "BlockConcreteReinforced.java",
+        "BlockGlassClear.java",
+        "BlockGlassGlow.java",
+        "BlockGrass.java",
+        "BlockPath.java",
+        "BlockSands.java",
+        {
+          "plants": [
+            "BlockFlowersA.java",
+            "BlockFlowersB.java",
+            "BlockGlowtus.java"
+          ],
+          "stone": [
+            "BlockCrystalOres.java",
+            "BlockRockOres.java",
+            "BlockVanillaOresA.java"
+          ],
+          "tool": [
+            "BlockBarsAdamantium.java",
+            "BlockBarsBrass.java",
+            "BlockBarsSteel.java",
+            "BlockBarsTitanium.java",
+            "BlockBarsTungstenSteel.java",
+            "BlockBarsWood.java",
+            "BlockLongDistPipe.java",
+            "BlockLongDistWire.java",
+            "BlockSpikeFancy.java",
+            "BlockSpikeMetal.java",
+            "BlockSpikeSharp.java",
+            "BlockSpikeSteel.java",
+            "BlockSpikeSuper.java"
+          ],
+          "tree": [
+            "BlockTreeLeavesAB.java",
+            "BlockTreeLeavesCD.java",
+            "BlockTreeLog1.java",
+            "BlockTreeLog1FireProof.java",
+            "BlockTreeLogA.java",
+            "BlockTreeLogAFireProof.java",
+            "BlockTreeLogB.java",
+            "BlockTreeLogBFireProof.java",
+            "BlockTreeLogC.java",
+            "BlockTreeLogCFireProof.java",
+            "BlockTreeSaplingAB.java",
+            "BlockTreeSaplingCD.java"
+          ],
+          "wood": [
+            "BlockTreeBeam1.java",
+            "BlockTreeBeam1FireProof.java",
+            "BlockTreeBeam2.java",
+            "BlockTreeBeam2FireProof.java",
+            "BlockTreeBeam3.java",
+            "BlockTreeBeam3FireProof.java",
+            "BlockTreeBeamA.java",
+            "BlockTreeBeamAFireProof.java",
+            "BlockTreeBeamB.java",
+            "BlockTreeBeamBFireProof.java",
+            "BlockTreeBeamC.java",
+            "BlockTreeBeamCFireProof.java",
+            "BlockTreePlanks.java",
+            "BlockTreePlanks2.java",
+            "BlockTreePlanks2FireProof.java",
+            "BlockTreePlanksFireProof.java"
+          ]
+        }
+      ],
+      "items": [
+        "MultiItemBooks.java",
+        "MultiItemBottles.java",
+        "MultiItemBumbles.java",
+        "MultiItemCans.java",
+        "MultiItemFood.java",
+        "MultiItemRandomTools.java",
+        "MultiItemTechnological.java",
+        {
+          "behaviors": [
+            "Behavior_Chunk_Remover.java",
+            "Behavior_Cropnalyzer.java",
+            "Behavior_DataStorage.java",
+            "Behavior_DataStorage16.java",
+            "Behavior_Duct_Tape.java",
+            "Behavior_FlintAndTinder.java",
+            "Behavior_Gun.java",
+            "Behavior_Key.java",
+            "Behavior_Lighter.java",
+            "Behavior_Place_Dynamite.java",
+            "Behavior_Plunger_Essentia.java",
+            "Behavior_Plunger_Fluid.java",
+            "Behavior_Plunger_Item.java",
+            "Behavior_Remote.java",
+            "Behavior_Scanner.java",
+            "Behavior_Scoop.java",
+            "Behavior_SensorKit.java",
+            "Behavior_Spray_Color.java",
+            "Behavior_Spray_Color_Remover.java",
+            "Behavior_Spray_Extinguisher.java",
+            "Behavior_Spray_Foam.java",
+            "Behavior_Spray_Foam_Hardener.java",
+            "Behavior_Spray_Foam_Remover.java",
+            "Behavior_Worldgen_Debugger.java"
+          ]
+        }
+      ],
+      "loaders": [
+        {
+          "a": [
+            "Loader_Fluids.java",
+            "Loader_Ores.java",
+            "Loader_Rails.java",
+            "Loader_Tools.java"
+          ],
+          "b": [
+            "Loader_Books.java",
+            "Loader_MultiTileEntities.java"
+          ],
+          "c": [
+            "Loader_Loot.java",
+            "Loader_Recipes_Foreign.java"
+          ]
+        }
+      ],
+      "tileentity": [
+        {
+          "computer": [
+            "MultiTileEntityHDDSwitch.java",
+            "MultiTileEntityUSBSwitch.java"
+          ],
+          "inventories": [
+            "MultiTileEntityEnderGarbageBin.java",
+            "MultiTileEntityEnderGarbageDump.java",
+            "MultiTileEntityHopper.java",
+            "MultiTileEntityQueueHopper.java"
+          ],
+          "portals": [
+            "MultiTileEntityMiniPortal.java",
+            "MultiTileEntityMiniPortalAether.java",
+            "MultiTileEntityMiniPortalAlfheim.java",
+            "MultiTileEntityMiniPortalAroma.java",
+            "MultiTileEntityMiniPortalAtum.java",
+            "MultiTileEntityMiniPortalBetweenlands.java",
+            "MultiTileEntityMiniPortalCandyCraft.java",
+            "MultiTileEntityMiniPortalCW2AquaCavern.java",
+            "MultiTileEntityMiniPortalCW2Caveland.java",
+            "MultiTileEntityMiniPortalCW2Cavenia.java",
+            "MultiTileEntityMiniPortalCW2Cavern.java",
+            "MultiTileEntityMiniPortalCW2Caveworld.java",
+            "MultiTileEntityMiniPortalDeepDark.java",
+            "MultiTileEntityMiniPortalEnd.java",
+            "MultiTileEntityMiniPortalEndOfTime.java",
+            "MultiTileEntityMiniPortalEnviromine.java",
+            "MultiTileEntityMiniPortalErebus.java",
+            "MultiTileEntityMiniPortalNether.java",
+            "MultiTileEntityMiniPortalTropics.java",
+            "MultiTileEntityMiniPortalTwilight.java"
+          ],
+          "tools": [
+            "MultiTileEntityPlantPot.java"
+          ]
+        }
+      ]
+    }
+  ],
+    "Требуются правки": [
+        "Loader_Books.java",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ]
+}
