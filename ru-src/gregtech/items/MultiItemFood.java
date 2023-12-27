@@ -198,23 +198,24 @@ public class MultiItemFood extends MultiItemRandomWithCompat implements IItemRot
 		RM.Bath       .addRecipe1(T,  0, 16, OM.dust(MT.Kaolinite    ),        tWater    , NF, IL.Clay_Ball_White.get(1));
 		}
 		
-		IL.Tusk         .set(addItem(12400, "Бивень"           , ""                 , OD.itemTusk  , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
-		IL.Tusk_Hoglin  .set(addItem(12401, "Хоглинский бивень", "нет золота"       , OD.itemTusk  , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
-		IL.Tusk_Boar    .set(addItem(12402, "Клык кабана"      , ""                 , OD.itemTusk  , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		IL.Tusk         .set(addItem(12400, "Бивень"           , ""                 , OD.itemTusk              , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		IL.Tusk_Hoglin  .set(addItem(12401, "Хоглинский бивень", "нет золота"       , OD.itemTusk              , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		IL.Tusk_Boar    .set(addItem(12402, "Клык кабана"      , ""                 , OD.itemTusk              , TC.stack(TC.BESTIA, 2), TC.stack(TC.FAMES, 2)));
+		IL.Tusk_Elephant.set(addItem(12403, "Слоновий бивень"  , "Слоновая кость"   , OD.itemTusk, OD.itemIvory, TC.stack(TC.BESTIA, 3), TC.stack(TC.FAMES, 3), TC.stack(TC.LUCRUM, 3)));
 		
-		IL.Hoof         .set(addItem(12500, "Копыто"           , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
-		IL.Hoof_Cow     .set(addItem(12501, "Коровье копыто"   , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
-		IL.Hoof_Horse   .set(addItem(12502, "Лошадиное копыто" , "не достоин гонок" , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
-		IL.Hoof_Mule    .set(addItem(12503, "Копыто мула"      , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
-		IL.Hoof_Donkey  .set(addItem(12504, "Ослиное копыто"   , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
-		IL.Hoof_Deer    .set(addItem(12505, "Оленье копыто"    , ""                 , OD.itemHoof  , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof         .set(addItem(12500, "Копыто"           , ""                 , OD.itemHoof              , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Cow     .set(addItem(12501, "Коровье копыто"   , ""                 , OD.itemHoof              , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Horse   .set(addItem(12502, "Лошадиное копыто" , "не достоин гонок" , OD.itemHoof              , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Mule    .set(addItem(12503, "Копыто мула"      , ""                 , OD.itemHoof              , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Donkey  .set(addItem(12504, "Ослиное копыто"   , ""                 , OD.itemHoof              , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
+		IL.Hoof_Deer    .set(addItem(12505, "Оленье копыто"    , ""                 , OD.itemHoof              , TC.stack(TC.BESTIA, 2), TC.stack(TC.ITER, 2)));
 		
-		IL.Horn         .set(addItem(12600, "Рог"              , ""                 , OD.itemHorn  , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
-		IL.Horn_Cow     .set(addItem(12601, "Коровий рог"      , ""                 , OD.itemHorn  , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
-		IL.Horn_Sheep   .set(addItem(12602, "Бараний рог"      , "from horned Sheep", OD.itemHorn  , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		IL.Horn         .set(addItem(12600, "Рог"              , ""                 , OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		IL.Horn_Cow     .set(addItem(12601, "Коровий рог"      , ""                 , OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		IL.Horn_Sheep   .set(addItem(12602, "Бараний рог"      , "from horned Sheep", OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
 		
-		IL.Antler       .set(addItem(12700, "Оленьи рога"      , ""                 , OD.itemAntler, TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
-		IL.Antler_Deer  .set(addItem(12701, "Красный оленьи рога", "о родной..."    , OD.itemAntler, TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
+		IL.Antler       .set(addItem(12700, "Оленьи рога"      , ""                 , OD.itemAntler            , TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
+		IL.Antler_Deer  .set(addItem(12701, "Красный оленьи рога", "о родной..."    , OD.itemAntler            , TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
 		
 		
 		
@@ -269,33 +270,33 @@ public class MultiItemFood extends MultiItemRandomWithCompat implements IItemRot
 		RM.Centrifuge.addRecipe1(T, 16, 64, new long[] {10000,  1000}                  , IL.Comb_Tera    .get(1), NF   , FL.Concrete                             .make(   L), OM.dust(MT.Basalz, U9)            , OP.stick.mat(MT.Basalz, 1));
 		
 		
-		IL.Food_Lemon                          .set(addItem(    0, "Лимон"                                    , "Не делайте лимонад"         , "cropLemon"                   , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T, PotionsGT.ID_CONDUCTIVE, 300, 0, 70), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Lemon_Sliced                   .set(addItem(    1, "Долька лимона"                            , "Идеально, чтобы поставить свой напиток"                                  , new FoodStat( 0, 0.150F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T, PotionsGT.ID_CONDUCTIVE, 300, 0, 70), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)28);
+		IL.Food_Lemon                          .set(addItem(    0, "Лимон"                                    , "Не делайте лимонад"         , "cropLemon"                 , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T, PotionsGT.ID_CONDUCTIVE, 300, 0, 70), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Lemon_Sliced                   .set(addItem(    1, "Долька лимона"                            , "Идеально, чтобы поставить свой напиток"                   , new FoodStat( 0, 0.150F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T, PotionsGT.ID_CONDUCTIVE, 300, 0, 70), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)28);
 		RM.replicateOrganic( 3,  4, IL.Food_Lemon.get(1));
 		CR.shaped(IL.Food_Lemon_Sliced.get(4), CR.DEF_NCC, "kX", 'X', "cropLemon");
 
 
-		IL.Food_Tomato                         .set(addItem(   10, "Томат"                                    , "То что надо для кетчупа"               , "cropTomato"                  , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Tomato_Sliced                  .set(addItem(   11, "Долька томата"                            , "То что надо для кетчупа"                                               , new FoodStat( 0, 0.150F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)36);
+		IL.Food_Tomato                         .set(addItem(   10, "Томат"                                    , "То что надо для кетчупа"               , "cropTomato"     , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Tomato_Sliced                  .set(addItem(   11, "Долька томата"                            , "То что надо для кетчупа"                                  , new FoodStat( 0, 0.150F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)36);
 		RM.replicateOrganic( 4,  5, IL.Food_Tomato.get(1));
 		CR.shaped(IL.Food_Tomato_Sliced.get(4), CR.DEF_NCC, "kX", 'X', "cropTomato");
 		
 		
-		IL.Food_MTomato                        .set(addItem(   20, "Максимальный томат"                       , "Десять сердечек в одном помидоре"    , "cropTomato"                  , new FoodStat( 9, 1.000F,  50, C+36,  0.30F,   0,   0,   0,  10,   0, EnumAction.eat, null                                 , F, T, F, T, Potion.regeneration.id, 60, 4, 100), TC.stack(TC.MESSIS, 1), TC.stack(TC.SANO, 3), TC.stack(TC.FAMES, 1)));
+		IL.Food_MTomato                        .set(addItem(   20, "Максимальный томат"                       , "Десять сердечек в одном помидоре"    , "cropTomato"       , new FoodStat( 9, 1.000F,  50, C+36,  0.30F,   0,   0,   0,  10,   0, EnumAction.eat, null                                 , F, T, F, T, Potion.regeneration.id, 60, 4, 100), TC.stack(TC.MESSIS, 1), TC.stack(TC.SANO, 3), TC.stack(TC.FAMES, 1)));
 		RM.replicateOrganic( 4,  6, IL.Food_MTomato.get(1));
 		RM.food_can(IL.Food_MTomato.get(1),10, "Canned Max Tomato", IL.CANS_VEGGIE);
 		
 		
-		IL.Food_Onion                          .set(addItem(   30, "Лук"                                      , "Принимая во внимание весь вкус" , "cropOnion"                   , new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Onion_Sliced                   .set(addItem(   31, "Долька лука"                              , "ЛУК, ОБЪЕДИНЯЙСЯ!"                                              , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)31);
+		IL.Food_Onion                          .set(addItem(   30, "Лук"                                      , "Принимая во внимание весь вкус" , "cropOnion"             , new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Onion_Sliced                   .set(addItem(   31, "Долька лука"                              , "ЛУК, ОБЪЕДИНЯЙСЯ!"                                        , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)31);
 		RM.replicateOrganic( 4,  7, IL.Food_Onion.get(1));
 		CR.shaped(IL.Food_Onion_Sliced.get(4), CR.DEF_NCC, "kX", 'X', "cropOnion");
 		
 		
-		IL.Food_Cucumber                       .set(addItem(   40, "Огурец"                                   , "Не морской огурец!", "cropCucumber"                            , new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Cucumber_Sliced                .set(addItem(   41, "Ломтик огурца"                            , "QUEWWWCUMMMBURRR!!!"                                            , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)23);
+		IL.Food_Cucumber                       .set(addItem(   40, "Огурец"                                   , "Это сорт арбуза или сорт тыквы?", "cropCucumber"          , new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   0,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Cucumber_Sliced                .set(addItem(   41, "Ломтик огурца"                            , "Это не нарезанный морской огурец!"                        , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   0,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)23);
 		IL.Food_Pickle                         .set(addItem(   42, "Соленый огурец"                           , "Не морской огурец! И не Рик!", "cropPickle", "foodPickles", new FoodStat( 1, 1.200F,   0, C+36,  0.30F,   4,   0,   0,   4,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.VENEMUM, 1)));
-		IL.Food_Pickle_Sliced                  .set(addItem(   43, "Ломтик соленого огурца"                   , "Вы, кажется, в рассоле."                                    , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   1,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)41);
+		IL.Food_Pickle_Sliced                  .set(addItem(   43, "Ломтик соленого огурца"                   , "Вы, кажется, в рассоле."                                  , new FoodStat( 0, 0.300F,   0, C+36,  0.30F,   1,   0,   0,   1,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)41);
 		RM.replicateOrganic( 4,  8, IL.Food_Cucumber.get(1));
 		RM.replicateOrganic( 4, 13, IL.Food_Pickle.get(1));
 		CR.shaped(IL.Food_Cucumber_Sliced.get(4), CR.DEF_NCC, "kX", 'X', "cropCucumber");
@@ -303,31 +304,31 @@ public class MultiItemFood extends MultiItemRandomWithCompat implements IItemRot
 		CR.shaped(IL.Food_Pickle_Sliced.get(4), CR.DEF_NCC, "kX", 'X', "foodPickles");
 		
 		
-		IL.Food_Chili_Pepper                   .set(addItem(   50, "Перец чили"                               , "Это красный и острый"           , "cropChilipepper"             , new FoodStat( 1, 1.200F, -10, C+40,  0.50F,   0,   0,  10,   0,   0, EnumAction.eat, null                                 , F, T, F, T, PotionsGT.ID_FLAMMABLE, 300, 0, 70, Potion.confusion.id, 200, 1, 40), TC.stack(TC.MESSIS, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.FAMES, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)20);
+		IL.Food_Chili_Pepper                   .set(addItem(   50, "Перец чили"                               , "Это красный и острый"           , "cropChilipepper"        , new FoodStat( 1, 1.200F, -10, C+40,  0.50F,   0,   0,  10,   0,   0, EnumAction.eat, null                                 , F, T, F, T, PotionsGT.ID_FLAMMABLE, 300, 0, 70, Potion.confusion.id, 200, 1, 40), TC.stack(TC.MESSIS, 1), TC.stack(TC.IGNIS, 1), TC.stack(TC.FAMES, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)20);
 		RM.replicateOrganic( 4,  9, IL.Food_Chili_Pepper.get(1));
 		
 		
-		IL.Food_Grapes_Green                   .set(addItem(   60, "Зеленый виноград"                         , "Источник вина"              , "cropGrapeGreen"              , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Raisins_Green                  .set(addItem(   61, "Зеленый изюм"                             , "Сушеный виноград"                , "foodRaisins"                 , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Grapes_Green                   .set(addItem(   60, "Зеленый виноград"                         , "Источник вина"              , "cropGrapeGreen"             , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Raisins_Green                  .set(addItem(   61, "Зеленый изюм"                             , "Сушеный виноград"                , "foodRaisins"           , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
 		RM.replicateOrganic( 3,  5, IL.Food_Grapes_Green.get(1));
 		
-		IL.Food_Grapes_White                   .set(addItem(   63, "Белый виноград"                           , "Источник вина"              , "cropGrapeWhite"              , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Raisins_White                  .set(addItem(   64, "Белый изюм"                               , "Сушеный виноград"                , "foodRaisins"                 , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Grapes_White                   .set(addItem(   63, "Белый виноград"                           , "Источник вина"              , "cropGrapeWhite"             , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Raisins_White                  .set(addItem(   64, "Белый изюм"                               , "Сушеный виноград"                , "foodRaisins"           , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
 		RM.replicateOrganic( 3,  6, IL.Food_Grapes_White.get(1));
 		
-		IL.Food_Grapes_Red                     .set(addItem(   66, "Красный виноград"                         , "Источник вина"              , "cropGrapeRed"                , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Raisins_Red                    .set(addItem(   67, "Красный изюм"                             , "Сушеный виноград"                , "foodRaisins"                 , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Grapes_Red                     .set(addItem(   66, "Красный виноград"                         , "Источник вина"              , "cropGrapeRed"               , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Raisins_Red                    .set(addItem(   67, "Красный изюм"                             , "Сушеный виноград"                , "foodRaisins"           , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
 		RM.replicateOrganic( 3,  7, IL.Food_Grapes_Red.get(1));
 		
-		IL.Food_Grapes_Purple                  .set(addItem(   70, "Фиолетовый виноград"                      , "Источник вина"              , "cropGrapePurple"             , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
-		IL.Food_Raisins_Purple                 .set(addItem(   71, "Фиолетовый изюм"                          , "Сушеный виноград"                , "foodRaisins"                 , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Grapes_Purple                  .set(addItem(   70, "Фиолетовый виноград"                      , "Источник вина"              , "cropGrapePurple"            , new FoodStat( 1, 0.600F,   0, C+36,  0.30F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1)));
+		IL.Food_Raisins_Purple                 .set(addItem(   71, "Фиолетовый изюм"                          , "Сушеный виноград"                , "foodRaisins"           , new FoodStat( 2, 0.600F,   0, C+37,  0.20F,   0,   0,   0,  12,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.FAMES, 1)));
 		RM.replicateOrganic( 3,  8, IL.Food_Grapes_Purple.get(1));
 		
-		IL.Food_Raisins_Chocolate              .set(addItem(   72, "Шоколадный изюм"                          , "Сушеный виноград в шоколаде", "foodChocolateraisins"    , new FoodStat( 3, 1.200F,   0, C+37,  0.20F,   0,   0,   0,  40,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.SANO, 1)));
+		IL.Food_Raisins_Chocolate              .set(addItem(   72, "Шоколадный изюм"                          , "Сушеный виноград в шоколаде", "foodChocolateraisins"       , new FoodStat( 3, 1.200F,   0, C+37,  0.20F,   0,   0,   0,  40,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.MESSIS, 1), TC.stack(TC.VACUOS, 1), TC.stack(TC.SANO, 1)));
 		
 		
-		IL.Food_Carrot                         .set(ST.make(Items.carrot, 1, 0)); FoodsGT.put(ST.make(Items.carrot, 1, W), 0, 0, 0, 8, 0);//                                            , new FoodStat( 5, 1.200F,   0, C+37,  0.10F,   0,   0,   0,   8,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1), TC.stack(TC.IGNIS, 1), Behavior_FeedPig.INSTANCE));
-		IL.Food_Carrot_Sliced                  .set(addItem(   81, "Ломтик моркови"                           , "Нарезанный Гоку"                                                 , new FoodStat( 0, 0.300F,   0, C+37,  0.30F,   0,   0,   0,   2,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)18);
+		IL.Food_Carrot                         .set(ST.make(Items.carrot, 1, 0)); FoodsGT.put(ST.make(Items.carrot, 1, W), 0, 0, 0, 8, 0);//                                , new FoodStat( 5, 1.200F,   0, C+37,  0.10F,   0,   0,   0,   8,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1), TC.stack(TC.FAMES, 1), TC.stack(TC.IGNIS, 1), Behavior_FeedPig.INSTANCE));
+		IL.Food_Carrot_Sliced                  .set(addItem(   81, "Ломтик моркови"                           , "Нарезанный Гоку"                                           , new FoodStat( 0, 0.300F,   0, C+37,  0.30F,   0,   0,   0,   2,   0, EnumAction.eat, null                                 , F, T, F, T), TC.stack(TC.HERBA, 1))); Sandwiches.INGREDIENTS.put(last(), (byte)18);
 		RM.replicateOrganic( 4,  9, IL.Food_Carrot.get(1));
 		CR.shaped(IL.Food_Carrot_Sliced.get(4), CR.DEF_NCC, "kX", 'X', "cropCarrot");
 		
