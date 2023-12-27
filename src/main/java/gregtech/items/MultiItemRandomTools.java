@@ -49,6 +49,8 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
 
+import java.util.Random;
+
 import static gregapi.data.CS.*;
 import static gregapi.data.OP.chunkGt;
 
@@ -554,11 +556,11 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		RM.Canner.addRecipe1(T, 16, 64, IL.Geiger_Counter_Empty.get(1), FL.Argon .make(1000), NF, IL.Geiger_Counter.get(1));
 		
 		
-		IL.Compass_North                   .set(addItem(11000, "Compass (Север)" , "Указывает на сервер"                                , OD.itemCompass, new Behavior_Switch_Metadata(11001, T, T), OM.data(ST.make(Items.compass, 1, 0)), TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO                                              , 2))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Face                    .set(addItem(11001, "Compass (Фронт)" , "Указывает в направлении, в которое вы смотрите"     , OD.itemCompass, new Behavior_Switch_Metadata(11002, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.COGNITIO, 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Spawn                   .set(addItem(11002, "Compass (Спавн)" , "Указывает на СПАВН как обычный компас"              , OD.itemCompass, new Behavior_Switch_Metadata(11003, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.HUMANUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Center                  .set(addItem(11003, "Compass (Центр)" , "Указывает на центр мира"                            , OD.itemCompass, new Behavior_Switch_Metadata(11004, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.TERRA   , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
-		IL.Compass_Death                   .set(addItem(11004, "Compass (Смерть)", "Указывает на последнее место смерти"                , OD.itemCompass, new Behavior_Switch_Metadata(11000, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.MORTUUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_North                   .set(addItem(11000, "Компас (Север)" , "Указывает на сервер"                                , OD.itemCompass, new Behavior_Switch_Metadata(11001, T, T), OM.data(ST.make(Items.compass, 1, 0)), TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO                                              , 2))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Face                    .set(addItem(11001, "Компас (Фронт)" , "Указывает в направлении, в которое вы смотрите"     , OD.itemCompass, new Behavior_Switch_Metadata(11002, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.COGNITIO, 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Spawn                   .set(addItem(11002, "Компас (Спавн)" , "Указывает на СПАВН как обычный компас"              , OD.itemCompass, new Behavior_Switch_Metadata(11003, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.HUMANUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Center                  .set(addItem(11003, "Компас (Центр)" , "Указывает на центр мира"                            , OD.itemCompass, new Behavior_Switch_Metadata(11004, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.TERRA   , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
+		IL.Compass_Death                   .set(addItem(11004, "Компас (Смерть)", "Указывает на последнее место смерти"                , OD.itemCompass, new Behavior_Switch_Metadata(11000, T, T), OM.data(ST.make(Items.compass, 1, 0)), TD.Creative.HIDDEN, TC.stack(TC.METALLUM, 2), TC.stack(TC.MAGNETO, 1), TC.stack(TC.MORTUUS , 1))); CR.shapeless(ST.make(Items.compass, 1, 0), CR.DEF, new Object[] {last()});
 		ItemsGT.addNEIRedirects(IL.Compass_North.get(1), IL.Compass_Face.get(1), IL.Compass_Spawn.get(1), IL.Compass_Center.get(1), IL.Compass_Death.get(1));
 		CR.shapeless(IL.Compass_North.get(1), CR.DEF, new Object[] {Items.compass});
 		
@@ -630,7 +632,21 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		case 11004: aTarget = LAST_DEATH_OF_THE_PLAYER; break;
 		default: return getIconIndex(aStack);
 		}
-		return aTarget == null ? Textures.ItemIcons.COMPASS[(int)(CLIENT_TIME % Textures.ItemIcons.COMPASS.length)].getIcon(0) : Textures.ItemIcons.COMPASS[UT.Code.roundDown(0.5+Textures.ItemIcons.COMPASS.length*(361170+aPlayer.rotationYaw-Math.atan2(aTarget.posZ+0.5-aPlayer.posZ, aTarget.posX+0.5-aPlayer.posX)*180/Math.PI)/360)%Textures.ItemIcons.COMPASS.length].getIcon(0);
+		// Spin to Win!
+		if (aTarget   == null) return Textures.ItemIcons.COMPASS[(int)(CLIENT_TIME % Textures.ItemIcons.COMPASS.length)].getIcon(0);
+		double tDistance = aTarget.getDistanceSquared(UT.Code.roundDown(aPlayer.posX), aTarget.posY, UT.Code.roundDown(aPlayer.posZ));
+		if (tDistance <     1) return Textures.ItemIcons.COMPASS[(int)(CLIENT_TIME % Textures.ItemIcons.COMPASS.length)].getIcon(0);
+		// Point to Target, but with a little jiggle for getting closer!
+		int tIndex = Textures.ItemIcons.COMPASS.length + (UT.Code.roundDown(0.5+Textures.ItemIcons.COMPASS.length*(361170+aPlayer.rotationYaw-Math.atan2(aTarget.posZ+0.5-aPlayer.posZ, aTarget.posX+0.5-aPlayer.posX)*180/Math.PI)/360)%Textures.ItemIcons.COMPASS.length);
+		if (tDistance <     4) return Textures.ItemIcons.COMPASS[(tIndex + (                            new Random(CLIENT_TIME   ).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <    16) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  2 != 0 ? 0 : new Random(CLIENT_TIME/ 2).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <   256) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  3 != 0 ? 0 : new Random(CLIENT_TIME/ 3).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <  1024) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  4 != 0 ? 0 : new Random(CLIENT_TIME/ 4).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <  4096) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  5 != 0 ? 0 : new Random(CLIENT_TIME/ 5).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance < 16384) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME % 10 != 0 ? 0 : new Random(CLIENT_TIME/10).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance < 65536) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME % 20 != 0 ? 0 : new Random(CLIENT_TIME/20).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		// Point straight to Target!
+		return Textures.ItemIcons.COMPASS[tIndex % Textures.ItemIcons.COMPASS.length].getIcon(0);
 	}
 	
 	@Override
@@ -647,7 +663,21 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		case 11004: aTarget = LAST_DEATH_OF_THE_PLAYER; break;
 		default: return getIconFromDamage(aMetaData);
 		}
-		return aTarget == null ? Textures.ItemIcons.COMPASS[(int)(CLIENT_TIME % Textures.ItemIcons.COMPASS.length)].getIcon(0) : Textures.ItemIcons.COMPASS[UT.Code.roundDown(0.5+Textures.ItemIcons.COMPASS.length*(361170+aPlayer.rotationYaw-Math.atan2(aTarget.posZ+0.5-aPlayer.posZ, aTarget.posX+0.5-aPlayer.posX)*180/Math.PI)/360)%Textures.ItemIcons.COMPASS.length].getIcon(0);
+		// Spin to Win!
+		if (aTarget   == null) return Textures.ItemIcons.COMPASS[(int)(CLIENT_TIME % Textures.ItemIcons.COMPASS.length)].getIcon(0);
+		double tDistance = aTarget.getDistanceSquared(UT.Code.roundDown(aPlayer.posX), aTarget.posY, UT.Code.roundDown(aPlayer.posZ));
+		if (tDistance <     1) return Textures.ItemIcons.COMPASS[(int)(CLIENT_TIME % Textures.ItemIcons.COMPASS.length)].getIcon(0);
+		// Point to Target, but with a little jiggle for getting closer!
+		int tIndex = Textures.ItemIcons.COMPASS.length + (UT.Code.roundDown(0.5+Textures.ItemIcons.COMPASS.length*(361170+aPlayer.rotationYaw-Math.atan2(aTarget.posZ+0.5-aPlayer.posZ, aTarget.posX+0.5-aPlayer.posX)*180/Math.PI)/360)%Textures.ItemIcons.COMPASS.length);
+		if (tDistance <     4) return Textures.ItemIcons.COMPASS[(tIndex + (                            new Random(CLIENT_TIME   ).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <    16) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  2 != 0 ? 0 : new Random(CLIENT_TIME/ 2).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <   256) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  3 != 0 ? 0 : new Random(CLIENT_TIME/ 3).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <  1024) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  4 != 0 ? 0 : new Random(CLIENT_TIME/ 4).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance <  4096) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME %  5 != 0 ? 0 : new Random(CLIENT_TIME/ 5).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance < 16384) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME % 10 != 0 ? 0 : new Random(CLIENT_TIME/10).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		if (tDistance < 65536) return Textures.ItemIcons.COMPASS[(tIndex + (CLIENT_TIME % 20 != 0 ? 0 : new Random(CLIENT_TIME/20).nextInt(3)-1)) % Textures.ItemIcons.COMPASS.length].getIcon(0);
+		// Point straight to Target!
+		return Textures.ItemIcons.COMPASS[tIndex % Textures.ItemIcons.COMPASS.length].getIcon(0);
 	}
 	
 	@Override

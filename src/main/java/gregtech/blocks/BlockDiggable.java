@@ -48,13 +48,13 @@ public class BlockDiggable extends BlockBaseMeta implements IBlockOnWalkOver {
 	
 	public BlockDiggable(String aUnlocalised) {
 		super(null, aUnlocalised, Material.ground, soundTypeGravel, 7, Textures.BlockIcons.DIGGABLES);
-		LH.add(getUnlocalizedName()+ ".0", "Грязь");
-		LH.add(getUnlocalizedName()+ ".1", "Коричневая глина");
-		LH.add(getUnlocalizedName()+ ".2", "Торф");
-		LH.add(getUnlocalizedName()+ ".3", "Красная глина");
-		LH.add(getUnlocalizedName()+ ".4", "Желтая глина");
-		LH.add(getUnlocalizedName()+ ".5", "Синяя глина");
-		LH.add(getUnlocalizedName()+ ".6", "Белая глина");
+		LH.add(getUnlocalizedName()+ ".0", "Mud");
+		LH.add(getUnlocalizedName()+ ".1", "Brown Clay");
+		LH.add(getUnlocalizedName()+ ".2", "Turf");
+		LH.add(getUnlocalizedName()+ ".3", "Red Clay");
+		LH.add(getUnlocalizedName()+ ".4", "Yellow Clay");
+		LH.add(getUnlocalizedName()+ ".5", "Blue Clay");
+		LH.add(getUnlocalizedName()+ ".6", "White Clay");
 		
 		MT.UNUSED.Mud  .mTextureSolid = BlockTextureCopied.get(this, SIDE_TOP, 0);
 		MT.ClayBrown   .mTextureSolid = BlockTextureCopied.get(this, SIDE_TOP, 1);

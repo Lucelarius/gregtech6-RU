@@ -2805,7 +2805,7 @@ public class UT {
 			return addStackToPlayerInventory(aPlayer, aStack, F);
 		}
 		public static boolean addStackToPlayerInventory(EntityPlayer aPlayer, ItemStack aStack, boolean aCurrentSlotFirst) {
-			return addStackToPlayerInventory(aPlayer, aPlayer.inventory, aStack, aCurrentSlotFirst);
+			return aPlayer != null && addStackToPlayerInventory(aPlayer, aPlayer.inventory, aStack, aCurrentSlotFirst);
 		}
 		public static boolean addStackToPlayerInventory(EntityPlayer aPlayer, IInventory aInventory, ItemStack aStack, boolean aCurrentSlotFirst) {
 			if (aInventory != null && ST.valid(aStack)) {
@@ -3120,7 +3120,7 @@ public class UT {
 			}
 			if (aEntity.getClass().getName().indexOf(".") < 0) return F;
 			String tClassName = UT.Reflection.getLowercaseClass(aEntity);
-			return tClassName.contains("wwolf") || tClassName.contains("villagerwere") || tClassName.contains("wolfman") || tClassName.contains("werewolf") || tClassName.contains("alphawolf") || tClassName.contains("tamewere") || tClassName.contains("minotaur") || tClassName.contains("minoshroom");
+			return tClassName.contains("wwolf") || tClassName.contains("yeti") || tClassName.contains("villagerwere") || tClassName.contains("wolfman") || tClassName.contains("werewolf") || tClassName.contains("alphawolf") || tClassName.contains("tamewere") || tClassName.contains("minotaur") || tClassName.contains("minoshroom");
 		}
 		
 		public static float getHeatDamageFromItem(ItemStack aStack) {

@@ -47,6 +47,10 @@ public class LoaderItemList implements Runnable {
 	
 	@Override
 	public void run() {
+		BlocksGT.EtFu_Beetroot_Crop              = GameRegistry.findBlock(MD.EtFu.mID, "beetroots");
+		BlocksGT.EtFu_Deepslate_Redstone_Ore     = GameRegistry.findBlock(MD.EtFu.mID, "deepslate_redstone_ore");
+		BlocksGT.EtFu_Deepslate_Lit_Redstone_Ore = GameRegistry.findBlock(MD.EtFu.mID, "deepslate_lit_redstone_ore");
+		
 		GarbageGT.BLACKLIST.add(ST.make(MD.TC, "ItemThaumonomicon"              , 1,42));
 		GarbageGT.BLACKLIST.add(ST.make(MD.RT, "opSpectreKey"                   , 1, W));
 		
@@ -554,8 +558,20 @@ public class LoaderItemList implements Runnable {
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.CHSL, "marble"                         , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.CHSL, "limestone"                      , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "stone"                          , null));
-		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "tuff"                           , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate"                      , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "copper_ore"                     , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_coal_ore"             , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_iron_ore"             , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_gold_ore"             , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_copper_ore"           , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_diamond_ore"          , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_lapis_ore"            , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(BlocksGT.EtFu_Deepslate_Redstone_Ore);
+		StoneLayer.REPLACEABLE_BLOCKS.add(BlocksGT.EtFu_Deepslate_Lit_Redstone_Ore);
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_emerald_ore"          , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "modded_deepslate_ore"           , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_thaumcraft_ore"       , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_certus_quartz_ore"    , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.GaSu, "18Stones"                       , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.GaSu, "basalt"                         , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.BOTA, "stone"                          , null));
@@ -601,6 +617,7 @@ public class LoaderItemList implements Runnable {
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.ore_tungsten"               , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.ore_uranium"                , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.ore_uranium_scorched"       , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.cluster_copper"             , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.cluster_iron"               , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.cluster_titanium"           , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.cluster_aluminium"          , null));
@@ -691,10 +708,6 @@ public class LoaderItemList implements Runnable {
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.DRPG, "skythernOre"                    , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.DRPG, "mortumOre"                      , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.DRPG, "arcaniumOre"                    , null));
-		
-		
-		BlocksGT.EtFu_Deepslate_Redstone_Ore     = GameRegistry.findBlock(MD.EtFu.mID, "deepslate_redstone_ore");
-		BlocksGT.EtFu_Deepslate_Lit_Redstone_Ore = GameRegistry.findBlock(MD.EtFu.mID, "deepslate_lit_redstone_ore");
 		
 		
 		MT.H2O.mTextureDust   = MT.Steam.mTextureDust   = MT.FreshWater.mTextureDust   = MT.DistWater.mTextureDust   = MT.Ice.mTextureDust   = MT.Snow.mTextureDust   = MT.Snow.mTextureSolid = BlockTextureCopied.get(Blocks.snow);
@@ -912,6 +925,9 @@ public class LoaderItemList implements Runnable {
 		IL.TC_Block_Tallow                      .set(ST.make(MD.TC, "blockCosmeticSolid"                    , 1, 5), new OreDictItemData(MT.Tallow, 9*U));
 		IL.TC_Block_Flesh                       .set(ST.make(MD.TC, "blockTaint"                            , 1, 2), new OreDictItemData(MT.MeatRotten, 18*U, MT.Bone, U));
 		IL.TC_Block_Air                         .set(ST.make(MD.TC, "blockAiry"                             , 1, 0));
+		IL.TC_Loot_Common                       .set(ST.make(MD.TC, "ItemLootBag"                           , 1, 0));
+		IL.TC_Loot_Uncommon                     .set(ST.make(MD.TC, "ItemLootBag"                           , 1, 1));
+		IL.TC_Loot_Rare                         .set(ST.make(MD.TC, "ItemLootBag"                           , 1, 2));
 		IL.TC_Phial                             .set(ST.make(MD.TC, "ItemEssence"                           , 1, 0), new OreDictItemData(ANY.Clay, U4, MT.Glass, 3*U4), CR.DELATE);
 		IL.TC_Gold_Ring                         .set(ST.make(MD.TC, "ItemBaubleBlanks"                      , 1, 1), OP.ring.dat(MT.Au), CR.DELATE);
 		IL.TC_Gold_Coin                         .set(ST.make(MD.TC, "ItemResource"                          , 1,18), new OreDictItemData(MT.Au, U9));
@@ -947,8 +963,9 @@ public class LoaderItemList implements Runnable {
 		IL.TF_Cube_of_Annihilation              .set(ST.make(MD.TF, "item.cubeOfAnnihilation"               , 1, 0));
 		IL.TF_Pick_Giant                        .set(ST.make(MD.TF, "item.giantPick"                        , 1, 0), new OreDictItemData(MT.Stone, U*1728, MT.WOODS.Oak, U*1024, MT.Bark, U*128).setUseVanillaDamage());
 		IL.TF_Sword_Giant                       .set(ST.make(MD.TF, "item.giantSword"                       , 1, 0), new OreDictItemData(MT.Stone, U*1152, MT.WOODS.Oak, U* 512, MT.Bark, U* 64).setUseVanillaDamage());
-		IL.TF_Fiddlehead                        .set(ST.make(MD.TF, "tile.TFPlant"                          , 1, 8));
+		IL.TF_Mushgloom_Huge                    .set(ST.make(MD.TF, "tile.HugeGloomBlock"                   , 1, 0), new OreDictItemData(MT.Glowstone, U));
 		IL.TF_Mushgloom                         .set(ST.make(MD.TF, "tile.TFPlant"                          , 1, 9), new OreDictItemData(MT.Glowstone, U4), OD.listAllmushroom);
+		IL.TF_Fiddlehead                        .set(ST.make(MD.TF, "tile.TFPlant"                          , 1, 8));
 		IL.TF_Tall_Grass                        .set(ST.make(MD.TF, "tile.TFPlant"                          , 1,10), null, OD.itemGrassTall);
 		IL.TF_Dry_Bush                          .set(ST.make(MD.TF, "tile.TFPlant"                          , 1,11));
 		IL.TF_Roots                             .set(ST.make(MD.TF, "tile.TFRoots"                          , 1, 0), new OreDictItemData(MT.Wood, U*3));
@@ -993,7 +1010,11 @@ public class LoaderItemList implements Runnable {
 		IL.TF_Maze_Map_Focus                    .set(ST.make(MD.TF, "item.mazeMapFocus"                     , 1, 0));
 		IL.TF_Ore_Map                           .set(ST.make(MD.TF, "item.oreMap"                           , 1, W), new OreDictItemData(MT.Paper, U*8), OD.paperMap);
 		IL.TF_Ore_Map_Empty                     .set(ST.make(MD.TF, "item.emptyOreMap"                      , 1, W), new OreDictItemData(MT.Paper, U*8), OD.paperMap);
+
 		
+		// Fixing the Drops of this one.
+		BlocksGT.blockToDrop.put(IL.TF_Mushgloom.item(), 0, IL.TF_Mushgloom.get(3));
+		BlocksGT.blockToSilk.put(IL.TF_Mushgloom.item(), 0, IL.TF_Mushgloom_Huge.get(1));
 		// Vanilla Maps are stackable, TF forgot to fix that lol.
 		if (IL.TF_Magic_Map.exists()) IL.TF_Magic_Map.item().setMaxStackSize(64);
 		if (IL.TF_Maze_Map .exists()) IL.TF_Maze_Map .item().setMaxStackSize(64);
@@ -1216,6 +1237,13 @@ public class LoaderItemList implements Runnable {
 		IL.MoCr_Turtle_Raw                      .set(ST.make(MD.MoCr, "turtleraw"                           , 1, 0), new OreDictItemData(MT.MeatRaw     , U*2, MT.Bone, U9), "foodTurtleraw");
 		
 		
+		IL.WiMo_Infected_Meat                   .set(ST.make(MD.WiMo, "infected_flesh"                      , 1, 0), new OreDictItemData(MT.MeatRotten  , U*2, MT.Bone, U9));
+		IL.WiMo_Thick_Bone                      .set(ST.make(MD.WiMo, "thick_bone"                          , 1, 0), new OreDictItemData(MT.Bone, U*4));
+		
+		
+		IL.Birb_Egg_Shell                       .set(ST.make(MD.Birb, "eggshell"                            , 1, 0), new OreDictItemData(MT.Bone, U9));
+		
+		
 		IL.MaCu_Dye_White                       .set(ST.make(MD.MaCu, "materials"                           , 1,27), null, DYE_OREDICTS_MIXABLE[DYE_INDEX_White]);
 		IL.MaCu_Dye_Blue                        .set(ST.make(MD.MaCu, "materials"                           , 1,28), null, DYE_OREDICTS_MIXABLE[DYE_INDEX_Blue]);
 		IL.MaCu_Dye_Green                       .set(ST.make(MD.MaCu, "materials"                           , 1,29), null, DYE_OREDICTS_MIXABLE[DYE_INDEX_Green]);
@@ -1283,6 +1311,16 @@ public class LoaderItemList implements Runnable {
 		IL.NeLi_Budding_Green                   .set(ST.make(MD.NeLi, "NetherCrystal"                       , 1, 7), new OreDictItemData(MT.FluoriteGreen  , U*4));
 		IL.NeLi_Budding_Yellow                  .set(ST.make(MD.NeLi, "NetherCrystal"                       , 1, 8), new OreDictItemData(MT.FluoriteYellow , U*4));
 		IL.NeLi_Budding_Magenta                 .set(ST.make(MD.NeLi, "NetherCrystal"                       , 1, 9), new OreDictItemData(MT.FluoriteMagenta, U*4));
+		IL.NeLi_Cluster_White                   .set(ST.make(MD.NeLi, "CrystalClusterWhite"                 , 1, 0), new OreDictItemData(MT.FluoriteWhite  , U  ));
+		IL.NeLi_Cluster_Blue                    .set(ST.make(MD.NeLi, "CrystalClusterBlue"                  , 1, 0), new OreDictItemData(MT.FluoriteBlue   , U  ));
+		IL.NeLi_Cluster_Green                   .set(ST.make(MD.NeLi, "CrystalClusterGreen"                 , 1, 0), new OreDictItemData(MT.FluoriteGreen  , U  ));
+		IL.NeLi_Cluster_Yellow                  .set(ST.make(MD.NeLi, "CrystalClusterYellow"                , 1, 0), new OreDictItemData(MT.FluoriteYellow , U  ));
+		IL.NeLi_Cluster_Magenta                 .set(ST.make(MD.NeLi, "CrystalClusterMagenta"               , 1, 0), new OreDictItemData(MT.FluoriteMagenta, U  ));
+		IL.NeLi_Clu2ter_White                   .set(ST.make(MD.NeLi, "CrystalClusterWhite"                 , 1, 1), new OreDictItemData(MT.FluoriteWhite  , U*3));
+		IL.NeLi_Clu2ter_Blue                    .set(ST.make(MD.NeLi, "CrystalClusterBlue"                  , 1, 1), new OreDictItemData(MT.FluoriteBlue   , U*3));
+		IL.NeLi_Clu2ter_Green                   .set(ST.make(MD.NeLi, "CrystalClusterGreen"                 , 1, 1), new OreDictItemData(MT.FluoriteGreen  , U*3));
+		IL.NeLi_Clu2ter_Yellow                  .set(ST.make(MD.NeLi, "CrystalClusterYellow"                , 1, 1), new OreDictItemData(MT.FluoriteYellow , U*3));
+		IL.NeLi_Clu2ter_Magenta                 .set(ST.make(MD.NeLi, "CrystalClusterMagenta"               , 1, 1), new OreDictItemData(MT.FluoriteMagenta, U*3));
 		IL.NeLi_Lamp_White                      .set(ST.make(MD.NeLi, "CrystalLamp"                         , 1, 0), new OreDictItemData(MT.FluoriteWhite  , U*4, ANY.Glowstone, U*4), CR.DELATE);
 		IL.NeLi_Lamp_Blue                       .set(ST.make(MD.NeLi, "CrystalLamp"                         , 1, 1), new OreDictItemData(MT.FluoriteBlue   , U*4, ANY.Glowstone, U*4), CR.DELATE);
 		IL.NeLi_Lamp_Green                      .set(ST.make(MD.NeLi, "CrystalLamp"                         , 1, 2), new OreDictItemData(MT.FluoriteGreen  , U*4, ANY.Glowstone, U*4), CR.DELATE);
@@ -1377,6 +1415,8 @@ public class LoaderItemList implements Runnable {
 		IL.EtFu_Chorus_Popped                   .set(ST.make(MD.EtFu, "chorus_fruit_popped"                 , 1, 0));
 		IL.EtFu_Rabbit_Foot                     .set(ST.make(MD.EtFu, "rabbit_foot"                         , 1, 0));
 		IL.EtFu_Beet_Seeds                      .set(ST.make(MD.EtFu, "beetroot_seeds"                      , 1, 0), null, "seedBeet");
+		IL.EtFu_Sus_Stew                        .set(ST.make(MD.EtFu, "suspicious_stew"                     , 1, 0));
+		IL.EtFu_Bottle_Honey                    .set(ST.make(MD.EtFu, "honey_bottle"                        , 1, 0), null, OD.container250honey);
 		IL.EtFu_Dragon_Breath                   .set(ST.make(MD.EtFu, "dragon_breath"                       , 1, 0));
 		IL.EtFu_Lingering_Potion                .set(ST.make(MD.EtFu, "lingering_potion"                    , 1, 0));
 		IL.EtFu_Wither_Rose                     .set(ST.make(MD.EtFu, "wither_rose"                         , 1, 0), null, OD.flower, OD.flowerWither);
@@ -1457,6 +1497,8 @@ public class LoaderItemList implements Runnable {
 		if (IL.EtFu_Block_Copper    .exists()) MT.Cu            .mTextureSolid = BlockTextureCopied.get(IL.EtFu_Block_Copper    .block(), 0);
 		if (IL.EtFu_Block_Copper_Cut.exists()) MT.AnnealedCopper.mTextureSolid = BlockTextureCopied.get(IL.EtFu_Block_Copper_Cut.block(), 4);
 		if (IL.EtFu_Lingering_Potion.exists()) IL.EtFu_Lingering_Potion.item().setContainerItem(Items.glass_bottle);
+		if (IL.EtFu_Bottle_Honey    .exists()) IL.EtFu_Bottle_Honey    .item().setContainerItem(Items.glass_bottle);
+		if (IL.EtFu_Sus_Stew        .exists()) IL.EtFu_Sus_Stew        .item().setContainerItem(Items.bowl);
 		
 		
 		IL.GaSu_Granite                         .set(ST.make(MD.GaSu, "18Stones"                            , 1, 1), new OreDictItemData(MT.STONES.Granite   , U*9), OP.stone.dat(MT.STONES.Granite   ), CR.DELATE);

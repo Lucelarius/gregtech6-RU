@@ -62,10 +62,29 @@ public class Loader_Worldgen implements Runnable {
 		, new StoneLayerOres(MT.Emerald                                 , F, U64,  0, 32, ST.block(MD.EtFu, "deepslate_emerald_ore"), BIOMES_MOUNTAINS)
 		, new StoneLayerOres(MT.Diamond                                 , F, U64,  0, 12, ST.block(MD.EtFu, "deepslate_diamond_ore"), BIOMES_JUNGLE, BIOMES_VOLCANIC)
 		, new StoneLayerOres(MT.Lapis                                   , F, U12, 16, 24, ST.block(MD.EtFu, "deepslate_lapis_ore"), BIOMES_FROZEN, BIOMES_TAIGA)
+		, new StoneLayerOres(MT.Amber                                   , F, U32, 16, 24, ST.block(MD.EtFu, "deepslate_thaumcraft_ore"), 7, BIOMES_OCEAN_BEACH)
 		, new StoneLayerOres(MT.Redstone                                , F, U16,  0, 20, ST.block(MD.EtFu, "deepslate_redstone_ore"))
+		, new StoneLayerOres(MT.OREMATS.Cinnabar                        , F, U64,  0, 20, ST.block(MD.EtFu, "deepslate_thaumcraft_ore"), 0, BIOMES_MESA, BIOMES_TAIGA, BIOMES_VOLCANIC, BIOMES_MAGICAL)
+		, new StoneLayerOres(MT.OREMATS.Cooperite                       , F, U64,  0, 12, ST.block(MD.EtFu, "modded_deepslate_ore"), 5, BIOMES_VOLCANIC)
+		, new StoneLayerOres(MT.Mithril                                 , F, U64,  0, 12, ST.block(MD.EtFu, "modded_deepslate_ore"), 6, BIOMES_MAGICAL)
+		, new StoneLayerOres(MT.OREMATS.Uraninite                       , F, U64,  0, 12, ST.block(MD.EtFu, "modded_deepslate_ore"), 7, BIOMES_JUNGLE, BIOMES_RADIOACTIVE)
+		, new StoneLayerOres(MT.Th                                      , F, U64, 10, 20, ST.block(MD.EtFu, "modded_deepslate_ore"), 8, BIOMES_JUNGLE, BIOMES_RADIOACTIVE)
+		, new StoneLayerOres(MT.OREMATS.Scheelite                       , F, U64,  0, 12, ST.block(MD.EtFu, "modded_deepslate_ore"), 9, BIOMES_FROZEN)
+		, new StoneLayerOres(MT.TiO2                                    , F, U64,  0, 12, ST.block(MD.EtFu, "modded_deepslate_ore"),10, BIOMES_DESERT)
 		, new StoneLayerOres(MT.Au                                      , F, U32,  0, 16, ST.block(MD.EtFu, "deepslate_gold_ore"), BIOMES_MESA)
+		, new StoneLayerOres(MT.OREMATS.Bauxite                         , F, U32, 16, 32, ST.block(MD.EtFu, "modded_deepslate_ore"), 0, BIOMES_PLAINS)
+		, new StoneLayerOres(MT.MgCO3                                   , F, U32, 10, 20, ST.block(MD.EtFu, "modded_deepslate_ore"), 12, BIOMES_DESERT, BIOMES_VOLCANIC)
+		, new StoneLayerOres(MT.OREMATS.Borax                           , F, U32, 10, 20, ST.block(MD.EtFu, "modded_deepslate_ore"), 13, BIOMES_OCEAN, BIOMES_RIVER_LAKE)
+		, new StoneLayerOres(MT.OREMATS.Galena                          , F, U32,  0, 16, ST.block(MD.EtFu, "modded_deepslate_ore"), 2, BIOMES_MOUNTAINS)
+		, new StoneLayerOres(MT.Pb                                      , F, U16,  0, 32, ST.block(MD.EtFu, "modded_deepslate_ore"), 3, BIOMES_MOUNTAINS, BIOMES_WOODS)
 		, new StoneLayerOres(MT.Cu                                      , F, U16,  0, 32, ST.block(MD.EtFu, "deepslate_copper_ore"), BIOMES_DESERT, BIOMES_SAVANNA)
-		, new StoneLayerOres(MT.Fe                                      , F, U16,  0, 32, ST.block(MD.EtFu, "deepslate_iron_ore"), BIOMES_SWAMP, BIOMES_WOODS)
+		, new StoneLayerOres(MT.OREMATS.Cassiterite                     , F, U16,  0, 32, ST.block(MD.EtFu, "modded_deepslate_ore"), 1, BIOMES_FROZEN, BIOMES_JUNGLE)
+		, new StoneLayerOres(MT.OREMATS.Sphalerite                      , F, U16,  0, 32, ST.block(MD.EtFu, "modded_deepslate_ore"), 11, BIOMES_SAVANNA, BIOMES_SWAMP)
+		, new StoneLayerOres(MT.OREMATS.BrownLimonite                   , F, U16,  0, 32, ST.block(MD.EtFu, "deepslate_iron_ore"), BIOMES_SHROOM)
+		, new StoneLayerOres(MT.OREMATS.YellowLimonite                  , F, U16,  0, 32, ST.block(MD.EtFu, "deepslate_iron_ore"), BIOMES_SWAMP)
+		, new StoneLayerOres(MT.Fe2O3                                   , F, U16,  0, 32, ST.block(MD.EtFu, "deepslate_iron_ore"), BIOMES_WOODS)
+		, new StoneLayerOres(MT.OREMATS.Garnierite                      , F, U16,  0, 32, ST.block(MD.EtFu, "modded_deepslate_ore"), 4, BIOMES_SHROOM)
+		, new StoneLayerOres(MT.OREMATS.Pentlandite                     , F, U16,  0, 32, ST.block(MD.EtFu, "modded_deepslate_ore"), 4, BIOMES_SWAMP)
 		, new StoneLayerOres(MT.Coal                                    , F, U16,  0, 32, ST.block(MD.EtFu, "deepslate_coal_ore"), BIOMES_PLAINS, BIOMES_SHROOM)
 		, MD.Salt    .mLoaded ? new StoneLayerOres(MT.NaCl              , F, U32, 20, 32, ST.block(MD.Salt, "saltDeepslateOre")) : null
 		,!MT.Nikolite.mHidden ? new StoneLayerOres(MT.Nikolite          , F, U32,  0, 20) : null
@@ -253,10 +272,11 @@ public class Loader_Worldgen implements Runnable {
 		StoneLayer.LAYERS.add(new StoneLayer(BlocksGT.Marble, MT.STONES.Marble, ST.block(MD.EB, "enhancedbiomes.tile.stoneEB"), 7, ST.block(MD.EB, "enhancedbiomes.tile.stoneCobbleEB"), 7));
 		StoneLayer.LAYERS.add(new StoneLayer(BlocksGT.Marble, MT.STONES.Marble, ST.block(MD.PFAA, "strongStone"), 5, ST.block(MD.PFAA, "strongCobble"), 5));
 		StoneLayer.LAYERS.add(new StoneLayer(BlocksGT.Marble, MT.STONES.Marble, ST.block(MD.UB, "metamorphicStone"), 2+8, ST.block(MD.UB, "metamorphicCobblestone"), 2
+		, new StoneLayerOres(MT.OREMATS.Cassiterite     , U16, 20, 80)
 		, new StoneLayerOres(MT.Dioptase                , U64, 24, 48, BIOMES_MOUNTAINS)
 		));
 		StoneLayer.LAYERS.add(new StoneLayer(BlocksGT.Marble
-		, new StoneLayerOres(MT.OREMATS.Cassiterite     , U16, 40, 80)
+		, new StoneLayerOres(MT.OREMATS.Cassiterite     , U16, 20, 80)
 		, new StoneLayerOres(MT.OREMATS.Stannite        , U16, 38, 82)
 		, new StoneLayerOres(MT.OREMATS.Kesterite       , U16, 38, 82)
 		, new StoneLayerOres(MT.OREMATS.Sphalerite      , U8 , 10, 30)
@@ -632,49 +652,49 @@ public class Loader_Worldgen implements Runnable {
 		Block
 		tBlock = BlocksGT.RockOres;
 		if (tBlock != null && tBlock != NB) {
-		new WorldgenOresVanilla("twilight.ore.anthracite"       , T, tBlock,  0,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.lignite"          , T, tBlock,  1,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.salt"             , T, tBlock,  2,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.rocksalt"         , T, tBlock,  3,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.bauxite"          , T, tBlock,  4,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.oilshale"         , T, tBlock,  5,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.gypsum"           , T, tBlock,  6,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.milkyquartz"      , T, tBlock,  7,  1, 50, 100, 16, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.anthracite"       , T, tBlock,  0,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.lignite"          , T, tBlock,  1,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.salt"             , T, tBlock,  2,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.rocksalt"         , T, tBlock,  3,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.bauxite"          , T, tBlock,  4,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.oilshale"         , T, tBlock,  5,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.gypsum"           , T, tBlock,  6,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.milkyquartz"      , T, tBlock,  7,  1, 50, 100, 16, 32, null                  , 0, null               , F, GEN_TWILIGHT);
 		}
 		tBlock = BlocksGT.VanillaOresA;
 		if (tBlock != null && tBlock != NB) {
-		new WorldgenOresVanilla("twilight.ore.sulfur"           , T, tBlock,  0,  1, 16,   1,  0,  8, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.apatite"          , T, tBlock,  1,  1, 16,   2, 24, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.ruby"             , T, tBlock,  2,  1, 12,   1, 40, 52, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.amber"            , T, tBlock,  3,  1, 12,   1, 40, 52, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.amethyst"         , T, tBlock,  4,  1, 12,   1, 40, 52, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.galena"           , T, tBlock,  5,  1, 24,   4,  8, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tetrahedrite"     , T, tBlock,  6,  1, 24,   4,  8, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.cassiterite"      , T, tBlock,  7,  1, 24,   4,  8, 32, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.cooperite"        , T, tBlock,  8,  1,  6,   1, 40, 52, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.pentlandite"      , T, tBlock,  9,  1, 16,   4,  8, 24, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.scheelite"        , T, tBlock, 10,  1, 12,   4,  8, 24, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.rutile"           , T, tBlock, 11,  1,  6,   1,  8, 24, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.bastnasite"       , T, tBlock, 12,  1, 16,   1, 40, 52, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.graphite"         , T, tBlock, 13,  1,  6,   2,  0,  8, Blocks.stone          , 0, null               , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.pitchblende"      , T, tBlock, 14,  1, 16,   1,  8, 16, Blocks.stone          , 0, BIOMES_SWAMP       , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.borax"            , T, tBlock, 15,  2,  6,   1,  0, 16, Blocks.stone          , 0, BIOMES_LAKE        , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.sulfur"           , T, tBlock,  0,  1, 16,   1,  0,  8, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.apatite"          , T, tBlock,  1,  1, 16,   2, 24, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.ruby"             , T, tBlock,  2,  1, 12,   1, 40, 52, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.amber"            , T, tBlock,  3,  1, 12,   1, 40, 52, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.amethyst"         , T, tBlock,  4,  1, 12,   1, 40, 52, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.galena"           , T, tBlock,  5,  1, 24,   4,  8, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tetrahedrite"     , T, tBlock,  6,  1, 24,   4,  8, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.cassiterite"      , T, tBlock,  7,  1, 24,   4,  8, 32, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.cooperite"        , T, tBlock,  8,  1,  6,   1, 40, 52, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.pentlandite"      , T, tBlock,  9,  1, 16,   4,  8, 24, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.scheelite"        , T, tBlock, 10,  1, 12,   4,  8, 24, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.rutile"           , T, tBlock, 11,  1,  6,   1,  8, 24, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.bastnasite"       , T, tBlock, 12,  1, 16,   1, 40, 52, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.graphite"         , T, tBlock, 13,  1,  6,   2,  0,  8, null                  , 0, null               , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.pitchblende"      , T, tBlock, 14,  1, 16,   1,  8, 16, null                  , 0, BIOMES_SWAMP       , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.borax"            , T, tBlock, 15,  2,  6,   1,  0, 16, null                  , 0, BIOMES_LAKE        , F, GEN_TWILIGHT);
 		}
 		tBlock = ST.block(MD.TC, "blockCustomOre", null);
 		if (tBlock != null && tBlock != NB) {
-		new WorldgenOresVanilla("twilight.ore.tc_cinnabar"      , T, tBlock,  0,  1, 12,   1,  8, 16, Blocks.stone          , 0, BIOMES_VOLCANIC    , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tc_air"           , T, tBlock,  1,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tc_fire"          , T, tBlock,  2,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tc_water"         , T, tBlock,  3,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tc_earth"         , T, tBlock,  4,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tc_order"         , T, tBlock,  5,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.tc_entropy"       , T, tBlock,  6,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_cinnabar"      , T, tBlock,  0,  1, 12,   1,  8, 16, null                  , 0, BIOMES_VOLCANIC    , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_air"           , T, tBlock,  1,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_fire"          , T, tBlock,  2,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_water"         , T, tBlock,  3,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_earth"         , T, tBlock,  4,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_order"         , T, tBlock,  5,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.tc_entropy"       , T, tBlock,  6,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
 		}
 		tBlock = ST.block(MD.ARS, "vinteumOre", null);
 		if (tBlock != null && tBlock != NB) {
-		new WorldgenOresVanilla("twilight.ore.ars_vinteum"      , T, tBlock,  0,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.ars_chimerite"    , T, tBlock,  1,  2, 16,   1,  8, 32, Blocks.stone          , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
-		new WorldgenOresVanilla("twilight.ore.ars_bluetopaz"    , T, tBlock,  2,  1,  8,   1,  8, 16, Blocks.stone          , 0, BIOMES_DARK_FOREST , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.ars_vinteum"      , T, tBlock,  0,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.ars_chimerite"    , T, tBlock,  1,  2, 16,   1,  8, 32, null                  , 0, BIOMES_MAGICAL     , F, GEN_TWILIGHT);
+		new WorldgenOresVanilla("twilight.ore.ars_bluetopaz"    , T, tBlock,  2,  1,  8,   1,  8, 16, null                  , 0, BIOMES_DARK_FOREST , F, GEN_TWILIGHT);
 		}
 		tBlock = (IL.Ancient_Debris.exists() ? IL.Ancient_Debris.block() : null);
 		if (tBlock != null && tBlock != NB) {

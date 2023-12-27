@@ -45,7 +45,10 @@ import static gregapi.util.CR.*;
  */
 public class Loader_Recipes_Temporary implements Runnable {
 	@Override public void run() {
-		ItemStack tStack = null;
+		ItemStack tStack = NI;
+		
+		// That Stone Rod is overlapping a Recipe. Luckily it can be made using GT6 Methods, so it is okay to remove it.
+		CR.delate(MD.FMB, "stoneRod");
 		
 		// TODO: Graphite Electrodes are made from petroleum coke after it is mixed with coal tar pitch. They are then extruded and shaped, baked to carbonize the binder (pitch) and finally graphitized by heating it to temperatures approaching 3273K.
 		RM.Extruder.addRecipe2(T, 512, 512, OP.dust.mat(MT.Graphite, 1), IL.Shape_Extruder_Rod     .get(0), OP.stick    .mat(MT.Graphite, 1));
@@ -367,6 +370,18 @@ public class Loader_Recipes_Temporary implements Runnable {
 			
 			RM.glowstone(IL.NeLi_Gloomstone.get(1), MT.Gloomstone);
 			
+			RM.smash(IL.NeLi_Cluster_White  .get(1), OP.gem.mat(MT.FluoriteWhite  , 1));
+			RM.smash(IL.NeLi_Cluster_Blue   .get(1), OP.gem.mat(MT.FluoriteBlue   , 1));
+			RM.smash(IL.NeLi_Cluster_Green  .get(1), OP.gem.mat(MT.FluoriteGreen  , 1));
+			RM.smash(IL.NeLi_Cluster_Yellow .get(1), OP.gem.mat(MT.FluoriteYellow , 1));
+			RM.smash(IL.NeLi_Cluster_Magenta.get(1), OP.gem.mat(MT.FluoriteMagenta, 1));
+			
+			RM.smash(IL.NeLi_Clu2ter_White  .get(1), OP.gem.mat(MT.FluoriteWhite  , 3));
+			RM.smash(IL.NeLi_Clu2ter_Blue   .get(1), OP.gem.mat(MT.FluoriteBlue   , 3));
+			RM.smash(IL.NeLi_Clu2ter_Green  .get(1), OP.gem.mat(MT.FluoriteGreen  , 3));
+			RM.smash(IL.NeLi_Clu2ter_Yellow .get(1), OP.gem.mat(MT.FluoriteYellow , 3));
+			RM.smash(IL.NeLi_Clu2ter_Magenta.get(1), OP.gem.mat(MT.FluoriteMagenta, 3));
+			
 			RM.compactsmash(OP.gem.mat(MT.FluoriteWhite  , 1), 4, IL.NeLi_Crystal_White  .get(1));
 			RM.compactsmash(OP.gem.mat(MT.FluoriteBlue   , 1), 4, IL.NeLi_Crystal_Blue   .get(1));
 			RM.compactsmash(OP.gem.mat(MT.FluoriteGreen  , 1), 4, IL.NeLi_Crystal_Green  .get(1));
@@ -603,6 +618,7 @@ public class Loader_Recipes_Temporary implements Runnable {
 		RM.genericycle(IL.RC_Crushed_Obsidian .get(1), IL.HBM_Crushed_Obsidian.get(1));
 		RM.genericycle(IL.IC2_Grin_Powder.get(1), IL.HBM_Poison_Powder.get(1));
 		RM.genericycle(IL.FR_Royal_Jelly.get(1), IL.HaC_Royal_Jelly.get(1));
+		RM.genericycle(IL.Bottle_Honey.get(1), IL.EtFu_Bottle_Honey.get(1), IL.GrC_Honey_Bottle.get(1));
 		RM.genericycle(ST.make(MD.TC, "ItemResource", 1, 6), ST.make(MD.BoP, "gems", 1, 7));
 		
 		// Some of these aren't Temporary, but I like having all Generifier Recipes for Fluids in on place.

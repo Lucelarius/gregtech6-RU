@@ -214,7 +214,7 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 	
 	public boolean canCollectDropsDirectly(ItemStack aStack) {
 		IToolStats tStats = getToolStats(aStack);
-		return (tStats.canCollect() || getPrimaryMaterial(aStack).contains(TD.Properties.MAGNETIC_ACTIVE) || getSecondaryMaterial(aStack).contains(TD.Properties.MAGNETIC_ACTIVE)) && isItemStackUsable(aStack);
+		return (tStats.canCollect() || getPrimaryMaterial(aStack).contains(TD.Properties.AUTO_COLLECTING) || getSecondaryMaterial(aStack).contains(TD.Properties.AUTO_COLLECTING)) && isItemStackUsable(aStack);
 	}
 	public boolean canCollectDropsDirectly(ItemStack aStack, Block aBlock, byte aMeta) {
 		if (ST.instaharvest(aBlock, aMeta)) return T;
@@ -222,8 +222,13 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 	}
 	
 	public float onBlockBreakSpeedEvent(float aDefault, ItemStack aStack, EntityPlayer aPlayer, Block aBlock, int aX, int aY, int aZ, byte aMeta, PlayerEvent.BreakSpeed aEvent) {
+		// Yeah no Bedrock breaking with these Tools.
 		if (aBlock == NB || WD.bedrock(aBlock)) return aDefault;
+		// Things that are normally harvested instantly, like Torches for example.
 		if (ST.instaharvest(aBlock, aMeta)) return Float.MAX_VALUE;
+		// special case for Obsidian to be mined faster with higher Quality Pickaxes.
+		if (OD.obsidian.is(ST.make(aBlock, 1, aMeta))) aDefault *= Math.max(1, getPrimaryMaterial(aStack).mToolQuality - 2);
+		// and now the basic Tool Stats.
 		IToolStats tStats = getToolStats(aStack);
 		return tStats == null ? aDefault : tStats.getMiningSpeed(aBlock, aMeta, aDefault, aPlayer, aPlayer.worldObj, aX, aY, aZ);
 	}
@@ -337,7 +342,7 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 					if (canHarvestBlock(IL.TF_Towerwood.block(), aStack)) aList.add(LH.Chat.PINK + LH.get(LH.TOOLTIP_TWILIGHT_TOWER_WOOD_BREAKING));
 				}
 				if (tMat1.contains(TD.Properties.UNBURNABLE) || tMat2.contains(TD.Properties.UNBURNABLE)) aList.add(LH.Chat.GREEN + LH.get(LH.TOOLTIP_UNBURNABLE));
-				if (tStats.canCollect() || tMat1.contains(TD.Properties.MAGNETIC_ACTIVE) || tMat2.contains(TD.Properties.MAGNETIC_ACTIVE)) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_AUTOCOLLECT));
+				if (tStats.canCollect() || tMat1.contains(TD.Properties.AUTO_COLLECTING) || tMat2.contains(TD.Properties.AUTO_COLLECTING)) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_AUTOCOLLECT));
 				if (tStats.canPenetrate()) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_ARMOR_PENETRATING));
 			}
 		}

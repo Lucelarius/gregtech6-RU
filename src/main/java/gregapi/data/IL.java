@@ -88,13 +88,15 @@ public enum IL implements IItemContainer {
 	NeLi_Blackstone, NeLi_Blackstone_Bricks, NeLi_Blackstone_Chiseled, NeLi_Blackstone_Cracked, NeLi_Blackstone_Polished, NeLi_Blackstone_Tiles, NeLi_Blackstone_Cross, NeLi_Blackstone_Path, NeLi_Basalt, NeLi_Basalt_Polished,
 	NeLi_Crystal_White, NeLi_Crystal_Blue, NeLi_Crystal_Green, NeLi_Crystal_Yellow, NeLi_Crystal_Magenta,
 	NeLi_Budding_White, NeLi_Budding_Blue, NeLi_Budding_Green, NeLi_Budding_Yellow, NeLi_Budding_Magenta,
+	NeLi_Cluster_White, NeLi_Cluster_Blue, NeLi_Cluster_Green, NeLi_Cluster_Yellow, NeLi_Cluster_Magenta,
+	NeLi_Clu2ter_White, NeLi_Clu2ter_Blue, NeLi_Clu2ter_Green, NeLi_Clu2ter_Yellow, NeLi_Clu2ter_Magenta,
 	NeLi_Glass_White, NeLi_Glass_Blue, NeLi_Glass_Green, NeLi_Glass_Yellow, NeLi_Glass_Magenta,
 	NeLi_Lamp_White, NeLi_Lamp_Blue, NeLi_Lamp_Green, NeLi_Lamp_Yellow, NeLi_Lamp_Magenta,
 	NeLi_Redstone_Lamp_White, NeLi_Redstone_Lamp_Blue, NeLi_Redstone_Lamp_Green, NeLi_Redstone_Lamp_Yellow, NeLi_Redstone_Lamp_Magenta,
 	NeLi_Torch_Soul, NeLi_Torch_Fox, NeLi_Torch_Shadow, NeLi_Bonetorch, NeLi_Bonetorch_Soul, NeLi_Bonetorch_Fox, NeLi_Bonetorch_Shadow, NeLi_Fire_Soul, NeLi_Fire_Shadow, NeLi_Fire_Fox, NeLi_Obsidian, NeLi_Blackstone_Crying, NeLi_Bowl_DevilishMaize, NeLi_Bowl_DevilishPopcorn, NeLi_Bowl_CrimsonStew, NeLi_Bowl_WarpedStew, NeLi_Bowl_FoxfireStew, NeLi_Bottle_Hellderberryjuice, NeLi_Bucket_Spectral_Dew, NeLi_ShroomLight, NeLi_Gloomstone, NeLi_Reed, NeLi_Gloom_Hibiscus, NeLi_Wither_Rose, NeLi_Bone_Rose, NeLi_Soul_Rose, NeLi_Foxfire_Lily, NeLi_Foxfire_Powder, NeLi_Wart_Crimson, NeLi_Wart_Warped, NeLi_Wart_Soggy, NeLi_Wart_Block_Nether, NeLi_Wart_Block_Crimson, NeLi_Wart_Block_Warped, NeLi_Wart_Block_Soggy, NeLi_Bread, NeLi_Cookie, NeLi_Ash, NeLi_SoulSoil, NeLi_SoulFarm, NeLi_Gravel, NeLi_Magmatic_Netherrack, NeLi_Magmatic_Blackstone, NeLi_Strider_Flank_Raw, NeLi_Strider_Flank_Cooked,
 	NeLi_Quartz_Bricks, NeLi_Quartz_Smooth, NeLi_Quartz_Chiseled_Pillar, NeLi_Void_Block, NeLi_Void_Bricks, NeLi_Void_Smooth, NeLi_Void_Chiseled, NeLi_Void_Pillar, NeLi_Void_Chiseled_Pillar,
 	NeLi_Stem_Crimson, NeLi_Stem_Warped, NeLi_Stem_FoxFire, NeLi_Beam1_Crimson, NeLi_Beam1_Warped, NeLi_Beam1_FoxFire, NeLi_Hyphae_Crimson, NeLi_Hyphae_Warped, NeLi_Hyphae_FoxFire, NeLi_Beam2_Crimson, NeLi_Beam2_Warped, NeLi_Beam2_FoxFire,
-	EtFu_Chorus_Flower, EtFu_Chorus_Fruit, EtFu_Chorus_Popped, EtFu_Rabbit_Foot, EtFu_Beet_Seeds, EtFu_Dragon_Breath, EtFu_Lingering_Potion, EtFu_Path, EtFu_Dirt, EtFu_Gravel, EtFu_Sandstone, EtFu_Obsidian, EtFu_Ancient_Debris, EtFu_Quartz_Bricks, EtFu_Magmatic_Netherrack, EtFu_Wart_Block_Nether, EtFu_Barrel, EtFu_Wither_Rose,
+	EtFu_Chorus_Flower, EtFu_Chorus_Fruit, EtFu_Chorus_Popped, EtFu_Rabbit_Foot, EtFu_Beet_Seeds, EtFu_Sus_Stew, EtFu_Bottle_Honey, EtFu_Dragon_Breath, EtFu_Lingering_Potion, EtFu_Path, EtFu_Dirt, EtFu_Gravel, EtFu_Sandstone, EtFu_Obsidian, EtFu_Ancient_Debris, EtFu_Quartz_Bricks, EtFu_Magmatic_Netherrack, EtFu_Wart_Block_Nether, EtFu_Barrel, EtFu_Wither_Rose,
 	EtFu_Bark_Oak, EtFu_Bark_Spruce, EtFu_Bark_Birch, EtFu_Bark_Jungle, EtFu_Bark_Acacia, EtFu_Bark_DarkOak, EtFu_Beam1_Oak, EtFu_Beam1_Spruce, EtFu_Beam1_Birch, EtFu_Beam1_Jungle, EtFu_Beam1_Acacia, EtFu_Beam1_DarkOak, EtFu_Beam2_Oak, EtFu_Beam2_Spruce, EtFu_Beam2_Birch, EtFu_Beam2_Jungle, EtFu_Beam2_Acacia, EtFu_Beam2_DarkOak,
 	EtFu_Block_Copper, EtFu_Block_Copper_Exposed, EtFu_Block_Copper_Weathered, EtFu_Block_Copper_Oxidized, EtFu_Block_Copper_Waxed, EtFu_Block_Copper_Exposed_Waxed, EtFu_Block_Copper_Weathered_Waxed, EtFu_Block_Copper_Oxidized_Waxed,
 	EtFu_Block_Copper_Cut, EtFu_Block_Copper_Cut_Exposed, EtFu_Block_Copper_Cut_Weathered, EtFu_Block_Copper_Cut_Oxidized, EtFu_Block_Copper_Cut_Waxed, EtFu_Block_Copper_Cut_Exposed_Waxed, EtFu_Block_Copper_Cut_Weathered_Waxed, EtFu_Block_Copper_Cut_Oxidized_Waxed,
@@ -126,13 +128,14 @@ public enum IL implements IItemContainer {
 	TC_Nugget_Chicken, TC_Nugget_Beef, TC_Nugget_Pork, TC_Nugget_Fish, TC_Triple_Meat_Treat,
 	TC_Warded_Glass, TC_Block_Air,
 	TC_Thaumometer,
+	TC_Loot_Common, TC_Loot_Uncommon, TC_Loot_Rare,
 	TC_Thaumonomicon, TC_Crimson_Rites, TC_Knowledge_Fragment,
 	TC_Block_Flesh, TC_Block_Tallow, TC_Block_Amber, TC_Block_Amber_Bricks,
 	TC_Nitor, TC_Alumentum, TC_Tallow, TC_Phial, TC_Gold_Coin, TC_Gold_Ring,
 	TC_Bucket_Death, TC_Bucket_Pure,
 	TC_Flux_Goo, TC_Flux_Gas,
 	TF_Roots, TF_Liveroots, TF_Firefly, TF_Firefly_Jar,
-	TF_LiveRoot, TF_Torchberries, TF_NagaScale, TF_BorerEssence, TF_Carminite, TF_Mushgloom, TF_Tall_Grass, TF_Fiddlehead, TF_Dry_Bush,
+	TF_LiveRoot, TF_Torchberries, TF_NagaScale, TF_BorerEssence, TF_Carminite, TF_Mushgloom, TF_Mushgloom_Huge, TF_Tall_Grass, TF_Fiddlehead, TF_Dry_Bush,
 	TF_Vial_FieryBlood, TF_Vial_FieryTears, TF_Transformation_Powder,
 	TF_Hydrachop_Raw, TF_Meef_Raw, TF_Meef_Cooked, TF_Venison_Raw, TF_Venison_Cooked,
 	TF_Log_Oak, TF_Log_Canopy, TF_Log_Mangrove, TF_Log_Darkwood, TF_Log_Time, TF_Log_Trans, TF_Log_Mine, TF_Log_Sorting, TF_Core_Time, TF_Core_Trans, TF_Core_Mine, TF_Core_Sorting, TF_Sapling,
@@ -178,6 +181,8 @@ public enum IL implements IItemContainer {
 	AE_Torch_Quartz,
 	MaCu_Dye_White, MaCu_Dye_Blue, MaCu_Dye_Green, MaCu_Dye_Yellow, MaCu_Dye_Red, MaCu_Dye_Brown, MaCu_Bait_Worm, MaCu_Bait_Ant, MaCu_Bait_Maggot, MaCu_Bait_Grasshopper, MaCu_Bait_Bee, MaCu_Polished_Planks, MaCu_Polished_Logs,
 	MoCr_Crab_Raw, MoCr_Crab_Cooked, MoCr_Turkey_Raw, MoCr_Turkey_Cooked, MoCr_Rat_Raw, MoCr_Rat_Cooked, MoCr_Ostrich_Raw, MoCr_Ostrich_Cooked, MoCr_Turtle_Raw,
+	WiMo_Infected_Meat, WiMo_Thick_Bone,
+	Birb_Egg_Shell,
 	AA_Dye_Black, AA_Fertilizer, AA_Dough_Rice, AA_Bread_Rice, AA_XP,
 	RC_ShuntingWire, RC_ShuntingWireFrame,
 	RC_Rail_Reinforced, RC_Rail_Electric, RC_Rail_Standard, RC_Rail_Wooden, RC_Rail_Adv, RC_Rail_HS,
@@ -257,7 +262,7 @@ public enum IL implements IItemContainer {
 	Bag_Sap_Resin,
 	Rope, Rope_Silk, Rope_Grass, Rope_Vine, Rope_Plastic,
 	Slimeball_Borax,
-	Tusk, Tusk_Boar, Tusk_Hoglin,
+	Tusk, Tusk_Boar, Tusk_Hoglin, Tusk_Elephant,
 	Hoof, Hoof_Horse, Hoof_Mule, Hoof_Donkey, Hoof_Cow, Hoof_Deer,
 	Horn, Horn_Sheep, Horn_Cow,
 	Antler, Antler_Deer,
@@ -268,7 +273,7 @@ public enum IL implements IItemContainer {
 	ThermosCan_Dark_Coffee, ThermosCan_Dark_Cafe_au_lait, ThermosCan_Coffee, ThermosCan_Cafe_au_lait, ThermosCan_Lait_au_cafe, ThermosCan_Dark_Chocolate_Milk,
 	ThermosCan_Chocolate_Milk,
 	ThermosCan_Tea, ThermosCan_Sweet_Tea, ThermosCan_Ice_Tea,
-	Bottle_Empty, Bottle_Milk, Bottle_Milk_Spoiled, Bottle_Blood, Bottle_Rotten_Drink, Bottle_Tar, Bottle_Ink, Bottle_Indigo, Bottle_Glue, Bottle_Lubricant, Bottle_Mercury, Bottle_Holy_Water, Bottle_Beer, Bottle_Purple_Drink,
+	Bottle_Empty, Bottle_Milk, Bottle_Milk_Spoiled, Bottle_Honey, Bottle_Blood, Bottle_Rotten_Drink, Bottle_Tar, Bottle_Ink, Bottle_Indigo, Bottle_Glue, Bottle_Lubricant, Bottle_Mercury, Bottle_Holy_Water, Bottle_Beer, Bottle_Purple_Drink,
 	Pill_Empty,
 	Pill_Mint, Pill_Red, Pill_Blue,
 	Pill_Iodine,
@@ -513,6 +518,7 @@ public enum IL implements IItemContainer {
 	, EMITTERS = {Emitter_ULV, Emitter_LV, Emitter_MV, Emitter_HV, Emitter_EV, Emitter_IV, Emitter_LuV, Emitter_ZPM, Emitter_UV, Emitter_PUV1, Emitter_PUV2, Emitter_PUV3, Emitter_PUV4, Emitter_PUV5, Emitter_OMEGA}
 	, SENSORS = {Sensor_ULV, Sensor_LV, Sensor_MV, Sensor_HV, Sensor_EV, Sensor_IV, Sensor_LuV, Sensor_ZPM, Sensor_UV, Sensor_PUV1, Sensor_PUV2, Sensor_PUV3, Sensor_PUV4, Sensor_PUV5, Sensor_OMEGA}
 	, MAGIC_RESEARCH_PAPERS = {Paper_Magic_Research_0, Paper_Magic_Research_1, Paper_Magic_Research_2, Paper_Magic_Research_3, Paper_Magic_Research_4, Paper_Magic_Research_5, Paper_Magic_Research_6, Paper_Magic_Research_7, Paper_Magic_Research_8,}
+	, TC_LOOT_BAGS = {TC_Loot_Common, TC_Loot_Uncommon, TC_Loot_Rare}
 	;
 	private ItemStack mStack;
 	private boolean mHasNotBeenSet = T;
