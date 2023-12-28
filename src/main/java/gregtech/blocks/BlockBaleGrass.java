@@ -120,9 +120,9 @@ public class BlockBaleGrass extends BlockBaseBale {
 	}
 	
 	static {
-		LH.add("gt.tooltip.bale", "Bale dries or rots when placed");
-		LH.add("gt.tooltip.bale.dry", "It would dry if placed here at the moment");
-		LH.add("gt.tooltip.bale.rot", "It would rot if placed here at the moment");
+		LH.add("gt.tooltip.bale", "Тюк высыхает или гниет при размещении");
+		LH.add("gt.tooltip.bale.dry", "Может высохнуть, если разместить здесь");
+		LH.add("gt.tooltip.bale.rot", "Может сгнить, если разместить здесь");
 	}
 	
 	@Override
