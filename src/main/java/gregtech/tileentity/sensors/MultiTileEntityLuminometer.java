@@ -33,7 +33,7 @@ import net.minecraft.tileentity.TileEntity;
  * @author Gregorius Techneticies
  */
 public class MultiTileEntityLuminometer extends MultiTileEntitySensorTE {
-	static {LH.add("gt.tooltip.sensor.luminometer", "Measures Light (0 - 15)");}
+	static {LH.add("gt.tooltip.sensor.luminometer", "Датчик освещения (0 - 15)");}
 	@Override public String getSensorDescription() {return LH.get("gt.tooltip.sensor.luminometer");}
 	
 	@Override

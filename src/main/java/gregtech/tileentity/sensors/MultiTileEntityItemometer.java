@@ -35,7 +35,7 @@ import net.minecraft.tileentity.TileEntity;
  * @author Gregorius Techneticies
  */
 public class MultiTileEntityItemometer extends MultiTileEntitySensorTE {
-	static {LH.add("gt.tooltip.sensor.itemometer", "Measures the precise amount of Items");}
+	static {LH.add("gt.tooltip.sensor.itemometer", "Датчик предметов");}
 	@Override public String getSensorDescription() {return LH.get("gt.tooltip.sensor.itemometer");}
 	
 	@Override

@@ -69,6 +69,9 @@
           ],
           "inventories": [
             "MultiTileEntityMassStorage"
+          ],
+          "machines": [
+            "MultiTileEntitySensor"
           ]
         }
       ]
@@ -218,6 +221,9 @@
               "generators": [
                 "MultiTileEntityMagicFieldAbsorber"
               ],
+              "reactors": [
+                "MultiTileEntityReactorCore"
+              ],
               "transformers": [
                 "MultiTileEntityGearBox"
               ]
@@ -288,6 +294,31 @@
             "MultiTileEntityMiniPortalNether",
             "MultiTileEntityMiniPortalTropics",
             "MultiTileEntityMiniPortalTwilight"
+          ],
+          "sensors": [
+            "MultiTileEntityBucketometer",
+            "MultiTileEntityChronometer",
+            "MultiTileEntityElectrometer",
+            "MultiTileEntityFluidometer",
+            "MultiTileEntityGeigerCounter",
+            "MultiTileEntityGibblometer",
+            "MultiTileEntityItemometer",
+            "MultiTileEntityKiloBucketometer",
+            "MultiTileEntityLaserometer",
+            "MultiTileEntityLuminometer",
+            "MultiTileEntityPlayerCounter",
+            "MultiTileEntityProgressmeter",
+            "MultiTileEntityStackometer",
+            "MultiTileEntityTachometer",
+            "MultiTileEntityThermometer",
+            "MultiTileEntityTPSmeter",
+            "MultiTileEntityWeightometerHeavy",
+            "MultiTileEntityWeightometerLight",
+            "MultiTileEntityWeightometerMedium",
+            "MultiTileEntityWeightometerSuperHeavy"
+          ],
+          "tanks": [
+            "MultiTileEntityPump"
           ],
           "tools": [
             "MultiTileEntityPlantPot",
