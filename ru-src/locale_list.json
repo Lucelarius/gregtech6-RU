@@ -10,6 +10,8 @@
         }
       ],
       "data": [
+        "AM",
+        "ANY",
         "CS",
         "FL",
         "FM",
@@ -17,6 +19,12 @@
         "MT",
         "RM",
         "TD"
+      ],
+      "enchants": [
+        "Enchantment_EnderDamage",
+        "Enchantment_Radioactivity",
+        "Enchantment_SlimeDamage",
+        "Enchantment_WerewolfDamage"
       ],
       "item": [
         "ItemEmptySlot",
@@ -50,6 +58,7 @@
       "oredict": [
         {
           "listeners": [
+            "OreDictListenerItem_Rocks",
             "OreDictListenerItem_Washing"
           ]
         }
@@ -332,7 +341,7 @@
         "Loader_Books",
         "MultiTileEntityBedrockDrill",
         "MultiTileEntityLargeBoiler",
-        "",
+        "AM",
         "",
         "",
         ""
