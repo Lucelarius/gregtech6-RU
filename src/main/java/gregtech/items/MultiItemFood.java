@@ -212,7 +212,7 @@ public class MultiItemFood extends MultiItemRandomWithCompat implements IItemRot
 		
 		IL.Horn         .set(addItem(12600, "Рог"              , ""                 , OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
 		IL.Horn_Cow     .set(addItem(12601, "Коровий рог"      , ""                 , OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
-		IL.Horn_Sheep   .set(addItem(12602, "Бараний рог"      , "from horned Sheep", OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
+		IL.Horn_Sheep   .set(addItem(12602, "Бараний рог"      , "От рогатой овцы"  , OD.itemHorn              , TC.stack(TC.BESTIA, 2), TC.stack(TC.TELUM, 2)));
 		
 		IL.Antler       .set(addItem(12700, "Оленьи рога"      , ""                 , OD.itemAntler            , TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
 		IL.Antler_Deer  .set(addItem(12701, "Красный оленьи рога", "о родной..."    , OD.itemAntler            , TC.stack(TC.BESTIA, 2), TC.stack(TC.INSTRUMENTUM, 2)));
