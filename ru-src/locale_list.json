@@ -13,6 +13,13 @@
           ]
         }
       ],
+      "compat": [
+        {
+          "thaumcraft": [
+            "CompatTC"
+          ]
+        }
+      ],
       "data": [
         "AM",
         "ANY",
