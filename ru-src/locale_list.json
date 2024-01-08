@@ -28,6 +28,7 @@
         "FM",
         "LH",
         "MT",
+        "OP",
         "RM",
         "TD"
       ],
@@ -68,6 +69,9 @@
             "PrefixItem"
           ]
         }
+      ],
+      "lang": [
+        "LanguageHandler"
       ],
       "oredict": [
         {
