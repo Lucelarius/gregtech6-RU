@@ -34,7 +34,7 @@ import net.minecraft.item.ItemStack;
  */
 public class OreDictListenerItem_Rocks extends OreDictListenerItem {
 	public OreDictListenerItem_Rocks() {
-		LH.add("gt.behaviour.rocks", "Указывает на наличие ");
+		LH.add("gt.behaviour.rocks", "Указывает на наличие руды: ");
 	}
 	
 	@Override
