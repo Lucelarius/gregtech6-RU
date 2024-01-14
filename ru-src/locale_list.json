@@ -250,7 +250,17 @@
                 "MultiTileEntityMagicFieldAbsorber"
               ],
               "reactors": [
-                "MultiTileEntityReactorCore"
+                "MultiTileEntityReactorCore",
+                "MultiTileEntityReactorCore1x1",
+                "MultiTileEntityReactorCore2x2",
+                "MultiTileEntityReactorRodAbsorber",
+                "MultiTileEntityReactorRodBase",
+                "MultiTileEntityReactorRodBreeder",
+                "MultiTileEntityReactorRodDepleted",
+                "MultiTileEntityReactorRodModerator",
+                "MultiTileEntityReactorRodNuclear",
+                "MultiTileEntityReactorRodProduct",
+                "MultiTileEntityReactorRodReflector"
               ],
               "transformers": [
                 "MultiTileEntityGearBox"
@@ -357,12 +367,14 @@
     }
   ],
     "Требуются правки": [
-        "Loader_Books",
-        "MultiTileEntityBedrockDrill",
-        "MultiTileEntityLargeBoiler",
-        "AM",
-        "",
-        "",
-        ""
+      "Loader_Books",
+      "MultiTileEntityBedrockDrill",
+      "MultiTileEntityLargeBoiler",
+      "AM",
+      "OP",
+      "LanguageHandler",
+      "MultiTileEntityReactorRodModerator",
+      "",
+      ""
     ]
 }

@@ -530,7 +530,7 @@ public class LH {
 		add(TOOL_TO_SET_CONNECTIONS_PRE                 , "Используйте ");
 		add(TOOL_TO_SET_CONNECTIONS_POST                , " для настройки соединения");
 		add(TOOL_TO_HARVEST                             , "Инструмент для добычи");
-		add(TOOL_TO_TAKE_PINCERS                        , "Используйте щипцы для извлечения предметов");
+		add(TOOL_TO_TAKE_PINCERS                        , "Используйте клещи для извлечения предметов");
 		add(TOOL_HINT_USE_SNEAK                         , "Используйте инструмент и приседания для дополнительных опций");
 		add(WEAPON_SNEAK_RIGHTCLICK_TO_RELOAD           , "Приседание и ПКМ для перезарядки");
 		add(WIRE_STATS_LOSSLESS                         , "Передает энергию без потерь");
