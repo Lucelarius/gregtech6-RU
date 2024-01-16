@@ -42,70 +42,71 @@ public class Loader_Books implements Runnable {
 		String tPage = "";
 		List<String> tBook = new ArrayListNoNulls<>();
 
-		UT.Books.createWrittenBook("Manual_Punch_Cards", "Punch Card Manual V0.0", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 1), new String[] {
-		  "This Manual will explain the Functionality of the Punch Cards, once they are fully implemented. And no, they won't be like the IRL Punch Cards. This is just a current Idea Collection."
+		UT.Books.createWrittenBook("Manual_Punch_Cards", "Руководство по перфокартам V0.0", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 1), new String[] {
+		  "В этом руководстве будут объяснены функциональные возможности перфокарт после их полного внедрения. И нет, они не будут похожи на перфокарты IRL. Это всего лишь текущая коллекция идей."
 		, "(i1&&i2)?o1=15:o1=0;=10"
-		, "ignore all Whitespace Characters, use Long for saving the Numbers"
+		, "Чтобы игнорировать все пробельные символы, используйте 'Long' для сохранения чисел."
 		, "&& || ^^ & | ^ ! ++ -- + - % / // * ** << >> >>> < > <= >= == !=  ~ ( ) ?: , ; ;= ;=X; = i0 i1 i2 i3 i4 i5 o0 o1 o2 o3 o4 o5 v0 v1 v2 v3 v4 v5 v6 v7 v8 v9 m0 m1 m2 m3 m4 m5 m6 m7 m8 m9 A B C D E F"
-		, "'0' = false, 'everything but 0' = true, '!' turns '0' into '1' and everything else into '0'"
-		, "',' is just a separator for multiple executed Codes in a row."
-		, "';' means that the Program waits until the next tick before continuing. ';=10' and ';=10;' both mean that it will wait 10 Ticks instead of 1. And ';=0' or anything < 0 will default to 0."
-		, "If the '=' Operator is used within Brackets, it returns the value the variable has been set to."
-		, "The Program saves the Char Index of the current Task, the 10 Variables (which reset to 0 as soon as the Program Loop stops), the 10 Member Variables and the remaining waiting Time in its NBT."
-		, "A = 10, B = 11, C = 12, D = 13, E = 14, F = 15, just for Hexadecimal Space saving, since Redstone has only 4 Bits."
-		, "For implementing Loops you just need 1 Punch Card per Loop, these Cards can restart once they are finished, depending on how many other Cards there are in the Program Loop you inserted your Card into, since it will process them procedurally."
-		, "A Punch Card Processor can run up to four Loops, each with the length of seven Punch Cards, parallel."
-		, "Why does the Punch Card need Ink to be made, you ask? Because the empty one needs to have some lines on, and the for the punched one it prints the Code to execute in a 'human' readable format on the Card."
+		, "'0' = ложь, 'все, кроме 0' = правда, '!' превращает «0» в «1», а все остальное в «0»."
+		, "',' — это просто разделитель нескольких выполняемых подряд кодов."
+		, "';' означает, что программа ждет следующего тика, прежде чем продолжить. ';=10' и ';=10;' оба означают, что он будет ждать 10 тиков вместо 1. И ';=0' или что-нибудь <0 по умолчанию будет равно 0."
+		, "Если оператор '=' используется в скобках, он возвращает значение, присвоенное переменной."
+		, "Программа сохраняет индекс символов текущей задачи, 10 переменных (которые сбрасываются в 0, как только цикл программы останавливается), 10 переменных-членов и оставшееся время ожидания в своем NBT."
+		, "A = 10, B = 11, C = 12, D = 13, E = 14, F = 15, просто для экономии шестнадцатеричного пространства, поскольку в 'Красной пыли' всего 4 бита."
+		, "Для реализации циклов вам нужна всего лишь 1 перфокарта на цикл. Эти карты могут перезапуститься после завершения, в зависимости от того, сколько других карт находится в программном цикле, в который вы вставили свою карту, поскольку он будет обрабатывать их процедурно."
+		, "Процессор перфокарт может параллельно запускать до четырех циклов, каждый длиной в семь перфокарт."
+		, "Вы спросите, почему для изготовления перфокарты нужны чернила? Потому что на пустом необходимо иметь несколько строк, а на перфорированном он печатает код для выполнения в 'человеческом' читаемом формате на карте."
 		});
 
-		UT.Books.createWrittenBook("Manual_Microwave", "Microwave Oven Manual", "Kitchen Industries", ST.make(ItemsGT.BOOKS, 1, 2), new String[] {
-		  "Congratulations, you inserted a random seemingly empty Book into the Microwave and these Letters appeared out of nowhere."
-		, "You just got a Microwave Oven and asked yourself 'why do I even need it?'. It's simple, the Microwave can cook for just 128 EU and at an insane speed. Not even a normal E-furnace can do it that fast and cheap!"
-		, "This is the cheapest and fastest way to cook for you. That is why the Microwave Oven can be found in almost every Kitchen (see www.youwannabuyakitchen.ly)."
-		, "Long time exposure to Microwaves can cause Cancer, but we doubt Steve lives long enough to die because of that."
-		, "Do not insert any Metals. It might result in an Explosion."
-		, "Do not dry Animals with it. It will result in a Hot Dog, no matter which Animal you put into it."
-		, "Do not insert inflammable Objects. The Oven will catch on Fire."
-		, "Do not insert Explosives such as Eggs. Just don't."
+		UT.Books.createWrittenBook("Manual_Microwave", "Руководство по эксплуатации микроволновой печи", "Kitchen Industries", ST.make(ItemsGT.BOOKS, 1, 2), new String[] {
+		  "Поздравляем, вы вставили в микроволновую печь случайную, казалось бы, пустую книгу, и эти буквы появились из ниоткуда."
+		, "Вы только что купили микроволновую печь и спросили себя: 'Зачем она мне вообще нужна?'. Все просто: микроволновая печь может готовить всего за 128 EU и с безумной скоростью. Даже обычная электронная печь не сможет сделать это так быстро и дешево!"
+		, "Это самый дешевый и быстрый способ приготовить для вас. Именно поэтому микроволновую печь можно найти практически на каждой кухне (см. www.youwannabuyakitchen.ly)."
+		, "Длительное воздействие микроволн может вызвать рак, но мы сомневаемся, что Стив проживет достаточно долго, чтобы умереть из-за этого."
+		, "Не помещайте металлы. Это может привести к взрыву."
+		, "Не сушите ей животных. В результате получится хот-дог, независимо от того, какое животное вы в нее положите."
+		, "Не помещайте легковоспламеняющиеся предметы. Печь загорится."
+		, "Не помещайте взрывчатые вещества, например яйца. Просто не надо."
 		});
 
-		UT.Books.createWrittenBook("Manual_Printer", "Scanner & Printer Manual", "GregTech Electrics", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		  "Congratulations on your acquisition of a new Scanner and/or Printer. You will find this Manual that you received with your purchase very useful. Just remember that if you lose it, you can just let the Printer create a new one."
-		, "First of all you need to power your Scanner and Printer with Electricity on their back side. Just plug them into the sockets of their respective Voltage. Next you will need either an USB Cable or an USB Stick to connect them."
-		, "Any USB Stick will do, Images and Text Files are not that large and won't require more than USB 1.0, even though you can ofcourse use higher USB Tiers aswell, thanks to downwards compatibility."
-		, "Now you need to refill your Printers Ink reserves, depending on what Job you want to do with it. It only accepts the Chemical Dyes for this purpose. Black = Text, CMYK for Images, Blue or White for Blueprints."
-		, "Having done all of that it is time to scan what you need to scan inside the Scanner. Just plug in the USB and insert the Book/Canvas/Blueprint etc. you want to scan. If you insert Blocks it will scan their Surface aswell."
-		, "After a successful scan, it will eject the eventual USB Stick and the scanned Object for you. Now you can insert the Data and the desired type of Paper/Canvas into the Printer to let it print your products."
-		, "The Printer can do a few more print jobs than just canvas and books. NEI will help you with all the possible Recipes."
+		UT.Books.createWrittenBook("Manual_Printer", "Руководство по сканерам и принтерам", "GregTech Electrics", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
+		  "Поздравляем с приобретением нового сканера и/или принтера. Данное руководство, полученное при покупке, окажется для вас очень полезным. Просто помните, что если вы потеряете его, вы можете просто позволить принтеру создать новое."
+		, "Прежде всего, вам необходимо снабдить сканер и принтер электричеством на задней стороне. Просто подключите их к розеткам соответствующего напряжения. Далее для их подключения вам понадобится USB-кабель или USB-накопитель."
+		, "Подойдет любой USB-накопитель, изображения и текстовые файлы не такие большие и не требуют более USB 1.0, хотя вы, конечно, можете использовать и более высокие уровни USB благодаря совместимости с нисходящими версиями."
+		, "Теперь вам нужно пополнить запасы чернил для принтера, в зависимости от того, какую работу вы хотите с ними выполнить. Для этой цели он принимает только химические красители. Черный = текст, CMYK для изображений, синий или белый для чертежей."
+		, "Сделав все это, пришло время сканировать то, что вам нужно, внутри сканера. Просто подключите USB-накопитель и вставьте книгу/холст/чертеж и т. д., которые хотите отсканировать. Если вы вставите блоки, он также просканирует их поверхность."
+		, "После успешного сканирования он извлечет USB-накопитель и отсканированный объект. Теперь вы можете вставить данные и нужный тип бумаги/холста в принтер, чтобы он мог печатать ваши продукты."
+		, "Принтер может выполнять несколько больше заданий на печать, чем просто холст и книги. NEI поможет вам со всеми возможными рецептами."
 		});
 
-		UT.Books.createWrittenBook("Manual_Steam", "Steam Manual", "GregTech Thermodynamics", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		  "This Manual is about the proper operation of a Boiler, in order to not blow yourself up. And yes there are many people who get blown up by improper operation of a Boiler."
-		, "First of all you need to make sure that the Boiler you use fits the Burning Box you place below. The Tooltips will hint you the proper values you can use. The Boiler itself does accept heat from all directions, not just the Bottom."
-		, "Then you need to fill the Boiler with Water on the Sides, so that you can generate Steam with it. Placing a Funnel on it and rightclicking that Funnel with a Water Bucket works for filling aswell."
-		, "But if you use regular Water instead of distilled Water, then you will end up with calcification and a constant decrease of Steam-Creation-Efficiency. No risk of explosion due to that though, since it just makes less Steam per Water."
-		, "Inserting Water into an empty hot Boiler, it will rapidly increase the Pressure maybe causing it to explode, depending on how much heat and water you insert at once."
-		, "If a Boiler stores too much Heat without being able to convert Water into Steam, then it will simply melt and break, leaving you with a giant mess."
-		, "Steam Turbines and Engines emit distilled Water to their Sides, which makes it possible to simply cycle the distilled Water back into the Boiler for having less calcification going on."
-		, "The Boilers have a Barometer on their Front, their ideal State is if the Line is inside the dark green Area, so in the middle of the Barometer itself. The closer it is to the red Area, the closer it is to exploding."
-		, "Steam Engines work best if they are in green Mode, if they are too blue then they have not enough Steam (look for Boiler Calcification if it happens after a while of running normally)."
-		, "If the Engines are too Red then they will release the Steam and stop running (no Explosions, just a waste of Steam and a fizzing noise)."
+		UT.Books.createWrittenBook("Manual_Steam", "Паровое руководство", "GregTech Thermodynamics", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
+		  "Данное руководство посвящено правильной эксплуатации котла, чтобы не взорвать себя. И да, есть много людей, которые взрываются из-за неправильной эксплуатации котла."
+		, "Прежде всего вам нужно убедиться, что используемый вами котел подходит к камере скорания, которую вы размещаете ниже. Подсказки подскажут вам правильные значения, которые вы можете использовать. Сам котел принимает тепло со всех сторон, а не только снизу."
+		, "Затем вам нужно заполнить котел водой по сторонам, чтобы с его помощью можно было генерировать пар. Разместив на нем воронку и щелкнув ПКМ по этой воронке с ведром для воды, вы также сможете заполнить его."
+		, "Если вы используете обычную воду вместо дистиллированной, то в конечном итоге вы получите кальцификацию и постоянное снижение эффективности парообразования. Однако из-за этого нет риска взрыва, поскольку он просто производит меньше пара на воду."
+		, "Поместив воду в пустой горячий котел, давление быстро увеличится, что может привести к взрыву, в зависимости от того, сколько тепла и воды вы поместите одновременно."
+		, "Если котел накапливает слишком много тепла, не имея возможности преобразовывать воду в пар, он просто расплавится и сломается, оставив вас в большом беспорядке."
+		, "Паровые турбины и двигатели выбрасывают дистиллированную воду в свои стороны, что позволяет просто возвращать дистиллированную воду обратно в котел, чтобы уменьшить кальцификацию."
+		, "Котлы имеют барометр на передней стороне, их идеальное состояние - это если линия находится внутри темно-зеленой области, то есть в середине самого барометра. Чем ближе он к красной зоне, тем ближе он к взрыву."
+		, "Паровые двигатели работают лучше всего, если они находятся в зеленом режиме, если они слишком синие, значит, в них недостаточно пара (ищите кальцификацию котла, если это происходит через некоторое время нормальной работы)."
+		, "Если двигатели слишком красные, они выпустят пар и перестанут работать (взрывов не будет, просто пустая трата пара и шипящий шум)."
 		});
 
-		UT.Books.createWrittenBook("Manual_Random", "Tips & Tricks with GregTech Six", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		"This Book contains random Information that might be useful sometime. Read it whenever you have Issues. Maybe it has the Solution."
-		, "The first Hint is obvious: ALWAYS. READ. THE. ENTIRE. TOOLTIP. FIRST! The Tooltips often contain the Information you need, but not many people think about reading them. They usually contain all the Stats of the Machine."
-		, "If a Machine doesn't process a certain Recipe (but does others), then you are not supplying enough Power. This is ALWAYS the Issue. The Tier of a Machine determines how much more Energy it consumes, than the normal Recipe."
-		, "The Tiers of Machines are as follows: anything between 16 and 64 Generic Units per Tick is Tier ONE¶Tier 2: 65-256¶Tier 3: 257-1024¶Tier 4: 1025-4096¶Tier 5: 4097-16192"
-		, "If the Tier of the Machine you are using is in a higher Range than the Tier of the Recipe (see its GU/t) it will multiply the required Input GU/t by 4 and halve the Processing time, making the Recipe twice as expensive."
-		, "And yes, 64 GU/t is STILL TIER ONE, you seriously have to insert that much into a Tier 1 Machine! It is often possible to use the Motor/Heater/etc of a higher Tier on the lowest Power Input to get the GU/t."
-		, "GT6 Electric Power is widely compatible with all Mods that use the IC² API, such as:¶IC², IC²-Classic, IC²-Addons, Railcraft, Forestry and more!"
-		, "Things emitting a Voltage less than 1024 EU/t are even capable of powering the non-IC² Machines of the following Mods:¶Galacticraft and it's Addons, Applied Energistics, Immersive Engineering, OpenModularTurrets, TechGuns and even GT5U!"
-		, "Burning Boxes of any kind are always a Fire Hazard, make sure to only have Fireproof Stuff around them! The only ways to turn those Boxes off are placing a solid Block in front of them or the Fire Extinguishers."
-		, "You want to move Water or get Milk, but don't have an Iron Bucket? Try making a Wooden Bucket for that Task, it's cheaper, even if it only works for a small sortiment Liquids."
-		, "If you need a Printer Manual, then just insert Chemical Black Dye and an empty vanilla Book into it and apply Energy. It will instantly print that Manual."
-		, "The Bathing Pot and the Bath can dye Leather Armor and GT6 Blocks using Liquid Dyes.¶You can wash Ores early on by throwing them into a filled vanilla Cauldron. Also GT Pipes with a cap of 334L and higher can fill Cauldrons with Water."
-		, "Space out Machines a little in order to be able to automate them later without causing a huge Clusterfuck. Always have enough space for 2 Blocks inbetween each Machine, if not 3! Disregard the eventual Loss of Power, it's not worth it."
+		UT.Books.createWrittenBook("Manual_Random", "Советы и подсказки в GregTech-6", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
+		"Эта книга содержит случайную информацию, которая может когда-нибудь оказаться полезной. Прочтите его всякий раз, когда у вас возникнут проблемы. Возможно у них есть решение."
+		, "Первый намек очевиден: ВСЕГДА ВНАЧАЛЕ ЧИТАТЬ ОПИСАНИЕ! Подсказки часто содержат необходимую информацию, но не многие люди задумываются о ее прочтении. Обычно они содержат все характеристики машины."
+		, "Если машина не обрабатывает определенный рецепт (но выполняет другие), значит, вы подаете недостаточно энергии. Это ВСЕГДА проблема. Уровень машины определяет, насколько больше энергии она потребляет, чем обычный рецепт."
+		, "Уровни машин следующие: все, что находится между 16 и 64 универсальными единицами за тик, соответствует уровню ОДИН¶Уровень 2: 65-256¶Уровень 3: 257-1024¶Уровень 4: 1025-4096¶Уровень 5: 4097-16192"
+		, "Если уровень используемой вами машины находится в более высоком диапазоне, чем уровень рецепта (см. его GU/t), это умножит необходимое входное GU/t на 4 и сократит время обработки вдвое, что сделает рецепт вдвое дороже."
+		, "И да, 64 GU/t - это ЕЩЕ ПЕРВЫЙ УРОВЕНЬ, в машину 1-го уровня серьезно придется вставить столько! Часто можно использовать двигатель/нагреватель/и т. д. более высокого уровня при минимальной потребляемой мощности, чтобы получить GU/t."
+		, "Электрическая энергия GT6 широко совместима со всеми модами, использующими IC² API, такими как:¶IC², IC²-Classic, IC²-Addons, Railcraft, Forestry и другими!"
+		, "Вещи, излучающие напряжение менее 1024 EU/t, способны даже питать машины без IC² следующих модов:¶Galacticraft и его дополнения, Applied Energistics, Immersive Engineering, OpenModularTurrets, TechGuns и даже GT5U!"
+		, "Камеры сгорания любого типа всегда представляют собой опасность пожара, поэтому убедитесь, что рядом с ними лежат только огнеупорные материалы! Единственный способ выключить эти камеры — поставить перед ними твердый блок или огнетушители."
+		, "Вы хотите переместить воду или получить молоко, но у вас нет железного ведра? Попробуйте сделать для этой задачи деревянное ведро, это дешевле, даже если оно подходит только для небольшого количества жидкостей."
+		, "Если вам нужно руководство по принтеру, то просто вставьте в принтер химический черный краситель и пустую ванильную книгу и подайте энергию. Это руководство будет немедленно распечатано."
+		, "В миске для купания и в ванне можно покрасить кожаную броню и блоки GT6 с помощью жидких красителей.¶На раннем этапе вы можете промыть руду, бросив в наполненный ванильный котел. Также трубы GT могут наполнять котлы водой."
+		, "Немного разнесите машины, чтобы иметь возможность автоматизировать их позже, не вызывая огромного кластерного траха."
+		, "Всегда имейте достаточно места для двух блоков между каждой машиной, если не для трех! Не обращайте внимания на возможную потерю мощности, оно того не стоит."
 		});
 
 		UT.Books.createWrittenBook("Manual_Portal_TF", "The Twilight Forest Guide", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 1005), new String[] {
@@ -216,43 +217,44 @@ public class Loader_Books implements Runnable {
 		, "This should conclude all the Stuff about Twilight Forest that seems noteworthy, aswell as most of the changes I made to improve the gameplay and add variety.¶-------------------¶Have Fun! ^^"
 		});
 
-		UT.Books.createWrittenBook("Manual_Enchantments", "The vexing World of Enchantments", "Evoker Number 42", ST.make(ItemsGT.BOOKS, 1, 10), new String[] {
-		  "I cant believe how hard it is to find Information on these ancient Enchantments! But here I am, finally having collected everything there is to know about this Magic!"
-		, "Enchanting Table¶===================¶You need one of these Tables, typically made of 2 Diamonds, 4 Obsidian and a Book. Then you can use your Magical Power and sometimes Lapis Lazuli to put random Enchantments onto Tools and Books!"
-		, "Book Shelves¶===================¶To increase the Power of these previously mentioned random Enchantments, you merely need any Book Shelves filled with Books. Can even be some fancy Metal Shelves! The Books can even be on the backside!"
-		, "Iron Anvils¶===================¶But random Enchantments cant just be removed from Tools. The Anvil will help with that, since it lets you put Enchantments that are in Books onto your Tools and even give them a Name!"
-		, "Grindstone¶===================¶There supposedly is Grindstones that can remove Enchantments, but I have never seen any of those! Must be like those Brains in Jars I keep hearing about!"
-		, "Magical Power¶===================¶You can acquire this by killing the many Creatures in this World, by cooking Food or messing with Ores! This is quite the Experience to be had, which is why many people call it XP or EXP!"
-		, "List¶===================¶What follows is a List of the Enchantments that I know of and their Effects."
-		, "Sharpness¶===================¶Levels 1 to 5+¶Deals 0.625 Hearts of Extra Damage per Level and works on pretty much everything!"
-		, "Wrecking¶===================¶Levels 1 to 5+¶IDeals 0.75 Hearts of Extra Damage per Level and works on pretty much everything! Can normally only be applied to Railcraft Crowbars."
-		, "Smite¶===================¶Levels 1 to 5+¶Deals 1.25 Hearts of Extra Damage per Level and works on Undead such as: Skeletons, Zombies, Drowned, Husks, Wraiths, Mummies and Liches! Smite Bullets can even penetrate a Lich Barrier!"
-		, "Bane of Arthropods¶===================¶Levels 1 to 5+¶Deals 1.25 Hearts of Extra Damage per Level and works on things that have 6 or more Legs, like those pesky Spiders, Mites, Insects or Silverfish!"
-		, "Implosion¶===================¶Levels 1 to 5+¶IDeals 1.5 Hearts of Extra Damage per Level and works on any Creepers! Can normally only be applied to Railcraft Crowbars. It often also hurts other explosive Mobs like Ghasts!"
-		, "Dissolving¶===================¶Levels 1 to 5+¶Inflicts Weakness and Poison to any slimey Creatures it hits!"
-		, "Disjunction¶===================¶Levels 1 to 5+¶Inflicts Weakness and Poison to any Ender Creatures it hits! Weakened Endermen cant Teleport anymore, making Projectiles with this Enchantment invaluable in deposing them!"
-		, "Werebane¶===================¶Levels 1 to 5+¶Inflicts Withering and Poison to any Werecreatures and similar that it hits! Works on Minotaurs too!"
-		, "Knockback¶===================¶Levels 1 to 2+¶This will yeet anyone you hit with it, decreasing your own horizontal velocity by 40% in the process, which is only noticeable midair. Its Level increases by one while sprinting."
-		, "Fire Aspect¶===================¶Levels 1 to 2+¶Not only does this Enchantment set the Enemy ablaze for 4 Seconds per Level, sometimes even cooking their drops and at Level 3 it can also smelt any Block it harvests blazingly fast!"
-		, "Looting¶===================¶Levels 1 to 3+¶Increases the amount of drops you get from Mobs. It may increase the total drops themselves or the chance that you get some rare drop at all."
-		, "Fortune¶===================¶Levels 1 to 3+¶Increases the amount of drops you get from Blocks. It may increase the total drops themselves or the chance that you get some rare drop at all. Works on Ores, Crops, Gravel, and Glowstone."
-		, "Silk Touch¶===================¶Only 1 Level¶Will make sure that the Block you harvest with the proper Tool, will drop itself instead of what it would normally drop otherwise. Small Ores get a better chance for bigger Gems."
-		, "Infinity¶===================¶Levels 1+¶Bows will be able to shoot Infinite Arrows as long as you have one Arrow on you. Guns will have a 50%, 66%, 75%, 80%, 84% or higher chance to not consume Ammo based on the Level."
-		, "Power¶===================¶Levels 1 to 5+¶Arrows shot will deal 25 percent more damage per Level. Bullets shot will fly faster and therefore have a higher piercing rate and higher Damage at longer range."
-		, "Flame¶===================¶Levels 1+¶Your Ranged Weapon will set its Projectile on Fire, dealing Fire Damage similar to or combined with Fire Aspect. You can ignite TNT and some other things with it too."
-		, "Punch¶===================¶Levels 1 to 2+¶Your Ranged Weapon will yeet anyone you hit with its Projectile about +3 additional Blocks per Level."
-		, "Luck of the Sea¶===================¶Levels 1 to 3+¶Increases the chance of fishing up Treasure, decreases the chance of fishing up Junk, slightly decreases the chance of fishing up an actual Fish."
-		, "Lure¶===================¶Levels 1 to 3+¶Reduces wait time for a Bite by 5 Seconds per Level up to Level 5, Level 6 or higher will instead make the Fishing Rod useless for fishing."
-		, "Protection¶===================¶Levels 1 to 4+¶Reduces amount of overall Damage taken by 4 Percent per Level per Armor Piece, it caps at a combined 80 Percent Reduction, which includes all the other Protection Enchantment Types!"
-		, "Fire Protection¶===================¶Levels 1 to 4+¶Reduces amount of Fire Damage taken by 8 Percent per Level per Armor Piece, it caps with Protection. It will reduce time on Fire by 15 Percent per best uncombined Level."
-		, "Blast Protection¶===================¶Levels 1 to 4+¶Reduces amount of Explosion Damage taken by 8 Percent per Level per Armor Piece, it caps with Protection. It will reduce Explosion Knockback by 15 Percent per best uncombined Level."
-		, "Projectile Protection¶===================¶Levels 1 to 4+¶Reduces amount of Ranged Damage taken by 8 Percent per Level per Armor Piece, it caps with Protection. Be aware that Explosive Projectiles may only be reduced partially!"
-		, "Feather Falling¶===================¶Levels 1 to 4+¶Reduces amount of Enderpearl and Falling Damage taken by 12 Percent per Level per Armor Piece, it caps with Protection. Does not work if you are crashing into a Wall though."
-		, "Thorns¶===================¶Levels 1 to 3+¶Each individual piece of Armor has the chance of 15 Percent per Level to deal between 0.5 and 2 Hearts of Damage to any Melee or Ranged Attacker. The Armor Piece will lose some more Durability though."
-		, "Respiration¶===================¶Levels 1 to 3+¶Each Level adds 15 seconds worth of Oxygen underwater, which makes it twice, thrice or quarce the normal time. It also reduces Drowning Damage with a chance of 50%, 66% or 75% respectively."
-		, "Aqua Affinity¶===================¶Only 1 Level¶Makes it so you can mine at normal Speed while standing underwater instead of five times slower. You do still have to stand on the ground though or else you are slowed down by five times."
-		, "Efficiency¶===================¶Levels 1 to 5+¶Tools with this Enchantment get a flat Bonus to the Mining Speed of Level squared plus 1, so +2, +5, +10, +17 or +26. Tool Materials never have this Enchantment because it would be pointless."
-		, "Unbreaking¶===================¶Levels 1 to 3+¶Tools with this Enchantment on average last longer by +100% per Level. Armors will only last +25%, +34% or +43% longer. Tool Materials never have this Enchantment because it would be pointless."
+		UT.Books.createWrittenBook("Manual_Enchantments", "Ужасающий мир волшебства", "Evoker Number 42", ST.make(ItemsGT.BOOKS, 1, 10), new String[] {
+		  "Я не могу поверить, как трудно найти информацию об этих древних чарах! Но вот я наконец-то собрал все, что нужно знать об этой Магии!"
+		, "Стол зачарований¶===================¶Вам понадобится один из этих столов, обычно состоящий из 2 алмазов, 4 обсидиана и книги. Затем вы сможете использовать свою магическую силу, а иногда и лазурит, чтобы накладывать случайные чары на инструменты и книги!"
+		, "Книжные полки¶===================¶Чтобы увеличить силу этих ранее упомянутых случайных чар, вам просто нужны любые книжные полки, заполненные книгами. Это могут быть даже необычные металлические полки! Книги могут быть даже на обратной стороне!"
+		, "Наковальня¶===================¶Но случайные чары нельзя просто удалить из инструментов. В этом поможет наковальня, поскольку она позволяет накладывать на инструменты чары из книг и даже давать им имена!"
+		, "Точильный камень¶===================¶Предположительно, существуют точильные камни, которые могут снимать чары, но я никогда не видел ни одного из них! Должно быть, это похоже на те 'Мозги в банках', о которых я постоянно слышу!"
+		, "Магическая энергия¶===================¶Вы можете получить это, убивая множество существ в этом мире, готовя еду или возясь с рудой! Это настоящий опыт, поэтому многие люди называют его XP или EXP!"
+		, "Список¶===================¶Далее следует список известных мне чар и их эффектов."
+		, "Острота¶===================¶Уровни с 1 по 5+¶Наносит 0,625 сердец дополнительного урона за уровень и действует практически на все!"
+		, "Разрушение¶===================¶Уровни с 1 по 5+¶IНаносит 0,75 сердец дополнительного урона за уровень и действует практически на все! Обычно может применяться только к железнодорожным монтировкам."
+		, "Небесная кара¶===================¶Уровни с 1 по 5+¶Наносит 1,25 сердец дополнительного урона за уровень и действует на нежить, такую как: скелеты, зомби, утопленники, призраки, мумии и личи! Карательные пули могут пробить даже барьер Лича!"
+		, "Гибель насекомых¶===================¶Уровни с 1 по 5+¶Наносит 1,25 сердец дополнительного урона за уровень и действует на существ, у которых 6 или более ног, таких как надоедливые пауки, клещи, насекомые или чешуйницы!"
+		, "Имплозия¶===================¶Уровни с 1 по 5+¶Наносит 1,5 сердца доп.урона за уровень и работает на любых криперах! Обычно может применяться только к монтировкам. Это также часто наносит вред другим взрывоопасным мобам, таким как гасты!"
+		, "Расстворение¶===================¶Уровни от 1 до 5+¶Причиняет слабость и яд любому склизкому существу, по которому попадает!"
+		, "Разделение¶===================¶Уровни от 1 до 5+¶Наносит слабость и яд всем существам Края, по которым попадает! Ослабленные жители Края больше не могут телепортироваться, поэтому снаряды с этим зачарованием неоценимы для их свержения!"
+		, "Проклятие¶===================¶Уровни от 1 до 5+¶Наносит увядание и яд всем существам-оборотням и подобным им существам, которых поражает! Работает и на Минотаврах!"
+		, "Отдача¶===================¶Уровни от 1 до 2+¶Этот удар поразит любого, кого вы ударите, уменьшив при этом вашу гориз-ую скорость на 40%, что заметно только в воздухе. Его уровень увеличивается на единицу во время спринта."
+		, "Заговор огня¶===================¶Уровни от 1 до 2+¶Это зачарование не только поджигает врага на 4 сек. за уровень, иногда даже готовя его дроп, а на уровне 3 оно также может расплавить любой блок, который собирает, невероятно быстро!"
+		, "Добыча¶===================¶Уровни с 1 по 3+¶Увеличивает кол-во дропа, которое вы получаете с мобов. Это может увеличить общее кол-во дропа предметов или вероятность того, что вы вообще получите редкий предмет."
+		, "Удача¶===================¶Уровни с 1 по 3+¶Увеличивает кол-во дропа из блоков. Это может увеличить общее кол-во дропа или вероятность того, что вы получите редкий предмет. Работает с рудами, посевами, гравием и светящимся камнем."
+		, "Шёлковое касание¶===================¶Только 1 уровень¶Убедитесь, что блок, который вы собираете подходящим инструментом, выпадет сам, а не так, как обычно. Маленькие руды имеют больше шансов получить более крупные драгоценные камни."
+		, "Бесконечность¶===================¶Уровни 1+¶Луки смогут стрелять бесконечными стрелами, пока у вас есть одна стрела. Оружие будет иметь 50%, 66%, 75%, 80%, 84% или выше шанс не израсходовать боеприпасы в зависимости от уровня."
+		, "Сила¶===================¶Уровни с 1 по 5+¶Стрелы нанесут на 25% больше урона за уровень. Выпущенные пули летят быстрее и, следовательно, имеют более высокую пробивную способность и больший урон на большем расстоянии."
+		, "Горящая стрела¶===================¶Уровни 1+¶Ваше оружие дальнего боя подожжет свой снаряд, нанося урон от огня, аналогичный или в сочетании с аспектом огня. С его помощью вы также можете поджечь ТНТ и некоторые другие вещи."
+		, "Откидывание¶===================¶Уровни от 1 до 2+¶Ваше оружие дальнего боя нанесет каждому, кого вы ударите своим снарядом, примерно +3 дополнительных блока за уровень."
+		, "Морская удача¶===================¶Уровни от 1 до 3+¶Увеличивает шанс выловить сокровище, уменьшает шанс выловить мусор, немного снижает шанс выловить настоящую рыбу."
+		, "Приманка¶===================¶Уровни с 1 по 3+¶Сокращает время ожидания поклевки на 5 сек. за уровень до уровня 5, уровня 6 или выше, вместо этого делая удочку бесполезной для рыбалки."
+		, "Защита¶===================¶Уровни с 1 по 4+¶Уменьшает общее кол-во получаемого урона на 4% за уровень за каждую часть брони, максимальное общее снижение составляет 80%, включая все остальные типы защитных чар!"
+		, "Огнеупорность¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого урона от огня на 8% за уровень за каждую часть брони, огр-ся защитой. Это сократит время горения на 15% за каждый лучший некомбинированный уровень."
+		, "Взрывоустойчивость¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого урона от взрыва на 8% за уровень за каждую часть брони, огр-ся защитой. Это снизит отбрасывание взрывом на 15% за каждый лучший некомбинированный уровень."
+		, "Защита от снарядов¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого дальнего урона на 8% за уровень за каждую часть брони, огр-ся защитой. Имейте в виду, что кол-во взрывных снарядов может быть уменьшено лишь частично!"
+		, "Невесомость¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого жемчуга Эндера и урона от падения на 12% за уровень за каждую часть брони, ограничивается защитой. Однако не работает, если вы врезаетесь в стену."
+		, "Шипы¶===================¶Уровни с 1 по 3+¶Каждая отдельная часть брони имеет шанс в 15% за уровень нанести от 0,5 до 2 сердец урона любому атакующему в ближнем или дальнем бою. Однако часть брони потеряет еще немного прочности."
+		, "Подводное дыхание¶===================¶Уровни с 1 по 3+¶Каждый уровень добавляет 15 сек. кислорода под водой, что увеличивает время в 2-4 раза больше обычного времени. Снижает урон от утопления с вероятностью 50%, 66% или 75% соответственно."
+		, "Подводник¶===================¶Всего 1 уровень¶Позволяет вам добывать добычу на нормальной скорости, стоя под водой, а не в пять раз медленнее. Однако вам все равно придется стоять на земле, иначе вы замедлитесь в пять раз."
+		, "*Эффективность¶===================¶Уровни с 1 по 5+. Инструменты с этим зачарованием получают фиксированный бонус к скорости добычи в квадрате уровня плюс 1, то есть +2, +5, +10, +17 или +26."
+		, "*Прочность¶===================¶Уровни с 1 по 3+¶Инструменты с этим зачарованием служат в среднем дольше на +100% за уровень. Броня прослужит только на +25%, +34% или +43% дольше."
+		, "*¶Эффективность и Прочность¶===================¶Инструментальные материалы никогда не имеют этих зачарований, потому что это было бы бессмысленно."
 		});
 
 
@@ -459,117 +461,117 @@ public class Loader_Books implements Runnable {
 		//-----
 
 		tBook.clear();
-		tBook.add("This Manual is about common and uncommon Tools and how to use them. It contains a List of every normal Tool that you might not know the true purpose of.");
+		tBook.add("В этом руководстве рассказывается о распространенных и необычных инструментах и о том, как их использовать. Он содержит список всех обычных инструментов, истинное назначение которых, вы возможно не знаете.");
 
-		tBook.add("Swords"              +"¶===================¶It's a Sword, it deals Damage and cuts things. It can harvest Leaves, Webs and Wool Blocks.");
-		tBook.add("Knifes"              +"¶===================¶They cut Food, Sticks, Rubber, Saplings into Sticks, Bark of a Tree, and similar things and are a somewhat usable early weapon. It can harvest all the things a Sword can harvest too.");
-		tBook.add("Butchery Knifes"     +"¶===================¶Has a Looting Modifier on it per Default, but has a slow swing and low Damage.");
+		tBook.add("Меч"                 +"¶===================¶Это меч, он наносит урон и режет предметы. Он может собирать листья, паутину и блоки шерсти.");
+		tBook.add("Нож"                 +"¶===================¶Он разрезает еду, палки, резину, кору дерева и тому подобные вещи и является довольно полезным ранним оружием. Он может собрать все, что может собрать меч.");
+		tBook.add("Тесак"               +"¶===================¶По умолчанию имеет модификатор грабежа, но имеет медленный размах и низкий урон.");
 
-		tBook.add("Clubs"               +"¶===================¶Sometimes kindof expensive, but it works like a Hammer and deals lots of Damage, while having a larger cooldown time after a hit. It can break Rocky Blocks, but it will crush them.");
+		tBook.add("Дубина"              +"¶===================¶Иногда довольно дорого, но она работает как молот и наносит много урона, но имеет большее время восстановления после удара. Она может сломать каменные блоки, но разрушит их.");
 
-		tBook.add("Axes"                +"¶===================¶Good in chopping down Trees, bad in chopping down Planks or other wooden things.");
-		tBook.add("Double Axes"         +"¶===================¶Still good for chopping on Trees, but also very effective as a Weapon and has 50% more Durability than the normal Axe, while requiring 66.666% more Material to create.");
-		tBook.add("Saws"                +"¶===================¶Bad for chopping Trees, but can easily cut wooden things like Planks.");
-		tBook.add("Chainsaws"           +"¶===================¶Good for pretty much all purposes, can chop Trees, saw Planks and is a very nice Weapon. It can specifically be used to spam click Creepers to death easily.");
-		tBook.add("Buzzsaws"            +"¶===================¶This Type of Saw is dedicated to Hand Crafting and cannot harvest any Blocks. It is cheaper to use this than a Chainsaw for crafting purposes.");
+		tBook.add("Топор"               +"¶===================¶Хорошо рубит деревья, плохо рубит доски или другие деревянные предметы.");
+		tBook.add("Секира"              +"¶===================¶По-прежнему хороша для рубки деревьев, но также очень эффективна в качестве оружия и имеет на 50% большую прочность, чем обычный топор, при этом для её создания требуется на 66,666% больше материала.");
+		tBook.add("Пила"                +"¶===================¶Плохо подходит для рубки деревьев, но может легко разрезать деревянные предметы, например доски.");
+		tBook.add("Электропила"         +"¶===================¶Подходит практически для всех целей, может рубить деревья, пилить доски и является очень хорошим оружием. Её можно специально использовать для спам-кликов по криперу до его смерти.");
+		tBook.add("Циркулярная пила"    +"¶===================¶Этот тип пилы предназначен для ручного изготовления и не может собирать блоки. Дешевле использовать её для крафта, чем бензопилу.");
 
-		tBook.add("Pickaxes"            +"¶===================¶Mines Blocks like a normal Pickaxe usually does.");
-		tBook.add("Construction Picks"  +"¶===================¶It mines man-made Blocks much faster, but is slow on Natural Rocks.");
-		tBook.add("Gem tipped Pickaxes" +"¶===================¶In an exchange for a lot of Durability, you can put flawed Gems onto your Raw Steel Pickaxe Head, to give it the Quality of a Gem Tool. Amber, Sapphires and Diamonds are best for this.");
-		tBook.add("JackHammers"         +"¶===================¶This thing mines Blocks and crushes them like a Hammer at an insane Speed. Not much to say about it.");
-		tBook.add("Mining Drills"       +"¶===================¶It can mine and shovel things at once and is the perfect universal mining Tool.");
+		tBook.add("Кирка"               +"¶===================¶Капает блоки, как это делает обычная кирка.");
+		tBook.add("Строительная кирка"  +"¶===================¶Она добывает искусственные блоки намного быстрее, но медленнее на природных камнях.");
+		tBook.add("Кирка с напылением"  +"¶===================¶В обмен на большую прочность вы можете поместить испорченные самоцветы на основу кирки из необработанной стали, чтобы придать ей качество инструмента из самоцветов. Лучше всего для этого подходят янтарь, сапфиры и алмазы.");
+		tBook.add("Отбойный молоток"    +"¶===================¶Эта штука добывает блоки и крушит их, как молот, с безумной скоростью. Не так уж много об этом можно сказать.");
+		tBook.add("Шахтерский бур"      +"¶===================¶Он может одновременно добывать и перелопачивать предметы и является идеальным универсальным инструментом для шахтерских работ.");
 
-		tBook.add("Shovels"             +"¶===================¶Mines Blocks like a normal Shovel usually does.");
-		tBook.add("Spades"              +"¶===================¶A Spade has conditional Silk-Touch for certain Blocks, such as Dirt, Grass, Mycelium, Clay, Mud, Snow and Podzol, but it is slower than a normal Shovel and doesn't work on Sand.");
-		tBook.add("Plows"               +"¶===================¶The Plow harvests a 3x3x3 Area of Snow Layers and similar Blocks at once.");
-		tBook.add("Universal Spades"    +"¶===================¶Shovel, Saw, Sword and Crowbar at once. Very versatile, but that goes at the cost of Durability and Speed.");
+		tBook.add("Лопата"              +"¶===================¶Капает блоки, как это делает обычная лопата.");
+		tBook.add("Совковая лопата"     +"¶===================¶Лопата имеет условное шелковое касание для определенных блоков, таких как грязь, трава, мицелий, глина, грязь, снег и подзол, но она медленнее, чем обычная лопата, и не работает на песке.");
+		tBook.add("Снегоуборочная лопата"+"¶===================¶Одновременно убирает слои снега и подобные блоки на площади 3x3x3.");
+		tBook.add("Универсальная лопата"+"¶===================¶Лопата, пила, меч и монтировка одновременно. Очень универсальна, но это происходит за счет прочности и скорости.");
 
-		tBook.add("Hammers"             +"¶===================¶Crushing Blocks and Smithery are the most common usages of this Tool. It doesn't do much else, but it can be used in Combat.");
-		tBook.add("Soft Hammers"        +"¶===================¶These Hammers are mainly used to turn Machines ON and OFF. They can even turn Redstone Lamps and certain Rails ON without having to have a Redstone Signal close to them.");
-		tBook.add("Wrenches"            +"¶===================¶Adjusts the primary Facing of most Machines, sometimes it can be used to toggle Modes aswell.");
-		tBook.add("Monkey Wrenches"     +"¶===================¶Adjusts the secondary Facing of most Machines, often it can be used to toggle Modes aswell.");
-		tBook.add("Electric Wrenches"   +"¶===================¶They are a combination of the normal Wrench and the Monkey Wrench and can easily switch between them via Modes. Sneak Rightclick on a non-wrenchable Block to switch.");
+		tBook.add("Молот"               +"¶===================¶Разбивание блоков и кузнечное дело — наиболее распространенные способы использования этого инструмента. Больше он ничего не делает, но его можно использовать в бою.");
+		tBook.add("Киянка"              +"¶===================¶Эти молотки в основном используются для включения и выключения машин. Они могут даже включать лампы красной пыли и некоторые рельсы без необходимости иметь рядом с ними сигнал красной пыли.");
+		tBook.add("Гаечный ключ"        +"¶===================¶Регулирует основную облицовку большинства машин, иногда его также можно использовать для переключения режимов.");
+		tBook.add("Разводной ключ"      +"¶===================¶Регулирует вторичную облицовку большинства машин, часто его также можно использовать для переключения режимов.");
+		tBook.add("Электроключ"         +"¶===================¶Он представляет собой комбинацию обычного гаечного ключа и разводного ключа, и между ними можно легко переключаться с помощью режимов. Нажмите ПКМ на неразборный блок, чтобы переключиться.");
 
-		tBook.add("Files"               +"¶===================¶Sharpens things and can comically harvest Iron Bars way faster than anything else.");
-		tBook.add("Chisels"             +"¶===================¶Can put Molds into Shape and change the looks of some Stones.");
-		tBook.add("Bending Cylinders"   +"¶===================¶Turns Plates into Curved Plates and is used for similar Metal Working procedures");
+		tBook.add("Напильник"           +"¶===================¶Затачивает предметы и может, как ни странно, собирать железные прутья гораздо быстрее, чем что-либо еще.");
+		tBook.add("Долото"              +"¶===================¶Может придать форму литейным формам и изменить внешний вид некоторых камней.");
+		tBook.add("Гибочный цилиндр"    +"¶===================¶Превращает пластины в изогнутые пластины и используется для аналогичных процедур обработки металлов.");
 
-		tBook.add("Crowbars"            +"¶===================¶Opens Crates and can be used on Rails and Minecarts");
-		tBook.add("Pincers"             +"¶===================¶Used to pick up hot things from Molds and Basins, so you don't have to wait for them to cool down before picking them up.");
-		tBook.add("Plungers"            +"¶===================¶Empties Pipes and Fluid Tanks by either voiding the Fluid or dropping the ItemStack that is stuck in them. Works on Thaumic Conduits aswell.");
-		tBook.add("Scoops"              +"¶===================¶Catches Butterflies, Bees and Bumblebees, also needed to harvest Bumble Hives and Bee Hives.");
+		tBook.add("Монтировка"          +"¶===================¶Открывает ящики и может использоваться на рельсах и вагонетках.");
+		tBook.add("Клещи"               +"¶===================¶Используется для сбора горячих предметов из форм и тазов, поэтому вам не придется ждать, пока они остынут, прежде чем брать их.");
+		tBook.add("Вантуз"              +"¶===================¶Опорожняет трубы и резервуары с жидкостью, опустошая жидкость или выбрасывая застрявшие в них пачки предметов. Также работает с Таумическими проводниками.");
+		tBook.add("Сачок"               +"¶===================¶Ловит бабочек, пчел и шмелей, также необходим для сбора ульев шмелей и пчелиных ульев.");
 
-		tBook.add("Hoes"                +"¶===================¶They till the ground, what do you expect? I'm not gonna explain vanilla Tools in great detail.");
-		tBook.add("Branch Cutters¶Trimmers"+"¶===================¶Cuts Saplings out of Leaves with high precision, like a Grafter.");
+		tBook.add("Мотыга"              +"¶===================¶Они пашут землю, чего вы ожидаете? Я не буду подробно объяснять ванильные инструменты.");
+		tBook.add("Секатор"             +"¶===================¶Вырезает саженцы из листьев с высокой точностью, как прививка.");
 //      tBook.add("Sickles"             +"¶===================¶");
-		tBook.add("Senses"              +"¶===================¶Harvests a 3x3x3 Area of Crops, Flowers and Tall Grass.");
+		tBook.add("Коса"                +"¶===================¶Собирает урожай, цветы и высокую траву на площади 3x3x3.");
 
-		tBook.add("Rolling Pins"        +"¶===================¶Flattens Dough and Clay for cooking and crafting purposes.");
-		tBook.add("Scissors"            +"¶===================¶Can cut Tripwires on Rightclick, shear Sheep and harvest Wool-ish/Cloth-ish Blocks.");
-		tBook.add("Screwdrivers"        +"¶===================¶Drives Screws and such. The most common usage is adjusting Modes on Blocks and Covers. They can rotate Comparators and Repeaters.");
-		tBook.add("Wire Cutters"        +"¶===================¶They harvest Wires. Another usage is to adjust Wires and in some cases Covers aswell.");
-		tBook.add("Hand Mixers"         +"¶===================¶These are just so you don't consume your Hunger Bar when operating the Mixing Bowl.");
-		tBook.add("Hand Drills"         +"¶===================¶Those Drill Holes in Surfaces. If you have Dynamite Sticks or Iron/Steel Rods with you, you can stick the Dynamite into Walls or reinforce Bricks and Concrete.");
-		tBook.add("Flint and Tinder"    +"¶===================¶Sets things on Fire and can light anything that requires ignition. But it might take a few tries to do so.");
-		tBook.add("Magnifying Glasses"  +"¶===================¶With this you can look at the Details of a LOT of things in GregTech, just put a Lens of any kind on a Stick and you are good to go for a long time.");
+		tBook.add("Скалка"              +"¶===================¶Раскатывает тесто и глину для приготовления пищи и поделок.");
+		tBook.add("Ножницы"             +"¶===================¶Можно перерезать растянутые провода при щелчке ПКМ, стричь овец и собирать шерстяные/тканевые блоки.");
+		tBook.add("Отвертка"            +"¶===================¶Приводы, винты и тому подобное. Чаще всего используется для настройки режимов блоков и облицовок. Может вращать компараторы и повторители.");
+		tBook.add("Кусачки"             +"¶===================¶Они собирают провода. Другое использование — настройка проводов, а в некоторых случаях и облицовок.");
+		tBook.add("Миксер"              +"¶===================¶Это сделано для того, чтобы вы не израсходовали батончик голода при работе с чашей для смешивания.");
+		tBook.add("Ручная дрель"        +"¶===================¶Это отверстия в поверхностях. Если у вас есть динамитные палки или железные/стальные стержни, вы можете воткнуть динамит в стены или укрепить кирпичи и бетон.");
+		tBook.add("Огниво"              +"¶===================¶Поджигает вещи и может зажечь все, что требует зажигания. Но для этого может потребоваться несколько попыток.");
+		tBook.add("Лупа"                +"¶===================¶С её помощью вы можете просмотреть детали МНОЖЕСТВА вещей в GregTech, просто наденьте любую линзу на палку, и все будет готово к работе в течение длительного времени.");
 
-		tBook.add("Pocket Multitool"    +"¶===================¶A Multi-Tool that can be switched to the most common purposes. See it as a Swiss Army Knife.");
+		tBook.add("Карманный мультиинструмент"+"¶===================¶Мультиинструмент, который можно использовать для самых распространенных целей. Воспринимайте это как швейцарский армейский нож.");
 
-		UT.Books.createWrittenBook("Manual_Tools", "Tool Index", "GITF (Gregorius Industrial Tool Factory)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
+		UT.Books.createWrittenBook("Manual_Tools", "Каталог инструментов", "GITF (Gregorius Industrial Tool Factory)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
 
 
 		tBook.clear();
-		tBook.add("This is the Manual of the Smelting Crucible and related Objects. It will explain how to use the Smelting Crucible and the Molds properly, so that you can start smelting things which cannot me molten inside a regular Furnace.");
-		tBook.add("If you need to know how heavy an Object is or what Materials it consists out of, just use the good old vanilla F3+H Method to enable advanced Tooltips, so you can see the most relevant Data about the Object.");
-		tBook.add("Step 1: Heat Source" +"¶===================¶You need a Heat Source in order to heat up your Crucible to the desired Temperature. Possible Heat Sources may include Burning Boxes, Electric Heaters, Laser Heaters and Arc Heaters.");
-		tBook.add("Optional: Air Source"+"¶===================¶In case you have to supply Air for the Crucible (for Steel), you need to point an Engine into it, which will act as a Fan. For Multiblock Crucibles the Engine has to be at the Bottom Row.");
-		tBook.add("Step 2: Crucible"    +"¶===================¶The choice of Crucible Material is very important. The Crucible can melt too at a certain Temperature, which is usually higher than the actual Melting Point of the Crucible itself.");
-		tBook.add("Step 2: Crucible"    +"¶===================¶Now place the Crucible of your choice at the Output Facing of the Heat Source. The Burning Box for example only emits to its Top Side, so you need to place the Crucible above it.");
-		tBook.add("Step 3: The Molds"   +"¶===================¶You probably want to cast the molten Metal into a Shape, so you need to place a Mold horizontally adjacent to the Crucible. As you may have noticed the Mold itself doesn't have a Shape.");
-		tBook.add("Step 3: The Molds"   +"¶===================¶This is why you need a Chisel in order to chisel the proper Shape into the Mold by using it in World. The most important Shapes are Listed in the last Pages of this Book.");
-		tBook.add("Step 3: The Molds"   +"¶===================¶If you somehow fail to put a correct Shape into the Mold, the End Result will be as many Nuggets as you have chiseled out places.");
-		tBook.add("Step 4: Smelting"    +"¶===================¶Now we get to smelting. Just throw the things you want to smelt into the Crucible, or use a Hopper above the Crucible to fill it. And turn up the Heat until you reach the melting Point.");
-		tBook.add("Step 4: Smelting"    +"¶===================¶Unless your Heat Source has some kind of Temperature regulation, you may need to shut it off once the Temperature reaches the Melting Point or else you will vaporate the Metals or worse.");
-		tBook.add("Step 5: Shaping"     +"¶===================¶Now just click the Side of the top of the Mold where the Crucible is next to, in order to fill it with its Metals. Warning: The Mold itself can melt too if it is made of the wrong Material.");
-		tBook.add("Step 5: Shaping"     +"¶===================¶Wait for the Metal to cool down, but note that you should not touch or take out the Metal while it is hot or else you will burn yourself unless you wear a Hazmat Suit or something.");
-		tBook.add("Mold Shapes"         +"¶===================¶The following is a List of Shapes you can chisel the Mold into. The position of the Shape on the Mold is NOT important, you can rotate and mirror it too¶X = Chiseled¶O = Not Chiseled");
-		tBook.add("Слиток"              +"¶===================¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 1.000");
-		tBook.add("Кусок"               +"¶===================¶XXOOO¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.250");
-		tBook.add("Пластина"            +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶===================¶Требуется материала: 1.000");
-		tBook.add("Малая пластина"      +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.111");
-		tBook.add("Болт"                +"¶===================¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.125");
-		tBook.add("Стержень"            +"¶===================¶OOOOO¶OOOOO¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.500");
-		tBook.add("Длинный стержень"    +"¶===================¶XOOOO¶OXOOO¶OOXOO¶OOOXO¶OOOOX¶===================¶Требуется материала: 1.000");
-		tBook.add("Оболочка"            +"¶===================¶XXXOX¶XXXOX¶XXXOX¶OOOOX¶XXXOO¶===================¶Требуется материала: 0.500");
-		tBook.add("Кольцо"              +"¶===================¶OOOOO¶OXXXO¶OXOXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.250");
-		tBook.add("Шестерня"            +"¶===================¶XOXOX¶OXXXO¶XXOXX¶OXXXO¶XOXOX¶===================¶Требуется материала: 4.000");
-		tBook.add("Малая шестерня"      +"¶===================¶OXOXO¶XXXXX¶OXOXO¶XXXXX¶OXOXO¶===================¶Требуется материала: 1.000");
-		tBook.add("Мечь"                +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OXXXO¶===================¶Требуется материала: 2.000");
-		tBook.add("Кирка"               +"¶===================¶OOOOO¶OXXXO¶XOOOX¶OOOOO¶OOOOO¶===================¶Требуется материала: 3.000");
-		tBook.add("Совковая лопата"     +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OXOXO¶OOOOO¶===================¶Требуется материала: 1.000");
-		tBook.add("Лопата"              +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 1.000");
-		tBook.add("Универсальная лопата"+"¶===================¶OOXOO¶OXXXO¶OXXOO¶OXXXO¶OOOOO¶===================¶Требуется материала: 1.000");
-		tBook.add("Топор"               +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXOOO¶OOOOO¶===================¶Требуется материала: 3.000");
-		tBook.add("Секира"              +"¶===================¶OOOOO¶XXXXX¶XXXXX¶XOOOX¶OOOOO¶===================¶Требуется материала: 5.000");
-		tBook.add("Пила"                +"¶===================¶OOOOO¶XXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 2.000");
-		tBook.add("Молот"               +"¶===================¶XXXOO¶XXXOO¶XOXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 6.000");
-		tBook.add("Напильник"           +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.500");
-		tBook.add("Отвертка"            +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.000");
-		tBook.add("Долото"              +"¶===================¶OXXXO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.500");
-		tBook.add("Наконечник стрелы"   +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.125");
-		tBook.add("Мотыга"              +"¶===================¶OOOOO¶OOXXO¶OXXXO¶OOOOO¶OOOOO¶===================¶Требуется материала: 2.000");
-		tBook.add("Коса"                +"¶===================¶OOOOO¶OXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 3.000");
-		tBook.add("Снегоуборочная лопата"+"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶OOXOO¶===================¶Требуется материала: 4.000");
+		tBook.add("Это руководство по плавильному тиглю и связанным с ним объектам. В нем объясняется, как правильно использовать плавильный тигель и формы, чтобы вы могли начать плавить вещи, которые невозможно выплавить в обычной печи.");
+		tBook.add("Если вам нужно знать, насколько тяжел объект или из каких материалов он состоит, просто используйте старый добрый ванильный метод F3+H, чтобы включить расширенные подсказки, чтобы вы могли видеть наиболее важные данные об объекте.");
+		tBook.add("Шаг 1: Источник тепла"         +"¶===================¶Вам нужен источник тепла, чтобы нагреть тигель до желаемой температуры. Возможные источники тепла могут включать камеры сгорания, электрические нагреватели, лазерные нагреватели и дуговые нагреватели.");
+		tBook.add("Опционально: Источник воздуха" +"¶===================¶Если нужно подать воздух для тигля (для стали), нужно направить в него двигатель, который будет действовать как вентилятор. Для мультиблочных тиглей, двигатель должен находиться в нижнем ряду.");
+		tBook.add("Шаг 2: Тигель"                 +"¶===================¶Выбор материала тигля очень важен. Тигель также может плавиться при определенной температуре, которая обычно выше фактической температуры плавления самого тигля.");
+		tBook.add("Шаг 2: Тигель"                 +"¶===================¶Теперь поместите тигель на выходную сторону источника тепла по вашему выбору. Например камера сгорания излучает тепло только сверху, поэтому вам нужно разместить тигель над ним.");
+		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Вероятно, вы хотите отлить расплавленный металл в форму, поэтому вам нужно разместить форму горизонтально рядом с тиглем. Как вы могли заметить, саму литейную форму нельзя отлить.");
+		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Вот почему вам нужно долото, чтобы вырезать правильную форму в литейной форме, используя ее в мире. Наиболее важные формы перечислены на последних страницах этой книги.");
+		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Если вам по какой-то причине не удастся придать правильную форму, конечным результатом будет столько самородков, сколько вы вырезали мест.");
+		tBook.add("Шаг 4: Плавление"              +"¶===================¶Теперь приступим к плавке. Просто бросьте предметы, которые хотите переплавить в тигель, или используйте над ним воронку, чтобы заполнить его. Увеличивайте температуру, пока не достигнете точки плавления.");
+		tBook.add("Шаг 4: Плавление"              +"¶===================¶Если ваш источник тепла не имеет какого-либо регулирования температуры, вам, возможно, придется отключить его как только температура достигнет точки плавления, иначе вы испарите металлы или что-то еще хуже.");
+		tBook.add("Шаг 5: Формирование"           +"¶===================¶Теперь просто щелкните ту сторону верхней части литейной формы, рядом с которой находится тигель, чтобы заполнить ее металлами. Предупреждение: сама форма также может расплавиться, если она изготовлена из неправильного материала.");
+		tBook.add("Шаг 5: Формирование"           +"¶===================¶Подождите, пока металл остынет, но учтите, что вам не следует прикасаться к металлу или вынимать его, пока он горячий, иначе вы обожжетесь, если только вы не наденете защитный костюм или что-то в этом роде.");
+		tBook.add("Литейные формы"                +"¶===================¶Ниже приводится список фигур, которые можно вырезать в форме. Положение фигуры на форме НЕ важно, вы также можете вращать и отражать ее: ¶X = Выточено¶O = Не выточено");
+		tBook.add("Слиток"                        +"¶===================¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Кусок"                         +"¶===================¶XXOOO¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.250");
+		tBook.add("Пластина"                      +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶===================¶Требуется материала: 1.000");
+		tBook.add("Малая пластина"                +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.111");
+		tBook.add("Болт"                          +"¶===================¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.125");
+		tBook.add("Стержень"                      +"¶===================¶OOOOO¶OOOOO¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.500");
+		tBook.add("Длинный стержень"              +"¶===================¶XOOOO¶OXOOO¶OOXOO¶OOOXO¶OOOOX¶===================¶Требуется материала: 1.000");
+		tBook.add("Оболочка"                      +"¶===================¶XXXOX¶XXXOX¶XXXOX¶OOOOX¶XXXOO¶===================¶Требуется материала: 0.500");
+		tBook.add("Кольцо"                        +"¶===================¶OOOOO¶OXXXO¶OXOXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.250");
+		tBook.add("Шестерня"                      +"¶===================¶XOXOX¶OXXXO¶XXOXX¶OXXXO¶XOXOX¶===================¶Требуется материала: 4.000");
+		tBook.add("Малая шестерня"                +"¶===================¶OXOXO¶XXXXX¶OXOXO¶XXXXX¶OXOXO¶===================¶Требуется материала: 1.000");
+		tBook.add("Мечь"                          +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OXXXO¶===================¶Требуется материала: 2.000");
+		tBook.add("Кирка"                         +"¶===================¶OOOOO¶OXXXO¶XOOOX¶OOOOO¶OOOOO¶===================¶Требуется материала: 3.000");
+		tBook.add("Совковая лопата"               +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OXOXO¶OOOOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Лопата"                        +"¶===================¶OOXOO¶OXXXO¶OXXXO¶OXXXO¶OOOOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Универсальная лопата"          +"¶===================¶OOXOO¶OXXXO¶OXXOO¶OXXXO¶OOOOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Топор"                         +"¶===================¶OOOOO¶OXXXO¶OXXXO¶OXOOO¶OOOOO¶===================¶Требуется материала: 3.000");
+		tBook.add("Секира"                        +"¶===================¶OOOOO¶XXXXX¶XXXXX¶XOOOX¶OOOOO¶===================¶Требуется материала: 5.000");
+		tBook.add("Пила"                          +"¶===================¶OOOOO¶XXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 2.000");
+		tBook.add("Молот"                         +"¶===================¶XXXOO¶XXXOO¶XOXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 6.000");
+		tBook.add("Напильник"                     +"¶===================¶OXXXO¶OXXXO¶OXXXO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.500");
+		tBook.add("Отвертка"                      +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.000");
+		tBook.add("Долото"                        +"¶===================¶OXXXO¶OOXOO¶OOXOO¶OOXOO¶OOXOO¶===================¶Требуется материала: 1.500");
+		tBook.add("Наконечник стрелы"             +"¶===================¶OOOOO¶OOXOO¶OOXOO¶OXXXO¶OOOOO¶===================¶Требуется материала: 0.125");
+		tBook.add("Мотыга"                        +"¶===================¶OOOOO¶OOXXO¶OXXXO¶OOOOO¶OOOOO¶===================¶Требуется материала: 2.000");
+		tBook.add("Коса"                          +"¶===================¶OOOOO¶OXXXX¶XXXXX¶OOOOO¶OOOOO¶===================¶Требуется материала: 3.000");
+		tBook.add("Снегоуборочная лопата"         +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶OOXOO¶===================¶Требуется материала: 4.000");
 		tBook.add("Наконечник строительного жезла"+"¶===================¶OOXOO¶XXXXX¶OXXXO¶OXOXO¶OOOOO¶===================¶Требуется материала: 1.000");
 
-		UT.Books.createWrittenBook("Manual_Smeltery", "Smelting Crucible Manual", "GMWI (Gregorius Metal Working Industries)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
+		UT.Books.createWrittenBook("Manual_Smeltery", "Руководство по плавильным тиглям", "GMWI (Gregorius Metal Working Industries)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
 
 		//-----
 
 		tBook.clear();
-		tBook.add("This Book Contains Information about every Alloy, which can be created by using a Smelting Crucible.¶===================¶In order to make an Alloy you need to reach the Melting Point of the Alloy itself.");
-		tBook.add("And you need to reach the Melting Point of all but one of its Components. You can ofcourse also melt all of the Components, but you are free to 'not melt' one of the Components.");
-		tBook.add("In case you have to supply Air for the Crucible (for Steel), you need to point an Engine into it, which will act as a Fan. For Multiblock Crucibles the Engine has to be at the Bottom Row.");
+		tBook.add("Эта книга содержит информацию о каждом сплаве, который можно создать с помощью плавильного тигля.¶===================¶Чтобы создать сплав, вам нужно достичь температуры плавления самого сплава.");
+		tBook.add("И вам нужно достичь точки плавления всех его компонентов, кроме одного. Вы, конечно, также можете расплавить все Компоненты, но вы можете 'не плавить' один из компонентов.");
+		tBook.add("Если нужно подать воздух для тигля (для стали), нужно направить в него двигатель, который будет действовать как вентилятор. Для мультиблочных тиглей, двигатель должен находиться в нижнем ряду.");
 
 		for (OreDictMaterial tMat : OreDictMaterial.ALLOYS) {
 			for (IOreDictConfigurationComponent tComponents : tMat.mAlloyCreationRecipes) {
@@ -579,7 +581,7 @@ public class Loader_Books implements Runnable {
 			}
 		}
 
-		UT.Books.createWrittenBook("Manual_Alloys", "Book of Alloys, Smeltery Edition ("+(tBook.size()-2)+")", "GMWI (Gregorius Metal Working Industries)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
+		UT.Books.createWrittenBook("Manual_Alloys", "Книга сплавов, издание для плавильного завода ("+(tBook.size()-2)+")", "GMWI (Gregorius Metal Working Industries)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
 
 		//-----
 
@@ -593,162 +595,162 @@ public class Loader_Books implements Runnable {
 			}
 		}
 
-		UT.Books.createWrittenBook("Manual_Elements", "Book of Periods ("+tBook.size()+")", "GCC (Gregorius Chemical Consortium)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
+		UT.Books.createWrittenBook("Manual_Elements", "Периодическая книга ("+tBook.size()+")", "GCC (Gregorius Chemical Consortium)", ST.make(ItemsGT.BOOKS, 1, tBook.size()>50?32001:32000), tBook.toArray(ZL_STRING));
 
 		//-----
 
-		UT.Books.createWrittenBook("Manual_Extenders", "Extenders & Filters", "GAD (Gregorius Automation Distributions)", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		  "This Manual covers Extenders as well as Filters. It will explain the usage of those Devices in Detail, so that you can use them easily. "
-		, "First a Declaration of Faces any Filter and Extender have. The Main Facing is the Facing you can set using the Wrench and which has 4 Dots around the center Pipe."
-		, "The Secondary Facing is the one with the outwards pointing Arrows, that is set using the Monkey Wrench. And the other Sides of the Extender/Filter are the Neutral Facings."
-		, "Now that this is clear, we can go for the Functionality. Basically ANYTHING that 'interacts' (* explained later) with the Extender through a Neutral or Secondary Facing will get redirected to the TileEntity at the Main Facing."
-		, "This means that the Main Facing is usually (but not always!) the Output Side, if you want to insert Stuff through the Neutral Facings or the Secondary one. So attach the Main Facing to the TileEntity you want to extend or have filtering for."
-		, "Now to the Secondary Facing: As you know the 5 Facings redirect their TileEntity access to the Main Facing, but the Main Facing itself can redirect all the TileEntity accesses on its Side to the TileEntity on the secondary Facing too."
-		, "This means that if you have Input and Output on the same Side of the TileEntity you attach it to, that you can redirect the Output into one Direction using the Secondary Facing, while the Neutral Facings fill the TileEntity on the Main Facing."
-		, "The redirect from Main->Secondary is NOT filtered, only the Neutral&Secondary->Main interactions are filtered! I hope this explanation is good enough to actually use the Filters properly."
-		, "Extenders and Filters cannot be used adjacent to each other in the sense of 'chained together', this means you have to have something, like a Pipe, between an Extender/Filter and another Extender/Filter, unless they are parallel ofcourse."
-		, "Now to explain what 'interact' actually means. A Hopper pulls Items from everything it 'interacts' with above, and pushes things to everything it 'interacts' with below. This means the direction an Item travels is irrelevant to the Extender."
-		, "So if you put a Hopper below an Extender, the Hopper will pull Items from whichever TileEntity the Extender is connected to. And if you put the Hopper above the Extender, it will push into the TileEntity the Extender is attached to."
-		, "Extenders are basically a both-way Detour Sign for anything that tries to interact with them in some way shape or form, as if the TileEntity you attached them to is now two Blocks in Size instead of one."
-		, "They do NOT do anything by themselves at all, they just sit there pretending to be whatever TileEntity you attached them to. So do not expect them to pull or push Items around or something dumb like that."
+		UT.Books.createWrittenBook("Manual_Extenders", "Расширители и фильтры", "GAD (Gregorius Automation Distributions)", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
+		  "В этом руководстве рассматриваются как расширители, так и фильтры. Оно подробно объяснит использование этих устройств, чтобы вы могли легко их использовать."
+		, "Сначала необходимо объявить стороны, которые есть у любого фильтра и расширителя. Основная сторона — это сторона, которую вы можете установить с помощью гаечного ключа и которая имеет 4 точки вокруг центральной трубы."
+		, "Вторичная сторона — это сторона со стрелками, направленными наружу, которая устанавливается с помощью гаечного ключа. А другие стороны расширителя/фильтра являются нейтральными."
+		, "Теперь, когда это ясно, мы можем перейти к функциональности. По сути, ВСЕ, что 'взаимодействует' (* объяснено позже) с расширителем через нейтральную или вторичную сторону, будет перенаправлено на TileEntity на основной стороне."
+		, "Это означает, что основная сторона обычно (но не всегда!) является выходной стороной, если вы хотите вставить материал через нейтральную или вторичную сторону. Поэтому прикрепите основную сторону к TileEntity, который вы хотите расширить или применить к нему фильтрацию."
+		, "Теперь о вторичной стороне: как вы знаете, 5 сторон перенаправляют свой доступ к TileEntity на основной стороне, но сама основная сторона может перенаправлять все доступы к TileEntity на своей стороне к TileEntity на вторичной стороне."
+		, "Это означает, что если у вас есть вход и выход на той же стороне TileEntity, к которой вы его прикрепили, вы можете перенаправить вывод в одном направлении, используя вторичную сторону, в то время как нейтральные стороны заполняют TileEntity на основной стороне."
+		, "Перенаправление с основной на вторичную НЕ фильтруется, фильтруются только нейтральные и вторичная на основную! Я надеюсь, что этого объяснения достаточно, чтобы правильно использовать фильтры."
+		, "Расширители и фильтры не могут использоваться рядом друг с другом, в смысле связанные вместе. Это означает, что у вас должно быть что-то вроде канала между расширителем/фильтром и другим расширителем/фильтром, если они, конечно, не параллельны."
+		, "Теперь объясним, что на самом деле означает 'взаимодействовать'. Воронка извлекает элементы из всего, с чем она 'взаимодействует' выше, и помещает их во все, с чем 'взаимодействует' внизу. Это означает, что направление движения предмета не имеет значения для расширителя."
+		, "Таким образом, если вы поместите djhjyre под расширителем, воронка будет извлекать элементы из любого объекта TileEntity, к которому подключен расширитель. А если вы поместите воронку над расширителем, она заполнит TileEntity, к которому прикреплен расширитель."
+		, "Расширители, по сути, представляют собой двусторонний знак обхода для всего, что пытается взаимодействовать с ними тем или иным образом, как если бы TileEntity, к которому вы их прикрепили, теперь имеет размер двух блоков вместо одного."
+		, "Они вообще ничего не делают сами по себе, они просто сидят там, притворяясь тем TileEntity, к которому вы их прикрепили. Так что не ожидайте, что они будут тянуть или толкать предметы или делать что-то в этом роде."
 		});
 
 		//-----
 
-		UT.Books.createWrittenBook("Manual_Reactors", "Fission Reactor Manual", "Apature Atomics", ST.make(ItemsGT.BOOKS, 1, 32005), new String[] {
-		"¶¶===================¶Introduction and Safety Instructions¶===================¶",
-		"[Transcript]¶Congratulations [Insert employee name] for graduating in nuclear physics!¶You are now fit for your job at Apature Atomics as a reactor operator.",
-		"First, I'll introduce you to what you'll be operating, hopefully without unplanned explosions:¶The core of any fission reactor, the 2x2 nuclear reactor core.",
-		"Some of our engineers would argue that it is just a metal box with four pistons to push the rods either in or up, that we've gone overboard with the processing power on these puppies, that four damn wires would have been sufficient.",
-		"As if anyone would trust four damn wires to prevent total nuclear destruction, it is probably even not in their best interest to do so anyway. That is why in our reactor cores, every single rod controller is sentient.",
-		"It is therefore in their best interest to not explode, as I would then get very angry at them and banish them to 'reactor rod controller'-hell!",
-		"That is what we told them anyway, such a place does obviously not exist, we don't have money to fund every stupid thing. They would go to robot hell instead to be eternally incinerated and rebuild while we gather useful data.",
-		"Turns out those fuckers would never insert the reactor rods at all, making the reactors perfectly safe, but also quite useless, so we overwritten their control of the rods to instead be controlled with four wires.",
-		"Any rumors you might have heard of 1x1 reactor cores are just that, rumors, we would of course never build such a thing because it is obvious that the rod controller would go mad without three other ones to entertain them.",
-		"In the unlikely case you might stumble upon such a core, which won't happen, if they existed we would have already send them to robot hell were they would reside in constant agony, which they don't because they don't exist.",
-		"Anyway, safety, I'm obliged to give you this information, so I'll go over it quickly: Wear you radiation hazard suit at all times. Do not explode the reactor core. Do not explode. Do not cause a nuclear meltdown.",
-		"Do not deny causing a nuclear meltdown in case of a nuclear meltdown. Do not touch the running reactor. Do not break the running reactor. Do not lick the running reactor. Do not let flamingos get near the reactor.",
-		"Do not eat the nuclear fuel. Do not cook on the nuclear reactor. In case of tumors, do eat the nuclear fuel. That should be everything you need to know, now go at it and make some science!",
-		"¶¶===================¶Reactor Operation Basics¶===================¶",
-		"The Nuclear Reactor Core (2x2) has slots for four reactor rods. Rods inserted into the reactor will only directly interact with directly adjacent reactor rods, also including adjacent slots on different, but adjacent, reactor core blocks.",
-		"Rods can be manually inserted into a slot by right clicking it with the rod. Right clicking a slot with Pincers will pull out the reactor rod inside the slot.",
-		"The reactor rods can also be automatically inserted on the top side when the reactor block is off. It is also possible to automatically extract them from the bottom side when the block is off.",
-		"The reactor can be manually toggled on or off with a soft hammer. A redstone machine switch will allow controlling this with redstone. While the reactor is off, the reactor will behave as if it doesn't contain any rods.",
-		"Individual rods can also be toggled on or off to behave as if the slot were empty. This can be done with either the redstone or manual selector.",
-		"The reactor core has two internal tanks to store 64_000 liters of cold and hot coolant. Different coolant can have different effects on the inserted reactor rods. Cold coolant can be inserted from any side.",
-		"Hot coolant will be automatically output on the red facing. If the cold coolant tank is more than half full, cold coolant will be automatically output on the blue facing. The red facing can be moved with a wrench and the blue one with a monkey wrench.",
-		"While the reactor is on, Neutrons can be present on active reactor rods. The neutrons might interact with the reactor rods in different ways.",
-		"Generally, the number of neutrons is directly output as HU into the reactor each tick. Neutrons only last for one second and will therefore be updated only every second.",
-		"Neutron counts can be manually measured by right-clicking the reactor core with a Geiger Counter. The Geiger Counter Sensor can also be attached to the reactor core to measure the sum of all neutrons on the reactor rods.",
-		"100% of the percentage modes of the sensor refers to the sum of neutron maximums of all fuel rods inside the reactor core. A reactor will also emit radiation with a ranged based on the highest number of neutrons on any reactor rod.",
-		"Building the reactor far away from any settlements and wearing a radiation hazard suit is strongly advised. Any reactor core will explode when heat gets added without coolant being present.",
-		"Should new heat energy from neutrons be added when the reactor is out of coolant, the reactor will violently disintegrate.",
-		"Should there be no space for the produced hot coolant remaining in the reactor, the reactor will be undergo rapid unplanned disassembly.",
-		"¶¶===================¶Guide to Reactor Rods¶===================¶",
-		"Empty Reactor Rod¶===================¶Does nothing when inside a reactor. Doesn't accept neutrons.",
-		"Fuel Rod¶===================¶Fuel rods emit Neutrons onto themselves and adjacent reactor rods. They have several stats that vary based on the material of the rod and the coolant that is used in the reactor.",
-		"The Self stat describes how many Neutrons the rod outputs onto its own slot.¶The Emission stat describes how many Neutrons it outputs onto each adjacent reactor rod.",
-		"The Factor stat describes how many additional neutrons it will output onto adjacent reactor rods based on how many neutrons are on itself.",
-		"A bigger Factor (1/3 > 1/32) means more additional neutrons are output per neutron on the fuel rod.¶The Maximum stat describes how many neutrons can be on this fuel rod before it will be losing duration faster.",
-		"When over the maximum, the fuel rod will be losing duration at minimum four times faster, scaling linearly with the amount of neutrons over the maximum.",
-		"Moderated fuel rods will make adjacent active fuel rods also moderated. Moderated fuel rods will deplete four times faster and can't put neutrons onto breeder rods.",
-		"When the remaining duration of the fuel rod runs out, it will convert to a Depleted Fuel Rod.",
-		"Depleted Fuel Rod¶===================¶Does nothing when inside a reactor. Doesn't accept neutrons. Can be centrifuged to obtain some fuel and some higher tier fission fuel back.",
-		"Absorber Rod¶===================¶Absorber rods accept neutrons from adjacent fuel rods. Each neutron on an absorber rod gets converted to two HU instead of just one.",
-		"Reflector Rod¶===================¶Return any neutrons put onto them directly to their source. They therefore will never have any neutron on them.",
-		"Moderator Rod¶===================¶Like reflector rods they return neutrons directly back to their source, but the number of neutrons they return gets multiplied by the number of fuel rods that emit neutrons onto them.",
-		"They therefore can reflect up to four times as many neutrons back and will never have any neutron on them. Moderator rods also moderate adjacent fuel rods,",
-		"making them deplete four times faster and unable to put neutrons onto breeder rods. Moderated fuel rods will also make adjacent active fuel rods moderated.",
-		"Breeder Rod¶===================¶Each tick, the number of neutrons on this rod get subtracted from the neutrons needed. If the needed neutrons reach zero, the rod will turn into an enriched rod.",
-		"Breeder rods will not accept neutrons from moderated fuel rods. The loss stat gets subtracted from each number of neutrons emitted onto this rod,",
-		"meaning the loss applies to the neutrons coming from any fuel rod emitting onto it and not just once for the breeder rod.",
-		"¶¶===================¶Guide to Reactor Coolants¶===================¶",
-		"Distilled Water¶===================¶Converts directly into steam, doesn't need a heat exchanger. 80 HU turns 1L of Distilled Water into 160L of Steam. Moderates any fuel rods inside. No fuel rod stat changes.",
-		"Semi-heavy Water¶===================¶40 HU turns 1L of Semi-heavy Water into 1L of Hot Semi-heavy Water. Moderates any fuel rods inside. No fuel rod stat changes.",
-		"Heavy Water¶===================¶50 HU turns 1L of Heavy Water into 1L of Hot Heavy Water. Moderates any fuel rods inside. Divides maximum stat of fuel rods by 8.",
-		"Tritiated Water¶===================¶60 HU turns 1L of Tritiated Water into 1L of Hot Tritiated Water. Moderates any fuel rods inside. Divides maximum stat of fuel rods by 16.",
-		"Industrial Coolant¶===================¶20 HU turns 1L of Industrial Coolant into 1L of Industrial Heatant. Multiplies self stat of fuel rods by 4.",
-		"Multiplies emission stat of fuel rods by 4. Multiplies factor stat of fuel rods by 2.",
-		"Carbon Dioxide¶===================¶20 HU turns 1L of Carbon Dioxide into 1L of Hot Carbon Dioxide. Multiplies self stat of fuel rods by 3.",
-		"Helium¶===================¶30 HU turns 1L of Helium into 1L of Hot Helium. Divides emission stat of fuel rods by 2.",
-		"Molten Lithium Chloride¶===================¶15 HU turns 1L of Molten Lithium Chloride into 1L of Hot Molten Lithium Chloride. Multiplies self stat of fuel rods by 5. Divides emission stat of fuel rods by 2. Increases maximum stat of fuel rods by 25%",
-		"Molten Tin¶===================¶40 HU turns 1L of Molten Tin into 1L of Hot Molten Tin. Neutrons only convert only to a third of the HU. Decreases divisor of factor stat of fuel rods by 1.",
-		"Molten Sodium¶===================¶30 HU turns 1L of Molten Sodium into 1L of Hot Molten Sodium. Neutrons only convert only to a sixth of the HU. Decreases divisor of factor stat of fuel rods by 1.",
-		"Molten Thorium Salt¶===================¶2_560_000 HU turns 1L of Molten Thorium Salt into 1L of Molten Lithium Chloride. Sets self stat of fuel rods to 0. Divides emission stat of fuel rods by 2. Multiplies maximum stat of fuel rods by 4.",
-		"¶¶===================¶Stable Reactor Design Guidelines¶===================¶",
-		"Stable nuclear fission reactors, also commonly called subcritical reactors, are a design of fission reactor that have no critical fuel rods. This means that the neutron count and thus heat output doesn't constantly increase while the reactor is running.",
-		"The advantages of stable reactors are:¶- No external control required¶- Stable neutron/HU output¶- Increased Safety¶- Easy to design¶- Function with any nuclear fuel",
-		"Disadvantages of stable reactors are:¶- Not very fuel efficient¶- Only really usable as power generating reactors¶- Generally bigger than comparable critical reactors",
-		"A reactor rod can be considered critical when the number of neutrons reflected back onto the rod times the factor of the rod is greater or equal to the emission of the fuel rod.",
-		"This means that a rod is critical if the number of reflectors around it times the factor is greater or equal to 1. So a fuel rod with a factor of 1/3 needs at least 3 adjacent reflector rods to be critical.",
-		"Therefore it is advised to use Industrial Coolant as a reactor coolant for stable reactors. Industrial Coolant decreases the factor of fuel rods, making it impossible for any fuel rod to go critical without moderator rods.",
-		"It also increases the self and emission stat which is really advantageous in stable reactors, as it means more Neutrons and therefore more efficiency.",
-		"You can generally adhere to these four rules to get your stable reactor to the best efficiency:¶If the fuel used has a factor lesser than 1/8, surrounding fuel rods with absorber rods yields the greatest HU output.",
-		"If the fuel used has a factor of 1/8, surrounding your fuel rods with absorber, reflector or other fuel rods yields to the exact same HU output.",
-		"If the fuel used has a factor greater than 1/8, surrounding your fuel rods with reflectors or other fuel rods yields the greatest HU output.",
-		"Don't use water based coolant or moderator rods in stable reactors, as they massively decrease the duration and therefore efficiency of fuel rods by moderating them without any real benefit in stable reactor designs.",
-		"¶¶===================¶Critical Reactor Design Guidelines¶===================¶",
-		"Critical nuclear fission reactors, also commonly called supercritical reactors, are a design of fission reactor that have critical fuel rods. This means that the neutron count and thus heat output constantly increases while the reactor is running.",
-		"The advantages of critical reactors are:¶- Greater efficiency¶- Completely configurable neutron output¶- Generally smaller than comparable stable reactors¶- Able to work as burner or breeder reactors",
-		"Disadvantages of critical reactors are:¶- Need external control¶- Constantly fluctuation HU output¶- Harder to design¶- Decreased safety¶- Need fuel with higher factors",
-		"A reactor rod can be considered critical when the number of neutrons reflected back onto the rod times the factor of the rod is greater or equal to the emission of the fuel rod.",
-		"This means that a rod is critical if the number of reflectors around it times the factor is greater or equal to 1. So a fuel rod with a factor of 1/3 needs at least 3 adjacent reflector rods to be critical.",
-		"Since the neutron count on the fuel rod will be indefinitely increasing, you need to control the reaction so you won't output more power than you can handle.",
-		"Geiger counter sensors allow such control in an automatic fashion when combined with redstone machine switches or selectors.",
-		"So when the neutron count gets too high you want to turn a reactor rod off to make the fuel rod subcritical again, making the neutron count shrink.",
-		"For the greatest efficiency you want your neutron count on the fuel rod stay beneath the maximum stat of that fuel rod at all times, while coming as close to it as you can.",
-		"You'd also want the neutron count to shrink as little as possible when controlling the reactor, so your average HU output stays as high as possible.",
-		"Therefore you need a fuel with a factor of at least 1/4 to be able to build a critical reactor without the use of moderator rods.",
-		"The easiest to acquire fuel that fulfills this condition is Uranium 235. You can get it by processing Uraninite. When using moderator rods the fuel can have a factor down to 1/16, so using Uranium 238 is possible.",
-		"¶¶===================¶Burner Reactor Design Guidelines¶===================¶",
-		"Burner Reactors are a type of nuclear fission design, with the purpose of burning through fuel rods as quickly as possible, allowing the depleted fuel rods to be processed for better nuclear fuel materials.",
-		"There are two ways to make fuel rod depletion significantly quicker:¶- Moderating the fuel rod¶- Running above the neutron maximum",
-		"A fuel rod can be moderated by either by having it placed in reactor cooled with Distilled/Semi-Heavy/Heavy/Tritiated Water or placing it next to a moderator rod or moderated fuel rod. When moderated, the fuel rod will deplete four times faster.",
-		"When having a neutron count greater than the maximum stat of the fuel rod on the fuel rod, it will also deplete four times faster, stacking with moderation to 16 times faster.",
-		"The more you go over the maximum, the quicker the fuel rod will deplete, having a neutron count twice as high as the maximum on the rod will make it deplete twice as fast yet again, which would be stacking with moderation to 32 times faster depletion.",
-		"Neutron counts 17 times the maximum would therefore make the fuel rod deplete 17 times faster times, times 4 because of going over the maximum,",
-		"so 68 times faster, times 4 if the rod is moderated, so 272 times faster than an unmoderated rod with neutron counts below the neutron maximum.",
-		"Instead of significantly increasing the neutron count on the fuel rod, it is also possible to lower the neutron maximum to take advantage of this effect.",
-		"This can be easily done by using either Heavy or Tritiated Water, which lower the maximum stat by 8 and 16 times respectively and additionally also moderate all fuel rods because they are water based.",
-		"To achieve really high neutron counts, it is advisable to utilize a critical reactor design, though it is also feasible to run a burner reactor as a stable design.",
-		"Cobalt 60, while being almost useless as a reactor fuel itself, is really easy to burn into Thorium, which is much more useful.",
-		"¶¶===================¶Breeder Reactor Design Guidelines¶===================¶",
-		"Breeder reactors have the goal of turning breeder rods into enriched rods. They allow getting really good nuclear fuel from lesser, more abundant fuels, like Thorium and Uranium 238.",
-		"However while similar to burner reactors, they are much harder to build, requiring a non-moderated, critical reactor design. Breeder rods have a stat called loss. It describes how many neutrons are subtracted from any amount of neutrons put onto it.",
-		"So when you have a breeder rod with a loss of 500 neutrons and try to emit 300 neutrons onto it from a single adjacent fuel rod, the breeder rod receive no neutrons, which means that the breeding process won't be advanced.",
-		"When emitting 300 neutrons from another adjacent fuel rod onto the same breeder rod, now essentially emitting 300 neutrons twice onto it, there will still be no neutrons on the breeder rod, as the loss is applied to each amount of neutrons.",
-		"This means that high neutron outputs from a single fuel rod are required, which make it infeasible to run a non-critical reactor design as a breeder.",
-		"Emitting 900 neutrons onto the same breeder rod with a loss of 500 neutrons would mean that 400 neutrons would end up on the breeder rod, meaning that they would be added to the process of turning into an enriched rod each tick.",
-		"Another fuel rod emitting 900 neutrons onto the same breeder rod, so essentially 900 neutrons twice, would therefore mean 800 neutrons on the breeder rod.",
-		"Since the breeder rod essentially needs to be adjacent to a critical fuel rod, the fuel rod only has three sides remaining for reflectors, which means it can only go critical if its factor is 1/3 or greater.",
-		"Moderator rods are obviously not usable here, since breeder rods can't accept neutrons from moderated fuel rods. This means either fuels with a higher factor like Plutonium are required or a coolant that raises the factor needs to be used.",
-		"Molten metal coolants like Molten Tin or Molten Sodium are therefore best for breeder reactors, since they raise the factor of fuel rods inside,",
-		"making breeding possible with more common fuel materials like Uranium 235 or allowing better fuel materials to breed more breeder rods at once.",
-		"They also have the advantage of lowering the HU output of the neutrons, which means higher neutron counts are possible with less cooling.",
-		"Emitting higher neutrons counts onto the breeder rods amounts to a quicker and also more efficient breeding process, as the neutron loss would be applied over a shorter time, resulting in fewer neutrons lost in total.",
-		"¶¶===================¶Thorium Salt Reactor Design Guidelines¶===================¶",
-		"Thorium Salt is a really special kind of coolant. In fact, it can't even be considered a coolant, as it doesn't get converted into an energy carrying liquid.",
-		"Instead it can be seen more of as a fuel itself, since it turns into Molten Lithium Chloride, meaning that essentially the thorium inside the thorium salt gets used up as a fuel.",
-		"Thorium salt also depletes really slowly into Molten Lithium Chloride, only for every 2_560_000 neutrons one liter of Thorium Salt gets turned into Molten Lithium Chloride.",
-		"The main advantage of using Thorium Salt is how it effects the stats of any fuel rod inside, massively boosting them.",
-		"However, since power can't be extracted from the Thorium Salt, since it doesn't turn into an energy carrying liquid, you can't simply use Thorium Salt alone in any reactor design.",
-		"A reactor design utilizing Thorium Salt needs to be using at least one other, additional coolants instead.",
-		"The reactor core filled with Thorium Salt would house the fuel rods,  while adjacent reactor cores filled with another coolant would capture the neutrons emitted from that reactor with neutron absorber rods.",
-		"Since the Thorium Salt main advantage is how it massively raises the maximum stat of fuel rods inside, it generally only really makes sense as a critical reactor design.",
-		"Critical Thorium Salt reactors are the most efficient power generating reactors possible, but also among the hardest to build.",
-		"¶¶===================¶Advanced Fission Reactors¶===================¶",
-		"This chapter will give you some tips and the mathematical formulas to build the most advanced and efficient reactors possible.",
-		"Calculating the neutron emission¶===================¶A fuel rod will emit more neutrons onto its neighbors when it has a higher neutron count on it.",
-		"The exact amount of neutrons any fuel rod would emit onto one adjacent neighbor can be calculated like this:¶¶e_n = e + ((n – s) * f)",
-		"e_n: Neutrons emitted onto neighbor¶e: Emission stat of the fuel rod¶n: Neutron count on the fuel rod¶s: Self stat of the fuel rod¶f: Factor of the fuel rod",
-		"Calculating the depletion rate of a fuel rod¶===================¶A fuel rod usually has a depletion rate of one and will therefore last as long as the time on the tooltip suggests.",
-		"However, when having a greater amount neutrons on the fuel rod than the neutron maximum, the depletion rates gets multiplied by this factor:¶¶f = 4 * n / m",
-		"f: Depletion rate multiplier¶n: Neutron count on the fuel rod¶m: Maximum stat of the fuel rod",
-		"Furthermore, having the fuel rod moderated will additionally multiply its depletion rate by a factor of 4. Divide the time remaining stat of the fuel rod by the calculated depletion rate to get the real time until depletion.",
-		"Tips and Tricks¶===================¶You can build reactor designs using multiple coolants. For critical reactors using moderator rods it is smarter to control one adjacent fuel rod,",
-		"rather than the moderator rod itself to control the neutron counts. Robot arms allow for precise automation of reactor cores.¶Filters can be used for easier automation of burner and breeder reactors.",
-		"A higher self stat is bad in critical reactor designs, as contributes to the maximum without effecting the neutron emission.¶The emission stat is mostly irrelevant for efficiency in critical reactor designs.",
-		"Setting the geiger counter sensor to hexadecimal mode is useful when trying to control neutron counts greater than 9_999. In hexadecimal mode you can compare up to 65_535 neutrons."
+		UT.Books.createWrittenBook("Manual_Reactors", "Руководство по реактору деления", "Apature Atomics", ST.make(ItemsGT.BOOKS, 1, 32005), new String[] {
+		"=================== =================== =================== =================== =================== =================== =================== =================== =================== =================== =================== =================== =================== ===================",
+		"¶¶===================¶Введение и инструкции по безопасности¶===================¶",
+		"[Стенограмма]¶Поздравляем [Вставьте имя сотрудника] с дипломом по ядерной физике!¶Теперь вы подходите для работы в Apature Atomics в качестве оператора реактора.",
+		"Сокращения¶===================¶АЗР - активная зона ядерного реактора.¶СР - стержень реактора.¶ОЖ - теплоноситель/ охлажд. жидкость.¶ХОЖ - холодная ОЖ.¶ГОЖ - горячаяя ОЖ.¶",
+		"Сначала я познакомлю вас с тем, чем вы будете управлять, надеюсь, без незапланированных взрывов:¶Ядро любого реактора деления - АЗР 2х2.",
+		"Некоторые из наших инженеров утв-ют, что это просто металл-ая коробка с четырьмя поршнями, которые толкают стержни внутрь или вверх, что мы переборщили с вычислительной мощностью этих малышей, что 4-х чертовых проводов было бы достаточно.",
+		"Как будто кто-то поверил бы четырем проклятым проводам, чтобы предотвратить полное ядерное разрушение, вероятно, в любом случае это даже не в его интересах. Вот почему в АЗР каждый стержень-контроллер разумен.",
+		"Поэтому в их интересах не взорваться, так как тогда я бы очень разозлился на них и отправил бы их 'контролер СР' — в ад!",
+		"Во всяком случае, мы им так сказали, такого места явно не существует, у нас нет денег, чтобы финансировать всякую глупость. Вместо этого они отправятся в ад роботов, чтобы их вечно сжигали и перестраивали, пока мы собираем полезные данные.",
+		"Оказывается, они вообще никогда не вставляли СР, что делало реакторы сов-но безопасными и бесполезными, поэтому мы перезаписали их контроль над стержнями, чтобы вместо этого они управлялись 4-мя проводами.",
+		"Любые слухи, которые вы, возможно, слышали об АЗР 1х1 — это всего лишь слухи, мы, конечно, никогда бы не построили такую штуку, потому что очевидно, что стержень-контроллер сошел бы с ума без трех других, которые бы его развлекали.",
+		"В маловероятном случае вы можете наткнуться на такое ядро, чего не произойдет, если бы они существовали, мы бы уже отправили их в ад роботов, где бы они находились в постоянной агонии, чего они не делают, потому что их не существует.",
+		"В любом случае, безопасность, я обязан предоставить вам эту информацию, поэтому я быстро пройдусь по ней: Всегда носите костюм радиационной защиты. Не взрывайте АЗР. Не взрывайтесь. Не спровоцируйте ядерный взрыв.",
+		"Не отрицайте причину ядерного взрыва в случае ядерного взрыва. Не прикасайтесь к работающему реактору. Не ломайте работающий реактор. Не облизывайте работающий реактор. Не позволяйте фламинго приближаться к реактору.",
+		"Не ешьте ядерное топливо. Не готовьте на ядерном реакторе. В случае опухолей ешьте ядерное топливо. Это должно быть все, что вам нужно знать, а теперь приступайте к делу и займитесь наукой!",
+		"¶¶===================¶Основы работы реактора¶===================¶",
+		"В АЗР (2x2) есть слоты для 4-х СР.¶СР, вставленные в реактор, будут напрямую взаимодействовать только с непосредственно соседними СР, включая соседние пазы на разных, но соседних блоках АЗР.",
+		"СР можно вставить в слот вручную, щелкнув по нему ПКМ. Щелчок ПКМ по слоту с помощью клещей вытащит СР внутри слота.",
+		"СР также могут автоматически вставляться сверху, когда реакторный блок отключен. Также возможно автоматическое извлечение их с нижней стороны при выключенном блоке.",
+		"Реактор можно включать и выключать вручную с помощью киянки. Переключатель машины из красного камня позволит управлять этим с помощью красного камня. Пока реактор выключен, он будет вести себя так, как будто в нем нет СР.",
+		"Отдельные СР также можно включать и выключать, чтобы они вели себя так, как будто слот пуст. Это можно сделать либо с помощью красного камня, либо с помощью ручного переключателя.",
+		"АЗР имеет два внутренних бака для хранения 64 000 литров ХОЖ и ГОЖ. Разная ОЖ может по-разному воздействовать на вставленные СР. ХОЖ можно заливать с любой стороны. ГОЖ автоматически выйдет на красную сторону.",
+		"Если бак ХОЖ заполнен более чем на половину, ХОЖ будет автоматически выливаться на синюю сторону. Красную сторону можно переместить с помощью гаечного ключа, а синюю — с помощью разводного ключа.",
+		"Пока реактор включен, нейтроны могут присутствовать на активных СР. Нейтроны могут взаимодействовать со СР по-разному.",
+		"Как правило, количество нейтронов напрямую выводится в реактор в виде HU каждый тик. Нейтроны существуют только одну секунду и поэтому обновляются только каждую секунду.",
+		"Кол-во нейтронов можно измерить вручную, щелкнув ПКМ по АЗР с помощью счетчика Гейгера. Датчик счетчика Гейгера также может быть прикреплен к АЗР для измерения суммы всех нейтронов на СР.",
+		"100% режим датчика относится к сумме нейтронных максимумов всех ТВЭЛов внутри АЗР. Реактор также будет излучать излучение с диапазоном, основанным на наибольшем количестве нейтронов на любом СР.",
+		"Настоятельно рекомендуется строить реактор вдали от населенных пунктов и носить костюм радиационной защиты. Любая АЗР взорвется, если добавить тепло без присутствия ОЖ.",
+		"Если добавить новую тепловую энергию от нейтронов, когда в реакторе нет ОЖ, реактор резко разрушится. Если в реакторе не останется места для оставшейся ГОЖ, реактор будет подвергнут быстрой внеплановой разборке.",
+		"¶¶===================¶Руководство по стержням реакторов¶===================¶",
+		"Сокращения¶===================¶ПСР - пустой СР.¶ТВЭЛ - топливный СР.¶ПС - поглащающий СР.¶ОС - отражающий СР.¶ЗС - замедляющий СР.¶СС- селекционный СР.",
+		"Пустой стержень реактора (ПСР)¶===================¶Ничего не делает, находясь внутри реактора. Не принимает нейтроны.",
+		"Топливный стержень (ТВЭЛ)¶===================¶ТВЭЛ излучают нейтроны на себя и соседние СР. У них есть несколько характеристик, которые различаются в зависимости от материала СР и ОЖ, используемого в реакторе.",
+		"Параметр 'ПН' (Персональных нейтронов) описывает сколько нейтронов СР выводит на свой собственный слот. Параметр 'Выброс' описывает сколько нейтронов он выводит на каждый соседний СР.",
+		"Параметр 'Фактор' описывает сколько дополнительных нейтронов он выпустит на соседние СР в зависимости от того, сколько нейтронов находится на нем самом.",
+		"Больший коэффициент (1/3 > 1/32) означает, что на один нейтрон на ТВЭЛ выводится больше допол-ых нейтронов. ¶Показатель 'Максимум' описывает сколько нейтронов может быть на этом ТВЭЛ, прежде чем он начнет терять продолжительность быстрее.",
+		"При превышении максимального значения, ТВЭЛ будет терять продолжительность жизни как минимум в четыре раза быстрее, линейно масштабируясь в зависимости от количества нейтронов, превышающего максимальное.",
+		"ЗС сделают также замедленными соседние активные ТВЭЛ. Замедленные ТВЭЛ разряжаются в четыре раза быстрее и не могут передать нейтроны на СС. Когда оставшийся срок службы ТВЭЛ истечет, он превратится в истощенный ТВЭЛ.",
+		"Истощенный ТВЭЛ¶===================¶Ничего не делает, находясь внутри реактора. Не принимает нейтроны. Можно использовать в центрифуге, чтобы получить обратно немного топлива и немного топлива деления более высокого уровня.",
+		"Поглощающий стержень (ПС)¶===================¶ПС принимают нейтроны от соседних ТВЭЛов. Каждый нейтрон на ПС преобразуется в две HU вместо одной",
+		"Отражающий стержень (ОС)¶===================¶Возвращают все нейтроны, попавшие на них, прямо к их источнику. Поэтому на них никогда не будет нейтронов.",
+		"Замедляющий стержень (ЗС)¶===================¶Подобно ОС, они возвращают нейтроны непосредственно обратно к источнику, но количество возвращаемых ими нейтронов умножается на количество ТВЭЛ, излучающих на них нейтроны.",
+		"Поэтому они могут отражать обратно в четыре раза больше нейтронов и никогда не иметь на себе ни одного нейтрона.",
+		"ЗС также замедляют соседние ТВЭЛ, в результате чего они истощаются в четыре раза быстрее и не могут передать нейтроны на СС. Замедленные ТВЭЛ также сделают замедленными соседние активные ТВЭЛ.",
+		"Селекционный стержень (СС)¶===================¶Каждый тик кол-во нейтронов на этом стержне вычитается из необходимого ко-ва нейтронов. Если необходимое кол-во нейтронов достигнет нуля, стержень превратится в обогащенный ТВЭЛ.",
+		"СС не принимают нейтроны от замедленных ТВЭЛ. Показатель потерь вычитается из каждого количества нейтронов, испускаемых этим стержнем,",
+		"то есть потери применяются к нейтронам, поступающим от любого ТВЭЛ, излучающего на него, а не только один раз для СС.",
+		"¶¶===================¶Руководство по теплоносителям реактора¶===================¶",
+		"Дистилированная вода¶===================¶Превращается в пар, не требует теплообменника.¶80 HU превращает¶1л дист. воды в¶160л пара.¶Замедляет любые ТВЭЛ внутри. Статус ТВЭЛ не меняется.",
+		"Полутяжелая вода¶===================¶40 HU превращает 1л полутяжелой воды в 1л гор. полутяжелой воды.¶Замедляет любые ТВЭЛ внутри.¶Статус ТВЭЛ не меняется.",
+		"Тяжелая вода¶===================¶50 HU превращают 1л тяжелой воды в¶1л гор. тяжелой воды.¶Замедляет любые ТВЭЛ внутри.¶Делит хар-ку ТВЭЛ 'Максимум' на 8.",
+		"Тритиевая вода¶===================¶60 HU превращают 1л тритиевой воды в¶1л гор. тритиевой воды.¶Замедляет любые ТВЭЛ внутри.¶Делит хар-ку ТВЭЛ 'Максимум' на 16.",
+		"Хладагент¶===================¶20 HU превращают¶1л хладагента в¶1л гор. хладагента. Умножает хар-ки ТВЭЛ:¶'ПН' на 4¶'Выброс' на 4¶'Фактор' на 2",
+		"Диоксид углерода¶===================¶20 HU превращают 1л диоксида углерода в 1л гор. диоксида углерода.¶Умножает хар-ку ТВЭЛ 'ПН' на 3.",
+		"Гелий¶===================¶30 HU превращают¶1л гелия в¶1л гор. гелия.¶Делит хар-ку ТВЭЛ 'Выброс' на 2.",
+		"Расплавленный хлорид лития¶===================¶15 HU превращает 1л расплавленного хлорида лития в 1л гор. расплавленного хлорида лития.¶Меняет хар-ки ТВЭЛ:¶'ПН'х5¶'Выброс'/2¶'Максимум'+25%",
+		"Расплавленное олово¶===================¶40 HU превращают 1л расплавленного олова в 1л гор. расплавленного олова.¶Нейтроны преобр-ся только в треть HU. Уменьшает делитель 'Фактор' ТВЭЛ на 1.",
+		"Расплавленный натрий¶===================¶30 HU превращает 1л расплавленного натрия в 1л гор. расплавленного натрия. Нейтроны преобр-ся только в шестую часть HU.¶Уменьшает делитель 'Фактор' ТВЭЛ на 1.",
+		"Расплавленная ториевая соль¶===================¶2_560_000 HU превращает 1л расплавленной соли тория в 1л расплавленного хлорида лития.¶Меняет хар-ки ТВЭЛ:¶'ПН'=0¶'Выброс'/2¶'Максимум'х4",
+		"¶¶===================¶Руководство по проектированию стабильного реактора¶===================¶",
+		"Стабильные ядерные реакторы деления, представляют собой конструкцию реактора деления, в которой нет критических ТВЭЛ. Это означает, что кол-во нейтронов и, следовательно, тепловая мощность не увеличиваются постоянно во время работы реактора.",
+		"Преимущества стабильных реакторов:¶- Не требуется внешний контроль¶- Стабильный выход нейтронов/HU¶- Повышенная безопасность¶- Легко проектировать ¶- Работает с любым ядерным топливом",
+		"Недостатками стабильных реакторов являются:¶- Не очень экономичен по топливу¶- Действительно можно использовать только в качестве энергетических реакторов¶- Обычно больше, чем сопоставимые критические ре-ры",
+		"Стержень реактора можно считать критическим, когда  кол-во нейтронов, отраженных обратно на стержень, умноженное на коэффициент стержня, больше или равно параметру 'Выброс' топливного стержня.",
+		"Это означает, что стержень является критическим, если кол-во отражателей вокруг него, умноженное на коэффициент, больше или равно 1. Таким образом, ТВЭЛ с коэффициентом 1/3 требует как минимум 3 соседних ОС, чтобы быть критическим.",
+		"Поэтому реком-ся использовать хладагент в кач-ве теплоносителя для стабильных реакторов. Хладагент снижает коэффициент ТВЭЛ, делая невозможным переход любого ТВЭЛ в критическое состояние без ЗС.",
+		"Это также увеличивает характеристики 'ПН' и 'Выброс', что действительно выгодно для стабильных реакторов, поскольку означает больше нейтронов и, следовательно, большую эффективность.",
+		"Обычно вы можете придерживаться этих четырех правил, чтобы добиться максимальной эффективности вашего стабильного реактора:",
+		"Правло 1:¶Если используемое топливо имеет коэффициент менее 1/8, окружение ТВЭЛ ПС дает наибольшую мощность HU.",
+		"Правло 2:¶Если используемое топливо имеет коэффициент 1/8, окружение ТВЭЛ ПС, ОС или другими ТВЭЛ дает точно такую же мощность HU.",
+		"Правло 3:¶Если коэффициент используемого ТВЭЛ превышает 1/8,окружение ТВЭЛ ОС или другими ТВЭЛ дает максимальную мощность HU.",
+		"Правло 4:¶Не используйте теплоноситель на водной основе или ЗС в стабильных реакторах, так как они значительно снижаю срок службы и эффективность ТВЭЛ за счет их замедления, без какой-либо реальной выгоды в стабильных реакторах.",
+		"¶¶===================¶Руководство по проектированию критических реакторов¶===================¶",
+		"Критические ядерные реакторы деления, представляют собой конструкцию реактора деления с критическими ТВЭЛ. Это означает, что кол-во нейтронов и тепловая мощность постоянно увеличиваются во время работы реактора.",
+		"Преимущества крит. реакторов:¶- Большая эффективность¶- Полностью настраиваемый нейтронный выход ¶- Обычно меньше, чем сопоставимые стабильные реакторы¶- Способны работать в качестве реакторов-горелок или обогащающих",
+		"Недостатки крит. реакторов:¶- Нужен внешний контроль¶- Постоянное колебание мощности HU¶- Сложнее спроектировать¶- Снижение безопасности¶- Необходимы ТВЭЛ с более высоким коэффициентом",
+		"Стержень реактора можно считать критическим, когда кол-во нейтронов, отраженных обратно на стержень, умноженное на коэффициент стержня, больше или равно параметру 'Выброс' топливного стержня.",
+		"Это означает, что стержень является критическим, если кол-во отражателей вокруг него, умноженное на коэффициент, больше или равно 1. Таким образом, ТВЭЛ с коэффициентом 1/3 требует как минимум 3 соседних ОС, чтобы быть критическим.",
+		"Поскольку кол-во нейтронов на ТВЭЛ будет бесконечно увеличиваться, вам необходимо контролировать реакцию, чтобы не выдавать больше энергии, чем вы можете выдержать.",
+		"Счетчик Гейгера позволяет осуществлять такое управление автоматически в сочетании с машинными переключателями или селекторами из красного камня.",
+		"Поэтому, когда кол-во нейтронов становится слишком большим, вы хотите выключить стержень реактора, чтобы снова сделать ТВЭЛ подкритическим, что приводит к уменьшению кол-ва нейтронов.",
+		"Для достижения максимальной эффективности вам нужно, чтобы кол-во нейтронов на ТВЭЛ всегда оставалось ниже максимального значения этого ТВЭЛ, но при этом приближалось к нему как можно ближе.",
+		"Вы также хотели бы, чтобы кол-во нейтронов уменьшалось как можно меньше при управлении реактором, чтобы ваша средняя мощность HU оставалась как можно выше.",
+		"Поэтому вам нужно топливо с коэффициентом не менее 1/4, чтобы можно было построить критический реактор без использования ЗС.",
+		"Проще всего исп-ть топливо, отвечающее этому условию — Уран-235. Его можно получить, перерабатывая Настуран. При использовании ЗС коэффициент топлива может быть уменьшен до 1/16, поэтому возможно исп-ие Урана-238.",
+		"¶¶===================¶Руководство по проектированию реактора-горелки¶===================¶",
+		"Реакторы-горелки представляют собой тип конструкции ядерного деления, целью которой яв-ся максимально быстрое сжигание ТВЭЛ, что позволяет перерабатывать истощенные ТВЭЛ для получения более качественных материалов ядерного топлива.",
+		"Есть два способа значительно ускорить истощение ТВЭЛ:¶- Замедление ТВЭЛ¶- Превышение нейтронного максимума",
+		"ТВЭЛ можно замедлить поместив его в реактор, охлаждаемый водным теплоносителем, либо поместив его рядом с ЗС или замедленным ТВЭЛ. При замедлении ТВЭЛ будет истощаться в четыре раза быстрее.",
+		"Если количество нейтронов превышает максимальное значение ТВЭЛ на нем, он также будет истощаться в четыре раза быстрее, суммируясь с замедлением до 16 раз быстрее.¶Чем больше вы превысите максимум, тем быстрее будет истощаться ТВЭЛ.",
+		"Если количество нейтронов в 2 раза превышает максимум на стержне, это снова заставит его истощаться в 2 раза быстрее, что будет суммироваться с замедлением до 32-кратного ускорения истощения.",
+		"Число нейтронов в 17 раз превышает максимальное, поэтому ТВЭЛ истощается в 17 раз быстрее, в 4 раза из-за превышения максимума, то есть в 68 раз быстрее, в 4 раза, если стержень замедлился, то есть в 272 раза быстрее.",
+		"Вместо значительного увеличения кол-ва нейтронов на ТВЭЛ можно также снизить нейтронный максимум, чтобы воспользоваться этим эффектом.",
+		"Это можно легко сделать, используя тяжелую или тритиевую воду, которые снижают максимальную характеристику в 8 и 16 раз, а также замедляют все ТВЭЛ, поскольку они основаны на воде.",
+		"Для достижения действительно высокого числа нейтронов желательно использовать критическую конструкцию реактора, хотя также возможно использовать реактор-горелку в качестве стабильной конструкции.",
+		"Кобальт-60, хотя сам по себе почти бесполезен в качестве топлива для реактора, на самом деле легко сгорает до тория, который гораздо полезнее.",
+		"¶¶===================¶Руководство по проектированию обогощающего реактора¶===================¶",
+		"Целью обогощающих реакторов является превращение СС в обогащенные ТВЭЛ. Они позволяют получать хорошее ядерное топливо из распространенных видов топлива, таких как Торий и Уран-238.¶Хотя они и похожи на реакторы-горелки, их горасздо сложнее",
+		"построить, так как для них требуется незамедлительная и крит. конструкция реактора. У СС есть показатель, называемый потерей. Он описывает, сколько нейтронов вычитается из любого количества помещенных в него нейтронов.",
+		"Таким образом, когда у вас есть СС с потерей 500 нейтронов и вы пытаетесь испустить на него 300 нейтронов из одного соседнего ТВЭЛ, СС не получает нейтронов, а это означает, что процесс обогащения не будет продвигаться вперед.",
+		"При излучении 300 нейтронов из другого ТВЭЛ на тот же СС, то есть испуская на него 300 нейтронов дважды, на СС по-прежнему не будет нейтронов, поскольку потери применяются к каждому количеству нейтронов.",
+		"Это означает, что требуются высокие нейтронные выходы от одного ТВЭЛ, что делает невозможным использование некритической конструкции реактора для обогащения.",
+		"Испускание 900 нейтронов на один и тот же СС с потерей 500 нейтронов будет означать, что 400 нейтронов окажутся на СС, а это значит, что они будут добавляться к процессу превращения в обогащенный ТВЭЛ каждую секунду.",
+		"Другой ТВЭЛ, испускающий 900 нейтронов на тот же СС, то есть, по сути, 900 нейтронов дважды, будет означать 800 нейтронов на СС.",
+		"Поскольку СС по существу должен находиться рядом с критическим ТВЭЛ, у ТВЭЛ остаются только три стороны для ОС, а это означает, что он может стать крит. только в том случае, если его коэффициент составляет 1/3 или больше.",
+		"ЗС здесь явно непригодны,так как СС не могут принимать нейтроны от замедлительных ТВЭЛ. Это означает, что либо требуется топливо с более высоким коэф-ом, такое как плутоний, либо необходимо использовать ОЖ, которая повышает коэффициент.",
+		"Расплавленные металлические ОЖ, такие как расплавленные олово или натрий, лучше всего подходят для обогощающих реакторов, поскольку они повышают коэф-нт наличия ТВЭЛ внутри, ",
+		"делая возможным обогащение с более распространенными топливными материалами, такими как Уран-235, или позволяя лучшим топливным материалам одновременно обогощать больше СС.",
+		"У них также есть преимущество в снижении выхода HU на нейтрон, что означает, что возможно большее количество нейтронов при меньшем охлаждении.",
+		"Выброс большего кол-ва нейтронов на СС приводит к более быстрому и эффективному процессу обогащения, поскольку потеря нейтронов будет происходить за более короткое время, что приведет к общей потере меньшего количества нейтронов.",
+		"¶¶===================¶Руководство по проектированию реактора на основе ториевой соли¶===================¶",
+		"Ториевая соль – это действительно особый вид охлаждающей жидкости. Фактически, его даже нельзя считать теплоносителем, поскольку он не превращается в энергонесущую жидкость.",
+		"Вместо этого его можно рассматривать скорее как топливо, поскольку он превращается в расплавленный хлорид лития, а это означает, что, по сути, торий внутри ториевой соли используется в качестве топлива.",
+		"Ториевая соль также очень медленно распадается на расплавленный хлорид лития, только на каждые 2_560_000 нейтронов один литр ториевой соли превращается в расплавленный хлорид лития.",
+		"Основное преимущество использования ториевой соли заключается в том, как она влияет на характеристики любого топливного стержня внутри, значительно повышая их.",
+		"Однако, поскольку из ториевой соли невозможно извлечь энергию, поскольку она не превращается в энергонесущую жидкость, вы не можете просто использовать ториевую соль отдельно в любой конструкции реактора.",
+		"В конструкции реактора, использующей ториевую соль, вместо нее должен использоваться хотя бы еще один дополнительный теплоноситель.",
+		"АЗР, заполненная ториевой солью, будет содержать ТВЭЛ, а соседние АЗР, заполненные другим теплоносителем, будут улавливать нейтроны, испускаемые из этого реактора, с помощью ПС.",
+		"Поскольку основным преимуществом ториевой соли является то, что она значительно повышает максимальную мощность ТВЭЛ внутри, обычно её имеет смысл применять только в критических реакторах.",
+		"Критические реакторы с ториевой солью являются наиболее эффективными энергогенерирующими реакторами, но также и одними из самых сложных в строительстве.",
+		"¶¶===================¶Усовершенствованные реакторы деления¶===================¶",
+		"В этой главе вы найдете несколько советов и математические формулы для создания самых совершенных и эффективных реакторов.",
+		"Расчет выброса нейтронов¶===================¶Топливный стержень будет излучать больше нейтронов на своих соседей, если на нем будет больше нейтронов.",
+		"Точное количество нейтронов, которое любой ТВЭЛ испустит на соседа, можно рассчитать следующим образом:",
+		"e_n=e+((n–s)*f)¶¶e_n: Излучаемые на соседа нейтроны¶¶e: 'Выброс' ТВЭЛ¶¶n: Количество нейтронов на ТВЭЛ¶¶s: 'ПН' ТВЭЛ¶¶f: 'Фактор' ТВЭЛ",
+		"Расчет скорости истощения ТВЭЛ¶===================¶ТВЭЛ обычно имеет скорость истощения, равную единице, и поэтому прослужит столько, сколько указано в подсказке.",
+		"Однако при наличии большего количества нейтронов на ТВЭЛ, чем нейтронный максимум, скорость истощения умножается на этот коэффициент:",
+		"f=4*n/m¶¶f: Множитель скорости истощения¶¶n: Количество нейтронов на ТВЭЛ¶¶m: 'Максимум' ТВЭЛ",
+		"Кроме того, замедление ТВЭЛ дополнительно умножит скорость его истощения в 4 раза. Разделите оставшееся время состояния ТВЭЛ на рассчитанную скорость истощения, чтобы получить реальное время до истощения.",
+		"Секреты и лайфхаки¶===================¶Можно создавать реакторы с использованием нескольких ОЖ. Для крит. реакторов с ЗС, разумнее контролировать один соседний ТВЭЛ, чем сам ЗС, чтобы контролировать количество нейтронов.",
+		"Роботы-манипуляторы позволяют точно автоматизировать работу активных зон реакторов.¶Фильтры можно использовать для упрощения автоматизации горелок и реакторов-размножителей.",
+		"Более высокий показатель 'ПН' плох в крит. реакторах, так как способствует достижению максимума, не влияя на выброс нейтронов.¶Показатель выбросов в большинстве случаев не имеет значения для эффективности в крит. реакторах.",
+		"Установка счетчика Гейгера в шестнадцатеричный режим полезна при попытке контролировать количество нейтронов выше 9_999. В шестнадцатеричном режиме вы можете сравнить до 65_535 нейтронов."
 		});
 
 		//-----

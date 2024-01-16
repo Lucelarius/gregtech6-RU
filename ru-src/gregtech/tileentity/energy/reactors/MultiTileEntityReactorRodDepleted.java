@@ -31,7 +31,7 @@ public class MultiTileEntityReactorRodDepleted extends MultiTileEntityReactorRod
 	@Override
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		aList.add(LH.Chat.DGRAY + "Используется в активной зоне ядерного реактора.");
-		aList.add(LH.Chat.CYAN + "Этот стержень " + LH.Chat.RED + "обеднен" + LH.Chat.CYAN + " и не будет излучать или принимать нейтроны.");
+		aList.add(LH.Chat.CYAN + "Этот стержень " + LH.Chat.RED + "истощен" + LH.Chat.CYAN + " и не будет излучать или принимать нейтроны.");
 		aList.add(LH.Chat.CYAN + "Можно использовать в центрефуге для получения ценных материалов.");
 	}
 	
