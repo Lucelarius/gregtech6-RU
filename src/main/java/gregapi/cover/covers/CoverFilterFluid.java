@@ -51,7 +51,7 @@ public class CoverFilterFluid extends AbstractCoverAttachment {
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		FluidStack tFluid = FL.load(aStack.getTagCompound(), "gt.filter.fluid");
 		if (tFluid != null && tFluid.getFluid() != null) aList.add(LH.Chat.CYAN + FL.name(tFluid, T));
-		aList.add(LH.Chat.ORANGE + "Not NBT sensitive!");
+		aList.add(LH.Chat.ORANGE + "Не чувствителен к NBT!");
 		super.addToolTips(aList, aStack, aF3_H);
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_TOGGLE_CONTROLLER_COVER));
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_TOGGLE_SCREWDRIVER));
@@ -62,7 +62,7 @@ public class CoverFilterFluid extends AbstractCoverAttachment {
 	public long onToolClick(byte aCoverSide, CoverData aData, String aTool, long aRemainingDurability, long aQuality, Entity aPlayer, List<String> aChatReturn, IInventory aPlayerInventory, boolean aSneaking, ItemStack aStack, byte aSideClicked, float aHitX, float aHitY, float aHitZ) {
 		if (aTool.equals(TOOL_screwdriver)) {
 			aData.visual(aCoverSide, (short)(aData.mVisuals[aCoverSide] == 0 ? 1 : 0));
-			if (aChatReturn != null) aChatReturn.add(aData.mVisuals[aCoverSide] == 0 ? "Whitelist Filter" : "Blacklist Filter");
+			if (aChatReturn != null) aChatReturn.add(aData.mVisuals[aCoverSide] == 0 ? "Белый список фильтра" : "Черный список фильтра");
 			return 1000;
 		}
 		if (aTool.equals(TOOL_softhammer)) {
@@ -71,17 +71,17 @@ public class CoverFilterFluid extends AbstractCoverAttachment {
 		}
 		if (aTool.equals(TOOL_magnifyingglass)) {
 			if (aChatReturn != null) {
-				aChatReturn.add(aData.mVisuals[aCoverSide] == 0 ? "Whitelist Filter" : "Blacklist Filter");
+				aChatReturn.add(aData.mVisuals[aCoverSide] == 0 ? "Белый список фильтра" : "Черный список фильтра");
 				if (aData.mNBTs[aCoverSide] == null) {
-					aChatReturn.add("Filter is empty!");
+					aChatReturn.add("Фильтр пуст!");
 					aData.mNBTs[aCoverSide] = null;
 				} else {
 					FluidStack tFluid = FL.load(aData.mNBTs[aCoverSide], "gt.filter.fluid");
 					if (tFluid == null) {
-						aChatReturn.add("Filter is empty!");
+						aChatReturn.add("Фильтр пуст!");
 						aData.mNBTs[aCoverSide] = null;
 					} else {
-						aChatReturn.add("Filters for: " + LH.Chat.CYAN + tFluid.getFluid().getName());
+						aChatReturn.add("Фильтровать по: " + LH.Chat.CYAN + tFluid.getFluid().getName());
 					}
 				}
 			}
@@ -106,7 +106,7 @@ public class CoverFilterFluid extends AbstractCoverAttachment {
 					if (FL.valid(tFluid)) {
 						aData.mNBTs[aCoverSide] = FL.save(null, "gt.filter.fluid", tFluid);
 						UT.Sounds.send(aData.mTileEntity.getWorld(), SFX.MC_CLICK, 1, 1, aData.mTileEntity.getCoords());
-						UT.Entities.sendchat(aPlayer, "Filters for: " + LH.Chat.CYAN + tFluid.getFluid().getName());
+						UT.Entities.sendchat(aPlayer, "Фильтровать по: " + LH.Chat.CYAN + tFluid.getFluid().getName());
 					}
 				}
 			}

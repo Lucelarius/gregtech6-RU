@@ -75,7 +75,7 @@ public class CoverConveyor extends AbstractCoverAttachment {
 	@Override
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		super.addToolTips(aList, aStack, aF3_H);
-		aList.add(LH.Chat.CYAN + "Transfers a Stack every " + (mTiming==1?"Tick":mTiming+" Ticks"));
+		aList.add(LH.Chat.CYAN + "Перемещает один стак за " + (mTiming==1?"Тик":mTiming==2||mTiming==4?mTiming+" Тика":mTiming+" Тиков"));
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_TOGGLE_CONTROLLER_COVER));
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_TOGGLE_SCREWDRIVER));
 	}

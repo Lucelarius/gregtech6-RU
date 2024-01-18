@@ -47,7 +47,7 @@ public class CoverLogisticsItemImport extends AbstractCoverAttachmentLogistics {
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		ItemStack tStack = ST.load(aStack.getTagCompound(), "gt.filter.item");
 		if (ST.valid(tStack)) aList.add(LH.Chat.CYAN + tStack.getDisplayName());
-		aList.add(LH.Chat.ORANGE + "Not NBT sensitive!");
+		aList.add(LH.Chat.ORANGE + "Не чувствителен к NBT!");
 		super.addToolTips(aList, aStack, aF3_H);
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_RESET_SOFT_HAMMER));
 	}
@@ -61,22 +61,22 @@ public class CoverLogisticsItemImport extends AbstractCoverAttachmentLogistics {
 		if (aTool.equals(TOOL_magnifyingglass)) {
 			if (aChatReturn != null) {
 				if (aData.mNBTs[aCoverSide] == null) {
-					aChatReturn.add("No Filter Set! (Priority: " + aData.mValues[aCoverSide] + ")");
+					aChatReturn.add("Нет набора фильтров! (Приоритет: " + aData.mValues[aCoverSide] + ")");
 					aData.mNBTs[aCoverSide] = null;
 				} else {
 					ItemStack tStack = ST.load(aData.mNBTs[aCoverSide], "gt.filter.item");
 					if (ST.invalid(tStack)) {
-						aChatReturn.add("No Filter Set! (Priority: " + aData.mValues[aCoverSide] + ")");
+						aChatReturn.add("Нет набора фильтров! (Приоритет: " + aData.mValues[aCoverSide] + ")");
 						aData.mNBTs[aCoverSide] = null;
 					} else {
-						aChatReturn.add("Imports: " + LH.Chat.CYAN + ST.regName(tStack) + LH.Chat.GRAY + " ; " + LH.Chat.CYAN + ST.meta_(tStack) + " (Priority: " + aData.mValues[aCoverSide] + ")");
+						aChatReturn.add("Импорт: " + LH.Chat.CYAN + ST.regName(tStack) + LH.Chat.GRAY + " ; " + LH.Chat.CYAN + ST.meta_(tStack) + " (Приоритет: " + aData.mValues[aCoverSide] + ")");
 					}
 				}
 				int tTargetSize = ((aData.mValues[aCoverSide] >> 2) & 127);
 				if (tTargetSize == 0) {
-					aChatReturn.add("Variable Target Stacksize");
+					aChatReturn.add("Переменный целевой размер стака");
 				} else {
-					aChatReturn.add("Target Stacksize: " + tTargetSize);
+					aChatReturn.add("Целевой размер стака: " + tTargetSize);
 				}
 			}
 			return 1;
@@ -92,7 +92,7 @@ public class CoverLogisticsItemImport extends AbstractCoverAttachmentLogistics {
 				if (ST.valid(tStack)) {
 					aData.mNBTs[aCoverSide] = ST.save("gt.filter.item", tStack);
 					UT.Sounds.send(aData.mTileEntity.getWorld(), SFX.MC_CLICK, 1, 1, aData.mTileEntity.getCoords());
-					UT.Entities.sendchat(aPlayer, "Imports: " + LH.Chat.CYAN + ST.regName(tStack) + LH.Chat.GRAY + " ; " + LH.Chat.CYAN + ST.meta_(tStack));
+					UT.Entities.sendchat(aPlayer, "Импорт: " + LH.Chat.CYAN + ST.regName(tStack) + LH.Chat.GRAY + " ; " + LH.Chat.CYAN + ST.meta_(tStack));
 				}
 			}
 		}

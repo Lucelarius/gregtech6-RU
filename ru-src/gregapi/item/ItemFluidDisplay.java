@@ -82,13 +82,13 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 		NBTTagCompound aNBT = aStack.getTagCompound();
 		Fluid aFluid = FL.fluid(ST.meta_(aStack));
 		if (aFluid == null) {
-			aList.add(LH.Chat.BLINKING_RED + "CLIENTSIDE FLUID IS NULL!!!");
+			aList.add(LH.Chat.BLINKING_RED + "КЛИЕНТСКАЯ ЖИДКОСТЬ ОТСУТСВУЕТ!!!");
 		} else if (FL.Error.is(aFluid)) {
-			aList.add(LH.Chat.BLINKING_RED + "THIS IS AN ERROR AND SHOULD NEVER BE OBTAINABLE!!!");
+			aList.add(LH.Chat.BLINKING_RED + "ЭТО ОШИБКА, И НИКОГДА НЕ ДОЛЖНА БЫТЬ ДОСТУПНА!!!");
 		} else {
 			String aName = aFluid.getName();
 			
-			if (SHOW_INTERNAL_NAMES || aF3_H) aList.add("Registry: " + aName);
+			if (SHOW_INTERNAL_NAMES || aF3_H) aList.add("Реестр: " + aName);
 			if (FluidsGT.FLUID_RENAMINGS.containsKey(aName) || FluidsGT.NONSTANDARD.contains(aName)) aList.add(LH.Chat.BLINKING_RED + "NON-STANDARD FLUID!");
 			
 			long tAmount = 0, tTemperature = DEF_ENV_TEMP;
@@ -108,7 +108,7 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 			}
 			
 			if (tAmount > 0) {
-				aList.add(LH.Chat.BLUE + "Amount: " + UT.Code.makeString(tAmount) + " L");
+				aList.add(LH.Chat.BLUE + "Количество: " + UT.Code.makeString(tAmount) + " L");
 			}
 			OreDictMaterialStack tMaterial = OreDictMaterial.FLUID_MAP.get(aName);
 			if (tMaterial != null) {
@@ -116,54 +116,54 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 					long tMatAmount = UT.Code.units(tAmount, tMaterial.mAmount, U, F);
 					if (tMatAmount > 0) {
 						int tDigits = (int)(((tMatAmount % U) / UD) * 1000);
-						aList.add(LH.Chat.BLUE + "Worth: " + (tMatAmount / U) + "." + (tDigits<1?"000":tDigits<10?"00"+tDigits:tDigits<100?"0"+tDigits:tDigits) + " Units of " + tMaterial.mMaterial.getLocal());
+						aList.add(LH.Chat.BLUE + "Ценность: " + (tMatAmount / U) + "." + (tDigits<1?"000":tDigits<10?"00"+tDigits:tDigits<100?"0"+tDigits:tDigits) + " Units of " + tMaterial.mMaterial.getLocal());
 					}
 				}
 				if (UT.Code.stringValid(tMaterial.mMaterial.mTooltipChemical)) aList.add(LH.Chat.YELLOW + tMaterial.mMaterial.mTooltipChemical);
 			}
 			
-			aList.add(LH.Chat.RED + "Temperature: " + tTemperature + " K (" + (tTemperature-C) + "°C)");
+			aList.add(LH.Chat.RED + "Температура: " + tTemperature + " K (" + (tTemperature-C) + "°C)");
 			
 			if (FL.plasma(tFluid)) {
-				aList.add(LH.Chat.GREEN + "State: " + LH.Chat.YELLOW + "Plasma" + (!aFluid.isGaseous(tFluid) ? LH.Chat.RED + " (Warning: Considered a Liquid by Mods other than GT!)" : LH.Chat.ORANGE + " (Note: Considered a Gas by Mods other than GT!)"));
+				aList.add(LH.Chat.GREEN + "Состояние: " + LH.Chat.YELLOW + "Плазма" + (!aFluid.isGaseous(tFluid) ? LH.Chat.RED + " (Предупреждение: считается жидкостью другими модами, кроме GT!)" : LH.Chat.ORANGE + " (Примечание: считается газом другими модами, кроме GT!)"));
 			} else if (tGas) {
-				aList.add(LH.Chat.GREEN + "State: " + LH.Chat.CYAN + "Gas" + (!aFluid.isGaseous(tFluid) ? LH.Chat.RED + " (Warning: Considered a Liquid by Mods other than GT!)" : ""));
+				aList.add(LH.Chat.GREEN + "Состояние: " + LH.Chat.CYAN + "Газ" + (!aFluid.isGaseous(tFluid) ? LH.Chat.RED + " (Предупреждение: считается жидкостью другими модами, кроме GT!)" : ""));
 			} else {
-				aList.add(LH.Chat.GREEN + "State: " + LH.Chat.BLUE + "Liquid" + (tMaterial != null && ST.valid(OP.ingot.mat(tMaterial.mMaterial, 1)) ? LH.Chat.CYAN + " (Might able to cast into Molds)" : ""));
-				if (aFluid.isGaseous(tFluid)) aList.add(LH.Chat.BLINKING_RED + " (Warning: Considered a Gas by Mods other than GT!)");
+				aList.add(LH.Chat.GREEN + "Состояние: " + LH.Chat.BLUE + "Жидкость" + (tMaterial != null && ST.valid(OP.ingot.mat(tMaterial.mMaterial, 1)) ? LH.Chat.CYAN + " (Возможна отливка в формы)" : ""));
+				if (aFluid.isGaseous(tFluid)) aList.add(LH.Chat.BLINKING_RED + " (Предупреждение: считается газом другими модами, кроме GT!)");
 			}
 			
 			int tDensity = aFluid.getDensity(tFluid);
 			if (tDensity > 0) {
-				aList.add(LH.Chat.GREEN + "Density: " + tDensity + " ; Heavier than Air (typically moves down)");
+				aList.add(LH.Chat.GREEN + "Плотность: " + tDensity + " ; Тяжелее воздуха (обычно движется вниз)");
 			} else if (tDensity < 0) {
-				aList.add(LH.Chat.GREEN + "Density: " + tDensity + " ; Lighter than Air (typically moves up)");
+				aList.add(LH.Chat.GREEN + "Плотность: " + tDensity + " ; Легче воздуха (обычно движется вверх)");
 			} else {
-				aList.add(LH.Chat.GREEN + "Density: 0 ; As dense as Air (typically still moves down)");
+				aList.add(LH.Chat.GREEN + "Плотность: 0 ; Плотность как у воздуха (обычно все еще движется вниз)");
 			}
 			
 			int tLuminosity = aFluid.getLuminosity(tFluid);
-			if (tLuminosity != 0) aList.add(LH.Chat.YELLOW + "Luminosity: " + tLuminosity);
+			if (tLuminosity != 0) aList.add(LH.Chat.YELLOW + "Светоизлучение: " + tLuminosity);
 			
 			int tViscosity = aFluid.getViscosity(tFluid);
-			if (tViscosity != 0) aList.add(LH.Chat.BLUE + "Viscosity: " + tViscosity);
+			if (tViscosity != 0) aList.add(LH.Chat.BLUE + "Вязкость: " + tViscosity);
 			
 			if (FL.powerconducting(aFluid)) {
-				aList.add(LH.Chat.DGREEN + "This is a Power Conducting Fluid");
-				aList.add(LH.Chat.ORANGE + "Cannot be stored in any normal GT6 Storage Tanks!");
+				aList.add(LH.Chat.DGREEN + "Это электропроводящая жидкость");
+				aList.add(LH.Chat.ORANGE + "Не может храниться в обычных резервуарах GT6!");
 			}
 			if (FL.simple(aFluid)) {
-				aList.add(LH.Chat.DGREEN + "This is a simple Fluid that is easy to handle");
+				aList.add(LH.Chat.DGREEN + "Это простая жидкость, с которой легко обращаться.");
 			}
 			if (FL.acid(aFluid)) {
-				aList.add(LH.Chat.ORANGE + "Acidic! Handle with Care!");
+				aList.add(LH.Chat.ORANGE + "Кислота! Обращаться осторожно!");
 			}
 			if (FL.magic(aFluid)) {
-				aList.add(LH.Chat.ORANGE + "Magical! Handle with Care!");
+				aList.add(LH.Chat.ORANGE + "Магия! Обращаться осторожно!");
 			}
 			if (FL.Lubricant.is(aFluid) || FL.LubRoCant.is(aFluid)) {
-				aList.add(LH.Chat.ORANGE + "Industrial Use ONLY!");
-				aList.add(LH.Chat.RED + "Not Flammable!");
+				aList.add(LH.Chat.ORANGE + "ТОЛЬКО для промышленного использования!");
+				aList.add(LH.Chat.RED + "Не огнеопасно!");
 			} else {
 				Collection<Recipe>
 				tRecipes = FM.Burn.mRecipeFluidMap.get(aName);
@@ -172,9 +172,9 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
 					if (tFuelValue > 0) {
 						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Burning: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU total");
+							aList.add(LH.Chat.RED + "Сжигание: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
 						} else {
-							aList.add(LH.Chat.RED + "Burning: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
+							aList.add(LH.Chat.RED + "Сжигание: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
 						}
 					}
 				}
@@ -184,9 +184,9 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
 					if (tFuelValue > 0) {
 						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Engine: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU total");
+							aList.add(LH.Chat.RED + "Двигатель: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
 						} else {
-							aList.add(LH.Chat.RED + "Engine: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
+							aList.add(LH.Chat.RED + "Двигатель: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
 						}
 					}
 				}
@@ -196,9 +196,9 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
 					if (tFuelValue > 0) {
 						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Turbine: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU total");
+							aList.add(LH.Chat.RED + "Турбина: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
 						} else {
-							aList.add(LH.Chat.RED + "Turbine: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
+							aList.add(LH.Chat.RED + "Турбина: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
 						}
 					}
 				}
@@ -208,27 +208,27 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
 					if (tFuelValue > 0) {
 						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Heat Exchanger: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU total");
+							aList.add(LH.Chat.RED + "Теплообменник: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
 						} else {
-							aList.add(LH.Chat.RED + "Heat Exchanger: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
+							aList.add(LH.Chat.RED + "Теплообменник: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
 						}
 					}
 				}
 			}
 			
 			if (aFluid instanceof FluidGT) {
-				aList.add(LH.Chat.DGRAY + "Fluid owned by GT6");
+				aList.add(LH.Chat.DGRAY + "Жидкость принадлежит GT6");
 			} else {
 				if (FL.Water.is(aFluid) || FL.Lava.is(aFluid)) {
-					aList.add(LH.Chat.DGRAY + "Fluid owned by vanilla Minecraft");
+					aList.add(LH.Chat.DGRAY + "Жидкость принадлежит оригинальному ");
 				} else {
-					aList.add(LH.Chat.DGRAY + "Fluid NOT owned by GT6");
+					aList.add(LH.Chat.DGRAY + "Жидкость НЕ принадлежит GT6");
 				}
 			}
 		}
 		
 		if (UT.Entities.hasInfiniteItems(aPlayer)) {
-			aList.add(LH.Chat.RAINBOW_SLOW + "Rightclick Blocks to fill their Tanks with this Fluid!");
+			aList.add(LH.Chat.RAINBOW_SLOW + "ПКМ по блоку, чтобы наполнить его резервуар этой жидкостью!");
 		}
 		
 		while (aList.remove(null));
@@ -291,7 +291,7 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 	public String getItemStackDisplayName(ItemStack aStack) {
 		if (aStack == null) return "";
 		Fluid tFluid = FL.fluid(ST.meta_(aStack));
-		return tFluid == null ? "INVALID FLUID ID!!!" : FL.name(tFluid, T);
+		return tFluid == null ? "НЕИЗВЕСТНЫЙ ИД ЖИДКОСТИ!!!" : FL.name(tFluid, T);
 	}
 	
 	@Override

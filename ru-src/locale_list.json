@@ -20,6 +20,27 @@
           ]
         }
       ],
+      "cover": [
+        {
+          "covers": [
+            "AbstractCoverAttachmentLogisticsDisplay",
+            "CoverConveyor",
+            "CoverDrain",
+            "CoverFilterFluid",
+            "CoverFilterItem",
+            "CoverLogisticsFluidExport",
+            "CoverLogisticsFluidImport",
+            "CoverLogisticsFluidStorage",
+            "CoverLogisticsItemExport",
+            "CoverLogisticsItemImport",
+            "CoverLogisticsItemStorage",
+            "CoverPressureValve",
+            "CoverPump",
+            "CoverRetrieverItem",
+            "CoverRobotArm"
+          ]
+        }
+      ],
       "data": [
         "AM",
         "ANY",
@@ -374,7 +395,7 @@
       "OP",
       "LanguageHandler",
       "MultiTileEntityReactorRodModerator",
-      "",
+      "CoverFilterItem",
       ""
     ]
 }

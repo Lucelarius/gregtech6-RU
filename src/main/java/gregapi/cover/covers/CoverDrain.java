@@ -226,17 +226,17 @@ public class CoverDrain extends AbstractCoverAttachment {
 	@Override
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		super.addToolTips(aList, aStack, aF3_H);
-		aList.add(LH.Chat.CYAN + "Collects Fluid Blocks (if not against Gravity)");
-		aList.add(LH.Chat.CYAN + "Collects Rainwater (not in Dry or Cold Areas)");
-		aList.add(LH.Chat.CYAN + "Will work infinitely in River and Lake Biomes");
+		aList.add(LH.Chat.CYAN + "Собирает блоки жидкости (если не против гравитации)");
+		aList.add(LH.Chat.CYAN + "Собирает дождевую воду (не в засушливых или холодных регионах)");
+		aList.add(LH.Chat.CYAN + "Будет работать бесконечно в речных и озерных биомах.");
 		if (FL.Sewage.exists())
-		aList.add(LH.Chat.ORANGE + "Will collect Sewage from adult Animals walking on it (Bigger Animals make more)");
+		aList.add(LH.Chat.ORANGE + "Собирает нечистоты от ходящих по ним взрослых животных (большие животные производят больше)");
 		if (FL.XP.exists())
-		aList.add(LH.Chat.GREEN + "Will collect XP Orbs to make Liquid XP");
+		aList.add(LH.Chat.GREEN + "Будет собирать сферы опыта, чтобы сделать жидкий опыт");
 		else if (FL.Mob.exists())
-		aList.add(LH.Chat.DGREEN + "Will collect XP Orbs to make Mob Essence");
+		aList.add(LH.Chat.DGREEN + "Будет собирать сферы опыта, чтобы создать эссенцию моба");
 		if (MD.OB.mLoaded)
-		aList.add(LH.Chat.GREEN + "Stand on this and Sneak to drain your XP");
+		aList.add(LH.Chat.GREEN + "Встаньте на это и присядьте, чтобы истощить свой опыт");
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_TOGGLE_CONTROLLER_COVER));
 	}
 	
