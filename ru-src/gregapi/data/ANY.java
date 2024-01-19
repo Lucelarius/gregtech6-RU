@@ -38,7 +38,7 @@ public class ANY {
 	Diamond         = any("Any Diamond"         ).setLocal("Любой алмаз"),
 	Sapphire        = any("Any Sapphire"        ).setLocal("Любой сапфир"),
 	Emerald         = any("Any Emerald"         ).setLocal("Любой изумруд"),
-	Amethyst        = any("Any Аметист"         ).setLocal("Любой аметист"),
+	Amethyst        = any("Any Amethyst"        ).setLocal("Любой аметист"),
 	Garnet          = any("Any Garnet"          ).setLocal("Любой гранат"),
 	Jasper          = any("Any Jasper"          ).setLocal("Любая яшма"),
 	TigerEye        = any("Any Tiger Eye"       ).setLocal("Любой тигриный глаз"),

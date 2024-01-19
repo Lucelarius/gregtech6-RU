@@ -194,8 +194,8 @@ public class Loader_MultiTileEntities implements Runnable {
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Brass                 ,    8,   2.5F,   2.5F,  4);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.TinAlloy              ,    5,   3.0F,   3.0F,  4);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Co                    ,   21,   4.0F,   4.0F,  4);
-		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.ArsenicBronze         ,   58,   8.0F,   8.0F,  5);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Ardite                ,   38,   2.0F,   2.0F,  4);
+		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.ArsenicBronze         ,   58,   8.0F,   8.0F,  5);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.BismuthBronze         ,   56,   8.0F,   8.0F,  5);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Ge                    ,   23,   4.0F,   4.0F,  5);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Invar                 ,    6,   4.0F,   4.0F,  5);
@@ -232,8 +232,8 @@ public class Loader_MultiTileEntities implements Runnable {
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Draconium             ,   35,  50.0F,  50.0F, 27);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Ultimet               ,   48,  12.5F,  12.5F, 27);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.DeshAlloy             ,   55,  15.0F,  15.0F, 27);
-		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Pd                    ,   59,  15.0F,  15.0F, 36);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, ANY.W                    ,   26,  10.0F,  10.0F, 36);
+		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Pd                    ,   59,  15.0F,  15.0F, 36);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Ir                    ,   15,  15.0F,  15.0F, 36);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.Os                    ,   29,   9.0F,   9.0F, 36);
 		metalset(aRegistry, aMetal, aUtilMetal, aMachine, aWooden, MT.VoidMetal             ,   28,  30.0F,  30.0F, 36);
@@ -1944,7 +1944,7 @@ public class Loader_MultiTileEntities implements Runnable {
 		aMat = ANY.Steel;           aRegistry.add("Расширитель инвентаря и бака"                        , "Расширители"                         , 30002, 30000, aClass, aMat.mToolQuality, 16, aMachine     , UT.NBT.make(NBT_MATERIAL, aMat, NBT_HARDNESS,   6.0F, NBT_RESISTANCE,   6.0F, NBT_TEXTURE, "inv_tank"        , NBT_MODE, MultiTileEntityExtender.EXTENDER_INV | MultiTileEntityExtender.EXTENDER_TANK    ), "XhY", " M ", "YwX", 'M', OP.casingMachineDouble     .dat(aMat), 'X', OP.pipeMedium.dat(aMat), 'Y', OP.pipeMedium.dat(MT.Electrum));
 		
 		aClass = MultiTileEntityExtenderController.class;
-		aMat = MT.StainlessSteel;   aRegistry.add("Универсальный расширитель"                           , "Расширители"                         , 30255, 30000, aClass, aMat.mToolQuality, 16, aMachine     , UT.NBT.make(NBT_MATERIAL, aMat, NBT_HARDNESS,   6.0F, NBT_RESISTANCE,   6.0F, NBT_TEXTURE, "universal"       , NBT_MODE, MultiTileEntityExtender.EXTENDER_ALL                                        ), "XRY", "CMC", "YSX", 'M', OP.casingMachineQuadruple  .dat(aMat), 'S', OP.spring.dat(aMat), 'G', OP.gearGt.dat(aMat), 'R', OP.rotor.dat(aMat), 'X', OP.pipeMedium.dat(MT.StainlessSteel), 'Y', OP.pipeMedium.dat(MT.Pt), 'C', OD_CIRCUITS[3]); CR.shapeless(aRegistry.getItem(), CR.DEF_NCC, new Object[] {aRegistry.getItem()});
+		aMat = MT.StainlessSteel;   aRegistry.add("Универсальный расширитель"                           , "Расширители"                         , 30255, 30000, aClass, aMat.mToolQuality, 16, aMachine     , UT.NBT.make(NBT_MATERIAL, aMat, NBT_HARDNESS,   6.0F, NBT_RESISTANCE,   6.0F, NBT_TEXTURE, "universal"       , NBT_MODE, MultiTileEntityExtender.EXTENDER_ALL                                        ), "XRY", "CMC", "YSX", 'M', OP.casingMachineQuadruple  .dat(aMat), 'X', OP.pipeMedium.dat(MT.StainlessSteel), 'Y', OP.pipeMedium.dat(MT.Pt), 'S', OP.spring.dat(aMat), 'G', OP.gearGt.dat(aMat), 'R', OP.rotor.dat(aMat), 'C', OD_CIRCUITS[3]);
 		
 		aClass = MultiTileEntityFilter.class;
 		aMat = MT.SteelGalvanized;  aRegistry.add("Фильтр (Предметы)"                                   , "Фильтры"                             , 30256, 30256, aClass, aMat.mToolQuality, 16, aMachine     , UT.NBT.make(NBT_MATERIAL, aMat, NBT_HARDNESS,   6.0F, NBT_RESISTANCE,   6.0F, NBT_TEXTURE, "filter_slots"    , NBT_MODE, MultiTileEntityExtender.EXTENDER_INV                                        ), " hY", "ZMZ", "Yw ", 'M', OP.casingMachine           .dat(aMat), 'X', OP.pipeMedium.dat(aMat), 'Y', OP.pipeMedium.dat(MT.Electrum), 'Z', IL.Cover_Filter_Item); CR.shapeless(aRegistry.getItem(), CR.DEF_NCC, new Object[] {aRegistry.getItem()});

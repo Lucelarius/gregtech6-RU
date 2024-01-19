@@ -89,7 +89,7 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 			String aName = aFluid.getName();
 			
 			if (SHOW_INTERNAL_NAMES || aF3_H) aList.add("Реестр: " + aName);
-			if (FluidsGT.FLUID_RENAMINGS.containsKey(aName) || FluidsGT.NONSTANDARD.contains(aName)) aList.add(LH.Chat.BLINKING_RED + "NON-STANDARD FLUID!");
+			if (FluidsGT.FLUID_RENAMINGS.containsKey(aName) || FluidsGT.NONSTANDARD.contains(aName)) aList.add(LH.Chat.BLINKING_RED + "НЕСТАНДАРТНАЯ ЖИДКОСТЬ!");
 			
 			long tAmount = 0, tTemperature = DEF_ENV_TEMP;
 			FluidStack tFluid = NF;
@@ -116,7 +116,7 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 					long tMatAmount = UT.Code.units(tAmount, tMaterial.mAmount, U, F);
 					if (tMatAmount > 0) {
 						int tDigits = (int)(((tMatAmount % U) / UD) * 1000);
-						aList.add(LH.Chat.BLUE + "Ценность: " + (tMatAmount / U) + "." + (tDigits<1?"000":tDigits<10?"00"+tDigits:tDigits<100?"0"+tDigits:tDigits) + " Units of " + tMaterial.mMaterial.getLocal());
+						aList.add(LH.Chat.BLUE + "Ценность: " + (tMatAmount / U) + "." + (tDigits<1?"000":tDigits<10?"00"+tDigits:tDigits<100?"0"+tDigits:tDigits) + " Units за " + tMaterial.mMaterial.getLocal());
 					}
 				}
 				if (UT.Code.stringValid(tMaterial.mMaterial.mTooltipChemical)) aList.add(LH.Chat.YELLOW + tMaterial.mMaterial.mTooltipChemical);
