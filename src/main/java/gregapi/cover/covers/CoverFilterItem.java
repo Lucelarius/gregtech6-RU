@@ -45,7 +45,7 @@ public class CoverFilterItem extends AbstractCoverAttachment {
 	@Override
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
 		ItemStack tStack = ST.load(aStack.getTagCompound(), "gt.filter.item");
-		if (ST.valid(tStack)) try {aList.add(LH.Chat.CYAN + tStack.getDisplayName());} catch(Throwable e) {aList.add(LH.Chat.BLINKING_RED + "ОШИБКА, НЕВОЗМОЖНО ОТОБРАЖАТЬ НАЗВАНИЕ ЭЛЕМЕНТА");}
+		if (ST.valid(tStack)) try {aList.add(LH.Chat.CYAN + tStack.getDisplayName());} catch(Throwable e) {aList.add(LH.Chat.BLINKING_RED + "ОШИБКА, НЕВОЗМОЖНО ОТОБРАЗИТЬ НАЗВАНИЕ ЭЛЕМЕНТА");}
 		aList.add(LH.Chat.ORANGE + "Не чувствителен к NBT!");
 		super.addToolTips(aList, aStack, aF3_H);
 		aList.add(LH.Chat.DGRAY + LH.get(LH.TOOL_TO_TOGGLE_CONTROLLER_COVER));

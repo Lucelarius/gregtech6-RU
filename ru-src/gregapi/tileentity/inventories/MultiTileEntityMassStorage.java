@@ -219,7 +219,7 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 		}
 		if (aTool.equals(TOOL_monkeywrench)) {
 			mMode ^= B[0];
-			aChatReturn.add((mMode & B[0]) == 0 ? "Не будет заполнять инвентарь ниже" : "Will fill Inventories below");
+			aChatReturn.add((mMode & B[0]) == 0 ? "Не будет заполнять инвентарь ниже" : "Заполнит инвентарь ниже");
 			updateClientData();
 			updateInventory();
 			return 10000;
@@ -234,7 +234,7 @@ public abstract class MultiTileEntityMassStorage extends TileEntityBase09FacingS
 				aChatReturn.add((mMode & B[0]) == 0 ? "Не будет заполнять инвентарь ниже" : "Будет заполнять инвентарь ниже");
 				aChatReturn.add((mMode & B[1]) == 0 ? "Фильтр останется при опустошении" : "Фильтр сбросится при опустошении");
 				aChatReturn.add((mMode & B[2]) == 0 ? "Не будет отдавать при переполнении" : "Будет отдавать вниз при переполнении");
-				if ((mMode & B[3]) != 0) aChatReturn.add("Will keep content when harvested.");
+				if ((mMode & B[3]) != 0) aChatReturn.add("Сохранит содержимое после сбора.");
 			}
 			return 1;
 		}

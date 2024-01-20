@@ -587,8 +587,8 @@ public class MultiItemRandomTools extends MultiItemRandomWithCompat implements I
 		addItemBehavior(12002, tBehaviour);
 		addItemBehavior(12003, tBehaviour);
 		
-		IL.Brain_Tape                      .set(addItem(12008, "Усовершенствованная армированная клейкая лента BrainTech Aerospace FAL-84", "Полный рулон"       , TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
-		IL.Brain_Tape_Used                 .set(addItem(12009, "Усовершенствованная армированная клейкая лента BrainTech Aerospace FAL-84", "Использованый рулон", TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
+		IL.Brain_Tape                      .set(addItem(12008, "Усовершенствованная укрепленная клейкая лента BrainTech Aerospace FAL-84", "Полный рулон"       , TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
+		IL.Brain_Tape_Used                 .set(addItem(12009, "Усовершенствованная укрепленная клейкая лента BrainTech Aerospace FAL-84", "Использованый рулон", TC.stack(TC.TUTAMEN, 1), TC.stack(TC.LIMUS, 1), OD.craftingDuctTape));
 		CR.shaped   (IL.Brain_Tape.get(1), CR.DEF, "PPP", " G ", 'P', OP.foil.dat(ANY.W), 'G', OD.itemGlue);
 		CR.shapeless(IL.Brain_Tape.get(1), CR.DEF, new Object[] {IL.Brain_Tape_Used, IL.Brain_Tape_Used, IL.Brain_Tape_Used, IL.Brain_Tape_Used});
 		tBehaviour = new Behavior_Duct_Tape(null, IL.Brain_Tape_Used.get(1), IL.Brain_Tape.get(1), 2, 10000000);
