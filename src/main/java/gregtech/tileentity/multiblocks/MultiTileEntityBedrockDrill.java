@@ -121,7 +121,7 @@ public class MultiTileEntityBedrockDrill extends TileEntityBase10MultiBlockBase 
 		LH.add("gt.tooltip.multiblock.bedrockdrill.1", "3x3 Основа из наконечников бура коренной породы, распологающихся на рудах коренных пород");
 		LH.add("gt.tooltip.multiblock.bedrockdrill.2", "Полная 3x4x3 из прочных стен из титана сверху");
 		LH.add("gt.tooltip.multiblock.bedrockdrill.3", "Главный блок распологается сверху в центре титановой башни и направлен вверх");
-		LH.add("gt.tooltip.multiblock.bedrockdrill.4", "Для добычи требуется смазка, мощность и место 3x3 на бедроке (-руде)");
+		LH.add("gt.tooltip.multiblock.bedrockdrill.4", "Для добычи требуется смазка, энергия и место 3x3 на бедроке (-руде)");
 		LH.add("gt.tooltip.multiblock.bedrockdrill.5", "Также работает с HBM's Bedrock Ores, даже если это не полноценный бедрок 3x3.");
 	}
 	
@@ -134,7 +134,7 @@ public class MultiTileEntityBedrockDrill extends TileEntityBase10MultiBlockBase 
 		aList.add(Chat.WHITE         + LH.get("gt.tooltip.multiblock.bedrockdrill.4"));
 		if (IL.HBM_Bedrock_Coltan.exists() || IL.HBM_Bedrock_Oil.exists())
 		aList.add(Chat.BLINKING_CYAN + LH.get("gt.tooltip.multiblock.bedrockdrill.5"));
-		aList.add(Chat.GREEN         + LH.get(LH.ENERGY_INPUT) + ": " + Chat.WHITE + "1024 to 4096 " + mEnergyTypeAccepted.getLocalisedChatNameShort() + Chat.WHITE + "/t (up to 32768 " + mEnergyTypeAccepted.getLocalisedChatNameShort() + Chat.WHITE + "/t total)");
+		aList.add(Chat.GREEN         + LH.get(LH.ENERGY_INPUT) + ": " + Chat.WHITE + "1024 - 4096 " + mEnergyTypeAccepted.getLocalisedChatNameShort() + Chat.WHITE + "/t (до 32768 " + mEnergyTypeAccepted.getLocalisedChatNameShort() + Chat.WHITE + "/t в сумме)");
 		super.addToolTips(aList, aStack, aF3_H);
 	}
 	

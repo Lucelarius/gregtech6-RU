@@ -140,7 +140,7 @@ public class MultiTileEntityCoin extends TileEntityBase04MultiTileEntities imple
 	
 	@Override
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
-		aList.add(LH.Chat.CYAN + mMaterial.getLocal() + (mIsUnique?" (Unique)":""));
+		aList.add(LH.Chat.CYAN + mMaterial.getLocal() + (mIsUnique?" (Уникальный)":""));
 		aList.add(LH.Chat.DGRAY + LH.get("gt.tooltip.coins.1"));
 		aList.add(LH.Chat.DGRAY + LH.get("gt.tooltip.coins.2"));
 		aList.add(LH.Chat.DGRAY + LH.get("gt.tooltip.coins.3"));

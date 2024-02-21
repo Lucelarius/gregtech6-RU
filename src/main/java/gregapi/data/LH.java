@@ -269,8 +269,8 @@ public class LH {
 	public static final String getToolTipHarvest(Material aMaterial, String aHarvestTool, int aHarvestLevel) {
 		if (aMaterial.isAdventureModeExempt()) {
 			if (UT.Code.stringValid(aHarvestTool))
-			return LH.Chat.DGRAY + "Hand-Harvestable, but " + LH.Chat.WHITE + LH.get(TOOL_LOCALISER_PREFIX + aHarvestTool, UT.Code.capitalise(aHarvestTool)) + LH.Chat.DGRAY + " is faster";
-			return LH.Chat.DGRAY + "Hand-Harvestable";
+			return LH.Chat.DGRAY + "Собирается руками. Быстрее, если используется " + LH.Chat.WHITE + LH.get(TOOL_LOCALISER_PREFIX + aHarvestTool, UT.Code.capitalise(aHarvestTool)) + LH.Chat.DGRAY;
+			return LH.Chat.DGRAY + "Собирается руками";
 		}
 		if (UT.Code.stringValid(aHarvestTool)) {
 			if (aHarvestLevel > 1) switch (aHarvestLevel) {
@@ -344,12 +344,12 @@ public class LH {
 	public static final void addEnergyToolTips(ITileEntityEnergy aTileEntity, List<String> aToolTips, TagData aEnergyTypeIN, TagData aEnergyTypeOUT, String aSidesIN, String aSidesOUT) {
 		if (aEnergyTypeIN != null) {
 			long tMin = aTileEntity.getEnergySizeInputMin(aEnergyTypeOUT, SIDE_ANY), tRec = aTileEntity.getEnergySizeInputRecommended(aEnergyTypeOUT, SIDE_ANY), tMax = aTileEntity.getEnergySizeInputMax(aEnergyTypeOUT, SIDE_ANY);
-			aToolTips.add(Chat.GREEN + LH.get(LH.ENERGY_INPUT ) + ": " + Chat.WHITE + tRec + " " + aEnergyTypeIN .getLocalisedChatNameShort() + Chat.WHITE + (tRec == tMin && tRec == tMax ? "/t" : (tMin <= 1 ? "/t (up to " : "/t ("+tMin+" to ")+tMax+(UT.Code.stringInvalid(aSidesIN )?"":", "+aSidesIN )+")"));
+			aToolTips.add(Chat.GREEN + LH.get(LH.ENERGY_INPUT ) + ": " + Chat.WHITE + tRec + " " + aEnergyTypeIN .getLocalisedChatNameShort() + Chat.WHITE + (tRec == tMin && tRec == tMax ? "/t" : (tMin <= 1 ? "/t (до " : "/t ("+tMin+" - ")+tMax+(UT.Code.stringInvalid(aSidesIN )?"":", "+aSidesIN )+")"));
 			aToolTips.add(getToolTipRedstoneFluxAccept(aEnergyTypeIN));
 		}
 		if (aEnergyTypeOUT != null) {
 			long tMin = aTileEntity.getEnergySizeOutputMin(aEnergyTypeOUT, SIDE_ANY), tRec = aTileEntity.getEnergySizeOutputRecommended(aEnergyTypeOUT, SIDE_ANY), tMax = aTileEntity.getEnergySizeOutputMax(aEnergyTypeOUT, SIDE_ANY);
-			aToolTips.add(Chat.RED   + LH.get(LH.ENERGY_OUTPUT) + ": " + Chat.WHITE + tRec + " " + aEnergyTypeOUT.getLocalisedChatNameShort() + Chat.WHITE + (tRec == tMin && tRec == tMax ? "/t" : (tMin <= 1 ? "/t (up to " : "/t ("+tMin+" to ")+tMax+(UT.Code.stringInvalid(aSidesOUT)?"":", "+aSidesOUT)+")"));
+			aToolTips.add(Chat.RED   + LH.get(LH.ENERGY_OUTPUT) + ": " + Chat.WHITE + tRec + " " + aEnergyTypeOUT.getLocalisedChatNameShort() + Chat.WHITE + (tRec == tMin && tRec == tMax ? "/t" : (tMin <= 1 ? "/t (до " : "/t ("+tMin+" - ")+tMax+(UT.Code.stringInvalid(aSidesOUT)?"":", "+aSidesOUT)+")"));
 			aToolTips.add(getToolTipRedstoneFluxEmit(aEnergyTypeOUT));
 		}
 	}
@@ -483,10 +483,10 @@ public class LH {
 		add(REQUIREMENT_CHUNKLOADER                     , "Должен быть в загруженном чанке для правильной работы!");
 		add(REQUIREMENT_UNSTACKED                       , "Не работает когда сложено!");
 		add(EMITS_USED_STEAM                            , "Выпускает использованный пар");
-		add(EMITS_REDSTONE_FLUX                         , "Может излучать Редстоун Сигнал (RF) без потерь");
-		add(EMITS_REDSTONE_FLUX_LOSS                    , "Может излучать Редстоун Сигнал (RF) с потерями");
-		add(ACCEPTS_REDSTONE_FLUX                       , "Может принимать Редстоун Сигнал (RF) без потерь");
-		add(ACCEPTS_REDSTONE_FLUX_LOSS                  , "Может принимать Редстоун Сигнал (RF) с потерями");
+		add(EMITS_REDSTONE_FLUX                         , "Может излучать RF без потерь");
+		add(EMITS_REDSTONE_FLUX_LOSS                    , "Может излучать RF с потерями");
+		add(ACCEPTS_REDSTONE_FLUX                       , "Может принимать RF без потерь");
+		add(ACCEPTS_REDSTONE_FLUX_LOSS                  , "Может принимать RF с потерями");
 		add(NO_GUI_CLICK_TO_LIMIT                       , "Нажмите по стороне для выставления лимита (При приседании чувствительность выше)");
 		add(NO_GUI_CLICK_TO_INTERACT                    , "Нет ГИ. Нажмите для взаимодействия!");
 		add(NO_GUI_CLICK_TO_INVENTORY                   , "Нет ГИ. Нажмите для размещения/извлечения предметов!");

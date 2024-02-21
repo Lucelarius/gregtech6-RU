@@ -1,5 +1,6 @@
 {
   "gregapi": [
+    "GT_API_Proxy_Client",
     {
       "block": [
         "BlockBase",
@@ -7,6 +8,13 @@
           "metatype": [
             "BlockColored",
             "BlockStones"
+          ],
+          "multitileentity": [
+            {
+              "example": [
+                "MultiTileEntityChest"
+              ]
+            }
           ],
           "prefixblock": [
             "PrefixBlock"
@@ -59,6 +67,9 @@
         "Enchantment_SlimeDamage",
         "Enchantment_WerewolfDamage"
       ],
+      "fluid": [
+        "FluidTankGT"
+      ],
       "item": [
         "ItemEmptySlot",
         "ItemFluidDisplay",
@@ -80,13 +91,18 @@
                 "Behavior_PrintedPages",
                 "Behavior_Shears",
                 "Behavior_Switch_Metadata",
+                "Behavior_Tool",
                 "Behavior_TripwireCutting",
                 "Behavior_WrittenBook"
+              ],
+              "food": [
+                "FoodStat"
               ]
             }
           ],
           "prefixitem": [
-            "PrefixItem"
+            "PrefixItem",
+            "PrefixItemProjectile"
           ]
         }
       ],
@@ -103,6 +119,9 @@
       ],
       "tileentity": [
         {
+          "behavior": [
+            "TE_Behavior_Energy_Stats"
+          ],
           "computer": [
             "TileEntityBase08DataSwitch"
           ],
@@ -111,16 +130,24 @@
             "MultiTileEntityPipeItem",
             "MultiTileEntityWireElectric"
           ],
+          "delegate": [
+            "ITileEntityDelegating"
+          ],
           "energy": [
+            "TileEntityBase08Battery",
             "TileEntityBase10EnergyBatBox"
           ],
           "inventories": [
             "MultiTileEntityMassStorage"
           ],
           "machines": [
+            "MultiTileEntityBasicMachine",
             "MultiTileEntitySensor"
           ]
         }
+      ],
+      "util": [
+        "WD"
       ]
     }
   ],
@@ -257,6 +284,13 @@
       ],
       "tileentity": [
         {
+          "batteries": [
+            {
+              "qu": [
+                "MultiTileEntityZPM"
+              ]
+            }
+          ],
           "computer": [
             "MultiTileEntityHDDSwitch",
             "MultiTileEntityUSBSwitch"
@@ -286,6 +320,9 @@
                 "MultiTileEntityGearBox"
               ]
             }
+          ],
+          "food": [
+            "MultiTileEntitySandwich"
           ],
           "inventories": [
             "MultiTileEntityEnderGarbageBin",
@@ -330,6 +367,9 @@
           ],
           "placeables": [
             "MultiTileEntityCoin"
+          ],
+          "plants": [
+            "MultiTileEntityBush"
           ],
           "portals": [
             "MultiTileEntityMiniPortal",
@@ -380,7 +420,8 @@
           ],
           "tools": [
             "MultiTileEntityPlantPot",
-            "MultiTileEntitySmeltery"
+            "MultiTileEntitySmeltery",
+            "MultiTileEntityMoldCoinage"
           ]
         }
       ]

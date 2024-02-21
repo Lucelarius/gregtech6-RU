@@ -160,7 +160,7 @@ public class MultiTileEntityLargeBoiler extends TileEntityBase10MultiBlockBase i
 		aList.add(LH.getToolTipEfficiency(mEfficiency));
 		aList.add(Chat.GREEN    + LH.get(LH.ENERGY_INPUT)           + ": " + Chat.WHITE + (mOutput/STEAM_PER_EU)                        + " " + mEnergyTypeAccepted.getLocalisedChatNameShort() + Chat.WHITE + "/t (Теплопередача)");
 		aList.add(Chat.GREEN    + LH.get(LH.ENERGY_CAPACITY)        + ": " + Chat.WHITE + mCapacity                                     + " " + mEnergyTypeAccepted.getLocalisedChatNameShort() + Chat.WHITE);
-		aList.add(Chat.RED      + LH.get(LH.ENERGY_OUTPUT)          + ": " + Chat.WHITE + UT.Code.units(mOutput, 10000, mEfficiency, F) + " " + TD.Energy.STEAM.getLocalisedChatNameLong()      + Chat.WHITE + "/t (Pipe Holes / Отверстия для труб)");
+		aList.add(Chat.RED      + LH.get(LH.ENERGY_OUTPUT)          + ": " + Chat.WHITE + UT.Code.units(mOutput, 10000, mEfficiency, F) + " " + TD.Energy.STEAM.getLocalisedChatNameLong()      + Chat.WHITE + "/t (Отверстия для труб)");
 		aList.add(Chat.RED      + LH.get(LH.ENERGY_CAPACITY)        + ": " + Chat.WHITE + mCapacity                                     + " " + TD.Energy.STEAM.getLocalisedChatNameLong()      + Chat.WHITE);
 		aList.add(Chat.ORANGE   + LH.get(LH.REQUIREMENT_WATER_PURE));
 		aList.add(Chat.DRED     + LH.get(LH.HAZARD_EXPLOSION_STEAM));
