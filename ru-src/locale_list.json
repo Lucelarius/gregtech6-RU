@@ -427,8 +427,7 @@
       ]
     }
   ],
-    "Требуются правки": [
-      "Loader_Books",
+    "Вероятно потребуются правки": [
       "MultiTileEntityBedrockDrill",
       "MultiTileEntityLargeBoiler",
       "AM",
