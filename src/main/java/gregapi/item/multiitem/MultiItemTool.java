@@ -324,7 +324,7 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 				aList.add(LH.Chat.WHITE + "Прочность: x" + LH.Chat.GREEN + tStats.getMaxDurabilityMultiplier());
 				aList.add(LH.Chat.WHITE + "Уровень: +" + LH.Chat.YELLOW + tStats.getBaseQuality());
 				float tCombat = getToolCombatDamage(aStack);
-				aList.add(LH.Chat.WHITE + "Урон от атаки: +" + LH.Chat.BLUE + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + " Сердец)"));
+				aList.add(LH.Chat.WHITE + "Урон от атаки: +" + LH.Chat.BLUE + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + "\u2764)"));
 				aList.add(LH.Chat.WHITE + "Скорость добычи: x" + LH.Chat.PINK + tStats.getSpeedMultiplier());
 				if (tStats.canCollect()) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_AUTOCOLLECT));
 				if (tStats.canPenetrate()) aList.add(LH.Chat.DGRAY + LH.get(LH.TOOLTIP_ARMOR_PENETRATING));
@@ -332,7 +332,7 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 				aList.add(LH.Chat.WHITE + "Прочность: " + LH.Chat.GREEN + UT.Code.makeString(tMaxDamage - tDamage) + " / " + UT.Code.makeString(tMaxDamage));
 				aList.add(LH.Chat.WHITE + tMat1.getLocal() + LH.Chat.YELLOW + " Уровень: " + (tStats.getBaseQuality() + tMat1.mToolQuality));
 				float tCombat = getToolCombatDamage(aStack);
-				aList.add(LH.Chat.WHITE + "Урон от атаки: " + LH.Chat.BLUE + "+" + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + " Сердец)"));
+				aList.add(LH.Chat.WHITE + "Урон от атаки: " + LH.Chat.BLUE + "+" + (tCombat * TFC_DAMAGE_MULTIPLIER) + LH.Chat.RED + " (= " + (TFC_DAMAGE_MULTIPLIER > 1 ? ((tCombat+1)*(TFC_DAMAGE_MULTIPLIER/2.0)) + ")" : ((tCombat+1)/2) + "\u2764)"));
 				aList.add(LH.Chat.WHITE + "Скорость добычи: " + LH.Chat.PINK + Math.max(Float.MIN_NORMAL, tStats.getSpeedMultiplier() * tMat1.mToolSpeed));
 				aList.add(LH.Chat.WHITE + "Используется в крафте: " + LH.Chat.GREEN + UT.Code.divup(getEnergyStats(aStack) == null ? tMaxDamage - tDamage : Math.min(getEnergyStored(TD.Energy.EU, aStack), getEnergyCapacity(TD.Energy.EU, aStack)), tStats.getToolDamagePerContainerCraft()));
 				if (MD.BTL.mLoaded && tMat1.contains(TD.Properties.BETWEENLANDS)) aList.add(LH.Chat.GREEN + LH.get(LH.TOOLTIP_BETWEENLANDS_RESISTANCE));

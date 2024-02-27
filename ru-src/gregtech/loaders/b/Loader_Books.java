@@ -53,39 +53,39 @@ public class Loader_Books implements Runnable {
 		, "Если оператор '=' используется в скобках, он возвращает значение, присвоенное переменной."
 		, "Программа сохраняет индекс символов текущей задачи, 10 переменных (которые сбрасываются в 0, как только цикл программы останавливается), 10 переменных-членов и оставшееся время ожидания в своем NBT."
 		, "A = 10, B = 11, C = 12, D = 13, E = 14, F = 15, просто для экономии шестнадцатеричного пространства, поскольку в 'Красной пыли' всего 4 бита."
-		, "Для реализации циклов вам нужна всего лишь 1 перфокарта на цикл. Эти карты могут перезапуститься после завершения, в зависимости от того, сколько других карт находится в программном цикле, в который вы вставили свою карту, поскольку он будет обрабатывать их процедурно."
+		, "Для реализации циклов Вам нужна всего лишь 1 перфокарта на цикл. Эти карты могут перезапуститься после завершения, в зависимости от того, сколько других карт находится в программном цикле, в который Вы вставили свою карту, поскольку он будет обрабатывать их процедурно."
 		, "Процессор перфокарт может параллельно запускать до четырех циклов, каждый длиной в семь перфокарт."
 		, "Вы спросите, почему для изготовления перфокарты нужны чернила? Потому что на пустом необходимо иметь несколько строк, а на перфорированном он печатает код для выполнения в 'человеческом' читаемом формате на карте."
 		});
 
 		UT.Books.createWrittenBook("Manual_Microwave", "Руководство по эксплуатации микроволновой печи", "Kitchen Industries", ST.make(ItemsGT.BOOKS, 1, 2), new String[] {
-		  "Поздравляем, вы вставили в микроволновую печь случайную, казалось бы, пустую книгу, и эти буквы появились из ниоткуда."
+		  "Поздравляем, Вы вставили в микроволновую печь случайную, казалось бы, пустую книгу, и эти буквы появились из ниоткуда."
 		, "Вы только что купили микроволновую печь и спросили себя: 'Зачем она мне вообще нужна?'. Все просто: микроволновая печь может готовить всего за 128 EU и с безумной скоростью. Даже обычная электронная печь не сможет сделать это так быстро и дешево!"
-		, "Это самый дешевый и быстрый способ приготовить для вас. Именно поэтому микроволновую печь можно найти практически на каждой кухне (см. www.youwannabuyakitchen.ly)."
+		, "Это самый дешевый и быстрый способ приготовить для Вас. Именно поэтому микроволновую печь можно найти практически на каждой кухне (см. www.youwannabuyakitchen.ly)."
 		, "Длительное воздействие микроволн может вызвать рак, но мы сомневаемся, что Стив проживет достаточно долго, чтобы умереть из-за этого."
 		, "Не помещайте металлы. Это может привести к взрыву."
-		, "Не сушите ей животных. В результате получится хот-дог, независимо от того, какое животное вы в нее положите."
+		, "Не сушите ей животных. В результате получится хот-дог, независимо от того, какое животное Вы в нее положите."
 		, "Не помещайте легковоспламеняющиеся предметы. Печь загорится."
 		, "Не помещайте взрывчатые вещества, например яйца. Просто не надо."
 		});
 
 		UT.Books.createWrittenBook("Manual_Printer", "Руководство по сканерам и принтерам", "GregTech Electrics", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		  "Поздравляем с приобретением нового сканера и/или принтера. Данное руководство, полученное при покупке, окажется для вас очень полезным. Просто помните, что если вы потеряете его, вы можете просто позволить принтеру создать новое."
-		, "Прежде всего, вам необходимо снабдить сканер и принтер электричеством на задней стороне. Просто подключите их к розеткам соответствующего напряжения. Далее для их подключения вам понадобится USB-кабель или USB-накопитель."
+		  "Поздравляем с приобретением нового сканера и/или принтера. Данное руководство, полученное при покупке, окажется для Вас очень полезным. Просто помните, что если Вы потеряете его, Вы можете просто позволить принтеру создать новое."
+		, "Прежде всего, Вам необходимо снабдить сканер и принтер электричеством на задней стороне. Просто подключите их к розеткам соответствующего напряжения. Далее для их подключения Вам понадобится USB-кабель или USB-накопитель."
 		, "Подойдет любой USB-накопитель, изображения и текстовые файлы не такие большие и не требуют более USB 1.0, хотя вы, конечно, можете использовать и более высокие уровни USB благодаря совместимости с нисходящими версиями."
-		, "Теперь вам нужно пополнить запасы чернил для принтера, в зависимости от того, какую работу вы хотите с ними выполнить. Для этой цели он принимает только химические красители. Черный = текст, CMYK для изображений, синий или белый для чертежей."
-		, "Сделав все это, пришло время сканировать то, что вам нужно, внутри сканера. Просто подключите USB-накопитель и вставьте книгу/холст/чертеж и т. д., которые хотите отсканировать. Если вы вставите блоки, он также просканирует их поверхность."
-		, "После успешного сканирования он извлечет USB-накопитель и отсканированный объект. Теперь вы можете вставить данные и нужный тип бумаги/холста в принтер, чтобы он мог печатать ваши продукты."
-		, "Принтер может выполнять несколько больше заданий на печать, чем просто холст и книги. NEI поможет вам со всеми возможными рецептами."
+		, "Теперь Вам нужно пополнить запасы чернил для принтера, в зависимости от того, какую работу Вы хотите с ними выполнить. Для этой цели он принимает только химические красители. Черный = текст, CMYK для изображений, синий или белый для чертежей."
+		, "Сделав все это, пришло время сканировать то, что Вам нужно, внутри сканера. Просто подключите USB-накопитель и вставьте книгу/холст/чертеж и т. д., которые хотите отсканировать. Если Вы вставите блоки, он также просканирует их поверхность."
+		, "После успешного сканирования он извлечет USB-накопитель и отсканированный объект. Теперь Вы можете вставить данные и нужный тип бумаги/холста в принтер, чтобы он мог печатать ваши продукты."
+		, "Принтер может выполнять несколько больше заданий на печать, чем просто холст и книги. NEI поможет Вам со всеми возможными рецептами."
 		});
 
 		UT.Books.createWrittenBook("Manual_Steam", "Паровое руководство", "GregTech Thermodynamics", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
 		  "Данное руководство посвящено правильной эксплуатации котла, чтобы не взорвать себя. И да, есть много людей, которые взрываются из-за неправильной эксплуатации котла."
-		, "Прежде всего вам нужно убедиться, что используемый вами котел подходит к камере скорания, которую вы размещаете ниже. Подсказки подскажут вам правильные значения, которые вы можете использовать. Сам котел принимает тепло со всех сторон, а не только снизу."
-		, "Затем вам нужно заполнить котел водой по сторонам, чтобы с его помощью можно было генерировать пар. Разместив на нем воронку и щелкнув ПКМ по этой воронке с ведром для воды, вы также сможете заполнить его."
-		, "Если вы используете обычную воду вместо дистиллированной, то в конечном итоге вы получите кальцификацию и постоянное снижение эффективности парообразования. Однако из-за этого нет риска взрыва, поскольку он просто производит меньше пара на воду."
-		, "Поместив воду в пустой горячий котел, давление быстро увеличится, что может привести к взрыву, в зависимости от того, сколько тепла и воды вы поместите одновременно."
-		, "Если котел накапливает слишком много тепла, не имея возможности преобразовывать воду в пар, он просто расплавится и сломается, оставив вас в большом беспорядке."
+		, "Прежде всего Вам нужно убедиться, что используемый Вами котел подходит к камере скорания, которую Вы размещаете ниже. Подсказки подскажут Вам правильные значения, которые Вы можете использовать. Сам котел принимает тепло со всех сторон, а не только снизу."
+		, "Затем Вам нужно заполнить котел водой по сторонам, чтобы с его помощью можно было генерировать пар. Разместив на нем воронку и щелкнув ПКМ по этой воронке с ведром для воды, Вы также сможете заполнить его."
+		, "Если Вы используете обычную воду вместо дистиллированной, то в конечном итоге Вы получите кальцификацию и постоянное снижение эффективности парообразования. Однако из-за этого нет риска взрыва, поскольку он просто производит меньше пара на воду."
+		, "Поместив воду в пустой горячий котел, давление быстро увеличится, что может привести к взрыву, в зависимости от того, сколько тепла и воды Вы поместите одновременно."
+		, "Если котел накапливает слишком много тепла, не имея возможности преобразовывать воду в пар, он просто расплавится и сломается, оставив Вас в большом беспорядке."
 		, "Паровые турбины и двигатели выбрасывают дистиллированную воду в свои стороны, что позволяет просто возвращать дистиллированную воду обратно в котел, чтобы уменьшить кальцификацию."
 		, "Котлы имеют барометр на передней стороне, их идеальное состояние - это если линия находится внутри темно-зеленой области, то есть в середине самого барометра. Чем ближе он к красной зоне, тем ближе он к взрыву."
 		, "Паровые двигатели работают лучше всего, если они находятся в зеленом режиме, если они слишком синие, значит, в них недостаточно пара (ищите кальцификацию котла, если это происходит через некоторое время нормальной работы)."
@@ -93,314 +93,340 @@ public class Loader_Books implements Runnable {
 		});
 
 		UT.Books.createWrittenBook("Manual_Random", "Советы и подсказки в GregTech-6", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		"Эта книга содержит случайную информацию, которая может когда-нибудь оказаться полезной. Прочтите его всякий раз, когда у вас возникнут проблемы. Возможно у них есть решение."
+		"Эта книга содержит случайную информацию, которая может когда-нибудь оказаться полезной. Прочтите его всякий раз, когда у Вас возникнут проблемы. Возможно у них есть решение."
 		, "Первый намек очевиден: ВСЕГДА ВНАЧАЛЕ ЧИТАТЬ ОПИСАНИЕ! Подсказки часто содержат необходимую информацию, но не многие люди задумываются о ее прочтении. Обычно они содержат все характеристики машины."
-		, "Если машина не обрабатывает определенный рецепт (но выполняет другие), значит, вы подаете недостаточно энергии. Это ВСЕГДА проблема. Уровень машины определяет, насколько больше энергии она потребляет, чем обычный рецепт."
+		, "Если машина не обрабатывает определенный рецепт (но выполняет другие), значит, Вы подаете недостаточно энергии. Это ВСЕГДА проблема. Уровень машины определяет, насколько больше энергии она потребляет, чем обычный рецепт."
 		, "Уровни машин следующие: все, что находится между 16 и 64 универсальными единицами за тик, соответствует уровню ОДИН¶Уровень 2: 65-256¶Уровень 3: 257-1024¶Уровень 4: 1025-4096¶Уровень 5: 4097-16192"
-		, "Если уровень используемой вами машины находится в более высоком диапазоне, чем уровень рецепта (см. его GU/t), это умножит необходимое входное GU/t на 4 и сократит время обработки вдвое, что сделает рецепт вдвое дороже."
+		, "Если уровень используемой Вами машины находится в более высоком диапазоне, чем уровень рецепта (см. его GU/t), это умножит необходимое входное GU/t на 4 и сократит время обработки вдвое, что сделает рецепт вдвое дороже."
 		, "И да, 64 GU/t - это ЕЩЕ ПЕРВЫЙ УРОВЕНЬ, в машину 1-го уровня серьезно придется вставить столько! Часто можно использовать двигатель/нагреватель/и т. д. более высокого уровня при минимальной потребляемой мощности, чтобы получить GU/t."
 		, "Электрическая энергия GT6 широко совместима со всеми модами, использующими IC² API, такими как:¶IC², IC²-Classic, IC²-Addons, Railcraft, Forestry и другими!"
 		, "Вещи, излучающие напряжение менее 1024 EU/t, способны даже питать машины без IC² следующих модов:¶Galacticraft и его дополнения, Applied Energistics, Immersive Engineering, OpenModularTurrets, TechGuns и даже GT5U!"
 		, "Камеры сгорания любого типа всегда представляют собой опасность пожара, поэтому убедитесь, что рядом с ними лежат только огнеупорные материалы! Единственный способ выключить эти камеры — поставить перед ними твердый блок или огнетушители."
-		, "Вы хотите переместить воду или получить молоко, но у вас нет железного ведра? Попробуйте сделать для этой задачи деревянное ведро, это дешевле, даже если оно подходит только для небольшого количества жидкостей."
-		, "Если вам нужно руководство по принтеру, то просто вставьте в принтер химический черный краситель и пустую ванильную книгу и подайте энергию. Это руководство будет немедленно распечатано."
-		, "В миске для купания и в ванне можно покрасить кожаную броню и блоки GT6 с помощью жидких красителей.¶На раннем этапе вы можете промыть руду, бросив в наполненный ванильный котел. Также трубы GT могут наполнять котлы водой."
+		, "Вы хотите переместить воду или получить молоко, но у Вас нет железного ведра? Попробуйте сделать для этой задачи деревянное ведро, это дешевле, даже если оно подходит только для небольшого количества жидкостей."
+		, "Если Вам нужно руководство по принтеру, то просто вставьте в принтер химический черный краситель и пустую ванильную книгу и подайте энергию. Это руководство будет немедленно распечатано."
+		, "В миске для купания и в ванне можно покрасить кожаную броню и блоки GT6 с помощью жидких красителей.¶На раннем этапе Вы можете промыть руду, бросив в наполненный ванильный котел. Также трубы GT могут наполнять котлы водой."
 		, "Немного разнесите машины, чтобы иметь возможность автоматизировать их позже, не вызывая огромного кластерного траха."
 		, "Всегда имейте достаточно места для двух блоков между каждой машиной, если не для трех! Не обращайте внимания на возможную потерю мощности, оно того не стоит."
 		});
 
-		UT.Books.createWrittenBook("Manual_Portal_TF", "The Twilight Forest Guide", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 1005), new String[] {
-		"If you found this Book next to a Twilight Forest Portal, but you don't know how to light the Portal to go on the Adventure, don't worry, in here are some instructions. If found inside the Twilight Forest, you can probably skip 3 Pages."
-		, "Step 1: You see the 4x4 of some type of Dirt, Grass or Mud with 12 Flowers growing on it and a 2x2 Pool of Water in the middle? That is going to be the Twilight Forest Portal."
-		, "Step 2: All you need to do to activate that Portal, is throwing a Diamond into that Water Pool, and you are ready to go. Yep, it is that simple. If the Water is purple and swirly, the Portal is already active."
-		, "Step 3: So, now that you have a Portal to the Twilight Forest, all you need to do is jump in. You don't even need Materials to prepare or anything."
-		, "Once you are inside of the Twilight Forest you can gather up Materials from the ground as usual. A good recommendation would be to find a Firefly Forest and grab a bunch of the Firefly Jars there, because they are blocklike Torches."
-		, "The Obsidian Pillars you see spread all over the place have a Block of Lapis Lazuli at their Top, it is sometimes easier to get that then to go mining. These Pillars also have Ravens around them, if you need a Feather for a Magic Map Focus."
-		, "Lakes are just boring Bodies of Water, not even Squids spawn inside of them, due to the Twilight Forest being of a too low Y Level to do so. I guess the Lake is a good place to go fishing or build some IC2 Water Power Generator."
-		, "The Mushroom Fortress is currently not in use. No Loot or anything in there, not even Staircases or Ladders, you could make a Base inside of it though."
-		, "The Questing Ram is an Animal you can find in the middle of a Biome full of Rainbow Trees. If you click it with one of each type of Wool it will reward you with the Crumble Horn, a somewhat useful Mining Tool, and some Blocks of Resources."
-		, "Druid Huts contain a Skeleton Druid Spawner, which is a renewable source of Torchberries, and a Netherrack Block that is lit on Fire. The Roof is made of Petrified Wood and therefore not flammable. There is no other Loot in there."
-		, "In general all Loot Chests in Twilight Forest can be picked up wholesale as long as you have never opened them before. That way you can bring them home without cluttering your Inventory and then open them there safely."
-		, "If you find small ruined Buildings, it is well advised to break their wooden Floor and dig a three block deep hole to see if there is a hidden Chest in the Basement. It is a 50:50 chance for it to exist."
-		, "Water Wells can be found all over the place, it is important to note that some Wells have a Chest hidden at their Bottom. Only the Wells that have a 1-by-1 of Water can randomly have such a Chest, the ones that are 2-by-2 will never have it."
-		, "Hollow Trees can contain multiple Chests accompanied by Spider Spawners. The tiny Spiders and their noise make it easy to find, and even early Tools kill them in one hit. Bigger Hollow Trees tend to have more Chests in their Foliage."
-		, "Hedge Mazes are the next logical Step to find some Loot. First look from above where all the Rooms are, then rush for each of them, axe all the Chests, and run. Most of the Mobs in there are not hard to beat."
-		, "Ironwood is easy as you only need some Hematite/Magnetite, Gold, and some Liveroot you get from picking up Sticks. A Mortar, a Mixing Bowl, a Furnace and Stone Anvils with Stone Hammers are all you need to make basic Equipment of it."
-		, "Hollow Hills are something you can try once you are all armored up, nab some Chests from one of those. Beware it is full of very deadly and explosive Mobs, so you need to be constantly on the run and hide behind the many Stalagmites."
-		, "Steeleaf may have low durability, but it is one of the Materials you can easily get good Fortune and Looting Enchanted Tools and Arrows from, and has the Item-Auto-Collecting Ability for many GT Tools. But it will turn into regular Steel if melted."
-		, "Naga Arena¶===================¶This is the first Boss you need to defeat. All you need is 8 solid Blocks, a Bow and a few Stacks of Arrows. Run into the Arena and let the Naga spawn, then immediately pillar up 8 Blocks and attack with the Bow."
-		, "Naga Arena¶===================¶The Naga will almost definitely kill you in Melee Combat so using ranged Weapons is the best way. And those Pillars that are already in the Arena are a good hint that you should get up and out of Melee Range."
-		, "Naga Arena¶===================¶If against better judgement you wish to engage the Naga in Melee Combat, you better get well enchanted Armor. Also walk around the Naga Arena once to make sure all Chunks are generated and Worldgen Lag wont kill you."
-		, "Naga Arena¶===================¶The Naga Trophy you get can be used to produce KU through a Magic Field Absorber. Naga Scales can be used to make Chestplates and Leggings, but are worthless otherwise. You are able to get into Lich Towers now."
-		, "Lich Tower¶===================¶In order to enter this place you might need to kill a Naga first and touch its Trophy. The Lich Tower has one big Double Helix Central Staircase with Bridges inbetween that contain typical Dungeon Mob Spawners."
-		, "Lich Tower¶===================¶Those Mob Spawners can be lit up by putting two Firefly Jars or similar Light Sources 1 horizontal Block away from them on opposite ends. These Spawners can create Zombies, Skeletons or various Spiders."
-		, "Lich Tower¶===================¶There will not only be Spawner Mobs but also special Mobs that spawn normally. The special one in this case being a flying Tome, that drops Paper for each hit. Have fun punching it for maximized Paper drops."
-		, "Lich Tower¶===================¶At the Ground Level of the Tower is four Side Buildings, which likely contain quite a bit of Loot Chests, you should try getting into each of those by breaking into the Walls from the Outside."
-		, "Lich Tower¶===================¶The Lich is located at the top of the Staircase, and has FIVE Shields that need to be destroyed before taking Damage. To destroy a Shield you need reflect their Projectiles at them (nearly impossible in Multiplayer!)."
-		, "Lich Tower¶===================¶An alternative Method for destroying a Shield is hitting it with 1.5+ Hearts of any Armor penetrating Damage. For example Smite Bullets, Pickaxes, Falling Damage and Splash Potions of Healing (but NOT Regeneration!)."
-		, "Lich Tower¶===================¶Using things like Withering Damage to attack the Lich works only when all Shields are down. Damage Immunities include: Fire, Poison, Drowning, Harming Potions and anything else Undead are immune to."
-		, "Lich Tower¶===================¶Zombies and Shadowclones of the Lich will be summoned occassionally to distract you from the real Target. Avoid hitting the Shadowclones, but do kill the Zombies as they will swarm you otherwise."
-		, "Lich Tower¶===================¶The Lich Trophy you get can be used to produce QU through a Magic Field Absorber. The Scepter will either allow you to drain Life or to summon helpful Zombies. They can be reloaded in the crafting Grid."
-		, "Minoshroom Maze¶===================¶Each Fire Swamp is surrounded by four regular Swamps, which each contain a Maze full of Minotaurs, Slimes, annoying Insects, Loot and sometimes flooded with Swamp Water. Kill a Lich first before going here."
-		, "Minoshroom Maze¶===================¶Minotaurs will charge at you very quickly and from any angle. To easily get rid of the. use a Weapon with the Werebane Enchantment, which works on them and weakens them drastically."
-		, "Minoshroom Maze¶===================¶Maze Slimes behave like the normal ones and are just as vulnerable to the Dissolving Enchantment. If you have Thaumcraft, use the Fire Wand Focus for the tiny leftover Slimes, to save on your Weapons durability."
-		, "Minoshroom Maze¶===================¶Around the Entrance are a lot of Vines, harvest them with a Knife and craft Ropes out of them, which you can then use to get down the Hole. Bring extra Rope for going from the Upper Level to the Basement Level!"
-		, "Minoshroom Maze¶===================¶Try to follow the universal Rules of Maze traversal, which you could train over at the Hedge Maze. Placing Torches always on the righthand side Walls helps you find the way back easily."
-		, "Minoshroom Maze¶===================¶You may be able to find a Maze Map Focus in one of the Loot Chests. Use it to craft a Maze Map and rightclick it while you stand on the ground of the Basement Level. Dont waste it on the Upper Level!"
-		, "Minoshroom Maze¶===================¶The Maze Map works everywhere, even your Base should you choose so. You can also upgrade an empty Maze Map into an Ore Map and go mining with it. Though if you got Ore Magnets you wont really need that."
-		, "Minoshroom Maze¶===================¶There is a few Rooms with Mob Spawners and Loot Chests inside the Pillars. Other Loot Chests can be found in Dead Ends, just beware that those are likely TNT trapped with more than one trigger!"
+		UT.Books.createWrittenBook("Manual_Portal_TF", "Путеводитель по Сумеречному лесу", "Gregorius Techneticies", ST.make(ItemsGT.BOOKS, 1, 1005), new String[] {
+		"Если Вы нашли эту книгу рядом с порталом в Сумеречный лес, но не знаете, как осветить портал, чтобы отправиться в приключение, не волнуйтесь, вот несколько инструкций. Если Вы найдете его в Сумеречном лесу, Вы можете пропустить 3 страницы."
+		, "Шаг 1: Вы видите фигурку 4х4 из грязи, травы или грязи с 12 растущими на ней цветами и лужей воды 2х2 посередине? Это будет портал Сумеречного леса."
+		, "Шаг 2: Все, что Вам нужно сделать, чтобы активировать этот портал, — это бросить алмаз в этот бассейн с водой, и он готов к работе. Да, это так просто. Если вода фиолетовая и кружится, портал уже активен."
+		, "Шаг 3: Итак, теперь, когда у Вас есть портал в Сумеречный лес, все, что Вам нужно сделать, это прыгнуть внутрь. Вам даже не нужны материалы для подготовки или что-то в этом роде."
+		, "Оказавшись в Сумеречном лесу, Вы можете, как обычно, собирать материалы с земли. Хорошей рекомендацией будет найти лес светлячков и собрать там кучу банок светлячков, потому что они представляют собой блочные факелы."
+		, "Обсидиановые столбы, которые Вы видите повсюду, имеют на вершине блок лазурита, иногда его легче добыть, чем заняться добычей полезных ископаемых. Вокруг этих столпов также есть вороны, если Вам нужно перо для фокуса на магической карте."
+		, "Озера — это просто скучные водоемы, внутри них не появляются даже кальмары, поскольку Сумеречный лес имеет слишком низкий уровень Y для этого. Думаю, озеро — хорошее место, чтобы порыбачить или построить гидрогенератор IC2."
+		, "Грибная крепость в настоящее время не используется. Никакой добычи или чего-то там, даже лестничных клеток или лестниц, Вы можете построить внутри него базу."
+		, "Рыскающий баран — это животное, которое Вы можете найти посреди биома, полного радужных деревьев. Если Вы щелкнете по нему шерстью каждого типа, Вы получите в награду Крошащийся рог, полезный горнодобывающий инструмент и блокои ресурсов."
+		, "Хижины друидов содержат спавнеры скелетов-друидов, которые являются возобновляемым источником факельных ягод, и блоков адского камня. Крыша сделана из окаменелого дерева и поэтому не воспламеняется. Другого лута там нет."
+		, "В общем, все сундуки с добычей в Сумеречного леса можно открыть оптом, если Вы никогда их раньше не открывали. Таким образом, Вы сможете принести их домой, не загромождая инвентарь, а затем безопасно открыть их там."
+		, "Если Вы обнаружите небольшие разрушенные здания, рекомендуется сломать их деревянный пол и вырыть яму глубиной в три блока, чтобы посмотреть, нет ли в подвале спрятанного сундука. Шансы на его существование составляют 50:50."
+		, "Колодцы с водой можно найти повсюду, важно отметить, что на дне некоторых колодцев спрятан сундук. Только колодцы с водой 1 на 1 могут случайным образом иметь такой сундук, а колодцы с размером 2 на 2 никогда не будут иметь его."
+		, "Полые деревья могут содержать несколько сундуков, сопровождаемых спавнерами пауков. Крошечные пауки и их шум позволяют легко их найти, и даже ранние инструменты убивают их одним ударом. У больших дуплистых деревьев в листве обычно больше сундуков."
+		, "Изгороди-лабиринты — следующий логический шаг в поисках добычи. Сначала посмотрите сверху, где находятся все Комнаты, затем бросьтесь в каждую из них, вырубите все Сундуки и бегите. Большую часть мобов там нетрудно победить."
+		, "Железное дерево — это просто, так как Вам нужно всего лишь немного гематита/магнетита, золота и немного живого корня, который Вы получаете, собирая палки."
+		, "Ступка, миска для смешивания, печь и каменные наковальни с каменными молотками — все, что Вам нужно для изготовления основного оборудования."
+		, "Полые холмы — это то, что Вы можете попробовать, как только Вы вооружитесь, и возьмите несколько сундуков из одного из них."
+		, "Остерегайтесь, здесь полно очень смертоносных и взрывоопасных мобов, поэтому Вам нужно постоянно бежать и прятаться за множеством сталагмитов."
+		, "Сталелист может иметь низкую прочность, но это один из материалов, из которого Вы можете легко получить зачарованные на удачу и добычу интсрументы и стрелы,"
+		, "а также он обладает способностью автоматического сбора предметов для многих инструментов GT.¶Но если его расплавить, он превратится в обычную сталь."
+		, "Арена Наги¶===================¶Это первый босс, которого Вам нужно победить. Все, что Вам нужно, это 8 твердых блоков, лук и несколько стопок стрел. Бегите на арену и дайте Наге появиться, затем сразу же соберите 8 блоков и атакуйте луком."
+		, "Арена Наги¶===================¶Нага почти наверняка убьет Вас в ближнем бою, поэтому лучше всего использовать оружие дальнего боя. А те столпы, которые уже находятся на арене, являются хорошим намеком на то, что Вам следует уйти из ближнего боя."
+		, "Арена Наги¶===================¶Если вопреки здравому смыслу Вы хотите вступить в рукопашный бой с нагами, Вам лучше приобрести хорошо зачарованную броню."
+		, "Арена Наги¶===================¶Также прогуляйтесь по арене Наги один раз, чтобы убедиться, что все куски сгенерированы и задержка генерации мира не убьет Вас."
+		, "Арена Наги¶===================¶Полученный Вами трофей Наги можно использовать для производства КU с помощью поглотителя магического поля."
+		, "Арена Наги¶===================¶Чешуйки наг можно использовать для изготовления нагрудников и поножей, но в остальном они бесполезны. Теперь Вы можете попасть в башни Лича."
+		, "Замок Лича¶===================¶Чтобы войти в это место, Вам, возможно, придется сначала убить Нагу и коснуться её трофея."
+		, "Замок Лича¶===================¶В башне Лича есть одна большая центральная лестница с двойной спиралью и мостами между ними, на которых находятся типичные спавнеры мобов подземелий."
+		, "Замок Лича¶===================¶Эти спавнеры мобов можно осветить, поместив две банки со светлячками или аналогичные источники света на расстоянии 1 горизонтального блока от них на противоположных концах. "
+		, "Замок Лича¶===================¶Эти спавнеры могут создавать зомби, скелетов или различных пауков.¶Будут не только спавнеры мобов, но и специальные мобы, которые появляются нормально."
+		, "Замок Лича¶===================¶Особым в данном случае является летающий фолиант, из которого при каждом попадании выпадает бумага. Получайте удовольствие, ударяя по нему, чтобы получить как можно больше бумаги."
+		, "Замок Лича¶===================¶На первом уровне башни находятся четыре боковых здания, которые, вероятно, содержат немало сундуков с добычей. Вам следует попытаться проникнуть в каждое из них, взломав стены снаружи."
+		, "Замок Лича¶===================¶Лич расположен наверху лестницы и имеет ПЯТЬ щитов, которые необходимо уничтожить, прежде чем нанести урон. Чтобы уничтожить щит, Вам нужно отразить в него его снаряды (в сетевой игре это практически невозможно!)."
+		, "Замок Лича¶===================¶Альтернативный метод уничтожения щита — нанести ему проникающий урон в размере +1,5❤ любой брони. Например, ударные пули, кирки, урон от падения и зелья лечения (но НЕ регенерации!)."
+		, "Замок Лича¶===================¶Использование таких вещей, как 'Иссушающий урон', для атаки Лича работает только тогда, когда все щиты отключены."
+		, "Замок Лича¶===================¶Иммунитет к урону включает в себя: огонь, яд, утопление, вредные зелья и все остальное, к чему нежить невосприимчива."
+		, "Замок Лича¶===================¶Зомби и теневые клоны Лича будут время от времени вызываться, чтобы отвлечь Вас от настоящей цели. Избегайте ударов по теневым клонам, но убивайте зомби, иначе они набросятся на Вас."
+		, "Замок Лича¶===================¶Полученный Вами трофей Лича можно использовать для производства QU с помощью поглотителя магического поля. Скипетр позволит Вам либо истощить жизнь, либо вызвать полезных зомби. Их можно перезарядить в сетке крафта."
+		, "Грибной лабиринт¶===================¶Каждое огненное болото окружено четырьмя обычными болотами, каждое из которых содержит лабиринт полный минотавров, слизней, надоедливых насекомых, добычи и иногда залитый болотной водой. Cначала убейте Лича."
+		, "Грибной лабиринт¶===================¶Минотавры нападут на Вас очень быстро и под любым углом. Чтобы легко избавиться от них, используйте оружие с чарами оборотней, которые воздействуют на них и резко ослабляют."
+		, "Грибной лабиринт¶===================¶Лабиринтные слизни ведут себя как обычные и так же уязвимы для растворяющих чар. Если у Вас есть Thaumcraft, используйте магический огненный жезл для крошечных слаймов для экономии прочности оружия."
+		, "Грибной лабиринт¶===================¶Вокруг входа много лоз, соберите их ножом и сделайте из них веревки, которые затем можно использовать, чтобы спуститься в дыру. Возьмите с собой дополнительную веревку, чтобы пройти с верхнего уровня в подвал!"
+		, "Грибной лабиринт¶===================¶Постарайтесь следовать универсальным правилам прохождения лабиринта, которым Вы можете поучиться в живом лабиринте. Размещение факелов всегда справа от стен поможет Вам легко найти путь назад."
+		, "Грибной лабиринт¶===================¶Вы можете найти фокус карты лабиринта в одном из сундуков с добычей. Используйте его, чтобы создать карту лабиринта, и щелкните её ПКМ, стоя на земле подвала. Не тратьте его на верхний уровень!"
+		, "Грибной лабиринт¶===================¶Карта лабиринта работает везде, даже на вашей базе, если Вы того пожелаете. Вы также можете улучшить пустую карту лабиринта до карты руды и заняться с ее помощью добычей полезных ископаемых."
+		, "Грибной лабиринт¶===================¶Внутри колонн есть несколько комнат с спанерами мобов и сундуками с добычей. Другие сундуки с добычей можно найти в тупиках, но имейте в виду, что скорее всего, там ловушки с TNT с более чем одним триггером!"
 		// Attacking the Minoshroom will result in breaking all Fences around it, making the Bow Method completely useless, unless you replace the Fences with actual Blocks. The Cheese would still work if it wasn't for GT6. This Line will stay to troll people.
-		, "Minoshroom Maze¶===================¶The Room with the Minoshroom is at the Basement Level and blocked off by Fences. Just break a Fence out of the middle and shoot the Minoshroom with a Bow and a bunch of Arrows. Four Loot Chests await you inside."
-		, "Minoshroom Maze¶===================¶Among the drops of the Minoshroom are Meef Stroganoff, a useless Food Item, and a +1 Diamond Axe that supposedly deals +3.5 Hearts of Extra Damage when you charge at Enemies (may be bugged, test it yourself)."
-		, "Minoshroom Vault¶===================¶There is a secret Vault full of high value Loot Chests hidden in the Maze. It occupies 3 by 3 grid spaces worth of Basement Level Maze with very thick Walls. With the Maze Map you can easily find it."
-		, "Minoshroom Vault¶===================¶The Vault Room on the Basement Level is trapped, try digging at Floor Height and with an Autocollecting Pickaxe to avoid the Wooden Pressure Plates triggering the TNT next to the Chests."
-		, "Hydra Cave¶===================¶Once you have killed the Minoshroom, you can go into the Fire Swamp in the center of the Swamplands to find the Hydra Cave, the home of the aforementioned Hydra. Though there is only Ores to be found there, no Loot."
-		, "Hydra Cave¶===================¶Trying to attack the Hydra can be tricky, because if you are too far away from it, all ranged Damage you deal will be nullified, and when you are close enough it will spew explosives at you."
-		, "Hydra Cave¶===================¶In order to deal damage to it, you need to hit the Heads while their Mouth happens to be open. It will always rotate towards you, so try to avoid having the Hydra kite you away, while all other Heads attack!"
-		, "Hydra Cave¶===================¶It has a high damage Bite Attack instant killing you if you dont wear Protection enchanted Armor, and a Fire Breathing Attack for which you should drink a Fire Resistance Potion ahead of time."
-		, "Hydra Cave¶===================¶To engage in Melee, you should wear strong Armor with at least one high Level regular Protection Enchantment, drink a Fire Resistance Potion and a Regeneration Potion, and get a Sword or Axe with Sharpness."
-		, "Hydra Cave¶===================¶The Hydra Trophy you get can be used to produce HU through a Magic Field Absorber. Its Blood can be used to imbue Steels including Steeleaf with a Fiery Aura, enabling Auto-Smelt on Tools and incinerating opponents!"
-		, "Knight Stronghold¶===================¶Time for the Dark Forest, there is four Knightly Strongholds in there. They are underground, but you need to find the Entrance in the Forest and put one of your Trophies onto its pedestal to open it up."
-		, "Knight Stronghold¶===================¶You should bring Ropes to the Stronghold as not all Areas inside of it are connected with Stairs. You will also need something that can get rid of Obsidian easily as the Tomb is encased in it."
-		, "Knight Stronghold¶===================¶The Mobs include: Helmet Crabs, Two Babies in a Trenchcoat wielding a Spear can be split in two by attacking from the back, The Sapper throwing TNT at you, And little Kids spinning Spikeballs around."
-		, "Knight Stronghold¶===================¶Speaking of Spikeball, you can craft one of those too from a lot of Knightmetal Ingots. Later there is even an upgrade to it to 'annihilate' your Enemies and the Terrain even more!"
-		, "Knight Stronghold¶===================¶There is a few 3 by 3 structures made of Stone Brick Stair Blocks. Remove one of those Stairs to reveal a trapped Loot Chest hidden inside of it. They are often hidden behind actual Staircases too."
-		, "Knight Stronghold¶===================¶Search the Stronghold until you find an Obsidian Wall visible behind some Iron Bars. Break through the Obsidian Wall into the Tomb behind it. The Phantoms will spawn once you enter."
-		, "Knight Stronghold¶===================¶A lot of times the Tombs are completely disconnected from the Entrance too, because the whole Stronghold does not generate well. Just dig around a little to see if something is behind a Wall."
-		, "Knight Stronghold¶===================¶The Phantoms will only track you down a limited distance and then go back to the Tomb, so you can bait them out and kill them one by one. They look more scary than they actually are."
-		, "Knight Stronghold¶===================¶They throw a LOT of Weapons at you, but they only really distract from their melee attacks. Phantoms do NOT count as Undead for the sake of the Smite Enchantment and Splash Potions of Harming."
-		, "Knight Stronghold¶===================¶Make sure to NOT place anything in the middle of the Tomb, such as Torches, because if the spot where the Loot Chest is supposed to be is blocked, it will not spawn!"
-		, "Knight Stronghold¶===================¶It is possible for there to be more than one Tomb, and every Tomb can be connected on four Sides, so breaking through the other Walls from the inside of the Tomb may unearth more of the Stronghold!"
-		, "Knight Stronghold¶===================¶Killing the Phantoms will cause Mobs to no longer spawn inside the Stronghold, giving you an easier time to find more Tombs in there. However sometimes listening for hostile Mobs can point you places."
-		, "Knight Stronghold¶===================¶Weapons and Armor of the Phantoms are not special or worthwhile, so dont bother. The Knightmetal Weapons supposedly deal +1 Heart of Extra Damage to the opponent (may be bugged, test it yourself)."
-		, "Dark Tower¶===================¶Found in the center of the Dark Forest, the Dark Tower is the most complex Dungeon of the Twilight Forest in this Minecraft Version. You better bring a few Enderpearls and Ropes with you, just in case."
-		, "Dark Tower¶===================¶Getting to the Tower is honestly easiest if you just walk ontop of the Dark Forest itself, way less Bushes and Trees blocking your way. Not to mention you can easily see the Dark Tower from a distance."
-		, "Dark Tower¶===================¶If you just wanna cheat and pillar up to the Roof of the Tower, beware of the big Rooftop Ghasts that will likely knock you off the Pillar and to your Death. So maybe you should try take the normal Entrance."
-		, "Dark Tower¶===================¶To enter the Tower go to one of the Red marked Doors and rightclick it. These Doors are nice and you could harvest some of them for your Base if you would like. There is also crafting Recipes for them."
-		, "Dark Tower¶===================¶Many of the Segments of this Tower have Anti-Builders in them, which prevent you from placing Blocks and will replace any broken Blocks. But they have a slight delay, enough to get into Fences for example."
-		, "Dark Tower¶===================¶There is a lot of burning Holes in the Tower, for which you will have to place Blocks or Ropes, or throw Enderpearls to get past those. Destroying any Anti-Builders you find is highly recommended."
-		, "Dark Tower¶===================¶Some Segments have Carminite Builders with Levers. Flip the Lever and look into the direction you want to go, and it will slowly place a Bridge of Blocks going there. You could harvest them for use with your Base."
-		, "Dark Tower¶===================¶Blaze Spawners can be spawnblocked by just putting eight Firefly Jars on their exact Y-Level in a Ring one Block away from their Pillar. So two Blocks above ground, barely enough space to walk under the Jars."
-		, "Dark Tower¶===================¶Locked Doors are found between Major Tower Segments. In order to open them you need to find four Tower Keys and rightclick each Corner with one of them. Or just break the Doorframe or something if you wanna cheat."
-		, "Dark Tower¶===================¶Tower Keys are found in the Knightmetal Chests of the smaller Side Towers. You can just harvest the whole Chest and the Key will drop out of it anyways, even if the Chest Loot has not been generated yet."
-		, "Dark Tower¶===================¶Golem and Spider Spawners are often found inside the Side Towers. Trapdoor Setups and partially broken Redstone Contraptions can be found too, as well as many Wooden and Metal Loot Chests."
-		, "Dark Tower¶===================¶Ghastlings can be found in various places around the Tower, usually they will not shoot you until you stare at them. Other than that they are basically Ghasts."
-		, "Dark Tower¶===================¶Towerwood Borers infest the entire Towers Walls, their Borer Essence can be used in a few Crafting Recipes related to the Devices you can find around the Dark Tower."
+		, "Грибной лабиринт¶===================¶Комната с кентавром находится на цокольном этаже и ограждена забором. Просто сломайте забор посередине и выстрелите в минотавра из лука и пучка стрел. Внутри Вас ждут четыре сундука с добычей."
+		, "Грибной лабиринт¶===================¶Среди трофеев грибного кентавра — бефстроганов, бесполезная еда, и +1 алмазный топор, который предположительно наносит +3,5❤ дополнительного урона, когда Вы атакуете врагов (возможно ошибся)."
+		, "Грибное хранилище¶===================¶В лабиринте спрятано секретное хранилище, полное ценных сундуков с добычей. Оно находится на цокольном уровне лабиринта размером 3 на 3 с очень толстыми стенами. С картой лабиринта Вы легко его найдете."
+		, "Грибное хранилище¶===================¶Комната-хранилище на цокольном этаже заперта, попробуйте копать на высоте пола и с помощью кирки с автосбором, чтобы избежать срабатывания деревянных нажимных пластин рядом с сундуками."
+		, "Логово Гидры¶===================¶После того, как Вы убьете кентавра, Вы можете отправиться в огненное болото в центре болот, чтобы найти логово Гидры. Хотя там можно найти только руду, а не добычу."
+		, "Логово Гидры¶===================¶Попытка атаковать Гидру может быть сложной:¶если Вы находитесь слишком далеко от нее, весь наносимый урон в дальнем бою будет сведен к нулю, а когда Вы подойдете достаточно близко, она извергнет в Вас взрывчатку."
+		, "Логово Гидры¶===================¶Чтобы нанести ей урон, Вам нужно ударить по головам, пока их рот открыт. Она всегда будет вращаться к Вам, поэтому постарайтесь не допустить, чтобы Гидра оттолкнула Вас, пока все остальные головы атакуют!"
+		, "Логово Гидры¶===================¶У неё есть атака укусом с высоким уроном, мгновенно убивающая Вас, если Вы не носите зачарованную на защиту броню, и атака огненного дыхания, для которой Вам следует заранее выпить зелье огнестойкости."
+		, "Логово Гидры¶===================¶Чтобы сражаться в ближнем бою, Вам следует надеть прочную броню с хотя бы одним обычным защитным заклинанием высокого уровня, выпить зелье огнестойкости и зелье регенерации, а также получить острый меч или топор."
+		, "Логово Гидры¶===================¶Полученный Вами трофей Гидры можно использовать для производства HU с помощью поглотителя магического поля."
+		, "Логово Гидры¶===================¶Её кровь можно использовать для наделения стали, в том числе сталелиста, огненной аурой, позволяя автоматически плавить инструменты и испепелять противников!"
+		, "Рыцарские крепости¶===================¶Настало время Темного леса, там четыре рыцарских крепости. Они находятся под землей, но Вам нужно найти вход в лес и поставить один из своих трофеев на пьедестал, чтобы открыть его."
+		, "Рыцарские крепости¶===================¶Вам следует принести веревки в крепость, так как не все области внутри нее соединены с лестницей. Вам также понадобится что-то, что поможет легко избавиться от обсидиана, окружающего гробницу."
+		, "Рыцарские крепости¶===================¶В число мобов входят: крабы в шлемах, два младенца в плаще с копьем, которых можно разделить на две части, атакуя со спины, сапер, бросающий в Вас динамит, и маленькие дети, крутящие шары с шипами."
+		, "Рыцарские крепости¶===================¶Говоря о шипастом шаре, Вы тоже можете создать один из них из множества слитков рыцарского металла. Позже его даже усовершенствовали, чтобы еще больше 'аннигилировать' ваших врагов и местность!"
+		, "Рыцарские крепости¶===================¶Есть несколько построек 3 на 3 из лестничных блоков из каменного кирпича. Удалите одну из этих лестниц, чтобы обнаружить спрятанный внутри нее сундук с добычей. Часто спрятаны за настоящими лестницами."
+		, "Рыцарские крепости¶===================¶Обыщите крепость, пока не найдете обсидиановую стену, видимую за железными решетками. Прорвитесь через обсидиановую стену в гробницу за ней. Фантомы появятся, как только Вы войдете."
+		, "Рыцарские крепости¶===================¶Часто гробницы полностью отключены от входа, потому что вся крепость не генерируется должным образом. Просто покопайтесь немного, чтобы увидеть, есть ли что-нибудь за стеной."
+		, "Рыцарские крепости¶===================¶Фантомы будут выслеживать Вас только на ограниченном расстоянии, а затем возвращаться в гробницу, так что Вы сможете выманить их и убить одного за другим. Они выглядят страшнее, чем есть на самом деле."
+		, "Рыцарские крепости¶===================¶Они бросают в Вас МНОГО оружия, но на самом деле они лишь отвлекают от атак ближнего боя. Фантомы НЕ считаются нежитью ради чар 'Кара' и 'Взрывных зелий вреда'."
+		, "Рыцарские крепости¶===================¶Обязательно НЕ размещайте что-либо в центре гробницы, например факелы, потому что, если место, где должен находиться сундук с добычей, заблокировано, он не появится!"
+		, "Рыцарские крепости¶===================¶Там может быть более одной гробницы, и каждая гробница может быть соединена с четырех сторон, поэтому прорыв других стен изнутри гробницы может открыть больше крепости!"
+		, "Рыцарские крепости¶===================¶Убийство фантомов приведет к тому, что мобы больше не будут появляться внутри крепости, что облегчит Вам поиск там новых гробниц. Однако иногда прослушивание враждебных мобов может указать Вам место."
+		, "Рыцарские крепости¶===================¶Оружие и доспехи фантомов не являются чем-то особенным или стоящим, так что не беспокойтесь. Предположительно, рыцарское металлическое оружие наносит +1❤ допурона противнику (возможно ошибся)."
+		, "Темная башня¶===================¶Темная башня, расположенная в центре Темного леса, является самым сложным подземельем Сумеречного леса в этой версии Minecraft. На всякий случай лучше возьмите с собой жемчуг Края и веревок."
+		, "Темная башня¶===================¶Добраться до башни проще всего, если Вы просто пройдете по самому Темному лесу, на пути будет гораздо меньше кустов и деревьев. Не говоря уже о том, что можно легко увидеть Темную башню на расстоянии."
+		, "Темная башня¶===================¶Если Вы просто хотите схитрить и подняться на крышу башни, остерегайтесь больших призраков на крыше, которые, скорее всего, сбьют Вас с колонны и насмерть. Возможно стоит попробовать воспользоваться обычным входом."
+		, "Темная башня¶===================¶Чтобы войти в башню, подойдите к одной из дверей, отмеченных красным, и щелкните ее ПКМ. Эти двери хороши, и Вы можете собрать некоторые из них для своей базы, если захотите. Для них также есть рецепты крафта."
+		, "Темная башня¶===================¶Во многих сегментах этой башни есть антистроители, которые не позволяют Вам размещать блоки и заменяют любые сломанные блоки. Но у них есть небольшая задержка, достаточная, чтобы попасть например за ограждение."
+		, "Темная башня¶===================¶В башне много горящих дыр, через которые Вам придется размещать блоки или веревки или бросать жемчуг Края, чтобы пройти через них. Настоятельно рекомендуется уничтожить всех найденных антистроителей."
+		, "Темная башня¶===================¶В некоторых сегментах есть карминитовые строители с рычагами. Нажмите рычаг и посмотрите в том направлении, в котором хотите идти, и он медленно поместит туда мост из блоков. Можно собрать для своей базы."
+		, "Темная башня¶===================¶Спавнеры Ифритов можно заблокировать, просто поместив восемь банок со светлячками на их точный Y-уровень в кольце в одном блоке от них. В двух блоках над землей едва хватает места, чтобы пройти под банками."
+		, "Темная башня¶===================¶Запертые двери находятся между сегментами главной башни. Чтобы открыть их, Вам нужно найти четыре ключа от башни и щелкнуть ПКМ по каждому углу одним из них. Или просто сломать дверной косяк или что-то такое."
+		, "Темная башня¶===================¶Ключи от башен можно найти в рыцарских сундуках небольших боковых башен. Вы можете просто собрать весь сундук, и ключ все равно выпадет из него, даже если добыча из сундука еще не была создана."
+		, "Темная башня¶===================¶Внутри боковых башен много спавнеров големов и пауков. Также можно найти конструкции с люками и частично сломанные приспособления из красного камня, а также множество деревянных и металлических сундуков с добычей."
+		, "Темная башня¶===================¶Гастлингов можно найти в разных местах Башни, обычно они не будут стрелять в Вас, пока Вы не посмотрите на них. В остальном они по сути Гасты."
+		, "Темная башня¶===================¶Башенные бурильщики заполонили все стены башни, их эссенцию бурильщика можно использовать в нескольких рецептах изготовления, связанных с устройствами, которые можно найти вокруг Темной башни."
 		// My Book isn't gonna spoil what this fun Device will do to you. XD
-		, "Dark Tower¶===================¶At the Top Segment of the Tower you will see Boxes with Pistons for pushing Redstone Blocks into them. When you push all four Redstone Blocks, the Box will turn into Gold and Diamonds ready for you to harvest."
-		, "Dark Tower¶===================¶To fight the Ur-Ghast I recommend using a Stack of high quality Arrows and an Enchanted Bow. If you have access to the Implosion Enchantment by using things like Gem Arrows, it works great on any type of Ghasts."
-		, "Dark Tower¶===================¶There is a 'special' other way to beat the Ur-Ghast using one of the four Ghost Busters References, whenever they have been charged enough by killing the small Ghasts around, and the Ur-Ghast is directly above it."
-		, "Dark Tower¶===================¶The Ur-Ghast Trophy you get can be used to produce LU through a Magic Field Absorber. Make sure you got the Achievement for collecting the Trophy! The Fiery Tears can be used on Steels just like Fiery Blood."
-		, "Yeti Cave¶===================¶Deep in the Wintery Forest you will find the Yeti Cave, complete with iced Floors and a herd of Yetis at each of the four Entrances. In the center the Alpha Yeti will wait for you to get close or attack him."
-		, "Yeti Cave¶===================¶The Alpha Yeti himself is quite the Cry-Baby, you can kill him with a Flame Bow very easily, even when he is immune to Arrows, and whenever you hit him he will throw a tantrum and make Ice fall from the ceiling."
-		, "Yeti Cave¶===================¶Should he grapple you like a Pinchbeetle, just hit him until he gives you up and lets you down, so you can run around and desert him."// never gonna give a fuck, never gonna care about...
-		, "Yeti Cave¶===================¶The Yetis drop Fur which can be used for Armors, or you just take a Knife to the Crafting Grid and remove the Fur to make Leather out of it instead. The Ice Bombs can be fun to throw at unsuspecting Yetis too."
-		, "Aurora Tower¶===================¶A Blue-Green Tower is located ontop of the Glacier. It is a straight forward Dungeon with a little bit of Parkour. Look at the ceiling of each Room for 'hidden' Chests."
-		, "Aurora Tower¶===================¶Three kinds of Mobs spawn inside of it, frosty Armored Ghosts, 'Ice Blazes' which drop Blizz Rods, and corrupt 'Ice Blazes' which explode after you kill them changing the Terrain in a weird way."
-		, "Aurora Tower¶===================¶While climbing the insides of the Tower you will eventually end up finding a Room with an Ice ceiling, where you have to break through the ceiling multiple times to get up to the Snow Queen."
-		, "Aurora Tower¶===================¶On the topmost Ice Layer you will find the Snow Queen. She is floating ontop of a platform of Ice. Hitting that floating Platform will do no damage to her at all. You need to hit her from the top."
-		, "Aurora Tower¶===================¶There will be one or two 'Ice Blazes' she summons every now and then. They do mostly melee damage. She will move up and down a lot in attempt to dodge attacks, and with the Ice Platform block attacks too."
-		, "Aurora Tower¶===================¶She has a Frost Breath that deals only Damage without any Side Effects. While breathing at you, you can hit her to make her stop the attack, though it's not really all that easy to do before she stops on her own."
-		, "Aurora Tower¶===================¶The Snow Queen Trophy you get can be used to produce CU through a Magic Field Absorber. She drops a Tri-Bow or a Seeker-Bow, both of which are fun Weapons. The Ender-Bow wont teleport you when using Looting Arrows."
-		, "Troll Caves¶===================¶Up in the Highlands are the Troll Caves, a place full of various vanilla Mobs and the namesake of the Caves, Trolls. The Walls are lined with 'Troll Steinn', an ugly Block that indicates presence or lack of Light."
-		, "Troll Caves¶===================¶Many Plants unique to these Caves are located within, such as huge Mushglooms and Troll Berries, the latter of which will randomly ripen when in contact with Light, resulting in Torchberries and therefore more Light."
-		, "Troll Caves¶===================¶The Trolls themselves hit like Golems, they also throw things at you. On death they cause Troll Berries to ripen, lighting up the Area. Also 2.5% to drop Magical Beans. They avoid Sunlight but are not hurt by it."
-		, "Cloud Giants¶===================¶Far above the Highlands floats a Cloud. Use the Magical Beans from the Troll Caves on the Uberous Soil beneath that Cloud to spawn a huge Bean Stalk to get up there comfortably. Could also just pillar up though."
-		, "Cloud Giants¶===================¶Up on the big walkable Cloud you will find a giant Oak Tree and a giant small Hut, where at least two Giants live, who will respawn in that Hut every once in a while. Ranged Weapons are advisable against them."
-		, "Cloud Giants¶===================¶The entire Area may seem like everything is moving slower or laggier, but this is just an optical Illusion, everything still moves at normal speed. The Giants only seem slow because their movement didn't scale up."
-		, "Cloud Giants¶===================¶You can get a Giant Sword or a Giant Pickaxe from defeating a Giant. The Pickaxe can be used to mine any of the giant Blocks, such as the giant Leaves, giant Logs, giant Obsidian and ofcourse giant Cobblestone."
-		, "Cloud Giants¶===================¶It is also possible to use those giant Blocks to craft more Giant Pickaxes and Giant Swords. Also the Boxinator is capable of merging 64 Blocks into one of the giant Blocks using the Giant Pickaxe as free catalyst."
-		, "Troll Vault¶===================¶The giant Cube of Obsidian contains the Lamp of Cinders and vanilla Endgame Loot such as Ancient Debris and Wither Skeleton Skulls. At this Version of Minecraft it's the final worthwhile Loot of Twilight Forest."
-		, "Thorn Castle¶===================¶With the Lamp of Cinders you can either burn the Thorns or use it as an infinite Lighter. The Castle itself is unfinished, so there is not much to do there. There might be Ancient Debris below the Castle."
-		, "If you combine various Trophies you got on your Journey, you will receive the Orb of Annihilation. It will grant any Holder all Progression Achievements of Twilight Forest. Just make sure that when you use the thing that you are NOT in your Base."
-		, "Placing a Snow Queen Trophy (or any of the earlier placeable Trophies) somewhere, will let anyone who rightclicks the Trophy receive all related Progression Achievements as if they collected it, so that they can enter the various Biomes."
-		, "This should conclude all the Stuff about Twilight Forest that seems noteworthy, aswell as most of the changes I made to improve the gameplay and add variety.¶-------------------¶Have Fun! ^^"
+		, "Темная башня¶===================¶В верхнем сегменте башни Вы увидите ящики с поршнями, в которые можно запихивать блоки красного камня. Когда Вы толкнете все четыре блока красного камня, ящик превратится в золото и бриллианты, готовые к сбору."
+		, "Темная башня¶===================¶Для борьбы с Ур-Гастом рекомендую использовать стрелы высокого качества и зачарованный лук. Если есть доступ к чарам 'Имплозия' и стрелы из самоцветов, это поможет с любыми типами гадов."
+		, "Темная башня¶===================¶Существует 'особый' способ победить Ур-Гаста, используя одну из четырех отсылок к Охотникам за привидениями, когда они достаточно заряжены, убивая маленьких Гастов вокруг, и Ур-Гаст находится прямо над ними."
+		, "Темная башня¶===================¶Полученный Вами трофей Ур-Гаста можно использовать для производства LU с помощью поглотителя магического поля."
+		, "Темная башня¶===================¶Убедитесь, что Вы получили достижение за сбор трофея! Огненные слезы можно использовать на стали так же, как и огненную кровь."
+		, "Берлога Йети¶===================¶Глубоко в зимнем лесу Вы найдете пещеру йети с ледяными полами и стадом йети у каждого из четырех входов. В центре Альфа Йети будет ждать, пока Вы подойдете поближе или нападете на него."
+		, "Берлога Йети¶===================¶Альфа Йети сам по себе настоящий плакса, его можно легко убить огненным луком, даже если он невосприимчив к стрелам, и всякий раз, когда Вы его ударяете, он закатывает истерику и заставляет лед падать с потолка."
+		, "Берлога Йети¶===================¶Если он схватит Вас, как жук-щипчик, просто бейте его, пока он не отпустит Вас, чтобы Вы могли бежать и бросить его."// never gonna give a fuck, never gonna care about...
+		, "Берлога Йети¶===================¶Из Йети выпадает мех, который можно использовать для изготовления доспехов, или Вы просто берете нож в сетку крафта и удаляете мех, чтобы вместо этого сделать из него кожу."
+		, "Берлога Йети¶===================¶Ледяные бомбы тоже могут быть забавными, если бросить их в ничего не подозревающих йети."
+		, "Дворец Авроры¶===================¶На вершине ледника расположена cине-зеленая башня. Это простое подземелье с небольшим количеством паркура. Посмотрите на потолок каждой комнаты на предмет 'спрятанных' сундуков."
+		, "Дворец Авроры¶===================¶Внутри него появляются три вида мобов: морозные бронированные призраки, 'Ледяные сполохи', из которых выпадают жезлы метели,"
+		, "Дворец Авроры¶===================¶и испорченные 'Ледяные сполохи', которые взрываются после того, как Вы их убиваете, странным образом меняя ландшафт."
+		, "Дворец Авроры¶===================¶Поднимаясь внутрь башни, Вы в конечном итоге обнаружите комнату с ледяным потолком, где Вам придется несколько раз пробивать потолок, чтобы добраться до Снежной Королевы."
+		, "Дворец Авроры¶===================¶На самом верхнем слое льда вы найдете Снежную Королеву. Она плывет на вершине ледяной платформы. Удар по этой летающей платформе не причинит ей никакого вреда. Вам нужно ударить ее сверху."
+		, "Дворец Авроры¶===================¶Время от времени она вызывает одного или двух 'Ледяных Ифритов'. Они наносят в основном урон в ближнем бою. Она будет много двигаться вверх и вниз, пытаясь уклониться от атак, а также блокировать атаки платформой."
+		, "Дворец Авроры¶===================¶У нее есть ледяное дыхание, которое наносит только урон без побочных эффектов. Вы можете ударить ее, чтобы заставить ее прекратить атаку, хотя на самом деле это не так уж и легко сделать, прежде чем она остановится сама."
+		, "Дворец Авроры¶===================¶Полученный вами трофей Снежной Королевы можно использовать для производства меди с помощью поглотителя магического поля."
+		, "Дворец Авроры¶===================¶Из нее падает тройной лук или лук-искатель, оба из которых являются забавным оружием. Лук Края не телепортирует вас при использовании cтрел-грабителей."
+		, "Тролльи пещеры¶===================¶В Высокогорье находятся пещеры Троллей, место, полное различных ванильных мобов и троллей. Стены украшены 'Троллем Штейном', уродливым блоком, указывающим на наличие или отсутствие света."
+		, "Тролльи пещеры¶===================¶Внутри этих пещер расположено множество растений, уникальных для этих пещер, таких как огромные грибные мраки и тролльи ягоды,"
+		, "Тролльи пещеры¶===================¶последние из которых случайным образом созревают при контакте со Светом, в результате чего появляются факелы и, следовательно, больше Света."
+		, "Тролльи пещеры¶===================¶Сами тролли бьют как големы, еще и кидают в вас вещи. После смерти они вызывают созревание тролльих ягод, освещая территорию."
+		, "Тролльи пещеры¶===================¶Также 2,5% на выпадение волшебных бобов. Они избегают солнечного света, но не страдают от него."
+		, "Облачные Гиганты¶===================¶Далеко над горной местностью плывет облако. Используйте волшебные бобы из пещер троллей на бурной почве под этим облаком, чтобы создать огромный бобовый стебель и удобно туда подняться. Хотя можно и без этого."
+		, "Облачные Гиганты¶===================¶На большом проходимом облаке Вы найдете гигантский дуб и гигантскую маленькую хижину, в которой живут как минимум два гиганта,"
+		, "Облачные Гиганты¶===================¶которые время от времени возрождаются в этой хижине. Против них рекомендуется использовать оружие дальнего боя."
+		, "Облачные Гиганты¶===================¶Может показаться, что во всей зоне все движется медленнее, но это всего лишь оптическая иллюзия, все по-прежнему движется с нормальной скоростью."
+		, "Облачные Гиганты¶===================¶Гиганты кажутся медленными только потому, что их движение не увеличивается."
+		, "Облачные Гиганты¶===================¶Победив Гиганта, вы можете получить Гигантский меч или Гигантскую кирку. Кирку можно использовать для добычи любых гигантских блоков, таких как гигантские листья, бревна, обсидиан и, конечно же, булыжник."
+		, "Облачные Гиганты¶===================¶Также можно использовать эти гигантские блоки для создания большего количества гигантских кирок и мечей."
+		, "Облачные Гиганты¶===================¶Также упаковщик способен объединить 64 блока в один из гигантских блоков, используя гигантскую кирку в качестве бесплатного катализатора."
+		, "Троллье хранилище¶===================¶Гигантский куб обсидиана содержит лампу пепла и ванильную добычу из финала, к примеру черепа скелетов-иссушителей. В этой версии Minecraft это последняя стоящая добыча из Сумеречного леса."
+		, "Колючий замок¶===================¶С помощью лампы пепла вы можете либо сжечь шипы, либо использовать ее как бесконечную зажигалку. Сам замок недостроен, поэтому делать там особо нечего. Под замком могут быть древние обломки."
+		, "Если вы объедините различные трофеи, Вы получите Сферу Уничтожения. Она предоставит любому владельцу все достижения прогресса Сумеречного леса. Просто убедитесь, что когда вы используете её, Вы НЕ находитесь в своей Базе."
+		, "Размещение трофея Снежной королевы (или любого из ранее размещенных трофеев) позволит любому, кто щелкнет по трофею ПКМ, получить все соответствующие достижения прогресса, как если бы он их собрал, чтобы он мог войти в различные биомы."
+		, "На этом можно завершить все, что кажется заслуживает внимания, а также большинство изменений, которые я внес для улучшения игрового процесса и добавления разнообразия.¶-------------------¶Веселитесь! ^^"
 		});
 
 		UT.Books.createWrittenBook("Manual_Enchantments", "Ужасающий мир волшебства", "Evoker Number 42", ST.make(ItemsGT.BOOKS, 1, 10), new String[] {
 		  "Я не могу поверить, как трудно найти информацию об этих древних чарах! Но вот я наконец-то собрал все, что нужно знать об этой Магии!"
-		, "Стол зачарований¶===================¶Вам понадобится один из этих столов, обычно состоящий из 2 алмазов, 4 обсидиана и книги. Затем вы сможете использовать свою магическую силу, а иногда и лазурит, чтобы накладывать случайные чары на инструменты и книги!"
-		, "Книжные полки¶===================¶Чтобы увеличить силу этих ранее упомянутых случайных чар, вам просто нужны любые книжные полки, заполненные книгами. Это могут быть даже необычные металлические полки! Книги могут быть даже на обратной стороне!"
+		, "Стол зачарований¶===================¶Вам понадобится один из этих столов, обычно состоящий из 2 алмазов, 4 обсидиана и книги. Затем Вы сможете использовать свою магическую силу, а иногда и лазурит, чтобы накладывать случайные чары на инструменты и книги!"
+		, "Книжные полки¶===================¶Чтобы увеличить силу этих ранее упомянутых случайных чар, Вам просто нужны любые книжные полки, заполненные книгами. Это могут быть даже необычные металлические полки! Книги могут быть даже на обратной стороне!"
 		, "Наковальня¶===================¶Но случайные чары нельзя просто удалить из инструментов. В этом поможет наковальня, поскольку она позволяет накладывать на инструменты чары из книг и даже давать им имена!"
 		, "Точильный камень¶===================¶Предположительно, существуют точильные камни, которые могут снимать чары, но я никогда не видел ни одного из них! Должно быть, это похоже на те 'Мозги в банках', о которых я постоянно слышу!"
 		, "Магическая энергия¶===================¶Вы можете получить это, убивая множество существ в этом мире, готовя еду или возясь с рудой! Это настоящий опыт, поэтому многие люди называют его XP или EXP!"
 		, "Список¶===================¶Далее следует список известных мне чар и их эффектов."
-		, "Острота¶===================¶Уровни с 1 по 5+¶Наносит 0,625 сердец дополнительного урона за уровень и действует практически на все!"
-		, "Разрушение¶===================¶Уровни с 1 по 5+¶IНаносит 0,75 сердец дополнительного урона за уровень и действует практически на все! Обычно может применяться только к железнодорожным монтировкам."
-		, "Небесная кара¶===================¶Уровни с 1 по 5+¶Наносит 1,25 сердец дополнительного урона за уровень и действует на нежить, такую как: скелеты, зомби, утопленники, призраки, мумии и личи! Карательные пули могут пробить даже барьер Лича!"
-		, "Гибель насекомых¶===================¶Уровни с 1 по 5+¶Наносит 1,25 сердец дополнительного урона за уровень и действует на существ, у которых 6 или более ног, таких как надоедливые пауки, клещи, насекомые или чешуйницы!"
-		, "Имплозия¶===================¶Уровни с 1 по 5+¶Наносит 1,5 сердца доп.урона за уровень и работает на любых криперах! Обычно может применяться только к монтировкам. Это также часто наносит вред другим взрывоопасным мобам, таким как гасты!"
+		, "Острота¶===================¶Уровни с 1 по 5+¶Наносит 0,625❤ дополнительного урона за уровень и действует практически на все!"
+		, "Разрушение¶===================¶Уровни с 1 по 5+¶IНаносит 0,75❤ дополнительного урона за уровень и действует практически на все! Обычно может применяться только к железнодорожным монтировкам."
+		, "Небесная кара¶===================¶Уровни с 1 по 5+¶Наносит 1,25❤ дополнительного урона за уровень и действует на нежить, такую как: скелеты, зомби, утопленники, призраки, мумии и личи! Карательные пули могут пробить даже барьер Лича!"
+		, "Гибель насекомых¶===================¶Уровни с 1 по 5+¶Наносит 1,25❤ дополнительного урона за уровень и действует на существ, у которых 6 или более ног, таких как надоедливые пауки, клещи, насекомые или чешуйницы!"
+		, "Имплозия¶===================¶Уровни с 1 по 5+¶Наносит 1,5❤ доп.урона за уровень и работает на любых криперах! Обычно может применяться только к монтировкам. Это также часто наносит вред другим взрывоопасным мобам, таким как гасты!"
 		, "Расстворение¶===================¶Уровни от 1 до 5+¶Причиняет слабость и яд любому склизкому существу, по которому попадает!"
 		, "Разделение¶===================¶Уровни от 1 до 5+¶Наносит слабость и яд всем существам Края, по которым попадает! Ослабленные жители Края больше не могут телепортироваться, поэтому снаряды с этим зачарованием неоценимы для их свержения!"
 		, "Проклятие¶===================¶Уровни от 1 до 5+¶Наносит увядание и яд всем существам-оборотням и подобным им существам, которых поражает! Работает и на Минотаврах!"
-		, "Отдача¶===================¶Уровни от 1 до 2+¶Этот удар поразит любого, кого вы ударите, уменьшив при этом вашу гориз-ую скорость на 40%, что заметно только в воздухе. Его уровень увеличивается на единицу во время спринта."
+		, "Отдача¶===================¶Уровни от 1 до 2+¶Этот удар поразит любого, кого Вы ударите, уменьшив при этом вашу гориз-ую скорость на 40%, что заметно только в воздухе. Его уровень увеличивается на единицу во время спринта."
 		, "Заговор огня¶===================¶Уровни от 1 до 2+¶Это зачарование не только поджигает врага на 4 сек. за уровень, иногда даже готовя его дроп, а на уровне 3 оно также может расплавить любой блок, который собирает, невероятно быстро!"
-		, "Добыча¶===================¶Уровни с 1 по 3+¶Увеличивает кол-во дропа, которое вы получаете с мобов. Это может увеличить общее кол-во дропа предметов или вероятность того, что вы вообще получите редкий предмет."
-		, "Удача¶===================¶Уровни с 1 по 3+¶Увеличивает кол-во дропа из блоков. Это может увеличить общее кол-во дропа или вероятность того, что вы получите редкий предмет. Работает с рудами, посевами, гравием и светящимся камнем."
-		, "Шёлковое касание¶===================¶Только 1 уровень¶Убедитесь, что блок, который вы собираете подходящим инструментом, выпадет сам, а не так, как обычно. Маленькие руды имеют больше шансов получить более крупные драгоценные камни."
-		, "Бесконечность¶===================¶Уровни 1+¶Луки смогут стрелять бесконечными стрелами, пока у вас есть одна стрела. Оружие будет иметь 50%, 66%, 75%, 80%, 84% или выше шанс не израсходовать боеприпасы в зависимости от уровня."
+		, "Добыча¶===================¶Уровни с 1 по 3+¶Увеличивает кол-во дропа, которое Вы получаете с мобов. Это может увеличить общее кол-во дропа предметов или вероятность того, что Вы вообще получите редкий предмет."
+		, "Удача¶===================¶Уровни с 1 по 3+¶Увеличивает кол-во дропа из блоков. Это может увеличить общее кол-во дропа или вероятность того, что Вы получите редкий предмет. Работает с рудами, посевами, гравием и светящимся камнем."
+		, "Шёлковое касание¶===================¶Только 1 уровень¶Убедитесь, что блок, который Вы собираете подходящим инструментом, выпадет сам, а не так, как обычно. Маленькие руды имеют больше шансов получить более крупные драгоценные камни."
+		, "Бесконечность¶===================¶Уровни 1+¶Луки смогут стрелять бесконечными стрелами, пока у Вас есть одна стрела. Оружие будет иметь 50%, 66%, 75%, 80%, 84% или выше шанс не израсходовать боеприпасы в зависимости от уровня."
 		, "Сила¶===================¶Уровни с 1 по 5+¶Стрелы нанесут на 25% больше урона за уровень. Выпущенные пули летят быстрее и, следовательно, имеют более высокую пробивную способность и больший урон на большем расстоянии."
-		, "Горящая стрела¶===================¶Уровни 1+¶Ваше оружие дальнего боя подожжет свой снаряд, нанося урон от огня, аналогичный или в сочетании с аспектом огня. С его помощью вы также можете поджечь ТНТ и некоторые другие вещи."
-		, "Откидывание¶===================¶Уровни от 1 до 2+¶Ваше оружие дальнего боя нанесет каждому, кого вы ударите своим снарядом, примерно +3 дополнительных блока за уровень."
+		, "Горящая стрела¶===================¶Уровни 1+¶Ваше оружие дальнего боя подожжет свой снаряд, нанося урон от огня, аналогичный или в сочетании с аспектом огня. С его помощью Вы также можете поджечь ТНТ и некоторые другие вещи."
+		, "Откидывание¶===================¶Уровни от 1 до 2+¶Ваше оружие дальнего боя нанесет каждому, кого Вы ударите своим снарядом, примерно +3 дополнительных блока за уровень."
 		, "Морская удача¶===================¶Уровни от 1 до 3+¶Увеличивает шанс выловить сокровище, уменьшает шанс выловить мусор, немного снижает шанс выловить настоящую рыбу."
 		, "Приманка¶===================¶Уровни с 1 по 3+¶Сокращает время ожидания поклевки на 5 сек. за уровень до уровня 5, уровня 6 или выше, вместо этого делая удочку бесполезной для рыбалки."
 		, "Защита¶===================¶Уровни с 1 по 4+¶Уменьшает общее кол-во получаемого урона на 4% за уровень за каждую часть брони, максимальное общее снижение составляет 80%, включая все остальные типы защитных чар!"
 		, "Огнеупорность¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого урона от огня на 8% за уровень за каждую часть брони, огр-ся защитой. Это сократит время горения на 15% за каждый лучший некомбинированный уровень."
 		, "Взрывоустойчивость¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого урона от взрыва на 8% за уровень за каждую часть брони, огр-ся защитой. Это снизит отбрасывание взрывом на 15% за каждый лучший некомбинированный уровень."
 		, "Защита от снарядов¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого дальнего урона на 8% за уровень за каждую часть брони, огр-ся защитой. Имейте в виду, что кол-во взрывных снарядов может быть уменьшено лишь частично!"
-		, "Невесомость¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого жемчуга Эндера и урона от падения на 12% за уровень за каждую часть брони, ограничивается защитой. Однако не работает, если вы врезаетесь в стену."
-		, "Шипы¶===================¶Уровни с 1 по 3+¶Каждая отдельная часть брони имеет шанс в 15% за уровень нанести от 0,5 до 2 сердец урона любому атакующему в ближнем или дальнем бою. Однако часть брони потеряет еще немного прочности."
+		, "Невесомость¶===================¶Уровни с 1 по 4+¶Уменьшает кол-во получаемого жемчуга Эндера и урона от падения на 12% за уровень за каждую часть брони, ограничивается защитой. Однако не работает, если Вы врезаетесь в стену."
+		, "Шипы¶===================¶Уровни с 1 по 3+¶Каждая отдельная часть брони имеет шанс в 15% за уровень нанести от 0,5❤ до 2❤ урона любому атакующему в ближнем или дальнем бою. Однако часть брони потеряет еще немного прочности."
 		, "Подводное дыхание¶===================¶Уровни с 1 по 3+¶Каждый уровень добавляет 15 сек. кислорода под водой, что увеличивает время в 2-4 раза больше обычного времени. Снижает урон от утопления с вероятностью 50%, 66% или 75% соответственно."
-		, "Подводник¶===================¶Всего 1 уровень¶Позволяет вам добывать добычу на нормальной скорости, стоя под водой, а не в пять раз медленнее. Однако вам все равно придется стоять на земле, иначе вы замедлитесь в пять раз."
+		, "Подводник¶===================¶Всего 1 уровень¶Позволяет Вам добывать добычу на нормальной скорости, стоя под водой, а не в пять раз медленнее. Однако Вам все равно придется стоять на земле, иначе Вы замедлитесь в пять раз."
 		, "*Эффективность¶===================¶Уровни с 1 по 5+. Инструменты с этим зачарованием получают фиксированный бонус к скорости добычи в квадрате уровня плюс 1, то есть +2, +5, +10, +17 или +26."
 		, "*Прочность¶===================¶Уровни с 1 по 3+¶Инструменты с этим зачарованием служат в среднем дольше на +100% за уровень. Броня прослужит только на +25%, +34% или +43% дольше."
 		, "*¶Эффективность и Прочность¶===================¶Инструментальные материалы никогда не имеют этих зачарований, потому что это было бы бессмысленно."
 		});
 
 
-		String tAlexGryllsIntro = "Hi, I'm Alex Grylls, Adventurer and experienced Hunter of the several Mobs you encounter in our World. In this Guide I will explain you easy Methods to hunt for wild Mobs in their natural Habitats.";
+		String tAlexGryllsIntro = "Привет, я Алекс Гриллс, искатель приключений и опытный охотник на нескольких мобов, с которыми Вы сталкиваетесь в нашем мире. В этом руководстве я объясню Вам простые методы охоты на диких мобов в их естественной среде обитания.";
 
-		UT.Books.createWrittenBook("Manual_Hunting_Creeper", "Hunting Guide for Creepers", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Creepers¶===================¶Creepers are sneaky, suicidal, leafy sticks on 4 short Legs, which will blow up when they are close by. They drop Gunpowder and will not deal any damage aside from the explosion when you let them come close."
-		, "Creepers¶===================¶If a Creeper is struck by Lightning it will become supercharged and will explode with a much larger force. Creepers in general when shot by a Skeleton, will drop Music Discs, which are usable for the Jukebox."
-		, "Creepers¶===================¶In order to detonate, a Creeper needs to see the Player, due to this it is always recommended to take the high Ground as you can hide behind the Cliff you are standing on more easily."
-		, "Creepers¶===================¶Water is also a good place to melee a Creeper, as knockback will get it out of explosion Range, and even if it explodes it will not cause Damage to the ground, due to the Water absorbing the shock."
-		, "Creepers¶===================¶For Melee Combat in general it is adviced to have Weapons with a strong Knockback so you don't need to sprint to knock the Creeper out of the Detonation Zone. You can also just shoot an Arrow first and then melee."
-		, "Creepers¶===================¶The Implosion Enchantment does a great deal of Damage to Creepers. It can however only be gotten by enchanting Crowbars, or by using Tool Materials that have the Enchantment on them normally."
-		, "Creepers¶===================¶You can manually ignite Creepers with Flint and Steel or a Lighter, and Ammunition with the Fire Aspect Enchantment will ignite Creepers at a distance if Implosion is not also on the same Arrow or Bullet."
-		, "Creepers¶===================¶Last but not least, you can always just drop Water between you and the Creeper, it will slow it down considerably and if its about to explode anyways, then it won't damage the Terrain."
+		UT.Books.createWrittenBook("Manual_Hunting_Creeper", "Руководство по охоте на криперов", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Криперы¶===================¶Криперы — это хитрые, склонные к самоубийству листовые палки на четырех коротких ногах, которые взрываются, когда оказываются рядом."
+		, "Криперы¶===================¶Они роняют порох и не нанесут никакого урона, кроме взрыва, когда Вы позволите им подойти близко. Если в крипера ударит молния, он получит сверхзаряд и взорвется с гораздо большей силой."
+		, "Криперы¶===================¶Обычно из криперов, застреленных скелетом, выпадают музыкальные диски, которые можно использовать в музыкальном автомате."
+		, "Криперы¶===================¶Чтобы взорваться, крипер должен видеть игрока, поэтому всегда рекомендуется занимать возвышенность, так как Вам будет легче спрятаться за скалой, на которой Вы стоите."
+		, "Криперы¶===================¶Вода также является хорошим местом для рукопашного боя с крипером, поскольку отбрасывание выведет его за пределы зоны взрыва, и даже если он взорвется, это не нанесет урона земле, поскольку вода поглотит удар."
+		, "Криперы¶===================¶Для рукопашного боя рекомендуется иметь оружие с сильным отбрасыванием, чтобы Вам не приходилось бежать, чтобы выбить крипера из зоны детонации. Вы также можете сначала выстрелить из лука, а затем перейти в ближний бой."
+		, "Криперы¶===================¶Чары имплозии наносят большой урон криперам. Однако его можно получить, только зачаровав монтировки или используя материалы для инструментов, на которых обычно есть зачарование."
+		, "Криперы¶===================¶Вы можете вручную поджечь криперов с помощью кремня и стали или зажигалки, а боеприпасы с зачарованием огненного аспекта подожгут криперов на расстоянии, если имплозия не находится на той же стреле или пуле."
+		, "Криперы¶===================¶И последнее, но не менее важное: Вы всегда можете просто бросить воду между Вами и Крипером, это сильно замедлит его, а если он все равно вот-вот взорвется, то это не повредит ландшафт."
 		});
 
-		UT.Books.createWrittenBook("Manual_Hunting_Skeleton", "Hunting Guide for Skeletons", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Skeletons¶===================¶Skeletons, usually named after Fonts and armed with Bow and Arrows. They are good at aiming, some of them are even capable of picking up dropped Weapons and Armor."
-		, "Skeletons¶===================¶If they somehow kill Creepers, those Creepers will drop Music Discs. Killing a Skeleton on long Range will yield the Sniper Duel Achievement aswell."
-		, "Skeletons¶===================¶In order to not have a bad time with Skeletons, you need to either keep a Safe distance from them and shoot them from far away, or to quickly engage them with Melee Attacks, Speed is useful for this purpose."
-		, "Skeletons¶===================¶When you charge at a Skeleton, strave slightly to the right or left in order to have less Arrows hit you, any way to instantly kill them with one blow, will greatly reduce the chance of more Arrows flying at you."
-		, "Skeletons¶===================¶If you have a Sword then blocking with it will reduce the Damage of Arrows. This can easily be used even during Melee to not get that large amounts of Damage, even if you get hit."
-		, "Skeletons¶===================¶Backing a Skeleton into a Corner, by pushing it or knocking it back for example, will result in the Arrow getting Stuck in the Wall in a glitchy fashion and therefore not flying at you or damaging you."
-		, "Skeletons¶===================¶Walls of any kind are useful, but what really helps (if you are prepared) is Sugar Canes / Reeds as they can block their view on you, while letting you shoot through."
-		, "Skeletons¶===================¶You can also use Saplings and (sadistically) Bonemeal to instantly create a small Forest as a Shield in the Grasslands."
-		, "Skeletons¶===================¶Being in Water makes you an easy Target for the Skeleton, since you are slow and constantly get knocked back. But the Skeleton being in Water can be worse as it bounces up and down without losing accuracy!"
-		, "Skeletons¶===================¶But if both you and the Skeleton are in deep water then diving below the surface and attacking the Skeleton from below is the best advise I can give, as the Skeletons often miss at steep angles."
-		, "Skeletons¶===================¶In some cases it is possible to just drop a Stone or a Wooden Sword for the Skeleton to pick up, they will drop their Bow in this case. However, this does not work on every Skeleton!"
-		, "Skeletons¶===================¶Skeletons are grouped amoung the Undead Mobs, meaning they can be damaged by Sunlight, since it sets them on Fire. The Smite Enchant will also help a lot."
-		, "Skeletons¶===================¶Due to being undead, Healing Splash Potions deal damage to them, while poisoning ones heal them. Since Skeletons shoot Arrows, it is a good Idea to wear Armor with Projectile Protection on it."
-		, "Skeletons¶===================¶It is always a good Idea to just make Skeletons attack each other or other Mobs in order to make the attacked Mob angry at them (instead of you), causing them to kill each other."
-		, "Spider Jockeys¶===================¶Ever saw a Skeleton Ride a Spider? Yeah its a terrifying picture. The speed and mobility of a Spider and a 'Turret' on its back."
-		, "Spider Jockeys¶===================¶To fight them you can use easy tricks, like making the Spider crawl up a wall into the Roof, crushing the Skeleton that rides it in the process."
-		, "Spider Jockeys¶===================¶In general you can apply the Strategies for both the Skeletons and the Spiders, to this combo. It's always the best solution to just shoot them from far away though."
-		, "Spider Jockeys¶===================¶If you have a Bow then go for the Skeleton first, if you have to Melee then go for the Spider. Alternatively you can wait for the Sun to burn the Skeleton before engaging."
-		, "Wither Skeletons¶===================¶Wither Skeletons are just like normal Skeletons with a Stone Sword, that instead of Arrows will drop regular Coal. They also are 3 Blocks tall and can absorb your Health."
-		, "Wither Skeletons¶===================¶While Witherskeletons behave like any other humanoid Melee Mob, they are relatively fast and less stupid than Zombie Pigmen. If you want to know if you can handle one, practise on Zombie Pigmen first."
-		, "Wither Skeletons¶===================¶Due to being about 3m tall, just like Endermen, you can essentially hide behind a 2m tall Roof and grind them into Ashes, uhh I mean Coal."
-		, "Wither Skeletons¶===================¶In Melee Situations, walking backwards and swinging is the best way to fight them without getting yourself harmed, but watch out for Fire and Lava behind you."
-		, "Wither Skeletons¶===================¶An Iron Golem is a good Idea to have with you, just take Iron Blocks and a Pumpkin with you. The Iron Golem will turn every hostile Mob in the area into scraps."
-		, "Wither Skeletons¶===================¶Those black Skeletons spawn alongside regular Skeletons with Bow & Arrow inside a Nether Fortress, and they are the only really aggressive Mob there, aside from Blazes."
-		, "Wither Skeletons¶===================¶If you end up fighting both a Wither Skeleton and a Blaze, the best is to hide outside the Range of the Blaze and trying to fight the Skeleton first, or to bring the Skeleton between the Blaze and yourself."
-		, "Wither Skeletons¶===================¶Since most of the times you are in the Nether with these Mobs, placing a Nether Portal close by to lure Mobs inside it, by hiding behind it, might be a good Idea (if you don't plan to use that Portal later)."
-		, "Wither Skeletons¶===================¶The Heads, which are dropped by every 40th Wither Skeleton, can be used to summon the Wither, but the Wither is being talked about in another Book."
+		UT.Books.createWrittenBook("Manual_Hunting_Skeleton", "Руководство по охоте на скелетов", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Скелеты¶===================¶Скелеты, обычно названные в честь шрифта и вооруженные луком и стрелами. Они хорошо прицеливаются, некоторые из них даже способны подобрать выпавшее оружие и броню."
+		, "Скелеты¶===================¶Если они каким-то образом убьют Криперов, из этих Криперов выпадут музыкальные диски. Убийство скелета на дальней дистанции также даст достижение 'Снайперская дуэль'."
+		, "Скелеты¶===================¶Чтобы не плохо провести время со скелетами, Вам нужно либо держаться от них на безопасном расстоянии и стрелять в них издалека, либо быстро атаковать их атаками ближнего боя, для этой цели пригодится скорость."
+		, "Скелеты¶===================¶Когда Вы атакуете скелета, слегка наклонитесь вправо или влево, чтобы в Вас попало меньше стрел. Любой способ мгновенно убить их одним ударом весомо уменьшит вероятность того, что в Вас полетит больше стрел."
+		, "Скелеты¶===================¶Если у Вас есть меч, то блокировка им уменьшит урон от стрел. Это можно легко использовать даже во время ближнего боя, чтобы не получить такой большой урон, даже если Вас ударили."
+		, "Скелеты¶===================¶Загон скелета в угол, например, толкнув его или отбросив назад, приведет к тому, что Стрела застрянет в стене с ошибками и, следовательно, не полетит в Вас и не нанесет Вам вреда."
+		, "Скелеты¶===================¶Стены любого типа полезны, но что действительно помогает (если Вы готовы), так это сахарные трости/тростники, поскольку они могут заблокировать Вам обзор, в то же время позволяя Вам стрелять."
+		, "Скелеты¶===================¶Вы также можете использовать саженцы и (садистски) костную муку, чтобы мгновенно создать небольшой лес в качестве щита на лугах."
+		, "Скелеты¶===================¶Нахождение в воде делает Вас легкой мишенью для скелета, поскольку Вы медлительны и Вас постоянно отбрасывают назад."
+		, "Скелеты¶===================¶А вот Скелету, находящемуся в воде, может быть лучше, поскольку он подпрыгивает вверх и вниз, не теряя при этом точности!"
+		, "Скелеты¶===================¶Но если и вы, и Скелет находитесь в глубокой воде, то лучшим советом, который я могу дать, будет нырнуть под поверхность и атаковать Скелета снизу, поскольку Скелеты часто промахиваются под крутыми углами."
+		, "Скелеты¶===================¶В некоторых случаях можно просто бросить камень или деревянный меч, чтобы скелет мог его подобрать, в этом случае он уронит свой лук. Однако это работает не на каждом скелете!"
+		, "Скелеты¶===================¶Скелеты сгруппированы среди мобов-нежити, что означает, что они могут быть повреждены солнечным светом, поскольку он поджигает их. Чары небесная кара также очень помогут."
+		, "Скелеты¶===================¶Поскольку они являются нежитью, исцеляющие зелья наносят им урон, а отравленные их лечат. Поскольку скелеты стреляют стрелами, рекомендуется носить броню с защитой от снарядов."
+		, "Скелеты¶===================¶Всегда хорошая идея — просто заставить скелетов атаковать друг друга или других мобов, чтобы разозлить атакуемого моба на них (а не на Вас), заставляя их убивать друг друга."
+		, "Скелет-наездник¶===================¶Вы когда-нибудь видели, как скелет ездит на пауке? Да, это ужасающая картина. Скорость и мобильность Паука и «Турели» на его спине."
+		, "Скелет-наездник¶===================¶Чтобы сражаться с ними, Вы можете использовать простые приемы, например, заставить паука залезть на стену под крышу, раздавив при этом скелета, который на нем ездит."
+		, "Скелет-наездник¶===================¶В общем, к этой комбинации Вы можете применить стратегии как для скелетов, так и для пауков. Однако всегда лучшее решение — просто стрелять в них издалека."
+		, "Скелет-наездник¶===================¶Если у Вас есть лук, сначала выберите скелета, если Вам нужен ближний бой, выберите паука. В качестве альтернативы Вы можете подождать, пока солнце сожжет скелета, прежде чем вступать в бой."
+		, "Скелет-иссушитель¶===================¶Скелеты-иссушители похожи на обычных скелетов с каменным мечом, из которого вместо стрел выпадает обычный уголь. Они также имеют высоту 3 блока и могут поглощать ваше здоровье."
+		, "Скелет-иссушитель¶===================¶Хотя они ведут себя как любой другой гуманоидный моб ближнего боя, они относительно быстры и менее глупы, чем свинозомби. Если Вы хотите знать, сможете ли Вы с ним справиться, сначала потренируйтесь на свинозомби."
+		, "Скелет-иссушитель¶===================¶Из-за того, что они примерно 3 метра в высоту, как и жители Края, Вы можете спрятаться за крышей высотой 2 метра и превратить их в пепел, я имею в виду уголь."
+		, "Скелет-иссушитель¶===================¶В ситуациях ближнего боя лучше всего идти назад и размахиваться, не причиняя себе вреда, но остерегайтесь огня и лавы позади Вас."
+		, "Скелет-иссушитель¶===================¶Железный голем — хорошая идея. Просто возьмите с собой железные блоки и тыкву. Железный голем превратит каждого враждебного моба в этом районе в клочья."
+		, "Скелет-иссушитель¶===================¶Эти черные скелеты появляются вместе с обычными скелетами с луком и стрелами внутри крепости, и они являются там единственными действительно агрессивными мобами, не считая ифритов."
+		, "Скелет-иссушитель¶===================¶Если Вы сражаетесь и со скелетом, и с ифритом, лучше всего спрятаться за пределами дальности действия ифритов и попытаться сначала сразиться со скелетом или поставить скелета между ифритом и Вами."
+		, "Скелет-иссушитель¶===================¶Хорошей идеей может быть размещение рядом с ними портала, чтобы заманить в него мобов, спрятавшись за ним (если Вы не планируете использовать этот портал позже)."
+		, "Скелет-иссушитель¶===================¶Головы, которые выпадают из каждого 40-го скелета-иссушителя, можно использовать для вызова Иссушителя, но об Иссушителе говорится в другой книге."
 		});
 
-		UT.Books.createWrittenBook("Manual_Hunting_Zombie", "Hunting Guide for Zombies", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Zombies¶===================¶Zombies, the most common Mob in Minecraft. Zombies always attack with Melee Damage and they can wield Weapons and wear Armor."
-		, "Zombies¶===================¶Zombies are grouped amoung the Undead Mobs, meaning they can be damaged by Sunlight, since it sets them on Fire. However, this does not apply to Baby Zombies!"
-		, "Zombies¶===================¶Due to being undead, Healing Splash Potions deal damage to them, while poisoning ones heal them. The Smite Enchant is a good way to cause a lot of damage on them."
-		, "Zombies¶===================¶Do not underestimate their Melee Damage and try to keep a safe distance while attacking them, make sure they don't hit you when you Melee them yourself."
-		, "Zombies¶===================¶While wearing a Helmet they are immune to the Sun, that is until the Helmet loses all of its durability and breaks as it gets damaged when worn by a Zombie in Sunlight."
-		, "Zombies¶===================¶Zombies are attracted by Villagers, you can use them to distract them. If you want them to murder that Village, that is."
-		, "Zombies¶===================¶They can detect you from very far distances and will therefore end up swarming you from all directions, if you are not careful."
-		, "Zombies¶===================¶Build yourself a small fortification if you are in the wild. Zombies luckily cannot break Blocks so they won't be able to attack you if you build it right."
-		, "Zombies¶===================¶Since Zombies normally group up on you due to coincedential pathfinding, it is well advised to just throw Splash Potions of Regeneration or Healing at them, since they are damaged by those."
-		, "Zombies¶===================¶As always, Bow and Arrows can help you killing Zombies, it is a good Idea to use golden Arrows or other Smite Arrows if possible. But usually there are too many of them to kill all."
-		, "Zombies¶===================¶Use Knockback on Zombies even if not needed, otherwise there might be too many Zombies grouping up at you if you are surrounded, so keep them at distance."
-		, "Zombies¶===================¶Keep Zombies in the Water, they are almost helpless there and can't shoot you like Skeletons would. They are swimming much slower than you do."
-		, "Zombies¶===================¶Iron Golems are made for killing Zombies, they might be a viable option for your purposes."
-		, "Zombies¶===================¶The official Mojang term for Zombies wearing golden Armor is 'Zom-Bling'."
-		, "Baby Zombies¶===================¶Annoying little Bastards would be a better Name for them, not only that they are immune to Sunlight, they are also very fast and hard to hit!"
-		, "Baby Zombies¶===================¶If you didn't need the Anti Zombie Strategies before, then now you probably need to use them, since those little things can ruin your day."
-		, "Baby Zombies¶===================¶If you have the option, go for the Water, they aren't fast there. Other than that, mow your lawn and then aim low and hit them as fast as you can!"
-		, "Chicken Jockeys¶===================¶Thought it couldn't get any worse? Chickens are faster than those Baby Zombies and now they actually ride the Chickens!"
-		, "Chicken Jockeys¶===================¶Shoot the Chicken, yes get rid of it as fast as possible, you won't be able to Melee it as the Zombie is in the way, but you can try to shoot it!"
-		, "Chicken Jockeys¶===================¶Other than that? Run for your life and try to either find a pond of water or use a Water Bucket on them, maybe you get it to dismount by doing so!"
-		, "Zombie Pigmen¶===================¶Zombie Pigmen, usually wielding a Golden Sword and dropping Gold Nuggets. The only pieceful Zombie, well peaceful until a Player harms it."
-		, "Zombie Pigmen¶===================¶If a Player does any damage to a Zombie Pigman, all the other Pegmen get angry and try to kill you, not only are they pretty fast, but they also do lots of Damage!"
-		, "Zombie Pigmen¶===================¶Zombie Pigmen are immune to Fire and the Sun, if you happen to find one in the Overworld (Pig struck by Lightning, or fresh from a Portal) it is usually safe to kill."
-		, "Zombie Pigmen¶===================¶The easiest Solution is not to harm them, but it always can happen that you accidentially do harm to them, or you mine the Ores of that Nether Ores Mod."
-		, "Zombie Pigmen¶===================¶In that case, pillar up or dig yourself in, as fast as possible! You don't want to die instantly and drop all your Inventory into the Nether."
-		, "Zombie Pigmen¶===================¶Once you have done that, make yourself a comfortable spot to attack the Pigmen from a space where they cant attack you."
-		, "Zombie Pigmen¶===================¶Since most of the times you are in the Nether with these Mobs, placing a Nether Portal close by to lure Mobs inside it, by hiding behind it, might be a good Idea (if you don't plan to use that Portal later)."
-		, "Zombie Pigmen¶===================¶As they are undead like normal Zombies aswell, Splash Potions of Regeneration and Healing can deal great damage to them, while leaving yourself unharmed."
-		, "Zombie Villagers¶===================¶They behave just like normal Zombies, even though they look much worse, the only difference is that you can cure them to get Villagers, what will be explained in the following Pages."
-		, "Zombie Villagers¶===================¶First of all, you need a good place to actually cure that Zombie without other Zombies turning the Villager right back into the undead Green."
-		, "Zombie Villagers¶===================¶For that you need to know, that the Transformation back into a Villager for some reason goes by faster if you use vanilla Iron Bars for the Cage."
-		, "Zombie Villagers¶===================¶Once you got the Cage, there are multiple Options on the Item you use to cure the Villager Zombie. There are multiple options."
-		, "Zombie Villagers¶===================¶Splash Potions of Weakness + Golden Apples are one way. Glass Bottles of Holy Water can replace that Golden Apple. The rainbow colored Cure-All Pill is an alternative that does not need Weakness."
-		, "Zombie Villagers¶===================¶Now you need to somehow lure the Zombie Villager into your Cage. Don't worry, the Villager won't remember that you punched them while they were a Zombie."
-		, "Zombie Villagers¶===================¶A fishing Rod can also work wonders on moving the Zombie into the right directions. Punching them into a pit and closing it off, will work aswell."
-		, "Zombie Villagers¶===================¶If your Cage is outside (or improvised), then make sure the Sun won't burn the Villager before you can heal them. Add a Roof or something to your Cage, once you caught them."
-		, "Zombie Villagers¶===================¶So, now that you got the Villager into a Cage, you can heal them. Once you have done that, transport the Villager somewhere else, maybe with Rails and Minecarts."
+		UT.Books.createWrittenBook("Manual_Hunting_Zombie", "Руководство по охоте на зомби", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Зомби¶===================¶Зомби, самый распространенный моб в Майнкрафте. Зомби всегда атакуют, нанося урон в ближнем бою, они могут владеть оружием и носить доспехи."
+		, "Зомби¶===================¶Зомби группируются среди мобов-нежити, что означает, что они могут быть повреждены солнечным светом, поскольку он поджигает их. Однако это не относится к зомби-детенышам!"
+		, "Зомби¶===================¶Поскольку они являются нежитью, исцеляющие зелья наносят им урон, а отравленные их лечат. Небесная кара — хороший способ нанести им большой урон."
+		, "Зомби¶===================¶Не недооценивайте их урон в ближнем бою и старайтесь держаться на безопасном расстоянии, атакуя их. Следите за тем, чтобы они не ударили Вас, когда Вы сами атакуете их в ближнем бою."
+		, "Зомби¶===================¶Нося шлем, они невосприимчивы к солнцу, то есть до тех пор, пока шлем не потеряет всю свою прочность и не сломается, когда его наденет зомби при солнечном свете."
+		, "Зомби¶===================¶Зомби привлекают жители деревни, Вы можете использовать их, чтобы отвлечь их. Если Вы хотите, чтобы они убили эту деревню, конечно."
+		, "Зомби¶===================¶Они могут обнаружить Вас с очень больших расстояний и поэтому в конечном итоге будут атаковать Вас со всех сторон, если Вы не будете осторожны."
+		, "Зомби¶===================¶Постройте себе небольшое укрепление, если Вы находитесь в дикой природе. К счастью, зомби не могут разбивать блоки, поэтому они не смогут атаковать Вас, если Вы все правильно построите."
+		, "Зомби¶===================¶Поскольку зомби обычно группируются вокруг Вас из-за случайного поиска пути, рекомендуется просто бросить в них взрывные зелья регенерации или исцеления, поскольку они наносят им урон."
+		, "Зомби¶===================¶Как всегда, лук и стрелы могут помочь Вам убить зомби. Если возможно, рекомендуется использовать золотые стрелы или другие карающие стрелы. Но обычно их слишком много, чтобы убить всех."
+		, "Зомби¶===================¶Используйте отбрасывание на зомби, даже если в этом нет необходимости, иначе, если Вы окружены, на Вас может сгруппироваться слишком много зомби, поэтому держите их на расстоянии."
+		, "Зомби¶===================¶Держите зомби в воде, они там почти беспомощны и не смогут стрелять в Вас, как это делают скелеты. Они плавают гораздо медленнее, чем вы."
+		, "Зомби¶===================¶Железные големы созданы для убийства зомби, они могут быть подходящим вариантом для ваших целей."
+		, "Зомби¶===================¶Официальный термин Mojang для зомби, носящих золотую броню — 'Zom-Bling'."
+		, "Зомби-детеныши¶===================¶Лучшее имя для них — 'Надоедливые маленькие ублюдки', поскольку они не только невосприимчивы к солнечному свету, но еще и очень быстрые, и в них трудно попасть!"
+		, "Зомби-детеныши¶===================¶Если раньше Вам не нужны были 'Стратегии борьбы с зомби', то теперь Вам, вероятно, придется их использовать, поскольку эти мелочи могут испортить Вам день."
+		, "Зомби-детеныши¶===================¶Если есть возможность, идите к воде, там они не быстрые. Кроме этого, косите газон, а затем цельтесь низко и бейте их как можно быстрее!"
+		, "Куриные наездники¶===================¶Думали, что хуже быть не может? Цыплята быстрее этих зомби-детенышей, и теперь они действительно ездят на цыплятах!"
+		, "Куриные наездники¶===================¶Стреляйте в цыпленка, да, избавьтесь от него как можно быстрее, Вы не сможете стрелять в него в ближнем бою, так как на пути стоит зомби, но Вы можете попытаться застрелить его!"
+		, "Куриные наездники¶===================¶Кроме этого? Бегите, спасая свою жизнь, и попытайтесь либо найти пруд с водой, либо использовать на них ведро с водой. Возможно, благодаря этому Вы сможете заставить его спешиться!"
+		, "Свинозомби¶===================¶Свинозомби, обычно владеющие золотым мечом и сбрасывающие золотые самородки. Единственный частичный зомби, вполне мирный, пока игрок не причинит ему вреда."
+		, "Свинозомби¶===================¶Если игрок наносит какой-либо урон свинозомби, все остальные свинозомби злятся и пытаются Вас убить. Они не только довольно быстры, но и наносят много урона!"
+		, "Свинозомби¶===================¶Свинозомби невосприимчивы к огню и солнцу. Если Вам случится найти такого человека в обычном мире (свинья, пораженная молнией или только что вышедшая из портала), его обычно безопасно убить."
+		, "Свинозомби¶===================¶Самое простое решение — не причинять им вреда, но всегда может случиться так, что Вы случайно причините им вред."
+		, "Свинозомби¶===================¶В этом случае забирайтесь на столб или закопайтесь как можно быстрее! Вы не хотите мгновенно умереть и выбросить весь свой инвентарь в аду."
+		, "Свинозомби¶===================¶Как только Вы это сделаете, займите удобное место, чтобы атаковать свинозомби из места, где они не смогут атаковать Вас."
+		, "Свинозомби¶===================¶Хорошей идеей может быть размещение рядом с ними портала, чтобы заманить в него мобов, спрятавшись за ним (если Вы не планируете использовать этот портал позже)."
+		, "Свинозомби¶===================¶Поскольку они также нежить, как и обычные зомби, взрывные зелья регенерации и исцеления могут нанести им большой урон, оставив при этом Вас невредимым."
+		, "Зомби-жители¶===================¶Они ведут себя так же, как обычные зомби, хотя выглядят намного хуже, с той лишь разницей, что Вы можете вылечить их, чтобы получить жителей деревни, что будет объяснено на следующих страницах."
+		, "Зомби-жители¶===================¶Прежде всего, Вам нужно хорошее место, где можно действительно вылечить этого зомби, чтобы другие зомби не превратили деревенского жителя обратно в зеленую нежить."
+		, "Зомби-жители¶===================¶Для этого Вам нужно знать, что обратное превращение в деревенского жителя по какой-то причине происходит быстрее, если Вы используете ванильные железные прутья для клетки."
+		, "Зомби-жители¶===================¶Как только Вы получите клетку, у предмета, который Вы используете для лечения зомби-жителя, появится несколько вариантов. Есть несколько вариантов."
+		, "Зомби-жители¶===================¶Взрывное зелье слабости + Золотые яблоки — один из способов. Стеклянные бутылки со святой водой могут заменить золотое яблоко. Радужная таблетка от всех болезней — это альтернатива, не требующая слабости."
+		, "Зомби-жители¶===================¶Теперь Вам нужно каким-то образом заманить зомби-жителя в свою клетку. Не волнуйтесь, деревенский житель не запомнит, что Вы ударили его, когда он был зомби."
+		, "Зомби-жители¶===================¶Удочка также может творить чудеса, перемещая зомби в нужном направлении. Также подойдет забивание их в яму и закрытие ее."
+		, "Зомби-жители¶===================¶Если ваша клетка находится снаружи, убедитесь, что солнце не сожжет жителя прежде, чем Вы сможете его исцелить. Добавьте крышу или что-нибудь в свою клетку, как только поймаете их."
+		, "Зомби-жители¶===================¶Итак, теперь, когда Вы поместили жителя деревни в клетку, Вы можете его исцелить. Как только Вы это сделаете, перевезите деревенского жителя куда-нибудь еще, возможно, с помощью рельсов и вагонеток."
 		});
 
-		UT.Books.createWrittenBook("Manual_Hunting_Spider", "Hunting Guide for Spiders", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Spiders¶===================¶Spiders, octo-legged, climbing, pastry selling Arthropods, that can jump at you. Often accompanied by a random Potion Effect, which doesn't ever run out, making them invisible, resistant, regenerating or faster."
-		, "Spiders¶===================¶They are fast, usually faster than you unless you run. They can also climb to a certain extend, so Walls won't help much, however Spiders can easily get stuck on ceilings, where they could fall down on you!"
-		, "Spiders¶===================¶The normal way to beat them is already very effective, just melee or shoot them. They have less Health than other Mobs. The Bane of Arthropods Enchant is very effective on them."
-		, "Spiders¶===================¶Spiders will jump/pounce at you when they are close, if you time it right then hitting them will knock them back farther than usual. Also always have the high Ground when fighting Spiders as otherwise they'll jump you."
-		, "Spiders¶===================¶If you are in a Desert, then look out for some tsundere Plants called 'Cactus', plural being 'Cactii', Spiders apparently love climbing them, damaging themselves in the process."
-		, "Spiders¶===================¶At daytime, Spiders are tired and usually not aggressive. If you attack them then and with critical hits, then they will die by the surprise and won't damage you."
-		, "Spiders¶===================¶Running is the best thing to do when fighting Spiders, not running away, I mean running at them or keeping a safe distance during combat. Spiders are immune to Poison, so splashing them with it isn't effective at all."
-		, "Spiders¶===================¶They get stuck at overhangs, meaning if you build a pillar with 4 overhang blocks (one at each side) Spiders won't get up and you can damage them from ontop of that pillar."
-		, "Spiders¶===================¶due to being 2m in diameter, hiding in a 1m tight spot is a good idea when fighting regular Spiders. This doesn't work on the poinsonous Cave Spiders though."
-		, "Cave Spiders¶===================¶Cave Spiders are just 1m in diameter and they inject poison when they melee you. They normally only spawn inside Mineshafts, since there are Spawners for them over there."
-		, "Cave Spiders¶===================¶The Spawners are surrounded by lots and lots of Webs, those webs will slow you down, so take your Sword or Silk Touch Shears and slice those Webs away, also useful if you need String."
-		, "Cave Spiders¶===================¶Cave Spiders often get Stuck at the wooden Pillars or hide in the ceiling at those, so be careful where you walk as they will fall down at you very surprisingly despite making lots of noise."
-		, "Cave Spiders¶===================¶Due to them being poisonous, Milk or any sort of Antidote Pill are useful Items to have on your Hotbar. Also hiding from them by closing off Paths is very needed sometimes."
+		UT.Books.createWrittenBook("Manual_Hunting_Spider", "Руководство по охоте на пауков", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Пауки¶===================¶Пауки, восьминогие, лазающие членистоногие, которые могут на Вас прыгнуть."
+		, "Пауки¶===================¶Часто сопровождается случайным эффектом зелья, который никогда не заканчивается, что делает их невидимыми, устойчивыми, регенерирующими или более быстрыми."
+		, "Пауки¶===================¶Они быстрые, обычно быстрее Вас, если только Вы не бежите. Они также могут подняться на определенную высоту, поэтому стены не сильно помогут, однако пауки могут легко застрять на потолках, где они могут упасть на Вас!"
+		, "Пауки¶===================¶Обычный способ победить их уже очень эффективен: просто вступить в ближний бой или расстрелять их. У них меньше здоровья, чем у других мобов. Чары 'Проклятие членистоногих' на них очень эффективны."
+		, "Пауки¶===================¶Пауки будут набрасываться на Вас, когда они близко. Если Вы правильно рассчитаете время, удар по ним отбросит их дальше, чем обычно. Также всегда имейте высокую позицию, когда сражаетесь с пауками, иначе они прыгнут на Вас."
+		, "Пауки¶===================¶Если Вы находитесь в пустыне, обратите внимание на кактусы. Пауки, очевидно, любят лазить по ним, повреждая себя при этом."
+		, "Пауки¶===================¶Днем пауки утомлены и обычно не агрессивны. Если Вы атакуете их критическими ударами, то они умрут от неожиданности и не нанесут Вам урона."
+		, "Пауки¶===================¶Когда сражаешься с пауками, лучше всего бежать, а не убегать, я имею в виду бежать к ним или сохранять безопасную дистанцию во время боя. Пауки невосприимчивы к яду, поэтому распылять на них яд совершенно неэффективно."
+		, "Пауки¶===================¶Они застревают на выступах, а это означает, что если Вы построите столб из 4 выступающих блоков (по одному с каждой стороны), пауки застрянут и Вы сможете поразить их сверху этого столба."
+		, "Пауки¶===================¶Из-за диаметра 2 метра, прятаться в узком месте шириной 1 метр — хорошая идея при борьбе с обычными пауками. Однако на ядовитых пещерных пауков это не действует."
+		, "Пещерные пауки¶===================¶Пещерные пауки имеют диаметр всего 1 метр и впрыскивают яд, когда атакуют Вас в ближнем бою. Обычно они появляются только внутри шахт, так как там есть спавнеры."
+		, "Пещерные пауки¶===================¶Спавнеры окружены множеством паутины, эта паутина будет Вас замедлять, поэтому возьмите свой меч или ножницы для шелкового прикосновения и разрежьте эту паутину, что также полезно, если вВм нужна нить."
+		, "Пещерные пауки¶===================¶Пещерные пауки часто застревают в деревянных колоннах или прячутся в потолке, поэтому будьте осторожны, когда идете, так как они неожиданно упадут на Вас, несмотря на большой шум."
+		, "Пещерные пауки¶===================¶Поскольку они ядовиты, молоко или любые таблетки-противоядия являются полезными предметами, которые следует иметь на панели быстрого доступа. Также иногда очень нужно скрываться от них, закрывая пути."
 		});
 
-		UT.Books.createWrittenBook("Manual_Hunting_End", "Hunting Guide for the End", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Endermen¶===================¶Endermen, 3m tall, black, purple eyed Teleporters with a weakness for Water and Silver (Disjunction Enchant), that can take some Blocks away from the World."
-		, "Endermen¶===================¶Under normal circumstances Endermen just mind their Business and don't care what you are doing, but they do not like getting stared at, to the point that they will attack you if you do so."
-		, "Endermen¶===================¶If you still want to look at them without them attacking you, then wear a carved Pumpkin as Helmet. But you are hunting them, probably for the Pearls, so turn to the next Page."
-		, "Endermen¶===================¶Since Endermen don't usually attack you, I presume you just want their Pearls, and for that an Enderman Trap is a good Idea."
-		, "Endermen¶===================¶The simplest Method is just standing below a 2m tall ceiling, so they cannot get to you. And then stare at every Enderman around to let them rage at you and attack you."
-		, "Endermen¶===================¶Another way would be the use of Water Buckets to shield yourself off. Also they can only teleport distances of at least 16m btw, no shorter teleports are possible for them."
-		, "Endermen¶===================¶As you may know, normal Arrows are pretty much worthless against them, that is why you should use Arrows with Disjunction on it (Silver), in order to prevent them from teleporting."
-		, "Endermen¶===================¶If you encounter an angry Enderman, then try to run into the closest Forest, the low Trees are perfect hiding Spots, and they cant teleport to you if they are too close to you already."
-		, "Endermen¶===================¶Melee attacks only work out if you look at their feet while swinging, as they will teleport away when you stare at them, since staring at them would freeze them into place."
-		, "Endermen¶===================¶The Weakness Potion Effect is capable of preventing an Enderman from Teleporting, make use of that and splash them. (Note, that it is GregTech adding that Feature!)"
-		, "Ender Dragon¶===================¶The Ender Dragon is essentially the Queen of the Endermen. She flies around between Obsidian Pillars with Magical Ender Crystals, that will regenerate her Health. Her attack pattern is Kamikaze Melee."
-		, "Ender Dragon¶===================¶She will obliterate every normal Block (except Endstone, Bedrock and Obsidian) when flying through it. She is immune to Knockback and Fire, and weak to the Disjunction Enchant found in Silver."
-		, "Ender Dragon¶===================¶The first thing you have to do is making sure you don't get knocked into the Void. Building Walls will only help if you have Obsidian with you, since she can't break it, unlike everything else you can bring."
-		, "Ender Dragon¶===================¶Once you are safe on the Main Island, you have to go and get rid of the Ender Crystals. They can easily be destroyed by Snowballs and Arrows. Do not melee those Crystals as they deal a huge explosion damage."
-		, "Ender Dragon¶===================¶Due to the Kamikaze Ram Attack, the Ender Dragon can be fought in Melee aswell as with Bow and Arrow. Use Weapons with the Disjunction Enchant and get yourself some Strength Buff in order to deal more melee."
-		, "Ender Dragon¶===================¶During the Fight it can happen that you stare at Endermen by accident, in order to prevent that you could either wear a Pumpkin as Hat and press F1, or just try to only look at a slight upwards angle."
+		UT.Books.createWrittenBook("Manual_Hunting_End", "Руководство по охоте в Краю", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Эндермен¶===================¶Эндермены, 3 метра ростом, черные, с фиолетовыми глазами, телепортаторы со слабостью к воде и серебру (чары разделения), которые могут унести некоторые блоки из мира."
+		, "Эндермен¶===================¶В обычных обстоятельствах они просто занимаются своими делами и не заботятся о том, что Вы делаете, но им не нравится, когда на них пристально смотрят, до такой степени, что они нападут."
+		, "Эндермен¶===================¶Если Вы все еще хотите смотреть на них, чтобы они не напали на Вас, наденьте резную тыкву в качестве шлема. Но Вы охотитесь за ними, вероятно, ради жемчуга, поэтому переходите на следующую страницу."
+		, "Эндермен¶===================¶Поскольку Эндермены обычно не нападают на Вас, я предполагаю, чтоВ просто нужен их жемчуг, и для этого хорошей идеей будет ловушка для Эндермена."
+		, "Эндермен¶===================¶Самый простой метод — просто стоять под потолком высотой 2 метра, чтобы они не могли до Вас добраться. А затем смотрите на каждого Эндермена вокруг, чтобы они разозлились и напали."
+		, "Эндермен¶===================¶Другой способ — использовать ведра с водой, чтобы защитить себя. Кроме того, они могут телепортироваться только на расстояние не менее 16 метров, более короткие телепорты для них невозможны."
+		, "Эндермен¶===================¶Как вы, возможно, знаете, обычные стрелы против них практически бесполезны, поэтому Вам следует использовать стрелы с разделением (серебро), чтобы предотвратить их телепортацию."
+		, "Эндермен¶===================¶Если Вы столкнетесь с разгневанным Эндерменом, постарайтесь сбежать в ближайший лес. Низкие деревья — идеальные укрытия, и они не смогут телепортироваться к Вам, если уже находятся слишком близко."
+		, "Эндермен¶===================¶Атаки ближнего боя срабатывают только в том случае, если Вы смотрите на их ноги во время замаха, поскольку они телепортируются, когда Вы смотрите на них, поскольку взгляд на них заморозит их на месте."
+		, "Эндермен¶===================¶Эффект зелья слабости способен предотвратить телепортацию Эндермена, воспользуйтесь этим и распылите его. (Обратите внимание: эту функцию добавила компания GregTech!)"
+		, "Дракон Края¶===================¶Это, по сути, королева Эндерменов. Она летает между обсидиановыми столбами с магическими кристаллами Края, которые восстанавливают её здоровье. Её модель атаки — 'Камикадзе ближнего боя'."
+		, "Дракон Края¶===================¶Пролетая сквозь остров, она уничтожит все обычные блоки (кроме камня Края, бедрока и обсидиана). Она невосприимчива к отбрасыванию и огню, и слаба к чарам разделения, найденным в серебре."
+		, "Дракон Края¶===================¶Первое, нужно сделать, это убедиться, что Вас не отбросит в пустоту. Строительство стен поможет только в том случае, если у Вас есть с собой Обсидиан, поскольку она не сможет его сломать,"
+		, "Дракон Края¶===================¶в отличие от всего остального, что Вы можете принести.¶Как только Вы окажетесь в безопасности на главном острове, Вам нужно пойти и избавиться от кристаллов Эндера."
+		, "Дракон Края¶===================¶Их легко уничтожить снежками и стрелами. Не атакуйте эти кристаллы в ближнем бою, поскольку они наносят огромный урон от взрыва."
+		, "Дракон Края¶===================¶Благодаря атаке тарана-камикадзе, с драконом Края можно сражаться как в ближнем бою, так и с помощью лука и стрел. Используйте оружие с чарами разделения и получите усиление силы, чтобы больше сражаться в ближнем бою."
+		, "Дракон Края¶===================¶Во время боя может случиться так, что Вы случайно посмотрите на Эндерменов, чтобы предотвратить возможность, либо наденьте тыкву и нажмите F1, либо просто попытаться смотреть только под небольшим углом вверх."
 		});
 
-		UT.Books.createWrittenBook("Manual_Hunting_Blaze", "Hunting Guide for Blazes and Ghasts", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Blazes¶===================¶Blazes are floating, fireball shooting, yellow Heads with valuable fiery Rods rotating around them. Those Rods only drop if they are killed by a living thing, making them rare. They also deal Melee Fire Damage too."
-		, "Blazes¶===================¶As they shoot Fireballs, they can be hard to get close to. My advice is either just shooting them with a Bow or being very creative and using a Fishing Rod to reel them in for Melee Combat."
-		, "Blazes¶===================¶You can also just hide behind a Wall and wait for them to come close, and then strike and hide again, so they don't get a chance to fire back. Building such a Wall between you and the Blazes is also a good Idea."
-		, "Blazes¶===================¶Fire Resistance is a nice Effect you should somehow have on yourself when you fight them, it makes you nearly immune to Blazes overall. Also possible is the use of Iron Golems, what not many think about doing."
-		, "Blazes¶===================¶Snowballs are normally useless against Mobs but in case of Blazes they do cause some severe Damage and are easier throw than you can shoot a bow. Snow Golems wouldn't survive in the Nether but they would work too."
-		, "Blazes¶===================¶Using Wolves or Golems can lead to them knowing Blazes down the Platforms, meaning you might not get drops, or they will now attack you from a distance, only do this for Areas that are surrounded by Netherrack."
-		, "Blazes¶===================¶Blazes can also be damaged by Water Buckets, sure they won't drop anything, and Water Buckets don't work in the Nether, but this Information might be useful if you got some way to get Water over there."
-		, "Ghasts¶===================¶Ghasts, flying, ghost alike, crying Tentacle Monsters with explosive Projectiles. Their Tears are hard to get due to them being airborne and the Nether being all like 'The Floor is Lava!'."
-		, "Ghasts¶===================¶Their Projectiles can literally be punched back at them kinda like a Baseball, what will yield the 'Return to Sender' Achievement. What is a Baseball, you ask? I don't know either."
-		, "Ghasts¶===================¶Punching their Fireballs back at them can be hard to do, especially with Lag, but Arrows can deflect the fireballs aswell, meaning you can shoot Arrows at the Fireballs as a defense."
-		, "Ghasts¶===================¶In general any form of ranged Attack is advised, because it happens very rarely, that a Ghast is close enough to the ground to actually melee it. The Implosion Enchantment works well on them too."
-		, "Ghasts¶===================¶It can happen very often that you are unprepared and a Ghast shows up trying to blow you into smithereens. In that case, run away and hide, first."
-		, "Ghasts¶===================¶After you are done finding a hiding Spot, look at where exactly the Ghast is right now, so you can stay out of its Range. Then either continue your business or shoot the Ghast."
-		, "Ghasts¶===================¶If you are going to deflect a Ghast Blast the melee way, then use a Sword for that, as it gives you a slightly increased Range. This is especially useful if you cant use a Bow."
-		, "Ghasts¶===================¶Ghasts are the normal kind of Mob, they are neither Undead nor Spiders, there is no special Enchant against them, and Potions work normally on them."
+		UT.Books.createWrittenBook("Manual_Hunting_Blaze", "Руководство по охоте на Ифритов и Гастов", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Ифриты¶===================¶Ифрит плывет, стреляет огненными шарами, вокруг вращаются желтые ценные стержни. Эти стержни выпадают только в том случае, если их убивает живое существо, что делает их редкими."
+		, "Ифриты¶===================¶Они также наносят урон от огня в ближнем бою.¶Поскольку они стреляют огненными шарами, к ним может быть трудно подобраться."
+		, "Ифриты¶===================¶Мой совет: либо просто стреляйте в них из лука, либо проявите творческий подход и используйте удочку, чтобы притянуть их для ближнего боя."
+		, "Ифриты¶===================¶Вы также можете просто спрятаться за стеной и подождать, пока они подойдут поближе, а затем нанести удар и снова спрятаться, чтобы у них не было возможности открыть ответный огонь."
+		, "Ифриты¶===================¶Построить такую стену между Вами и Ифритами — тоже хорошая идея.¶Также возможно использование железных големов, о чем многие не задумываются."
+		, "Ифриты¶===================¶Сопротивление огню — хороший эффект, который Вы должны каким-то образом оказывать на себя, когда сражаетесь с ними. В целом он делает Вас почти невосприимчивым к Пламени."
+		, "Ифриты¶===================¶Снежки обычно бесполезны против мобов, но в случае с Ифритами они наносят серьезный урон, и их легче бросить, чем выстрелить из лука. Снеговики не выживут в Аду, но тоже будут работать."
+		, "Ифриты¶===================¶Использование волков или големов может привести к тому, что они узнают, что платформы пылают, а это означает, что Вы можете не получить дроп,"
+		, "Ифриты¶===================¶или теперь они будут атаковать Вас на расстоянии, делайте это только для областей, окруженных адским камнем."
+		, "Ифриты¶===================¶Ифритов также можно повредить ведрами с водой, конечно, из них ничего не упадет, а ведра с водой не работают в Аду, но эта информация может быть полезна, если у Вас есть способ доставить туда воду."
+		, "Гасты¶===================¶Гасты, летающие, похожие на призраков, плачущие монстры с щупальцами со взрывными снарядами. Их слезы трудно достать, потому что они летают по воздуху, а Ад похож на 'Пол — это лава!'."
+		, "Гасты¶===================¶Их снаряды можно буквально отбивать в ответ, как в бейсболе, что дает достижение 'Вернуть отправителю'. Вы спросите, что такое бейсбол? Я тоже не знаю."
+		, "Гасты¶===================¶Нанести им ответный удар огненными шарами может быть сложно, особенно с задержкой, но стрелы также могут отклонять огненные шары, а это означает, что Вы можете стрелять стрелами по огненным шарам в качестве защиты."
+		, "Гасты¶===================¶В общем, рекомендуется любая форма дальней атаки, потому что очень редко случается, что Гаст находится достаточно близко к земле, чтобы атаковать его в ближнем бою. Чары Имплозии тоже хорошо на них действуют."
+		, "Гасты¶===================¶Очень часто может случиться так, что Вы будете неподготовлены, и появится Гаст, пытающийся разнести Вас вдребезги. В этом случае сначала убегайте и спрячьтесь."
+		, "Гасты¶===================¶После того, как Вы закончите поиск укрытия, посмотрите, где именно сейчас находится Гаст, чтобы держаться подальше от его досягаемости. Тогда либо продолжайте свои дела, либо пристрелите Гаста."
+		, "Гасты¶===================¶Если Вы собираетесь отразить огненный шар в ближнем бою, используйте для этого меч, так как он немного увеличивает дальность действия. Это особенно полезно, если Вы не можете использовать лук."
+		, "Гасты¶===================¶Гасты — это обычный вид мобов, они не являются ни нежитью, ни пауками, против них нет специальных чар, и зелья на них действуют нормально."
 		});
 
-		UT.Books.createWrittenBook("Manual_Hunting_Witch", "Hunting Guide for Witches", "Alex Grylls, Survival Specialist", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
-		, "Witches¶===================¶Witches are uglier Villagers with Potion Skills. When damaged they will drink a Potion of Regeneration or Fire Resistance depending on the source of the Damage. They sometimes drop the **most recently used** Potion."
-		, "Witches¶===================¶Their attacks are Splash Potions of Poison and Harming. Since they use Fire Resistance Potions 'BURN THE WITCH!!!' is not an attack option for you. Drowning doesn't work either, as they use Water Breathing Potions."
-		, "Witches¶===================¶Bow and Arrow are ofcourse a good option, but if you have to melee then do it fast and run straight at the Witch to hit them. This will cause the Witch to try healing themself instead of attacking you."
-		, "Witches¶===================¶A Bucket of Water can give you the needed distance from the Witch in order to attack them with ranged Weapons. But watch out, if you are too far away, the Witch may use Speed Potions to be able to catch up with you."
-		, "Witches¶===================¶In swampy Areas there is the possibility to find Witch Huts, those Huts may be very small but only Witches can spawn in there, meaning a Mob Spawning Area built around it will only spawn Witches!"
-		, "Witches¶===================¶Witches drop Empty Bottles, Sticks, Redstone, Glowstone, Sugar, Spider Eyes, Gunpowder and Potions. This makes them a valuable Mob to farm and also a way to get Glowstone and Potions without the Nether."
+		UT.Books.createWrittenBook("Manual_Hunting_Witch", "Руководство по охоте на ведьм", "Алекс Гриллс, специалист по выживанию", ST.make(ItemsGT.BOOKS, 1, 3), new String[] {tAlexGryllsIntro
+		, "Ведьмы¶===================¶Ведьмы — более уродливые жители деревни с навыками зельеварения. При повреждении они выпьют зелье регенерации или сопротивления огню в зависимости от источника урона."
+		, "Ведьмы¶===================¶Иногда из них выпадает **последнее использованное** зелье.¶Их атаки — это зелья яда и вреда."
+		, "Ведьмы¶===================¶Поскольку они используют зелья огнестойкости 'СЖИГАЙТЕ ВЕДЬМУ!!!' это не вариант атаки для Вас. Утопление тоже не работает, так как они используют зелья водного дыхания."
+		, "Ведьмы¶===================¶Лук и стрелы, конечно, хороший вариант, но если Вам нужно сражаться в ближнем бою, делайте это быстро и бегите прямо к ведьме, чтобы поразить ее. Это заставит ведьму попытаться исцелить себя, а не атаковать Вас."
+		, "Ведьмы¶===================¶Ведро с водой может дать Вам необходимое расстояние от ведьмы, чтобы атаковать ее оружием дальнего боя. Но будьте осторожны: если Вы находитесь слишком далеко, ведьма может использовать зелья скорости, чтобы догнать Вас."
+		, "Ведьмы¶===================¶В болотистых областях есть возможность найти хижины ведьм. Эти хижины могут быть очень маленькими, но там могут появляться только ведьмы и построенная вокруг них зона будет порождать только ведьм!"
+		, "Ведьмы¶===================¶Из ведьм падают пустые бутылки, палки, красный камень, светящийся камень, сахар, паучьи глаза, порох и зелья. Это делает их ценным мобом для фарма, а также способом получить светящийся камень и зелья без Ада."
 		});
 
 //      The Wither is a tough mob to fight.
@@ -461,7 +487,7 @@ public class Loader_Books implements Runnable {
 		//-----
 
 		tBook.clear();
-		tBook.add("В этом руководстве рассказывается о распространенных и необычных инструментах и о том, как их использовать. Он содержит список всех обычных инструментов, истинное назначение которых, вы возможно не знаете.");
+		tBook.add("В этом руководстве рассказывается о распространенных и необычных инструментах и о том, как их использовать. Он содержит список всех обычных инструментов, истинное назначение которых, Вы возможно не знаете.");
 
 		tBook.add("Меч"                 +"¶===================¶Это меч, он наносит урон и режет предметы. Он может собирать листья, паутину и блоки шерсти.");
 		tBook.add("Нож"                 +"¶===================¶Он разрезает еду, палки, резину, кору дерева и тому подобные вещи и является довольно полезным ранним оружием. Он может собрать все, что может собрать меч.");
@@ -477,7 +503,7 @@ public class Loader_Books implements Runnable {
 
 		tBook.add("Кирка"               +"¶===================¶Капает блоки, как это делает обычная кирка.");
 		tBook.add("Строительная кирка"  +"¶===================¶Она добывает искусственные блоки намного быстрее, но медленнее на природных камнях.");
-		tBook.add("Кирка с напылением"  +"¶===================¶В обмен на большую прочность вы можете поместить испорченные самоцветы на основу кирки из необработанной стали, чтобы придать ей качество инструмента из самоцветов. Лучше всего для этого подходят янтарь, сапфиры и алмазы.");
+		tBook.add("Кирка с напылением"  +"¶===================¶В обмен на большую прочность Вы можете поместить испорченные самоцветы на основу кирки из необработанной стали, чтобы придать ей качество инструмента из самоцветов. Лучше всего для этого подходят янтарь, сапфиры и алмазы.");
 		tBook.add("Отбойный молоток"    +"¶===================¶Эта штука добывает блоки и крушит их, как молот, с безумной скоростью. Не так уж много об этом можно сказать.");
 		tBook.add("Шахтерский бур"      +"¶===================¶Он может одновременно добывать и перелопачивать предметы и является идеальным универсальным инструментом для шахтерских работ.");
 
@@ -497,11 +523,11 @@ public class Loader_Books implements Runnable {
 		tBook.add("Гибочный цилиндр"    +"¶===================¶Превращает пластины в изогнутые пластины и используется для аналогичных процедур обработки металлов.");
 
 		tBook.add("Монтировка"          +"¶===================¶Открывает ящики и может использоваться на рельсах и вагонетках.");
-		tBook.add("Клещи"               +"¶===================¶Используется для сбора горячих предметов из форм и тазов, поэтому вам не придется ждать, пока они остынут, прежде чем брать их.");
+		tBook.add("Клещи"               +"¶===================¶Используется для сбора горячих предметов из форм и тазов, поэтому Вам не придется ждать, пока они остынут, прежде чем брать их.");
 		tBook.add("Вантуз"              +"¶===================¶Опорожняет трубы и резервуары с жидкостью, опустошая жидкость или выбрасывая застрявшие в них пачки предметов. Также работает с Таумическими проводниками.");
 		tBook.add("Сачок"               +"¶===================¶Ловит бабочек, пчел и шмелей, также необходим для сбора ульев шмелей и пчелиных ульев.");
 
-		tBook.add("Мотыга"              +"¶===================¶Они пашут землю, чего вы ожидаете? Я не буду подробно объяснять ванильные инструменты.");
+		tBook.add("Мотыга"              +"¶===================¶Они пашут землю, чегоВожидаете? Я не буду подробно объяснять ванильные инструменты.");
 		tBook.add("Секатор"             +"¶===================¶Вырезает саженцы из листьев с высокой точностью, как прививка.");
 //      tBook.add("Sickles"             +"¶===================¶");
 		tBook.add("Коса"                +"¶===================¶Собирает урожай, цветы и высокую траву на площади 3x3x3.");
@@ -510,10 +536,10 @@ public class Loader_Books implements Runnable {
 		tBook.add("Ножницы"             +"¶===================¶Можно перерезать растянутые провода при щелчке ПКМ, стричь овец и собирать шерстяные/тканевые блоки.");
 		tBook.add("Отвертка"            +"¶===================¶Приводы, винты и тому подобное. Чаще всего используется для настройки режимов блоков и облицовок. Может вращать компараторы и повторители.");
 		tBook.add("Кусачки"             +"¶===================¶Они собирают провода. Другое использование — настройка проводов, а в некоторых случаях и облицовок.");
-		tBook.add("Миксер"              +"¶===================¶Это сделано для того, чтобы вы не израсходовали батончик голода при работе с чашей для смешивания.");
-		tBook.add("Ручная дрель"        +"¶===================¶Это отверстия в поверхностях. Если у вас есть динамитные палки или железные/стальные стержни, вы можете воткнуть динамит в стены или укрепить кирпичи и бетон.");
+		tBook.add("Миксер"              +"¶===================¶Это сделано для того, чтобыВне израсходовали батончик голода при работе с чашей для смешивания.");
+		tBook.add("Ручная дрель"        +"¶===================¶Это отверстия в поверхностях. Если у Вас есть динамитные палки или железные/стальные стержни, Вы можете воткнуть динамит в стены или укрепить кирпичи и бетон.");
 		tBook.add("Огниво"              +"¶===================¶Поджигает вещи и может зажечь все, что требует зажигания. Но для этого может потребоваться несколько попыток.");
-		tBook.add("Лупа"                +"¶===================¶С её помощью вы можете просмотреть детали МНОЖЕСТВА вещей в GregTech, просто наденьте любую линзу на палку, и все будет готово к работе в течение длительного времени.");
+		tBook.add("Лупа"                +"¶===================¶С её помощью Вы можете просмотреть детали МНОЖЕСТВА вещей в GregTech, просто наденьте любую линзу на палку, и все будет готово к работе в течение длительного времени.");
 
 		tBook.add("Карманный мультиинструмент"+"¶===================¶Мультиинструмент, который можно использовать для самых распространенных целей. Воспринимайте это как швейцарский армейский нож.");
 
@@ -521,20 +547,20 @@ public class Loader_Books implements Runnable {
 
 
 		tBook.clear();
-		tBook.add("Это руководство по плавильному тиглю и связанным с ним объектам. В нем объясняется, как правильно использовать плавильный тигель и формы, чтобы вы могли начать плавить вещи, которые невозможно выплавить в обычной печи.");
-		tBook.add("Если вам нужно знать, насколько тяжел объект или из каких материалов он состоит, просто используйте старый добрый ванильный метод F3+H, чтобы включить расширенные подсказки, чтобы вы могли видеть наиболее важные данные об объекте.");
+		tBook.add("Это руководство по плавильному тиглю и связанным с ним объектам. В нем объясняется, как правильно использовать плавильный тигель и формы, чтобы Вы могли начать плавить вещи, которые невозможно выплавить в обычной печи.");
+		tBook.add("Если Вам нужно знать, насколько тяжел объект или из каких материалов он состоит, просто используйте старый добрый ванильный метод F3+H, чтобы включить расширенные подсказки, чтобы Вы могли видеть наиболее важные данные об объекте.");
 		tBook.add("Шаг 1: Источник тепла"         +"¶===================¶Вам нужен источник тепла, чтобы нагреть тигель до желаемой температуры. Возможные источники тепла могут включать камеры сгорания, электрические нагреватели, лазерные нагреватели и дуговые нагреватели.");
 		tBook.add("Опционально: Источник воздуха" +"¶===================¶Если нужно подать воздух для тигля (для стали), нужно направить в него двигатель, который будет действовать как вентилятор. Для мультиблочных тиглей, двигатель должен находиться в нижнем ряду.");
 		tBook.add("Шаг 2: Тигель"                 +"¶===================¶Выбор материала тигля очень важен. Тигель также может плавиться при определенной температуре, которая обычно выше фактической температуры плавления самого тигля.");
-		tBook.add("Шаг 2: Тигель"                 +"¶===================¶Теперь поместите тигель на выходную сторону источника тепла по вашему выбору. Например камера сгорания излучает тепло только сверху, поэтому вам нужно разместить тигель над ним.");
-		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Вероятно, вы хотите отлить расплавленный металл в форму, поэтому вам нужно разместить форму горизонтально рядом с тиглем. Как вы могли заметить, саму литейную форму нельзя отлить.");
-		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Вот почему вам нужно долото, чтобы вырезать правильную форму в литейной форме, используя ее в мире. Наиболее важные формы перечислены на последних страницах этой книги.");
-		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Если вам по какой-то причине не удастся придать правильную форму, конечным результатом будет столько самородков, сколько вы вырезали мест.");
+		tBook.add("Шаг 2: Тигель"                 +"¶===================¶Теперь поместите тигель на выходную сторону источника тепла по вашему выбору. Например камера сгорания излучает тепло только сверху, поэтому Вам нужно разместить тигель над ним.");
+		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Вероятно, Вы хотите отлить расплавленный металл в форму, поэтому Вам нужно разместить форму горизонтально рядом с тиглем. Как Вы могли заметить, саму литейную форму нельзя отлить.");
+		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Вот почему Вам нужно долото, чтобы вырезать правильную форму в литейной форме, используя ее в мире. Наиболее важные формы перечислены на последних страницах этой книги.");
+		tBook.add("Шаг 3: Литейные формы"         +"¶===================¶Если Вам по какой-то причине не удастся придать правильную форму, конечным результатом будет столько самородков, сколько Вы вырезали мест.");
 		tBook.add("Шаг 4: Плавление"              +"¶===================¶Теперь приступим к плавке. Просто бросьте предметы, которые хотите переплавить в тигель, или используйте над ним воронку, чтобы заполнить его. Увеличивайте температуру, пока не достигнете точки плавления.");
-		tBook.add("Шаг 4: Плавление"              +"¶===================¶Если ваш источник тепла не имеет какого-либо регулирования температуры, вам, возможно, придется отключить его как только температура достигнет точки плавления, иначе вы испарите металлы или что-то еще хуже.");
+		tBook.add("Шаг 4: Плавление"              +"¶===================¶Если ваш источник тепла не имеет какого-либо регулирования температуры, Вам, возможно, придется отключить его как только температура достигнет точки плавления, иначе Вы испарите металлы или что-то еще хуже.");
 		tBook.add("Шаг 5: Формирование"           +"¶===================¶Теперь просто щелкните ту сторону верхней части литейной формы, рядом с которой находится тигель, чтобы заполнить ее металлами. Предупреждение: сама форма также может расплавиться, если она изготовлена из неправильного материала.");
-		tBook.add("Шаг 5: Формирование"           +"¶===================¶Подождите, пока металл остынет, но учтите, что вам не следует прикасаться к металлу или вынимать его, пока он горячий, иначе вы обожжетесь, если только вы не наденете защитный костюм или что-то в этом роде.");
-		tBook.add("Литейные формы"                +"¶===================¶Ниже приводится список фигур, которые можно вырезать в форме. Положение фигуры на форме НЕ важно, вы также можете вращать и отражать ее: ¶X = Выточено¶O = Не выточено");
+		tBook.add("Шаг 5: Формирование"           +"¶===================¶Подождите, пока металл остынет, но учтите, что Вам не следует прикасаться к металлу или вынимать его, пока он горячий, иначе Вы обожжетесь, если только Вы не наденете защитный костюм или что-то в этом роде.");
+		tBook.add("Литейные формы"                +"¶===================¶Ниже приводится список фигур, которые можно вырезать в форме. Положение фигуры на форме НЕ важно, Вы также можете вращать и отражать ее: ¶X = Выточено¶O = Не выточено");
 		tBook.add("Слиток"                        +"¶===================¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶XXXOO¶===================¶Требуется материала: 1.000");
 		tBook.add("Кусок"                         +"¶===================¶XXOOO¶XXOOO¶OOOOO¶OOOOO¶OOOOO¶===================¶Требуется материала: 0.250");
 		tBook.add("Пластина"                      +"¶===================¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶XXXXX¶===================¶Требуется материала: 1.000");
@@ -569,8 +595,8 @@ public class Loader_Books implements Runnable {
 		//-----
 
 		tBook.clear();
-		tBook.add("Эта книга содержит информацию о каждом сплаве, который можно создать с помощью плавильного тигля.¶===================¶Чтобы создать сплав, вам нужно достичь температуры плавления самого сплава.");
-		tBook.add("И вам нужно достичь точки плавления всех его компонентов, кроме одного. Вы, конечно, также можете расплавить все Компоненты, но вы можете 'не плавить' один из компонентов.");
+		tBook.add("Эта книга содержит информацию о каждом сплаве, который можно создать с помощью плавильного тигля.¶===================¶Чтобы создать сплав, Вам нужно достичь температуры плавления самого сплава.");
+		tBook.add("И Вам нужно достичь точки плавления всех его компонентов, кроме одного. Вы, конечно, также можете расплавить все Компоненты, но Вы можете 'не плавить' один из компонентов.");
 		tBook.add("Если нужно подать воздух для тигля (для стали), нужно направить в него двигатель, который будет действовать как вентилятор. Для мультиблочных тиглей, двигатель должен находиться в нижнем ряду.");
 
 		for (OreDictMaterial tMat : OreDictMaterial.ALLOYS) {
@@ -600,39 +626,38 @@ public class Loader_Books implements Runnable {
 		//-----
 
 		UT.Books.createWrittenBook("Manual_Extenders", "Расширители и фильтры", "GAD (Gregorius Automation Distributions)", ST.make(ItemsGT.BOOKS, 1, 32000), new String[] {
-		  "В этом руководстве рассматриваются как расширители, так и фильтры. Оно подробно объяснит использование этих устройств, чтобы вы могли легко их использовать."
-		, "Сначала необходимо объявить стороны, которые есть у любого фильтра и расширителя. Основная сторона — это сторона, которую вы можете установить с помощью гаечного ключа и которая имеет 4 точки вокруг центральной трубы."
+		  "В этом руководстве рассматриваются как расширители, так и фильтры. Оно подробно объяснит использование этих устройств, чтобы Вы могли легко их использовать."
+		, "Сначала необходимо объявить стороны, которые есть у любого фильтра и расширителя. Основная сторона — это сторона, которую Вы можете установить с помощью гаечного ключа и которая имеет 4 точки вокруг центральной трубы."
 		, "Вторичная сторона — это сторона со стрелками, направленными наружу, которая устанавливается с помощью гаечного ключа. А другие стороны расширителя/фильтра являются нейтральными."
 		, "Теперь, когда это ясно, мы можем перейти к функциональности. По сути, ВСЕ, что 'взаимодействует' (* объяснено позже) с расширителем через нейтральную или вторичную сторону, будет перенаправлено на TileEntity на основной стороне."
-		, "Это означает, что основная сторона обычно (но не всегда!) является выходной стороной, если вы хотите вставить материал через нейтральную или вторичную сторону. Поэтому прикрепите основную сторону к TileEntity, который вы хотите расширить или применить к нему фильтрацию."
-		, "Теперь о вторичной стороне: как вы знаете, 5 сторон перенаправляют свой доступ к TileEntity на основной стороне, но сама основная сторона может перенаправлять все доступы к TileEntity на своей стороне к TileEntity на вторичной стороне."
-		, "Это означает, что если у вас есть вход и выход на той же стороне TileEntity, к которой вы его прикрепили, вы можете перенаправить вывод в одном направлении, используя вторичную сторону, в то время как нейтральные стороны заполняют TileEntity на основной стороне."
+		, "Это означает, что основная сторона обычно (но не всегда!) является выходной стороной, если Вы хотите вставить материал через нейтральную или вторичную сторону. Поэтому прикрепите основную сторону к TileEntity, который Вы хотите расширить или применить к нему фильтрацию."
+		, "Теперь о вторичной стороне: как Вы знаете, 5 сторон перенаправляют свой доступ к TileEntity на основной стороне, но сама основная сторона может перенаправлять все доступы к TileEntity на своей стороне к TileEntity на вторичной стороне."
+		, "Это означает, что если у Вас есть вход и выход на той же стороне TileEntity, к которой Вы его прикрепили, Вы можете перенаправить вывод в одном направлении, используя вторичную сторону, в то время как нейтральные стороны заполняют TileEntity на основной стороне."
 		, "Перенаправление с основной на вторичную НЕ фильтруется, фильтруются только нейтральные и вторичная на основную! Я надеюсь, что этого объяснения достаточно, чтобы правильно использовать фильтры."
-		, "Расширители и фильтры не могут использоваться рядом друг с другом, в смысле связанные вместе. Это означает, что у вас должно быть что-то вроде канала между расширителем/фильтром и другим расширителем/фильтром, если они, конечно, не параллельны."
+		, "Расширители и фильтры не могут использоваться рядом друг с другом, в смысле связанные вместе. Это означает, что у Вас должно быть что-то вроде канала между расширителем/фильтром и другим расширителем/фильтром, если они, конечно, не параллельны."
 		, "Теперь объясним, что на самом деле означает 'взаимодействовать'. Воронка извлекает элементы из всего, с чем она 'взаимодействует' выше, и помещает их во все, с чем 'взаимодействует' внизу. Это означает, что направление движения предмета не имеет значения для расширителя."
-		, "Таким образом, если вы поместите djhjyre под расширителем, воронка будет извлекать элементы из любого объекта TileEntity, к которому подключен расширитель. А если вы поместите воронку над расширителем, она заполнит TileEntity, к которому прикреплен расширитель."
-		, "Расширители, по сути, представляют собой двусторонний знак обхода для всего, что пытается взаимодействовать с ними тем или иным образом, как если бы TileEntity, к которому вы их прикрепили, теперь имеет размер двух блоков вместо одного."
-		, "Они вообще ничего не делают сами по себе, они просто сидят там, притворяясь тем TileEntity, к которому вы их прикрепили. Так что не ожидайте, что они будут тянуть или толкать предметы или делать что-то в этом роде."
+		, "Таким образом, если Вы поместите djhjyre под расширителем, воронка будет извлекать элементы из любого объекта TileEntity, к которому подключен расширитель. А если Вы поместите воронку над расширителем, она заполнит TileEntity, к которому прикреплен расширитель."
+		, "Расширители, по сути, представляют собой двусторонний знак обхода для всего, что пытается взаимодействовать с ними тем или иным образом, как если бы TileEntity, к которому Вы их прикрепили, теперь имеет размер двух блоков вместо одного."
+		, "Они вообще ничего не делают сами по себе, они просто сидят там, притворяясь тем TileEntity, к которому Вы их прикрепили. Так что не ожидайте, что они будут тянуть или толкать предметы или делать что-то в этом роде."
 		});
 
 		//-----
 
 		UT.Books.createWrittenBook("Manual_Reactors", "Руководство по реактору деления", "Apature Atomics", ST.make(ItemsGT.BOOKS, 1, 32005), new String[] {
-		"=================== =================== =================== =================== =================== =================== =================== =================== =================== =================== =================== =================== =================== ===================",
 		"¶¶===================¶Введение и инструкции по безопасности¶===================¶",
-		"[Стенограмма]¶Поздравляем [Вставьте имя сотрудника] с дипломом по ядерной физике!¶Теперь вы подходите для работы в Apature Atomics в качестве оператора реактора.",
+		"[Стенограмма]¶Поздравляем [Вставьте имя сотрудника] с дипломом по ядерной физике!¶Теперь Вы подходите для работы в Apature Atomics в качестве оператора реактора.",
 		"Сокращения¶===================¶АЗР - активная зона ядерного реактора.¶СР - стержень реактора.¶ОЖ - теплоноситель/ охлажд. жидкость.¶ХОЖ - холодная ОЖ.¶ГОЖ - горячаяя ОЖ.¶",
-		"Сначала я познакомлю вас с тем, чем вы будете управлять, надеюсь, без незапланированных взрывов:¶Ядро любого реактора деления - АЗР 2х2.",
+		"Сначала я познакомлю Вас с тем, чем Вы будете управлять, надеюсь, без незапланированных взрывов:¶Ядро любого реактора деления - АЗР 2х2.",
 		"Некоторые из наших инженеров утв-ют, что это просто металл-ая коробка с четырьмя поршнями, которые толкают стержни внутрь или вверх, что мы переборщили с вычислительной мощностью этих малышей, что 4-х чертовых проводов было бы достаточно.",
 		"Как будто кто-то поверил бы четырем проклятым проводам, чтобы предотвратить полное ядерное разрушение, вероятно, в любом случае это даже не в его интересах. Вот почему в АЗР каждый стержень-контроллер разумен.",
 		"Поэтому в их интересах не взорваться, так как тогда я бы очень разозлился на них и отправил бы их 'контролер СР' — в ад!",
 		"Во всяком случае, мы им так сказали, такого места явно не существует, у нас нет денег, чтобы финансировать всякую глупость. Вместо этого они отправятся в ад роботов, чтобы их вечно сжигали и перестраивали, пока мы собираем полезные данные.",
 		"Оказывается, они вообще никогда не вставляли СР, что делало реакторы сов-но безопасными и бесполезными, поэтому мы перезаписали их контроль над стержнями, чтобы вместо этого они управлялись 4-мя проводами.",
 		"Любые слухи, которые вы, возможно, слышали об АЗР 1х1 — это всего лишь слухи, мы, конечно, никогда бы не построили такую штуку, потому что очевидно, что стержень-контроллер сошел бы с ума без трех других, которые бы его развлекали.",
-		"В маловероятном случае вы можете наткнуться на такое ядро, чего не произойдет, если бы они существовали, мы бы уже отправили их в ад роботов, где бы они находились в постоянной агонии, чего они не делают, потому что их не существует.",
-		"В любом случае, безопасность, я обязан предоставить вам эту информацию, поэтому я быстро пройдусь по ней: Всегда носите костюм радиационной защиты. Не взрывайте АЗР. Не взрывайтесь. Не спровоцируйте ядерный взрыв.",
+		"В маловероятном случае Вы можете наткнуться на такое ядро, чего не произойдет, если бы они существовали, мы бы уже отправили их в ад роботов, где бы они находились в постоянной агонии, чего они не делают, потому что их не существует.",
+		"В любом случае, безопасность, я обязан предоставить Вам эту информацию, поэтому я быстро пройдусь по ней: Всегда носите костюм радиационной защиты. Не взрывайте АЗР. Не взрывайтесь. Не спровоцируйте ядерный взрыв.",
 		"Не отрицайте причину ядерного взрыва в случае ядерного взрыва. Не прикасайтесь к работающему реактору. Не ломайте работающий реактор. Не облизывайте работающий реактор. Не позволяйте фламинго приближаться к реактору.",
-		"Не ешьте ядерное топливо. Не готовьте на ядерном реакторе. В случае опухолей ешьте ядерное топливо. Это должно быть все, что вам нужно знать, а теперь приступайте к делу и займитесь наукой!",
+		"Не ешьте ядерное топливо. Не готовьте на ядерном реакторе. В случае опухолей ешьте ядерное топливо. Это должно быть все, что Вам нужно знать, а теперь приступайте к делу и займитесь наукой!",
 		"¶¶===================¶Основы работы реактора¶===================¶",
 		"В АЗР (2x2) есть слоты для 4-х СР.¶СР, вставленные в реактор, будут напрямую взаимодействовать только с непосредственно соседними СР, включая соседние пазы на разных, но соседних блоках АЗР.",
 		"СР можно вставить в слот вручную, щелкнув по нему ПКМ. Щелчок ПКМ по слоту с помощью клещей вытащит СР внутри слота.",
@@ -685,7 +710,7 @@ public class Loader_Books implements Runnable {
 		"Это означает, что стержень является критическим, если кол-во отражателей вокруг него, умноженное на коэффициент, больше или равно 1. Таким образом, ТВЭЛ с коэффициентом 1/3 требует как минимум 3 соседних ОС, чтобы быть критическим.",
 		"Поэтому реком-ся использовать хладагент в кач-ве теплоносителя для стабильных реакторов. Хладагент снижает коэффициент ТВЭЛ, делая невозможным переход любого ТВЭЛ в критическое состояние без ЗС.",
 		"Это также увеличивает характеристики 'ПН' и 'Выброс', что действительно выгодно для стабильных реакторов, поскольку означает больше нейтронов и, следовательно, большую эффективность.",
-		"Обычно вы можете придерживаться этих четырех правил, чтобы добиться максимальной эффективности вашего стабильного реактора:",
+		"Обычно Вы можете придерживаться этих четырех правил, чтобы добиться максимальной эффективности вашего стабильного реактора:",
 		"Правло 1:¶Если используемое топливо имеет коэффициент менее 1/8, окружение ТВЭЛ ПС дает наибольшую мощность HU.",
 		"Правло 2:¶Если используемое топливо имеет коэффициент 1/8, окружение ТВЭЛ ПС, ОС или другими ТВЭЛ дает точно такую же мощность HU.",
 		"Правло 3:¶Если коэффициент используемого ТВЭЛ превышает 1/8,окружение ТВЭЛ ОС или другими ТВЭЛ дает максимальную мощность HU.",
@@ -696,18 +721,18 @@ public class Loader_Books implements Runnable {
 		"Недостатки крит. реакторов:¶- Нужен внешний контроль¶- Постоянное колебание мощности HU¶- Сложнее спроектировать¶- Снижение безопасности¶- Необходимы ТВЭЛ с более высоким коэффициентом",
 		"Стержень реактора можно считать критическим, когда кол-во нейтронов, отраженных обратно на стержень, умноженное на коэффициент стержня, больше или равно параметру 'Выброс' топливного стержня.",
 		"Это означает, что стержень является критическим, если кол-во отражателей вокруг него, умноженное на коэффициент, больше или равно 1. Таким образом, ТВЭЛ с коэффициентом 1/3 требует как минимум 3 соседних ОС, чтобы быть критическим.",
-		"Поскольку кол-во нейтронов на ТВЭЛ будет бесконечно увеличиваться, вам необходимо контролировать реакцию, чтобы не выдавать больше энергии, чем вы можете выдержать.",
+		"Поскольку кол-во нейтронов на ТВЭЛ будет бесконечно увеличиваться, Вам необходимо контролировать реакцию, чтобы не выдавать больше энергии, чем Вы можете выдержать.",
 		"Счетчик Гейгера позволяет осуществлять такое управление автоматически в сочетании с машинными переключателями или селекторами из красного камня.",
-		"Поэтому, когда кол-во нейтронов становится слишком большим, вы хотите выключить стержень реактора, чтобы снова сделать ТВЭЛ подкритическим, что приводит к уменьшению кол-ва нейтронов.",
-		"Для достижения максимальной эффективности вам нужно, чтобы кол-во нейтронов на ТВЭЛ всегда оставалось ниже максимального значения этого ТВЭЛ, но при этом приближалось к нему как можно ближе.",
+		"Поэтому, когда кол-во нейтронов становится слишком большим, Вы хотите выключить стержень реактора, чтобы снова сделать ТВЭЛ подкритическим, что приводит к уменьшению кол-ва нейтронов.",
+		"Для достижения максимальной эффективности Вам нужно, чтобы кол-во нейтронов на ТВЭЛ всегда оставалось ниже максимального значения этого ТВЭЛ, но при этом приближалось к нему как можно ближе.",
 		"Вы также хотели бы, чтобы кол-во нейтронов уменьшалось как можно меньше при управлении реактором, чтобы ваша средняя мощность HU оставалась как можно выше.",
-		"Поэтому вам нужно топливо с коэффициентом не менее 1/4, чтобы можно было построить критический реактор без использования ЗС.",
+		"Поэтому Вам нужно топливо с коэффициентом не менее 1/4, чтобы можно было построить критический реактор без использования ЗС.",
 		"Проще всего исп-ть топливо, отвечающее этому условию — Уран-235. Его можно получить, перерабатывая Настуран. При использовании ЗС коэффициент топлива может быть уменьшен до 1/16, поэтому возможно исп-ие Урана-238.",
 		"¶¶===================¶Руководство по проектированию реактора-горелки¶===================¶",
 		"Реакторы-горелки представляют собой тип конструкции ядерного деления, целью которой яв-ся максимально быстрое сжигание ТВЭЛ, что позволяет перерабатывать истощенные ТВЭЛ для получения более качественных материалов ядерного топлива.",
 		"Есть два способа значительно ускорить истощение ТВЭЛ:¶- Замедление ТВЭЛ¶- Превышение нейтронного максимума",
 		"ТВЭЛ можно замедлить поместив его в реактор, охлаждаемый водным теплоносителем, либо поместив его рядом с ЗС или замедленным ТВЭЛ. При замедлении ТВЭЛ будет истощаться в четыре раза быстрее.",
-		"Если количество нейтронов превышает максимальное значение ТВЭЛ на нем, он также будет истощаться в четыре раза быстрее, суммируясь с замедлением до 16 раз быстрее.¶Чем больше вы превысите максимум, тем быстрее будет истощаться ТВЭЛ.",
+		"Если количество нейтронов превышает максимальное значение ТВЭЛ на нем, он также будет истощаться в четыре раза быстрее, суммируясь с замедлением до 16 раз быстрее.¶Чем больше Вы превысите максимум, тем быстрее будет истощаться ТВЭЛ.",
 		"Если количество нейтронов в 2 раза превышает максимум на стержне, это снова заставит его истощаться в 2 раза быстрее, что будет суммироваться с замедлением до 32-кратного ускорения истощения.",
 		"Число нейтронов в 17 раз превышает максимальное, поэтому ТВЭЛ истощается в 17 раз быстрее, в 4 раза из-за превышения максимума, то есть в 68 раз быстрее, в 4 раза, если стержень замедлился, то есть в 272 раза быстрее.",
 		"Вместо значительного увеличения кол-ва нейтронов на ТВЭЛ можно также снизить нейтронный максимум, чтобы воспользоваться этим эффектом.",
@@ -717,7 +742,7 @@ public class Loader_Books implements Runnable {
 		"¶¶===================¶Руководство по проектированию обогощающего реактора¶===================¶",
 		"Целью обогощающих реакторов является превращение СС в обогащенные ТВЭЛ. Они позволяют получать хорошее ядерное топливо из распространенных видов топлива, таких как Торий и Уран-238.¶Хотя они и похожи на реакторы-горелки, их горасздо сложнее",
 		"построить, так как для них требуется незамедлительная и крит. конструкция реактора. У СС есть показатель, называемый потерей. Он описывает, сколько нейтронов вычитается из любого количества помещенных в него нейтронов.",
-		"Таким образом, когда у вас есть СС с потерей 500 нейтронов и вы пытаетесь испустить на него 300 нейтронов из одного соседнего ТВЭЛ, СС не получает нейтронов, а это означает, что процесс обогащения не будет продвигаться вперед.",
+		"Таким образом, когда у Вас есть СС с потерей 500 нейтронов и Вы пытаетесь испустить на него 300 нейтронов из одного соседнего ТВЭЛ, СС не получает нейтронов, а это означает, что процесс обогащения не будет продвигаться вперед.",
 		"При излучении 300 нейтронов из другого ТВЭЛ на тот же СС, то есть испуская на него 300 нейтронов дважды, на СС по-прежнему не будет нейтронов, поскольку потери применяются к каждому количеству нейтронов.",
 		"Это означает, что требуются высокие нейтронные выходы от одного ТВЭЛ, что делает невозможным использование некритической конструкции реактора для обогащения.",
 		"Испускание 900 нейтронов на один и тот же СС с потерей 500 нейтронов будет означать, что 400 нейтронов окажутся на СС, а это значит, что они будут добавляться к процессу превращения в обогащенный ТВЭЛ каждую секунду.",
@@ -733,13 +758,13 @@ public class Loader_Books implements Runnable {
 		"Вместо этого его можно рассматривать скорее как топливо, поскольку он превращается в расплавленный хлорид лития, а это означает, что, по сути, торий внутри ториевой соли используется в качестве топлива.",
 		"Ториевая соль также очень медленно распадается на расплавленный хлорид лития, только на каждые 2_560_000 нейтронов один литр ториевой соли превращается в расплавленный хлорид лития.",
 		"Основное преимущество использования ториевой соли заключается в том, как она влияет на характеристики любого топливного стержня внутри, значительно повышая их.",
-		"Однако, поскольку из ториевой соли невозможно извлечь энергию, поскольку она не превращается в энергонесущую жидкость, вы не можете просто использовать ториевую соль отдельно в любой конструкции реактора.",
+		"Однако, поскольку из ториевой соли невозможно извлечь энергию, поскольку она не превращается в энергонесущую жидкость, Вы не можете просто использовать ториевую соль отдельно в любой конструкции реактора.",
 		"В конструкции реактора, использующей ториевую соль, вместо нее должен использоваться хотя бы еще один дополнительный теплоноситель.",
 		"АЗР, заполненная ториевой солью, будет содержать ТВЭЛ, а соседние АЗР, заполненные другим теплоносителем, будут улавливать нейтроны, испускаемые из этого реактора, с помощью ПС.",
 		"Поскольку основным преимуществом ториевой соли является то, что она значительно повышает максимальную мощность ТВЭЛ внутри, обычно её имеет смысл применять только в критических реакторах.",
 		"Критические реакторы с ториевой солью являются наиболее эффективными энергогенерирующими реакторами, но также и одними из самых сложных в строительстве.",
 		"¶¶===================¶Усовершенствованные реакторы деления¶===================¶",
-		"В этой главе вы найдете несколько советов и математические формулы для создания самых совершенных и эффективных реакторов.",
+		"В этой главе Вы найдете несколько советов и математические формулы для создания самых совершенных и эффективных реакторов.",
 		"Расчет выброса нейтронов¶===================¶Топливный стержень будет излучать больше нейтронов на своих соседей, если на нем будет больше нейтронов.",
 		"Точное количество нейтронов, которое любой ТВЭЛ испустит на соседа, можно рассчитать следующим образом:",
 		"e_n=e+((n–s)*f)¶¶e_n: Излучаемые на соседа нейтроны¶¶e: 'Выброс' ТВЭЛ¶¶n: Количество нейтронов на ТВЭЛ¶¶s: 'ПН' ТВЭЛ¶¶f: 'Фактор' ТВЭЛ",
@@ -750,7 +775,7 @@ public class Loader_Books implements Runnable {
 		"Секреты и лайфхаки¶===================¶Можно создавать реакторы с использованием нескольких ОЖ. Для крит. реакторов с ЗС, разумнее контролировать один соседний ТВЭЛ, чем сам ЗС, чтобы контролировать количество нейтронов.",
 		"Роботы-манипуляторы позволяют точно автоматизировать работу активных зон реакторов.¶Фильтры можно использовать для упрощения автоматизации реакторов-горелок и обогащения.",
 		"Более высокий показатель 'ПН' плох в крит. реакторах, так как способствует достижению максимума, не влияя на выброс нейтронов.¶Показатель выбросов в большинстве случаев не имеет значения для эффективности в крит. реакторах.",
-		"Установка счетчика Гейгера в шестнадцатеричный режим полезна при попытке контролировать количество нейтронов выше 9_999. В шестнадцатеричном режиме вы можете сравнить до 65_535 нейтронов."
+		"Установка счетчика Гейгера в шестнадцатеричный режим полезна при попытке контролировать количество нейтронов выше 9_999. В шестнадцатеричном режиме Вы можете сравнить до 65_535 нейтронов."
 		});
 
 		//-----

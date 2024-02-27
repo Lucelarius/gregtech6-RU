@@ -383,7 +383,7 @@ task buildInfo {
 			if (procDes.exitValue() == 0) {
 				ext.tag = "DEV-${procDes.text.trim()}"
 			} else {
-				ext.tag = "6.17.01-RU_0.01" // No tags at all?!
+				ext.tag = "6.17.01-RU_1.00" // No tags at all?!
 			}
 		}
 		if (System.getenv().VERSION_FALLBACK != null) {
