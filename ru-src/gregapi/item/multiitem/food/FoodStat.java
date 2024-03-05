@@ -188,7 +188,7 @@ public class FoodStat implements IFoodStat {
 	@Override
 	public void addAdditionalToolTips(Item aItem, List<String> aList, ItemStack aStack, boolean aF3_H) {
 		if ((!useAppleCoreFunctionality(aItem, aStack, null) || !MD.APC.mLoaded) && (mFoodLevel > 0 || mSaturation > 0.0F)) aList.add(LH.Chat.RED + "Еда: " + mFoodLevel + " - Насыщение: " + mSaturation);
-		String tString = (mTemperature >= C+40.0F?"Hot"+(mHydration==0?"":" - "):mTemperature >= C+38.0F?"Warm"+(mHydration==0?"":" - "):mTemperature <= C+34.0F?"Very Cold"+(mHydration==0?"":" - "):mTemperature <= C+36.0F?"Cold"+(mHydration==0?"":" - "):"") + (mHydration>0?"Hydration: " + mHydration:mHydration<0?"Dehydration: " + (-mHydration):"");
+		String tString = (mTemperature >= C+40.0F?"Горячее"+(mHydration==0?"":" - "):mTemperature >= C+38.0F?"Теплое"+(mHydration==0?"":" - "):mTemperature <= C+34.0F?"Очень холодное"+(mHydration==0?"":" - "):mTemperature <= C+36.0F?"Холодное"+(mHydration==0?"":" - "):"") + (mHydration>0?"Гидратация: " + mHydration:mHydration<0?"Обезвоживание: " + (-mHydration):"");
 		if (UT.Code.stringValid(tString) && MD.ENVM.mLoaded) aList.add(LH.Chat.RED + tString);
 		if (mExplosive) aList.add(LH.Chat.DRED + "smells like explosives");
 		if (mIsRotten) aList.add(LH.Chat.DRED + "пахнет тухлятиной");
