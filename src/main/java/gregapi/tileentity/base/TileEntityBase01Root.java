@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -23,6 +23,7 @@ import appeng.api.movable.IMovableTile;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import gregapi.block.multitileentity.IMultiTileEntity;
 import gregapi.block.multitileentity.IMultiTileEntity.IMTE_GetLightValue;
 import gregapi.block.multitileentity.IMultiTileEntity.IMTE_IsProvidingStrongPower;
 import gregapi.code.ArrayListNoNulls;
@@ -34,8 +35,10 @@ import gregapi.gui.Slot_Base;
 import gregapi.network.packets.PacketBlockError;
 import gregapi.network.packets.PacketBlockEvent;
 import gregapi.random.ExplosionGT;
+import gregapi.render.BlockTextureCopied;
 import gregapi.render.IRenderedBlockObject;
 import gregapi.render.IRenderedBlockObject.ErrorRenderer;
+import gregapi.render.ITexture;
 import gregapi.render.RenderHelper;
 import gregapi.tileentity.ITileEntity;
 import gregapi.tileentity.ITileEntityAdjacentInventoryUpdatable;
@@ -254,6 +257,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 	@Override
 	public boolean getSky(int aX, int aY, int aZ) {
 		if (worldObj == null) return T;
+		if (worldObj.provider.hasNoSky) return F;
 		if (mIgnoreUnloadedChunks && crossedChunkBorder(aX, aZ) && !worldObj.blockExists(aX, aY, aZ)) return T;
 		return worldObj.canBlockSeeTheSky(aX, aY, aZ);
 	}
@@ -261,6 +265,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 	@Override
 	public boolean getRain(int aX, int aY, int aZ) {
 		if (worldObj == null) return T;
+		if (worldObj.provider.hasNoSky) return F;
 		if (mIgnoreUnloadedChunks && crossedChunkBorder(aX, aZ) && !worldObj.blockExists(aX, aY, aZ)) return T;
 		return worldObj.getPrecipitationHeight(aX, aZ) <= aY;
 	}
@@ -415,7 +420,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 		if (mExplosionStrength > 0) {
 			setToAir();
 			if (mExplosionStrength < 1) {
-				UT.Sounds.send(worldObj, SFX.MC_EXPLODE, 1, 1, getCoords());
+				UT.Sounds.send(SFX.MC_EXPLODE, this, F);
 			} else {
 				ExplosionGT.explode(worldObj, null, xCoord, yCoord, zCoord, mExplosionStrength, F, T);
 			}
@@ -479,7 +484,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 			setToAir();
 			mExplodeSpamCooldown = 0;
 			if (mExplosionStrength < 1) {
-				UT.Sounds.send(worldObj, SFX.MC_EXPLODE, 1, 1, getCoords());
+				UT.Sounds.send(SFX.MC_EXPLODE, this, F);
 			} else {
 				ExplosionGT.explode(worldObj, null, xCoord, yCoord, zCoord, mExplosionStrength, F, T);
 			}
@@ -498,7 +503,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 			explode(0.1);
 		}
 		// Yes, I will annoy people with that a lot, even when they disable Explosions.
-		UT.Sounds.send(worldObj, TD.Energy.ALL_ELECTRIC.contains(aEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(aEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, 1, 1, getCoords());
+		UT.Sounds.send(TD.Energy.ALL_ELECTRIC.contains(aEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(aEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, this, F);
 		// The Noise should make the position obvious.
 		DEB.println("Machine overcharged with: " + aVoltage + " " + aEnergyType.getLocalisedNameLong());
 	}
@@ -538,8 +543,8 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 	public void updateInventory() {/**/}
 	public void updateAdjacentInventories() {for (byte tSide : ALL_SIDES_VALID) {DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(tSide); if (tDelegator.mTileEntity instanceof ITileEntityAdjacentInventoryUpdatable) ((ITileEntityAdjacentInventoryUpdatable)tDelegator.mTileEntity).adjacentInventoryUpdated(tDelegator.mSideOfTileEntity, (IInventory)this);}}
 	
-	public void playClick() {UT.Sounds.send(worldObj, SFX.MC_CLICK, 1, 1, getCoords());}
-	public void playCollect() {UT.Sounds.send(worldObj, SFX.MC_COLLECT, 0.2F, ((RNGSUS.nextFloat() - RNGSUS.nextFloat()) * 0.7F + 1) * 2, getCoords());}
+	public void playClick() {UT.Sounds.send(SFX.MC_CLICK, this, F);}
+	public void playCollect() {UT.Sounds.send(SFX.MC_COLLECT, 0.2F, this, F);}
 	
 	public void updateLightValue() {
 		if (this instanceof IMTE_GetLightValue) {
@@ -774,7 +779,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 				if (!isFireProof(tSide) && getBlockAtSide(tSide) instanceof BlockFire && rng(10) == 0) {
 					if (FIRE_EXPLOSIONS) explode(TD.Energy.ALL_EXPLODING.contains(tEnergyType) ? 4.0 : 0.1); else if (FIRE_BREAKING) explode(0.1);
 					if (mExplodeSpamCooldown++ == 0) {
-						UT.Sounds.send(worldObj, TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, 1, 1, getCoords());
+						UT.Sounds.send(TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, this, F);
 						DEB.println("Machine came into contact with Fire - Energy Type: " + tEnergyType.getLocalisedNameLong());
 					}
 					return F;
@@ -784,7 +789,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 				if (!isWaterProof(tSide) && WD.liquid(getBlockAtSide(tSide))) {
 					if (WATER_EXPLOSIONS) explode(TD.Energy.ALL_EXPLODING.contains(tEnergyType) ? 4.0 : 0.1); else if (WATER_BREAKING) explode(0.1);
 					if (mExplodeSpamCooldown++ == 0) {
-						UT.Sounds.send(worldObj, TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, 1, 1, getCoords());
+						UT.Sounds.send(TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, this, F);
 						DEB.println("Machine came into contact with Water - Energy Type: " + tEnergyType.getLocalisedNameLong());
 					}
 					return F;
@@ -792,7 +797,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 				if (!isRainProof(tSide) && worldObj.isRaining() && getBiome().rainfall > 0 && rng(100) == 0 && getRainAtSide(tSide)) {
 					if (RAIN_EXPLOSIONS) explode(TD.Energy.ALL_EXPLODING.contains(tEnergyType) ? 4.0 : 0.1); else if (RAIN_BREAKING) explode(0.1);
 					if (mExplodeSpamCooldown++ == 0) {
-						UT.Sounds.send(worldObj, TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, 1, 1, getCoords());
+						UT.Sounds.send(TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, this, F);
 						DEB.println("Machine came into contact with Rain - Energy Type: " + tEnergyType.getLocalisedNameLong());
 					}
 					return F;
@@ -802,7 +807,7 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 				if (!isThunderProof(tSide) && worldObj.isThundering() && rng(1000) == 0 && getRainAtSide(tSide)) {
 					if (THUNDER_EXPLOSIONS) explode(TD.Energy.ALL_EXPLODING.contains(tEnergyType) ? 4.0 : 0.1); else if (THUNDER_BREAKING) explode(0.1);
 					if (mExplodeSpamCooldown++ == 0) {
-						UT.Sounds.send(worldObj, TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, 1, 1, getCoords());
+						UT.Sounds.send(TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE, this, F);
 						DEB.println("Machine came into contact with Thunder - Energy Type: " + tEnergyType.getLocalisedNameLong());
 					}
 					return F;
@@ -846,7 +851,14 @@ public abstract class TileEntityBase01Root extends TileEntity implements ITileEn
 	public int getFlammability   (byte aSide, boolean aDefault) {return aDefault ? 150 : 0;}
 	public void setOnFire() {WD.burn(worldObj, getCoords(), F, F);}
 	public boolean setToFire() {return worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.fire, 0, 3);}
-	public boolean setToAir () {return worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.air , 0, 3);}
+	
+	// Removal and Snow Layer Stuff
+	
+	public static final ITexture SNOW_TEXTURE = BlockTextureCopied.get(Blocks.snow_layer); // very commonly used Texture.
+	public boolean removedByPlayer(World aWorld, EntityPlayer aPlayer, boolean aWillHarvest) {return setToAir();}
+	public boolean hasSnow() {for (int i : SCAN_NEG_1) for (int j : SCAN_NEG_1) if (getBlockOffset(i, 0, j) == Blocks.snow_layer) return T; return F;}
+	public boolean setToSnow() {return getOpacity(xCoord, yCoord-1, zCoord) && hasSnow() && worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.snow_layer, 0, 3);}
+	public boolean setToAir() {if (worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.air, 0, 3)) {if (this instanceof IMultiTileEntity.IMTE_CanPlaceSnowLayerOnRemoval) setToSnow(); return T;} return F;}
 	
 	// Inventory Stuff
 	

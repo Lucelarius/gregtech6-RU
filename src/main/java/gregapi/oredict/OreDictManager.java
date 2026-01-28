@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -301,6 +301,7 @@ public final class OreDictManager {
 	
 	@SubscribeEvent
 	public void onOreRegistration1(OreRegisterEvent aEvent) {
+		if (aEvent.getClass() != OreRegisterEvent.class) return;
 		String aModID = MD.UNKNOWN.mID;
 		ModData aMod = MD.UNKNOWN;
 		ModContainer tContainer = Loader.instance().activeModContainer();
@@ -363,8 +364,9 @@ public final class OreDictManager {
 		
 		mAllRegisteredOres.add(aEvent.Ore);
 		
-		if (!ST.isGT(aEvent.Ore)) {
+		if (!ST.isGT(aEvent.Ore) && aMod != MD.EtFu) {
 			// Another Mod registered something, maybe that makes a Material visible!
+			// Et Futurum Requiem adds Deepslate Ores and Ore Blocks for Compat, those should not count for this. Luckily its native Materials are never hidden.
 			triggerVisibility(aEvent.Name);
 		}
 		
@@ -492,6 +494,11 @@ public final class OreDictManager {
 		return setTarget_(aPrefix, aMaterial, aStack, F, F, F);
 	}
 	
+	public boolean setTarget(OreDictPrefix aPrefix, OreDictMaterial aMaterial, ModData aMod, Object aName, long aMeta, ModData aMod2) {
+		ItemStack aStack = ST.make(aMod, aName.toString(), 1, aMeta);
+		if (aMod.mLoaded && aMod2.mLoaded && aStack == null) ERR.println("Item does not exist for Unification Target despite Mod being loaded: " + aMod.mID + ":" + aName);
+		return setTarget(aPrefix, aMaterial, aStack, T, F, T);
+	}
 	public boolean setTarget(OreDictPrefix aPrefix, OreDictMaterial aMaterial, ModData aMod, Object aName, long aMeta) {
 		ItemStack aStack = ST.make(aMod, aName.toString(), 1, aMeta);
 		if (aMod.mLoaded && aStack == null) ERR.println("Item does not exist for Unification Target despite Mod being loaded: " + aMod.mID + ":" + aName);

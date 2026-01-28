@@ -363,7 +363,8 @@
             "MultiTileEntitySqueezer",
             "MultiTileEntityTank",
             "MultiTileEntityTank3x3x3",
-            "MultiTileEntityTank5x5x5"
+            "MultiTileEntityTank5x5x5",
+            "MultiTileEntityVonDaGraagg"
           ],
           "placeables": [
             "MultiTileEntityCoin"

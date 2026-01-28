@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -22,6 +22,7 @@ package gregtech;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
+import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.network.FMLNetworkEvent.ClientConnectedToServerEvent;
 import gregapi.GT_API;
@@ -128,18 +129,18 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 		//
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onEndermanTeleportEvent(EnderTeleportEvent aEvent) {
 		if (aEvent.entityLiving instanceof EntityEnderman && aEvent.entityLiving.getActivePotionEffect(Potion.weakness) != null) aEvent.setCanceled(T);
 	}
 	
 	private static final EnumSet<EventType> PREVENTED_ORES = EnumSet.of(EventType.COAL, EventType.IRON, EventType.GOLD, EventType.DIAMOND, EventType.REDSTONE, EventType.LAPIS, EventType.QUARTZ);
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onOreGenEvent(GenerateMinable aEvent) {
 		if (mDisableVanillaOres && !WD.dimTF(aEvent.world) && PREVENTED_ORES.contains(aEvent.type)) aEvent.setResult(Result.DENY);
 	}
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onTerrainGenEvent(DecorateBiomeEvent.Decorate aEvent) {
 		if (aEvent.world.provider.dimensionId == 0) {
 			if (MD.RTG.mLoaded) {
@@ -150,7 +151,7 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 			if (GENERATE_BIOMES  && (UT.Code.inside(-96, 95, aEvent.chunkX) && UT.Code.inside(-96, 95, aEvent.chunkZ))) {aEvent.setResult(Result.DENY); return;}
 		}
 	}
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onTerrainGenEvent(PopulateChunkEvent.Populate aEvent) {
 		if (aEvent.world.provider.dimensionId == 0) {
 			if (mDisableVanillaLakes && (aEvent.type == Populate.EventType.LAKE || aEvent.type == Populate.EventType.LAVA)) {aEvent.setResult(Result.DENY); return;}
@@ -162,14 +163,14 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 			if (GENERATE_BIOMES  && (UT.Code.inside(-96, 95, aEvent.chunkX) && UT.Code.inside(-96, 95, aEvent.chunkZ))) {aEvent.setResult(Result.DENY); return;}
 		}
 	}
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onGetVillageBlockIDEvent(BiomeEvent.GetVillageBlockID aEvent) {
 		if (aEvent.original == Blocks.cobblestone) {
 			aEvent.replacement = (aEvent.biome == null ? BlocksGT.Andesite : BlocksGT.stones[(aEvent.biome.biomeID+6) % BlocksGT.stones.length]);
 			aEvent.setResult(Result.DENY);
 		}
 	}
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onGetVillageBlockMetaEvent(BiomeEvent.GetVillageBlockMeta aEvent) {
 		if (aEvent.original == Blocks.cobblestone || aEvent.original instanceof BlockStones) {
 			aEvent.replacement = BlockStones.SBRIK;
@@ -183,14 +184,14 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 	
 	private static final HashSetNoNulls<String> CHECKED_PLAYERS = new HashSetNoNulls<>();
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onPlayerInteraction(PlayerInteractEvent aEvent) {
 		if (aEvent.entityPlayer == null || aEvent.entityPlayer.worldObj == null || aEvent.action == null || aEvent.world.provider == null) return;
 		String aName = aEvent.entityPlayer.getCommandSenderName(), aNameLowercase = aName.toLowerCase();
 		if (!aEvent.world.isRemote && CHECKED_PLAYERS.add(aName)) {
 			if (mSupporterListSilver.contains(aEvent.entityPlayer.getUniqueID().toString()) || mSupporterListGold.contains(aEvent.entityPlayer.getUniqueID().toString()) || mSupporterListSilver.contains(aNameLowercase) || mSupporterListGold.contains(aNameLowercase)) {
 				if (!MultiTileEntityCertificate.ALREADY_RECEIVED.contains(aNameLowercase)) {
-					if (UT.Inventories.addStackToPlayerInventoryOrDrop(aEvent.entityPlayer, MultiTileEntityCertificate.getCertificate(1, aName), F)) {
+					if (ST.give(aEvent.entityPlayer, MultiTileEntityCertificate.getCertificate(1, aName), F)) {
 						MultiTileEntityCertificate.ALREADY_RECEIVED.add(aNameLowercase);
 						UT.Entities.sendchat(aEvent.entityPlayer, CHAT_GREG + "Thank you, " + aName + ", for Supporting GregTech! Here, have a Certificate. ;)");
 					}
@@ -219,7 +220,7 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 								aEvent.entityPlayer.inventory.mainInventory[aEvent.entityPlayer.inventory.currentItem] = ST.make(Items.potionitem, 1, 0);
 							} else {
 								ST.use(aEvent.entityPlayer, aStack);
-								UT.Inventories.addStackToPlayerInventoryOrDrop(aEvent.entityPlayer, ST.make(Items.potionitem, 1, 0), F);
+								ST.give(aEvent.entityPlayer, ST.make(Items.potionitem, 1, 0), F);
 							}
 						}
 						if (!WD.infiniteWater(aEvent.world, tTarget.blockX, tTarget.blockY, tTarget.blockZ)) aEvent.world.setBlockToAir(tTarget.blockX, tTarget.blockY, tTarget.blockZ);
@@ -230,21 +231,21 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 						ItemStack tStack = FL.Water.fill(aStack);
 						if (tStack == null) return;
 						ST.use(aEvent.entityPlayer, aStack);
-						UT.Inventories.addStackToPlayerInventoryOrDrop(aEvent.entityPlayer, tStack, F);
+						ST.give(aEvent.entityPlayer, tStack, F);
 						return;
 					}
 					if (tBlock == BlocksGT.Ocean) {
 						ItemStack tStack = FL.Ocean.fill(aStack);
 						if (tStack == null) return;
 						ST.use(aEvent.entityPlayer, aStack);
-						UT.Inventories.addStackToPlayerInventoryOrDrop(aEvent.entityPlayer, tStack, F);
+						ST.give(aEvent.entityPlayer, tStack, F);
 						return;
 					}
 					if (tBlock == BlocksGT.Swamp) {
 						ItemStack tStack = FL.Dirty_Water.fill(aStack);
 						if (tStack == null) return;
 						ST.use(aEvent.entityPlayer, aStack);
-						UT.Inventories.addStackToPlayerInventoryOrDrop(aEvent.entityPlayer, tStack, F);
+						ST.give(aEvent.entityPlayer, tStack, F);
 						return;
 					}
 					return;
@@ -262,7 +263,7 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 				if (IL.ERE_Spray_Repellant.equal(aStack, T, T)) {
 					if (!aEvent.world.isRemote && aStack.getItem().onItemUse(aStack, aEvent.entityPlayer, aEvent.world, aEvent.x, aEvent.y, aEvent.z, aEvent.face, 0.5F, 0.5F, 0.5F)) {
 						aEvent.setCanceled(T);
-						UT.Inventories.addStackToPlayerInventoryOrDrop(aEvent.entityPlayer, IL.Spray_Empty.get(1), aEvent.world, aEvent.x, aEvent.y, aEvent.z);
+						ST.give(aEvent.entityPlayer, IL.Spray_Empty.get(1), aEvent.world, aEvent.x, aEvent.y, aEvent.z);
 						return;
 					}
 				} else if (aStack.getItem() == Items.flint_and_steel) {
@@ -277,7 +278,7 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 					UT.Entities.sendchat(aEvent.entityPlayer, tChatReturn, F);
 					if (tDamage > 0) {
 						aEvent.setCanceled(T);
-						UT.Sounds.send(aEvent.world, SFX.MC_IGNITE, 1.0F, 1.0F, aEvent.x, aEvent.y, aEvent.z);
+						UT.Sounds.send(SFX.MC_IGNITE, aEvent.world, aEvent.x, aEvent.y, aEvent.z);
 						if (!UT.Entities.hasInfiniteItems(aEvent.entityPlayer)) {
 							aStack.damageItem(UT.Code.bindInt(UT.Code.units(tDamage, 10000, 1, T)), aEvent.entityPlayer);
 							if (aStack.getItemDamage() >= aStack.getMaxDamage()) ST.use(aEvent.entityPlayer, aStack);
@@ -337,7 +338,7 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 					long tDamage = IBlockToolable.Util.onToolClick(TOOL_igniter, Long.MAX_VALUE, 1, aEvent.entityPlayer, tChatReturn, aEvent.entityPlayer.inventory, aEvent.entityPlayer.isSneaking(), NI, aEvent.world, (byte)aEvent.face, aEvent.x, aEvent.y, aEvent.z, 0.5F, 0.5F, 0.5F);
 					UT.Entities.sendchat(aEvent.entityPlayer, tChatReturn, F);
 					if (tDamage > 0) {
-						UT.Sounds.send(aEvent.world, SFX.MC_IGNITE, 1.0F, 1.0F, aEvent.x, aEvent.y, aEvent.z);
+						UT.Sounds.send(SFX.MC_IGNITE, aEvent.world, aEvent.x, aEvent.y, aEvent.z);
 						aEvent.setCanceled(T);
 					}
 				}
@@ -345,7 +346,7 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 		}
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onEntitySpawningEvent(EntityJoinWorldEvent aEvent) {
 		if (aEvent.entity == null) return;
 		
@@ -410,13 +411,13 @@ public abstract class GT_Proxy extends Abstract_Proxy {
 		}
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void onEntityLivingDropsEventEvent(LivingDropsEvent aEvent) {
-		if (aEvent.entity.worldObj.isRemote || aEvent.entity instanceof EntityPlayer || aEvent.entityLiving == null) return;
-		Override_Drops.handleDrops(aEvent.entityLiving, UT.Reflection.getLowercaseClass(aEvent.entityLiving), aEvent.drops, aEvent.lootingLevel, aEvent.entityLiving.isBurning(), aEvent.recentlyHit);
+		if (aEvent.entity.worldObj.isRemote || aEvent.entityLiving == null) return;
+		Override_Drops.handleDrops(aEvent.entityLiving, UT.Reflection.getLowercaseClass(aEvent.entityLiving), aEvent.drops, aEvent.source, aEvent.lootingLevel, aEvent.entityLiving.isBurning(), aEvent.recentlyHit);
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onEntityLivingFallEvent(LivingFallEvent aEvent) {
 		if (!aEvent.entity.worldObj.isRemote && aEvent.entity instanceof EntityPlayer) {
 			if (ST.equal(((EntityPlayer)aEvent.entity).getCurrentEquippedItem(), ToolsGT.sMetaTool, ToolsGT.SCISSORS) || ST.equal(((EntityPlayer)aEvent.entity).getCurrentEquippedItem(), ToolsGT.sMetaTool, ToolsGT.POCKET_SCISSORS)) aEvent.distance *= 2;

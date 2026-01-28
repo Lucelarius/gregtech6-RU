@@ -83,7 +83,7 @@ public class PrefixItem extends Item implements Runnable, IItemUpdatable, IPrefi
 		
 		mPrefix.addTextureSet(aModIDTextures, T);
 		LH.add("oredict." + mPrefix.dat(MT.Empty).toString(), getLocalName(mPrefix, MT.Empty));
-		LH.add(mNameInternal+"."+W, "Любой его саб-предмет"); // Local Name for the WildcardItem Variant.
+		LH.add(mNameInternal+"."+W, "Любой его субпредмет"); // Local Name for the WildcardItem Variant.
 		mPrefix.mRegisteredItems.add(this); // this optimizes some processes by decreasing the size of the Set.
 		
 		if (SHOW_HIDDEN_PREFIXES || !mPrefix.contains(TD.Creative.HIDDEN)) {

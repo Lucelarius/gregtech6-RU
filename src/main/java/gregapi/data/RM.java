@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -100,12 +100,12 @@ public class RM {
 	
 	, Squeezer                  = new RecipeMap                     (null, "gt.recipe.squeezer"                     , "Выжиматель"                 , null, 0, 1, RES_PATH_GUI+"machines/Squeezer"                  ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 0, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Juicer                    = new RecipeMap                     (null, "gt.recipe.juicer"                       , "Соковыжималка"              , null, 0, 1, RES_PATH_GUI+"machines/Juicer"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 3, 1,/*IN-OUT-MIN-FLUID=*/ 0, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
-	, Furnace                   = new RecipeMapFurnace              (null, "mc.recipe.furnace"                      , "Печь"                       , "smelting", 0, 1, RES_PATH_GUI+"machines/Oven"                ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 0, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, F, T, F, F, F)
-	, Microwave                 = new RecipeMapMicrowave            (null, "gt.recipe.microwave"                    , "Микроволновка"              , "smelting", 0, 1, RES_PATH_GUI+"machines/Oven"                ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 0, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, F, T, F, F, F)
+	, Furnace                   = new RecipeMapFurnace              (null, "mc.recipe.furnace"                      , "Печь"                       , "smelting", 0, 1, RES_PATH_GUI+"machines/Oven"                ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 1, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, F, T, F, F, F)
+	, Microwave                 = new RecipeMapMicrowave            (null, "gt.recipe.microwave"                    , "Микроволновка"              , "smelting", 0, 1, RES_PATH_GUI+"machines/Oven"                ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 1, 1, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, F, T, F, F, F)
 	, Cooking                   = new RecipeMap                     (null, "gt.recipe.cooker"                       , "Плита"                      , null, 0, 1, RES_PATH_GUI+"machines/Cooker"                    ,/*IN-OUT-MIN-ITEM=*/ 9, 1, 1,/*IN-OUT-MIN-FLUID=*/ 3, 1, 1,/*MIN*/ 2,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, BumbleQueens              = new RecipeMap                     (null, "gt.recipe.bumblequeen"                  , "Шмелиная королева"          , null, 0, 1, RES_PATH_GUI+"machines/Default"                   ,/*IN-OUT-MIN-ITEM=*/ 2, 6, 0,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , F, T, F, T, F, T, T)
 	, Bumblelyzer               = new RecipeMapBumblelyzer          (null, "gt.recipe.bumblelyzer"                  , "Анализатор шмелей"          , null, 0, 1, RES_PATH_GUI+"machines/Bumblelyzer"               ,/*IN-OUT-MIN-ITEM=*/ 2, 2, 0,/*IN-OUT-MIN-FLUID=*/ 1, 0, 0,/*MIN*/ 2,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
-	, Trees                     = new RecipeMap                     (null, "gt.recipe.trees"                        , "Гениалогическое древо"      , null, 0, 1, RES_PATH_GUI+"machines/FamilyTree"                ,/*IN-OUT-MIN-ITEM=*/ 2,12, 0,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , F, T, F, F, F, T, T)
+	, Trees                     = new RecipeMap                     (null, "gt.recipe.trees"                        , "Гениалогическое древо"      , null, 0, 1, RES_PATH_GUI+"machines/FamilyTree"                ,/*IN-OUT-MIN-ITEM=*/ 3,12, 0,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , F, T, F, F, F, T, T)
 	, Plantalyzer               = new RecipeMapPlantalyzer          (null, "gt.recipe.plantalyzer"                  , "Анализатор растений"        , null, 0, 1, RES_PATH_GUI+"machines/Plantalyzer"               ,/*IN-OUT-MIN-ITEM=*/ 2, 2, 0,/*IN-OUT-MIN-FLUID=*/ 1, 0, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	
 	, Wiremill                  = new RecipeMap                     (null, "gt.recipe.wiremill"                     , "Проволочный станок"         , null, 0, 1, RES_PATH_GUI+"machines/Wiremill"                  ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
@@ -128,6 +128,7 @@ public class RM {
 	, CrucibleAlloying          = new RecipeMap                     (null, "gt.recipe.cruciblealloying"             , "Комб. плавка"               , null, 0, 1, RES_PATH_GUI+"machines/Alloying"                  ,/*IN-OUT-MIN-ITEM=*/12,12, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, "Temperature: "       ,    1, " K"    , T, T, F, T, F, T, T)
 	, CrucibleSmelting          = new RecipeMapCrucible             (null, "gt.recipe.cruciblesmelting"             , "Тигельная выплавка"         , null, 0, 1, RES_PATH_GUI+"machines/Default"                   ,/*IN-OUT-MIN-ITEM=*/ 6, 6, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, "Temperature: "       ,    1, " K"    , T, T, F, T, F, T, T)
 	, Cutter                    = new RecipeMap                     (null, "gt.recipe.cutter"                       , "Резак"                      , null, 0, 1, RES_PATH_GUI+"machines/Cutter"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 3, 1,/*IN-OUT-MIN-FLUID=*/ 1, 0, 1,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
+	, Melter                    = new RecipeMap                     (null, "gt.recipe.melter"                       , "Плавка"                     , null, 0, 1, RES_PATH_GUI+"machines/Melter"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 0,/*IN-OUT-MIN-FLUID=*/ 1, 1, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Smelter                   = new RecipeMap                     (null, "gt.recipe.smelter"                      , "Плавильня"                  , null, 0, 1, RES_PATH_GUI+"machines/Smelter"                   ,/*IN-OUT-MIN-ITEM=*/ 1, 1, 0,/*IN-OUT-MIN-FLUID=*/ 1, 1, 0,/*MIN*/ 1,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Mortar                    = new RecipeMap                     (null, "gt.recipe.mortar"                       , "Ступка"                     , null, 0, 1, RES_PATH_GUI+"machines/Mortar"                    ,/*IN-OUT-MIN-ITEM=*/ 1, 2, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
 	, Shredder                  = new RecipeMapShredder             (null, "gt.recipe.shredder"                     , "Измельчитель"               , null, 0, 1, RES_PATH_GUI+"machines/Shredder"                  ,/*IN-OUT-MIN-ITEM=*/ 1,12, 1,/*IN-OUT-MIN-FLUID=*/ 0, 0, 0,/*MIN*/ 0,/*AMP=*/ 1, ""                    ,    1, ""      , T, T, T, T, F, T, T)
@@ -684,22 +685,22 @@ public class RM {
 		int tSize = aBiomass.stackSize;
 		if (tSize <= 0) return F;
 		aBiomass = ST.amount(1, aBiomass);
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.Rotten_Drink.make(              1080 / tSize), FL.BiomassIC2.make(3240    / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.Soup_Mushroom.make(             1080 / tSize), FL.BiomassIC2.make(3240    / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.Rotten_Drink.make(              1080 / tSize), FL.BiomassIC2.make(3240   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.Soup_Mushroom.make(             1080 / tSize), FL.BiomassIC2.make(3240   / tSize, FL.Biomass), ZL_IS);
 		for (String tFluid : FluidsGT.WATER) if (FL.exists(tFluid))
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 4) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(1080    / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 4) / tSize, aBiomass, FL.MnWtr.make(              1080 / tSize), FL.BiomassIC2.make(1080    / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 4) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(1080   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 4) / tSize, aBiomass, FL.MnWtr.make(                     1080 / tSize), FL.BiomassIC2.make(1080   / tSize, FL.Biomass), ZL_IS);
 		for (String tFluid : FluidsGT.MILK ) if (FL.exists(tFluid))
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 3) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(2160    / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 3) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(2160   / tSize, FL.Biomass), ZL_IS);
 		for (String tFluid : FluidsGT.JUICE) if (FL.exists(tFluid) && !"potion.idunsapplejuice".equals(tFluid) && !"potion.goldenapplejuice".equals(tFluid) && !"goldencarrotjuice".equals(tFluid))
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 3) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(3240    / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16,  aSpeed      / tSize, aBiomass, FL.make("potion.idunsapplejuice" , 1080 / tSize), FL.BiomassIC2.make(2099520 / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16,  aSpeed      / tSize, aBiomass, FL.make("potion.goldenapplejuice", 1080 / tSize), FL.BiomassIC2.make(233280  / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16,  aSpeed      / tSize, aBiomass, FL.make("goldencarrotjuice"      , 1080 / tSize), FL.BiomassIC2.make(25920   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 3) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(3240   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16,  aSpeed      / tSize, aBiomass, FL.make("potion.idunsapplejuice" , 1080 / tSize), FL.BiomassIC2.make(210600 / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16,  aSpeed      / tSize, aBiomass, FL.make("potion.goldenapplejuice", 1080 / tSize), FL.BiomassIC2.make(29160  / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16,  aSpeed      / tSize, aBiomass, FL.make("goldencarrotjuice"      , 1080 / tSize), FL.BiomassIC2.make(6480   / tSize, FL.Biomass), ZL_IS);
 		for (String tFluid : FluidsGT.HONEY) if (FL.exists(tFluid))
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 3) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(3240    / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.Honeydew.make(                  1080 / tSize), FL.BiomassIC2.make(3240    / tSize, FL.Biomass), ZL_IS);
-		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.RoyalJelly.make(                1080 / tSize), FL.BiomassIC2.make(32400   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 3) / tSize, aBiomass, FL.make(tFluid                   , 1080 / tSize), FL.BiomassIC2.make(3240   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.Honeydew.make(                  1080 / tSize), FL.BiomassIC2.make(3240   / tSize, FL.Biomass), ZL_IS);
+		RM.Fermenter.addRecipe1(F, 16, (aSpeed * 2) / tSize, aBiomass, FL.RoyalJelly.make(                1080 / tSize), FL.BiomassIC2.make(12560  / tSize, FL.Biomass), ZL_IS);
 		return T;
 	}
 	

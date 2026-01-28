@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -200,7 +200,7 @@ public class PrefixBlock extends Block implements Runnable, ITileEntityProvider,
 		mHarvestLevelMaximum = Math.max(aHarvestLevelMinimum, aHarvestLevelMaximum);
 		mPrefix.addTextureSet(aModIDTextures, F);
 		LH.add("oredict." + mPrefix.dat(MT.Empty).toString(), getLocalName(mPrefix, MT.Empty));
-		LH.add(mNameInternal+"."+W, "Любой его саб-блок"); // Local Name for the WildcardItem Variant.
+		LH.add(mNameInternal+"."+W, "Любой его субблок"); // Local Name for the WildcardItem Variant.
 		
 		opaque = mOpaque;
 		lightOpacity = mOpaque ? 255 : 0;
@@ -568,7 +568,7 @@ public class PrefixBlock extends Block implements Runnable, ITileEntityProvider,
 	@Override
 	public void harvestBlock(World aWorld, EntityPlayer aPlayer, int aX, int aY, int aZ, int aMeta) {
 		aPlayer.addStat(StatList.mineBlockStatArray[getIdFromBlock(this)], 1);
-		aPlayer.addExhaustion(0.025F);
+		UT.Entities.exhaust(aPlayer, 0.025F);
 		boolean aSilkTouch = EnchantmentHelper.getSilkTouchModifier(aPlayer);
 		int aFortune = EnchantmentHelper.getFortuneModifier(aPlayer);
 		ArrayList<ItemStack> tList = mDrops.getDrops(this, aWorld, aX, aY, aZ, aFortune, aSilkTouch);

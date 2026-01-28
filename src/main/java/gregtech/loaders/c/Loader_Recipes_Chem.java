@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -317,12 +317,12 @@ public class Loader_Recipes_Chem implements Runnable {
 		RM.Electrolyzer .addRecipe1(T, 16, 3840, ST.tag(0), FL.array(FL.Cold_Water      .make( 3000)), FL.array(MT.H.gas(U*2, F), MT.O.gas(U, F)));
 		RM.Electrolyzer .addRecipe1(T, 16, 3840, ST.tag(0), FL.array(MT.D2O          .liquid(U*3, T)), FL.array(MT.D.gas(U*2, F), MT.O.gas(U, F)));
 		RM.Electrolyzer .addRecipe1(T, 16, 3840, ST.tag(0), FL.array(MT.T2O          .liquid(U*3, T)), FL.array(MT.T.gas(U*2, F), MT.O.gas(U, F))); if (FL.Tropics_Water.exists())
-		RM.Electrolyzer .addRecipe1(T, 16,20480, ST.tag(0), FL.array(FL.Tropics_Water   .make(16000)), FL.array(MT.Cl.gas(U4, F), MT.H.gas(83*U8, F), MT.O.gas(41*U8, F)), OM.dust(MT.NaOH, 3*U8)); if (FL.OceanGrC.exists())
-		RM.Electrolyzer .addRecipe1(T, 16,20480, ST.tag(0), FL.array(FL.OceanGrC        .make(16000)), FL.array(MT.Cl.gas(U4, F), MT.H.gas(83*U8, F), MT.O.gas(41*U8, F)), OM.dust(MT.NaOH, 3*U8));
-		RM.Electrolyzer .addRecipe1(T, 16,20480, ST.tag(0), FL.array(FL.Ocean           .make(16000)), FL.array(MT.Cl.gas(U4, F), MT.H.gas(83*U8, F), MT.O.gas(41*U8, F)), OM.dust(MT.NaOH, 3*U8)); if (FL.Brine.exists())
-		RM.Electrolyzer .addRecipe1(T, 16, 1280, ST.tag(0), FL.array(FL.Brine           .make( 1000)), FL.array(MT.Cl.gas(U8, F), MT.H.gas( 3*U8, F), MT.O.gas(   U8, F)), OM.dust(MT.NaOH, 3*U8));
-		RM.Electrolyzer .addRecipe1(T, 16, 1280, ST.tag(0), FL.array(MT.SaltWater    .liquid(U  , T)), FL.array(MT.Cl.gas(U8, F), MT.H.gas( 3*U8, F), MT.O.gas(   U8, F)), OM.dust(MT.NaOH, 3*U8));
-		RM.Electrolyzer .addRecipe1(T, 16, 1280, ST.tag(0), FL.array(MT.SaltedWater  .liquid(U  , T)), FL.array(MT.Cl.gas(U8, F), MT.H.gas( 3*U8, F), MT.O.gas(   U8, F)), OM.dust(MT.KOH , 3*U8));
+		RM.Electrolyzer .addRecipe1(T, 16, 8960, ST.tag(0), FL.array(FL.Tropics_Water   .make( 7000)), FL.array(MT.Cl.gas( 1*U8, F), MT.H.gas(35*U8, F), MT.O.gas(17*U8, F)), OM.dust(MT.NaOH, 3*U8)); if (FL.OceanGrC.exists())
+		RM.Electrolyzer .addRecipe1(T, 16, 8960, ST.tag(0), FL.array(FL.OceanGrC        .make( 7000)), FL.array(MT.Cl.gas( 1*U8, F), MT.H.gas(35*U8, F), MT.O.gas(17*U8, F)), OM.dust(MT.NaOH, 3*U8));
+		RM.Electrolyzer .addRecipe1(T, 16, 8960, ST.tag(0), FL.array(FL.Ocean           .make( 7000)), FL.array(MT.Cl.gas( 1*U8, F), MT.H.gas(35*U8, F), MT.O.gas(17*U8, F)), OM.dust(MT.NaOH, 3*U8)); if (FL.Brine.exists())
+		RM.Electrolyzer .addRecipe1(T, 16, 1280, ST.tag(0), FL.array(FL.Brine           .make( 1000)), FL.array(MT.Cl.gas( 1*U8, F), MT.H.gas( 3*U8, F), MT.O.gas( 1*U8, F)), OM.dust(MT.NaOH, 3*U8));
+		RM.Electrolyzer .addRecipe1(T, 16, 1280, ST.tag(0), FL.array(MT.SaltWater    .liquid(U  , T)), FL.array(MT.Cl.gas( 1*U8, F), MT.H.gas( 3*U8, F), MT.O.gas( 1*U8, F)), OM.dust(MT.NaOH, 3*U8));
+		RM.Electrolyzer .addRecipe1(T, 16, 1280, ST.tag(0), FL.array(MT.SaltedWater  .liquid(U  , T)), FL.array(MT.Cl.gas( 1*U8, F), MT.H.gas( 3*U8, F), MT.O.gas( 1*U8, F)), OM.dust(MT.KOH , 3*U8));
 		
 		
 		
@@ -471,6 +471,21 @@ public class Loader_Recipes_Chem implements Runnable {
 		RM.Centrifuge   .addRecipe0(T, 64,   64, FL.array(MT.D2O             .liquid(U, T)), FL.array(MT.T2O.liquid(U10, F)), ZL_IS);
 		
 		
+		RM.Melter       .addRecipe1(T, 16,  111 * 2, OM.dust(MT.Ice, U9)             , NF, FL.Water.make( 111), NI);
+		RM.Melter       .addRecipe1(T, 16,  250 * 2, OM.dust(MT.Ice, U4)             , NF, FL.Water.make( 250), NI);
+		RM.Melter       .addRecipe1(T, 16, 1000 * 2, OM.dust(MT.Ice)                 , NF, FL.Water.make(1000), NI);
+		RM.Melter       .addRecipe1(T, 16,  250 * 2, gemChipped.mat(MT.Ice    , 1   ), NF, FL.Water.make( 250), NI);
+		RM.Melter       .addRecipe1(T, 16,  500 * 2, gemFlawed.mat(MT.Ice     , 1   ), NF, FL.Water.make( 500), NI);
+		RM.Melter       .addRecipe1(T, 16, 1000 * 2, gem.mat(MT.Ice           , 1   ), NF, FL.Water.make(1000), NI);
+		RM.Melter       .addRecipe1(T, 16, 1000 * 2, ST.make(Blocks.ice       , 1, W), NF, FL.Water.make(1000), NI);
+		RM.Melter       .addRecipe1(T, 16, 2000 * 2, ST.make(Blocks.packed_ice, 1, W), NF, FL.Water.make(2000), NI);
+		RM.Melter       .addRecipe1(T, 16,  111 * 2, OM.dust(MT.Snow, U9)            , NF, FL.Water.make( 111), NI);
+		RM.Melter       .addRecipe1(T, 16,  250 * 2, OM.dust(MT.Snow, U4)            , NF, FL.Water.make( 250), NI);
+		RM.Melter       .addRecipe1(T, 16, 1000 * 2, OM.dust(MT.Snow)                , NF, FL.Water.make(1000), NI);
+		RM.Melter       .addRecipe1(T, 16,  250 * 2, ST.make(Items.snowball   , 1, W), NF, FL.Water.make( 250), NI);
+		RM.Melter       .addRecipe1(T, 16, 1000 * 2, ST.make(Blocks.snow      , 1, W), NF, FL.Water.make(1000), NI);
+		
+		
 		RM.Smelter      .addRecipe1(T, 16,  111 * 2, OM.dust(MT.Ice, U9)             , NF, FL.Water.make( 111), NI);
 		RM.Smelter      .addRecipe1(T, 16,  250 * 2, OM.dust(MT.Ice, U4)             , NF, FL.Water.make( 250), NI);
 		RM.Smelter      .addRecipe1(T, 16, 1000 * 2, OM.dust(MT.Ice)                 , NF, FL.Water.make(1000), NI);
@@ -521,12 +536,12 @@ public class Loader_Recipes_Chem implements Runnable {
 		
 		
 		if (FL.Tropics_Water.exists())
-		RM.Drying       .addRecipe0(T, 16,12800, FL.Tropics_Water.make(8000)    , FL.DistW.make(7750), OM.dust(MT.NaCl, U4));
+		RM.Drying       .addRecipe0(T, 16,11200, FL.Tropics_Water.make(7000)    , FL.DistW.make(6750), OM.dust(MT.NaCl, U4));
 		if (FL.OceanGrC.exists())
-		RM.Drying       .addRecipe0(T, 16,12800, FL.OceanGrC.make(8000)         , FL.DistW.make(7750), OM.dust(MT.NaCl, U4));
-		RM.Drying       .addRecipe0(T, 16,12800, FL.Ocean.make(8000)            , FL.DistW.make(7750), OM.dust(MT.NaCl, U4));
+		RM.Drying       .addRecipe0(T, 16,11200, FL.OceanGrC.make(7000)         , FL.DistW.make(6750), OM.dust(MT.NaCl, U4));
+		RM.Drying       .addRecipe0(T, 16,11200, FL.Ocean.make(7000)            , FL.DistW.make(6750), OM.dust(MT.NaCl, U4));
 		if (FL.Brine.exists())
-		RM.Drying       .addRecipe0(T, 16, 1600, FL.Brine.make(8000)            , FL.DistW.make( 750), OM.dust(MT.NaCl, U4));
+		RM.Drying       .addRecipe0(T, 16, 1600, FL.Brine.make(1000)            , FL.DistW.make( 750), OM.dust(MT.NaCl, U4));
 		RM.Drying       .addRecipe0(T, 16, 1600, MT.SaltWater.liquid(U, T)      , FL.DistW.make( 750), OM.dust(MT.NaCl, U4));
 		RM.Drying       .addRecipe0(T, 16, 1600, MT.SaltedWater.liquid(U, T)    , FL.DistW.make( 750), OM.dust(MT.KCl , U4));
 		RM.Drying       .addRecipe0(T, 16,16000, FL.Dirty_Water.make(8000)      , FL.DistW.make(7000), ST.make(Blocks.dirt, 1, 0));

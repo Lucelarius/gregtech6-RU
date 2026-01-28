@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -25,7 +25,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import gregapi.GT_API;
 import gregapi.api.Abstract_Mod;
 import gregapi.config.ConfigCategories;
-import gregapi.data.*;
+import gregapi.data.FL;
+import gregapi.data.LH;
+import gregapi.data.MD;
+import gregapi.data.OP;
 import gregapi.fluid.FluidGT;
 import gregapi.oredict.OreDictMaterial;
 import gregapi.oredict.OreDictMaterialStack;
@@ -89,7 +92,7 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 			String aName = aFluid.getName();
 			
 			if (SHOW_INTERNAL_NAMES || aF3_H) aList.add("Реестр: " + aName);
-			if (FluidsGT.FLUID_RENAMINGS.containsKey(aName) || FluidsGT.NONSTANDARD.contains(aName)) aList.add(LH.Chat.BLINKING_RED + "НЕСТАНДАРТНАЯ ЖИДКОСТЬ!");
+			if (FL.exists(FluidsGT.FLUID_RENAMINGS.get(aName)) || FluidsGT.NONSTANDARD.contains(aName)) aList.add(LH.Chat.BLINKING_RED + "НЕСТАНДАРТНАЯ ЖИДКОСТЬ!");
 			
 			long tAmount = 0, tTemperature = DEF_ENV_TEMP;
 			FluidStack tFluid = NF;
@@ -147,13 +150,16 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 			
 			int tViscosity = aFluid.getViscosity(tFluid);
 			if (tViscosity != 0) aList.add(LH.Chat.BLUE + "Вязкость: " + tViscosity);
-			
-			if (FL.powerconducting(aFluid)) {
-				aList.add(LH.Chat.DGREEN + "Это электропроводящая жидкость");
-				aList.add(LH.Chat.ORANGE + "Не может храниться в обычных резервуарах GT6!");
+
+			if (FluidsGT.COOKING_OIL.contains(aName)) {
+				aList.add(LH.Chat.DGREEN + "Можно использовать в качестве масла для жарки в духовке GT для имитации мяса и рыбы.");
 			}
 			if (FL.simple(aFluid)) {
 				aList.add(LH.Chat.DGREEN + "Это простая жидкость, с которой легко обращаться.");
+			}
+			if (FL.powerconducting(aFluid)) {
+				aList.add(LH.Chat.DGREEN + "Это электропроводящая жидкость");
+				aList.add(LH.Chat.ORANGE + "Не может храниться в обычных резервуарах GT6!");
 			}
 			if (FL.acid(aFluid)) {
 				aList.add(LH.Chat.ORANGE + "Кислота! Обращаться осторожно!");
@@ -165,52 +171,17 @@ public class ItemFluidDisplay extends Item implements IFluidContainerItem, IItem
 				aList.add(LH.Chat.ORANGE + "ТОЛЬКО для промышленного использования!");
 				aList.add(LH.Chat.RED + "Не огнеопасно!");
 			} else {
-				Collection<Recipe>
-				tRecipes = FM.Burn.mRecipeFluidMap.get(aName);
-				if (tRecipes != null && !tRecipes.isEmpty()) {
-					long tFuelValue = 0;
-					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
-					if (tFuelValue > 0) {
-						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Сжигание: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
-						} else {
-							aList.add(LH.Chat.RED + "Сжигание: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
-						}
-					}
-				}
-				tRecipes = FM.Engine.mRecipeFluidMap.get(aName);
-				if (tRecipes != null && !tRecipes.isEmpty()) {
-					long tFuelValue = 0;
-					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
-					if (tFuelValue > 0) {
-						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Двигатель: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
-						} else {
-							aList.add(LH.Chat.RED + "Двигатель: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
-						}
-					}
-				}
-				tRecipes = FM.Gas.mRecipeFluidMap.get(aName);
-				if (tRecipes != null && !tRecipes.isEmpty()) {
-					long tFuelValue = 0;
-					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
-					if (tFuelValue > 0) {
-						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Турбина: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
-						} else {
-							aList.add(LH.Chat.RED + "Турбина: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
-						}
-					}
-				}
-				tRecipes = FM.Hot.mRecipeFluidMap.get(aName);
-				if (tRecipes != null && !tRecipes.isEmpty()) {
-					long tFuelValue = 0;
-					for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
-					if (tFuelValue > 0) {
-						if (tAmount > 1) {
-							aList.add(LH.Chat.RED + "Теплообменник: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU всего");
-						} else {
-							aList.add(LH.Chat.RED + "Теплообменник: " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
+				for (Recipe.RecipeMap tMap : Recipe.RecipeMap.FUEL_MAP_LIST) {
+					Collection<Recipe> tRecipes = tMap.mRecipeFluidMap.get(aName);
+					if (tRecipes != null && !tRecipes.isEmpty()) {
+						long tFuelValue = 0;
+						for (Recipe tRecipe : tRecipes) if (tRecipe.mEnabled && tRecipe.mFluidInputs[0] != null) tFuelValue = Math.max(tFuelValue, (tRecipe.getAbsoluteTotalPower() * U) / tRecipe.mFluidInputs[0].amount);
+						if (tFuelValue > 0) {
+							if (tAmount > 1) {
+								aList.add(LH.Chat.RED + LH.get(tMap.mNameInternal) + ": " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L; " + LH.Chat.WHITE + UT.Code.makeString((tFuelValue * tAmount) / U) + LH.Chat.YELLOW + " GU total");
+							} else {
+								aList.add(LH.Chat.RED + LH.get(tMap.mNameInternal) + ": " + LH.Chat.WHITE + UT.Code.makeString(tFuelValue / U) + LH.Chat.YELLOW + " GU/L ");
+							}
 						}
 					}
 				}

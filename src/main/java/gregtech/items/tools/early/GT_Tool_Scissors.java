@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -89,13 +89,21 @@ public class GT_Tool_Scissors extends ToolStats {
 			aDrops.clear();
 			aDrops.add(ST.make(Blocks.vine, 1, 0));
 		}
+		if (IL.EBXL_Vines.equal(aBlock)) {
+			aDrops.clear();
+			aDrops.add(IL.EBXL_Vines.get(1));
+		}
+		if (IL.BoP_Vines.equal(aBlock)) {
+			aDrops.clear();
+			aDrops.add(IL.BoP_Vines.get(1));
+		}
 		return 0;
 	}
 	
 	@Override
 	public boolean isMinableBlock(Block aBlock, byte aMetaData) {
 		String tTool = aBlock.getHarvestTool(aMetaData);
-		return (tTool != null && (tTool.equalsIgnoreCase(TOOL_scissors) || tTool.equalsIgnoreCase(TOOL_shears))) || aBlock.getMaterial() == Material.cloth || aBlock.getMaterial() == Material.web || aBlock == Blocks.vine || IL.TF_Mazehedge.equal(aBlock);
+		return (tTool != null && (tTool.equalsIgnoreCase(TOOL_scissors) || tTool.equalsIgnoreCase(TOOL_shears))) || aBlock.getMaterial() == Material.cloth || aBlock.getMaterial() == Material.web || aBlock == Blocks.vine || IL.TF_Mazehedge.equal(aBlock) || IL.EBXL_Vines.equal(aBlock) || IL.BoP_Vines.equal(aBlock);
 	}
 	
 	@Override
@@ -110,7 +118,7 @@ public class GT_Tool_Scissors extends ToolStats {
 	
 	@Override
 	public void onStatsAddedToTool(MultiItemTool aItem, int aID) {
-		aItem.addItemBehavior(aID, new Behavior_Tool(TOOL_knife, SFX.MC_DIG_CLOTH, getToolDamagePerContainerCraft(), !canBlock(), T));
+		aItem.addItemBehavior(aID, new Behavior_Tool(TOOL_knife, SFX.MC_DIG_CLOTH, getToolDamagePerContainerCraft(), !canBlock(), SFX.RANDOM_PITCH));
 		aItem.addItemBehavior(aID, new Behavior_Shears(20));
 		aItem.addItemBehavior(aID, new Behavior_TripwireCutting(100));
 	}

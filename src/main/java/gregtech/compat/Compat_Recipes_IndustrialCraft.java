@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -478,7 +478,8 @@ public class Compat_Recipes_IndustrialCraft extends CompatMods {
 		if (IL.HBM_Poison_Powder.exists())
 		RM.Canner           .addRecipe2(T, 16,   16, IL.HBM_Poison_Powder.get(1)                        , IL.Spray_Empty.get(1)                 , IL.IC2_Spray_WeedEx.get(1));
 		RM.Canner           .addRecipe2(T, 16,   16, IL.IC2_Grin_Powder.get(1)                          , IL.Spray_Empty.get(1)                 , IL.IC2_Spray_WeedEx.get(1));
-		RM.Canner           .addRecipe1(T, 16,   16, IL.Spray_Empty.get(1)                              , FL.Potion_Poison_2.make(250)      , NF, IL.IC2_Spray_WeedEx.get(1));
+		RM.Canner           .addRecipe1(T, 16,   16, IL.Spray_Empty.get(1)                              , FL.Potion_Poison_2.make(250)      , NF, IL.IC2_Spray_WeedEx.get(1)); if (FL.Poison.exists())
+		RM.Canner           .addRecipe1(T, 16,   16, IL.Spray_Empty.get(1)                              , FL.Poison.make(250)               , NF, IL.IC2_Spray_WeedEx.get(1));
 		
 		RM.Loom             .addRecipe2(T, 64,  128, ST.tag(0)                                          , OP.wireFine.mat(MT.Graphene, 32)      , IL.IC2_Carbon_Fiber.get(1));
 		RM.Loom             .addRecipe2(T, 64,  128, ST.tag(0)                                          , IL.IC2_Carbon_Fiber.get(2)            , IL.IC2_Carbon_Mesh.get(1));
@@ -500,13 +501,14 @@ public class Compat_Recipes_IndustrialCraft extends CompatMods {
 		for (FluidStack tWater : FL.waters(250))
 		RM.Mixer            .addRecipe1(T, 16,   16, IL.IC2_Grin_Powder.get(1), tWater, FL.Potion_Poison_2.make(250), ZL_IS);
 		
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.SoylentGreen   ), IL.IC2_Fertilizer.get(2));
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.MeatRaw        ), IL.IC2_Fertilizer.get(2));
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.FishRaw        ), IL.IC2_Fertilizer.get(2));
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.MeatCooked     ), IL.IC2_Fertilizer.get(2));
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.FishCooked     ), IL.IC2_Fertilizer.get(2));
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.MeatRotten     ), IL.IC2_Fertilizer.get(2));
-		RM.Mixer            .addRecipe2(T, 16,   32, IL.IC2_Scrap.get(1           ), OM.dust(MT.FishRotten     ), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.SoylentGreen)), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.MeatRaw     )), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.FishRaw     )), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.MeatCooked  )), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.FishCooked  )), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.MeatRotten  )), IL.IC2_Fertilizer.get(2));
+		RM.Mixer            .addRecipeX(T, 16,   32, ST.array(ST.tag(2), IL.IC2_Scrap.get(1), OM.dust(MT.FishRotten  )), IL.IC2_Fertilizer.get(2));
+		
 		RM.Mixer            .addRecipe2(T, 16,   32, OM.dust(MT.CaCO3             ), OM.dust(MT.S              ), IL.IC2_Fertilizer.get(2));
 		RM.Mixer            .addRecipe2(T, 16,   48, OM.dust(MT.CaCO3             ), OM.dust(MT.Phosphorus     ), IL.IC2_Fertilizer.get(3));
 		RM.Mixer            .addRecipe2(T, 16,   48, OM.dust(MT.CaCO3             ), OM.dust(MT.PhosphorusBlue ), IL.IC2_Fertilizer.get(3));

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -30,6 +30,7 @@ import gregapi.tileentity.behavior.TE_Behavior_Energy_Converter;
 import gregapi.tileentity.behavior.TE_Behavior_Energy_Stats;
 import gregapi.tileentity.machines.ITileEntityRunningActively;
 import gregapi.util.UT;
+import gregapi.util.WD;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -106,6 +107,8 @@ public abstract class TileEntityBase10EnergyConverter extends TileEntityBase09Fa
 		if (aIsServerSide) {
 			doConversion(aTimer);
 			if (mTimer % 600 == 5) if (mActivity.mActive) doDefaultStructuralChecks(); else if (mExplosionPrevention > 0) mExplosionPrevention--;
+		} else {
+			if (mActivity.mState != 0 && (mEnergyIN.mType == TD.Energy.RU || mEnergyOUT.mType == TD.Energy.RU) && WD.random(this, 20, CLIENT_TIME)) UT.Sounds.play(SFX.MC_MINECART, 1, 0.2F, getCoords());
 		}
 	}
 	

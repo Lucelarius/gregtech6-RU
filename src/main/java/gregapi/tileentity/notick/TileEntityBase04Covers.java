@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -175,7 +175,7 @@ public abstract class TileEntityBase04Covers extends TileEntityBase03MultiTileEn
 				ItemStack tStack = getCoverItem(tSide);
 				ICover tCover = mCovers.mBehaviours[tSide];
 				if (tStack != null && setCoverItem(tSide, null, aPlayer, F, T)) {
-					if (!(aPlayer instanceof EntityPlayer) || !UT.Inventories.addStackToPlayerInventory((EntityPlayer)aPlayer, tStack, F)) ST.place(worldObj, getOffsetX(aSide)+0.5, getOffsetY(aSide)+0.5, getOffsetZ(aSide)+0.5, tStack);
+					if (!ST.add(aPlayer, tStack, F)) ST.place(worldObj, getOffsetX(aSide)+0.5, getOffsetY(aSide)+0.5, getOffsetZ(aSide)+0.5, tStack);
 					if (tCover != null) tCover.onAfterCrowbar(this);
 					checkCoverValidity();
 					if (mCovers != null && mCovers.requiresSync()) {
@@ -220,7 +220,7 @@ public abstract class TileEntityBase04Covers extends TileEntityBase03MultiTileEn
 			ItemStack tStack = getCoverItem(tSide);
 			if (tStack != null && setCoverItem(tSide, null, null, T, T)) {
 				ST.place(worldObj, getOffsetX(tSide)+0.5, getOffsetY(tSide)+0.5, getOffsetZ(tSide)+0.5, tStack);
-				UT.Sounds.send(worldObj, SFX.MC_BREAK, 1.0F, -1.0F, getCoords());
+				UT.Sounds.send(SFX.MC_BREAK, 1.0F, -1.0F, this, F);
 			}
 		}
 	}

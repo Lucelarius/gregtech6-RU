@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -72,7 +72,7 @@ import static gregapi.data.CS.*;
  * @author Gregorius Techneticies
  */
 public class MultiTileEntityMold extends TileEntityBase07Paintable implements ITileEntityEnergy, IFluidHandler, ITileEntityTemperature, ITileEntityMold, ITileEntityServerTickPost, IMTE_SetBlockBoundsBasedOnState, IMTE_OnEntityCollidedWithBlock, IMTE_GetCollisionBoundingBoxFromPool, IMTE_GetSelectedBoundingBoxFromPool, IMTE_AddToolTips, IMTE_OnPlaced {
-	private static double HEAT_RESISTANCE_BONUS = 1.25;
+	public static double HEAT_RESISTANCE_BONUS = 1.25;
 	
 	public static final Map<Integer, OreDictPrefix> MOLD_RECIPES = new HashMap<>();
 	
@@ -177,7 +177,7 @@ public class MultiTileEntityMold extends TileEntityBase07Paintable implements IT
 		
 		if (mContent != null) {
 			if (mTemperature > mContent.mMaterial.mBoilingPoint || mTemperature > getMoldMaxTemperature()) {
-				UT.Sounds.send(SFX.MC_FIZZ, this);
+				UT.Sounds.send(SFX.MC_FIZZ, this, F);
 				mContent = null;
 				mDisplay = 0;
 				slotTrash(0);
@@ -297,7 +297,7 @@ public class MultiTileEntityMold extends TileEntityBase07Paintable implements IT
 		ItemStack tOutputStack = slot(0);
 		if (tOutputStack != null) {
 			OreDictItemData tData = OM.anyassociation(tOutputStack);
-			if (tData != null) for (Achievement tAchievement : tData.mMaterial.mMaterial.mAchievementsForCreation) UT.Inventories.unlockAchievement(aPlayer, tAchievement);
+			if (tData != null) for (Achievement tAchievement : tData.mMaterial.mMaterial.mAchievementsForCreation) ST.achieve(aPlayer, tAchievement);
 			ItemStack aStack = aPlayer.getCurrentEquippedItem();
 			if (aStack == null) {
 				aPlayer.inventory.setInventorySlotContents(aPlayer.inventory.currentItem, tOutputStack);
@@ -312,7 +312,7 @@ public class MultiTileEntityMold extends TileEntityBase07Paintable implements IT
 				if (aCauseDamage) UT.Entities.applyTemperatureDamage(aPlayer, mTemperature, 1, 5.0F);
 				return T;
 			}
-			if (UT.Inventories.addStackToPlayerInventory(aPlayer, slot(0), F)) {
+			if (ST.add(aPlayer, slot(0), F)) {
 				if (aCauseDamage) UT.Entities.applyTemperatureDamage(aPlayer, mTemperature, 1, 5.0F);
 				slotKill(0);
 				return T;
@@ -328,7 +328,7 @@ public class MultiTileEntityMold extends TileEntityBase07Paintable implements IT
 		if (aTool.equals(TOOL_chisel) && mContent == null && slot(0) == null && aHitX > PX_P[2] && aHitX < PX_N[2] && aHitZ > PX_P[2] && aHitZ < PX_N[2]) {
 			int tBit = B[((int)(5 * (aHitX - PX_P[2]) / PX_P[12]))*5+(int)(5 * (aHitZ - PX_P[2]) / PX_P[12])];
 			if ((mShape & tBit) == 0) {
-				UT.Sounds.send(SFX.MC_DIG_ROCK, 1.0F, -1.0F, this);
+				UT.Sounds.send(SFX.MC_DIG_ROCK, 1.0F, -1.0F, this, F);
 				mShape |= tBit;
 				updateClientData();
 				return 10000;

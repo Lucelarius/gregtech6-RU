@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,21 +19,16 @@
 
 package gregtech.loaders.c;
 
-import static gregapi.data.CS.*;
-import static gregapi.data.OP.*;
-
-import gregapi.data.ANY;
-import gregapi.data.FL;
-import gregapi.data.IL;
-import gregapi.data.MT;
-import gregapi.data.OP;
-import gregapi.data.RM;
+import gregapi.data.*;
 import gregapi.oredict.OreDictMaterial;
 import gregapi.util.OM;
 import gregapi.util.ST;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import static gregapi.data.CS.*;
+import static gregapi.data.OP.gemChipped;
 
 public class Loader_Recipes_Potions implements Runnable {
 	@Override public void run() {
@@ -80,6 +75,11 @@ public class Loader_Recipes_Potions implements Runnable {
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.DistW         .make(750), FL.Potion_Mundane          .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Awkward.make(750), FL.Potion_Strength_1       .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 16, tStack, FL.Potion_Thick  .make(250), FL.Potion_Strength_2       .make(250), ZL_IS);
+		}
+		for (ItemStack tStack : ST.array(OP.dustTiny.mat(MT.Breeze, 1))) if (tStack != null) {
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.DistW         .make(750), FL.Potion_Mundane          .make(750), ZL_IS);
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Awkward.make(750), FL.Potion_WaterBreathing_1 .make(750), ZL_IS);
+		RM.Distillery.addRecipe1(T, 16, 16, tStack, FL.Potion_Thick  .make(250), FL.Potion_WaterBreathing_1L.make(250), ZL_IS);
 		}
 		for (ItemStack tStack : ST.array(OP.dustTiny.mat(MT.Blizz, 1))) if (tStack != null) {
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.DistW         .make(750), FL.Potion_Thick            .make(750), ZL_IS);
@@ -155,7 +155,8 @@ public class Loader_Recipes_Potions implements Runnable {
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_1D         .make(750), FL.Potion_Harm_1D           .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_1L         .make(750), FL.Potion_Harm_1            .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_1LS        .make(750), FL.Potion_Harm_1S           .make(750), ZL_IS);
-		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_1LD        .make(750), FL.Potion_Harm_1D           .make(750), ZL_IS);
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_1LD        .make(750), FL.Potion_Harm_1D           .make(750), ZL_IS); if (FL.Poison.exists())
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Poison                   .make(750), FL.Potion_Harm_2            .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_2          .make(750), FL.Potion_Harm_2            .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_2S         .make(750), FL.Potion_Harm_2S           .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_2D         .make(750), FL.Potion_Harm_2D           .make(750), ZL_IS);
@@ -269,7 +270,8 @@ public class Loader_Recipes_Potions implements Runnable {
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Jump_2            .make(750), FL.Potion_Jump_1            .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Speed_2           .make(750), FL.Potion_Speed_1           .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Strength_2        .make(750), FL.Potion_Strength_1        .make(750), ZL_IS);
-		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Regen_2           .make(750), FL.Potion_Regen_1           .make(750), ZL_IS);
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Regen_2           .make(750), FL.Potion_Regen_1           .make(750), ZL_IS); if (FL.Poison.exists())
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Poison                   .make(750), FL.Potion_Poison_1          .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_2          .make(750), FL.Potion_Poison_1          .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Harm_2S           .make(750), FL.Potion_Harm_1S           .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Heal_2S           .make(750), FL.Potion_Heal_1S           .make(750), ZL_IS);
@@ -305,7 +307,8 @@ public class Loader_Recipes_Potions implements Runnable {
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Jump_2            .make(750), FL.Potion_Jump_2S           .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Speed_2           .make(750), FL.Potion_Speed_2S          .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Strength_2        .make(750), FL.Potion_Strength_2S       .make(750), ZL_IS);
-		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Regen_2           .make(750), FL.Potion_Regen_2S          .make(750), ZL_IS);
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Regen_2           .make(750), FL.Potion_Regen_2S          .make(750), ZL_IS); if (FL.Poison.exists())
+		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Poison                   .make(750), FL.Potion_Poison_2S         .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Poison_2          .make(750), FL.Potion_Poison_2S         .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Speed_1L          .make(750), FL.Potion_Speed_1LS         .make(750), ZL_IS);
 		RM.Distillery.addRecipe1(T, 16, 48, tStack, FL.Potion_Strength_1L       .make(750), FL.Potion_Strength_1LS      .make(750), ZL_IS);
@@ -395,7 +398,8 @@ public class Loader_Recipes_Potions implements Runnable {
 		RM.Fermenter.addRecipe1(T, 16,128, ST.tag(0), FL.Potion_Regen_1LD         .make(50), FL.Potion_Poison_1LD      .make(10), ZL_IS);
 		RM.Fermenter.addRecipe1(T, 16, 64, ST.tag(0), FL.Potion_Poison_1          .make(50), FL.Potion_Harm_1          .make(25), ZL_IS);
 		RM.Fermenter.addRecipe1(T, 16, 64, ST.tag(0), FL.Potion_Poison_1S         .make(50), FL.Potion_Harm_1S         .make(25), ZL_IS);
-		RM.Fermenter.addRecipe1(T, 16, 64, ST.tag(0), FL.Potion_Poison_1D         .make(50), FL.Potion_Harm_1D         .make(25), ZL_IS);
+		RM.Fermenter.addRecipe1(T, 16, 64, ST.tag(0), FL.Potion_Poison_1D         .make(50), FL.Potion_Harm_1D         .make(25), ZL_IS); if (FL.Poison.exists())
+		RM.Fermenter.addRecipe1(T, 16,128, ST.tag(0), FL.Poison                   .make(50), FL.Potion_Harm_2          .make(10), ZL_IS);
 		RM.Fermenter.addRecipe1(T, 16,128, ST.tag(0), FL.Potion_Poison_2          .make(50), FL.Potion_Harm_2          .make(10), ZL_IS);
 		RM.Fermenter.addRecipe1(T, 16,128, ST.tag(0), FL.Potion_Poison_2S         .make(50), FL.Potion_Harm_2S         .make(10), ZL_IS);
 		RM.Fermenter.addRecipe1(T, 16,128, ST.tag(0), FL.Potion_Poison_2D         .make(50), FL.Potion_Harm_2D         .make(10), ZL_IS);

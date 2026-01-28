@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -92,7 +92,7 @@ public class MultiItemBumbles extends MultiItemRandomWithCompat implements IItem
 		make(  420, "Alienated Bumblebee"       , "Не чувствует себя комфортно в обществе");
 		make(  430, "Nihilistic Bumblebee"      , "Какая разница? Ничто не имеет значения.");
 		
-		make(  500, "Stoned Bumblebee"          , "Йооооу, я такой чертовски красивый");
+		make(  500, "Stoned Bumblebee"          , "Йооооу");//Forgot to remove one reference last year. I need a new thing for the Stoner Bumble to say...
 		make(  510, "Rocking Bumblebee"         , "");
 		make(  520, "Hard Rock Bumblebee"       , "");
 		make(  530, "Bumbelvis"                 , "Покинул здание");
@@ -648,7 +648,7 @@ public class MultiItemBumbles extends MultiItemRandomWithCompat implements IItem
 	public IIcon PRINCESS, QUEEN, SCANNED, DEAD;
 	
 	@Override public IIcon getIconIndex(ItemStack aStack) {return getIconFromDamage(ST.meta(aStack));}
-	@Override public IIcon getIconFromDamage(int aMetaData) {aMetaData /= 10; aMetaData *= 10; return UT.Code.exists(aMetaData, mIconList) ? mIconList[aMetaData][0] : Textures.ItemIcons.RENDERING_ERROR.getIcon(0);}
+	@Override public IIcon getIconFromDamage(int aMetaData) {aMetaData /= 10; aMetaData *= 10; return UT.Code.exists(aMetaData, mIconList) && mIconList[aMetaData][0] != null ? mIconList[aMetaData][0] : Textures.ItemIcons.RENDERING_ERROR.getIcon(0);}
 	@Override public IIcon getIcon(ItemStack aStack, int aRenderPass, EntityPlayer aPlayer, ItemStack aUsedStack, int aUseRemaining) {return getIcon(aStack, aRenderPass);}
 	@Override public IIcon getIcon(ItemStack aStack, int aRenderPass) {return getIconFromDamageForRenderPass(ST.meta_(aStack), aRenderPass);}
 	

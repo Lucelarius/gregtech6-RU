@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,6 +19,7 @@
 
 package gregapi.block.metatype;
 
+import gregapi.block.IBlockOnWalkOver;
 import gregapi.block.IBlockToolable;
 import gregapi.block.ToolCompat;
 import gregapi.code.ItemStackContainer;
@@ -37,6 +38,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
@@ -56,7 +58,7 @@ import static gregapi.data.CS.*;
 import static gregapi.data.OP.gearGtSmall;
 import static gregapi.data.OP.rockGt;
 
-public class BlockStones extends BlockMetaType implements IOreDictListenerEvent, IBlockToolable, IGrowable, Runnable {
+public class BlockStones extends BlockMetaType implements IOreDictListenerEvent, IBlockToolable, IBlockOnWalkOver, IGrowable, Runnable {
 	public static final boolean[]
 	  MOSSY     = {F,F,T,F,F,T,F,F,F,F,F,F,F,F,F,F}
 	, MOSSABLE  = {F,T,F,T,T,F,F,F,F,F,F,F,F,F,F,F}
@@ -640,11 +642,74 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 			if (tBlock instanceof BlockStones && MOSSABLE[tMeta] && WD.set(aWorld, aX+tOffs[0], aY+tOffs[1], aZ+tOffs[2], tBlock, MOSS_MAPPINGS[tMeta], 3)) return;
 		}
 	}
-	
+
+	@Override
+	public void onWalkOver(EntityLivingBase aEntity, World aWorld, int aX, int aY, int aZ) {
+		// Mossy Cobblestone is slightly slippery, unless you sneak on it.
+		if (!aEntity.isInWater() && !aEntity.isSneaking() && WD.meta(aWorld, aX, aY, aZ) == MCOBL) {
+			int tAddX = (aEntity.posX >= aX + 0.5 ? +1 : -1);
+			int tAddZ = (aEntity.posZ >= aZ + 0.5 ? +1 : -1);
+			double tSpeed = 0.15;
+			if (Math.abs(aEntity.motionX) < tSpeed) {
+				if (       !WD.opq(aWorld, aX+tAddX  , aY, aZ, F, F) && !WD.hasCollide(aWorld, aX+tAddX  , aY+1, aZ)) {
+					aEntity.motionX = +tAddX*tSpeed;
+				} else if (!WD.opq(aWorld, aX-tAddX  , aY, aZ, F, F) && !WD.hasCollide(aWorld, aX-tAddX  , aY+1, aZ)) {
+					aEntity.motionX = -tAddX*tSpeed;
+				} else if (!WD.opq(aWorld, aX+tAddX*2, aY, aZ, F, F) && !WD.hasCollide(aWorld, aX+tAddX*2, aY+1, aZ)) {
+					aEntity.motionX = +tAddX*tSpeed;
+				} else if (!WD.opq(aWorld, aX-tAddX*2, aY, aZ, F, F) && !WD.hasCollide(aWorld, aX-tAddX*2, aY+1, aZ)) {
+					aEntity.motionX = -tAddX*tSpeed;
+				}
+			}
+			if (Math.abs(aEntity.motionZ) < tSpeed) {
+				if (       !WD.opq(aWorld, aX, aY, aZ+tAddZ  , F, F) && !WD.hasCollide(aWorld, aX, aY+1, aZ+tAddZ  )) {
+					aEntity.motionZ = +tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX, aY, aZ-tAddZ  , F, F) && !WD.hasCollide(aWorld, aX, aY+1, aZ-tAddZ  )) {
+					aEntity.motionZ = -tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX, aY, aZ+tAddZ*2, F, F) && !WD.hasCollide(aWorld, aX, aY+1, aZ+tAddZ*2)) {
+					aEntity.motionZ = +tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX, aY, aZ-tAddZ*2, F, F) && !WD.hasCollide(aWorld, aX, aY+1, aZ-tAddZ*2)) {
+					aEntity.motionZ = -tAddZ*tSpeed;
+				}
+			}
+			if (Math.abs(aEntity.motionX) < tSpeed && Math.abs(aEntity.motionZ) < tSpeed) {
+				if (       !WD.opq(aWorld, aX+tAddX  , aY, aZ+tAddZ  , F, F) && !WD.hasCollide(aWorld, aX+tAddX  , aY+1, aZ+tAddZ  )) {
+					aEntity.motionX = +tAddX*tSpeed;
+					aEntity.motionZ = +tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX-tAddX  , aY, aZ-tAddZ  , F, F) && !WD.hasCollide(aWorld, aX-tAddX  , aY+1, aZ-tAddZ  )) {
+					aEntity.motionX = -tAddX*tSpeed;
+					aEntity.motionZ = -tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX+tAddX*2, aY, aZ+tAddZ*2, F, F) && !WD.hasCollide(aWorld, aX+tAddX*2, aY+1, aZ+tAddZ*2)) {
+					aEntity.motionX = +tAddX*tSpeed;
+					aEntity.motionZ = +tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX-tAddX*2, aY, aZ-tAddZ*2, F, F) && !WD.hasCollide(aWorld, aX-tAddX*2, aY+1, aZ-tAddZ*2)) {
+					aEntity.motionX = -tAddX*tSpeed;
+					aEntity.motionZ = -tAddZ*tSpeed;
+				}
+			}
+			if (Math.abs(aEntity.motionX) < tSpeed && Math.abs(aEntity.motionZ) < tSpeed) {
+				if (       !WD.opq(aWorld, aX-tAddX  , aY, aZ+tAddZ  , F, F) && !WD.hasCollide(aWorld, aX-tAddX  , aY+1, aZ+tAddZ  )) {
+					aEntity.motionX = -tAddX*tSpeed;
+					aEntity.motionZ = +tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX+tAddX  , aY, aZ-tAddZ  , F, F) && !WD.hasCollide(aWorld, aX+tAddX  , aY+1, aZ-tAddZ  )) {
+					aEntity.motionX = +tAddX*tSpeed;
+					aEntity.motionZ = -tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX-tAddX*2, aY, aZ+tAddZ*2, F, F) && !WD.hasCollide(aWorld, aX-tAddX*2, aY+1, aZ+tAddZ*2)) {
+					aEntity.motionX = -tAddX*tSpeed;
+					aEntity.motionZ = +tAddZ*tSpeed;
+				} else if (!WD.opq(aWorld, aX+tAddX*2, aY, aZ-tAddZ*2, F, F) && !WD.hasCollide(aWorld, aX+tAddX*2, aY+1, aZ-tAddZ*2)) {
+					aEntity.motionX = +tAddX*tSpeed;
+					aEntity.motionZ = -tAddZ*tSpeed;
+				}
+			}
+		}
+	}
+
 	static {
 		LH.add("gt.tooltip.stone.mushroom.yes", "Грибы могут прорости на этом грубом камне");
 		LH.add("gt.tooltip.stone.mushroom.no", "Грибы не растут на гладких камнях!");
 		LH.add("gt.tooltip.stone.moss.bonemeal", "Используйте костяную муку или что-то подобное, чтобы разложить мох");
+		LH.add("gt.tooltip.stone.moss.slippery", "Скользко вблизи пропасти (идеально подходит для ферм мобов)");
 	}
 	
 	@Override
@@ -657,6 +722,9 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 		}
 		if (MOSSY[aMeta]) {
 			aList.add(LH.Chat.DGREEN + LH.get("gt.tooltip.stone.moss.bonemeal"));
+		}
+		if (aMeta == MCOBL) {
+			aList.add(LH.Chat.ORANGE + LH.get("gt.tooltip.stone.moss.slippery"));
 		}
 	}
 	
@@ -672,5 +740,5 @@ public class BlockStones extends BlockMetaType implements IOreDictListenerEvent,
 	@Override public boolean isFlammable(byte aMeta) {return MOSSY[aMeta];}
 	@Override public int getFlammability(byte aMeta) {return 0;}
 	@Override public int getFireSpreadSpeed(byte aMeta) {return MOSSY[aMeta]?3000:0;}
-	@Override public boolean isReplaceableOreGen(World aWorld, int aX, int aY, int aZ, Block aTarget) {return (aTarget == this || (aY <= 6 && aTarget == Blocks.stone)) && WD.meta(aWorld, aX, aY, aZ) == STONE;}
+	@Override public boolean isReplaceableOreGen(World aWorld, int aX, int aY, int aZ, Block aTarget) {return aTarget == this && WD.meta(aWorld, aX, aY, aZ) == STONE;}// No longer pretend to be Vanilla Stone at Y<=6, as all the special cases (Draconium) have been resolved.
 }

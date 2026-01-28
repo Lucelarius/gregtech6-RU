@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -69,7 +69,7 @@ public class MultiTileEntityBathingPot extends TileEntityBase07Paintable impleme
 	public void readFromNBT2(NBTTagCompound aNBT) {
 		super.readFromNBT2(aNBT);
 		if (aNBT.hasKey(NBT_RECIPEMAP)) mRecipes = RecipeMap.RECIPE_MAPS.get(aNBT.getString(NBT_RECIPEMAP));
-
+		
 		int tCapacity = 1000;
 		if (aNBT.hasKey(NBT_TANK_CAPACITY)) tCapacity = UT.Code.bindInt(aNBT.getLong(NBT_TANK_CAPACITY));
 		mTanksInput = new FluidTankGT[mRecipes.mInputFluidCount];
@@ -175,7 +175,7 @@ public class MultiTileEntityBathingPot extends TileEntityBase07Paintable impleme
 			}
 		}
 		for (int i = 0; i < mTanksOutput.length && i < aRecipe.mFluidOutputs.length; i++) if (mTanksOutput[i].has()) {
-			if (aRecipe.mNeedsEmptyOutput || (aRecipe.mFluidOutputs[i] != null && (!mTanksOutput[i].contains(aRecipe.mFluidOutputs[i]) || FL.temperature(aRecipe.mFluidOutputs[i]) >= mMaterial.mMeltingPoint - 100 || FL.lighter(aRecipe.mFluidOutputs[i]) || mTanksOutput[i].has(Math.max(1000, 1+aRecipe.mFluidOutputs[i].amount))))) {
+			if (aRecipe.mNeedsEmptyOutput || (aRecipe.mFluidOutputs[i] != null && (!mTanksOutput[i].contains(aRecipe.mFluidOutputs[i]) || FL.temperature(aRecipe.mFluidOutputs[i]) >= mMaterial.mMeltingPoint - 100 || FL.lighter(aRecipe.mFluidOutputs[i]) || FL.gas(aRecipe.mFluidOutputs[i]) || mTanksOutput[i].has(Math.max(1000, 1+aRecipe.mFluidOutputs[i].amount))))) {
 				return F;
 			}
 		}
@@ -199,7 +199,7 @@ public class MultiTileEntityBathingPot extends TileEntityBase07Paintable impleme
 						FluidStack[] tOutputFluids = tRecipe.getFluidOutputs();
 						for (int i = 0; i < mRecipes.mOutputItemsCount && i < tOutputItems .length; i++) addStackToSlot(i+6, tOutputItems[i]);
 						for (int i = 0; i < mTanksOutput.length && i < tOutputFluids.length; i++) mTanksOutput[i].fill(tOutputFluids[i], T);
-						aPlayer.addExhaustion(Math.max(1, tRecipe.getAbsoluteTotalPower()) / 1000.0F);
+						UT.Entities.exhaust(aPlayer, Math.max(1, tRecipe.getAbsoluteTotalPower()) / 1000.0F);
 						removeAllDroppableNullStacks();
 						updateInventory();
 						updateAdjacentInventories();
@@ -208,7 +208,7 @@ public class MultiTileEntityBathingPot extends TileEntityBase07Paintable impleme
 				}
 			}
 			
-			for (int i = 6; i < 12; i++) if (UT.Inventories.addStackToPlayerInventory(aPlayer, slot(i), F)) {
+			for (int i = 6; i < 12; i++) if (ST.add(aPlayer, slot(i), F)) {
 				playCollect();
 				slotKill(i);
 				return T;
@@ -218,7 +218,7 @@ public class MultiTileEntityBathingPot extends TileEntityBase07Paintable impleme
 			
 			if (aStack != null && tFluid != null && FL.fillAll_(this, SIDE_ANY, tFluid, T)) {
 				aStack.stackSize--;
-				UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+				ST.give(aPlayer, tStack, T);
 				return T;
 			}
 			if (SIDES_TOP[aSide] && aHitX > PX_P[2] && aHitX < PX_N[2] && aHitZ > PX_P[2] && aHitZ < PX_N[2]) {
@@ -227,30 +227,30 @@ public class MultiTileEntityBathingPot extends TileEntityBase07Paintable impleme
 				}
 				if (aStack != null) for (FluidTankGT tTank : mTanksOutput) if ((tStack = FL.fill(tTank, ST.amount(1, aStack), T, T, T, T)) != null) {
 					aStack.stackSize--;
-					UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+					ST.give(aPlayer, tStack, T);
 					return T;
 				}
 				if (aStack != null) for (FluidTankGT tTank : mTanksInput) if ((tStack = FL.fill(tTank, ST.amount(1, aStack), T, T, T, T)) != null) {
 					aStack.stackSize--;
-					UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+					ST.give(aPlayer, tStack, T);
 					return T;
 				}
 			} else {
 				if (aStack != null) for (FluidTankGT tTank : mTanksOutput) if ((tStack = FL.fill(tTank, ST.amount(1, aStack), T, T, T, T)) != null) {
 					aStack.stackSize--;
-					UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+					ST.give(aPlayer, tStack, T);
 					return T;
 				}
 				if (aStack != null) for (FluidTankGT tTank : mTanksInput) if ((tStack = FL.fill(tTank, ST.amount(1, aStack), T, T, T, T)) != null) {
 					aStack.stackSize--;
-					UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+					ST.give(aPlayer, tStack, T);
 					return T;
 				}
 				if (aStack != null) for (byte i = 0; i < 6; i++) {
 					if (ST.move(aPlayer.inventory, this, aPlayer.inventory.currentItem, i) > 0) return T;
 				}
 			}
-			if (slot(6) == null && slot(7) == null && slot(8) == null && slot(9) == null && slot(10) == null && slot(11) == null) for (int i = 0; i < 6; i++) if (UT.Inventories.addStackToPlayerInventory(aPlayer, slot(i), T)) {
+			if (slot(6) == null && slot(7) == null && slot(8) == null && slot(9) == null && slot(10) == null && slot(11) == null) for (int i = 0; i < 6; i++) if (ST.add(aPlayer, slot(i), T)) {
 				playCollect();
 				slotKill(i);
 				return T;

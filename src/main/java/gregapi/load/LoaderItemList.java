@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -572,6 +572,10 @@ public class LoaderItemList implements Runnable {
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "modded_deepslate_ore"           , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_thaumcraft_ore"       , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_certus_quartz_ore"    , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_draconium_ore"        , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_projred_ore"          , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_bluepower_ore"        , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.EtFu, "deepslate_bop_ore"              , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.GaSu, "18Stones"                       , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.GaSu, "basalt"                         , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.BOTA, "stone"                          , null));
@@ -586,9 +590,9 @@ public class LoaderItemList implements Runnable {
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.AE, "tile.oreQuartzCharged"            , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.TG, "oreTitanIron"                     , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.BR, "YelloriteOre"                     , null));
-	//  StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.BoP, "gemOre"                          , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.BoP, "gemOre"                          , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.BoP, "rocks"                           , null));
-		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.stone_gneiss"               , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.stone_gneiss"               , null));// Do not add HBM Alexandrite Ore to this List!
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.basalt_smooth"              , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.ore_aluminium"              , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HBM, "tile.ore_asbestos"               , null));
@@ -636,6 +640,7 @@ public class LoaderItemList implements Runnable {
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.TE_FOUNDATION, "Ore"                   , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.ENVM, "flammablecoal"                  , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.HaC, "salt"                            , null));
+		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.DE, "draconiumOre"                     , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.Mek, "OreBlock"                        , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.VULPES, "libVulpesore0"                , null));
 		StoneLayer.REPLACEABLE_BLOCKS.add(ST.block(MD.MgC, "copper_ore"                      , null));
@@ -934,6 +939,7 @@ public class LoaderItemList implements Runnable {
 		IL.TC_Knowledge_Fragment                .set(ST.make(MD.TC, "ItemResource"                          , 1, 9), new OreDictItemData(MT.Paper, U9), "paperResearchFragment");
 		IL.TC_Thaumonomicon                     .set(ST.make(MD.TC, "ItemThaumonomicon"                     , 1, 0), new OreDictItemData(MT.Paper, 9*U));
 		IL.TC_Crimson_Rites                     .set(ST.make(MD.TC, "ItemEldritchObject"                    , 1, 1), new OreDictItemData(MT.Paper, 9*U));
+		IL.TC_Primordial_Pearl                  .set(ST.make(MD.TC, "ItemEldritchObject"                    , 1, 3));
 		IL.TC_Flux_Goo                          .set(ST.make(MD.TC, "blockFluxGoo"                          , 1, 0));
 		IL.TC_Flux_Gas                          .set(ST.make(MD.TC, "blockFluxGas"                          , 1, 0));
 		IL.TC_Bucket_Death                      .set(ST.make(MD.TC, "ItemBucketDeath"                       , 1, 0), new OreDictItemData(ANY.Fe, U*3), OD.itemPoison);
@@ -1036,7 +1042,7 @@ public class LoaderItemList implements Runnable {
 		
 		
 		IL.RH_Sand_Magnetite                    .set(ST.make(MD.RH, "globbypotato_rockhounding_beachSands"  , 1, 0), new OreDictItemData(MT.OREMATS.GraniticMineralSand, U));
-		IL.RH_Sand_Olivine                      .set(ST.make(MD.RH, "globbypotato_rockhounding_beachSands"  , 1, 1), new OreDictItemData(MT.Olivine, U));
+		IL.RH_Sand_Olivine                      .set(ST.make(MD.RH, "globbypotato_rockhounding_beachSands"  , 1, 1), new OreDictItemData(MT.Peridot, U));
 		IL.RH_Sand_Coral                        .set(ST.make(MD.RH, "globbypotato_rockhounding_beachSands"  , 1, 2), new OreDictItemData(MT.Sand, U*9));
 		IL.RH_Sand_Gypsum                       .set(ST.make(MD.RH, "globbypotato_rockhounding_beachSands"  , 1, 3), new OreDictItemData(MT.Gypsum, U));
 		
@@ -1151,26 +1157,44 @@ public class LoaderItemList implements Runnable {
 		IL.BTL_Rubber                           .set(ST.make(MD.BTL, "unknownGeneric"                       , 1,26), new OreDictItemData(MT.Rubber, U));
 		IL.BTL_Compost                          .set(ST.make(MD.BTL, "unknownGeneric"                       , 1, 5), null, OD.itemCompost);
 		IL.BTL_Skin                             .set(ST.make(MD.BTL, "unknownGeneric"                       , 1, 7), null, OD.itemSkin);
-		IL.BTL_Tar                              .set(ST.make(MD.BTL, "unknownGeneric"                       , 1,29), null, OD.itemTar, DYE_OREDICTS_MIXABLE[DYE_INDEX_Black]);
 		IL.BTL_Dry_Bark                         .set(ST.make(MD.BTL, "unknownGeneric"                       , 1,16), null, OD.itemBarkDry);
+		IL.BTL_Tar                              .set(ST.make(MD.BTL, "unknownGeneric"                       , 1,29), null, OD.itemTar, DYE_OREDICTS_MIXABLE[DYE_INDEX_Black]);
+		IL.BTL_Tar_Block                        .set(ST.make(MD.BTL, "solidTar"                             , 1, 0), null, OD.itemTar, DYE_OREDICTS_MIXABLE[DYE_INDEX_Black]);
+		IL.BTL_Bucket_Empty                     .set(ST.make(MD.BTL, "weedwoodBucket"                       , 1, 0), new OreDictItemData(MT.Weedwood, 3*U));
+		IL.BTL_Bucket_Tar                       .set(ST.make(MD.BTL, "weedwoodBucketTar"                    , 1, 0), new OreDictItemData(MT.Weedwood, 3*U), OD.container1000tar);
+		IL.BTL_Bucket_Swamp                     .set(ST.make(MD.BTL, "weedwoodBucketWater"                  , 1, 0), new OreDictItemData(MT.Weedwood, 3*U));
+		IL.BTL_Bucket_Stagnant                  .set(ST.make(MD.BTL, "weedwoodBucketStagnantWater"          , 1, 0), new OreDictItemData(MT.Weedwood, 3*U));
+		IL.BTL_Bucket_Latex                     .set(ST.make(MD.BTL, "bucketOfRubber"                       , 1, 0), new OreDictItemData(MT.Weedwood, 3*U), OD.container1000latex);
+		IL.BTL_Bucket_Infusion                  .set(ST.make(MD.BTL, "weedwoodBucketInfusion"               , 1, 0), new OreDictItemData(MT.Weedwood, 3*U));
+		
+		if (IL.BTL_Bucket_Tar     .exists()) IL.BTL_Bucket_Tar     .item().setContainerItem(IL.BTL_Bucket_Empty.getItem());
+		if (IL.BTL_Bucket_Swamp   .exists()) IL.BTL_Bucket_Swamp   .item().setContainerItem(IL.BTL_Bucket_Empty.getItem());
+		if (IL.BTL_Bucket_Stagnant.exists()) IL.BTL_Bucket_Stagnant.item().setContainerItem(IL.BTL_Bucket_Empty.getItem());
+		if (IL.BTL_Bucket_Latex   .exists()) IL.BTL_Bucket_Latex   .item().setContainerItem(IL.BTL_Bucket_Empty.getItem());
+		if (IL.BTL_Bucket_Infusion.exists()) IL.BTL_Bucket_Infusion.item().setContainerItem(IL.BTL_Bucket_Empty.getItem());
 		
 		
+		
+		
+		if (!MD.AETHEL.mLoaded) {
 		IL.AETHER_Chest                         .set(ST.make(MD.AETHER, "skyrootChest"                      , 1, 0), new OreDictItemData(MT.Skyroot, 8*U), OD.craftingChest);
 		IL.AETHER_Skyroot_Planks                .set(ST.make(MD.AETHER, "skyrootPlank"                      , 1, 0), new OreDictItemData(MT.Skyroot, U), OD.plankSkyroot);
 		IL.AETHER_Skyroot_Log                   .set(ST.make(MD.AETHER, "aetherLog"                         , 1, 0), new OreDictItemData(MT.Skyroot, U*8, MT.Bark, U));
-		IL.AETHER_Skyroot_Log_Gold              .set(ST.make(MD.AETHER, "aetherLog"                         , 1, 2), new OreDictItemData(MT.Skyroot, U*8, MT.Bark, U)); OM.reg(IL.AETHER_Skyroot_Log.wild(1), OD.logWood);
+		IL.AETHER_Skyroot_Log_Gold              .set(ST.make(MD.AETHER, "aetherLog"                         , 1, 2), new OreDictItemData(MT.Skyroot, U*8, MT.AmberGolden, U)); OM.reg(IL.AETHER_Skyroot_Log.wild(1), OD.logWood);
 		IL.AETHER_Skyroot_Log_Small             .set(ST.make(MD.AETHER, "skyrootLogWall"                    , 1, 0), new OreDictItemData(MT.Skyroot, U*8, MT.Bark, U)); OM.reg(IL.AETHER_Skyroot_Log_Small.wild(1), OD.logWood);
 		IL.AETHER_Bowl                          .set(ST.make(MD.AETHER, "shoyrootBowl"                      , 1, 0), new OreDictItemData(MT.Skyroot, U));
 		IL.AETHER_Bucket_Empty                  .set(ST.make(MD.AETHER, "skyrootBucket"                     , 1, 0), new OreDictItemData(MT.Skyroot, U*3));
 		IL.AETHER_Bucket_Water                  .set(ST.make(MD.AETHER, "skyrootWaterBucket"                , 1, 0), new OreDictItemData(MT.Skyroot, U*3), OD.container1000water);
-		IL.AETHER_Bucket_Milk                   .set(ST.make(MD.AETHER, "skyrootMilkBucket"                 , 1, 0), new OreDictItemData(MT.Skyroot, U*3), OD.container1000milk);
 		IL.AETHER_Bucket_Poison                 .set(ST.make(MD.AETHER, "skyrootPoisonBucket"               , 1, 0), new OreDictItemData(MT.Skyroot, U*3), OD.container1000poison);
+		IL.AETHER_Bucket_Milk                   .set(ST.make(MD.AETHER, "skyrootMilkBucket"                 , 1, 0), new OreDictItemData(MT.Skyroot, U*3), OD.container1000milk);
 		IL.AETHER_Torch_Ambrosium               .set(ST.make(MD.AETHER, "ambrosiumTorch"                    , 1, 0), new OreDictItemData(MT.Ambrosium, U8, MT.Skyroot, U16), OD.blockTorch);
 		IL.AETHER_Apple                         .set(ST.make(MD.AETHER, "whiteApple"                        , 1, 0), null, "cropAppleWhite");
 		IL.AETHER_Tall_Grass                    .set(ST.make(MD.AETHER, "tallAetherGrass"                   , 1, 0), null, OD.itemGrassTall);
 		IL.AETHER_Sand                          .set(ST.make(MD.AETHER, "quicksoil"                         , 1, 0), new OreDictItemData(MT.Sand, U*9), OD.sand);
 		IL.AETHER_Glass                         .set(ST.make(MD.AETHER, "quicksoilGlass"                    , 1, 0), null, OD.blockGlassColorless);
 		IL.AETHER_Glass_Pane                    .set(ST.make(MD.AETHER, "quicksoilGlassPane"                , 1, 0), null, OD.paneGlassColorless);
+		IL.AETHER_Flower_Purple                 .set(ST.make(MD.AETHER, "purpleFlower"                      , 1, 0), null, OD.flower);
+		IL.AETHER_Flower_White                  .set(ST.make(MD.AETHER, "whiteRose"                         , 1, 0), null, OD.flower);
 		IL.AETHER_Dirt                          .set(ST.make(MD.AETHER, "aetherDirt"                        , 1, 0));
 		IL.AETHER_Grass                         .set(ST.make(MD.AETHER, "aetherGrass"                       , 1, 0));
 		IL.AETHER_Grass_Enchanted               .set(ST.make(MD.AETHER, "enchantedAetherGrass"              , 1, 0));
@@ -1187,10 +1211,12 @@ public class LoaderItemList implements Runnable {
 		IL.AETHER_Skyroot_Leaves_Purple         .set(ST.make(MD.AETHER, "purpleCrystalLeaves"               , 1, 1), null, OP.treeLeaves);
 		IL.AETHER_Skyroot_Leaves_Apple          .set(ST.make(MD.AETHER, "purpleFruitLeaves"                 , 1, 1), null, OP.treeLeaves);
 		
-		if (IL.AETHER_Dirt         .exists()) Textures.BlockIcons.DIRTS[1] = new IconContainerCopied(IL.AETHER_Dirt.block(), 0, SIDE_BOTTOM);
 		if (IL.AETHER_Bucket_Water .exists()) IL.AETHER_Bucket_Water .item().setContainerItem(IL.AETHER_Bucket_Empty.getItem());
-		if (IL.AETHER_Bucket_Milk  .exists()) IL.AETHER_Bucket_Milk  .item().setContainerItem(IL.AETHER_Bucket_Empty.getItem());
 		if (IL.AETHER_Bucket_Poison.exists()) IL.AETHER_Bucket_Poison.item().setContainerItem(IL.AETHER_Bucket_Empty.getItem());
+		if (IL.AETHER_Bucket_Milk  .exists()) IL.AETHER_Bucket_Milk  .item().setContainerItem(IL.AETHER_Bucket_Empty.getItem());
+		
+		if (IL.AETHER_Dirt         .exists()) Textures.BlockIcons.DIRTS[1] = new IconContainerCopied(IL.AETHER_Dirt.block(), 0, SIDE_BOTTOM);
+		}
 		
 		
 		IL.GrC_Honey_Jar                        .set(ST.make(MD.GrC_Bees, "grc.honeyJar"                    , 1, 0), null, OD.container1000honey, CR.DELATE);
@@ -1417,9 +1443,11 @@ public class LoaderItemList implements Runnable {
 		IL.EtFu_Beet_Seeds                      .set(ST.make(MD.EtFu, "beetroot_seeds"                      , 1, 0), null, "seedBeet");
 		IL.EtFu_Sus_Stew                        .set(ST.make(MD.EtFu, "suspicious_stew"                     , 1, 0));
 		IL.EtFu_Bottle_Honey                    .set(ST.make(MD.EtFu, "honey_bottle"                        , 1, 0), null, OD.container250honey);
+		IL.EtFu_Block_Honey                     .set(ST.make(MD.EtFu, "honey_block"                         , 1, 0));
 		IL.EtFu_Dragon_Breath                   .set(ST.make(MD.EtFu, "dragon_breath"                       , 1, 0));
 		IL.EtFu_Lingering_Potion                .set(ST.make(MD.EtFu, "lingering_potion"                    , 1, 0));
 		IL.EtFu_Wither_Rose                     .set(ST.make(MD.EtFu, "wither_rose"                         , 1, 0), null, OD.flower, OD.flowerWither);
+		IL.EtFu_Bamboo                          .set(ST.make(MD.EtFu, "bamboo"                              , 1, 0), OP.stick.dat(MT.Bamboo), OD.bamboo);
 		IL.EtFu_Bark_Oak                        .set(ST.make(MD.EtFu, "bark"                                , 1, 0), new OreDictItemData(MT.WOODS.Oak    , U*8, MT.Bark, U), OD.logWood);
 		IL.EtFu_Bark_Spruce                     .set(ST.make(MD.EtFu, "bark"                                , 1, 1), new OreDictItemData(MT.WOODS.Spruce , U*8, MT.Bark, U), OD.logWood);
 		IL.EtFu_Bark_Birch                      .set(ST.make(MD.EtFu, "bark"                                , 1, 2), new OreDictItemData(MT.WOODS.Birch  , U*8, MT.Bark, U), OD.logWood);
@@ -1542,6 +1570,7 @@ public class LoaderItemList implements Runnable {
 		IL.BOTA_Prismarine_Dark                 .set(ST.make(MD.BOTA, "prismarine"                          , 1, 2), new OreDictItemData(MT.PrismarineDark , U), OP.stone.dat(MT.PrismarineDark ));
 		
 		
+		IL.EBXL_Vines                           .set(ST.make(MD.EBXL, "vines"                               , 1, 0));
 		IL.EBXL_Cactus_Paste                    .set(ST.make(MD.EBXL, "extrabiomes.paste"                   , 1, 0));
 		IL.EBXL_Dye_Black                       .set(ST.make(MD.EBXL, "extrabiomes.dye"                     , 1, 0), null, DYE_OREDICTS_MIXABLE[DYE_INDEX_Black]);
 		IL.EBXL_Dye_Blue                        .set(ST.make(MD.EBXL, "extrabiomes.dye"                     , 1, 1), null, DYE_OREDICTS_MIXABLE[DYE_INDEX_Blue]);
@@ -1600,6 +1629,7 @@ public class LoaderItemList implements Runnable {
 		IL.BoP_GhastlySoul                      .set(ST.make(MD.BoP, "misc"                                 , 1,10));
 		IL.BoP_PixieDust                        .set(ST.make(MD.BoP, "misc"                                 , 1,11));
 		IL.BoP_Ichor                            .set(ST.make(MD.BoP, "misc"                                 , 1,12));
+		IL.BoP_Vines                            .set(ST.make(MD.BoP, "flowerVine"                           , 1, 0));
 		IL.BoP_Pinecone                         .set(ST.make(MD.BoP, "misc"                                 , 1,13));
 		IL.BoP_Bamboo                           .set(ST.make(MD.BoP, "bamboo"                               , 1, 0), OP.stick.dat(MT.Bamboo), OD.bamboo);
 		IL.BoP_Hard_Ice                         .set(ST.make(MD.BoP, "hardIce"                              , 1, 0), new OreDictItemData(MT.Ice, U*2));
@@ -1642,7 +1672,7 @@ public class LoaderItemList implements Runnable {
 		
 		IL.BoP_Jar_Empty                        .set(ST.make(MD.BoP, "jarEmpty"                             , 1, 0), new OreDictItemData(MT.Glass, 21*U));
 		IL.BoP_Jar_Honey                        .set(ST.make(MD.BoP, "jarFilled"                            , 1, 0), new OreDictItemData(MT.Glass, 21*U), "foodHoneydrop");
-		IL.BoP_Jar_Poison                       .set(ST.make(MD.BoP, "jarFilled"                            , 1, 1), new OreDictItemData(MT.Glass, 21*U), OD.itemPoison);
+		IL.BoP_Jar_Poison                       .set(ST.make(MD.BoP, "jarFilled"                            , 1, 1), new OreDictItemData(MT.Glass, 21*U), OD.container500poison);
 		IL.BoP_Jar_Pixie                        .set(ST.make(MD.BoP, "jarFilled"                            , 1, 2), new OreDictItemData(MT.Glass, 21*U));
 		
 		if (IL.BoP_Jar_Honey.item() != null && IL.BoP_Jar_Empty.item() != null) IL.BoP_Jar_Honey.item().setContainerItem(IL.BoP_Jar_Empty.item());

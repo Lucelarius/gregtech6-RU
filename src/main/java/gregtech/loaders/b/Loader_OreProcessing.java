@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -163,6 +163,7 @@ public class Loader_OreProcessing implements Runnable {
 		stick                       .addListener(new OreProcessing_CraftFrom( 8, tCategory + "gem2stick"                , new String[][] {{"s " , "fX"        }}, gemLegendary      , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT)));
 		bolt                        .addListener(new OreProcessing_CraftFrom( 2, tCategory + "stick2bolt"               , new String[][] {{"s " , " S"        }}, null              , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT, MT.Wood.NOT)));
 		screw                       .addListener(new OreProcessing_CraftFrom( 1, tCategory + "bolt2screw"               , new String[][] {{"fX" , "X "        }}, bolt              , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT)));
+		ring                        .addListener(new OreProcessing_CraftFrom( 1, tCategory + "gem2ring"                 , new String[][] {{"f " , " X"        }}, gem               , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT)));
 		round                       .addListener(new OreProcessing_CraftFrom( 1, tCategory + "chunk2round"              , new String[][] {{"f " , " X"        }}, chunkGt           , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT)));
 		wireFine                    .addListener(new OreProcessing_CraftFrom( 1, tCategory + "foil2wireFine"            , new String[][] {{"Xx"               }}, foil              , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT)));
 		wireGt01                    .addListener(new OreProcessing_CraftFrom( 1, tCategory + "plate2wire"               , new String[][] {{"Px"               }}, null              , null          , null          , null                          , null                          , new And(ANTIMATTER.NOT, COATED.NOT)));
@@ -186,7 +187,9 @@ public class Loader_OreProcessing implements Runnable {
 		toolHeadRawUniversalSpade   .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadShovel     , OreDictToolNames.file, OreDictToolNames.saw       }, new And(ANTIMATTER.NOT, COATED.NOT)));
 		toolHeadRawUniversalSpade   .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadSpade      , OreDictToolNames.file, OreDictToolNames.saw       }, new And(ANTIMATTER.NOT, COATED.NOT)));
 		toolHeadConstructionPickaxe .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadRawPickaxe , OreDictToolNames.file, OreDictToolNames.hammer    }, new And(ANTIMATTER.NOT, COATED.NOT)));
-		toolHeadPickaxeGem          .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadRawPickaxe.dat(ANY.Steel), gemFlawed, gemFlawed, OreDictToolNames.file, OreDictToolNames.hammer, OreDictToolNames.saw}, ANTIMATTER.NOT));
+		toolHeadPickaxeGem          .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadRawPickaxe.dat(ANY.Iron), gemFlawed, gemFlawed, OreDictToolNames.file, OreDictToolNames.hammer, OreDictToolNames.saw}, ANTIMATTER.NOT));
+		toolHeadPickaxeGem          .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadPickaxe   .dat(ANY.Iron), gemFlawed, gemFlawed, OreDictToolNames.file, OreDictToolNames.hammer, OreDictToolNames.saw}, ANTIMATTER.NOT));
+		toolHeadPickaxeGem          .addListener(new OreProcessing_Shapeless( 1, null, new Object[] {toolHeadPickaxeGem.dat(MT.Empty), gemFlawed, gemFlawed, OreDictToolNames.file, OreDictToolNames.hammer, OreDictToolNames.saw}, ANTIMATTER.NOT));
 		
 		CR.shaped(OP.bolt.mat(MT.Wood, 2), RECIPE_BITS, "s " , " S", 'S', IL.Stick);
 		
@@ -283,7 +286,9 @@ public class Loader_OreProcessing implements Runnable {
 				}
 			}
 			if (tFluid != null && tFluid.amount > 0 && tMaterial != null) {
-				RM.Smelter.addRecipe1(T, 16, (long)Math.max(FL.Lava.is(tFluid)?UT.Code.divup(tFluid.amount*EU_PER_LAVA, 16):16, (OM.weight(aEvent.mItemData.getAllMaterialStacks()) * (Math.max(tMaterial.mMaterial.mMeltingPoint, tFluid.getFluid().getTemperature())-DEF_ENV_TEMP))/1600), aEvent.mStack, NF, tFluid, ZL_IS);
+				if (tMaterial.mMaterial.contains(FURNACE) || tMaterial.mMaterial.mTargetSmelting.mMaterial == MT.CaCO3)
+				RM.Melter .addRecipe1(T, 16, (long)Math.max(FL.Lava.is(tFluid)?UT.Code.divup(tFluid.amount*(long)EU_PER_LAVA, 16):16, (OM.weight(aEvent.mItemData.getAllMaterialStacks()) * (Math.max(tMaterial.mMaterial.mMeltingPoint, tFluid.getFluid().getTemperature())-DEF_ENV_TEMP))/1600), aEvent.mStack, NF, tFluid, ZL_IS);
+				RM.Smelter.addRecipe1(T, 16, (long)Math.max(FL.Lava.is(tFluid)?UT.Code.divup(tFluid.amount*(long)EU_PER_LAVA, 16):16, (OM.weight(aEvent.mItemData.getAllMaterialStacks()) * (Math.max(tMaterial.mMaterial.mMeltingPoint, tFluid.getFluid().getTemperature())-DEF_ENV_TEMP))/1600), aEvent.mStack, NF, tFluid, ZL_IS);
 			}
 		}
 	}

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -41,6 +41,8 @@ public class Compat_Recipes_TwilightForest extends CompatMods {
 		CR.shaped(IL.Stick.get(2), DEF, "s", "X", 'X', IL.TF_Dry_Bush);
 		CR.shaped(IL.Stick.get(2), DEF, "k", "X", 'X', IL.TF_Dry_Bush);
 		
+		// Hide that damn thing so people wont get the Idea to use it.
+		ST.hide(IL.TF_Uncrafting.item());
 		// To get the Glass Bottle back, which is the Container Item.
 		CR.shapeless(IL.TF_Firefly.get(1), new Object[] {IL.TF_Firefly_Jar});
 		// Since the Cube gives all Progress related TF Achievements with GT6, it is not that bad that you use up the 5 Trophies in co-op Multiplayer. Oh and yes I know the Lamp of Cinders has itself as Container Item, that is intended as you just need to "have" it.
@@ -106,7 +108,16 @@ public class Compat_Recipes_TwilightForest extends CompatMods {
 		RM.Boxinator.addRecipe2(T,128,128, ST.make(BlocksGT.Leaves_AB      , 64, W), IL.TF_Pick_Giant.getWildcard(0), IL.TF_Giant_Leaves  .get(1));
 		RM.Boxinator.addRecipe2(T,128,128, ST.make(BlocksGT.Leaves_CD      , 64, W), IL.TF_Pick_Giant.getWildcard(0), IL.TF_Giant_Leaves  .get(1));
 		
-		RM.Mixer.addRecipeX(T, 16, 64, ST.array(OM.dust(MT.Redstone, 4*U), IL.TF_BorerEssence.get(4), ST.make(Items.ghast_tear, 1, W)), IL.TF_Carminite.get(1));
+		RM.Mixer.addRecipeX(T, 16, 64, ST.array(OM.dust(MT.Redstone, 4*U), IL.TF_BorerEssence.get(4), ST.make(Items.ghast_tear, 1, W)), OP.dust.mat(MT.Carminite, 4));
+		
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.arcticHelm" , 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.arcticFur", 1));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.arcticPlate", 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.arcticFur", 2));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.arcticLegs" , 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.arcticFur", 2));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.arcticBoots", 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.arcticFur", 1));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.yetiHelm"   , 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.alphaFur" , 1));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.yetiPlate"  , 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.alphaFur" , 2));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.yetiLegs"   , 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.alphaFur" , 2));
+		RM.Slicer.addRecipe2(T, 16, 16, ST.make(MD.TF, "item.yetiBoots"  , 1, W), IL.Shape_Slicer_Split.get(0), ST.make(MD.TF, "item.alphaFur" , 1));
 		
 		RM.Loom.addRecipe2(T, 16,  128, ST.tag(4), ST.make(MD.TF, "item.arcticFur", 5), ST.make(MD.TF, "item.arcticHelm" , 1));
 		RM.Loom.addRecipe2(T, 16,  128, ST.tag(5), ST.make(MD.TF, "item.arcticFur", 8), ST.make(MD.TF, "item.arcticPlate", 1));

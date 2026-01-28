@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,7 +19,6 @@
 
 package gregtech.tileentity.tools;
 
-import gregapi.block.multitileentity.IMultiTileEntity.IMTE_IgnorePlayerCollisionWhenPlacing;
 import gregapi.data.FL;
 import gregapi.data.IL;
 import gregapi.data.LH;
@@ -34,7 +33,7 @@ import gregapi.render.IIconContainer;
 import gregapi.render.ITexture;
 import gregapi.tileentity.ITileEntityTapAccessible;
 import gregapi.tileentity.ITileEntityTapFillable;
-import gregapi.tileentity.base.TileEntityBase10Attachment;
+import gregapi.tileentity.base.TileEntityBase11AttachmentSmall;
 import gregapi.tileentity.delegate.DelegatorTileEntity;
 import gregapi.util.ST;
 import gregapi.util.UT;
@@ -58,7 +57,7 @@ import static gregapi.data.CS.*;
 /**
  * @author Gregorius Techneticies
  */
-public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implements IMTE_IgnorePlayerCollisionWhenPlacing {
+public class MultiTileEntityFluidTap extends TileEntityBase11AttachmentSmall {
 	public boolean mAcidProof = F;
 	
 	@Override
@@ -79,9 +78,14 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 		if (isServerSide()) {
 			DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(mFacing);
 			if (tDelegator.mTileEntity instanceof ITileEntityTapAccessible) {
+				ItemStack aStack = aPlayer.getCurrentEquippedItem();
+				if (ItemsGT.VOIDING_ITEMS.contains(aStack, F)) {
+					UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this, F);
+					GarbageGT.trash(((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, Integer.MAX_VALUE, T));
+					return T;
+				}
 				FluidStack aFluid = ((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, Integer.MAX_VALUE, F);
 				if (!FL.gas(aFluid, T) && aFluid.amount > 0 && (mAcidProof || !FL.acid(aFluid))) {
-					ItemStack aStack = aPlayer.getCurrentEquippedItem();
 					if (aStack == null) {
 						DelegatorTileEntity<TileEntity> tDelegator2 = getAdjacentTileEntity(SIDE_BOTTOM);
 						if (tDelegator2.mTileEntity == null) {
@@ -98,8 +102,8 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 										((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity,  334, T);
 										tDelegator2.setMetaData((byte)(tMeta + 1));
 									}
-									UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this);
-									UT.Sounds.send(SFX.MC_LIQUID_WATER, 1.0F, 1.0F, this);
+									UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this, F);
+									UT.Sounds.send(SFX.MC_LIQUID_WATER, this, F);
 								}
 								return T;
 							}
@@ -108,8 +112,8 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 							aFluid = aFluid.copy();
 							aFluid.amount = Math.min(aFluid.amount, FL.lava(aFluid) ? 1000 : !FL.water(aFluid) && tMaterial != null && tMaterial.mAmount > 0 ? UT.Code.bindInt(tMaterial.mAmount) : 250);
 							if (FL.nonzero(((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, UT.Code.bindInt(((ITileEntityTapFillable)tDelegator2.mTileEntity).tapFill(tDelegator2.mSideOfTileEntity, aFluid, T)), T))) {
-								UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this);
-								UT.Sounds.send(SFX.MC_LIQUID_WATER, 1.0F, 1.0F, this);
+								UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this, F);
+								UT.Sounds.send(SFX.MC_LIQUID_WATER, this, F);
 							}
 							return T;
 						} else if (tDelegator2.mTileEntity instanceof MultiTileEntitySandwich) {
@@ -118,7 +122,7 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 								FluidStack tFluid = FL.mul(FL.getFluid(tStack, T), ((MultiTileEntitySandwich)tDelegator2.mTileEntity).getIngredientCount(), 4, T);
 								if (tFluid != null && tFluid.amount <= aFluid.amount && ((MultiTileEntitySandwich)tDelegator2.mTileEntity).addIngredient(tStack) > 0) {
 									((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, tFluid.amount, T);
-									UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this);
+									UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this, F);
 									return T;
 								}
 							}
@@ -160,9 +164,9 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 					FluidStack tNewFluid = aFluid.copy();
 					ItemStack tStack = FL.fill(tNewFluid, ST.amount(1, aStack), T, T, T, T);
 					if (aFluid.amount > tNewFluid.amount && ((ITileEntityTapAccessible)tDelegator.mTileEntity).tapDrain(tDelegator.mSideOfTileEntity, aFluid.amount - tNewFluid.amount, T) != null) {
-						UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this);
+						UT.Sounds.send(SFX.IC_SPRAY, 1.0F, 2.0F, this, F);
 						aStack.stackSize--;
-						UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+						ST.give(aPlayer, tStack, T);
 						return T;
 					}
 				}
@@ -239,7 +243,6 @@ public class MultiTileEntityFluidTap extends TileEntityBase10Attachment implemen
 	}
 	
 	@Override public boolean canDrop(int aInventorySlot) {return T;}
-	@Override public boolean ignorePlayerCollisionWhenPlacing() {return T;}
 	
 	@Override public String getTileEntityName() {return "gt.multitileentity.tap";}
 }

@@ -62,7 +62,7 @@ public abstract class BlockBase extends Block implements IBlockBase {
 		setBlockName(mNameInternal = aNameInternal);
 		setCreativeTab(CreativeTabs.tabBlock);
 		ST.register(this, mNameInternal, aItemClass);
-		LH.add(mNameInternal+"."+W, "Любой его саб-блок");
+		LH.add(mNameInternal+"."+W, "Любой его субблок");
 	}
 	
 	@Override public final String getUnlocalizedName() {return mNameInternal;}

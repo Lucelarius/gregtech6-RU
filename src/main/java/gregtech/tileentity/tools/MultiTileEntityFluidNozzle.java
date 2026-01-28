@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,12 +19,6 @@
 
 package gregtech.tileentity.tools;
 
-import static gregapi.data.CS.*;
-
-import java.util.List;
-
-import gregapi.block.multitileentity.IMultiTileEntity.IMTE_IgnorePlayerCollisionWhenPlacing;
-import gregapi.data.CS.SFX;
 import gregapi.data.FL;
 import gregapi.data.LH;
 import gregapi.data.LH.Chat;
@@ -35,7 +29,7 @@ import gregapi.render.BlockTextureMulti;
 import gregapi.render.IIconContainer;
 import gregapi.render.ITexture;
 import gregapi.tileentity.ITileEntityTapAccessible;
-import gregapi.tileentity.base.TileEntityBase10Attachment;
+import gregapi.tileentity.base.TileEntityBase11AttachmentSmall;
 import gregapi.tileentity.delegate.DelegatorTileEntity;
 import gregapi.util.ST;
 import gregapi.util.UT;
@@ -50,10 +44,14 @@ import net.minecraftforge.fluids.FluidStack;
 import openblocks.common.LiquidXpUtils;
 import openmods.utils.EnchantmentUtils;
 
+import java.util.List;
+
+import static gregapi.data.CS.*;
+
 /**
  * @author Gregorius Techneticies
  */
-public class MultiTileEntityFluidNozzle extends TileEntityBase10Attachment implements IMTE_IgnorePlayerCollisionWhenPlacing {
+public class MultiTileEntityFluidNozzle extends TileEntityBase11AttachmentSmall {
 	public boolean mAcidProof = F;
 	
 	@Override
@@ -74,9 +72,14 @@ public class MultiTileEntityFluidNozzle extends TileEntityBase10Attachment imple
 		if (isServerSide()) {
 			DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(mFacing);
 			if (tDelegator.mTileEntity instanceof ITileEntityTapAccessible) {
+				ItemStack aStack = aPlayer.getCurrentEquippedItem();
+				if (ItemsGT.VOIDING_ITEMS.contains(aStack, F)) {
+					UT.Sounds.send(SFX.MC_FIZZ, 1.0F, 2.0F, this, F);
+					GarbageGT.trash(((ITileEntityTapAccessible)tDelegator.mTileEntity).nozzleDrain(tDelegator.mSideOfTileEntity, Integer.MAX_VALUE, T));
+					return T;
+				}
 				FluidStack aFluid = ((ITileEntityTapAccessible)tDelegator.mTileEntity).nozzleDrain(tDelegator.mSideOfTileEntity, Integer.MAX_VALUE, F);
 				if (FL.gas(aFluid, F) && aFluid.amount > 0 && (mAcidProof || !FL.acid(aFluid))) {
-					ItemStack aStack = aPlayer.getCurrentEquippedItem();
 					if (aStack == null) {
 						// Drop XP in case the Fluid is labeled as a Gas
 						if (FL.XP.is(aFluid)) {
@@ -114,9 +117,9 @@ public class MultiTileEntityFluidNozzle extends TileEntityBase10Attachment imple
 					FluidStack tNewFluid = aFluid.copy();
 					ItemStack tStack = FL.fill(tNewFluid, ST.amount(1, aStack), T, T, T, T);
 					if (aFluid.amount > tNewFluid.amount && ((ITileEntityTapAccessible)tDelegator.mTileEntity).nozzleDrain(tDelegator.mSideOfTileEntity, aFluid.amount - tNewFluid.amount, T) != null) {
-						UT.Sounds.send(SFX.MC_FIZZ, 1.0F, 2.0F, this);
+						UT.Sounds.send(SFX.MC_FIZZ, 1.0F, 2.0F, this, F);
 						aStack.stackSize--;
-						UT.Inventories.addStackToPlayerInventoryOrDrop(aPlayer, tStack, T);
+						ST.give(aPlayer, tStack, T);
 						return T;
 					}
 				}
@@ -186,7 +189,6 @@ public class MultiTileEntityFluidNozzle extends TileEntityBase10Attachment imple
 	}
 	
 	@Override public boolean canDrop(int aInventorySlot) {return T;}
-	@Override public boolean ignorePlayerCollisionWhenPlacing() {return T;}
 	
 	@Override public String getTileEntityName() {return "gt.multitileentity.nozzle";}
 }

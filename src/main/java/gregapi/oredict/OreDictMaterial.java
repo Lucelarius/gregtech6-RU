@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -117,9 +117,9 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	 * <BR>[30800:30899] SuperCoder79
 	 * <BR>[30900:30999] ManaMetal Mod
 	 * <BR>[31000:31099] BioAstroiner
-	 * <BR>[31100:31199] the next one who asks me (do not use unless I personally tell you to use this smaller Range)
-	 * <BR>[31200:31299] Free
-	 * <BR>[31300:31399] Free
+	 * <BR>[31100:31199] KSP Atlas
+	 * <BR>[31200:31299] mayonnaise
+	 * <BR>[31300:31399] the next one who asks me (do not use unless I personally tell you to use this smaller Range)
 	 * <BR>[31400:31499] Free
 	 * <BR>[31500:31599] Free
 	 * <BR>[31600:31699] Free
@@ -142,7 +142,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	public static OreDictMaterial createMaterial(int aID, String aNameOreDict, String aLocalName) {
 		aID = (aID < 0 || aID >= MATERIAL_ARRAY.length || aID == W ? -1 : aID);
 		// Replace all Spaces and Minuses, and capitalise the String.
-		aNameOreDict = UT.Code.capitalise(aNameOreDict.replaceAll(" ", "").replaceAll("-", "").replaceAll("'", "").replaceAll("/", ""));
+		aNameOreDict = sanitize(aNameOreDict);
 		// That would cause really bad shit to happen.
 		if (aNameOreDict.isEmpty())
 		throw new IllegalArgumentException("This OreDict Name is not usable, due to being an empty String, after stripping all the minuses and spaces.");
@@ -199,6 +199,10 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	public static OreDictMaterial get(OreDictMaterial aMaterial) {
 		while (aMaterial != aMaterial.mTargetRegistration) aMaterial = aMaterial.mTargetRegistration;
 		return aMaterial;
+	}
+	
+	public static String sanitize(String aString) {
+		return UT.Code.capitalise(aString.replaceAll(" ", "").replaceAll("-", "").replaceAll("'", "").replaceAll("/", ""));
 	}
 	
 	/** The Index of this Material inside the Array. Negative for "Not in the Array" and therefore also for "Not Unificatable", 0 is the NULL Material so a > 0 check could be useful for you. */
@@ -268,6 +272,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	public int mPriorityPrefixIndex = 0;
 	/** Contains the most useful Prefix made of 1 Unit for this Material. */
 	public OreDictPrefix mPriorityPrefix = null;
+	/** The Material which is the target for Recycling a Crafting Recipe. Mainly to prevent things like Iron from showing up twice in the Ingredients List */
+	public OreDictMaterial mTargetReversing = this;
 	/** The Material which is the target for Re-Registration. */
 	public OreDictMaterial mTargetRegistration = this;
 	/** The Material which is the target for selecting the preferred Tool Handle. */
@@ -285,7 +291,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	mTargetForging      = OM.stack(this, U),
 	mTargetBurning      = OM.stack(this, 0), // The remaining Material when being burned. Used for getting the Ashes.
 	mTargetBending      = OM.stack(this, U),
-	mTargetCompressing  = OM.stack(this, U);
+	mTargetCompressing  = OM.stack(this, U),
+	mTargetGenerifying  = OM.stack(this, U);
 	
 	/** The Materials targetting this for certain kinds of Processing. */
 	public final Set<OreDictMaterial>
@@ -299,7 +306,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	mTargetedForging      = new HashSetNoNulls<>(F, this),
 	mTargetedBurning      = new HashSetNoNulls<>(F, this),
 	mTargetedBending      = new HashSetNoNulls<>(F, this),
-	mTargetedCompressing  = new HashSetNoNulls<>(F, this);
+	mTargetedCompressing  = new HashSetNoNulls<>(F, this),
+	mTargetedGenerifying  = new HashSetNoNulls<>(F, this);
 	
 	/**  */
 	public long mLiquidUnit = U, mGasUnit = U, mPlasmaUnit = U;
@@ -344,7 +352,14 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	
 	/** Adds Identical Names which are getting re-registered to this Material. returns this Material, not the newly created ones. */
 	public OreDictMaterial addIdenticalNames(String... aNames) {
-		for (String aName : aNames) addReRegistrations(createMaterial(-1, aName, aName).setRegistration(this));
+		for (String aName : aNames) {
+			aName = sanitize(aName);
+			if (mNameInternal.equals(aName)) {
+				ERR.println("The Material '" + mNameInternal + "' has almost registered an identical Name as an alternative Name by accident, almost leading to Issues with the Recipe System.");
+			} else {
+				addReRegistrations(createMaterial(-1, aName, aName).setRegistration(this));
+			}
+		}
 		return this;
 	}
 	
@@ -441,7 +456,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		ALLOYS.add(this);
 		for (OreDictMaterialStack tMaterial : aConfiguration.getUndividedComponents()) {
 			if (tMaterial.mMaterial != MT.Air) {
-				if (mMeltingPoint >= tMaterial.mMaterial.mBoilingPoint) mMeltingPoint = Math.max(C+20, tMaterial.mMaterial.mBoilingPoint-20);
+				if (mMeltingPoint >= tMaterial.mMaterial.mBoilingPoint && !contains(TD.Atomic.ELEMENT)) mMeltingPoint = Math.max(C+20, tMaterial.mMaterial.mBoilingPoint-20);
 				if (mMeltingPoint >= tMaterial.mMaterial.mBoilingPoint) ERR.println("The Alloy '" + mNameInternal + "' cannot be created due to the Melting Point being higher than the Boiling Point of its Component '" + tMaterial.mMaterial.mNameInternal + "'");
 			}
 			tMaterial.mMaterial.mAlloyComponentReferences.add(this);
@@ -452,6 +467,8 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	
 	/** Sets the Molecule Configuration or Components of this Material. Calculates the Average of the MainStats and sets them. */
 	public OreDictMaterial setMoleculeConfiguration(IOreDictConfigurationComponent aComponents) {
+		if (contains(TD.Atomic.ELEMENT)) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+		
 		mComponents = aComponents;
 		double tDivider = 0, tProtons = 0, tElectrons = 0, tNeutrons = 0, tMass = 0, tGramPerCubicCentimeter = 0, tMeltingPoint = 0, tBoilingPoint = 0, tPlasmaPoint = 0;
 		for (OreDictMaterialStack tMaterial : aComponents.getComponents()) tDivider += tMaterial.mAmount;
@@ -778,7 +795,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to smelt it, if you want to disable smelting, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to smelt it, if you want to disable smelting, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setSmelting(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetSmelting.mMaterial.mTargetedSmelting.remove(this);
@@ -788,7 +805,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of cooling it down, if you want to disable cooling down, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of cooling it down, if you want to disable cooling down, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setSolidifying(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetSolidifying.mMaterial.mTargetedSolidifying.remove(this);
@@ -797,7 +814,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to smash it, if you want to disable smashing, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to smash it, if you want to disable smashing, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setSmashing(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetSmashing.mMaterial.mTargetedSmashing.remove(this);
@@ -806,7 +823,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to cut it, if you want to disable cutting, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to cut it, if you want to disable cutting, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setCutting(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetCutting.mMaterial.mTargetedCutting.remove(this);
@@ -815,7 +832,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to craft with it, if you want to disable working, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to craft with it, if you want to disable working, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setWorking(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetWorking.mMaterial.mTargetedWorking.remove(this);
@@ -824,7 +841,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to forge it, if you want to disable forging, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to forge it, if you want to disable forging, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setForging(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetForging.mMaterial.mTargetedForging.remove(this);
@@ -833,7 +850,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to burn it (Ashes for example), if you want to disable burning, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to burn it (Ashes for example), if you want to disable burning, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setBurning(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetBurning.mMaterial.mTargetedBurning.remove(this);
@@ -842,7 +859,7 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to bend it, if you want to disable bending, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to bend it, if you want to disable bending, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setBending(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetBending.mMaterial.mTargetedBending.remove(this);
@@ -851,12 +868,21 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 		return this;
 	}
 	
-	/** The result of trying to compress it, if you want to disable compressing, then set the Amount to 0. If aMaterial == null it will choose previous Material instead, which is usually "this". */
+	/** The result of trying to compress it, if you want to disable compressing, then set the Amount to 0. If aMaterial == null it will choose "this". */
 	public OreDictMaterial setCompressing(OreDictMaterial aMaterial, long aAmount) {
 		if (aMaterial == null) aMaterial = this;
 		mTargetCompressing.mMaterial.mTargetedCompressing.remove(this);
 		mTargetCompressing = OM.stack(aMaterial, aAmount);
 		aMaterial.mTargetedCompressing.add(this);
+		return this;
+	}
+	
+	/** The result of trying to generify it, If aMaterial == null it will choose "this". */
+	public OreDictMaterial setGenerifying(OreDictMaterial aMaterial) {
+		if (aMaterial == null) aMaterial = this;
+		mTargetGenerifying.mMaterial.mTargetedGenerifying.remove(this);
+		mTargetGenerifying = OM.stack(aMaterial, U);
+		aMaterial.mTargetedGenerifying.add(this);
 		return this;
 	}
 	
@@ -878,6 +904,10 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	@Deprecated public OreDictMaterial setMeltingPoint(long aMeltingPoint) {return heat(aMeltingPoint);}
 	/** Sets the energetic Stats of this Material. Everything is measured in Kelvin. */
 	public OreDictMaterial heat(long aMeltingPoint) {
+		if (contains(TD.Atomic.ELEMENT)) {
+			if (mMeltingPoint != 1000 && aMeltingPoint != mMeltingPoint) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+		//  if (mBoilingPoint != 3000 && aBoilingPoint != mBoilingPoint) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+		}
 		mMeltingPoint = aMeltingPoint;
 		mBoilingPoint = mMeltingPoint * 2;
 		mPlasmaPoint = mBoilingPoint * 100;
@@ -887,6 +917,10 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	@Deprecated public OreDictMaterial setStatsEnergetic(long aMeltingPoint, long aBoilingPoint) {return heat(aMeltingPoint, aBoilingPoint);}
 	/** Sets the energetic Stats of this Material. Everything is measured in Kelvin. */
 	public OreDictMaterial heat(long aMeltingPoint, long aBoilingPoint) {
+		if (contains(TD.Atomic.ELEMENT)) {
+			if (mMeltingPoint != 1000 && aMeltingPoint != mMeltingPoint) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+			if (mBoilingPoint != 3000 && aBoilingPoint != mBoilingPoint) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+		}
 		if (aMeltingPoint > aBoilingPoint) throw new IllegalArgumentException("The Melting Point cannot be above the Boiling Point.");
 		mMeltingPoint = aMeltingPoint;
 		mBoilingPoint = aBoilingPoint;
@@ -897,6 +931,10 @@ public final class OreDictMaterial implements ITagDataContainer<OreDictMaterial>
 	@Deprecated public OreDictMaterial setStatsEnergetic(long aMeltingPoint, long aBoilingPoint, long aPlasmaPoint) {return heat(aMeltingPoint, aBoilingPoint, aPlasmaPoint);}
 	/** Sets the energetic Stats of this Material. Everything is measured in Kelvin. */
 	public OreDictMaterial heat(long aMeltingPoint, long aBoilingPoint, long aPlasmaPoint) {
+		if (contains(TD.Atomic.ELEMENT)) {
+			if (mMeltingPoint != 1000 && aMeltingPoint != mMeltingPoint) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+			if (mBoilingPoint != 3000 && aBoilingPoint != mBoilingPoint) new IllegalArgumentException("Detected problematic tampering with Elements of the Periodic Table").printStackTrace(ERR);
+		}
 		if (aMeltingPoint > aBoilingPoint) throw new IllegalArgumentException("The Melting Point cannot be above the Boiling Point.");
 		if (aBoilingPoint > aPlasmaPoint) throw new IllegalArgumentException("The Boiling Point cannot be above the Plasmafication Point.");
 		mMeltingPoint = aMeltingPoint;

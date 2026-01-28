@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -21,7 +21,7 @@ package gregtech.worldgen;
 
 import gregapi.block.multitileentity.MultiTileEntityRegistry;
 import gregapi.code.ItemStackContainer;
-import gregapi.data.IL;
+import gregapi.data.MD;
 import gregapi.util.ST;
 import gregapi.util.UT;
 import gregapi.util.WD;
@@ -29,6 +29,7 @@ import gregapi.worldgen.WorldgenObject;
 import gregapi.worldgen.WorldgenOnSurface;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -62,17 +63,35 @@ public class WorldgenBushes extends WorldgenOnSurface {
 		MultiTileEntityRegistry tRegistry = MultiTileEntityRegistry.getRegistry("gt.multitileentity");
 		if (tRegistry == null) return F;
 		
-		if (aContact == Blocks.grass) WD.set(aWorld, aX, aY, aZ, Blocks.dirt, 0, 3);
+		ItemStack tBerry = UT.Code.select(new NoiseGenerator(aWorld).get(aX/2, 300, aZ/2, BushesGT.MAP.size()), new ItemStackContainer(Items.string, 1, 0), BushesGT.MAP.keySet().toArray(ZL_ISC)).toStack();
 		
-		int tStage = aRandom.nextInt(4);
-		ItemStack tBerry = UT.Code.select(new NoiseGenerator(aWorld).get(aX/2, 300, aZ/2, BushesGT.MAP.size()), new ItemStackContainer(IL.Food_Candleberry.get(1)), BushesGT.MAP.keySet().toArray(ZL_ISC)).toStack();
+		// Change Minecraft String to Harvestcraft Cotton, because it's in the static initializer as a default.
+		if (MD.HaC.mLoaded && ST.item(tBerry) == Items.string) tBerry = ST.make(MD.HaC, "cottonItem", 1, 0, tBerry);
 		
-		;                                         tRegistry.mBlock.placeBlock(aWorld, aX  , aY+1, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_UNDEFINED, NBT_STATE, tStage), NBT_VALUE, tBerry), T, T);
-		if (WD.easyRep(aWorld, aX+1, aY+1, aZ  )) tRegistry.mBlock.placeBlock(aWorld, aX+1, aY+1, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_X_NEG    , NBT_STATE, tStage), NBT_VALUE, tBerry), T, T);
-		if (WD.easyRep(aWorld, aX-1, aY+1, aZ  )) tRegistry.mBlock.placeBlock(aWorld, aX-1, aY+1, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_X_POS    , NBT_STATE, tStage), NBT_VALUE, tBerry), T, T);
-		if (WD.easyRep(aWorld, aX  , aY+1, aZ+1)) tRegistry.mBlock.placeBlock(aWorld, aX  , aY+1, aZ+1, SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_Z_NEG    , NBT_STATE, tStage), NBT_VALUE, tBerry), T, T);
-		if (WD.easyRep(aWorld, aX  , aY+1, aZ-1)) tRegistry.mBlock.placeBlock(aWorld, aX  , aY+1, aZ-1, SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_Z_POS    , NBT_STATE, tStage), NBT_VALUE, tBerry), T, T);
-		if (WD.easyRep(aWorld, aX  , aY+2, aZ  )) tRegistry.mBlock.placeBlock(aWorld, aX  , aY+2, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_Y_NEG    , NBT_STATE, tStage), NBT_VALUE, tBerry), T, T);
+		if (placeBushCore(aWorld, aX, aY, aZ, tRegistry, tBerry, 3)) {
+			if (aRandom.nextBoolean() && placeBushCore(aWorld, aX-1, aY, aZ  , tRegistry, tBerry, 3)) placeBushSides(aWorld, aX-1, aY, aZ  , tRegistry, tBerry, 3);
+			if (aRandom.nextBoolean() && placeBushCore(aWorld, aX+1, aY, aZ  , tRegistry, tBerry, 3)) placeBushSides(aWorld, aX+1, aY, aZ  , tRegistry, tBerry, 3);
+			if (aRandom.nextBoolean() && placeBushCore(aWorld, aX  , aY, aZ-1, tRegistry, tBerry, 3)) placeBushSides(aWorld, aX  , aY, aZ-1, tRegistry, tBerry, 3);
+			if (aRandom.nextBoolean() && placeBushCore(aWorld, aX  , aY, aZ+1, tRegistry, tBerry, 3)) placeBushSides(aWorld, aX  , aY, aZ+1, tRegistry, tBerry, 3);
+			placeBushSides(aWorld, aX, aY, aZ, tRegistry, tBerry, 3);
+			return T;
+		}
+		return F;
+	}
+	
+	public boolean placeBushCore(World aWorld, int aX, int aY, int aZ, MultiTileEntityRegistry aRegistry, ItemStack aBerry, int aStage) {
+		Block tBlock = aWorld.getBlock(aX, aY, aZ);
+		if (!BlocksGT.plantableGreens.contains(tBlock) || !WD.easyRep(aWorld, aX, aY+1, aZ)) return F;
+		if (tBlock == Blocks.grass) WD.set(aWorld, aX, aY, aZ, Blocks.dirt, 0, 3);
+		return aRegistry.mBlock.placeBlock(aWorld, aX  , aY+1, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_UNDEFINED, NBT_STATE, aStage), NBT_VALUE, aBerry), T, T);
+	}
+	
+	public boolean placeBushSides(World aWorld, int aX, int aY, int aZ, MultiTileEntityRegistry aRegistry, ItemStack aBerry, int aStage) {
+		if (WD.easyRep(aWorld, aX+1, aY+1, aZ  )) aRegistry.mBlock.placeBlock(aWorld, aX+1, aY+1, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_X_NEG    , NBT_STATE, aStage), NBT_VALUE, aBerry), T, T);
+		if (WD.easyRep(aWorld, aX-1, aY+1, aZ  )) aRegistry.mBlock.placeBlock(aWorld, aX-1, aY+1, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_X_POS    , NBT_STATE, aStage), NBT_VALUE, aBerry), T, T);
+		if (WD.easyRep(aWorld, aX  , aY+1, aZ+1)) aRegistry.mBlock.placeBlock(aWorld, aX  , aY+1, aZ+1, SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_Z_NEG    , NBT_STATE, aStage), NBT_VALUE, aBerry), T, T);
+		if (WD.easyRep(aWorld, aX  , aY+1, aZ-1)) aRegistry.mBlock.placeBlock(aWorld, aX  , aY+1, aZ-1, SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_Z_POS    , NBT_STATE, aStage), NBT_VALUE, aBerry), T, T);
+		if (WD.easyRep(aWorld, aX  , aY+2, aZ  )) aRegistry.mBlock.placeBlock(aWorld, aX  , aY+2, aZ  , SIDE_UNKNOWN, (short)32759, ST.save(UT.NBT.make(NBT_FACING, SIDE_Y_NEG    , NBT_STATE, aStage), NBT_VALUE, aBerry), T, T);
 		return T;
 	}
 }

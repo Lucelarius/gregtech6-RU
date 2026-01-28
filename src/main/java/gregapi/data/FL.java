@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -39,10 +39,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.*;
 import net.minecraftforge.fluids.FluidContainerRegistry.FluidContainerData;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static gregapi.data.CS.*;
 import static gregapi.data.CS.FluidsGT.*;
@@ -223,7 +220,7 @@ public enum FL {
 	, Juice_Starfruit           ("starfruitjuice"                                           , SIMPLE, LIQUID, FOOD, JUICE, FRUIT_JUICE)
 	, Juice_Papaya              ("papayajuice"                                              , SIMPLE, LIQUID, FOOD, JUICE, FRUIT_JUICE)
 	, Juice_Fig                 ("figjuice"                                                 , SIMPLE, LIQUID, FOOD, JUICE, FRUIT_JUICE)
-	, Juice_Coconut             ("coconutmilk"                                              , SIMPLE, LIQUID, FOOD, JUICE, FRUIT_JUICE)
+	, Juice_Coconut             ("coconutmilk"                                              , SIMPLE, LIQUID, FOOD, JUICE, FRUIT_JUICE, COOKING_OIL)
 	, Juice_Date                ("datejuice"                                                , SIMPLE, LIQUID, FOOD, JUICE, FRUIT_JUICE)
 	
 	, Juice_Carrot              ("binnie.juicecarrot"       , "carrotjuice"                 , SIMPLE, LIQUID, FOOD, JUICE)
@@ -435,7 +432,7 @@ public enum FL {
 	, CFoam                     ("ic2constructionfoam"                                      , LIQUID) // 100 per Unit
 	, Sewage                    ("sewage"                                                   , SIMPLE, LIQUID)
 	, Sludge                    ("sludge"                                                   , SIMPLE, LIQUID)
-	, Tar                       ("tar"                                                      , SIMPLE, LIQUID)
+	, Tar                       ("tar"                      , "tarfluid"                    , SIMPLE, LIQUID)
 	, Glass                     ("glass"                    , "molten.glass"                , SIMPLE, LIQUID)
 	, Sluice                    ("sluicejuice"                                              , SIMPLE, LIQUID)
 	
@@ -465,7 +462,9 @@ public enum FL {
 	
 	, Med_Heal                  ("medicine.heal"                                            , SIMPLE, LIQUID, BATH)
 	, Med_Laxative              ("medicine.laxative"                                        , SIMPLE, LIQUID, BATH)
-	
+
+	, Poison                    ("poison"                                                   , SIMPLE, LIQUID, BATH)
+
 	, Rotten_Drink              ("rottendrink"                                              , SIMPLE, LIQUID, FOOD)
 	
 	, Dragon_Breath             ("dragonbreath"                                             , SIMPLE, MAGIC, GAS, BATH)
@@ -565,26 +564,27 @@ public enum FL {
 	, Potion_Invisibility_1D    ("potion.invisibility.lingering"                            , SIMPLE, LIQUID, POTION, MAGIC, ENCHANTED_EFFECT)
 	, Potion_Invisibility_1LD   ("potion.invisibility.long.lingering"                       , SIMPLE, LIQUID, POTION, MAGIC, ENCHANTED_EFFECT)
 	;
-	
+
 	public final String mName;
-	
-	private FL(String aName, Collection<String>... aFluidSets) {
+	public String[] mAllNames = ZL_STRING;
+
+	FL(String aName, Collection<String>... aFluidSets) {
 		mName = aName;
+		mAllNames = new String[] {aName};
 		for (Collection<String> aFluidSet : aFluidSets) {aFluidSet.add(mName);}
 	}
-	private FL(String aName, String aOldName, Collection<String>... aFluidSets) {
+	FL(String aName, String aOldName, Collection<String>... aFluidSets) {
 		mName = aName;
+		mAllNames = new String[] {aName, aOldName};
 		FluidsGT.HIDDEN.add(aOldName);
-		FluidsGT.NONSTANDARD.add(aOldName);
 		FluidsGT.FLUID_RENAMINGS.put(aOldName, mName);
 		for (Collection<String> aFluidSet : aFluidSets) {aFluidSet.add(mName); aFluidSet.add(aOldName);}
 	}
-	private FL(String aName, String aOldName1, String aOldName2, Collection<String>... aFluidSets) {
+	FL(String aName, String aOldName1, String aOldName2, Collection<String>... aFluidSets) {
 		mName = aName;
+		mAllNames = new String[] {aName, aOldName1, aOldName2};
 		FluidsGT.HIDDEN.add(aOldName1);
 		FluidsGT.HIDDEN.add(aOldName2);
-		FluidsGT.NONSTANDARD.add(aOldName1);
-		FluidsGT.NONSTANDARD.add(aOldName2);
 		FluidsGT.FLUID_RENAMINGS.put(aOldName1, mName);
 		FluidsGT.FLUID_RENAMINGS.put(aOldName2, mName);
 		for (Collection<String> aFluidSet : aFluidSets) {aFluidSet.add(mName); aFluidSet.add(aOldName1); aFluidSet.add(aOldName2);}
@@ -619,13 +619,17 @@ public enum FL {
 	public boolean is(Fluid aFluid) {return aFluid != null && is(aFluid.getName());}
 	public boolean is(String aFluidName) {return mName.equalsIgnoreCase(aFluidName);}
 	public boolean is(Collection<String> aFluidSet) {return aFluidSet.contains(mName);}
-	
+
 	public ItemStack fill(ItemStack aStack) {return fill(make(Integer.MAX_VALUE), aStack, F, T, T, F);}
+
+	public List<FluidStack> list(long aAmount) {
+		List<FluidStack> rList = new ArrayListNoNulls<>();
+		for (String tName : mAllNames) rList.add(make(tName, aAmount));
+		return rList;
+	}
 	
 	
-	
-	
-	
+
 	public static ArrayListNoNulls<FluidStack> arraylist(FluidStack... aFluids) {return new ArrayListNoNulls<>(F, aFluids);}
 	public static FluidStack[] array(FluidStack... aFluids) {return aFluids;}
 	

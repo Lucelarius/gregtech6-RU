@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -53,6 +53,7 @@ public enum OD {
 	, craftingWireIron
 	, craftingWireTin
 	, craftingDuctTape
+	, crateGtEmpty
 	, lever
 	, button
 	, buttonWood
@@ -91,6 +92,7 @@ public enum OD {
 	, container1000glue
 	, container250glue
 	, container1000poison
+	, container500poison
 	, container250poison
 	, container1000blood
 	, container250blood
@@ -204,7 +206,7 @@ public enum OD {
 	, itemQuicksilver
 	, itemCompressedCarbon
 	, itemClay
-	, itemEgg
+	, itemEgg, itemEggBig
 	, itemFeather, chocobofeather
 	, itemLeather
 	, itemLeatherTreated
@@ -247,6 +249,8 @@ public enum OD {
 	, blockShadowTorch
 	, blockFoxfireTorch
 	, listAllmeatsubstitute
+	, listAllmeatcooked
+	, listAllmeatraw
 	;
 	
 	public final List<ItemStack> mItems;

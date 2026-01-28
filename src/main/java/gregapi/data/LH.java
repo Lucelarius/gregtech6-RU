@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,6 +19,7 @@
 
 package gregapi.data;
 
+import gregapi.code.HashSetNoNulls;
 import gregapi.code.TagData;
 import gregapi.lang.LanguageHandler;
 import gregapi.tileentity.behavior.TE_Behavior_Energy_Converter;
@@ -31,6 +32,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 
 import java.util.List;
+import java.util.Set;
 
 import static gregapi.data.CS.*;
 
@@ -60,6 +62,7 @@ public class LH {
 	, RECIPES_IGNITER = "gt.lang.recipes.igniter"
 	, RECIPES_QUALITY = "gt.lang.recipes.quality"
 	, STRUCTURE = "gt.lang.structure"
+	, RANGE = "gt.lang.range"
 	, ENERGY_CONTAINED = "gt.lang.energy.contained"
 	, ENERGY_CAPACITY = "gt.lang.energy.capacity"
 	, ENERGY_OUTPUT = "gt.lang.energy.output"
@@ -142,6 +145,7 @@ public class LH {
 	, TOOL_TO_OPEN_CROWBAR = "gt.lang.use.crowbar.to.open"
 	, TOOL_TO_UNCOVER_CROWBAR = "gt.lang.use.crowbar.to.uncover"
 	, TOOL_TO_DECALCIFY_CHISEL = "gt.lang.use.chisel.to.decalcify"
+	, TOOL_TO_BUILD_BUILDER_WAND = "gt.lang.use.builder.wand.to.ease.building"
 	, TOOL_TO_DETAIL_MAGNIFYINGGLASS = "gt.lang.use.magnifyingglass.to.detail"
 	, TOOL_TO_MEASURE_GEIGER_COUNTER = "gt.lang.use.geigercoutner.to.measure"
 	, TOOL_TO_MEASURE_THERMOMETER = "gt.lang.use.thermometer.to.measure"
@@ -192,6 +196,7 @@ public class LH {
 	, TOOLTIP_BLASTRANGE = "gt.lang.blastrange"
 	, TOOLTIP_BLASTFORTUNE = "gt.lang.blastfortune"
 	, TOOLTIP_BLASTRESISTANCE = "gt.lang.blastresistance"
+	, TOOLTIP_FURNACE_FUEL = "gt.lang.furnacefuel"
 	, TOOLTIP_RAILSPEED = "gt.lang.railspeed"
 	, TOOLTIP_WALKSPEED = "gt.lang.walkspeed"
 	, TOOLTIP_GRAVITY = "gt.lang.gravity"
@@ -389,7 +394,15 @@ public class LH {
 		add("enchantment.level.28"                      , "XXVIII");
 		add("enchantment.level.29"                      , "XXIX");
 		add("enchantment.level.30"                      , "XXX");
-		
+
+		add("loot.gt.books"                             , "+Random Books+");
+		add("loot.gt.matdicts"                          , "-Random Material Dictionaries-");
+		add("loot.gt.bottles"                           , "+Bottles+");
+		add("loot.gt.saplings"                          , "-Random Saplings-");
+		add("loot.gt.seeds"                             , "-Random Seeds-");
+		add("loot.gt.gems"                              , "+Random Gems+");
+		add("loot.gt.misc"                              , "*Miscellaneous Items*");
+		add("loot.gt.flawless"                          , "*Flawless Gems*");
 		add("loot.mineshaftCorridor"                    , "+Mineshaft+");
 		add("loot.pyramidDesertyChest"                  , "*Desert Pyramid*");
 		add("loot.pyramidJungleChest"                   , "*Jungle Temple*");
@@ -442,6 +455,7 @@ public class LH {
 		add(RECIPES_IGNITER                             , "Воспламеняет блок, находящийся у лицевой стороны машины");
 		add(RECIPES_QUALITY                             , "Имеет качество инструмента");
 		add(STRUCTURE                                   , "Структура");
+		add(RANGE                                       , "Дистанция");
 		add(ENERGY_CONTAINED                            , "Хранится энергии");
 		add(ENERGY_CAPACITY                             , "Вместимость");
 		add(ENERGY_OUTPUT                               , "Отдает энергию");
@@ -508,6 +522,7 @@ public class LH {
 		add(TOOL_TO_OPEN_CROWBAR                        , "Используйте монтировку, чтобы открыть это");
 		add(TOOL_TO_UNCOVER_CROWBAR                     , "Используйте монтировку, чтобы снять покрытие");
 		add(TOOL_TO_DECALCIFY_CHISEL                    , "Используйте долото для удаления накипи");
+		add(TOOL_TO_BUILD_BUILDER_WAND                  , "Используйте строительный посох для облегчения строительства");
 		add(TOOL_TO_DETAIL_MAGNIFYINGGLASS              , "Используйте лупу для просмотра деталей");
 		add(TOOL_TO_MEASURE_GEIGER_COUNTER              , "Используйте счетчик Гейгера для измерения");
 		add(TOOL_TO_MEASURE_THERMOMETER                 , "Используйте термометр для измерения");
@@ -551,7 +566,7 @@ public class LH {
 		add(HAZARD_CONTACT                              , "Наносит урон при прикосновении во время работы!");
 		add(HAZARD_LEAKING_GAS                          , "Утечки при использовании с газами!");
 		add(TOOLTIP_GASPROOF                            , "Может работать с газами");
-		add(TOOLTIP_ACIDPROOF                           , "Может работать с ксилотами");
+		add(TOOLTIP_ACIDPROOF                           , "Может работать с кислотами");
 		add(TOOLTIP_MAGICPROOF                          , "Может рабобтать с магией");
 		add(TOOLTIP_LIQUIDPROOF                         , "Может работать с жидкостями");
 		add(TOOLTIP_PLASMAPROOF                         , "Может рабобтать с плазмой");
@@ -573,6 +588,7 @@ public class LH {
 		add(TOOLTIP_BLASTRANGE                          , "Радиус взрыва: ");
 		add(TOOLTIP_BLASTFORTUNE                        , "Уровень удачи взрыва: ");
 		add(TOOLTIP_BLASTRESISTANCE                     , "Взрывоустойчивость: ");
+		add(TOOLTIP_FURNACE_FUEL                        , "Значение топлива: ");
 		add(TOOLTIP_RAILSPEED                           , "Скорость путей: ");
 		add(TOOLTIP_WALKSPEED                           , "Этот блок изменяет скорость ходьбы");
 		add(TOOLTIP_GRAVITY                             , "На этот блок влияет гравитация");
@@ -638,8 +654,34 @@ public class LH {
 		add(ADMIN_ONLY_CREATION                         , "Только администраторы могут это создать. (или используйте мод MineTweaker для добавления рецепта)");
 		add(WIP                                         , Chat.RESET + Chat.WHITE + Chat.BOLD + "WIP" + Chat.RESET_TOOLTIP + ", Это может быть не так функционально, как вы ожидаете!");
 	}
-	
+
 	public static class Chat {
+		public static final Set<String> BASICALLY_EMPTY_STRINGS = new HashSetNoNulls<>(F, "", " ", "  ", "   ", "    ");
+
+		static {
+			for (EnumChatFormatting tEnum1 : EnumChatFormatting.values()) {
+				// Literally just formatting without Text in it.
+				BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()    );
+				BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+" ");
+				BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()    );
+				for (EnumChatFormatting tEnum2 : EnumChatFormatting.values()) {
+					// Literally just formatting without Text in it.
+					BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+     tEnum2.toString()    );
+					BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+     tEnum2.toString()+" ");
+					BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()+     tEnum2.toString()    );
+					BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()+     tEnum2.toString()+" ");
+					BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+" " +tEnum2.toString()    );
+					BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+" " +tEnum2.toString()+" ");
+					BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()+" " +tEnum2.toString()    );
+					BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()+" " +tEnum2.toString()+" ");
+					BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+"  "+tEnum2.toString()    );
+					BASICALLY_EMPTY_STRINGS.add(    tEnum1.toString()+"  "+tEnum2.toString()+" ");
+					BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()+"  "+tEnum2.toString()    );
+					BASICALLY_EMPTY_STRINGS.add(" "+tEnum1.toString()+"  "+tEnum2.toString()+" ");
+				}
+			}
+		}
+
 		public static final String
 		   BLACK          = EnumChatFormatting.BLACK.toString()
 		,  DBLUE          = EnumChatFormatting.DARK_BLUE.toString()

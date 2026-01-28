@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -19,7 +19,6 @@
 
 package gregtech.tileentity.tools;
 
-import gregapi.block.multitileentity.IMultiTileEntity.IMTE_IgnorePlayerCollisionWhenPlacing;
 import gregapi.data.FL;
 import gregapi.data.LH;
 import gregapi.data.LH.Chat;
@@ -28,7 +27,7 @@ import gregapi.data.TD;
 import gregapi.oredict.OreDictMaterialStack;
 import gregapi.render.BlockTextureDefault;
 import gregapi.render.ITexture;
-import gregapi.tileentity.base.TileEntityBase10Attachment;
+import gregapi.tileentity.base.TileEntityBase11AttachmentSmall;
 import gregapi.tileentity.delegate.DelegatorTileEntity;
 import gregapi.tileentity.machines.ITileEntityCrucible;
 import gregapi.tileentity.machines.ITileEntityMold;
@@ -52,8 +51,8 @@ import static gregapi.data.CS.*;
 /**
  * @author Gregorius Techneticies
  */
-public class MultiTileEntityFaucet extends TileEntityBase10Attachment implements ITileEntityMold, IMTE_IgnorePlayerCollisionWhenPlacing {
-	private static double HEAT_RESISTANCE_BONUS = 1.25;
+public class MultiTileEntityFaucet extends TileEntityBase11AttachmentSmall implements ITileEntityMold {
+	public static double HEAT_RESISTANCE_BONUS = 1.25;
 	
 	protected boolean mAcidProof = F, mAutoPull = F;
 	
@@ -112,7 +111,7 @@ public class MultiTileEntityFaucet extends TileEntityBase10Attachment implements
 	public long fillMold(OreDictMaterialStack aMaterial, long aTemperature, byte aSide) {
 		if (aSide != mFacing || aMaterial == null || aMaterial.mMaterial == null || (!mAcidProof && aMaterial.mMaterial.contains(TD.Properties.ACID))) return 0;
 		if (aTemperature > getMoldMaxTemperature()) {
-			UT.Sounds.send(SFX.MC_FIZZ, this);
+			UT.Sounds.send(SFX.MC_FIZZ, this, F);
 			worldObj.setBlock(xCoord, yCoord, zCoord, Blocks.flowing_lava, 1, 3);
 		}
 		DelegatorTileEntity<TileEntity> tDelegator = getAdjacentTileEntity(SIDE_BOTTOM);
@@ -226,7 +225,6 @@ public class MultiTileEntityFaucet extends TileEntityBase10Attachment implements
 	}
 	
 	@Override public boolean canDrop(int aInventorySlot) {return T;}
-	@Override public boolean ignorePlayerCollisionWhenPlacing() {return T;}
 	
 	@Override public String getTileEntityName() {return "gt.multitileentity.smeltery.drain";}
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021 GregTech-6 Team
+ * Copyright (c) 2025 GregTech-6 Team
  *
  * This file is part of GregTech.
  *
@@ -18,11 +18,6 @@
  */
 
 package gregtech.tileentity.tools;
-
-import static gregapi.data.CS.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -52,6 +47,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static gregapi.data.CS.*;
 
 /**
  * @author Gregorius Techneticies
@@ -86,6 +86,7 @@ public class MultiTileEntityBumbliary extends TileEntityBase07Paintable implemen
 	
 	@Override
 	public void addToolTips(List<String> aList, ItemStack aStack, boolean aF3_H) {
+		aList.add(Chat.GREEN    + LH.get(LH.RANGE) + ":" + Chat._WHITE + "7x7x7");
 		aList.add(Chat.DGRAY    + LH.get(LH.TOOL_TO_ACCESS_SCOOP));
 		aList.add(Chat.DGRAY    + LH.get(LH.TOOL_TO_MEASURE_THERMOMETER));
 	}
@@ -303,7 +304,7 @@ public class MultiTileEntityBumbliary extends TileEntityBase07Paintable implemen
 		}
 		if (aTool.equals(TOOL_scoop)) {
 			if (SIDES_TOP[aSide]) {
-				mBreedingCountDown = 6000;
+				if (!UT.Entities.isCreative(aPlayer)) mBreedingCountDown = 6000;
 				if (aPlayer instanceof EntityLivingBase) attackEntity((EntityLivingBase)aPlayer);
 				if (aPlayer instanceof EntityPlayer) openGUI((EntityPlayer)aPlayer, 1);
 				return 10000;
@@ -343,7 +344,10 @@ public class MultiTileEntityBumbliary extends TileEntityBase07Paintable implemen
 	@Override public boolean allowCovers(byte aSide) {return SIDES_BOTTOM_HORIZONTAL[aSide];}
 	@Override public boolean canDrop(int aSlot) {return T;}
 	@Override public boolean breakDrop(int aSlot) {if (mLife > 0 && slot(aSlot).getItem() instanceof IItemBumbleBee) slot(aSlot, ((IItemBumbleBee)slot(aSlot).getItem()).bumbleKill(slot(aSlot))); return T;}
-	
+	@Override public boolean isFireProof       (byte aSide) {return T;}
+	@Override public boolean isRainProof       (byte aSide) {return T;}
+	@Override public boolean isWaterProof      (byte aSide) {return T;}
+	@Override public boolean isThunderProof    (byte aSide) {return T;}
 	@Override public boolean getStateRunningActively()      {return mLife > 0;}
 	@Override public boolean getStateRunningPassively()     {return mLife > 0 || mBreedingCountDown < 1200;}
 	@Override public boolean getStateRunningPossible()      {return mLife > 0 || mBreedingCountDown < 1200;}
